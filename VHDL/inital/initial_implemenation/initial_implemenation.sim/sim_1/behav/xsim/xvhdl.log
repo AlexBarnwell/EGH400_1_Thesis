@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/REPOS/EGH400_1/VHDL/inital/initial_implemenation/initial_implemenation.srcs/sources_1/new/IPs.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DFT'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/REPOS/EGH400_1/VHDL/inital/initial_implemenation/initial_implemenation.srcs/sim_1/new/DFTtest.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DFTtest'

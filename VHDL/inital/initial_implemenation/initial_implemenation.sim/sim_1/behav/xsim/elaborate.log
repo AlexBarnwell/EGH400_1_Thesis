@@ -1,0 +1,37 @@
+Vivado Simulator v2022.1
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2022.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L xbip_utils_v3_0_10 -L xbip_pipe_v3_0_6 -L xbip_bram18k_v3_0_6 -L mult_gen_v12_0_18 -L xbip_dsp48_wrapper_v3_0_4 -L xbip_dsp48_addsub_v3_0_6 -L xbip_dsp48_multadd_v3_0_6 -L xbip_multadd_v3_0_17 -L secureip -L xpm --snapshot DFTtest_behav xil_defaultlib.DFTtest -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package xbip_utils_v3_0_10.xbip_utils_v3_0_10_pkg
+Compiling package xbip_multadd_v3_0_17.xbip_multadd_v3_0_17_viv_comp
+Compiling package mult_gen_v12_0_18.mult_gen_v12_0_18_pkg
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_signed
+Compiling package xbip_multadd_v3_0_17.xbip_multadd_v3_0_17_pkg
+Compiling package xbip_dsp48_multadd_v3_0_6.xbip_dsp48_multadd_v3_0_6_viv_co...
+Compiling package mult_gen_v12_0_18.mult_gen_v12_0_18_viv_comp
+Compiling package xbip_dsp48_multadd_v3_0_6.xbip_dsp48_multadd_v3_0_6_pkg
+Compiling package unisim.vcomponents
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture synth of entity xbip_dsp48_wrapper_v3_0_4.xbip_dsp48e1_wrapper_v3_0 [\xbip_dsp48e1_wrapper_v3_0(acasc...]
+Compiling architecture synth of entity xbip_dsp48_multadd_v3_0_6.xbip_dsp48_multadd_synth [\xbip_dsp48_multadd_synth(c_xdev...]
+Compiling architecture synth of entity xbip_dsp48_multadd_v3_0_6.xbip_dsp48_multadd_v3_0_6_viv [\xbip_dsp48_multadd_v3_0_6_viv(c...]
+Compiling architecture xilinx of entity xbip_multadd_v3_0_17.multadd_dsp [\multadd_dsp(c_xdevicefamily="ar...]
+Compiling architecture synth of entity xbip_multadd_v3_0_17.xbip_multadd_v3_0_17_viv [\xbip_multadd_v3_0_17_viv(c_xdev...]
+Compiling architecture xilinx of entity xbip_multadd_v3_0_17.xbip_multadd_v3_0_17 [\xbip_multadd_v3_0_17(c_xdevicef...]
+Compiling architecture xbip_multadd_0_arch of entity xil_defaultlib.xbip_multadd_0 [xbip_multadd_0_default]
+Compiling architecture behavioral of entity xil_defaultlib.DFT [dft_default]
+Compiling architecture sim of entity xil_defaultlib.dfttest
+Built simulation snapshot DFTtest_behav
