@@ -36,7 +36,7 @@ architecture behavioral of DFT is
             B : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
             C : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
             SUBTRACT : IN STD_LOGIC;
-            P : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+            P : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
           --PCOUT : OUT STD_LOGIC_VECTOR(47 DOWNTO 0)
         );
     END component ;

@@ -1,0 +1,2 @@
+DFTBD_MEM1.v,verilog,xil_defaultlib,../../../../project_3.gen/sources_1/ip/DFTBD_MEM1/sim/DFTBD_MEM1.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

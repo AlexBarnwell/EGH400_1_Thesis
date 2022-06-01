@@ -1,0 +1,298 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Fri May 27 11:15:52 2022
+# Process ID: 29324
+# Current directory: C:/REPOS/EGH400_1/VHDL/inital/iniital_2/project_2/project_2.runs/synth_1
+# Command line: vivado.exe -log fpga_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fpga_top.tcl
+# Log file: C:/REPOS/EGH400_1/VHDL/inital/iniital_2/project_2/project_2.runs/synth_1/fpga_top.vds
+# Journal file: C:/REPOS/EGH400_1/VHDL/inital/iniital_2/project_2/project_2.runs/synth_1\vivado.jou
+# Running On: DESKTOP-BDA8VGJ, OS: Windows, CPU Frequency: 3600 MHz, CPU Physical cores: 8, Host memory: 25599 MB
+#-----------------------------------------------------------
+source fpga_top.tcl -notrace
+Command: synth_design -top fpga_top -part xc7a35ticsg324-1L
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: [Device 21-403] Loading part xc7a35ticsg324-1L
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 30572
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1290.977 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'fpga_top' [C:/REPOS/EGH400_1/EGH400-1 Thesis/VHDL/initial_2/fpga_top.vhd:55]
+INFO: [Synth 8-637] synthesizing blackbox instance 'PM_CLKWIZ' of component 'clk_wiz_0' [C:/REPOS/EGH400_1/EGH400-1 Thesis/VHDL/initial_2/fpga_top.vhd:269]
+	Parameter clk_freq bound to: 100000000 - type: integer 
+	Parameter baud_rate bound to: 115200 - type: integer 
+	Parameter os_rate bound to: 16 - type: integer 
+	Parameter d_width bound to: 8 - type: integer 
+	Parameter parity bound to: 0 - type: integer 
+	Parameter parity_eo bound to: 1'b0 
+INFO: [Synth 8-637] synthesizing blackbox instance 'PM_UART_115200_8N1' of component 'uart' [C:/REPOS/EGH400_1/EGH400-1 Thesis/VHDL/initial_2/fpga_top.vhd:276]
+INFO: [Synth 8-637] synthesizing blackbox instance 'PM_ADC' of component 'xadc_wiz_0' [C:/REPOS/EGH400_1/EGH400-1 Thesis/VHDL/initial_2/fpga_top.vhd:298]
+	Parameter WIDTH_PWM bound to: 16 - type: integer 
+	Parameter WIDTH_ACCUM bound to: 32 - type: integer 
+	Parameter NUM_PHASES bound to: 4 - type: integer 
+	Parameter STATE_RESET bound to: 1'b0 
+INFO: [Synth 8-637] synthesizing blackbox instance 'PM_PWM_A' of component 'pacpwm' [C:/REPOS/EGH400_1/EGH400-1 Thesis/VHDL/initial_2/fpga_top.vhd:318]
+	Parameter WIDTH_PWM bound to: 16 - type: integer 
+	Parameter WIDTH_ACCUM bound to: 32 - type: integer 
+	Parameter NUM_PHASES bound to: 4 - type: integer 
+	Parameter STATE_RESET bound to: 1'b0 
+INFO: [Synth 8-637] synthesizing blackbox instance 'PM_PWM_B' of component 'pacpwm' [C:/REPOS/EGH400_1/EGH400-1 Thesis/VHDL/initial_2/fpga_top.vhd:339]
+INFO: [Synth 8-256] done synthesizing module 'fpga_top' (0#1) [C:/REPOS/EGH400_1/EGH400-1 Thesis/VHDL/initial_2/fpga_top.vhd:55]
+WARNING: [Synth 8-3848] Net bnc_pwm in module/entity fpga_top does not have driver. [C:/REPOS/EGH400_1/EGH400-1 Thesis/VHDL/initial_2/fpga_top.vhd:51]
+WARNING: [Synth 8-3917] design fpga_top has port led_r[3] driven by constant 0
+WARNING: [Synth 8-3917] design fpga_top has port led_r[2] driven by constant 0
+WARNING: [Synth 8-3917] design fpga_top has port led_g[3] driven by constant 0
+WARNING: [Synth 8-3917] design fpga_top has port led_g[2] driven by constant 0
+WARNING: [Synth 8-3917] design fpga_top has port led_g[1] driven by constant 0
+WARNING: [Synth 8-3917] design fpga_top has port led_g[0] driven by constant 0
+WARNING: [Synth 8-3917] design fpga_top has port led_b[1] driven by constant 0
+WARNING: [Synth 8-3917] design fpga_top has port led_b[0] driven by constant 0
+WARNING: [Synth 8-7129] Port bnc_pwm in module fpga_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port btn[3] in module fpga_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port btn[2] in module fpga_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port btn[1] in module fpga_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port btn[0] in module fpga_top is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1290.977 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1290.977 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1290.977 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1290.977 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/REPOS/EGH400_1/EGH400-1 Thesis/VHDL/initial_2/arty.xdc]
+Finished Parsing XDC File [C:/REPOS/EGH400_1/EGH400-1 Thesis/VHDL/initial_2/arty.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/REPOS/EGH400_1/EGH400-1 Thesis/VHDL/initial_2/arty.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/fpga_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/fpga_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1307.938 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1307.938 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1307.938 ; gain = 16.961
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35ticsg324-1L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1307.938 ; gain = 16.961
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1307.938 ; gain = 16.961
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_uart_reg' in module 'fpga_top'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                us_start |                        000000001 |                             0000
+                  us_esc |                        000000010 |                             0001
+                us_pi_b3 |                        000000100 |                             0010
+                us_pi_b2 |                        000001000 |                             0011
+                us_pi_b1 |                        000010000 |                             0100
+                us_pi_b0 |                        000100000 |                             0101
+              us_mode_np |                        001000000 |                             0110
+             us_mode_pwm |                        010000000 |                             0111
+             us_mode_adc |                        100000000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_uart_reg' using encoding 'one-hot' in module 'fpga_top'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1307.938 ; gain = 16.961
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   16 Bit       Adders := 7     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 3     
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   9 Input   32 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 1     
+	   9 Input    9 Bit        Muxes := 1     
+	   2 Input    9 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 1     
+	   9 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3917] design fpga_top has port led_r[3] driven by constant 0
+WARNING: [Synth 8-3917] design fpga_top has port led_r[2] driven by constant 0
+WARNING: [Synth 8-3917] design fpga_top has port led_g[3] driven by constant 0
+WARNING: [Synth 8-3917] design fpga_top has port led_g[2] driven by constant 0
+WARNING: [Synth 8-3917] design fpga_top has port led_g[1] driven by constant 0
+WARNING: [Synth 8-3917] design fpga_top has port led_g[0] driven by constant 0
+WARNING: [Synth 8-3917] design fpga_top has port led_b[1] driven by constant 0
+WARNING: [Synth 8-3917] design fpga_top has port led_b[0] driven by constant 0
+WARNING: [Synth 8-7129] Port bnc_pwm in module fpga_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port btn[3] in module fpga_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port btn[2] in module fpga_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port btn[1] in module fpga_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port btn[0] in module fpga_top is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1307.938 ; gain = 16.961
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1307.938 ; gain = 16.961
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1307.938 ; gain = 16.961
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1307.938 ; gain = 16.961
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1307.938 ; gain = 16.961
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1307.938 ; gain = 16.961
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1307.938 ; gain = 16.961
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1307.938 ; gain = 16.961
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1307.938 ; gain = 16.961
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1307.938 ; gain = 16.961
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_wiz_0     |         1|
+|2     |uart          |         1|
+|3     |xadc_wiz_0    |         1|
+|4     |pacpwm        |         2|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+----------------+------+
+|      |Cell            |Count |
++------+----------------+------+
+|1     |clk_wiz_0_bbox  |     1|
+|2     |pacpwm_bbox     |     2|
+|4     |uart_bbox       |     1|
+|5     |xadc_wiz_0_bbox |     1|
+|6     |CARRY4          |     7|
+|7     |LUT1            |    30|
+|8     |LUT2            |     4|
+|9     |LUT3            |    16|
+|10    |LUT4            |     4|
+|11    |LUT5            |    34|
+|12    |LUT6            |    23|
+|13    |FDCE            |    69|
+|14    |FDPE            |     2|
+|15    |IBUF            |    11|
+|16    |OBUF            |    33|
+|17    |OBUFT           |    17|
++------+----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1307.938 ; gain = 16.961
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 14 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 1307.938 ; gain = 0.000
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1307.938 ; gain = 16.961
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1307.938 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 7 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1307.938 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: e85a7341
+INFO: [Common 17-83] Releasing license: Synthesis
+24 Infos, 28 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1307.938 ; gain = 16.961
+INFO: [Common 17-1381] The checkpoint 'C:/REPOS/EGH400_1/VHDL/inital/iniital_2/project_2/project_2.runs/synth_1/fpga_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file fpga_top_utilization_synth.rpt -pb fpga_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri May 27 11:16:19 2022...
