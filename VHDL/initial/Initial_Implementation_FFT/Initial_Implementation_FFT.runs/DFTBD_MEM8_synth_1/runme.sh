@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/REPOS/EGH400_1/VHDL/inital/iniital_2/project_3/project_3.runs/DFTBD_MEM8_synth_1'
+HD_PWD='C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/DFTBD_MEM8_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

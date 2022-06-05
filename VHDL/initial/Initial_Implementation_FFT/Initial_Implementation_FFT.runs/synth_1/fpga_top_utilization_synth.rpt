@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
-| Date         : Sun Jun  5 16:15:53 2022
+| Date         : Sun Jun  5 16:30:30 2022
 | Host         : DESKTOP-BDA8VGJ running 64-bit major release  (build 9200)
 | Command      : report_utilization -file fpga_top_utilization_synth.rpt -pb fpga_top_utilization_synth.pb
 | Design       : fpga_top
