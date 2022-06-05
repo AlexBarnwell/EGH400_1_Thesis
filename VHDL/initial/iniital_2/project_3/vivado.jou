@@ -1,0 +1,28 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Sun Jun  5 16:01:44 2022
+# Process ID: 6724
+# Current directory: C:/REPOS/EGH400_1/EGH400-1 Thesis/VHDL/initial/iniital_2/project_3
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent37920 C:\REPOS\EGH400_1\EGH400-1 Thesis\VHDL\initial\iniital_2\project_3\project_3.xpr
+# Log file: C:/REPOS/EGH400_1/EGH400-1 Thesis/VHDL/initial/iniital_2/project_3/vivado.log
+# Journal file: C:/REPOS/EGH400_1/EGH400-1 Thesis/VHDL/initial/iniital_2/project_3\vivado.jou
+# Running On: DESKTOP-BDA8VGJ, OS: Windows, CPU Frequency: 3600 MHz, CPU Physical cores: 8, Host memory: 25599 MB
+#-----------------------------------------------------------
+start_gui
+open_project {C:/REPOS/EGH400_1/EGH400-1 Thesis/VHDL/initial/iniital_2/project_3/project_3.xpr}
+update_compile_order -fileset sources_1
+save_project_as Initial_Implementation_FFT {C:/REPOS/EGH400_1/EGH400-1 Thesis/VHDL/initial/Initial_Implementation_FFT} -force
+set_property -dict [list CONFIG.Coe_File {C:/REPOS/EGH400_1/EGH400-1 Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFT_values.coe}] [get_ips DFTBD_MEM1]
+set_property -dict [list CONFIG.Coe_File {C:/REPOS/EGH400_1/EGH400-1 Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFT_values_2.coe}] [get_ips DFTBD_MEM2]
+set_property -dict [list CONFIG.Coe_File {C:/REPOS/EGH400_1/EGH400-1 Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFT_values_8.coe}] [get_ips DFTBD_MEM8]
+set_property -dict [list CONFIG.Coe_File {C:/REPOS/EGH400_1/EGH400-1 Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFT_values_3.coe}] [get_ips DFTBD_MEM3]
+set_property -dict [list CONFIG.Coe_File {C:/REPOS/EGH400_1/EGH400-1 Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFT_values_4.coe}] [get_ips DFTBD_MEM4]
+set_property -dict [list CONFIG.Coe_File {C:/REPOS/EGH400_1/EGH400-1 Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFT_values_5.coe}] [get_ips DFTBD_MEM5]
+set_property -dict [list CONFIG.Coe_File {C:/REPOS/EGH400_1/EGH400-1 Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFT_values_6.coe}] [get_ips DFTBD_MEM6]
+set_property -dict [list CONFIG.Coe_File {C:/REPOS/EGH400_1/EGH400-1 Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFT_values_7.coe}] [get_ips DFTBD_MEM7]
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
