@@ -121,7 +121,7 @@ begin
 
 
 
-    first : DFT_loop
+    Series_recombination_loop : DFT_loop
         port map(
             DFTin => DFTin,
             TWin  => Twin,
