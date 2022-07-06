@@ -44,6 +44,8 @@ entity DFTBD_RAM is
 end DFTBD_RAM;
 
 architecture Behavioral of DFTBD_RAM is
+   
+
 
     COMPONENT DFTBD_MEM1
         PORT (
