@@ -168,8 +168,8 @@
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="DFTBD_MEM2"/>
   <BlockFileSet Type="BlockSrcs" Name="DFTBD_MEM3"/>
-  <BlockFileSet Type="BlockSrcs" Name="TW_RAM"/>
   <BlockFileSet Type="BlockSrcs" Name="DFTBD_MEM4"/>
+  <BlockFileSet Type="BlockSrcs" Name="TW_RAM"/>
   <BlockFileSet Type="BlockSrcs" Name="DFTBD_MEM5"/>
   <BlockFileSet Type="BlockSrcs" Name="DFTBD_MEM6"/>
   <BlockFileSet Type="BlockSrcs" Name="DFTBD_MEM7"/>

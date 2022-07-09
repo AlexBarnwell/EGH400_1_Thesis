@@ -38,13 +38,13 @@ entity DFTBD_RAM is
         DFTOUT  : out std_logic_vector (15 downto 0);
         CLK : in std_logic;
         RST : in std_logic;
-        count : in unsigned(3 downto 0);
-        bitstream_value  : in std_logic_vector(1 downto 0)
+        position : in unsigned(3 downto 0);
+        bitstream_value  : in std_logic_vector(15 downto 0) -- all bits from the input buffer to feed into RAM address
     );
 end DFTBD_RAM;
 
 architecture Behavioral of DFTBD_RAM is
-   
+
 
 
     COMPONENT DFTBD_MEM1
@@ -135,7 +135,14 @@ architecture Behavioral of DFTBD_RAM is
         );
     END COMPONENT;
 
-    signal ADDRESS : std_logic_vector(5 downto 0):= (others => '0');
+    signal ADDRESS1 : std_logic_vector(5 downto 0):= (others => '0'); -- ADDRESSes for all the RAMS
+    signal ADDRESS2 : std_logic_vector(5 downto 0):= (others => '0');
+    signal ADDRESS3 : std_logic_vector(5 downto 0):= (others => '0');
+    signal ADDRESS4 : std_logic_vector(5 downto 0):= (others => '0');
+    signal ADDRESS5 : std_logic_vector(5 downto 0):= (others => '0');
+    signal ADDRESS6 : std_logic_vector(5 downto 0):= (others => '0');
+    signal ADDRESS7 : std_logic_vector(5 downto 0):= (others => '0');
+    signal ADDRESS8 : std_logic_vector(5 downto 0):= (others => '0');
 
     signal DFTBD1 : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
     signal DFTBD2 : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
@@ -166,7 +173,7 @@ begin
             clka => CLK,
             ena => '1',
             wea => "0", -- set hard to 0 so only read is possible
-            addra => ADDRESS,
+            addra => ADDRESS1,
             dina => "0000000000000000",
             douta => DFTBD1
         );
@@ -176,7 +183,7 @@ begin
             clka => CLK,
             ena => '1',
             wea => "0", -- set hard to 0 so only read is possible
-            addra => ADDRESS,
+            addra => ADDRESS2,
             dina => "0000000000000000",
             douta => DFTBD2
         );
@@ -186,7 +193,7 @@ begin
             clka => CLK,
             ena => '1',
             wea => "0", -- set hard to 0 so only read is possible
-            addra => ADDRESS,
+            addra => ADDRESS8,
             dina => "0000000000000000",
             douta => DFTBD8
         );
@@ -196,7 +203,7 @@ begin
             clka => CLK,
             ena => '1',
             wea => "0", -- set hard to 0 so only read is possible
-            addra => ADDRESS,
+            addra => ADDRESS3,
             dina => "0000000000000000",
             douta => DFTBD3
         );
@@ -206,7 +213,7 @@ begin
             clka => CLK,
             ena => '1',
             wea => "0", -- set hard to 0 so only read is possible
-            addra => ADDRESS,
+            addra => ADDRESS4,
             dina => "0000000000000000",
             douta => DFTBD4
         );
@@ -216,7 +223,7 @@ begin
             clka => CLK,
             ena => '1',
             wea => "0", -- set hard to 0 so only read is possible
-            addra => ADDRESS,
+            addra => ADDRESS5,
             dina => "0000000000000000",
             douta => DFTBD5
         );
@@ -226,7 +233,7 @@ begin
             clka => CLK,
             ena => '1',
             wea => "0", -- set hard to 0 so only read is possible
-            addra => ADDRESS,
+            addra => ADDRESS6,
             dina => "0000000000000000",
             douta => DFTBD6
         );
@@ -236,7 +243,7 @@ begin
             clka => CLK,
             ena => '1',
             wea => "0", -- set hard to 0 so only read is possible
-            addra => ADDRESS,
+            addra => ADDRESS7,
             dina => "0000000000000000",
             douta => DFTBD7
         );
@@ -269,10 +276,33 @@ begin
     begin
         if rising_edge(CLK) then
             if RST = '0' then
-                ADDRESS <= (others => '0');
+                ADDRESS1 <= (others => '0');
+                ADDRESS2 <= (others => '0');
+                ADDRESS3 <= (others => '0');
+                ADDRESS4 <= (others => '0');
+                ADDRESS5 <= (others => '0');
+                ADDRESS6 <= (others => '0');
+                ADDRESS7 <= (others => '0');
+                ADDRESS8 <= (others => '0');
             else
-                ADDRESS(5 downto 4) <= Bit_stream_value; -- assume B=2 thus this is 2 bit width 
-                ADDRESS(3 downto 0) <= std_logic_vector(count); -- incrementer 
+                ADDRESS1(5 downto 4) <= Bit_stream_value( 1 downto 0); -- assume B=2 thus this is 2 bit width
+                ADDRESS2(5 downto 4) <= Bit_stream_value( 3 downto 2);
+                ADDRESS3(5 downto 4) <= Bit_stream_value( 5 downto 4);
+                ADDRESS4(5 downto 4) <= Bit_stream_value( 7 downto 6);
+                ADDRESS5(5 downto 4) <= Bit_stream_value( 9 downto 8);
+                ADDRESS6(5 downto 4) <= Bit_stream_value( 11 downto 10);
+                ADDRESS7(5 downto 4) <= Bit_stream_value( 13 downto 12);
+                ADDRESS8(5 downto 4) <= Bit_stream_value( 15 downto 14);
+                
+                ADDRESS1(3 downto 0) <= std_logic_vector(position); -- incrementer  
+                ADDRESS2(3 downto 0) <= std_logic_vector(position);
+                ADDRESS3(3 downto 0) <= std_logic_vector(position);
+                ADDRESS4(3 downto 0) <= std_logic_vector(position); 
+                ADDRESS5(3 downto 0) <= std_logic_vector(position); 
+                ADDRESS6(3 downto 0) <= std_logic_vector(position); 
+                ADDRESS7(3 downto 0) <= std_logic_vector(position);
+                ADDRESS8(3 downto 0) <= std_logic_vector(position); 
+                
             end if;
         end if;
     end process ADDRESS_incrementer;

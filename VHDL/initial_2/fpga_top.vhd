@@ -41,6 +41,7 @@ architecture RTL of fpga_top is
 (-- Clock in ports
         -- Clock out ports
             clk_sys          : out    std_logic;
+            clk_mic          : out    std_logic;
             -- Status and control signals
             reset             : in     std_logic;
             locked            : out    std_logic;
@@ -85,6 +86,7 @@ end component ;
 
 
     signal clk_sys : std_logic;
+    signal clk_mic : std_logic;
     signal DFTin : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
     signal TWin : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
     signal count : unsigned(3 downto 0) := (others => '0');
@@ -104,7 +106,8 @@ begin
         port map(
             reset => reset_n,
             clk_in1  => clk_100M,
-            clk_sys => clk_sys
+            clk_sys => clk_sys,
+            clk_mic => clk_mic
         );
 
 

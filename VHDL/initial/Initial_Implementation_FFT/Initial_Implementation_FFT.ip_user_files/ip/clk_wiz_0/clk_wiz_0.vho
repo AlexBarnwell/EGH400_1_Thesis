@@ -56,6 +56,7 @@
 --   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
 ------------------------------------------------------------------------------
 -- _clk_sys__100.00000______0.000______50.0______130.958_____98.575
+-- _clk_mic__100.00000______0.000______50.0______130.958_____98.575
 --
 ------------------------------------------------------------------------------
 -- Input Clock   Freq (MHz)    Input Jitter (UI)
@@ -70,6 +71,7 @@ port
  (-- Clock in ports
   -- Clock out ports
   clk_sys          : out    std_logic;
+  clk_mic          : out    std_logic;
   -- Status and control signals
   reset             : in     std_logic;
   locked            : out    std_logic;
@@ -85,6 +87,7 @@ your_instance_name : clk_wiz_0
    port map ( 
   -- Clock out ports  
    clk_sys => clk_sys,
+   clk_mic => clk_mic,
   -- Status and control signals                
    reset => reset,
    locked => locked,

@@ -9,13 +9,14 @@ vmap xil_defaultlib activehdl/xil_defaultlib
 
 vlog -work xpm  -sv2k12 "+incdir+../../../ipstatic" \
 "C:/Xilinx/Vivado/2022.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+"C:/Xilinx/Vivado/2022.1/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
 
 vcom -work xpm -93 \
 "C:/Xilinx/Vivado/2022.1/data/ip/xpm/xpm_VCOMP.vhd" \
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../ipstatic" \
-"../../../../project_3.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" \
-"../../../../project_3.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.v" \
+"../../../../Initial_Implementation_FFT.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" \
+"../../../../Initial_Implementation_FFT.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.v" \
 
 vlog -work xil_defaultlib \
 "glbl.v"
