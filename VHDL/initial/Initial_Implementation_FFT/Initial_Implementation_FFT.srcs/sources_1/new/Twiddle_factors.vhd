@@ -18,7 +18,7 @@
 -- 
 ----------------------------------------------------------------------------------
 
-
+-- output latency of 4 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
@@ -31,10 +31,10 @@ USE ieee.numeric_std.ALL;
 -- any Xilinx leaf cells in this code.
 --library UNISIM;
 --use UNISIM.VComponents.all;
-
+-- note this is designed for use in a 256 bit input system with 16 bit banks and a 2 bit bitsream decomp (i.e 16 unique twiddle factors)
 entity Twiddle_factors is
     port(
-    count : in unsigned(3 downto 0);
+    count : in unsigned(7 downto 0);
     CLK : in std_logic;
     RST : in std_logic;
     Twiddleout : out std_logic_vector(15 downto 0)
@@ -48,15 +48,18 @@ COMPONENT TW_RAM
     clka : IN STD_LOGIC;
     ena : IN STD_LOGIC;
     wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    addra : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+    addra : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
     dina : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     douta : OUT STD_LOGIC_VECTOR(15 DOWNTO 0) 
   );
 END COMPONENT;
 
 
-signal ADDRESS : std_logic_vector(3 downto 0);
+signal ADDRESS : std_logic_vector(7 downto 0);
 signal TWout : std_logic_vector(15 downto 0);
+signal TWout1 : std_logic_vector(15 downto 0);
+signal TWout2 : std_logic_vector(15 downto 0);
+signal TWout3 : std_logic_vector(15 downto 0);
 
 begin
 
@@ -64,7 +67,7 @@ begin
 Twiddle_1 : TW_RAM
   PORT MAP (
     clka => CLK,
-    ena => '0',
+    ena => RST,
     wea => "0",
     addra => ADDRESS,
     dina => "0000000000000000",
@@ -76,15 +79,17 @@ Twiddle_1 : TW_RAM
 
    DFTBD_pipe_add :process (CLK,RST) is
     begin
-        if rising_edge(CLK) then
-            if RST = '0' then
-                Twiddleout<= (others => '0'); -- sets output to zero
-            else
+     if RST = '0' then
+                Twiddleout<= (others => '0'); -- sets output to zero -- replace with counter
+                ADDRESS <= "00000000";
+        elsif rising_edge(CLK) then
                 ADDRESS<=std_logic_vector(count); 
-                Twiddleout<=TWout;
+                TWout1<=TWout;
+                Twout2<=TWout1;
+                Twout3<=TWout2;
+                Twiddleout<=TWout3;
                 -- DFTnew<=DFTin;
             end if;
-        end if;
     end process DFTBD_pipe_add;
 
 

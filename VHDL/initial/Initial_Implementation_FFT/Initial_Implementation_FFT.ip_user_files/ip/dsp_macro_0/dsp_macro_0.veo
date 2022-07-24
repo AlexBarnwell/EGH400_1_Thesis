@@ -55,11 +55,13 @@
 
 //----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
 dsp_macro_0 your_instance_name (
-  .CLK(CLK),  // input wire CLK
-  .A(A),      // input wire [15 : 0] A
-  .B(B),      // input wire [15 : 0] B
-  .C(C),      // input wire [15 : 0] C
-  .P(P)      // output wire [15 : 0] P
+  .CLK(CLK),    // input wire CLK
+  .CE(CE),      // input wire CE
+  .SCLR(SCLR),  // input wire SCLR
+  .A(A),        // input wire [15 : 0] A
+  .B(B),        // input wire [15 : 0] B
+  .C(C),        // input wire [15 : 0] C
+  .P(P)        // output wire [32 : 0] P
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 

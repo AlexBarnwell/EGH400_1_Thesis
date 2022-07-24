@@ -20,7 +20,7 @@ vlog -work blk_mem_gen_v8_4_5  -incr -mfcu \
 "../../../ipstatic/simulation/blk_mem_gen_v8_4.v" \
 
 vlog -work xil_defaultlib  -incr -mfcu \
-"../../../../project_3.gen/sources_1/ip/DFTBD_MEM5/sim/DFTBD_MEM5.v" \
+"../../../../Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM5/sim/DFTBD_MEM5.v" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

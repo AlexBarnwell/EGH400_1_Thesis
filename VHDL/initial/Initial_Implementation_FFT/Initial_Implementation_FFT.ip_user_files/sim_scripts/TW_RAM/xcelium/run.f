@@ -9,7 +9,7 @@
   "../../../ipstatic/simulation/blk_mem_gen_v8_4.v" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
-  "../../../../project_3.gen/sources_1/ip/TW_RAM/sim/TW_RAM.v" \
+  "../../../../Initial_Implementation_FFT.gen/sources_1/ip/TW_RAM/sim/TW_RAM.v" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   glbl.v

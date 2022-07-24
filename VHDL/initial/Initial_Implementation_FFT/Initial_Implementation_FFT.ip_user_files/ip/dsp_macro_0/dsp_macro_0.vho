@@ -53,10 +53,12 @@
 COMPONENT dsp_macro_0
   PORT (
     CLK : IN STD_LOGIC;
+    CE : IN STD_LOGIC;
+    SCLR : IN STD_LOGIC;
     A : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     B : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     C : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-    P : OUT STD_LOGIC_VECTOR(15 DOWNTO 0) 
+    P : OUT STD_LOGIC_VECTOR(32 DOWNTO 0) 
   );
 END COMPONENT;
 -- COMP_TAG_END ------ End COMPONENT Declaration ------------
@@ -68,6 +70,8 @@ END COMPONENT;
 your_instance_name : dsp_macro_0
   PORT MAP (
     CLK => CLK,
+    CE => CE,
+    SCLR => SCLR,
     A => A,
     B => B,
     C => C,

@@ -1,5 +1,6 @@
 -makelib xcelium_lib/xpm -sv \
   "C:/Xilinx/Vivado/2022.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+  "C:/Xilinx/Vivado/2022.1/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
 -endlib
 -makelib xcelium_lib/xpm \
   "C:/Xilinx/Vivado/2022.1/data/ip/xpm/xpm_VCOMP.vhd" \
@@ -17,7 +18,7 @@
   "../../../ipstatic/hdl/dsp_macro_v1_0_rfs.vhd" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
-  "../../../../project_3.gen/sources_1/ip/dsp_macro_0/sim/dsp_macro_0.vhd" \
+  "../../../../Initial_Implementation_FFT.gen/sources_1/ip/dsp_macro_0/sim/dsp_macro_0.vhd" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   glbl.v

@@ -17,6 +17,7 @@ vmap xil_defaultlib questa_lib/msim/xil_defaultlib
 
 vlog -work xpm  -incr -mfcu -sv \
 "C:/Xilinx/Vivado/2022.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+"C:/Xilinx/Vivado/2022.1/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
 
 vcom -work xpm  -93 \
 "C:/Xilinx/Vivado/2022.1/data/ip/xpm/xpm_VCOMP.vhd" \
@@ -34,8 +35,7 @@ vcom -work dsp_macro_v1_0_2  -93 \
 "../../../ipstatic/hdl/dsp_macro_v1_0_rfs.vhd" \
 
 vcom -work xil_defaultlib  -93 \
-"../../../../project_3.gen/sources_1/ip/dsp_macro_0/sim/dsp_macro_0.vhd" \
-
+"../../../../Initial_Implementation_FFT.gen/sources_1/ip/dsp_macro_0/sim/dsp_macro_0.vhd" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

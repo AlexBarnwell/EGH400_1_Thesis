@@ -59,7 +59,10 @@ architecture RTL of fpga_top is
             PP : out STD_LOGIC_VECTOR   (15 downto 0 );
             nRst : in std_logic;
             Clk : in std_logic;
-            count : out unsigned(3 downto 0)
+            count : out unsigned(7 downto 0);
+            FFT_RESETs : out std_logic;  -- triggers hard reset (reset to 0 on most operations)
+            DFT_RESETs : out std_logic; 
+            position : out unsigned (3 downto 0)
         );
     end component ;
 
@@ -69,15 +72,15 @@ architecture RTL of fpga_top is
             DFTOUT  : out std_logic_vector (15 downto 0);
             CLK : in std_logic;
             RST : in std_logic;
-            count : in unsigned(3 downto 0);
-            bitstream_value  : in std_logic_vector(1 downto 0)
+            position : in unsigned(3 downto 0);
+            Bit_stream_value  : in std_logic_vector(15 downto 0)
         );
     end component;
 
 
 component  Twiddle_factors is
     port(
-    count : in unsigned(3 downto 0);
+    count : in unsigned(7 downto 0);
     CLK : in std_logic;
     RST : in std_logic;
     Twiddleout : out std_logic_vector(15 downto 0) :=(others => '0')
@@ -89,15 +92,16 @@ end component ;
     signal clk_mic : std_logic;
     signal DFTin : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
     signal TWin : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
-    signal count : unsigned(3 downto 0) := (others => '0');
-
+    signal count : unsigned(7 downto 0) := (others => '0');
+    signal position : unsigned (3 downto 0 ) := (others => '0'); -- DFTBD RAM DFT wated 0 through 15
 
     signal PPsig : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
     signal  P2sig : std_logic_vector (15 downto 0):= (others => '0');
     signal  temp : std_logic_vector (15 downto 0):= (others => '0');
     signal  TW : std_logic_vector (15 downto 0):= (others => '0');
-
-    signal bitstream_value : std_logic_vector (1 downto 0):= (others => '0'); -- this is will be tied to the bit stream values of the reformatted bitsream
+    signal  FFT_RESETs : std_logic;  -- triggers hard reset (reset to 0 on most operations)
+    signal DFT_RESETs : std_logic; 
+    signal Bit_stream_value : std_logic_vector (15 downto 0):= (others => '0'); -- this is will be tied to the bit stream values of the reformatted bitsream
 
 
 begin
@@ -118,8 +122,8 @@ begin
             DFTOUT  => DFTin,
             CLK => clk_sys,
             RST  => nrst,
-            count => count,
-            bitstream_value => bitstream_value
+            position => position,
+            Bit_stream_value => Bit_stream_value
         );
 
 
@@ -131,7 +135,10 @@ begin
             PP    => output,
             nRst  => nrst,
             Clk   => clk_sys,
-            count => count
+            count => count,
+            FFT_RESETs => FFT_RESETs,
+            DFT_RESETs  => DFT_RESETs,
+            position => position
         );
 
         

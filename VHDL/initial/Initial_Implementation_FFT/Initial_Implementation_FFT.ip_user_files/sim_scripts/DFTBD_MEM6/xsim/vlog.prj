@@ -1,5 +1,5 @@
 verilog xil_defaultlib  \
-"../../../../project_3.gen/sources_1/ip/DFTBD_MEM6/sim/DFTBD_MEM6.v" \
+"../../../../Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM6/sim/DFTBD_MEM6.v" \
 
 verilog xil_defaultlib "glbl.v"
 
