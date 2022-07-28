@@ -55,6 +55,7 @@ architecture RTL of fpga_top is
     component  DFT_loop is
         port (
             DFTin : in std_logic_vector (15 downto 0);
+            DFTinI : in std_logic_vector (15 downto 0);
             TWin : in std_logic_vector (15 downto 0);
             PP : out STD_LOGIC_VECTOR   (15 downto 0 );
             nRst : in std_logic;
@@ -70,6 +71,7 @@ architecture RTL of fpga_top is
         port(
             --ADDRESS : in  std_logic_vector(5 downto 0);
             DFTOUT  : out std_logic_vector (15 downto 0);
+            DFTOUTI : OUT std_logic_vector (15 downto 0);
             CLK : in std_logic;
             RST : in std_logic;
             position : in unsigned(3 downto 0);
@@ -91,6 +93,7 @@ end component ;
     signal clk_sys : std_logic;
     signal clk_mic : std_logic;
     signal DFTin : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
+    signal DFTinI : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
     signal TWin : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
     signal count : unsigned(7 downto 0) := (others => '0');
     signal position : unsigned (3 downto 0 ) := (others => '0'); -- DFTBD RAM DFT wated 0 through 15
@@ -121,6 +124,7 @@ begin
         port map(
             --ADDRESS => DFT_address,
             DFTOUT  => DFTin,
+            DFTOUTI => DFTinI,
             CLK => clk_sys,
             RST  => RESET,
             position => position,
@@ -132,6 +136,7 @@ begin
     Series_recombination_loop : DFT_loop
         port map(
             DFTin => DFTin,
+            DFTinI => DFTinI,
             TWin  => Twin,
             PP    => output,
             nRst  => RESET,

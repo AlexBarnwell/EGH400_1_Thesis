@@ -1,0 +1,354 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Thu Jul 28 12:46:41 2022
+# Process ID: 23184
+# Current directory: C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5268 C:\REPOS\EGH400-1\EGH400_1_Thesis\VHDL\initial\Initial_Implementation_FFT\Initial_Implementation_FFT.xpr
+# Log file: C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/vivado.log
+# Journal file: C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT\vivado.jou
+# Running On: LAPTOP-M3DNELKA, OS: Windows, CPU Frequency: 2208 MHz, CPU Physical cores: 6, Host memory: 17075 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.xpr
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:1.6 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kc705/1.6/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.6 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.6/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.7 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.7/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.4 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu116/1.4/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.5 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu116/1.5/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu1500:part0:1.2 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu1500/1.2/board.xml as part xcku115-flvb2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:sp701:part0:1.0 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/sp701/1.0/board.xml as part xc7s100fgga676-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:sp701:part0:1.1 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/sp701/1.1/board.xml as part xc7s100fgga676-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc707:part0:1.4 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc707/1.4/board.xml as part xc7vx485tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc709:part0:1.8 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc709/1.8/board.xml as part xc7vx690tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/2.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.0 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.0 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.6 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.6/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.7 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.7/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu110:part0:1.4 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu110/1.4/board.xml as part xcvu190-flgc2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.0 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.0/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.3 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.3/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.4 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.4/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128:part0:1.0 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu128/production/1.0/board.xml as part xcvu37p-fsvh2892-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu129/production/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu1525:part0:1.3 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu1525/1.3/board.xml as part xcvu9p-fsgd2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_mpsoc:part0:1.0 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_mpsoc/1.0/board.xml as part xczu19eg-ffvd1760-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_rfsoc:part0:1.0 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_rfsoc/1.0/board.xml as part xczu21dr-ffvd1156-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:2.2 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/2.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.0 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.0 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es_revb:part0:1.0 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120_revb/es/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc702:part0:1.4 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zc702/1.4/board.xml as part xc7z020clg484-1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc706:part0:1.4 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zc706/1.4/board.xml as part xc7z045ffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.3 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.3/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.4 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.4/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu104:part0:1.1 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu104/1.1/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.4 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu106/2.4/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.5 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu106/2.5/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.6 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu106/2.6/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.2 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.2/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.3 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.3/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.4 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.4/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1275:part0:1.0 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1275/1.0/board.xml as part xczu29dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1285:part0:1.0 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1285/1.0/board.xml as part xczu39dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208:part0:2.0 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208/production/2.0/board.xml as part xczu48dr-fsvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216:part0:2.0 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216/production/2.0/board.xml as part xczu49dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+INFO: [Project 1-313] Project file moved from 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT' since last save.
+WARNING: [filemgmt 56-3] Board Part Repository Path: Could not find the directory 'C:/Users/a/AppData/Roaming/Xilinx/Vivado/2022.1/xhub/board_store/xilinx_board_store'.
+Scanning sources...
+Finished scanning sources
+CRITICAL WARNING: [Board 49-67] The board_part definition was not found for digilentinc.com:arty:part0:1.1. This can happen sometimes when you use custom board part. You can resolve this issue by setting 'board.repoPaths' parameter, pointing to the location of custom board files. Valid board_part values can be retrieved with the 'get_board_parts' Tcl command.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2022.1/data/ip'.
+WARNING: [IP_Flow 19-2162] IP 'clk_wiz_0' is locked:
+* This IP has board specific outputs. Current project board 'unset' and the board 'digilentinc.com:arty:part0:1.1' used to customize the IP 'clk_wiz_0' do not match.
+open_project: Time (s): cpu = 00:00:29 ; elapsed = 00:00:12 . Memory (MB): peak = 1659.043 ; gain = 0.000
+update_compile_order -fileset sources_1
+close [ open C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAMS_I.vhd w ]
+add_files C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAMS_I.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+INFO: [IP_Flow 19-3484] Absolute path of file 'c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTI_values_1.coe' provided. It will be converted relative to IP Instance files '../../../../Initial_Implementation_FFT.srcs/sources_1/ip/DFTI_values_1.coe'
+create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.4 -module_name blk_mem_gen_1
+set_property -dict [list CONFIG.Write_Depth_A {64} CONFIG.Load_Init_File {true} CONFIG.Coe_File {c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTI_values_1.coe}] [get_ips blk_mem_gen_1]
+INFO: [IP_Flow 19-3484] Absolute path of file 'c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTI_values_1.coe' provided. It will be converted relative to IP Instance files '../DFTI_values_1.coe'
+generate_target {instantiation_template} [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/blk_mem_gen_1_1/blk_mem_gen_1.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'blk_mem_gen_1'...
+generate_target all [get_files  c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/blk_mem_gen_1_1/blk_mem_gen_1.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'blk_mem_gen_1'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'blk_mem_gen_1'...
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'blk_mem_gen_1'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'blk_mem_gen_1'...
+catch { config_ip_cache -export [get_ips -all blk_mem_gen_1] }
+export_ip_user_files -of_objects [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/blk_mem_gen_1_1/blk_mem_gen_1.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/blk_mem_gen_1_1/blk_mem_gen_1.xci]
+launch_runs blk_mem_gen_1_synth_1 -jobs 6
+[Thu Jul 28 13:13:37 2022] Launched blk_mem_gen_1_synth_1...
+Run output will be captured here: C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/blk_mem_gen_1_synth_1/runme.log
+export_simulation -of_objects [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/blk_mem_gen_1_1/blk_mem_gen_1.xci] -directory C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/sim_scripts -ip_user_files_dir C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files -ipstatic_source_dir C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/modelsim} {questa=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/questa} {riviera=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/riviera} {activehdl=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+INFO: [IP_Flow 19-3484] Absolute path of file 'c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTI_values_1.coe' provided. It will be converted relative to IP Instance files '../../../../Initial_Implementation_FFT.srcs/sources_1/ip/DFTI_values_1.coe'
+export_ip_user_files -of_objects  [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/blk_mem_gen_1_1/blk_mem_gen_1.xci] -no_script -reset -force -quiet
+remove_files  -fileset blk_mem_gen_1 c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/blk_mem_gen_1_1/blk_mem_gen_1.xci
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/blk_mem_gen_1_synth_1
+
+INFO: [Project 1-386] Moving file 'c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/blk_mem_gen_1_1/blk_mem_gen_1.xci' from fileset 'blk_mem_gen_1' to fileset 'sources_1'.
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+INFO: [IP_Flow 19-3484] Absolute path of file 'c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTI_values_1.coe' provided. It will be converted relative to IP Instance files '../../../../Initial_Implementation_FFT.srcs/sources_1/ip/DFTI_values_1.coe'
+create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.4 -module_name DFTBD_MEM1I
+set_property -dict [list CONFIG.Component_Name {DFTBD_MEM1I} CONFIG.Write_Depth_A {64} CONFIG.Load_Init_File {true} CONFIG.Coe_File {c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTI_values_1.coe} CONFIG.Fill_Remaining_Memory_Locations {true}] [get_ips DFTBD_MEM1I]
+WARNING: [Vivado 12-3523] Attempt to change 'Component_Name' from 'DFTBD_MEM1I' to 'DFTBD_MEM1I' is not allowed and is ignored.
+INFO: [IP_Flow 19-3484] Absolute path of file 'c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTI_values_1.coe' provided. It will be converted relative to IP Instance files '../DFTI_values_1.coe'
+generate_target {instantiation_template} [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM1I/DFTBD_MEM1I.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'DFTBD_MEM1I'...
+generate_target all [get_files  c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM1I/DFTBD_MEM1I.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'DFTBD_MEM1I'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'DFTBD_MEM1I'...
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'DFTBD_MEM1I'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'DFTBD_MEM1I'...
+catch { config_ip_cache -export [get_ips -all DFTBD_MEM1I] }
+export_ip_user_files -of_objects [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM1I/DFTBD_MEM1I.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM1I/DFTBD_MEM1I.xci]
+launch_runs DFTBD_MEM1I_synth_1 -jobs 6
+[Thu Jul 28 13:14:56 2022] Launched DFTBD_MEM1I_synth_1...
+Run output will be captured here: C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/DFTBD_MEM1I_synth_1/runme.log
+export_simulation -of_objects [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM1I/DFTBD_MEM1I.xci] -directory C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/sim_scripts -ip_user_files_dir C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files -ipstatic_source_dir C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/modelsim} {questa=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/questa} {riviera=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/riviera} {activehdl=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+INFO: [IP_Flow 19-3484] Absolute path of file 'c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM2I.coe' provided. It will be converted relative to IP Instance files '../../../../Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM2I.coe'
+create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.4 -module_name DFTB_MEM2I
+set_property -dict [list CONFIG.Component_Name {DFTB_MEM2I} CONFIG.Write_Depth_A {64} CONFIG.Load_Init_File {true} CONFIG.Coe_File {c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM2I.coe} CONFIG.Fill_Remaining_Memory_Locations {true}] [get_ips DFTB_MEM2I]
+WARNING: [Vivado 12-3523] Attempt to change 'Component_Name' from 'DFTB_MEM2I' to 'DFTB_MEM2I' is not allowed and is ignored.
+INFO: [IP_Flow 19-3484] Absolute path of file 'c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM2I.coe' provided. It will be converted relative to IP Instance files '../DFTBD_MEM2I.coe'
+generate_target {instantiation_template} [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTB_MEM2I/DFTB_MEM2I.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'DFTB_MEM2I'...
+update_compile_order -fileset sources_1
+generate_target all [get_files  c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTB_MEM2I/DFTB_MEM2I.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'DFTB_MEM2I'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'DFTB_MEM2I'...
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'DFTB_MEM2I'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'DFTB_MEM2I'...
+catch { config_ip_cache -export [get_ips -all DFTB_MEM2I] }
+export_ip_user_files -of_objects [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTB_MEM2I/DFTB_MEM2I.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTB_MEM2I/DFTB_MEM2I.xci]
+launch_runs DFTB_MEM2I_synth_1 -jobs 6
+[Thu Jul 28 13:22:10 2022] Launched DFTB_MEM2I_synth_1...
+Run output will be captured here: C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/DFTB_MEM2I_synth_1/runme.log
+export_simulation -of_objects [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTB_MEM2I/DFTB_MEM2I.xci] -directory C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/sim_scripts -ip_user_files_dir C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files -ipstatic_source_dir C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/modelsim} {questa=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/questa} {riviera=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/riviera} {activehdl=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+INFO: [IP_Flow 19-3484] Absolute path of file 'c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM3I.coe' provided. It will be converted relative to IP Instance files '../../../../Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM3I.coe'
+create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.4 -module_name DFTBD_MEM3I
+set_property -dict [list CONFIG.Component_Name {DFTBD_MEM3I} CONFIG.Write_Depth_A {64} CONFIG.Load_Init_File {true} CONFIG.Coe_File {c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM3I.coe}] [get_ips DFTBD_MEM3I]
+WARNING: [Vivado 12-3523] Attempt to change 'Component_Name' from 'DFTBD_MEM3I' to 'DFTBD_MEM3I' is not allowed and is ignored.
+INFO: [IP_Flow 19-3484] Absolute path of file 'c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM3I.coe' provided. It will be converted relative to IP Instance files '../DFTBD_MEM3I.coe'
+generate_target {instantiation_template} [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM3I/DFTBD_MEM3I.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'DFTBD_MEM3I'...
+generate_target all [get_files  c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM3I/DFTBD_MEM3I.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'DFTBD_MEM3I'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'DFTBD_MEM3I'...
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'DFTBD_MEM3I'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'DFTBD_MEM3I'...
+catch { config_ip_cache -export [get_ips -all DFTBD_MEM3I] }
+export_ip_user_files -of_objects [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM3I/DFTBD_MEM3I.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM3I/DFTBD_MEM3I.xci]
+launch_runs DFTBD_MEM3I_synth_1 -jobs 6
+[Thu Jul 28 13:27:19 2022] Launched DFTBD_MEM3I_synth_1...
+Run output will be captured here: C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/DFTBD_MEM3I_synth_1/runme.log
+export_simulation -of_objects [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM3I/DFTBD_MEM3I.xci] -directory C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/sim_scripts -ip_user_files_dir C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files -ipstatic_source_dir C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/modelsim} {questa=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/questa} {riviera=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/riviera} {activehdl=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.4 -module_name DFTBD_MEM4I
+set_property -dict [list CONFIG.Component_Name {DFTBD_MEM4I} CONFIG.Write_Depth_A {64} CONFIG.Load_Init_File {false}] [get_ips DFTBD_MEM4I]
+WARNING: [Vivado 12-3523] Attempt to change 'Component_Name' from 'DFTBD_MEM4I' to 'DFTBD_MEM4I' is not allowed and is ignored.
+generate_target {instantiation_template} [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM4I/DFTBD_MEM4I.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'DFTBD_MEM4I'...
+update_compile_order -fileset sources_1
+generate_target all [get_files  c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM4I/DFTBD_MEM4I.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'DFTBD_MEM4I'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'DFTBD_MEM4I'...
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'DFTBD_MEM4I'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'DFTBD_MEM4I'...
+catch { config_ip_cache -export [get_ips -all DFTBD_MEM4I] }
+export_ip_user_files -of_objects [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM4I/DFTBD_MEM4I.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM4I/DFTBD_MEM4I.xci]
+launch_runs DFTBD_MEM4I_synth_1 -jobs 6
+[Thu Jul 28 13:29:50 2022] Launched DFTBD_MEM4I_synth_1...
+Run output will be captured here: C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/DFTBD_MEM4I_synth_1/runme.log
+export_simulation -of_objects [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM4I/DFTBD_MEM4I.xci] -directory C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/sim_scripts -ip_user_files_dir C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files -ipstatic_source_dir C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/modelsim} {questa=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/questa} {riviera=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/riviera} {activehdl=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.4 -module_name DFTBD_MEM5I
+set_property -dict [list CONFIG.Component_Name {DFTBD_MEM5I} CONFIG.Write_Depth_A {64} CONFIG.Fill_Remaining_Memory_Locations {true}] [get_ips DFTBD_MEM5I]
+WARNING: [Vivado 12-3523] Attempt to change 'Component_Name' from 'DFTBD_MEM5I' to 'DFTBD_MEM5I' is not allowed and is ignored.
+generate_target {instantiation_template} [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM5I/DFTBD_MEM5I.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'DFTBD_MEM5I'...
+generate_target all [get_files  c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM5I/DFTBD_MEM5I.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'DFTBD_MEM5I'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'DFTBD_MEM5I'...
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'DFTBD_MEM5I'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'DFTBD_MEM5I'...
+catch { config_ip_cache -export [get_ips -all DFTBD_MEM5I] }
+export_ip_user_files -of_objects [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM5I/DFTBD_MEM5I.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM5I/DFTBD_MEM5I.xci]
+launch_runs DFTBD_MEM5I_synth_1 -jobs 6
+[Thu Jul 28 13:38:08 2022] Launched DFTBD_MEM5I_synth_1...
+Run output will be captured here: C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/DFTBD_MEM5I_synth_1/runme.log
+export_simulation -of_objects [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM5I/DFTBD_MEM5I.xci] -directory C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/sim_scripts -ip_user_files_dir C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files -ipstatic_source_dir C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/modelsim} {questa=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/questa} {riviera=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/riviera} {activehdl=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.4 -module_name DFTDB_MEM6I
+set_property -dict [list CONFIG.Component_Name {DFTDB_MEM6I} CONFIG.Write_Depth_A {64}] [get_ips DFTDB_MEM6I]
+WARNING: [Vivado 12-3523] Attempt to change 'Component_Name' from 'DFTDB_MEM6I' to 'DFTDB_MEM6I' is not allowed and is ignored.
+generate_target {instantiation_template} [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTDB_MEM6I/DFTDB_MEM6I.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'DFTDB_MEM6I'...
+update_compile_order -fileset sources_1
+generate_target all [get_files  c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTDB_MEM6I/DFTDB_MEM6I.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'DFTDB_MEM6I'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'DFTDB_MEM6I'...
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'DFTDB_MEM6I'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'DFTDB_MEM6I'...
+catch { config_ip_cache -export [get_ips -all DFTDB_MEM6I] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP DFTDB_MEM6I, cache-ID = 7b145a8aa86b9c41; cache size = 15.370 MB.
+export_ip_user_files -of_objects [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTDB_MEM6I/DFTDB_MEM6I.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTDB_MEM6I/DFTDB_MEM6I.xci]
+INFO: [Vivado 12-3453] The given sub-design is up-to-date, no action was taken.  If a run is still desired, use the '-force' option for the file:'c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTDB_MEM6I/DFTDB_MEM6I.xci'
+export_simulation -of_objects [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTDB_MEM6I/DFTDB_MEM6I.xci] -directory C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/sim_scripts -ip_user_files_dir C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files -ipstatic_source_dir C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/modelsim} {questa=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/questa} {riviera=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/riviera} {activehdl=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.4 -module_name DFTBD_MEM7I
+set_property -dict [list CONFIG.Component_Name {DFTBD_MEM7I} CONFIG.Write_Depth_A {64}] [get_ips DFTBD_MEM7I]
+WARNING: [Vivado 12-3523] Attempt to change 'Component_Name' from 'DFTBD_MEM7I' to 'DFTBD_MEM7I' is not allowed and is ignored.
+generate_target {instantiation_template} [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM7I/DFTBD_MEM7I.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'DFTBD_MEM7I'...
+generate_target all [get_files  c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM7I/DFTBD_MEM7I.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'DFTBD_MEM7I'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'DFTBD_MEM7I'...
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'DFTBD_MEM7I'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'DFTBD_MEM7I'...
+catch { config_ip_cache -export [get_ips -all DFTBD_MEM7I] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP DFTBD_MEM7I, cache-ID = 7b145a8aa86b9c41; cache size = 15.370 MB.
+export_ip_user_files -of_objects [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM7I/DFTBD_MEM7I.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM7I/DFTBD_MEM7I.xci]
+INFO: [Vivado 12-3453] The given sub-design is up-to-date, no action was taken.  If a run is still desired, use the '-force' option for the file:'c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM7I/DFTBD_MEM7I.xci'
+export_simulation -of_objects [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM7I/DFTBD_MEM7I.xci] -directory C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/sim_scripts -ip_user_files_dir C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files -ipstatic_source_dir C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/modelsim} {questa=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/questa} {riviera=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/riviera} {activehdl=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+update_compile_order -fileset sources_1
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.4 -module_name DFTBD_MEM8I
+set_property -dict [list CONFIG.Component_Name {DFTBD_MEM8I} CONFIG.Write_Depth_A {64}] [get_ips DFTBD_MEM8I]
+WARNING: [Vivado 12-3523] Attempt to change 'Component_Name' from 'DFTBD_MEM8I' to 'DFTBD_MEM8I' is not allowed and is ignored.
+generate_target {instantiation_template} [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM8I/DFTBD_MEM8I.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'DFTBD_MEM8I'...
+generate_target all [get_files  c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM8I/DFTBD_MEM8I.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'DFTBD_MEM8I'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'DFTBD_MEM8I'...
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'DFTBD_MEM8I'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'DFTBD_MEM8I'...
+catch { config_ip_cache -export [get_ips -all DFTBD_MEM8I] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP DFTBD_MEM8I, cache-ID = 7b145a8aa86b9c41; cache size = 15.370 MB.
+export_ip_user_files -of_objects [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM8I/DFTBD_MEM8I.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM8I/DFTBD_MEM8I.xci]
+INFO: [Vivado 12-3453] The given sub-design is up-to-date, no action was taken.  If a run is still desired, use the '-force' option for the file:'c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM8I/DFTBD_MEM8I.xci'
+export_simulation -of_objects [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM8I/DFTBD_MEM8I.xci] -directory C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/sim_scripts -ip_user_files_dir C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files -ipstatic_source_dir C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/modelsim} {questa=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/questa} {riviera=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/riviera} {activehdl=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+update_compile_order -fileset sources_1
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+INFO: [IP_Flow 19-3484] Absolute path of file 'c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/mem_init_files/DFT_values _1I.coe' provided. It will be converted relative to IP Instance files '../../../../Initial_Implementation_FFT.ip_user_files/mem_init_files/DFT_values _1I.coe'
+set_property -dict [list CONFIG.Coe_File {C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/mem_init_files/DFT_values _1I.coe}] [get_ips DFTBD_MEM1I]
+INFO: [IP_Flow 19-3484] Absolute path of file 'c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/mem_init_files/DFT_values _1I.coe' provided. It will be converted relative to IP Instance files '../../../../Initial_Implementation_FFT.ip_user_files/mem_init_files/DFT_values _1I.coe'
+generate_target all [get_files  c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM1I/DFTBD_MEM1I.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'DFTBD_MEM1I'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'DFTBD_MEM1I'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'DFTBD_MEM1I'...
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'DFTBD_MEM1I'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'DFTBD_MEM1I'...
+catch { config_ip_cache -export [get_ips -all DFTBD_MEM1I] }
+export_ip_user_files -of_objects [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM1I/DFTBD_MEM1I.xci] -no_script -sync -force -quiet
+reset_run DFTBD_MEM1I_synth_1
+launch_runs DFTBD_MEM1I_synth_1 -jobs 6
+[Thu Jul 28 14:04:11 2022] Launched DFTBD_MEM1I_synth_1...
+Run output will be captured here: C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/DFTBD_MEM1I_synth_1/runme.log
+export_simulation -of_objects [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM1I/DFTBD_MEM1I.xci] -directory C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/sim_scripts -ip_user_files_dir C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files -ipstatic_source_dir C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/modelsim} {questa=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/questa} {riviera=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/riviera} {activehdl=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+INFO: [IP_Flow 19-3484] Absolute path of file 'c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/mem_init_files/DFTBD_MEM2I.coe' provided. It will be converted relative to IP Instance files '../../../../Initial_Implementation_FFT.ip_user_files/mem_init_files/DFTBD_MEM2I.coe'
+set_property -dict [list CONFIG.Coe_File {C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/mem_init_files/DFTBD_MEM2I.coe}] [get_ips DFTB_MEM2I]
+INFO: [IP_Flow 19-3484] Absolute path of file 'c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/mem_init_files/DFTBD_MEM2I.coe' provided. It will be converted relative to IP Instance files '../../../../Initial_Implementation_FFT.ip_user_files/mem_init_files/DFTBD_MEM2I.coe'
+generate_target all [get_files  c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTB_MEM2I/DFTB_MEM2I.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'DFTB_MEM2I'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'DFTB_MEM2I'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'DFTB_MEM2I'...
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'DFTB_MEM2I'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'DFTB_MEM2I'...
+catch { config_ip_cache -export [get_ips -all DFTB_MEM2I] }
+export_ip_user_files -of_objects [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTB_MEM2I/DFTB_MEM2I.xci] -no_script -sync -force -quiet
+reset_run DFTB_MEM2I_synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/DFTB_MEM2I_synth_1
+
+launch_runs DFTB_MEM2I_synth_1 -jobs 6
+[Thu Jul 28 14:04:52 2022] Launched DFTB_MEM2I_synth_1...
+Run output will be captured here: C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/DFTB_MEM2I_synth_1/runme.log
+export_simulation -of_objects [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTB_MEM2I/DFTB_MEM2I.xci] -directory C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/sim_scripts -ip_user_files_dir C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files -ipstatic_source_dir C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/modelsim} {questa=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/questa} {riviera=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/riviera} {activehdl=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+INFO: [IP_Flow 19-3484] Absolute path of file 'c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/mem_init_files/DFT_values _2I.coe' provided. It will be converted relative to IP Instance files '../../../../Initial_Implementation_FFT.ip_user_files/mem_init_files/DFT_values _2I.coe'
+INFO: [IP_Flow 19-3484] Absolute path of file 'c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/mem_init_files/DFT_values _2I.coe' provided. It will be converted relative to IP Instance files '../../../../Initial_Implementation_FFT.ip_user_files/mem_init_files/DFT_values _2I.coe'
+INFO: [IP_Flow 19-3484] Absolute path of file 'c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/mem_init_files/DFT_values _2I.coe' provided. It will be converted relative to IP Instance files '../../../../Initial_Implementation_FFT.ip_user_files/mem_init_files/DFT_values _2I.coe'
+INFO: [IP_Flow 19-3484] Absolute path of file 'c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/mem_init_files/DFT_values _2I.coe' provided. It will be converted relative to IP Instance files '../../../../Initial_Implementation_FFT.ip_user_files/mem_init_files/DFT_values _2I.coe'
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+INFO: [IP_Flow 19-3484] Absolute path of file 'c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/mem_init_files/DFTBD_MEM2I.coe' provided. It will be converted relative to IP Instance files '../../../../Initial_Implementation_FFT.ip_user_files/mem_init_files/DFTBD_MEM2I.coe'
+INFO: [IP_Flow 19-3484] Absolute path of file 'c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/mem_init_files/DFT_values _2I.coe' provided. It will be converted relative to IP Instance files '../../../../Initial_Implementation_FFT.ip_user_files/mem_init_files/DFT_values _2I.coe'
+set_property -dict [list CONFIG.Coe_File {C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/mem_init_files/DFT_values _2I.coe}] [get_ips DFTB_MEM2I]
+INFO: [IP_Flow 19-3484] Absolute path of file 'c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/mem_init_files/DFT_values _2I.coe' provided. It will be converted relative to IP Instance files '../../../../Initial_Implementation_FFT.ip_user_files/mem_init_files/DFT_values _2I.coe'
+generate_target all [get_files  c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTB_MEM2I/DFTB_MEM2I.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'DFTB_MEM2I'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'DFTB_MEM2I'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'DFTB_MEM2I'...
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'DFTB_MEM2I'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'DFTB_MEM2I'...
+catch { config_ip_cache -export [get_ips -all DFTB_MEM2I] }
+export_ip_user_files -of_objects [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTB_MEM2I/DFTB_MEM2I.xci] -no_script -sync -force -quiet
+reset_run DFTB_MEM2I_synth_1
+launch_runs DFTB_MEM2I_synth_1 -jobs 6
+[Thu Jul 28 14:08:14 2022] Launched DFTB_MEM2I_synth_1...
+Run output will be captured here: C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/DFTB_MEM2I_synth_1/runme.log
+export_simulation -of_objects [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTB_MEM2I/DFTB_MEM2I.xci] -directory C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/sim_scripts -ip_user_files_dir C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files -ipstatic_source_dir C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/modelsim} {questa=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/questa} {riviera=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/riviera} {activehdl=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+INFO: [IP_Flow 19-3484] Absolute path of file 'c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/mem_init_files/DFT_values _3I.coe' provided. It will be converted relative to IP Instance files '../../../../Initial_Implementation_FFT.ip_user_files/mem_init_files/DFT_values _3I.coe'
+set_property -dict [list CONFIG.Coe_File {C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/mem_init_files/DFT_values _3I.coe} CONFIG.Fill_Remaining_Memory_Locations {true}] [get_ips DFTBD_MEM3I]
+INFO: [IP_Flow 19-3484] Absolute path of file 'c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/mem_init_files/DFT_values _3I.coe' provided. It will be converted relative to IP Instance files '../../../../Initial_Implementation_FFT.ip_user_files/mem_init_files/DFT_values _3I.coe'
+generate_target all [get_files  c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM3I/DFTBD_MEM3I.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'DFTBD_MEM3I'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'DFTBD_MEM3I'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'DFTBD_MEM3I'...
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'DFTBD_MEM3I'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'DFTBD_MEM3I'...
+catch { config_ip_cache -export [get_ips -all DFTBD_MEM3I] }
+export_ip_user_files -of_objects [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM3I/DFTBD_MEM3I.xci] -no_script -sync -force -quiet
+reset_run DFTBD_MEM3I_synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/DFTBD_MEM3I_synth_1
+
+launch_runs DFTBD_MEM3I_synth_1 -jobs 6
+[Thu Jul 28 14:09:33 2022] Launched DFTBD_MEM3I_synth_1...
+Run output will be captured here: C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/DFTBD_MEM3I_synth_1/runme.log
+export_simulation -of_objects [get_files c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM3I/DFTBD_MEM3I.xci] -directory C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/sim_scripts -ip_user_files_dir C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files -ipstatic_source_dir C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/modelsim} {questa=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/questa} {riviera=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/riviera} {activehdl=C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet

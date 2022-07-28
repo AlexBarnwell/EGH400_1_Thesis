@@ -47,6 +47,7 @@ component DFTBD_RAM
     port(
         --ADDRESS : in  std_logic_vector(5 downto 0);
         DFTOUT  : out std_logic_vector (15 downto 0);
+        DFTOUTI  : out std_logic_vector (15 downto 0);
         CLK : in std_logic;
         RST : in std_logic;
         position : in unsigned(3 downto 0);
@@ -56,6 +57,7 @@ end component;
 
 signal CLK  : std_logic := '1';
 signal DFTOUT  : std_logic_vector (15 downto 0);--:= (others => '0');
+signal DFTOUTI  : std_logic_vector (15 downto 0);--:= (others => '0');
 signal RST : std_logic := '0';
 signal positionin : unsigned(3 downto 0);--:= (others => '0');
 signal positionout : unsigned(3 downto 0);
@@ -65,17 +67,24 @@ constant ClockPeriod    : time    := 1000 ms / ClockFrequency;
 
     signal DFTin    : std_logic_vector (15 downto 0) := (others => '0');
     signal TWin     : std_logic_vector (15 downto 0):= (others => '0');
+    signal DFTinI    : std_logic_vector (15 downto 0) := (others => '0');
+    signal TW2in     : std_logic_vector (15 downto 0):= (others => '0');
     signal PP       : STD_LOGIC_VECTOR   (15 downto 0 );--:= (others => '0');
     signal count : unsigned(7 downto 0) := (others => '0');
     --signal SCLR : std_logic := '0';
     signal FFT_RESET : std_logic;  -- triggers hard reset (reset to 0 on most operations)
     signal DFT_RESET : std_logic;
+    
+    signal  FFT_outR : STD_LOGIC_VECTOR   (31 downto 0 ); -- outputs of the FFT
+    signal  FFT_outI : STD_LOGIC_VECTOR   (31 downto 0 );
 
 begin
 
     testbenching1 : entity work.DFT_loop(behavioral)
         port map(
         DFTin => DFTin,
+        DFTinI => DFTinI,
+        TWin2 => TW2in,
         TWin => TWin,
         PP  => PP,
         nRst => RST,
@@ -84,12 +93,15 @@ begin
         --SCLR => SCLR,
         FFT_RESETs => FFT_RESET,  -- triggers hard reset (reset to 0 on most operations)
         DFT_RESETs => DFT_RESET,
+         FFT_outR => FFT_outR,
+        FFT_outI => FFT_outI,
         position => positionout
 );
         
         testbenching2 : DFTBD_RAM
         PORT MAP (
             DFTOUT => DFTOUT ,
+            DFTOUTI => DFTOUTI ,
             CLK => CLK ,
             RST => RST, -- set hard to 0 so only read is possible
             position => positionin,
@@ -109,6 +121,7 @@ process is
 -- one clock cycle
         Bit_stream_value <= "0000000000001000" ;
         TWin  <= "0000000000000001" ;
+        TW2in  <= "0000000000000001" ;
           wait for 10 ns; -- one clock cycle
         Bit_stream_value <= "0000000011110111" ;
          wait for 10 ns; -- one clock cycle

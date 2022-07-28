@@ -1,5 +1,12 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  --include "../../../../Initial_Implementation_FFT.gen/sources_1/ip/clk_wiz_0" \
+"../../../../Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM8I/sim/DFTBD_MEM8I.v" \
+"../../../../Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM7I/sim/DFTBD_MEM7I.v" \
+"../../../../Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM5I/sim/DFTBD_MEM5I.v" \
+"../../../../Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM4I/sim/DFTBD_MEM4I.v" \
+"../../../../Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM3I/sim/DFTBD_MEM3I.v" \
+"../../../../Initial_Implementation_FFT.gen/sources_1/ip/DFTB_MEM2I/sim/DFTB_MEM2I.v" \
+"../../../../Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM1I_1/sim/DFTBD_MEM1I.v" \
 "../../../../Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM7/sim/DFTBD_MEM7.v" \
 "../../../../Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM6/sim/DFTBD_MEM6.v" \
 "../../../../Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM5/sim/DFTBD_MEM5.v" \

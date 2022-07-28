@@ -50,6 +50,25 @@ end
 end
 LUTRR=LUTRR'
 
+
+
+loop=1;
+RAM= 1;
+for RAM= 1:8
+    loop=1;
+for B=1:2
+    for B1=1:2
+for count=1:I
+LUTII(RAM,loop)=LUTI(RAM,B,B1,count);
+loop=loop+1;
+end
+    end
+end
+end
+LUTII=LUTII'
+
+
+
 TW=(2.*cos((1:N).*2.*pi./N))'
 TW2=(2.*sin((1:N).*2.*pi./N))'
 % %%

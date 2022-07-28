@@ -73,7 +73,7 @@ signal TWout : std_logic_vector(15 downto 0);
 signal TWout1 : std_logic_vector(15 downto 0);
 signal TWout2 : std_logic_vector(15 downto 0);
 signal TWout3 : std_logic_vector(15 downto 0);
-signal
+signal TW2out : std_logic_vector(15 downto 0);
 begin
 
 
