@@ -43,7 +43,21 @@ end Twiddle_factors;
 
 architecture Behavioral of Twiddle_factors is
 
-COMPONENT TW_RAM
+COMPONENT TW_RAM --cos
+  PORT (
+    clka : IN STD_LOGIC;
+    ena : IN STD_LOGIC;
+    wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+    addra : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    dina : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+    --dinb: IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+    douta : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+    --doutb : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)  
+  );
+END COMPONENT;
+
+
+COMPONENT TW2_RAM -- sin
   PORT (
     clka : IN STD_LOGIC;
     ena : IN STD_LOGIC;
@@ -54,13 +68,12 @@ COMPONENT TW_RAM
   );
 END COMPONENT;
 
-
 signal ADDRESS : std_logic_vector(7 downto 0);
 signal TWout : std_logic_vector(15 downto 0);
 signal TWout1 : std_logic_vector(15 downto 0);
 signal TWout2 : std_logic_vector(15 downto 0);
 signal TWout3 : std_logic_vector(15 downto 0);
-
+signal
 begin
 
 
@@ -74,7 +87,15 @@ Twiddle_1 : TW_RAM
     douta => TWout
   );
 
-
+Twiddle_2 : TW2_RAM
+  PORT MAP (
+    clka => CLK,
+    ena => RST,
+    wea => "0",
+    addra => ADDRESS,
+    dina => "0000000000000000",
+    douta => TW2out
+  );
 
 
    DFTBD_pipe_add :process (CLK,RST) is

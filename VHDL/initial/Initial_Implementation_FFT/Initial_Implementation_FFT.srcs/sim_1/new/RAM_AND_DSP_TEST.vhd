@@ -84,7 +84,7 @@ begin
         --SCLR => SCLR,
         FFT_RESETs => FFT_RESET,  -- triggers hard reset (reset to 0 on most operations)
         DFT_RESETs => DFT_RESET,
-        position => positionin
+        position => positionout
 );
         
         testbenching2 : DFTBD_RAM
@@ -92,7 +92,7 @@ begin
             DFTOUT => DFTOUT ,
             CLK => CLK ,
             RST => RST, -- set hard to 0 so only read is possible
-            position => positionout,
+            position => positionin,
             Bit_stream_value => Bit_stream_value
         );
 
@@ -116,7 +116,7 @@ process is
          wait for 10 ns; -- one clock cycle
         Bit_stream_value <= "0100011011110111" ;
          wait for 10 ns; -- one clock cycle
-        Bit_stream_value <= "0110000011001111" ;
+        Bit_stream_value <= "0111000011001111" ;
         
         wait;
         end process;

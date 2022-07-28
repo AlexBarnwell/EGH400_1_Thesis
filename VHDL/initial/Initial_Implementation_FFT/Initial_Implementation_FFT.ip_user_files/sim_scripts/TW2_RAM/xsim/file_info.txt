@@ -1,0 +1,2 @@
+TW2_RAM.v,verilog,xil_defaultlib,../../../../Initial_Implementation_FFT.gen/sources_1/ip/TW2_RAM/sim/TW2_RAM.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

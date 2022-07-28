@@ -51,6 +51,7 @@ end
 LUTRR=LUTRR'
 
 TW=(2.*cos((1:N).*2.*pi./N))'
+TW2=(2.*sin((1:N).*2.*pi./N))'
 % %%
 % a=1:64
 % a=a'

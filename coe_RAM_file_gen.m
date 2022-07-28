@@ -1,7 +1,8 @@
+
 clear all
 close all
-fileName={'RAM1.txt', 'RAM2.txt', 'RAM3.txt','RAM4.txt', 'RAM5.txt', 'RAM6.txt','RAM7.txt', 'RAM8.txt'};
 only_RAM
+fileName={'RAM1.txt', 'RAM2.txt', 'RAM3.txt','RAM4.txt', 'RAM5.txt', 'RAM6.txt','RAM7.txt', 'RAM8.txt'};
 LUTRR=LUTRR.*(2.^8); % 8 decimal bits
 for ii=1:8
 bin=dec2bin(LUTRR(:,ii),16)
@@ -32,4 +33,17 @@ for ii=1:256
         q=fprintf(fid,'%s,\n',a);
     end 
 
-fclose(fid)
+fclose(fid);
+
+
+TW2=TW2.*(2.^8);
+TW2bin=dec2bin(TW2,16);
+fileTW2='coe_files\TW2.txt';
+fid=fopen(fileTW2,'w');
+
+for ii=1:256
+        a=string(cellstr(TW2bin(ii,:)));
+        q=fprintf(fid,'%s,\n',a);
+    end 
+
+fclose(fid);

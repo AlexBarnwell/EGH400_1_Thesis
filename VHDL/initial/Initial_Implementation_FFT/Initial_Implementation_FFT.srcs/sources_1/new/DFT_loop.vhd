@@ -7,7 +7,8 @@ entity DFT_loop is
     --BB : in STD_LOGIC_VECTOR (15 downto 0);
     --CC : in STD_LOGIC_VECTOR (15 downto 0);
         DFTin : in std_logic_vector (15 downto 0);
-        TWin : in std_logic_vector (15 downto 0);
+        TWin : in std_logic_vector (15 downto 0);  -- cos
+        TWin2 : in std_logic_vector (15 downto 0); -- sin
         PP : out STD_LOGIC_VECTOR   (15 downto 0 );
         nRst : in std_logic;
         Clk : in std_logic;
@@ -27,11 +28,28 @@ architecture behavioral of DFT_loop is
     signal PPsig : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
     signal  P2sig : std_logic_vector (15 downto 0):= (others => '0');
     signal  temp : std_logic_vector (15 downto 0):= (others => '0');
-    signal  TW : std_logic_vector (15 downto 0):= (others => '0');
+    signal  cos2 : std_logic_vector (15 downto 0):= (others => '0');
+    signal  cos : std_logic_vector (15 downto 0):= (others => '0');
+    signal  sin : std_logic_vector (15 downto 0):= (others => '0');    
     --signal  DFTnew : std_logic_vector (15 downto 0):= (others => '0');
     signal  DFTs : signed (15 downto 0):= (others => '0');
     signal  PPsigs : signed (15 downto 0):= (others => '0');
-    signal  Pout : std_logic_vector  (32 downto 0):= (others => '1');
+    signal  Pout : std_logic_vector  (32 downto 0):= (others => '0');
+    signal PPsig2 : std_logic_vector  (15 downto 0) := (others => '0');
+    
+    signal final1 : signed  (32 downto 0) := (others => '0');
+    signal final2 : signed  (32 downto 0) := (others => '0');
+    signal final3 : signed  (32 downto 0) := (others => '0');
+    signal final4 : signed  (32 downto 0) := (others => '0');
+
+
+    signal pp32sig1 : signed  (32 downto 0) := (others => '0');
+--pp32sig2 <= signed (ZERO(7 downto 0) &  ppsig2 & ZERO(7 downto 0));
+    signal pp32sigi1 : signed  (32 downto 0) := (others => '0');
+--pp32sigi2 <= signed (ZERO(7 downto 0) &  ppsigi2 & ZERO(7 downto 0));
+    signal REALL : std_logic_vector(32 downto 0) := (others => '0');-- FFT outputs -- probably send to some sort of RAM 
+    signal IMAGG : std_logic_vector (32 downto 0) := (others => '0'); 
+
 
     signal  count2 : unsigned (3 downto 0) := (others => '0');
     signal  count3 : unsigned (7 downto 0) := (others => '0');
@@ -82,7 +100,7 @@ architecture behavioral of DFT_loop is
 
 
 begin
-
+   
     --A<=AA;
     --B<=BB;
     --C<=CC;
@@ -92,7 +110,7 @@ begin
             CE => DFT_RESET ,
             SCLR => (not DFT_RESET) ,
             A =>PPsig,
-            B =>TW,
+            B =>cos2,
             C =>P2sig,
             P =>Pout
             --  PCOUT=>PCOUT
@@ -119,6 +137,7 @@ begin
                     end if;
                 when DFT  =>
                     count2<=(count2+1);
+                    PPsig2 <= PPsig;
                     if count2 = 15 then -- this assumes 256 input bits thus only 16 banks of 16, will change to generic when needed
                         count2 <= (others => '0');
                         count3<=(count3+1); -- count 3 keeps track of how many DFTs have bee computed
@@ -132,6 +151,7 @@ begin
                 when Finish =>
                     -- compute the recombination steps + the stops
                     count4 <= count4+1;
+                    
                     if count4 = "11" then
                         if count3 = 0 then
                             FFT_RESET<= '0'; -- trigger hard reset
@@ -161,8 +181,22 @@ begin
 
 FFT_RESETs <= FFT_RESET;  -- triggers hard reset (reset to 0 on most operations)
 DFT_RESETs <= DFT_RESET;
+position <= count5;
 
+final1 <= (signed(cos)*signed(PPsig2)); -- final recombination -- NOTE need to add the part in process that grabs final value and hence get put into BRAM
+final2 <= (signed(sin)*signed(PPsigi2));
+final3 <=  (signed(sin)*signed(PPsig2));
+final4 <=  (signed(cos)*signed(PPsigi2));
 
+-- recast to 32 component dsp_macro_0
+pp32sig1(24 downto 0) <= signed(ppsig);
+pp32sigi1(24 downto 0) <= signed(ppsig);
+--pp32sig2 <= signed (ZERO(7 downto 0) &  ppsig2 & ZERO(7 downto 0));
+--pp32sigi1 <= signed (ZERO(7 downto 0) &  ppsigi1 & ZERO(7 downto 0));
+--pp32sigi2 <= signed (ZERO(7 downto 0) &  ppsigi2 & ZERO(7 downto 0));
+
+REALL <= std_logic_vector (pp32sig1  - final1 + final2); -- FFT outputs -- probably send to some stort of RAM 
+IMAGG <= std_logic_vector (pp32sigi1 - final3 + final4);
 
 
 
@@ -207,10 +241,11 @@ DFT_RESETs <= DFT_RESET;
 
 
 
-
+ --TWt2<= std_logic_vector (2*signed(TW2t));
     P2sig<=temp;
-    TW<=TWin;
-    PPsig <=Pout(15 downto 0);
+    cos<=TWin;
+    cos2<=std_logic_vector (2*signed(TWin));
+    PPsig <=Pout(24 downto 8);
     DFTs<=signed(DFTin);
     PPsigs<=signed(PPsig);
     temp<=std_logic_vector((DFTs-PPsigs));

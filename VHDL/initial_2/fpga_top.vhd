@@ -102,7 +102,8 @@ end component ;
     signal  FFT_RESETs : std_logic;  -- triggers hard reset (reset to 0 on most operations)
     signal DFT_RESETs : std_logic; 
     signal Bit_stream_value : std_logic_vector (15 downto 0):= (others => '0'); -- this is will be tied to the bit stream values of the reformatted bitsream
-
+    signal RESET : std_logic := '0';
+    --signal nRST  : std_logic := '0'; 
 
 begin
 
@@ -121,7 +122,7 @@ begin
             --ADDRESS => DFT_address,
             DFTOUT  => DFTin,
             CLK => clk_sys,
-            RST  => nrst,
+            RST  => RESET,
             position => position,
             Bit_stream_value => Bit_stream_value
         );
@@ -133,7 +134,7 @@ begin
             DFTin => DFTin,
             TWin  => Twin,
             PP    => output,
-            nRst  => nrst,
+            nRst  => RESET,
             Clk   => clk_sys,
             count => count,
             FFT_RESETs => FFT_RESETs,
@@ -146,12 +147,13 @@ begin
     port map(
     count => count,
     CLK  => clk_sys,
-    RST  =>nRst,
+    RST  =>RESET,
     Twiddleout =>TWin
     );
 
 
-
+ --  resets
+ RESET <= (nRSt OR FFT_RESETS); -- resets given each condition
 
 
 
