@@ -37,7 +37,8 @@ entity Twiddle_factors is
     count : in unsigned(7 downto 0);
     CLK : in std_logic;
     RST : in std_logic;
-    Twiddleout : out std_logic_vector(15 downto 0)
+    Twiddleout : out std_logic_vector(15 downto 0);
+    Twiddleout2 : out std_logic_vector(15 downto 0)
     );
 end Twiddle_factors;
 
@@ -74,6 +75,10 @@ signal TWout1 : std_logic_vector(15 downto 0);
 signal TWout2 : std_logic_vector(15 downto 0);
 signal TWout3 : std_logic_vector(15 downto 0);
 signal TW2out : std_logic_vector(15 downto 0);
+signal TW2out1 : std_logic_vector(15 downto 0);
+signal TW2out2 : std_logic_vector(15 downto 0);
+signal TW2out3 : std_logic_vector(15 downto 0);
+--signal TW2out : std_logic_vector(15 downto 0);
 begin
 
 
@@ -102,6 +107,16 @@ Twiddle_2 : TW2_RAM
     begin
      if RST = '0' then
                 Twiddleout<= (others => '0'); -- sets output to zero -- replace with counter
+                Twiddleout2<= (others => '0');
+                
+                 TWout1<=(others => '0');
+                Twout2<=(others => '0');
+                Twout3<=(others => '0');
+                
+                
+                 TW2out1<=(others => '0');
+                Tw2out2<=(others => '0');
+                Tw2out3<=(others => '0');
                 ADDRESS <= "00000000";
         elsif rising_edge(CLK) then
                 ADDRESS<=std_logic_vector(count); 
@@ -109,11 +124,17 @@ Twiddle_2 : TW2_RAM
                 Twout2<=TWout1;
                 Twout3<=TWout2;
                 Twiddleout<=TWout3;
+                
+                TW2out1<=TW2out;
+                Tw2out2<=TW2out1;
+                Tw2out3<=TW2out2;
+                Twiddleout2<=TW2out3;
+                
                 -- DFTnew<=DFTin;
             end if;
     end process DFTBD_pipe_add;
 
-
+    --Twiddleout2 <= TW2out;
 
 
 

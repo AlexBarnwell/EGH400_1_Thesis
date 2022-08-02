@@ -1,0 +1,6 @@
+verilog xil_defaultlib  \
+"../../../../Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM3I/sim/DFTBD_MEM3I.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

@@ -3,6 +3,9 @@ USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
 entity DFT_loop is
+generic (
+        G_DATA_WIDTH    : INTEGER := 18 -- data width of output
+    );
     port (--AA : in STD_LOGIC_VECTOR (15 downto 0); -- initial ports
     --BB : in STD_LOGIC_VECTOR (15 downto 0);
     --CC : in STD_LOGIC_VECTOR (15 downto 0);
@@ -10,7 +13,7 @@ entity DFT_loop is
         DFTinI : in std_logic_vector (15 downto 0);
         TWin : in std_logic_vector (15 downto 0);  -- cos
         TWin2 : in std_logic_vector (15 downto 0); -- sin
-        PP : out STD_LOGIC_VECTOR   (15 downto 0 );
+        PP : out STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );
         nRst : in std_logic;
         Clk : in std_logic;
         count : out  unsigned(7 downto 0);
@@ -19,8 +22,8 @@ entity DFT_loop is
         DFT_RESETs : out std_logic;  -- trggers soft reset (pause on most operations)
 
 
-        FFT_outR : out STD_LOGIC_VECTOR   (31 downto 0 ); -- outputs of the FFT
-        FFT_outI : out STD_LOGIC_VECTOR   (31 downto 0 );
+        FFT_outR : out STD_LOGIC_VECTOR   (G_DATA_WIDTH*2-1 downto 0 ); -- outputs of the FFT
+        FFT_outI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH*2-1 downto 0 );
 
         position : out unsigned(3 downto 0));
 
@@ -33,48 +36,48 @@ architecture behavioral of DFT_loop is
     --signal AAsig : STD_LOGIC_VECTOR(15 downto 0);
     --signal BBsig : STD_LOGIC_VECTOR(15 downto 0);
     --signal CCsig : STD_LOGIC_VECTOR(15 downto 0);
-    signal PPsig : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
-    signal  P2sig : std_logic_vector (15 downto 0):= (others => '0');
-    signal  PPsigs : signed (15 downto 0):= (others => '0');
-    signal PPsig2 : std_logic_vector  (15 downto 0) := (others => '0');
-    signal  temp : std_logic_vector (15 downto 0):= (others => '0');
-    signal  Pout : std_logic_vector  (32 downto 0):= (others => '0');
+    signal PPsig : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal  P2sig : std_logic_vector (G_DATA_WIDTH*2-1 downto 0):= (others => '0');
+    signal  PPsigs : signed (G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal PPsig2 : std_logic_vector  (G_DATA_WIDTH-1 downto 0) := (others => '0');
+    signal  temp : std_logic_vector (G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal  Pout : std_logic_vector  (G_DATA_WIDTH*2 downto 0):= (others => '0');
 
 
-    signal PPsigI : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
-    signal  P2sigI : std_logic_vector (15 downto 0):= (others => '0');
-    signal  PPsigsI : signed (15 downto 0):= (others => '0');
-    signal PPsig2I : std_logic_vector  (15 downto 0) := (others => '0');
-    signal  tempI : std_logic_vector (15 downto 0):= (others => '0');
-    signal  PoutI : std_logic_vector  (32 downto 0):= (others => '0');
+    signal PPsigI : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal  P2sigI : std_logic_vector (G_DATA_WIDTH*2-1 downto 0):= (others => '0');
+    signal  PPsigsI : signed (G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal PPsig2I : std_logic_vector  (G_DATA_WIDTH-1 downto 0) := (others => '0');
+    signal  tempI : std_logic_vector (G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal  PoutI : std_logic_vector  (G_DATA_WIDTH*2 downto 0):= (others => '0');
 
 
 
-    signal  cos2 : std_logic_vector (15 downto 0):= (others => '0');
-    signal  cos : std_logic_vector (15 downto 0):= (others => '0');
-    signal  sin : std_logic_vector (15 downto 0):= (others => '0');
+    signal  coss2 : std_logic_vector (G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal  coss : std_logic_vector (G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal  sinn : std_logic_vector (G_DATA_WIDTH-1 downto 0):= (others => '0');
     --signal  DFTnew : std_logic_vector (15 downto 0):= (others => '0');
-    signal  DFTs : signed (15 downto 0):= (others => '0');
-    signal  DFTsI : signed (15 downto 0):= (others => '0');
+    signal  DFTs : signed (G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal  DFTsI : signed (G_DATA_WIDTH-1 downto 0):= (others => '0');
 
     --signal PPsig2 : std_logic_vector  (15 downto 0) := (others => '0');
 
-    signal final1 : signed  (31 downto 0) := (others => '0');
-    signal final2 : signed  (31 downto 0) := (others => '0');
-    signal final3 : signed  (31 downto 0) := (others => '0');
-    signal final4 : signed  (31 downto 0) := (others => '0');
+    signal final1 : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
+    signal final2 : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
+    signal final3 : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
+    signal final4 : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
 
 
-    signal pp32sig1 : signed  (31 downto 0) := (others => '0');
+    signal A1 : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
     --pp32sig2 <= signed (ZERO(7 downto 0) &  ppsig2 & ZERO(7 downto 0));
-    signal pp32sigi1 : signed  (31 downto 0) := (others => '0');
+    signal B1 : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
     --signal ppsig2 : signed  (32 downto 0) := (others => '0');
     --pp32sig2 <= signed (ZERO(7 downto 0) &  ppsig2 & ZERO(7 downto 0));
    -- signal ppsigi2 : signed  (32 downto 0) := (others => '0');
     
     --pp32sigi2 <= signed (ZERO(7 downto 0) &  ppsigi2 & ZERO(7 downto 0));
-    signal REALL : std_logic_vector(31 downto 0) := (others => '0');-- FFT outputs -- probably send to some sort of RAM 
-    signal IMAGG : std_logic_vector (31 downto 0) := (others => '0');
+    signal REALL : std_logic_vector(G_DATA_WIDTH*2-1 downto 0) := (others => '0');-- FFT outputs -- probably send to some sort of RAM 
+    signal IMAGG : std_logic_vector (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
 
 
     signal  count2 : unsigned (3 downto 0) := (others => '0');
@@ -116,10 +119,10 @@ architecture behavioral of DFT_loop is
             CLK : IN STD_LOGIC;
             CE : IN STD_LOGIC;
             SCLR : IN STD_LOGIC;
-            A : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-            B : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-            C : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-            P : OUT STD_LOGIC_VECTOR(32 DOWNTO 0)
+            A : IN STD_LOGIC_VECTOR(17 DOWNTO 0);
+            B : IN STD_LOGIC_VECTOR(17 DOWNTO 0);
+            C : IN STD_LOGIC_VECTOR(35 DOWNTO 0);
+            P : OUT STD_LOGIC_VECTOR(36 DOWNTO 0)
         );
     END COMPONENT;
 
@@ -136,7 +139,7 @@ begin
             CE => DFT_RESET ,
             SCLR => (not DFT_RESET) ,
             A =>PPsig,
-            B =>cos2,
+            B =>coss2,
             C =>P2sig,
             P =>Pout
             --  PCOUT=>PCOUT
@@ -147,7 +150,7 @@ begin
             CE => DFT_RESET ,
             SCLR => (not DFT_RESET) ,
             A =>PPsigI,
-            B =>cos2,
+            B =>coss2,
             C =>P2sigI,
             P =>PoutI
             --  PCOUT=>PCOUT
@@ -222,20 +225,20 @@ begin
     DFT_RESETs <= DFT_RESET;
     position <= count5;
 
-    final1 <= (signed(cos)*signed(PPsig2)); -- final recombination -- NOTE need to add the part in process that grabs final value and hence get put into BRAM
-    final2 <= (signed(sin)*signed(PPsig2I));
-    final3 <=  (signed(sin)*signed(PPsig2));
-    final4 <=  (signed(cos)*signed(PPsig2I));
+    final1 <= (signed(coss)*signed(PPsig2)); -- final recombination -- NOTE need to add the part in process that grabs final value and hence get put into BRAM
+    final2 <= (signed(sinn)*signed(PPsig2I));
+    final3 <=  (signed(sinn)*signed(PPsig2));
+    final4 <=  (signed(coss)*signed(PPsig2I));
 
-    -- recast to 32 component dsp_macro_0
-    pp32sig1(23 downto 8) <= signed(ppsig);
-    pp32sigi1(23 downto 8) <= signed(ppsigI);
+    -- recast to 32 
+    A1(G_DATA_WIDTH*2*3/4-1 downto G_DATA_WIDTH*2/4) <= signed(ppsig);
+    B1(G_DATA_WIDTH*2*3/4-1 downto G_DATA_WIDTH*2/4) <= signed(ppsigI);
     --pp32sig2 <= signed (ZERO(7 downto 0) &  ppsig2 & ZERO(7 downto 0));
     --pp32sigi1 <= signed (ZERO(7 downto 0) &  ppsigi1 & ZERO(7 downto 0));
     --pp32sigi2 <= signed (ZERO(7 downto 0) &  ppsigi2 & ZERO(7 downto 0));
 
-    REALL <= std_logic_vector (pp32sig1  - final1 + final2); -- FFT outputs -- probably send to some stort of RAM 
-    IMAGG <= std_logic_vector (pp32sigi1 - final3 + final4);
+    REALL <= std_logic_vector (A1 - final1 + final2); -- FFT outputs -- probably send to some stort of RAM 
+    IMAGG <= std_logic_vector (B1 - final3 + final4);
 
 
 
@@ -281,18 +284,20 @@ begin
 
 
     --TWt2<= std_logic_vector (2*signed(TW2t));
-    P2sig<=temp;
-    P2sigI<=tempI;
-    cos<=TWin;
-    cos2<=std_logic_vector (2*signed(TWin));
-    PPsig <=Pout(23 downto 8);
-    PPsigI <=PoutI(23 downto 8);
-    DFTs<=signed(DFTin);
+    P2sig(G_DATA_WIDTH*2-1 downto G_DATA_WIDTH/2)<=std_logic_vector (resize(signed(temp),G_DATA_WIDTH*3/2)); -- up converts to 32 bit
+    P2sigI(G_DATA_WIDTH*2-1 downto G_DATA_WIDTH/2)<=std_logic_vector (resize(signed(tempI),G_DATA_WIDTH*3/2));
+    
+    coss((G_DATA_WIDTH+16)/2-1 downto (G_DATA_WIDTH-16)/2)<=TWin; --reformates the inputs size by padding with zeros Left & right
+    coss2(G_DATA_WIDTH-1 downto 1)<=coss(G_DATA_WIDTH-2 downto 0);
+    --coss2<=coss;
+    PPsig <=Pout(G_DATA_WIDTH*2*3/4-1 downto G_DATA_WIDTH*2/4); --
+    PPsigI <=PoutI(G_DATA_WIDTH*2*3/4-1 downto G_DATA_WIDTH*2/4); -- 
+    DFTs(G_DATA_WIDTH-1 downto (G_DATA_WIDTH-16)/2)<=resize(signed(DFTin),(G_DATA_WIDTH +16)/2);
     PPsigs<=signed(PPsig);
-    DFTsI<=signed(DFTinI);
+    DFTsI(G_DATA_WIDTH-1 downto (G_DATA_WIDTH-16)/2)<=resize(signed(DFTinI),(G_DATA_WIDTH+16)/2);
     PPsigsI<=signed(PPsigI);
     temp<=std_logic_vector((DFTs-PPsigs));
-    tempI<=std_logic_vector((DFTs-PPsigs));
+    tempI<=std_logic_vector((DFTsI-PPsigsI));
     PP<=PPsig;--
     count<=count3;
 

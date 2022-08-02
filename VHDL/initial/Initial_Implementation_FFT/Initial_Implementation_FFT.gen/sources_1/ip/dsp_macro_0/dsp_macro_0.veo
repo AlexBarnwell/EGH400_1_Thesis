@@ -58,10 +58,10 @@ dsp_macro_0 your_instance_name (
   .CLK(CLK),    // input wire CLK
   .CE(CE),      // input wire CE
   .SCLR(SCLR),  // input wire SCLR
-  .A(A),        // input wire [15 : 0] A
-  .B(B),        // input wire [15 : 0] B
-  .C(C),        // input wire [15 : 0] C
-  .P(P)        // output wire [32 : 0] P
+  .A(A),        // input wire [17 : 0] A
+  .B(B),        // input wire [17 : 0] B
+  .C(C),        // input wire [35 : 0] C
+  .P(P)        // output wire [36 : 0] P
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 
