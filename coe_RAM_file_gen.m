@@ -3,7 +3,8 @@ clear all
 close all
 only_RAM
 fileName={'RAM1.txt', 'RAM2.txt', 'RAM3.txt','RAM4.txt', 'RAM5.txt', 'RAM6.txt','RAM7.txt', 'RAM8.txt'};
-LUTRR=LUTRR.*(2.^8); % 8 decimal bits
+D=8;
+LUTRR=LUTRR.*(2.^D); % 8 decimal bits
 for ii=1:8
 bin=dec2bin(LUTRR(:,ii),16)
 %file=[num2str(ii)
@@ -24,9 +25,10 @@ fid=fopen(file,'w');
 end
 %close file indentifier
 
+%%
 %IMAG
 
-LUTII=LUTII.*(2.^8); % 8 decimal bits
+LUTII=LUTII.*(2.^D); % 8 decimal bits
 for ii=1:8
 bin=dec2bin(LUTII(:,ii),16)
 %file=[num2str(ii)
@@ -51,7 +53,7 @@ end
 
 
 
-TW=TW.*(2.^8);
+TW=TW.*(2.^D);
 TWbin=dec2bin(TW,16);
 fileTW='coe_files\TW.txt';
 fid=fopen(fileTW,'w');
@@ -64,7 +66,7 @@ for ii=1:256
 fclose(fid);
 
 
-TW2=TW2.*(2.^8);
+TW2=TW2.*(2.^D);
 TW2bin=dec2bin(TW2,16);
 fileTW2='coe_files\TW2.txt';
 fid=fopen(fileTW2,'w');

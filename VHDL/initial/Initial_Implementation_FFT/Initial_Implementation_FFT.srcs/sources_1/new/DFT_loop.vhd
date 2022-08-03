@@ -4,7 +4,8 @@ USE ieee.numeric_std.ALL;
 
 entity DFT_loop is
 generic (
-        G_DATA_WIDTH    : INTEGER := 18 -- data width of output
+        G_DATA_WIDTH    : INTEGER := 18; -- data width of output
+        G_DECIMAL_WIDTH : integer := 8 -- decimal precision
     );
     port (--AA : in STD_LOGIC_VECTOR (15 downto 0); -- initial ports
     --BB : in STD_LOGIC_VECTOR (15 downto 0);
@@ -231,8 +232,8 @@ begin
     final4 <=  (signed(coss)*signed(PPsig2I));
 
     -- recast to 32 
-    A1(G_DATA_WIDTH*2*3/4-1 downto G_DATA_WIDTH*2/4) <= signed(ppsig);
-    B1(G_DATA_WIDTH*2*3/4-1 downto G_DATA_WIDTH*2/4) <= signed(ppsigI);
+    A1(G_DATA_WIDTH+G_DECIMAL_WIDTH-1 downto G_DECIMAL_WIDTH ) <= signed(ppsig);
+    B1(G_DATA_WIDTH+G_DECIMAL_WIDTH-1 downto G_DECIMAL_WIDTH) <= signed(ppsigI);
     --pp32sig2 <= signed (ZERO(7 downto 0) &  ppsig2 & ZERO(7 downto 0));
     --pp32sigi1 <= signed (ZERO(7 downto 0) &  ppsigi1 & ZERO(7 downto 0));
     --pp32sigi2 <= signed (ZERO(7 downto 0) &  ppsigi2 & ZERO(7 downto 0));
@@ -284,17 +285,17 @@ begin
 
 
     --TWt2<= std_logic_vector (2*signed(TW2t));
-    P2sig(G_DATA_WIDTH*2-1 downto G_DATA_WIDTH/2)<=std_logic_vector (resize(signed(temp),G_DATA_WIDTH*3/2)); -- up converts to 32 bit
-    P2sigI(G_DATA_WIDTH*2-1 downto G_DATA_WIDTH/2)<=std_logic_vector (resize(signed(tempI),G_DATA_WIDTH*3/2));
+    P2sig(G_DATA_WIDTH*2-1 downto G_DECIMAL_WIDTH)<=std_logic_vector (resize(signed(temp),G_DATA_WIDTH*2-G_DECIMAL_WIDTH)); -- up converts to 32 bit
+    P2sigI(G_DATA_WIDTH*2-1 downto G_DECIMAL_WIDTH)<=std_logic_vector (resize(signed(tempI),G_DATA_WIDTH*2-G_DECIMAL_WIDTH));
     
-    coss((G_DATA_WIDTH+16)/2-1 downto (G_DATA_WIDTH-16)/2)<=TWin; --reformates the inputs size by padding with zeros Left & right
-    coss2(G_DATA_WIDTH-1 downto 1)<=coss(G_DATA_WIDTH-2 downto 0);
+    coss(G_DATA_WIDTH -1 downto 0)<=std_logic_vector(resize(signed(TWin),G_DATA_WIDTH)); --reformates the inputs size by padding on the right side
+    coss2(G_DATA_WIDTH-1 downto 1)<=coss(G_DATA_WIDTH-2 downto 0); -- Lshift by 1 (multiply by 2)
     --coss2<=coss;
-    PPsig <=Pout(G_DATA_WIDTH*2*3/4-1 downto G_DATA_WIDTH*2/4); --
-    PPsigI <=PoutI(G_DATA_WIDTH*2*3/4-1 downto G_DATA_WIDTH*2/4); -- 
-    DFTs(G_DATA_WIDTH-1 downto (G_DATA_WIDTH-16)/2)<=resize(signed(DFTin),(G_DATA_WIDTH +16)/2);
+    PPsig <=Pout(G_DATA_WIDTH+G_DECIMAL_WIDTH-1 downto G_DECIMAL_WIDTH); --
+    PPsigI <=PoutI(G_DATA_WIDTH+G_DECIMAL_WIDTH-1 downto G_DECIMAL_WIDTH); -- 
+    DFTs(G_DATA_WIDTH-1 downto 0)<=resize(signed(DFTin),G_DATA_WIDTH);
     PPsigs<=signed(PPsig);
-    DFTsI(G_DATA_WIDTH-1 downto (G_DATA_WIDTH-16)/2)<=resize(signed(DFTinI),(G_DATA_WIDTH+16)/2);
+    DFTsI(G_DATA_WIDTH-1 downto 0)<=resize(signed(DFTinI),G_DATA_WIDTH);
     PPsigsI<=signed(PPsigI);
     temp<=std_logic_vector((DFTs-PPsigs));
     tempI<=std_logic_vector((DFTsI-PPsigsI));
