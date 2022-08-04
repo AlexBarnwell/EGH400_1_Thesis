@@ -1,7 +1,7 @@
-Running: xsim.dir/DSP_RAM_Twiddle_behav/xsimk.exe -simmode gui -wdb DSP_RAM_Twiddle_behav.wdb -simrunnum 0 -socket 52098
+Running: xsim.dir/DSP_RAM_Twiddle_behav/xsimk.exe -simmode gui -wdb DSP_RAM_Twiddle_behav.wdb -simrunnum 0 -socket 51698
 Design successfully loaded
-Design Loading Memory Usage: 9828 KB (Peak: 9828 KB)
+Design Loading Memory Usage: 9808 KB (Peak: 9808 KB)
 Design Loading CPU Usage: 15 ms
 Simulation completed
-Simulation Memory Usage: 12844 KB (Peak: 12844 KB)
-Simulation CPU Usage: 171 ms
+Simulation Memory Usage: 13192 KB (Peak: 13192 KB)
+Simulation CPU Usage: 390 ms

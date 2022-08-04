@@ -1,4 +1,0 @@
-vhdl xil_defaultlib  \
-"../../../../initial_implemenation.gen/sources_1/ip/xbip_multadd_0_2/sim/xbip_multadd_0.vhd" \
-
-nosort
