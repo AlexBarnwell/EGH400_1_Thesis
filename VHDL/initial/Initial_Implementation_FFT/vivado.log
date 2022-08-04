@@ -81,3 +81,5 @@ WARNING: [IP_Flow 19-2162] IP 'clk_wiz_0' is locked:
 * This IP has board specific outputs. Current project board 'unset' and the board 'digilentinc.com:arty:part0:1.1' used to customize the IP 'clk_wiz_0' do not match.
 open_project: Time (s): cpu = 00:00:31 ; elapsed = 00:00:12 . Memory (MB): peak = 1653.359 ; gain = 0.000
 update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Aug  4 22:40:00 2022...
