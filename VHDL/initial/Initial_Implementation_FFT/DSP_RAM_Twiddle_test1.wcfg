@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="160.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="247.823 ns"></ZoomEndTime>
-      <Cursor1Time time="77.600 ns"></Cursor1Time>
+      <ZoomStartTime time="2,995.200 ns"></ZoomStartTime>
+      <ZoomEndTime time="3,690.201 ns"></ZoomEndTime>
+      <Cursor1Time time="142.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="144"></NameColumnWidth>
-      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+      <ValueColumnWidth column_width="64"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="13" />
+   <WVObjectSize size="14" />
    <wvobject fp_name="/DSP_RAM_Twiddle/CLK" type="logic">
       <obj_property name="ElementShortName">CLK</obj_property>
       <obj_property name="ObjectShortName">CLK</obj_property>
@@ -31,10 +31,15 @@
    <wvobject fp_name="/DSP_RAM_Twiddle/DFTOUT" type="array">
       <obj_property name="ElementShortName">DFTOUT[15:0]</obj_property>
       <obj_property name="ObjectShortName">DFTOUT[15:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/DSP_RAM_Twiddle/DFTOUTI" type="array">
       <obj_property name="ElementShortName">DFTOUTI[15:0]</obj_property>
       <obj_property name="ObjectShortName">DFTOUTI[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DSP_RAM_Twiddle/orders" type="other">
+      <obj_property name="ElementShortName">orders</obj_property>
+      <obj_property name="ObjectShortName">orders</obj_property>
    </wvobject>
    <wvobject fp_name="/DSP_RAM_Twiddle/PP" type="array">
       <obj_property name="ElementShortName">PP[17:0]</obj_property>
@@ -61,7 +66,6 @@
    <wvobject fp_name="/DSP_RAM_Twiddle/Twiddleout" type="array">
       <obj_property name="ElementShortName">Twiddleout[15:0]</obj_property>
       <obj_property name="ObjectShortName">Twiddleout[15:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/DSP_RAM_Twiddle/Twiddleout2" type="array">
       <obj_property name="ElementShortName">Twiddleout2[15:0]</obj_property>

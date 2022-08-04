@@ -62,7 +62,7 @@ component  DFT_loop is
 
         FFT_outR : out STD_LOGIC_VECTOR   (G_DATA_WIDTH*2-1 downto 0 ); -- outputs of the FFT
         FFT_outI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH*2-1 downto 0 );
-
+        orders : out integer;
         position : out unsigned(3 downto 0));
 
     -- PCOUT : out std_logic_vector (47 downto 0));
@@ -122,6 +122,7 @@ constant ClockPeriod    : time    := 1000 ms / ClockFrequency;
 
     signal Twiddleout2 : std_logic_vector(15 downto 0);
     signal Twiddleout : std_logic_vector(15 downto 0);
+    signal orders : integer :=0;
 begin
 
     testbenching1 : DFT_loop 
@@ -139,6 +140,7 @@ begin
         DFT_RESETs => DFT_RESET,
          FFT_outR => FFT_outR,
         FFT_outI => FFT_outI,
+        orders =>orders,
         position => positionout
 );
         
