@@ -63,7 +63,8 @@ architecture RTL of fpga_top is
             count : out unsigned(7 downto 0);
             FFT_RESETs : out std_logic;  -- triggers hard reset (reset to 0 on most operations)
             DFT_RESETs : out std_logic; 
-            position : out unsigned (3 downto 0)
+            position : out unsigned (3 downto 0);
+            FFT_ready : in std_logic
         );
     end component ;
 
@@ -90,6 +91,25 @@ component  Twiddle_factors is
 end component ;
 
 
+component  shift_reg_input is
+    Port (
+        CLK : in std_logic;
+        RST : in std_logic;
+        bit_input: in std_logic; -- input from microphone
+        FFT_Reset : in std_logic;
+        DFT_Reset : in std_logic;
+        FFT_ready : out std_logic; 
+        Data_ready : out std_logic; -- trigger for new mic data being reseived ready to start next FFT
+        --read_en : in std_logic;
+        MCLK : in std_logic;
+        buffer_out : out std_logic_vector(255 downto 0);
+        byte_out : out std_logic_vector(15 downto 0); -- reorderd byte for DFTBD RAMS as input
+        byte_select : out unsigned(3 downto 0) -- the counter/ byte_select for the RAM
+        -- note there will need to be a pause (soft reset after each DFT) and a restart (after each full FFT cycle) flag
+    );
+end component; 
+
+
     signal clk_sys : std_logic;
     signal clk_mic : std_logic;
     signal DFTin : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
@@ -107,7 +127,8 @@ end component ;
     signal Bit_stream_value : std_logic_vector (15 downto 0):= (others => '0'); -- this is will be tied to the bit stream values of the reformatted bitsream
     signal RESET : std_logic := '0';
     --signal nRST  : std_logic := '0'; 
-
+    signal bit_input: std_logic := '0';
+    signal FFT_ready: std_logic;
 begin
 
     CLOCK : clk_wiz_0
@@ -144,7 +165,8 @@ begin
             count => count,
             FFT_RESETs => FFT_RESETs,
             DFT_RESETs  => DFT_RESETs,
-            position => position
+            FFT_ready => FFT_ready
+            --position => position
         );
 
         
@@ -155,6 +177,27 @@ begin
     RST  =>RESET,
     Twiddleout =>TWin
     );
+
+
+input : shift_reg_input 
+    Port map (
+        CLK  => clk_sys,
+        RST =>nRST,
+        bit_input => bit_input,
+        FFT_Reset => FFT_RESETS,
+        DFT_Reset => DFT_RESETS,
+        FFT_ready =>FFT_ready, -- trigger for new mic data being reseived ready to start next FFT
+        --Data_ready =; 
+        --read_en : in std_logic;
+        MCLK => clk_mic,
+        --buffer_out : out std_logic_vector(255 downto 0);
+        byte_out => bit_stream_value, -- reorderd byte for DFTBD RAMS as input
+        byte_select => position -- the counter/ byte_select for the RAM
+        -- note there will need to be a pause (soft reset after each DFT) and a restart (after each full FFT cycle) flag
+    );
+
+
+
 
 
  --  resets

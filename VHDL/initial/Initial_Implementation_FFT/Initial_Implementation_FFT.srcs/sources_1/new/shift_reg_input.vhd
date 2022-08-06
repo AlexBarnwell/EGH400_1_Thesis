@@ -36,12 +36,15 @@ entity shift_reg_input is
         CLK : in std_logic;
         RST : in std_logic;
         bit_input: in std_logic; -- input from microphone
-        FFT_done : in std_logic;
-        DFT_done : in std_logic; 
+        FFT_Reset : in std_logic;
+        DFT_Reset : in std_logic;
+        FFT_ready : out std_logic; -- trigger for new mic data being reseived ready to start next FFT
+       -- Data_ready : out std_logic; 
         --read_en : in std_logic;
         MCLK : in std_logic;
         buffer_out : out std_logic_vector(255 downto 0);
-        byte_out : out std_logic_vector(15 downto 0) -- reorderd byte for DFTBD RAMS as input 
+        byte_out : out std_logic_vector(15 downto 0); -- reorderd byte for DFTBD RAMS as input
+        byte_select : out unsigned(3 downto 0) -- the counter/ byte_select for the RAM
         -- note there will need to be a pause (soft reset after each DFT) and a restart (after each full FFT cycle) flag
     );
 
@@ -49,7 +52,7 @@ end shift_reg_input;
 
 architecture Behavioral of shift_reg_input is
 
-    signal shift_reg_input : std_logic_vector(64 downto 0) := (others => '0');
+    signal shift_reg_input : std_logic_vector(63 downto 0) := (others => '0');
     signal shift_reg_buffer : std_logic_vector(255 downto 0) := (others => '0');
     signal buffer_done : std_logic := '0';
     signal count : std_logic_vector(5 downto 0) := (others => '0');
@@ -58,7 +61,7 @@ architecture Behavioral of shift_reg_input is
     constant DFT_count : integer := 16; --DFTBs per DFT for the FFT (i.e 16 clocks 1 per DFTBD) how many banks of 16 
     signal count2 :  integer := 15;
     signal byte : std_logic_vector(15 downto 0) := (others => '0');
-
+    signal start_count : unsigned (2 downto 0) := (others => '0');
 begin
 
     -- trigger for end of DFT continue to wiat for input flag to trigger  (i.e. enough inputs have come in)
@@ -66,12 +69,14 @@ begin
     begin
         if RST = '0' then
             shift_reg_buffer <= (others => '0'); -- empty buffer
+            FFT_ready<= '0'; 
         else
             if rising_edge(CLK) then
-                if (buffer_push = '1' and FFT_done = '1')  then
-                    shift_reg_buffer(255 downto 64) <= shift_reg_buffer(191 downto 0); -- get new bts into buffer and shift old bits
+                if (buffer_push = '1' and FFT_Reset = '0')  then
+                    shift_reg_buffer(255 downto 64) <= shift_reg_buffer(191 downto 0); -- get new bits into buffer and shift old bits
                     shift_reg_buffer(63 downto 0) <= shift_reg_input(64 downto 1);
                     buffer_push <= '0';
+                    FFT_ready <= '1'; -- new data has been successfully pushed into data buffer begin FFT
                 end if;
             end if;
         end if;
@@ -95,7 +100,7 @@ begin
             shift_reg_input <= (others => '0'); -- empty buffer
         else
             if (rising_edge(CLK) and read_en = '1') then
-                shift_reg_input(64 downto 1) <=  shift_reg_input(63 downto 0); -- move shift register after new input
+                shift_reg_input(63 downto 1) <=  shift_reg_input(62 downto 0); -- move shift register after new input
                 count <= std_logic_vector( (unsigned(count)+1)); -- count inputs for buffer transaction
                 read_en <= '0';
                 if count = "111111" then -- check if input data amount is 64 bits
@@ -107,12 +112,18 @@ begin
 
 
 
-    reorder : process (CLK,RST)is
+    reorder : process (CLK,FFT_Reset,RST)is
     begin
-        if RST = '0' then
+        if (FFT_Reset or RST)  = '0' then
             byte_out <= (others => '0'); -- empty buffer
+            count2 <= DFT_count-1;
+            byte_select <= "000";
         else
-            if (rising_edge(CLK) and (DFT_done = '0') ) then -- only update when DFT is not done i.e singl eclock pause at end of DFT
+            if (rising_edge(CLK) and (DFT_Reset = '1') ) then -- only update when DFT is not done i.e singl eclock pause at end of DFT
+            
+            
+            if start_count = "011" then
+            
                 
                  
                 if count2 = 0 then
@@ -120,8 +131,11 @@ begin
                 else
                     count2 <= count2-1;
                 end if;
-
-                byte_out(0)<= byte(0);
+                
+                byte_select<= byte_select+1;
+                
+                
+                byte_out(0)<= byte(0); -- reorded bit stream  sectio  with need generics for larger scale 
                 byte_out(1)<= byte(1);
                 byte_out(2)<= byte(2);
                 byte_out(3)<= byte(3);
@@ -137,7 +151,9 @@ begin
                 byte_out(13)<= byte(13);
                 byte_out(14)<= byte(14);
                 byte_out(15)<= byte(15);
-
+             else
+             start_count <= start_count+1; -- initial delay for RAMs to start
+             end if;
             end if;
         end if;
 
@@ -169,7 +185,7 @@ begin
 
 
 
-
+    --byte_select <=count2;
 
 
     buffer_out <= shift_reg_buffer ;

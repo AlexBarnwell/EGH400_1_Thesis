@@ -27,7 +27,9 @@ generic (
         FFT_outI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH*2-1 downto 0 );
 
 orders : out integer; -- temp
-        position : out unsigned(3 downto 0));
+        position : out unsigned(3 downto 0);
+        FFT_ready: out std_logic
+        );
         
     -- PCOUT : out std_logic_vector (47 downto 0));
     -- PCOUT : out std_logic_vector (47 downto 0));
@@ -178,12 +180,16 @@ begin
         elsif rising_edge(Clk) then
             case state is
                 when start =>
+                if FFT_ready = '1' then
+                FFT_reset <= '1';
                     count_delay<= count_delay+1;
 
                     if count_delay = "101" then
                         --turn_on <= '1';
                         CE<='1';
                         state <= DFT;
+                    end if;
+                    else
                     end if;
                 when DFT  =>
                     count2<=(count2+1);
@@ -238,11 +244,11 @@ begin
                     rshifti <=0;
                     --if count4 = "11" then
                         if count3 = 0 then
-                            FFT_RESET<= '0'; -- trigger hard reset
+                            FFT_RESET<= '0'; -- trigger hard reset and go to start to wait until dat input is ready
                             state <= start;
                         else
                             state <= DFT; -- up completion
-                            DFT_RESET <= '1';
+                            DFT_RESET <= '1'; -- turn off DFT reset
                             -- CE<= '1';
                             --SCLR <= '0';
                         end if;
