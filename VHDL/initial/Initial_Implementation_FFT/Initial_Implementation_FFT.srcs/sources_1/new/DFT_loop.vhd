@@ -28,7 +28,7 @@ generic (
 
 orders : out integer; -- temp
         position : out unsigned(3 downto 0);
-        FFT_ready: out std_logic
+        FFT_ready: in std_logic
         );
         
     -- PCOUT : out std_logic_vector (47 downto 0));
@@ -182,6 +182,7 @@ begin
                 when start =>
                 if FFT_ready = '1' then
                 FFT_reset <= '1';
+                --FFT_ready <= '0';
                     count_delay<= count_delay+1;
 
                     if count_delay = "101" then
@@ -195,7 +196,7 @@ begin
                     count2<=(count2+1);
                     PPsig2 <= PPsig;
                     PPsig2I <= PPsigI;
-                    if count2 = 16 then -- this assumes 256 input bits thus only 16 banks of 16, will change to generic when needed
+                    if count2 = "1000" then -- this assumes 256 input bits thus only 16 banks of 16, will change to generic when needed
                         count2 <= (others => '0');
                         count3<=(count3+1); -- count 3 keeps track of how many DFTs have bee computed
                         count5 <= (count5+1); -- novel DFT input size i.e bank size = 16

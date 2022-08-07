@@ -60,10 +60,10 @@ architecture RTL of fpga_top is
             PP : out STD_LOGIC_VECTOR   (15 downto 0 );
             nRst : in std_logic;
             Clk : in std_logic;
-            count : out unsigned(7 downto 0);
+          --  count : out unsigned(7 downto 0); not needed as comes from the input handler 
             FFT_RESETs : out std_logic;  -- triggers hard reset (reset to 0 on most operations)
             DFT_RESETs : out std_logic; 
-            position : out unsigned (3 downto 0);
+           -- position : out unsigned (3 downto 0); not needed comes from the input handler now
             FFT_ready : in std_logic
         );
     end component ;
@@ -104,7 +104,8 @@ component  shift_reg_input is
         MCLK : in std_logic;
         buffer_out : out std_logic_vector(255 downto 0);
         byte_out : out std_logic_vector(15 downto 0); -- reorderd byte for DFTBD RAMS as input
-        byte_select : out unsigned(3 downto 0) -- the counter/ byte_select for the RAM
+        byte_select : out unsigned(3 downto 0); -- the counter/ byte_select for the RAM
+        byte_select_full : out unsigned(7 downto 0)
         -- note there will need to be a pause (soft reset after each DFT) and a restart (after each full FFT cycle) flag
     );
 end component; 
@@ -162,7 +163,7 @@ begin
             PP    => output,
             nRst  => RESET,
             Clk   => clk_sys,
-            count => count,
+           -- count => count,
             FFT_RESETs => FFT_RESETs,
             DFT_RESETs  => DFT_RESETs,
             FFT_ready => FFT_ready
@@ -192,7 +193,8 @@ input : shift_reg_input
         MCLK => clk_mic,
         --buffer_out : out std_logic_vector(255 downto 0);
         byte_out => bit_stream_value, -- reorderd byte for DFTBD RAMS as input
-        byte_select => position -- the counter/ byte_select for the RAM
+        byte_select => position, -- the counter/ byte_select for the RAM
+        byte_select_full => count
         -- note there will need to be a pause (soft reset after each DFT) and a restart (after each full FFT cycle) flag
     );
 
