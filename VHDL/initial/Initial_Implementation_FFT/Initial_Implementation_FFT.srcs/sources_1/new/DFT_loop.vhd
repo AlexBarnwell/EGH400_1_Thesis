@@ -94,7 +94,8 @@ architecture behavioral of DFT_loop is
     signal FFT_RESET : std_logic := '1'; -- triggers hard reset (reset to 0 on most operations)
     signal DFT_RESET : std_logic := '1'; -- trggers soft reset (pause on most operations)
 
-
+    signal FFT_begin : std_logic := '0';
+    
     -- state machine signal
     type states is (start, DFT, finish);
     signal state : states := start;
@@ -180,13 +181,15 @@ begin
         elsif rising_edge(Clk) then
             case state is
                 when start =>
-                if FFT_ready = '1' then
+                if ((FFT_ready = '1') or (FFT_begin = '1')) then
+                    FFT_begin <= '1';
                 FFT_reset <= '1';
                 --FFT_ready <= '0';
                     count_delay<= count_delay+1;
 
                     if count_delay = "101" then
                         --turn_on <= '1';
+                        FFT_begin <= '0';
                         CE<='1';
                         state <= DFT;
                     end if;

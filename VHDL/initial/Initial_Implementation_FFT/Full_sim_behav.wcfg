@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="2,537.500 ns"></ZoomStartTime>
-      <ZoomEndTime time="6,692.501 ns"></ZoomEndTime>
-      <Cursor1Time time="6,000.000 ns"></Cursor1Time>
+      <ZoomStartTime time="44.517250 us"></ZoomStartTime>
+      <ZoomEndTime time="108.317251 us"></ZoomEndTime>
+      <Cursor1Time time="101.000000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="142"></NameColumnWidth>
-      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+      <NameColumnWidth column_width="118"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="31" />
+   <WVObjectSize size="32" />
    <wvobject fp_name="/Full_sim/CLK" type="logic">
       <obj_property name="ElementShortName">CLK</obj_property>
       <obj_property name="ObjectShortName">CLK</obj_property>
@@ -143,5 +143,9 @@
    <wvobject fp_name="/Full_sim/input/FFT_ready" type="logic">
       <obj_property name="ElementShortName">FFT_ready</obj_property>
       <obj_property name="ObjectShortName">FFT_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Full_sim/input/buffer_push" type="logic">
+      <obj_property name="ElementShortName">buffer_push</obj_property>
+      <obj_property name="ObjectShortName">buffer_push</obj_property>
    </wvobject>
 </wave_config>

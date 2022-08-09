@@ -80,10 +80,11 @@ begin
                 if (buffer_push = '1' and FFT_Reset = '0')  then
                     shift_reg_buffer(255 downto 64) <= shift_reg_buffer(191 downto 0); -- get new bits into buffer and shift old bits
                     shift_reg_buffer(63 downto 0) <= Mic_shift_reg_input(64 downto 1);
-                    buffer_push <= '0';
+                    buffer_done <= '1';
                     FFT_ready <= '1'; -- new data has been successfully pushed into data buffer begin FFT
-                    else
-                    --FFT_ready <= '0';
+                else
+                    FFT_ready <= '0';
+                    buffer_done <= '0';
                 end if;
             end if;
         end if;
@@ -113,17 +114,19 @@ begin
         else
             if (rising_edge(CLK)) then
                 if ((read_en ='1') and (read_en2 = '1')) then
-             -- could add a count reset for 
-                Mic_shift_reg_input(64 downto 1) <=  Mic_shift_reg_input(63 downto 0); -- move shift register after new input
-                count <= count+1; -- count inputs for buffer transaction
-                read_en2 <= '0';
-                if ((count = "111111") and (buffer_push = '0')) then -- check if input data amount is 64 bits
-                    buffer_push<= '1'; -- send data to buffer for FFT access   
-                    else
-                     --buffer_push<='0';   
-                end if;
+                    -- could add a count reset for 
+                    Mic_shift_reg_input(64 downto 1) <=  Mic_shift_reg_input(63 downto 0); -- move shift register after new input
+                    count <= count+1; -- count inputs for buffer transaction
+                    read_en2 <= '0';
+                    if ((count = "111111") and (buffer_done = '0')) then -- check if input data amount is 64 bits
+                        buffer_push<= '1'; -- send data to buffer for FFT access   
+
+                    end if;
                 elsif (read_en = '0') then
                     read_en2 <= '1';
+                end if;
+                if (buffer_done = '1') then
+                    buffer_push<='0';
                 end if;
             end if;
         end if;
