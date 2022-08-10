@@ -54,7 +54,7 @@ component  DFT_loop is
         PP : out STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );
         nRst : in std_logic;
         Clk : in std_logic;
-       -- count : out  unsigned(7 downto 0);
+        count : out  unsigned(4 downto 0);
         -- SCLR : in  std_logic;
         FFT_RESETs : out std_logic;  -- triggers hard reset (reset to 0 on most operations)
         DFT_RESETs : out std_logic;  -- trggers soft reset (pause on most operations)
@@ -157,7 +157,7 @@ constant ClockPeriod    : time    := 1000 ms / ClockFrequency;
     constant micClockFrequency : integer :=1e6; -- 1 MHz
     constant micClockPeriod    : time    := 1000 ms / micClockFrequency;
     signal MCLK : std_logic := '1'; -- clock for input microphone
-    
+    signal meas : unsigned( 4 downto 0) := (others => '0');
 begin
 
     testbenching1 : DFT_loop 
@@ -169,7 +169,7 @@ begin
         PP  => PP,
         nRst => RST,
         Clk => CLk,
-       -- count => count,
+        count => meas,
         --SCLR => SCLR,
         FFT_RESETs => FFT_RESET,  -- triggers hard reset (reset to 0 on most operations)
         DFT_RESETs => DFT_RESET,

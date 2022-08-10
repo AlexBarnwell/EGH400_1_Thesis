@@ -73,7 +73,7 @@ begin
     shift_buffer : process(CLK,RST) is
     begin
         if RST = '0' then
-            shift_reg_buffer <= (others => '0'); -- empty buffer
+            shift_reg_buffer <= (others => '1'); -- empty buffer
             FFT_ready<= '1';
         else
             if rising_edge(CLK) then
@@ -145,16 +145,16 @@ begin
             if (rising_edge(CLK) and (DFT_Reset = '1') ) then -- only update when DFT is not done i.e singl eclock pause at end of DFT
 
 
-                if start_count = "000" then -- delay amount (needs to be calibrated)
+                if start_count = "001" then -- delay amount (needs to be calibrated)
 
 
 
                     if count2 = 0 then
                         count2 <=(DFT_count-1);
-                    else
-                        count2 <= count2-1;
                         byte_select_temp<= byte_select_temp+1; -- for RAMS DFTBD position
                         byte_select_full_temp<= byte_select_full_temp+1; -- for Twwiddle factor position
+                    else
+                        count2 <= count2-1;  
                     end if;
 
 

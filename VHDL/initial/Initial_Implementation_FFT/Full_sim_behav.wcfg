@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="44.517250 us"></ZoomStartTime>
-      <ZoomEndTime time="108.317251 us"></ZoomEndTime>
-      <Cursor1Time time="101.000000 us"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="395.001 ns"></ZoomEndTime>
+      <Cursor1Time time="213.500 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="118"></NameColumnWidth>
-      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+      <NameColumnWidth column_width="171"></NameColumnWidth>
+      <ValueColumnWidth column_width="70"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="32" />
+   <WVObjectSize size="31" />
    <wvobject fp_name="/Full_sim/CLK" type="logic">
       <obj_property name="ElementShortName">CLK</obj_property>
       <obj_property name="ObjectShortName">CLK</obj_property>
@@ -47,26 +47,6 @@
    <wvobject fp_name="/Full_sim/DFTin" type="array">
       <obj_property name="ElementShortName">DFTin[15:0]</obj_property>
       <obj_property name="ObjectShortName">DFTin[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Full_sim/TWin" type="array">
-      <obj_property name="ElementShortName">TWin[15:0]</obj_property>
-      <obj_property name="ObjectShortName">TWin[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Full_sim/DFTinI" type="array">
-      <obj_property name="ElementShortName">DFTinI[15:0]</obj_property>
-      <obj_property name="ObjectShortName">DFTinI[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Full_sim/TW2in" type="array">
-      <obj_property name="ElementShortName">TW2in[15:0]</obj_property>
-      <obj_property name="ObjectShortName">TW2in[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Full_sim/TWin0" type="array">
-      <obj_property name="ElementShortName">TWin0[15:0]</obj_property>
-      <obj_property name="ObjectShortName">TWin0[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Full_sim/TW2in0" type="array">
-      <obj_property name="ElementShortName">TW2in0[15:0]</obj_property>
-      <obj_property name="ObjectShortName">TW2in0[15:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/Full_sim/PP" type="array">
       <obj_property name="ElementShortName">PP[17:0]</obj_property>
@@ -147,5 +127,45 @@
    <wvobject fp_name="/Full_sim/input/buffer_push" type="logic">
       <obj_property name="ElementShortName">buffer_push</obj_property>
       <obj_property name="ObjectShortName">buffer_push</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Full_sim/input/byte" type="array">
+      <obj_property name="ElementShortName">byte[15:0]</obj_property>
+      <obj_property name="ObjectShortName">byte[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Full_sim/input/byte_select_temp" type="array">
+      <obj_property name="ElementShortName">byte_select_temp[3:0]</obj_property>
+      <obj_property name="ObjectShortName">byte_select_temp[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="group175" type="group">
+      <obj_property name="label">unused</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/Full_sim/DFTinI" type="array">
+         <obj_property name="ElementShortName">DFTinI[15:0]</obj_property>
+         <obj_property name="ObjectShortName">DFTinI[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Full_sim/TW2in" type="array">
+         <obj_property name="ElementShortName">TW2in[15:0]</obj_property>
+         <obj_property name="ObjectShortName">TW2in[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Full_sim/TWin0" type="array">
+         <obj_property name="ElementShortName">TWin0[15:0]</obj_property>
+         <obj_property name="ObjectShortName">TWin0[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Full_sim/TW2in0" type="array">
+         <obj_property name="ElementShortName">TW2in0[15:0]</obj_property>
+         <obj_property name="ObjectShortName">TW2in0[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Full_sim/TWin" type="array">
+         <obj_property name="ElementShortName">TWin[15:0]</obj_property>
+         <obj_property name="ObjectShortName">TWin[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Full_sim/count" type="array">
+         <obj_property name="ElementShortName">count[7:0]</obj_property>
+         <obj_property name="ObjectShortName">count[7:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/Full_sim/meas" type="array">
+      <obj_property name="ElementShortName">meas[4:0]</obj_property>
+      <obj_property name="ObjectShortName">meas[4:0]</obj_property>
    </wvobject>
 </wave_config>

@@ -78,6 +78,12 @@ signal TW2out : std_logic_vector(15 downto 0);
 signal TW2out1 : std_logic_vector(15 downto 0);
 signal TW2out2 : std_logic_vector(15 downto 0);
 signal TW2out3 : std_logic_vector(15 downto 0);
+signal TW2out4 : std_logic_vector(15 downto 0);
+signal TW2out5 : std_logic_vector(15 downto 0);
+signal TW2out6 : std_logic_vector(15 downto 0);
+signal TWout4 : std_logic_vector(15 downto 0);
+signal TWout5 : std_logic_vector(15 downto 0);
+signal TWout6 : std_logic_vector(15 downto 0);
 --signal TW2out : std_logic_vector(15 downto 0);
 begin
 
@@ -109,26 +115,38 @@ Twiddle_2 : TW2_RAM
                 Twiddleout<= (others => '0'); -- sets output to zero -- replace with counter
                 Twiddleout2<= (others => '0');
                 
-                 TWout1<=(others => '0');
+                TWout1<=(others => '0');
                 Twout2<=(others => '0');
                 Twout3<=(others => '0');
+                TWout4<=(others => '0');
+                Twout5<=(others => '0');
+                Twout6<=(others => '0');
                 
                 
-                 TW2out1<=(others => '0');
+                TW2out1<=(others => '0');
                 Tw2out2<=(others => '0');
                 Tw2out3<=(others => '0');
+                TW2out4<=(others => '0');
+                Tw2out5<=(others => '0');
+                Tw2out6<=(others => '0');
                 ADDRESS <= "00000000";
         elsif rising_edge(CLK) then
                 ADDRESS<=std_logic_vector(count); 
                 TWout1<=TWout;
                 Twout2<=TWout1;
                 Twout3<=TWout2;
-                Twiddleout<=TWout3;
+                Twout4<=TWout3;
+                Twout5<=TWout4;
+                Twout6<=TWout5;
+                Twiddleout<=TWout6;
                 
                 TW2out1<=TW2out;
                 Tw2out2<=TW2out1;
                 Tw2out3<=TW2out2;
-                Twiddleout2<=TW2out3;
+                Tw2out4<=TW2out3;
+                Tw2out5<=TW2out4;
+                Tw2out6<=TW2out5;
+                Twiddleout2<=TW2out6;
                 
                 -- DFTnew<=DFTin;
             end if;

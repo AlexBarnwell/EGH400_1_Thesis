@@ -17,7 +17,7 @@ generic (
         PP : out STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );
         nRst : in std_logic;
         Clk : in std_logic;
-        count : out  unsigned(7 downto 0);
+        count : out  unsigned(4 downto 0);
         -- SCLR : in  std_logic;
         FFT_RESETs : out std_logic;  -- triggers hard reset (reset to 0 on most operations)
         DFT_RESETs : out std_logic;  -- trggers soft reset (pause on most operations)
@@ -187,19 +187,18 @@ begin
                 --FFT_ready <= '0';
                     count_delay<= count_delay+1;
 
-                    if count_delay = "101" then
+                    if count_delay = "111" then
                         --turn_on <= '1';
                         FFT_begin <= '0';
                         CE<='1';
                         state <= DFT;
                     end if;
-                    else
                     end if;
                 when DFT  =>
                     count2<=(count2+1);
                     PPsig2 <= PPsig;
                     PPsig2I <= PPsigI;
-                    if count2 = "1000" then -- this assumes 256 input bits thus only 16 banks of 16, will change to generic when needed
+                    if count2 = "10000" then -- this assumes 256 input bits thus only 16 banks of 16, will change to generic when needed
                         count2 <= (others => '0');
                         count3<=(count3+1); -- count 3 keeps track of how many DFTs have bee computed
                         count5 <= (count5+1); -- novel DFT input size i.e bank size = 16
@@ -351,7 +350,7 @@ begin
     temp<=std_logic_vector((DFTs-PPsigs));
     tempI<=std_logic_vector((DFTsI-PPsigsI));
     PP<=PPsig;--
-    count<=count3;
+    count<=count2;
 
     orders<= order;
 
