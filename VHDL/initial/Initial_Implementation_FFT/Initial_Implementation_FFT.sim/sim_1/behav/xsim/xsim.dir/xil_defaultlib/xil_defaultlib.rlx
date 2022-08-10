@@ -2,7 +2,7 @@
 2020.2
 Apr 18 2022
 16:05:34
-C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM1/sim/DFTBD_MEM1.v,1660039341,verilog,,,,DFTBD_MEM1,,,../../../../Initial_Implementation_FFT.gen/sources_1/ip/clk_wiz_0,,,,,
+C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM1/sim/DFTBD_MEM1.v,1660129714,verilog,,,,DFTBD_MEM1,,,../../../../Initial_Implementation_FFT.gen/sources_1/ip/clk_wiz_0,,,,,
 C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM1I_1/sim/DFTBD_MEM1I.v,1660039323,verilog,,C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM7/sim/DFTBD_MEM7.v,,DFTBD_MEM1I,,,../../../../Initial_Implementation_FFT.gen/sources_1/ip/clk_wiz_0,,,,,
 C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM2/sim/DFTBD_MEM2.v,1660039338,verilog,,C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM1/sim/DFTBD_MEM1.v,,DFTBD_MEM2,,,../../../../Initial_Implementation_FFT.gen/sources_1/ip/clk_wiz_0,,,,,
 C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM3/sim/DFTBD_MEM3.v,1660039334,verilog,,C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM8/sim/DFTBD_MEM8.v,,DFTBD_MEM3,,,../../../../Initial_Implementation_FFT.gen/sources_1/ip/clk_wiz_0,,,,,
@@ -22,8 +22,8 @@ C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initia
 C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/TW_RAM/sim/TW_RAM.v,1660039305,verilog,,C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM8I/sim/DFTBD_MEM8I.v,,TW_RAM,,,../../../../Initial_Implementation_FFT.gen/sources_1/ip/clk_wiz_0,,,,,
 C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/dsp_macro_0/sim/dsp_macro_0.vhd,1659428564,vhdl,,,,dsp_macro_0,,,,,,,,
 C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.sim/sim_1/behav/xsim/glbl.v,1649976174,verilog,,,,glbl,,,,,,,,
-C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sim_1/new/Full_sim.vhd,1660047469,vhdl,,,,full_sim,,,,,,,,
-C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd,1659249950,vhdl,,,,dftbd_ram,,,,,,,,
-C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFT_loop.vhd,1660048061,vhdl,,,,dft_loop,,,,,,,,
-C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/Twiddle_factors.vhd,1660044429,vhdl,,,,twiddle_factors,,,,,,,,
-C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/shift_reg_input.vhd,1660040873,vhdl,,,,shift_reg_input,,,,,,,,
+C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sim_1/new/Full_sim.vhd,1660120566,vhdl,,,,full_sim,,,,,,,,
+C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd,1660119517,vhdl,,,,dftbd_ram,,,,,,,,
+C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFT_loop.vhd,1660123685,vhdl,,,,dft_loop,,,,,,,,
+C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/Twiddle_factors.vhd,1660128871,vhdl,,,,twiddle_factors,,,,,,,,
+C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/shift_reg_input.vhd,1660129365,vhdl,,,,shift_reg_input,,,,,,,,

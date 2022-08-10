@@ -405,7 +405,7 @@ begin
             clka => CLK,
             ena => RST,
             wea => "0", -- set hard to 0 so only read is possible
-            addra => ADDRESS1,
+            addra => ADDRESS2,
             dina => "0000000000000000",
             douta => DFTBD2Io
         );
@@ -415,7 +415,7 @@ begin
             clka => CLK,
             ena => RST,
             wea => "0", -- set hard to 0 so only read is possible
-            addra => ADDRESS1,
+            addra => ADDRESS3,
             dina => "0000000000000000",
             douta => DFTBD3Io
         );
@@ -425,7 +425,7 @@ begin
             clka => CLK,
             ena => RST,
             wea => "0", -- set hard to 0 so only read is possible
-            addra => ADDRESS1,
+            addra => ADDRESS4,
             dina => "0000000000000000",
             douta => DFTBD4Io
         );
@@ -435,7 +435,7 @@ begin
             clka => CLK,
             ena => RST,
             wea => "0", -- set hard to 0 so only read is possible
-            addra => ADDRESS1,
+            addra => ADDRESS5,
             dina => "0000000000000000",
             douta => DFTBD5Io
         );
@@ -445,7 +445,7 @@ begin
             clka => CLK,
             ena => RST,
             wea => "0", -- set hard to 0 so only read is possible
-            addra => ADDRESS1,
+            addra => ADDRESS6,
             dina => "0000000000000000",
             douta => DFTBD6Io
         );
@@ -455,7 +455,7 @@ begin
             clka => CLK,
             ena => RST,
             wea => "0", -- set hard to 0 so only read is possible
-            addra => ADDRESS1,
+            addra => ADDRESS7,
             dina => "0000000000000000",
             douta => DFTBD7Io
         );
@@ -465,7 +465,7 @@ begin
             clka => CLK,
             ena => RST,
             wea => "0", -- set hard to 0 so only read is possible
-            addra => ADDRESS1,
+            addra => ADDRESS8,
             dina => "0000000000000000",
             douta => DFTBD8Io
         );

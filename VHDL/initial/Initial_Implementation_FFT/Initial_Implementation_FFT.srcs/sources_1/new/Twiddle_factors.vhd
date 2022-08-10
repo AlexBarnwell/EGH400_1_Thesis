@@ -84,6 +84,9 @@ signal TW2out6 : std_logic_vector(15 downto 0);
 signal TWout4 : std_logic_vector(15 downto 0);
 signal TWout5 : std_logic_vector(15 downto 0);
 signal TWout6 : std_logic_vector(15 downto 0);
+signal TWout7 : std_logic_vector(15 downto 0);
+signal TW2out7 : std_logic_vector(15 downto 0);
+
 --signal TW2out : std_logic_vector(15 downto 0);
 begin
 
@@ -121,7 +124,7 @@ Twiddle_2 : TW2_RAM
                 TWout4<=(others => '0');
                 Twout5<=(others => '0');
                 Twout6<=(others => '0');
-                
+                Twout7<=(others => '0');
                 
                 TW2out1<=(others => '0');
                 Tw2out2<=(others => '0');
@@ -129,6 +132,7 @@ Twiddle_2 : TW2_RAM
                 TW2out4<=(others => '0');
                 Tw2out5<=(others => '0');
                 Tw2out6<=(others => '0');
+                Tw2out7<=(others => '0');
                 ADDRESS <= "00000000";
         elsif rising_edge(CLK) then
                 ADDRESS<=std_logic_vector(count); 
@@ -138,7 +142,8 @@ Twiddle_2 : TW2_RAM
                 Twout4<=TWout3;
                 Twout5<=TWout4;
                 Twout6<=TWout5;
-                Twiddleout<=TWout6;
+                Twout7<=TWout6;
+                Twiddleout<=TWout2;
                 
                 TW2out1<=TW2out;
                 Tw2out2<=TW2out1;
@@ -146,7 +151,8 @@ Twiddle_2 : TW2_RAM
                 Tw2out4<=TW2out3;
                 Tw2out5<=TW2out4;
                 Tw2out6<=TW2out5;
-                Twiddleout2<=TW2out6;
+                Tw2out7<=TW2out6;
+                Twiddleout2<=TW2out2;
                 
                 -- DFTnew<=DFTin;
             end if;

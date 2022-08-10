@@ -224,7 +224,7 @@ input: shift_reg_input
         
         
         
- RST2<= (RST OR FFT_RESET ); -- resets given each condition
+ RST2<= (RST and FFT_RESET ); -- resets given each condition
 Clk <= not Clk after ClockPeriod / 2;
 MClk <= not MClk after micClockPeriod / 2;
 

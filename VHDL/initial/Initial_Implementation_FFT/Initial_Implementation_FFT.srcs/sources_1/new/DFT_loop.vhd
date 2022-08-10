@@ -87,7 +87,7 @@ architecture behavioral of DFT_loop is
     signal  count2 : unsigned (4 downto 0) := (others => '0');
     signal  count3 : unsigned (7 downto 0) := (others => '0');
 
-    signal count_delay : unsigned (2 downto 0) := (others => '0');
+    signal count_delay : unsigned (3 downto 0) := (others => '0');
     signal CE : std_logic:= '0';
     signal turn_on:std_logic := '0';
 
@@ -187,8 +187,9 @@ begin
                 --FFT_ready <= '0';
                     count_delay<= count_delay+1;
 
-                    if count_delay = "111" then
+                    if count_delay = "1010" then
                         --turn_on <= '1';
+                        count_delay <= (others => '0');
                         FFT_begin <= '0';
                         CE<='1';
                         state <= DFT;
@@ -198,7 +199,7 @@ begin
                     count2<=(count2+1);
                     PPsig2 <= PPsig;
                     PPsig2I <= PPsigI;
-                    if count2 = "10000" then -- this assumes 256 input bits thus only 16 banks of 16, will change to generic when needed
+                    if count2 = "01111" then -- this assumes 256 input bits thus only 16 banks of 16, will change to generic when needed
                         count2 <= (others => '0');
                         count3<=(count3+1); -- count 3 keeps track of how many DFTs have bee computed
                         count5 <= (count5+1); -- novel DFT input size i.e bank size = 16

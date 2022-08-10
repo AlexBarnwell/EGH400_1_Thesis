@@ -139,26 +139,27 @@ begin
         if (FFT_Reset = '0' or RST= '0') then
             byte_out <= (others => '0'); -- empty buffer
             count2 <= DFT_count-1;
-            byte_select_temp <= "0000";
+            byte_select_temp <= "1111";
             byte_select_full_temp <= "00000000";
         else
             if (rising_edge(CLK) and (DFT_Reset = '1') ) then -- only update when DFT is not done i.e singl eclock pause at end of DFT
 
 
-                if start_count = "001" then -- delay amount (needs to be calibrated)
+                if start_count = "011" then -- delay amount (needs to be calibrated)
 
 
 
                     if count2 = 0 then
                         count2 <=(DFT_count-1);
-                        byte_select_temp<= byte_select_temp+1; -- for RAMS DFTBD position
-                        byte_select_full_temp<= byte_select_full_temp+1; -- for Twwiddle factor position
+                      
                     else
                         count2 <= count2-1;  
                     end if;
 
-
-
+                    if count2 = DFT_count-1 then
+                      byte_select_temp<= byte_select_temp+1; -- for RAMS DFTBD position
+                        byte_select_full_temp<= byte_select_full_temp+1; -- for Twwiddle factor position
+                    end if;
 
                     byte_out(0)<= byte(0); -- reorded bit stream  sectio  with need generics for larger scale 
                     byte_out(1)<= byte(1);
