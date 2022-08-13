@@ -66,6 +66,7 @@ architecture Behavioral of shift_reg_input is
     signal byte_select_full_temp : unsigned(7 downto 0) := (others => '0');
     signal byte_select_temp : unsigned(3 downto 0) := (others => '0');
     signal read_en2 : std_logic  := '0';
+    signal delay  : std_logic := '0';
 
 begin
 
@@ -141,6 +142,7 @@ begin
             count2 <= DFT_count-1;
             byte_select_temp <= "1111";
             byte_select_full_temp <= "00000000";
+            --delay <= '0';
         else
             if (rising_edge(CLK) and (DFT_Reset = '1') ) then -- only update when DFT is not done i.e singl eclock pause at end of DFT
 
@@ -151,8 +153,9 @@ begin
 
                     if count2 = 0 then
                         count2 <=(DFT_count-1);
+                       -- delay <= '1';
                       
-                    else
+                    else --delay = '0' then
                         count2 <= count2-1;  
                     end if;
 

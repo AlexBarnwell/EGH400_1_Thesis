@@ -60,6 +60,16 @@ architecture behavioral of DFT_loop is
     signal  coss2 : std_logic_vector (G_DATA_WIDTH-1 downto 0):= (others => '0');
     signal  coss : std_logic_vector (G_DATA_WIDTH-1 downto 0):= (others => '0');
     signal  sinn : std_logic_vector (G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal  sinn2 : std_logic_vector (G_DATA_WIDTH-1 downto 0):= (others => '0');
+    
+    --signal  delayed_cos2 : std_logic_vector (G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal  delayed_cos : std_logic_vector (G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal  delayed_sin : std_logic_vector (G_DATA_WIDTH-1 downto 0):= (others => '0');
+    
+    signal  delayed2_cos : std_logic_vector (G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal  delayed2_sin : std_logic_vector (G_DATA_WIDTH-1 downto 0):= (others => '0');
+    
+   -- signal  delayed_sin2 : std_logic_vector (G_DATA_WIDTH-1 downto 0):= (others => '0');
     --signal  DFTnew : std_logic_vector (15 downto 0):= (others => '0');
     signal  DFTs : signed (G_DATA_WIDTH-1 downto 0):= (others => '0');
     signal  DFTsI : signed (G_DATA_WIDTH-1 downto 0):= (others => '0');
@@ -110,6 +120,10 @@ architecture behavioral of DFT_loop is
     signal r2shifti : integer := 0;
     signal orderi : integer := 0; -- the order that FFT bank has been shifted to 
     --signal SCLR : std_logic:= '0';
+    
+   
+             
+    
 
     -- signal Clk : std_logic :='0';
 
@@ -199,6 +213,14 @@ begin
                     count2<=(count2+1);
                     PPsig2 <= PPsig;
                     PPsig2I <= PPsigI;
+                    delayed_cos <= coss;
+                   -- delayed_cos2 <= coss2;
+                    delayed_sin <= sinn;
+                     delayed2_cos <= delayed_cos;
+                   -- delayed_cos2 <= coss2;
+                    delayed2_sin <= delayed_sin;
+                   -- delayed_sin2 <=sinn2;
+                    
                     if count2 = "01111" then -- this assumes 256 input bits thus only 16 banks of 16, will change to generic when needed
                         count2 <= (others => '0');
                         count3<=(count3+1); -- count 3 keeps track of how many DFTs have bee computed
@@ -276,21 +298,23 @@ begin
     FFT_RESETs <= FFT_RESET;  -- triggers hard reset (reset to 0 on most operations)
     DFT_RESETs <= DFT_RESET;
     position <= count5;
-
-    final1 <= (signed(coss)*signed(PPsig2)); -- final recombination -- NOTE need to add the part in process that grabs final value and hence get put into BRAM
-    final2 <= (signed(sinn)*signed(PPsig2I));
-    final3 <=  (signed(sinn)*signed(PPsig2));
-    final4 <=  (signed(coss)*signed(PPsig2I));
-
+-- could ahve applied the current right shoft tot eh 2 previous values before teh multiplcation but for slightly high preiciosn it was done after
+    final1 <= shift_right(signed(delayed2_cos)*signed(PPsig2),rshift); --cos*A2-- final recombination -- NOTE need to add the part in process that grabs final value and hence get put into BRAM
+    final2 <= shift_right(signed(delayed2_sin)*signed(PPsig2I),rshifti); -- sin*B2
+    final3 <=  shift_right(signed(delayed2_sin)*signed(PPsig2),rshift); -- sin*A2
+    final4 <=  shift_right(signed(delayed2_cos)*signed(PPsig2I),rshifti); --cos*B2
+    
+    
+    
     -- recast to 32 
-    A1(G_DATA_WIDTH+G_DECIMAL_WIDTH-1 downto G_DECIMAL_WIDTH ) <= signed(ppsig);
-    B1(G_DATA_WIDTH+G_DECIMAL_WIDTH-1 downto G_DECIMAL_WIDTH) <= signed(ppsigI);
+    A1(G_DATA_WIDTH*2-1 downto G_DECIMAL_WIDTH ) <= resize(signed(ppsig),G_DATA_WIDTH*2-G_DECIMAL_WIDTH);
+    B1(G_DATA_WIDTH*2-1 downto G_DECIMAL_WIDTH) <= resize(signed(ppsigI),G_DATA_WIDTH*2-G_DECIMAL_WIDTH);
     --pp32sig2 <= signed (ZERO(7 downto 0) &  ppsig2 & ZERO(7 downto 0));
     --pp32sigi1 <= signed (ZERO(7 downto 0) &  ppsigi1 & ZERO(7 downto 0));
     --pp32sigi2 <= signed (ZERO(7 downto 0) &  ppsigi2 & ZERO(7 downto 0));
 
     REALL <= std_logic_vector (A1 - final1 + final2); -- FFT outputs -- probably send to some stort of RAM  -- might increase to 100% 
-    IMAGG <= std_logic_vector (B1 - final3 + final4);
+    IMAGG <= std_logic_vector (B1 - final3 - final4);
 
 
 
@@ -342,6 +366,10 @@ begin
     coss(G_DATA_WIDTH -1 downto 0)<=std_logic_vector(resize(signed(TWin),G_DATA_WIDTH)); --reformates the inputs size by padding on the right side
     coss2(G_DATA_WIDTH-1 downto 1)<=coss(G_DATA_WIDTH-2 downto 0); -- Lshift by 1 (multiply by 2)
     --coss2<=coss;
+    
+    sinn(G_DATA_WIDTH -1 downto 0)<=std_logic_vector(resize(signed(TWin2),G_DATA_WIDTH)); --reformates the inputs size by padding on the right side
+    sinn2(G_DATA_WIDTH-1 downto 1)<=sinn(G_DATA_WIDTH-2 downto 0); 
+    
     PPsig <=Pout(G_DATA_WIDTH+G_DECIMAL_WIDTH-1+rshift downto G_DECIMAL_WIDTH+rshift); 
     PPsigI <=PoutI(G_DATA_WIDTH+G_DECIMAL_WIDTH-1+rshifti downto G_DECIMAL_WIDTH+rshifti);  
     DFTs(G_DATA_WIDTH-1 downto 0)<=shift_right (resize(signed(DFTin),G_DATA_WIDTH),order);--

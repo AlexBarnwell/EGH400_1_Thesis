@@ -12,14 +12,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="399.001 ns"></ZoomEndTime>
-      <Cursor1Time time="110.000 ns"></Cursor1Time>
+      <ZoomEndTime time="825.001 ns"></ZoomEndTime>
+      <Cursor1Time time="270.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="171"></NameColumnWidth>
-      <ValueColumnWidth column_width="62"></ValueColumnWidth>
+      <NameColumnWidth column_width="146"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="32" />
+   <WVObjectSize size="31" />
    <wvobject fp_name="/Full_sim/CLK" type="logic">
       <obj_property name="ElementShortName">CLK</obj_property>
       <obj_property name="ObjectShortName">CLK</obj_property>
@@ -27,6 +27,8 @@
    <wvobject fp_name="/Full_sim/DFTOUT" type="array">
       <obj_property name="ElementShortName">DFTOUT[15:0]</obj_property>
       <obj_property name="ObjectShortName">DFTOUT[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/Full_sim/DFTOUTI" type="array">
       <obj_property name="ElementShortName">DFTOUTI[15:0]</obj_property>
@@ -51,10 +53,12 @@
    <wvobject fp_name="/Full_sim/PP" type="array">
       <obj_property name="ElementShortName">PP[17:0]</obj_property>
       <obj_property name="ObjectShortName">PP[17:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
-   <wvobject fp_name="/Full_sim/count" type="array">
-      <obj_property name="ElementShortName">count[7:0]</obj_property>
-      <obj_property name="ObjectShortName">count[7:0]</obj_property>
+   <wvobject fp_name="/Full_sim/orders" type="other">
+      <obj_property name="ElementShortName">orders</obj_property>
+      <obj_property name="ObjectShortName">orders</obj_property>
    </wvobject>
    <wvobject fp_name="/Full_sim/FFT_RESET" type="logic">
       <obj_property name="ElementShortName">FFT_RESET</obj_property>
@@ -67,22 +71,24 @@
    <wvobject fp_name="/Full_sim/FFT_outR" type="array">
       <obj_property name="ElementShortName">FFT_outR[35:0]</obj_property>
       <obj_property name="ObjectShortName">FFT_outR[35:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/Full_sim/FFT_outI" type="array">
       <obj_property name="ElementShortName">FFT_outI[35:0]</obj_property>
       <obj_property name="ObjectShortName">FFT_outI[35:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/Full_sim/Twiddleout2" type="array">
       <obj_property name="ElementShortName">Twiddleout2[15:0]</obj_property>
       <obj_property name="ObjectShortName">Twiddleout2[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/Full_sim/Twiddleout" type="array">
       <obj_property name="ElementShortName">Twiddleout[15:0]</obj_property>
       <obj_property name="ObjectShortName">Twiddleout[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Full_sim/orders" type="other">
-      <obj_property name="ElementShortName">orders</obj_property>
-      <obj_property name="ObjectShortName">orders</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/Full_sim/bit_input" type="logic">
       <obj_property name="ElementShortName">bit_input</obj_property>
@@ -158,6 +164,10 @@
       <wvobject fp_name="/Full_sim/TWin" type="array">
          <obj_property name="ElementShortName">TWin[15:0]</obj_property>
          <obj_property name="ObjectShortName">TWin[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Full_sim/count" type="array">
+         <obj_property name="ElementShortName">count[7:0]</obj_property>
+         <obj_property name="ObjectShortName">count[7:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/Full_sim/count" type="array">
          <obj_property name="ElementShortName">count[7:0]</obj_property>
