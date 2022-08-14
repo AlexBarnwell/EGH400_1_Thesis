@@ -43,6 +43,7 @@ component DFTBD_RAM
     port(
         --ADDRESS : in  std_logic_vector(5 downto 0);
         DFTOUT  : out std_logic_vector (15 downto 0);
+        DFTOUTI : OUT std_logic_vector (15 downto 0);
         CLK : in std_logic;
         RST : in std_logic;
         position : in unsigned(3 downto 0);
@@ -52,6 +53,8 @@ end component;
 
 signal CLK  : std_logic := '1';
 signal DFTOUT  : std_logic_vector (15 downto 0);--:= (others => '0');
+signal DFTOUTI  : std_logic_vector (15 downto 0);--:= (others => '0');
+
 signal RST : std_logic := '0';
 signal position : unsigned(3 downto 0):= (others => '0');
 signal Bit_stream_value  : std_logic_vector(15 downto 0):= (others => '1'); 
@@ -64,6 +67,7 @@ begin
 testbenching : DFTBD_RAM
         PORT MAP (
             DFTOUT => DFTOUT,
+            DFTOUTI => DFTOUTI,
             CLK => CLK ,
             RST => RST, -- set hard to 0 so only read is possible
             position => position,
@@ -73,7 +77,7 @@ testbenching : DFTBD_RAM
 
 Clk <= not Clk after ClockPeriod / 2;
 
-position <= "0000";
+position <= "0101";
 
 process is
     begin

@@ -2,12 +2,12 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Thu Jul 28 14:08:19 2022
-# Process ID: 8056
-# Current directory: C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/DFTB_MEM2I_synth_1
+# Start of session at: Sun Aug 14 16:34:53 2022
+# Process ID: 40200
+# Current directory: C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/DFTB_MEM2I_synth_1
 # Command line: vivado.exe -log DFTB_MEM2I.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source DFTB_MEM2I.tcl
-# Log file: C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/DFTB_MEM2I_synth_1/DFTB_MEM2I.vds
-# Journal file: C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/DFTB_MEM2I_synth_1\vivado.jou
-# Running On: LAPTOP-M3DNELKA, OS: Windows, CPU Frequency: 2208 MHz, CPU Physical cores: 6, Host memory: 17075 MB
+# Log file: C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/DFTB_MEM2I_synth_1/DFTB_MEM2I.vds
+# Journal file: C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/DFTB_MEM2I_synth_1\vivado.jou
+# Running On: DESKTOP-BDA8VGJ, OS: Windows, CPU Frequency: 3600 MHz, CPU Physical cores: 8, Host memory: 25599 MB
 #-----------------------------------------------------------
 source DFTB_MEM2I.tcl -notrace

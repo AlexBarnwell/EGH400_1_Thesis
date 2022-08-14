@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="825.001 ns"></ZoomEndTime>
-      <Cursor1Time time="270.000 ns"></Cursor1Time>
+      <ZoomStartTime time="0.400 ns"></ZoomStartTime>
+      <ZoomEndTime time="412.901 ns"></ZoomEndTime>
+      <Cursor1Time time="156.900 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="146"></NameColumnWidth>
-      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+      <ValueColumnWidth column_width="60"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="31" />
    <wvobject fp_name="/Full_sim/CLK" type="logic">
@@ -49,6 +49,7 @@
    <wvobject fp_name="/Full_sim/DFTin" type="array">
       <obj_property name="ElementShortName">DFTin[15:0]</obj_property>
       <obj_property name="ObjectShortName">DFTin[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/Full_sim/PP" type="array">
       <obj_property name="ElementShortName">PP[17:0]</obj_property>
@@ -77,7 +78,6 @@
       <obj_property name="ElementShortName">FFT_outI[35:0]</obj_property>
       <obj_property name="ObjectShortName">FFT_outI[35:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/Full_sim/Twiddleout2" type="array">
       <obj_property name="ElementShortName">Twiddleout2[15:0]</obj_property>

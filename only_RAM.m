@@ -35,14 +35,15 @@ for ii= 1:ADR
     end
 end
 %%
+clear LUTRR LUTII
 loop=1;
 RAM= 1;
 for RAM= 1:8
     loop=1;
-for B=1:2
-    for B1=1:2
+for B22=1:2
+    for B11=1:2
 for count=1:I
-LUTRR(RAM,loop)=LUTR(RAM,B,B1,count);
+LUTRR(RAM,loop)=LUTR(RAM,B11,B22,count);
 loop=loop+1;
 end
     end
@@ -56,10 +57,10 @@ loop=1;
 RAM= 1;
 for RAM= 1:8
     loop=1;
-for B=1:2
-    for B1=1:2
+for B22=1:2
+    for B11=1:2
 for count=1:I
-LUTII(RAM,loop)=LUTI(RAM,B,B1,count);
+LUTII(RAM,loop)=LUTI(RAM,B11,B22,count);
 loop=loop+1;
 end
     end
@@ -67,10 +68,10 @@ end
 end
 LUTII=LUTII'
 
+%%
 
-
-TW=(cos((1:N).*2.*pi./N))'
-TW2=(sin((1:N).*2.*pi./N))'
+TW=(cos((0:N-1).*2.*pi./N))'
+TW2=(sin((0:N-1).*2.*pi./N))'
 % %%
 % a=1:64
 % a=a'

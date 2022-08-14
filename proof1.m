@@ -7,7 +7,7 @@ close all
 N= 16^2
 P =16 %radix count
 Q=N/P % reoformatted bit strema banks
-L=8; % L*16 DFT uotputs desired
+L=16; % L*16 DFT uotputs desired
 bitstream=randi([0 1],1,N); % create randomised 1:0 input data to simualte bitstream
 %bitstream= 1:N;
 %bitstream=[0 1 1 1 0 0 0 0 1 1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 1 1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 1 1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 1 1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 1 1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 1 1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 1 1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 1 1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 1 1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 1 1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 1 1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 1 1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 1 1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 1 1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 1 1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 1 1 0 0 1 1 1 1 ]
@@ -16,7 +16,9 @@ bitstream=randi([0 1],1,N); % create randomised 1:0 input data to simualte bitst
 %bitstream =zeros(1,N);
 %bitstream(round(N/2):end)=1; %
 bitstream = ones(1,length(bitstream));
+bitstream([1 3 5 7 9 11 13 15]) =0;
 
+%bitstream =flip(bitstream);
 reformattt=zeros(1,length(bitstream));
 
 %% perform the start of the transform decompostion
@@ -92,7 +94,7 @@ for ii =1:P
         k=((1:L)-1).*(P)+(ii-1); % set based on how many required output banks (L*P)
         angle=2*pi*k/N;
 
-        stager =A1.*2.*cos(angle)-A2+DFTtempR; % multiply addition and access (multiple clock cycles 
+        stager =A1.*2.*cos(angle)-A2+DFTtempR % multiply addition and access (multiple clock cycles 
         A2=A1;
         A1=stager;
         
@@ -110,9 +112,9 @@ end
 
 
 figure
-plot(imag(fft(bitstream)))
+plot(real((fft(bitstream))))
 hold on
-plot(abs(Yr+Yi*1i))
+%plot(abs(Yr+Yi*1i))
 hold off
 ylim([0 mean(abs(fft(bitstream)))*5])
 ylim([0 500]);
@@ -121,3 +123,19 @@ xlabel('Frequency Bank')
 ylabel('FFT Output')
 title('Proposed FFT implemenation against MATLAB inbuilt FFT')
 legend('Inbuilt MATLAB FFT','Proposed FFT algorithm')
+
+
+
+%%
+%LUT extractio tests
+B11=[ 2 2 1 2 1 1 1 2];
+B22=[ 2 2 1 2 1 1 2 1];
+%for t = 1:8
+    
+for kk=1:P/2
+    A1=LUTR(kk,B11(kk),B22(kk),6)*2^(8);
+    B1=LUTI(kk,B11(kk),B22(kk),6)*2^(8);
+    kk
+end
+%end
+

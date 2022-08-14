@@ -54,7 +54,7 @@ end shift_reg_input;
 architecture Behavioral of shift_reg_input is
 
     signal Mic_shift_reg_input : std_logic_vector(64 downto 0) := (others => '0');
-    signal shift_reg_buffer : std_logic_vector(255 downto 0) := (others => '0');
+    signal shift_reg_buffer : std_logic_vector(255 downto 0) := (0 => '0', 2=> '0', 4=> '0',  6=> '0' , 8=> '0',  10=> '0',  12=> '0',  14 => '0' ,  others => '1');
     signal buffer_done : std_logic := '0';
     signal count : unsigned(5 downto 0) := (others => '0');
     signal buffer_push : std_logic := '0';
@@ -67,6 +67,7 @@ architecture Behavioral of shift_reg_input is
     signal byte_select_temp : unsigned(3 downto 0) := (others => '0');
     signal read_en2 : std_logic  := '0';
     signal delay  : std_logic := '0';
+    signal hold : std_logic := '0'; -- trigger for holder the couiter for a period of time
 
 begin
 
@@ -74,7 +75,7 @@ begin
     shift_buffer : process(CLK,RST) is
     begin
         if RST = '0' then
-            shift_reg_buffer <= (others => '1'); -- empty buffer
+            shift_reg_buffer <=  (0 => '0', 2=> '0', 4=> '0',  6=> '0' , 8=> '0',  10=> '0',  12=> '0',  14 => '0' ,  others => '1');-- empty buffer
             FFT_ready<= '1';
         else
             if rising_edge(CLK) then
@@ -141,7 +142,8 @@ begin
             byte_out <= (others => '0'); -- empty buffer
             count2 <= DFT_count-1;
             byte_select_temp <= "1111";
-            byte_select_full_temp <= "00000000";
+            byte_select_full_temp <= "11111111";
+            hold <= '0';
             --delay <= '0';
         else
             if (rising_edge(CLK) and (DFT_Reset = '1') ) then -- only update when DFT is not done i.e singl eclock pause at end of DFT
@@ -151,15 +153,23 @@ begin
 
 
 
-                    if count2 = 0 then
+                    if ((count2 = 0) or (hold = '1')) then
                         count2 <=(DFT_count-1);
+                        --hold <= '1'; -- turn on hold ( can be made a std_logic_vector for more delay
                        -- delay <= '1';
                       
                     else --delay = '0' then
-                        count2 <= count2-1;  
+                        count2 <= count2-1; 
+                    end if;
+                    
+                    if (count2 =0) then   
+                    hold <= '1';
+                    else 
+                    hold <= '0';
                     end if;
 
-                    if count2 = DFT_count-1 then
+                        
+                    if ((count2 = DFT_count-1) and (hold = '1'))  then
                       byte_select_temp<= byte_select_temp+1; -- for RAMS DFTBD position
                         byte_select_full_temp<= byte_select_full_temp+1; -- for Twwiddle factor position
                     end if;

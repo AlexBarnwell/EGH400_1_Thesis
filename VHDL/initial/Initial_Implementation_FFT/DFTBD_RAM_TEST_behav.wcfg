@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="106.913 ns"></ZoomEndTime>
-      <Cursor1Time time="80.000 ns"></Cursor1Time>
+      <ZoomStartTime time="61.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="143.801 ns"></ZoomEndTime>
+      <Cursor1Time time="130.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="143"></NameColumnWidth>
-      <ValueColumnWidth column_width="64"></ValueColumnWidth>
+      <ValueColumnWidth column_width="60"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="7" />
+   <WVObjectSize size="8" />
    <wvobject fp_name="/DFTBD_RAM_TEST/CLK" type="logic">
       <obj_property name="ElementShortName">CLK</obj_property>
       <obj_property name="ObjectShortName">CLK</obj_property>
@@ -28,6 +28,10 @@
       <obj_property name="ElementShortName">DFTOUT[15:0]</obj_property>
       <obj_property name="ObjectShortName">DFTOUT[15:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DFTBD_RAM_TEST/DFTOUTI" type="array">
+      <obj_property name="ElementShortName">DFTOUTI[15:0]</obj_property>
+      <obj_property name="ObjectShortName">DFTOUTI[15:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/DFTBD_RAM_TEST/RST" type="logic">
       <obj_property name="ElementShortName">RST</obj_property>
