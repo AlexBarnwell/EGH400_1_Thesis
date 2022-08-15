@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="DFTBD_MEM1I_synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1660458823">
   <File Type="PA-TCL" Name="DFTBD_MEM1I.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="DFTBD_MEM1I_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="DFTBD_MEM1I_reports.tcl"/>
   <File Type="RDS-RDS" Name="DFTBD_MEM1I.vds"/>
-  <File Type="RDS-UTIL" Name="DFTBD_MEM1I_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="DFTBD_MEM1I_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="DFTBD_MEM1I.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="DFTBD_MEM1I_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="DFTBD_MEM1I_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/DFTBD_MEM1I">
     <File Path="$PSRCDIR/sources_1/ip/DFTBD_MEM1I_1/DFTBD_MEM1I.xci">
       <FileInfo>
@@ -52,9 +47,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

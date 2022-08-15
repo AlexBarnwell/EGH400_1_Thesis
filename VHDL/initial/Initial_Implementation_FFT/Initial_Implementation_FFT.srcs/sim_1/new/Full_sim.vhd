@@ -109,7 +109,8 @@ component  shift_reg_input is
         buffer_out : out std_logic_vector(255 downto 0);
         byte_out : out std_logic_vector(15 downto 0); -- reorderd byte for DFTBD RAMS as input
         byte_select : out unsigned(3 downto 0); -- the counter/ byte_select for the RAM
-        byte_select_full : out unsigned(7 downto 0)
+        byte_select_full : out unsigned(7 downto 0);
+        count_check : out integer
         -- note there will need to be a pause (soft reset after each DFT) and a restart (after each full FFT cycle) flag
     );
 
@@ -158,6 +159,8 @@ constant ClockPeriod    : time    := 1000 ms / ClockFrequency;
     constant micClockPeriod    : time    := 1000 ms / micClockFrequency;
     signal MCLK : std_logic := '1'; -- clock for input microphone
     signal meas : unsigned( 4 downto 0) := (others => '0');
+    
+    signal count_check : integer;
 begin
 
     testbenching1 : DFT_loop 
@@ -216,7 +219,8 @@ input: shift_reg_input
        -- buffer_out : out std_logic_vector(255 downto 0);
         byte_out => Bit_stream_value, -- reorderd byte for DFTBD RAMS as input
         byte_select => positionin, -- the counter/ byte_select for the RAM
-        byte_select_full => count
+        byte_select_full => count,
+        count_check => count_check
         -- note there will need to be a pause (soft reset after each DFT) and a restart (after each full FFT cycle) flag
     );
 
@@ -233,7 +237,7 @@ DFTin<= DFTOUT;
 
 process is
     begin
-    wait for 10 ns;
+    wait for 20 ns;
      RST <= '1';
         --PP <= "0000000000000000";
 -- one clock cycle

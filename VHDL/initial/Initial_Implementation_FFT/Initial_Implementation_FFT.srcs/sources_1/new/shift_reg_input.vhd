@@ -45,7 +45,8 @@ entity shift_reg_input is
         buffer_out : out std_logic_vector(255 downto 0);
         byte_out : out std_logic_vector(15 downto 0); -- reorderd byte for DFTBD RAMS as input
         byte_select : out unsigned(3 downto 0); -- the counter/ byte_select for the RAM
-        byte_select_full : out unsigned(7 downto 0)
+        byte_select_full : out unsigned(7 downto 0);
+        count_check : out integer
         -- note there will need to be a pause (soft reset after each DFT) and a restart (after each full FFT cycle) flag
     );
 
@@ -141,8 +142,8 @@ begin
         if (FFT_Reset = '0' or RST= '0') then
             byte_out <= (others => '0'); -- empty buffer
             count2 <= DFT_count-1;
-            byte_select_temp <= "1111";
-            byte_select_full_temp <= "11111111";
+            byte_select_temp <= "0000";
+            byte_select_full_temp <= "00000000";
             hold <= '0';
             --delay <= '0';
         else
@@ -229,5 +230,7 @@ begin
 
 
     buffer_out <= shift_reg_buffer ;
+    
+    count_check <= count2;
 
 end Behavioral;

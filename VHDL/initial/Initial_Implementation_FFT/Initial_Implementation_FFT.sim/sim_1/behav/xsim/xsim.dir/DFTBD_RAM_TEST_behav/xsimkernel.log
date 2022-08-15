@@ -1,7 +1,0 @@
-Running: xsim.dir/DFTBD_RAM_TEST_behav/xsimk.exe -simmode gui -wdb DFTBD_RAM_TEST_behav.wdb -simrunnum 0 -socket 53831
-Design successfully loaded
-Design Loading Memory Usage: 9760 KB (Peak: 9760 KB)
-Design Loading CPU Usage: 15 ms
-Simulation completed
-Simulation Memory Usage: 12252 KB (Peak: 12252 KB)
-Simulation CPU Usage: 108 ms
