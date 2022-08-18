@@ -13,3 +13,8 @@ order = 4
 value = [-13567 -2646]
 
 output =value.*(2.^(-16+order))
+
+%%
+number =40;
+order=2;
+number*2^(-10+order)

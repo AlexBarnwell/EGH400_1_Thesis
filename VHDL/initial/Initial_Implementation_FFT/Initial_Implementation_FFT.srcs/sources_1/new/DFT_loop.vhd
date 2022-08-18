@@ -5,7 +5,9 @@ USE ieee.numeric_std.ALL;
 entity DFT_loop is
     generic (
         G_DATA_WIDTH    : INTEGER := 18; -- data width of output
-        G_DECIMAL_WIDTH : integer := 8 -- decimal precision
+        G_DECIMAL_WIDTH : integer := 10 -- decimal precision
+        --POUT_size : integer := 37
+
     );
     port (--AA : in STD_LOGIC_VECTOR (15 downto 0); -- initial ports
     --BB : in STD_LOGIC_VECTOR (15 downto 0);
@@ -28,7 +30,8 @@ entity DFT_loop is
 
         orders : out integer; -- temp
         position : out unsigned(3 downto 0);
-        FFT_ready: in std_logic
+        FFT_ready: in std_logic;
+        overflow : out integer
     );
 
     -- PCOUT : out std_logic_vector (47 downto 0));
@@ -42,20 +45,27 @@ architecture behavioral of DFT_loop is
     --signal CCsig : STD_LOGIC_VECTOR(15 downto 0);
     signal PPsig : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0):= (others => '0');
     signal  P2sig : std_logic_vector (G_DATA_WIDTH*2-1 downto 0):= (others => '0');
-    signal  PPsigs : signed (G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal  PPsigs : signed (G_DATA_WIDTH*2 downto 0):= (others => '0');
     signal PPsig2 : std_logic_vector  (G_DATA_WIDTH-1 downto 0) := (others => '0');
-    signal  temp : std_logic_vector (G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal  temp : std_logic_vector (G_DATA_WIDTH*2 downto 0):= (others => '0');
+    signal  temp2 : std_logic_vector (G_DATA_WIDTH*2 downto 0):= (others => '0');
     signal  Pout : std_logic_vector  (G_DATA_WIDTH*2 downto 0):= (others => '0');
 
 
     signal PPsigI : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0):= (others => '0');
     signal  P2sigI : std_logic_vector (G_DATA_WIDTH*2-1 downto 0):= (others => '0');
-    signal  PPsigsI : signed (G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal  PPsigsI : signed (G_DATA_WIDTH*2 downto 0):= (others => '0');
     signal PPsig2I : std_logic_vector  (G_DATA_WIDTH-1 downto 0) := (others => '0');
-    signal  tempI : std_logic_vector (G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal  tempI : std_logic_vector (G_DATA_WIDTH*2 downto 0):= (others => '0');
+    signal  temp2I : std_logic_vector (G_DATA_WIDTH*2 downto 0):= (others => '0');
     signal  PoutI : std_logic_vector  (G_DATA_WIDTH*2 downto 0):= (others => '0');
 
+    signal  unPPsig : std_logic_vector (G_DATA_WIDTH*2 downto 0):= (others => '0');
+    signal  unPPsigI : std_logic_vector (G_DATA_WIDTH*2 downto 0):= (others => '0');
 
+    signal  DFT1s : signed (G_DATA_WIDTH*2 downto 0):= (others => '0');
+
+    signal  DFT1SI : signed (G_DATA_WIDTH*2 downto 0):= (others => '0');
 
     signal  coss2 : std_logic_vector (G_DATA_WIDTH-1 downto 0):= (others => '0');
     signal  coss : std_logic_vector (G_DATA_WIDTH-1 downto 0):= (others => '0');
@@ -71,8 +81,8 @@ architecture behavioral of DFT_loop is
 
     -- signal  delayed_sin2 : std_logic_vector (G_DATA_WIDTH-1 downto 0):= (others => '0');
     --signal  DFTnew : std_logic_vector (15 downto 0):= (others => '0');
-    signal  DFTs : signed (G_DATA_WIDTH-1 downto 0):= (others => '0');
-    signal  DFTsI : signed (G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal  DFTs : signed (G_DATA_WIDTH*2 downto 0):= (others => '0');
+    signal  DFTsI : signed (G_DATA_WIDTH*2 downto 0):= (others => '0');
 
     --signal PPsig2 : std_logic_vector  (15 downto 0) := (others => '0');
 
@@ -113,11 +123,15 @@ architecture behavioral of DFT_loop is
     signal count5 : unsigned(3 downto 0):= (others => '0');
 
     signal rshift : integer := 0;
-    signal r2shift : integer := 0;
+    signal rshift2 : integer := 0;
     signal order : integer := 0; -- the order that FFT bank has been shifted to 
+    signal order1 : integer := 0; -- the order that FFT bank has been shifted to 
+
+    signal orderi1 : integer := 0; -- the order that FFT bank has been shifted to 
+
 
     signal rshifti : integer  := 0;
-    signal r2shifti : integer := 0;
+    signal rshift2i : integer := 0;
     signal orderi : integer := 0; -- the order that FFT bank has been shifted to 
     --signal SCLR : std_logic:= '0';
     signal ord_diff : integer :=0;
@@ -125,9 +139,12 @@ architecture behavioral of DFT_loop is
     signal ord_diffi : integer :=0;
 
 
-
-
-
+    signal ovf_checkI : std_logic_vector(2 downto 0) := (others => '0');
+    signal ovf_checkR : std_logic_vector(2 downto 0) := (others => '0');
+    signal ovf_hold : std_logic := '0';
+    signal ovf_holdi : std_logic := '0';
+    signal ovf_clock_holdi : std_logic := '1';
+    signal ovf_clock_hold : std_logic := '1';
     -- signal Clk : std_logic :='0';
 
 
@@ -159,187 +176,197 @@ architecture behavioral of DFT_loop is
 
 
 begin
+    overflow <= rshift;
+    --A<=AA;
+    --B<=BB;
+    --C<=CC;
+    --PP<=P;
+    first : dsp_macro_0  port map(   --- instatiate 1 DSP DFT
+            CLK => Clk,
+            CE => DFT_RESET ,
+            SCLR => (not DFT_RESET) ,
+            A =>PPsig,
+            B =>coss2,
+            C =>P2sig,
+            P =>Pout
+            --  PCOUT=>PCOUT
+        );
 
---A<=AA;
---B<=BB;
---C<=CC;
---PP<=P;
-first : dsp_macro_0  port map(   --- instatiate 1 DSP DFT
-        CLK => Clk,
-        CE => DFT_RESET ,
-        SCLR => (not DFT_RESET) ,
-        A =>PPsig,
-        B =>coss2,
-        C =>P2sig,
-        P =>Pout
-        --  PCOUT=>PCOUT
-    );
-
-firstI : dsp_macro_0  port map(   --- instatiate 1 DSP DFT
-        CLK => Clk,
-        CE => DFT_RESET ,
-        SCLR => (not DFT_RESET) ,
-        A =>PPsigI,
-        B =>coss2,
-        C =>P2sigI,
-        P =>PoutI
-        --  PCOUT=>PCOUT
-    );
+    firstI : dsp_macro_0  port map(   --- instatiate 1 DSP DFT
+            CLK => Clk,
+            CE => DFT_RESET ,
+            SCLR => (not DFT_RESET) ,
+            A =>PPsigI,
+            B =>coss2,
+            C =>P2sigI,
+            P =>PoutI
+            --  PCOUT=>PCOUT
+        );
 
 
 
-sseries_DFT : process(Clk,nRSt) is
-begin
-    if nRST = '0' then
-        count2<=(others => '0');
-        count3<=(others => '0');
-        count4<=(others => '0');
-        count_delay<= (others => '0');
-    elsif rising_edge(Clk) then
-        case state is
-            when start =>
-                if ((FFT_ready = '1') or (FFT_begin = '1')) then
-                    FFT_begin <= '1';
-                    FFT_reset <= '1';
-                    --FFT_ready <= '0';
-                    count_delay<= count_delay+1;
+    sseries_DFT : process(Clk,nRSt) is
+    begin
+        if nRST = '0' then
+            count2<=(others => '0');
+            count3<=(others => '0');
+            count4<=(others => '0');
+            count_delay<= (others => '0');
+        elsif rising_edge(Clk) then
+            case state is
+                when start =>
+                    if ((FFT_ready = '1') or (FFT_begin = '1')) then
+                        FFT_begin <= '1';
+                        FFT_reset <= '1';
+                        --FFT_ready <= '0';
+                        count_delay<= count_delay+1;
 
-                    if count_delay = "1001" then
-                        --turn_on <= '1';
-                        count_delay <= (others => '0');
-                        FFT_begin <= '0';
-                        CE<='1';
-                        state <= DFT;
-                        -- DFT_RESET 
+                        if count_delay = "1001" then
+                            --turn_on <= '1';
+                            count_delay <= (others => '0');
+                            FFT_begin <= '0';
+                            CE<='1';
+                            state <= DFT;
+                            -- DFT_RESET 
+                        end if;
                     end if;
-                end if;
-            when DFT  =>
-                count2<=(count2+1);
-                PPsig2 <= PPsig;
-                PPsig2I <= PPsigI;
-                delayed_cos <= coss;
-                -- delayed_cos2 <= coss2;
-                delayed_sin <= sinn;
-                delayed2_cos <= delayed_cos;
-                -- delayed_cos2 <= coss2;
-                delayed2_sin <= delayed_sin;
-                -- delayed_sin2 <=sinn2;
+                when DFT  =>
+                    count2<=(count2+1);
+                    PPsig2 <= PPsig;
+                    PPsig2I <= PPsigI;
+                    delayed_cos <= coss;
+                    -- delayed_cos2 <= coss2;
+                    delayed_sin <= sinn;
+                    delayed2_cos <= delayed_cos;
+                    -- delayed_cos2 <= coss2;
+                    delayed2_sin <= delayed_sin;
+                    -- delayed_sin2 <=sinn2;
 
-                if count2 = "10000" then -- this assumes 256 input bits thus only 16 banks of 16, will change to generic when needed
-                    count2 <= (others => '0');
-                    count3<=(count3+1); -- count 3 keeps track of how many DFTs have bee computed
-                    count5 <= (count5+1); -- novel DFT input size i.e bank size = 16
-                    DFT_RESET <= '0';
-                    state <= Finish;
-                    -- CE <= '0';
-                    --SCLR <= '1' -- turn off DSP block and clear
-                end if;
-                -- check if the bit is gettiong close too overflow (also underflow but only if the MSB is not getting close to overflow)
+                    if count2 = "10000" then -- this assumes 256 input bits thus only 16 banks of 16, will change to generic when needed
+                        count2 <= (others => '0');
+                        count3<=(count3+1); -- count 3 keeps track of how many DFTs have bee computed
+                        count5 <= (count5+1); -- novel DFT input size i.e bank size = 16
+                        DFT_RESET <= '0';
+                        state <= Finish;
+                        -- CE <= '0';
+                        --SCLR <= '1' -- turn off DSP block and clear
+                    end if;
+                    -- check if the bit is gettiong close too overflow (also underflow but only if the MSB is not getting close to overflow)
 
-                -- if Pout(G_DATA_WIDTH +G_DECIMAL_WIDTH -1) = '1' then -- check if negative
+                    -- if Pout(G_DATA_WIDTH +G_DECIMAL_WIDTH -1) = '1' then -- check if negative
 
-                rshift<=r2shift;
-                if ((Pout(G_DATA_WIDTH +G_DECIMAL_WIDTH -1) /= Pout(G_DATA_WIDTH +G_DECIMAL_WIDTH -2)) or (Pout(G_DATA_WIDTH +G_DECIMAL_WIDTH -1) /= Pout(G_DATA_WIDTH +G_DECIMAL_WIDTH -3)) or (Pout(G_DATA_WIDTH +G_DECIMAL_WIDTH -1) /= Pout(G_DATA_WIDTH +G_DECIMAL_WIDTH -4))) then
-                    -- trigger left shift 
-                    order<=order+1;
-                    r2shift<= 1;
+                    --                rshift<=r2shift;
+                    --                if ((Pout(G_DATA_WIDTH +G_DECIMAL_WIDTH -1) /= Pout(G_DATA_WIDTH +G_DECIMAL_WIDTH -2)) or (Pout(G_DATA_WIDTH +G_DECIMAL_WIDTH -1) /= Pout(G_DATA_WIDTH +G_DECIMAL_WIDTH -3)) or (Pout(G_DATA_WIDTH +G_DECIMAL_WIDTH -1) /= Pout(G_DATA_WIDTH +G_DECIMAL_WIDTH -4))) then
+                    --                    -- trigger left shift 
+                    --                    order<=order+1;
+                    --                    r2shift<= 1;
 
-                else
-                    r2shift <= 0;
-                end if;
+                    --                else
+                    --                    r2shift <= 0;
+                    --                end if;
 
-                rshifti<=r2shifti;
-                if ((Pouti(G_DATA_WIDTH +G_DECIMAL_WIDTH -1) /= Pouti(G_DATA_WIDTH +G_DECIMAL_WIDTH -2)) or (Pouti(G_DATA_WIDTH +G_DECIMAL_WIDTH -1) /= Pouti(G_DATA_WIDTH +G_DECIMAL_WIDTH -3)) or (Pouti(G_DATA_WIDTH +G_DECIMAL_WIDTH -1) /= Pouti(G_DATA_WIDTH +G_DECIMAL_WIDTH -4))) then
-                    -- trigger left shift 
-                     orderi<=orderi+1;
-                    r2shifti<= 1;
-                else
-                    r2shifti <=0;
-                end if;
+                    --                rshifti<=r2shifti;
+                    --                if ((Pouti(G_DATA_WIDTH +G_DECIMAL_WIDTH -1) /= Pouti(G_DATA_WIDTH +G_DECIMAL_WIDTH -2)) or (Pouti(G_DATA_WIDTH +G_DECIMAL_WIDTH -1) /= Pouti(G_DATA_WIDTH +G_DECIMAL_WIDTH -3)) or (Pouti(G_DATA_WIDTH +G_DECIMAL_WIDTH -1) /= Pouti(G_DATA_WIDTH +G_DECIMAL_WIDTH -4))) then
+                    --                    -- trigger left shift 
+                    --                     orderi<=orderi+1;
+                    --                    r2shifti<= 1;
+                    --                else
+                    --                    r2shifti <=0;
+                    --                end if;
 
-                if (r2shift = 1) then
-                    --order <= order +1;
-                end if;
+                    if (rshift = 1) then
+                        order <= order +1;
+                        rshift2 <= rshift;
+                      --  ovf_clock_hold <= '1';
+                        else
+                       -- ovf_clock_hold <= '0';
+                    end if;
 
-                if (r2shifti = 1) then
-                   -- orderi <= orderi +1;
-                end if;
-               
-               if (ord_diff >0) then
-               ord_diffr <= 0;
-               ord_diffi <= ord_diff ;
-               else
-               ord_diffi <= 0;
-               ord_diffr <= (-ord_diff);
-               
-               end if;
-            --elsif
+                    if (rshifti = 1) then
+                        orderi <= orderi +1;
+                        rshift2i <= rshifti;
+                       -- ovf_clock_holdi <= '1';
+                        else
+                        --ovf_clock_holdi <= '0';
+                    end if;
+                    --orderi<=orderi1;
+                    --order<= order1;
 
-            --else
+                    if (ord_diff >0) then
+                        ord_diffr <= 0;
+                        ord_diffi <= ord_diff ;
+                    else
+                        ord_diffi <= 0;
+                        ord_diffr <= (-ord_diff);
 
+                    end if;
+                --elsif
 
-
-            when Finish =>
-                -- compute the recombination steps + the stops
-                --count4 <= count4+1;
-                FFT_outR <= REALL; -- push the value to outputs (synchonous)
-                FFT_outI <= IMAGG;
-                order <=0;
-                r2shifti<=0;
-                rshift<=0;
-                r2shift<=0;
-                rshifti <=0;
-                --if count4 = "11" then
-                if count3 = 0 then
-                    FFT_RESET<= '0'; -- trigger hard reset and go to start to wait until dat input is ready
-                    state <= start;
-                else
-                    state <= DFT; -- up completion
-                    DFT_RESET <= '1'; -- turn off DFT reset
-                    -- CE<= '1';
-                    --SCLR <= '0';
-                end if;
-                --end if;
-                --CE<='1';
-                --DFT_RESET  <= '0';
-                --if count3 = 0 then -- reset upon completion of a full cycle
-                --count3<=(others=>'0');
-                --FFT_RESET<= '0'; -- trigger hard reset
-                -- state <= start;
-                --FFT_RESET <= '0';
-                -- end if;
-                -- upon completion
-
-
-        end case;
-    end if;
-end process;
-
-
-ord_diff <= (order-orderi);
+                --else
 
 
 
+                when Finish =>
+                    -- compute the recombination steps + the stops
+                    --count4 <= count4+1;
+                    FFT_outR <= REALL; -- push the value to outputs (synchonous)
+                    FFT_outI <= IMAGG;
+                    order <=0;
+                    --r2shifti<=0;
+                    --rshift<=0;
+                    --r2shift<=0;
+                    --rshifti <=0;
+                    --if count4 = "11" then
+                    if count3 = 0 then
+                        FFT_RESET<= '0'; -- trigger hard reset and go to start to wait until dat input is ready
+                        state <= start;
+                    else
+                        state <= DFT; -- up completion
+                        DFT_RESET <= '1'; -- turn off DFT reset
+                        -- CE<= '1';
+                        --SCLR <= '0';
+                    end if;
+                    --end if;
+                    --CE<='1';
+                    --DFT_RESET  <= '0';
+                    --if count3 = 0 then -- reset upon completion of a full cycle
+                    --count3<=(others=>'0');
+                    --FFT_RESET<= '0'; -- trigger hard reset
+                    -- state <= start;
+                    --FFT_RESET <= '0';
+                    -- end if;
+                    -- upon completion
 
 
---ord_diffr <= ord_diff when ord_diff <=0 else
-  --        0;          
-   
---ord_diffi <= ord_diff when ord_diff >0 else
-  --        0;      
+            end case;
+        end if;
+    end process;
+
+
+    ord_diff <= (order-orderi);
+
+
+
+
+
+    --ord_diffr <= ord_diff when ord_diff <=0 else
+    --        0;          
+
+    --ord_diffi <= ord_diff when ord_diff >0 else
+    --        0;      
 
 
     FFT_RESETs <= FFT_RESET;  -- triggers hard reset (reset to 0 on most operations)
     DFT_RESETs <= DFT_RESET;
     position <= count5;
--- could ahve applied the current right shoft tot eh 2 previous values before teh multiplcation but for slightly high preiciosn it was done after
+    -- could ahve applied the current right shoft tot eh 2 previous values before teh multiplcation but for slightly high preiciosn it was done after
     final1 <= shift_right(signed(delayed2_cos)*signed(PPsig2),rshift+ord_diffr); --cos*A2-- final recombination -- NOTE need to add the part in process that grabs final value and hence get put into BRAM
     final2 <= shift_right(signed(delayed2_sin)*signed(PPsig2I),rshifti+ord_diffi); -- sin*B2
     final3 <=  shift_right(signed(delayed2_sin)*signed(PPsig2),rshift+ord_diffr); -- sin*A2
     final4 <=  shift_right(signed(delayed2_cos)*signed(PPsig2I),rshifti+ord_diffi); --cos*B2
-    
-    
-    
+
+
+
     -- recast to 32 
     A1(G_DATA_WIDTH*2-1 downto G_DECIMAL_WIDTH ) <= resize(signed(ppsig),G_DATA_WIDTH*2-G_DECIMAL_WIDTH);
     B1(G_DATA_WIDTH*2-1 downto G_DECIMAL_WIDTH) <= resize(signed(ppsigI),G_DATA_WIDTH*2-G_DECIMAL_WIDTH);
@@ -393,30 +420,71 @@ ord_diff <= (order-orderi);
     --    end process series_DFT;
 
 
+    rshift <= 0 when ((ovf_checkR = "000") or (ovf_checkR = "111") or (state = Finish)) else
+              1;
+
+    rshiftI <= 0 when ((ovf_checkI = "111") or (ovf_checkI = "000")or (state = Finish)) else
+              1;
+
+    ovf_hold <= '1' when rshift = 1 else
+        '0';
+        
+         ovf_holdi <= '1' when rshifti = 1 else
+        '0';
+
+
+
+    process (clk,nRST)
+    begin
+        if ((nRst = '0') or (DFT_RESET = '0'))then
+            temp2<= (others => '0');
+            temp2I<= (others => '0');
+        elsif rising_edge(clk) then
+            temp2<= temp;
+            temp2I<= tempI;
+        end if;
+    end process;
 
 
 
 
+    ovf_checkR(1 downto 0) <= Pout(G_DECIMAL_WIDTH +G_DATA_WIDTH-1 downto G_DECIMAL_WIDTH +G_DATA_WIDTH -2); -- deals with determining whether an overflow has occured
+    ovf_checkI(1 downto 0) <= PoutI(G_DECIMAL_WIDTH +G_DATA_WIDTH-1 downto G_DECIMAL_WIDTH +G_DATA_WIDTH -2);
+    ovf_checkI(2) <= PoutI(G_DATA_WIDTH*2);
+    ovf_checkR(2) <= Pout(G_DATA_WIDTH*2);
     --TWt2<= std_logic_vector (2*signed(TW2t));
-    P2sig(G_DATA_WIDTH*2-1 downto G_DECIMAL_WIDTH)<=std_logic_vector (resize(signed(temp),G_DATA_WIDTH*2-G_DECIMAL_WIDTH)); -- up converts to 32 bit
-    P2sigI(G_DATA_WIDTH*2-1 downto G_DECIMAL_WIDTH)<=std_logic_vector (resize(signed(tempI),G_DATA_WIDTH*2-G_DECIMAL_WIDTH));
-    
-    coss(G_DATA_WIDTH -1 downto 0)<=std_logic_vector(resize(signed(TWin),G_DATA_WIDTH)); --reformates the inputs size by padding on the right side
+    P2sig(G_DATA_WIDTH*2-1 downto 0)<= temp2(G_DATA_WIDTH*2-1+rshift downto rshift ); -- 
+    P2sigI(G_DATA_WIDTH*2-1 downto 0)<=temp2I(G_DATA_WIDTH*2-1+rshifti downto rshifti );
+
+    coss(G_DATA_WIDTH -1 downto 0)<=std_logic_vector(resize(signed(TWin),G_DATA_WIDTH));-- --reformates the inputs size by padding on the right side
     coss2(G_DATA_WIDTH-1 downto 1)<=coss(G_DATA_WIDTH-2 downto 0); -- Lshift by 1 (multiply by 2)
     --coss2<=coss;
-    
-    sinn(G_DATA_WIDTH -1 downto 0)<=std_logic_vector(resize(signed(TWin2),G_DATA_WIDTH)); --reformates the inputs size by padding on the right side
-    sinn2(G_DATA_WIDTH-1 downto 1)<=sinn(G_DATA_WIDTH-2 downto 0); 
-    
-    PPsig <=Pout(G_DATA_WIDTH+G_DECIMAL_WIDTH-1+rshift downto G_DECIMAL_WIDTH+rshift); 
-    PPsigI <=PoutI(G_DATA_WIDTH+G_DECIMAL_WIDTH-1+rshifti downto G_DECIMAL_WIDTH+rshifti);  
-    DFTs(G_DATA_WIDTH-1 downto 0)<=shift_right (resize(signed(DFTin),G_DATA_WIDTH),order);--
-    PPsigs<= shift_right(signed(PPsig),r2shift); --
-    DFTsI(G_DATA_WIDTH-1 downto 0)<=shift_right(resize(signed(DFTinI),G_DATA_WIDTH),orderi);--
-    PPsigsI<=shift_right(signed(PPsigI),r2shifti); --
-    temp<=std_logic_vector((DFTs-PPsigs));
-    tempI<=std_logic_vector((DFTsI-PPsigsI));
-    PP<=PPsig;--
+
+    sinn(G_DATA_WIDTH -1 downto 0)<=std_logic_vector(resize(signed(TWin2),G_DATA_WIDTH));-- --reformates the inputs size by padding on the right side
+    sinn2(G_DATA_WIDTH-1 downto 1)<=sinn(G_DATA_WIDTH-2 downto 0);
+
+    PPsig <=Pout(G_DATA_WIDTH+G_DECIMAL_WIDTH-1+rshift downto G_DECIMAL_WIDTH+rshift); --
+    PPsigI <=PoutI(G_DATA_WIDTH+G_DECIMAL_WIDTH-1+rshifti downto G_DECIMAL_WIDTH+rshifti); -- 
+
+    --unPPsig <=Pout(G_DATA_WIDTH+G_DECIMAL_WIDTH downto G_DECIMAL_WIDTH); -- a bit larger than the input (19 with 18 bit input)
+    --unPPsigI <=PoutI(G_DATA_WIDTH+G_DECIMAL_WIDTH downto G_DECIMAL_WIDTH);
+
+    unPPsig <=Pout; -- same size as Pout
+    unPPsigI <=PoutI;
+
+
+    DFT1s(G_DATA_WIDTH*2 downto G_DECIMAL_WIDTH )<=(resize(signed(DFTin),G_DATA_WIDTH*2-G_DECIMAL_WIDTH+1));--
+    DFTs<= shift_right (DFT1s,order);
+    DFT1sI(G_DATA_WIDTH*2 downto G_DECIMAL_WIDTH )<=resize(signed(DFTinI),G_DATA_WIDTH*2-G_DECIMAL_WIDTH+1);--
+
+    PPsigs<= signed(unPPsig); --
+    --DFT1sI(G_DATA_WIDTH*2 downto G_DECIMAL_WIDTH )<=resize(signed(DFTinI),G_DATA_WIDTH*2-G_DECIMAL_WIDTH);--
+    DFTsI<= shift_right(DFT1sI,orderi);
+    PPsigsI<=signed(unPPsigI); --
+
+    temp<=std_logic_vector(shift_right(DFTs-PPsigs,rshift));-- same size as Pout
+    tempI<=std_logic_vector(shift_right(DFTsI-PPsigsI,rshifti));
+    PP<=(Pout(G_DATA_WIDTH+G_DECIMAL_WIDTH-1 downto G_DECIMAL_WIDTH));--
     count<=count2;
 
     orders<= order;

@@ -38,7 +38,8 @@ entity Twiddle_factors is
     CLK : in std_logic;
     RST : in std_logic;
     Twiddleout : out std_logic_vector(15 downto 0);
-    Twiddleout2 : out std_logic_vector(15 downto 0)
+    Twiddleout2 : out std_logic_vector(15 downto 0);
+        DFT_RESET : in std_logic 
     );
 end Twiddle_factors;
 
@@ -134,7 +135,8 @@ Twiddle_2 : TW2_RAM
                 Tw2out6<=(others => '0');
                 Tw2out7<=(others => '0');
                 ADDRESS <= "00000000";
-        elsif rising_edge(CLK) then
+       -- elsif ((rising_edge(CLK)) and (DFT_RESET = '1')) then
+        elsif ((rising_edge(CLK))) then
                 ADDRESS<=std_logic_vector(count); 
                 TWout1<=TWout;
                 Twout2<=TWout1;

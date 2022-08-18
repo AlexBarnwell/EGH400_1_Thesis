@@ -15,24 +15,24 @@ Compiling package ieee.numeric_std
 Compiling package xbip_utils_v3_0_10.xbip_utils_v3_0_10_pkg
 Compiling package dsp_macro_v1_0_2.dsp_macro_v1_0_2_viv_comp
 Compiling package dsp_macro_v1_0_2.dsp_macro_v1_0_2_pkg
+Compiling package unisim.vcomponents
 Compiling package ieee.std_logic_arith
 Compiling package ieee.std_logic_signed
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
 Compiling package vl.vl_types
 Compiling module xil_defaultlib.glbl
 Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
 Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
-Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
-Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
-Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
-Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
-Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
-Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture synth of entity xbip_dsp48_wrapper_v3_0_4.xbip_dsp48e1_wrapper_v3_0 [\xbip_dsp48e1_wrapper_v3_0(breg=...]
 Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
 Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
-Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
-Compiling architecture synth of entity dsp_macro_v1_0_2.dsp_macro_rtl [\dsp_macro_rtl(c_model_type=1,c_...]
-Compiling architecture synth of entity dsp_macro_v1_0_2.dsp_macro_v1_0_2_viv [\dsp_macro_v1_0_2_viv(c_model_ty...]
-Compiling architecture xilinx of entity dsp_macro_v1_0_2.dsp_macro_v1_0_2 [\dsp_macro_v1_0_2(c_model_type=1...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture synth of entity dsp_macro_v1_0_2.dsp_macro_synth [\dsp_macro_synth(c_xdevicefamily...]
+Compiling architecture synth of entity dsp_macro_v1_0_2.dsp_macro_v1_0_2_viv [\dsp_macro_v1_0_2_viv(c_xdevicef...]
+Compiling architecture xilinx of entity dsp_macro_v1_0_2.dsp_macro_v1_0_2 [\dsp_macro_v1_0_2(c_xdevicefamil...]
 Compiling architecture dsp_macro_0_arch of entity xil_defaultlib.dsp_macro_0 [dsp_macro_0_default]
 Compiling architecture behavioral of entity xil_defaultlib.DFT_loop [dft_loop_default]
 Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...

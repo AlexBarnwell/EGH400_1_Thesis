@@ -1,10 +1,10 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
--- Date        : Sun Aug 14 16:24:46 2022
--- Host        : DESKTOP-BDA8VGJ running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub -rename_top DFTBD_MEM8 -prefix
---               DFTBD_MEM8_ DFTBD_MEM8_stub.vhdl
+-- Date        : Tue Aug 16 14:52:03 2022
+-- Host        : LAPTOP-M3DNELKA running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode synth_stub
+--               c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM8/DFTBD_MEM8_stub.vhdl
 -- Design      : DFTBD_MEM8
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a35ticsg324-1L

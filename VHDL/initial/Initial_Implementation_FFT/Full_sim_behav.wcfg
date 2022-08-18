@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="165.801 ns"></ZoomEndTime>
-      <Cursor1Time time="54.200 ns"></Cursor1Time>
+      <ZoomStartTime time="22.100480 us"></ZoomStartTime>
+      <ZoomEndTime time="28.560481 us"></ZoomEndTime>
+      <Cursor1Time time="26.300480 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="144"></NameColumnWidth>
-      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+      <NameColumnWidth column_width="110"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="31" />
+   <WVObjectSize size="32" />
    <wvobject fp_name="/Full_sim/CLK" type="logic">
       <obj_property name="ElementShortName">CLK</obj_property>
       <obj_property name="ObjectShortName">CLK</obj_property>
@@ -29,9 +29,17 @@
       <obj_property name="ObjectShortName">DFTOUT[15:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
+   <wvobject fp_name="/Full_sim/input/byte" type="array">
+      <obj_property name="ElementShortName">byte[15:0]</obj_property>
+      <obj_property name="ObjectShortName">byte[15:0]</obj_property>
+   </wvobject>
    <wvobject fp_name="/Full_sim/DFTOUTI" type="array">
       <obj_property name="ElementShortName">DFTOUTI[15:0]</obj_property>
       <obj_property name="ObjectShortName">DFTOUTI[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Full_sim/DFT_RESET" type="logic">
+      <obj_property name="ElementShortName">DFT_RESET</obj_property>
+      <obj_property name="ObjectShortName">DFT_RESET</obj_property>
    </wvobject>
    <wvobject fp_name="/Full_sim/RST" type="logic">
       <obj_property name="ElementShortName">RST</obj_property>
@@ -55,6 +63,10 @@
       <obj_property name="ObjectShortName">PP[17:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
+   <wvobject fp_name="/Full_sim/overflow" type="other">
+      <obj_property name="ElementShortName">overflow</obj_property>
+      <obj_property name="ObjectShortName">overflow</obj_property>
+   </wvobject>
    <wvobject fp_name="/Full_sim/orders" type="other">
       <obj_property name="ElementShortName">orders</obj_property>
       <obj_property name="ObjectShortName">orders</obj_property>
@@ -62,10 +74,6 @@
    <wvobject fp_name="/Full_sim/FFT_RESET" type="logic">
       <obj_property name="ElementShortName">FFT_RESET</obj_property>
       <obj_property name="ObjectShortName">FFT_RESET</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Full_sim/DFT_RESET" type="logic">
-      <obj_property name="ElementShortName">DFT_RESET</obj_property>
-      <obj_property name="ObjectShortName">DFT_RESET</obj_property>
    </wvobject>
    <wvobject fp_name="/Full_sim/FFT_outR" type="array">
       <obj_property name="ElementShortName">FFT_outR[35:0]</obj_property>
@@ -130,10 +138,6 @@
    <wvobject fp_name="/Full_sim/input/buffer_push" type="logic">
       <obj_property name="ElementShortName">buffer_push</obj_property>
       <obj_property name="ObjectShortName">buffer_push</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Full_sim/input/byte" type="array">
-      <obj_property name="ElementShortName">byte[15:0]</obj_property>
-      <obj_property name="ObjectShortName">byte[15:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/Full_sim/input/byte_select_temp" type="array">
       <obj_property name="ElementShortName">byte_select_temp[3:0]</obj_property>

@@ -1,4 +1,6 @@
 %create DFT LUT with 3 bit address for P=16 and 2 bit data 
+clear all
+close all
 P=16
 N=256
 ADR = 2^3; % all these values are teo represneted in theri deciam forms

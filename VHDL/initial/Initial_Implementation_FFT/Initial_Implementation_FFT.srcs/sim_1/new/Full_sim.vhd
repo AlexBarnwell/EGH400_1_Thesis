@@ -64,7 +64,8 @@ component  DFT_loop is
         FFT_outI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH*2-1 downto 0 );
         orders : out integer;
        -- position : out unsigned(3 downto 0));
-        FFT_ready : in std_logic);
+        FFT_ready : in std_logic;
+        overflow : out integer);
     -- PCOUT : out std_logic_vector (47 downto 0));
     -- PCOUT : out std_logic_vector (47 downto 0));
 
@@ -79,7 +80,8 @@ component DFTBD_RAM
         CLK : in std_logic;
         RST : in std_logic;
         position : in unsigned(3 downto 0);
-        Bit_stream_value  : in std_logic_vector(15 downto 0) -- all bits from the input buffer to feed into RAM address
+        Bit_stream_value  : in std_logic_vector(15 downto 0); -- all bits from the input buffer to feed into RAM address
+        DFT_RESET : in std_logic
     );
 end component;
 
@@ -89,7 +91,8 @@ component Twiddle_factors is
     CLK : in std_logic;
     RST : in std_logic;
     Twiddleout : out std_logic_vector(15 downto 0);
-    Twiddleout2 : out std_logic_vector(15 downto 0)
+    Twiddleout2 : out std_logic_vector(15 downto 0);
+    DFT_RESET : in std_logic
     );
 end component  ;
 
@@ -161,6 +164,7 @@ constant ClockPeriod    : time    := 1000 ms / ClockFrequency;
     signal meas : unsigned( 4 downto 0) := (others => '0');
     
     signal count_check : integer;
+    signal overflow : integer;
 begin
 
     testbenching1 : DFT_loop 
@@ -179,7 +183,8 @@ begin
          FFT_outR => FFT_outR,
         FFT_outI => FFT_outI,
         orders =>orders,
-        FFT_ready => FFT_ready
+        FFT_ready => FFT_ready,
+        overflow => overflow
        -- position => positionout
 );
         
@@ -190,7 +195,8 @@ begin
             CLK => CLK ,
             RST => RST2, -- set hard to 0 so only read is possible
             position => positionin,
-            Bit_stream_value => Bit_stream_value
+            Bit_stream_value => Bit_stream_value,
+            DFT_RESET => DFT_RESET
         );
         
         
@@ -200,7 +206,8 @@ begin
     CLK  => CLK,
     RST => RST2,
     Twiddleout =>Twiddleout,
-    Twiddleout2 => Twiddleout2
+    Twiddleout2 => Twiddleout2,
+    DFT_RESET => DFT_RESET
         );
         
         

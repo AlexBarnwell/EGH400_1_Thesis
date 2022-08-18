@@ -16,8 +16,8 @@ bitstream=randi([0 1],1,N); % create randomised 1:0 input data to simualte bitst
 %bitstream =zeros(1,N);
 %bitstream(round(N/2):end)=1; %
 bitstream = ones(1,length(bitstream));
-bitstream([1 3 5 7 9 11 13 15]) =0;
-
+%bitstream([1 3 5 7 9 11 13 15]) =0;
+ bitstream=mod((1:length(bitstream)),2); %% the constant frequency case
 %bitstream =flip(bitstream);
 reformattt=zeros(1,length(bitstream));
 
@@ -114,7 +114,7 @@ end
 figure
 plot(real((fft(bitstream))))
 hold on
-%plot(abs(Yr+Yi*1i))
+plot(real(Yr+Yi*1i))
 hold off
 ylim([0 mean(abs(fft(bitstream)))*5])
 ylim([0 500]);
@@ -134,7 +134,7 @@ B22=[ 2 2 1 2 1 1 2 1];
     
 for kk=1:P/2
     A1=LUTR(kk,B11(kk),B22(kk),6)*2^(8);
-    B1=LUTI(kk,B11(kk),B22(kk),6)*2^(8);
+    B1=LUTI(kk,B11(kk),B22(kk),6)*2^(8)
     kk
 end
 %end

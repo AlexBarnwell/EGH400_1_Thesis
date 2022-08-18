@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="DFTBD_MEM2_synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1660458824">
+<GenRun Id="DFTBD_MEM2_synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1660624581">
   <File Type="PA-TCL" Name="DFTBD_MEM2.tcl"/>
   <File Type="REPORTS-TCL" Name="DFTBD_MEM2_reports.tcl"/>
   <File Type="RDS-RDS" Name="DFTBD_MEM2.vds"/>
+  <File Type="RDS-UTIL" Name="DFTBD_MEM2_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="DFTBD_MEM2_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="DFTBD_MEM2.dcp"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/DFTBD_MEM2">
     <File Path="$PSRCDIR/sources_1/ip/DFTBD_MEM2/DFTBD_MEM2.xci">

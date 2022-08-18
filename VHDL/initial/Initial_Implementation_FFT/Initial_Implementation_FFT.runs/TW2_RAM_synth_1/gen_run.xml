@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="TW2_RAM_synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1660463197">
+<GenRun Id="TW2_RAM_synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1660625777">
   <File Type="PA-TCL" Name="TW2_RAM.tcl"/>
   <File Type="REPORTS-TCL" Name="TW2_RAM_reports.tcl"/>
   <File Type="RDS-RDS" Name="TW2_RAM.vds"/>
+  <File Type="RDS-UTIL" Name="TW2_RAM_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="TW2_RAM_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="TW2_RAM.dcp"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/TW2_RAM">
     <File Path="$PSRCDIR/sources_1/ip/TW2_RAM/TW2_RAM.xci">

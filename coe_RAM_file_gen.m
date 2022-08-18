@@ -3,7 +3,7 @@ clear all
 close all
 only_RAM
 fileName={'RAM1.txt', 'RAM2.txt', 'RAM3.txt','RAM4.txt', 'RAM5.txt', 'RAM6.txt','RAM7.txt', 'RAM8.txt'};
-D=8;
+D=10;
 LUTRR=LUTRR.*(2.^D); % 8 decimal bits
 for ii=1:8
 bin=dec2bin(LUTRR(:,ii),16)
