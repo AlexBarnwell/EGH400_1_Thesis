@@ -19,6 +19,7 @@ bitstream = ones(1,length(bitstream));
 %bitstream([1 3 5 7 9 11 13 15]) =0;
  bitstream=mod((1:length(bitstream)),2); %% the constant frequency case
 %bitstream =flip(bitstream);
+bitstream(1:256/4) =1;
 reformattt=zeros(1,length(bitstream));
 
 %% perform the start of the transform decompostion
@@ -124,7 +125,8 @@ ylabel('FFT Output')
 title('Proposed FFT implemenation against MATLAB inbuilt FFT')
 legend('Inbuilt MATLAB FFT','Proposed FFT algorithm')
 
-
+figure
+plot(real(Yr+Yi*1i))
 
 %%
 %LUT extractio tests

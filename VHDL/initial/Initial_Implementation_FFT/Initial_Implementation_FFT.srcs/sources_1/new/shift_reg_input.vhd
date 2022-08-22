@@ -46,7 +46,8 @@ entity shift_reg_input is
         byte_out : out std_logic_vector(15 downto 0); -- reorderd byte for DFTBD RAMS as input
         byte_select : out unsigned(3 downto 0); -- the counter/ byte_select for the RAM
         byte_select_full : out unsigned(7 downto 0);
-        count_check : out integer
+        count_check : out integer;
+        count_in : out unsigned(5 downto 0)
         --overflow : out integer
         -- note there will need to be a pause (soft reset after each DFT) and a restart (after each full FFT cycle) flag
     );
@@ -68,23 +69,26 @@ architecture Behavioral of shift_reg_input is
     signal start_count : unsigned (2 downto 0) := (others => '0');
     signal byte_select_full_temp : unsigned(7 downto 0) := (others => '0');
     signal byte_select_temp : unsigned(3 downto 0) := (others => '0');
+    signal byte_select_full_temp_1 : unsigned(7 downto 0) := (others => '0');
+    signal byte_select_temp_1 : unsigned(3 downto 0) := (others => '0');
     signal read_en2 : std_logic  := '0';
     signal delay  : std_logic := '0';
     signal hold : std_logic_vector(1 downto 0) := (others => '0'); -- trigger for holder the couiter for a period of time
 
 begin
- 
+
     -- trigger for end of DFT continue to wiat for input flag to trigger  (i.e. enough inputs have come in)
     shift_buffer : process(CLK,RST) is
     begin
         if RST = '0' then
             --shift_reg_buffer <=  (0 => '0', 2=> '0', 4=> '0',  6=> '0' , 8=> '0',  10=> '0',  12=> '0',  14 => '0' ,  others => '1');-- empty buffer
-            --shift_reg_buffer <=(others => '1');
+ --         shift_reg_buffer <=(others => '1');
+            shift_reg_buffer <= x"555555555555555555555555555555555555555555555555ffffffffffffffff";
             FFT_ready<= '1';
-            for k in 0 to 127 loop
-            shift_reg_buffer(k*2) <= '1';
-            end loop;
-            
+--                    for k in 0 to 127 loop
+--                    shift_reg_buffer(k*2) <= '1';
+--                    end loop;
+
         else
             if rising_edge(CLK) then
                 if (buffer_push = '1' and FFT_Reset = '0')  then
@@ -106,13 +110,23 @@ begin
     begin
         if RST = '0' then
             Mic_shift_reg_input(0) <= '0';
+        elsif (read_en = '1') then
+            read_en <= '0';
         elsif rising_edge(MCLK) then
             Mic_shift_reg_input(0) <= bit_input;
             read_en <= '1';
-        elsif falling_edge(MCLK) then
-            read_en <='0';
+            --        elsif falling_edge(MCLK) then
+            --            read_en <='0';
         end if;
     end process input_bit;
+
+
+    --    reset_input_check : process (MCLK) is
+    --       begin
+    --         if falling_edge(MCLK) then
+    --            read_en <='0';
+    --            end if;
+    --            end process reset_input_check;
 
 
 
@@ -149,41 +163,51 @@ begin
         if (FFT_Reset = '0' or RST= '0') then
             byte_out <= (others => '0'); -- empty buffer
             count2 <= DFT_count-1;
+            byte_select_temp_1 <= "1111";
+            byte_select_full_temp_1 <= "11111111";
             byte_select_temp <= "1111";
             byte_select_full_temp <= "11111111";
-            hold <= "00";
-            --delay <= '0';
+            hold <= "11";
+         if (RST = '0') then
+           start_count <= "000";
+           else 
+           start_count <= "000";
+           end if;
+        --delay <= '0';
         else
-           -- if (rising_edge(CLK) and (DFT_Reset = '1') ) then -- only update when DFT is not done i.e singl eclock pause at end of DFT
+            -- if (rising_edge(CLK) and (DFT_Reset = '1') ) then -- only update when DFT is not done i.e singl eclock pause at end of DFT
             if ((rising_edge(CLK))) then
 
-                if start_count = "011" then -- delay amount (needs to be calibrated)
+                if start_count = "001" then -- delay amount (needs to be calibrated)
 
 
 
                     if ((count2 = 0) or (hold(0) = '1')) then
-                  -- if count2 =0 then
+                        -- if count2 =0 then
                         count2 <=(DFT_count-1);
-                        --hold <= '1'; -- turn on hold ( can be made a std_logic_vector for more delay
-                       -- delay <= '1';
-                      
+                    --hold <= '1'; -- turn on hold ( can be made a std_logic_vector for more delay
+                    -- delay <= '1';
+
                     else --delay = '0' then
-                        count2 <= count2-1; 
-                    end if;
-                    
-                    if (count2 =0) then   
-                    hold <= "11";
-                    else 
-                    hold(1 downto 0) <= (1 => '0',0=>(hold(1)));
+                        count2 <= count2-1;
                     end if;
 
-                        
-                    if ((count2 = DFT_count-1) and (hold = "00"))  then
-                    --if count2 = DFT_count-1 then
-                      byte_select_temp<= byte_select_temp+1; -- for RAMS DFTBD position
+                    if (count2 =0) then
+                        hold <= "11";
+                    else
+                        hold(1 downto 0) <= (1 => '0',0=>(hold(1)));
+                    end if;
+
+
+                    if ((count2 = DFT_count-1) and (hold = "11"))  then
+                        --if count2 = DFT_count-1 then
+                        byte_select_temp<= byte_select_temp+1; -- for RAMS DFTBD position
                         byte_select_full_temp<= byte_select_full_temp+1; -- for Twwiddle factor position
                     end if;
-
+        
+                   -- byte_select_temp <= byte_select_temp_1;
+                   -- byte_select_full_temp <= byte_select_full_temp_1;
+        
                     byte_out(0)<= byte(0); -- reorded bit stream  sectio  with need generics for larger scale 
                     byte_out(1)<= byte(1);
                     byte_out(2)<= byte(2);
@@ -239,7 +263,7 @@ begin
 
 
     buffer_out <= shift_reg_buffer ;
-    
-    count_check <= count2;
 
+    count_check <= count2;
+    count_in <= count;
 end Behavioral;

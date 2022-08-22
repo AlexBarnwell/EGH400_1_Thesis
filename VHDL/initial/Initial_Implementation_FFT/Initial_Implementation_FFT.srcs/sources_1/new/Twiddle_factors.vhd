@@ -38,8 +38,8 @@ entity Twiddle_factors is
     CLK : in std_logic;
     RST : in std_logic;
     Twiddleout : out std_logic_vector(15 downto 0);
-    Twiddleout2 : out std_logic_vector(15 downto 0);
-        DFT_RESET : in std_logic 
+    Twiddleout2 : out std_logic_vector(15 downto 0)
+        --DFT_RESET : in std_logic 
     );
 end Twiddle_factors;
 

@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
-| Date         : Tue Aug 16 14:50:52 2022
-| Host         : LAPTOP-M3DNELKA running 64-bit major release  (build 9200)
+| Date         : Mon Aug 22 19:05:15 2022
+| Host         : DESKTOP-BDA8VGJ running 64-bit major release  (build 9200)
 | Command      : report_utilization -file DFTBD_MEM3_utilization_synth.rpt -pb DFTBD_MEM3_utilization_synth.pb
 | Design       : DFTBD_MEM3
 | Device       : xc7a35ticsg324-1L

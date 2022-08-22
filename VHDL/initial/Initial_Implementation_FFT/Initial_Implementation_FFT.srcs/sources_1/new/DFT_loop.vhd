@@ -17,6 +17,7 @@ entity DFT_loop is
         TWin : in std_logic_vector (15 downto 0);  -- cos
         TWin2 : in std_logic_vector (15 downto 0); -- sin
         PP : out STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );
+        PPI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );
         nRst : in std_logic;
         Clk : in std_logic;
         count : out  unsigned(4 downto 0);
@@ -29,6 +30,7 @@ entity DFT_loop is
         FFT_outI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH*2-1 downto 0 );
 
         orders : out integer; -- temp
+        ordersI : out integer;
         position : out unsigned(3 downto 0);
         FFT_ready: in std_logic;
         overflow : out integer
@@ -227,13 +229,15 @@ begin
                             FFT_begin <= '0';
                             CE<='1';
                             state <= DFT;
-                            -- DFT_RESET 
+                             DFT_RESET <= '1'; 
+                         else 
+                         DFT_RESET <= '0';
                         end if;
                     end if;
                 when DFT  =>
                     count2<=(count2+1);
-                    PPsig2 <= PPsig;
-                    PPsig2I <= PPsigI;
+                    PPsig2 <= std_logic_vector( shift_right( signed(PPsig),0));
+                    PPsig2I <= std_logic_vector( shift_right( signed(PPsigI),0));
                     delayed_cos <= coss;
                     -- delayed_cos2 <= coss2;
                     delayed_sin <= sinn;
@@ -292,14 +296,14 @@ begin
                     --orderi<=orderi1;
                     --order<= order1;
 
-                    if (ord_diff >0) then
-                        ord_diffr <= 0;
-                        ord_diffi <= ord_diff ;
-                    else
-                        ord_diffi <= 0;
-                        ord_diffr <= (-ord_diff);
+--                    if (ord_diff >0) then
+--                        ord_diffr <= 0;
+--                        ord_diffi <= ord_diff ;
+--                    else
+--                        ord_diffi <= 0;
+--                        ord_diffr <= (-ord_diff);
 
-                    end if;
+--                    end if;
                 --elsif
 
                 --else
@@ -312,6 +316,7 @@ begin
                     FFT_outR <= REALL; -- push the value to outputs (synchonous)
                     FFT_outI <= IMAGG;
                     order <=0;
+                    orderi <=0;
                     --r2shifti<=0;
                     --rshift<=0;
                     --r2shift<=0;
@@ -349,21 +354,21 @@ begin
 
 
 
-    --ord_diffr <= ord_diff when ord_diff <=0 else
-    --        0;          
+    ord_diffr <= -ord_diff when ord_diff <= 0 else
+            0;          
 
-    --ord_diffi <= ord_diff when ord_diff >0 else
-    --        0;      
+    ord_diffi <= ord_diff when ord_diff >0 else
+            0;      
 
 
     FFT_RESETs <= FFT_RESET;  -- triggers hard reset (reset to 0 on most operations)
     DFT_RESETs <= DFT_RESET;
-    position <= count5;
+    --position <= count5;
     -- could ahve applied the current right shoft tot eh 2 previous values before teh multiplcation but for slightly high preiciosn it was done after
-    final1 <= shift_right(signed(delayed2_cos)*signed(PPsig2),rshift+ord_diffr); --cos*A2-- final recombination -- NOTE need to add the part in process that grabs final value and hence get put into BRAM
-    final2 <= shift_right(signed(delayed2_sin)*signed(PPsig2I),rshifti+ord_diffi); -- sin*B2
-    final3 <=  shift_right(signed(delayed2_sin)*signed(PPsig2),rshift+ord_diffr); -- sin*A2
-    final4 <=  shift_right(signed(delayed2_cos)*signed(PPsig2I),rshifti+ord_diffi); --cos*B2
+    final1 <= shift_right(signed(delayed2_cos)*signed(PPsig2),ord_diffr); --cos*A2-- final recombination -- NOTE need to add the part in process that grabs final value and hence get put into BRAM
+    final2 <= shift_right(signed(delayed2_sin)*signed(PPsig2I),ord_diffi); -- sin*B2
+    final3 <=  shift_right(signed(delayed2_sin)*signed(PPsig2),ord_diffr); -- sin*A2
+    final4 <=  shift_right(signed(delayed2_cos)*signed(PPsig2I),ord_diffi); --cos*B2
 
 
 
@@ -374,8 +379,8 @@ begin
     --pp32sigi1 <= signed (ZERO(7 downto 0) &  ppsigi1 & ZERO(7 downto 0));
     --pp32sigi2 <= signed (ZERO(7 downto 0) &  ppsigi2 & ZERO(7 downto 0));
 
-    REALL <= std_logic_vector (A1 - final1 + final2); -- FFT outputs -- probably send to some stort of RAM  -- might increase to 100% 
-    IMAGG <= std_logic_vector (B1 - final3 - final4);
+    REALL <= std_logic_vector ( shift_right(A1,ord_diffr) - final1 + final2); -- FFT outputs -- probably send to some stort of RAM  -- might increase to 100% 
+    IMAGG <= std_logic_vector (shift_right(B1,ord_diffi) - final3 - final4);
 
 
 
@@ -426,11 +431,11 @@ begin
     rshiftI <= 0 when ((ovf_checkI = "111") or (ovf_checkI = "000")or (state = Finish)) else
               1;
 
-    ovf_hold <= '1' when rshift = 1 else
-        '0';
+--    ovf_hold <= '1' when rshift = 1 else
+--        '0';
         
-         ovf_holdi <= '1' when rshifti = 1 else
-        '0';
+--         ovf_holdi <= '1' when rshifti = 1 else
+--        '0';
 
 
 
@@ -484,9 +489,11 @@ begin
 
     temp<=std_logic_vector(shift_right(DFTs-PPsigs,rshift));-- same size as Pout
     tempI<=std_logic_vector(shift_right(DFTsI-PPsigsI,rshifti));
-    PP<=(Pout(G_DATA_WIDTH+G_DECIMAL_WIDTH-1 downto G_DECIMAL_WIDTH));--
+    --PP<=(Pout(G_DATA_WIDTH+G_DECIMAL_WIDTH-1 downto G_DECIMAL_WIDTH));--
+    PP<= ppsig;
     count<=count2;
 
     orders<= order;
-
+    ordersI <= orderI;
+     PPI<=ppsigI;--
 end behavioral;

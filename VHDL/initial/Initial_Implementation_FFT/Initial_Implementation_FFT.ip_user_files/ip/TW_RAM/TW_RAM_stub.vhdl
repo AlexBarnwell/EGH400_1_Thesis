@@ -1,10 +1,10 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
--- Date        : Tue Aug 16 14:58:27 2022
+-- Date        : Tue Aug 16 14:58:26 2022
 -- Host        : LAPTOP-M3DNELKA running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               c:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/TW_RAM/TW_RAM_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top TW_RAM -prefix
+--               TW_RAM_ TW_RAM_stub.vhdl
 -- Design      : TW_RAM
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a35ticsg324-1L

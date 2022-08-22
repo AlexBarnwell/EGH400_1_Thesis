@@ -41,8 +41,8 @@ entity DFTBD_RAM is
         CLK : in std_logic;
         RST : in std_logic;
         position : in unsigned(3 downto 0);
-        Bit_stream_value  : in std_logic_vector(15 downto 0); -- all bits from the input buffer to feed into RAM address
-        DFT_RESET : in std_logic
+        Bit_stream_value  : in std_logic_vector(15 downto 0) -- all bits from the input buffer to feed into RAM address
+        --DFT_RESET : in std_logic
     );
 end DFTBD_RAM;
 
