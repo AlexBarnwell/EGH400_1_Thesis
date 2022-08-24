@@ -1,0 +1,10 @@
+counter for all DFT i.e.e to 256 for TW address
+
+counter that increament after each completed DFT in sections of 16 i.ie repeats this is for the DFTBD RAM
+
+and have an autocounter that incremented down each 16 bit election of bits from the input vector
+
+do inout mic 4MHZ for input testing dtermin if flags are working and if the selected 16 bits is updated in same clock cycle as turn on flag
+
+
+for the final real and imag combination use second RAM that store sin values only turns on at end of exectution and in the paused mode to compute the final DFT set to output 

@@ -1,5 +1,0 @@
-put in hard and soft reset DFT_trigger and FFT_trigger
-
-convert to 8bit.8bit for initiall checking
-
-make suer stuff that needs to reset is rest adn stuff that needs to hold holds.

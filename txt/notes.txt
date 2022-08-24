@@ -1,0 +1,14 @@
+ppsigI
+ppsig
+temp
+tempI
+DFTs
+DFTSI
+PP
+coss 
+
+coss2
+
+
+Challenges
+- overflow and subsequent DSP resitrciotnm whilst treying to increase byte size and therfore the restructuring of the bitstream.
