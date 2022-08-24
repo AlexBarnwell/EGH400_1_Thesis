@@ -43,27 +43,34 @@ proc checkRequiredFiles { origin_dir} {
  "[file normalize "$origin_dir/fpga_src/design/Twiddle_factors.vhd"]"\
  "[file normalize "$origin_dir/fpga_src/design/shift_reg_input.vhd"]"\
  "[file normalize "$origin_dir/fpga_src/design/fpga_top.vhd"]"\
+ "[file normalize "$origin_dir/fpga_src/coeff/TW2_values.coe"]"\
+ "[file normalize "$origin_dir/fpga_src/coeff/TW1_values.coe"]"\
+ "[file normalize "$origin_dir/fpga_src/coeff/DFT_values _8I.coe"]"\
+ "[file normalize "$origin_dir/fpga_src/coeff/DFT_values _7I.coe"]"\
+ "[file normalize "$origin_dir/fpga_src/coeff/DFT_values _6I.coe"]"\
+ "[file normalize "$origin_dir/fpga_src/coeff/DFT_values _5I.coe"]"\
+ "[file normalize "$origin_dir/fpga_src/coeff/DFT_values _4I.coe"]"\
+ "[file normalize "$origin_dir/fpga_src/coeff/DFT_values _3I.coe"]"\
+ "[file normalize "$origin_dir/fpga_src/coeff/DFT_values _2I.coe"]"\
+ "[file normalize "$origin_dir/fpga_src/coeff/DFT_values _1I.coe"]"\
+ "[file normalize "$origin_dir/fpga_src/coeff/DFT_values_7.coe"]"\
+ "[file normalize "$origin_dir/fpga_src/coeff/DFT_values_6.coe"]"\
+ "[file normalize "$origin_dir/fpga_src/coeff/DFT_values_5.coe"]"\
+ "[file normalize "$origin_dir/fpga_src/coeff/DFT_values_4.coe"]"\
+ "[file normalize "$origin_dir/fpga_src/coeff/DFT_values_3.coe"]"\
+ "[file normalize "$origin_dir/fpga_src/coeff/DFT_values_8.coe"]"\
+ "[file normalize "$origin_dir/fpga_src/coeff/DFT_values_2.coe"]"\
+ "[file normalize "$origin_dir/fpga_src/coeff/DFT_values_1.coe"]"\
  "[file normalize "$origin_dir/fpga_src/design/Input_handling.vhd"]"\
  "[file normalize "$origin_dir/fpga_src/design/DFTBD_RAMS_I.vhd"]"\
  "[file normalize "$origin_dir/fpga_src/ip/fifo_generator_0/fifo_generator_0.xci"]"\
- "[file normalize "$origin_dir/fpga_src/coeff/DFT_values _1I.coe"]"\
- "[file normalize "$origin_dir/fpga_src/coeff/DFT_values _2I.coe"]"\
- "[file normalize "$origin_dir/fpga_src/coeff/DFT_values _3I.coe"]"\
- "[file normalize "$origin_dir/fpga_src/coeff/DFT_values _4I.coe"]"\
- "[file normalize "$origin_dir/fpga_src/coeff/DFT_values _5I.coe"]"\
- "[file normalize "$origin_dir/fpga_src/coeff/DFT_values _6I.coe"]"\
- "[file normalize "$origin_dir/fpga_src/coeff/DFT_values _7I.coe"]"\
- "[file normalize "$origin_dir/fpga_src/coeff/DFT_values _8I.coe"]"\
- "[file normalize "$origin_dir/fpga_src/coeff/DFT_values_1.coe"]"\
- "[file normalize "$origin_dir/fpga_src/coeff/DFT_values_2.coe"]"\
- "[file normalize "$origin_dir/fpga_src/coeff/DFT_values_8.coe"]"\
- "[file normalize "$origin_dir/fpga_src/coeff/DFT_values_3.coe"]"\
- "[file normalize "$origin_dir/fpga_src/coeff/DFT_values_4.coe"]"\
- "[file normalize "$origin_dir/fpga_src/coeff/DFT_values_5.coe"]"\
- "[file normalize "$origin_dir/fpga_src/coeff/DFT_values_6.coe"]"\
- "[file normalize "$origin_dir/fpga_src/coeff/DFT_values_7.coe"]"\
- "[file normalize "$origin_dir/fpga_src/coeff/TW1_values.coe"]"\
- "[file normalize "$origin_dir/fpga_src/coeff/TW2_values.coe"]"\
+ "[file normalize "$origin_dir/../../fpga_src/coeff/DFT_values _2I.coe"]"\
+ "[file normalize "$origin_dir/fpga_src/simulation/Full_sim.vhd"]"\
+ "[file normalize "$origin_dir/fpga_src/simulation/Twiddle_test.vhd"]"\
+ "[file normalize "$origin_dir/fpga_src/simulation/DFTBD_RAM_TEST.vhd"]"\
+ "[file normalize "$origin_dir/fpga_src/simulation/DSP_test.vhd"]"\
+ "[file normalize "$origin_dir/fpga_src/simulation/RAM_AND_DSP_TEST.vhd"]"\
+ "[file normalize "$origin_dir/fpga_src/simulation/DSP_RAM_Twiddle.vhd"]"\
   ]
   foreach ifile $files {
     if { ![file isfile $ifile] } {
@@ -189,13 +196,14 @@ set_property -name "simulator.xsim_gcc_version" -value "6.2.0" -objects $obj
 set_property -name "simulator.xsim_version" -value "2022.1" -objects $obj
 set_property -name "simulator_language" -value "Mixed" -objects $obj
 set_property -name "target_language" -value "VHDL" -objects $obj
-set_property -name "webtalk.activehdl_export_sim" -value "42" -objects $obj
-set_property -name "webtalk.modelsim_export_sim" -value "42" -objects $obj
-set_property -name "webtalk.questa_export_sim" -value "42" -objects $obj
-set_property -name "webtalk.riviera_export_sim" -value "42" -objects $obj
-set_property -name "webtalk.vcs_export_sim" -value "42" -objects $obj
-set_property -name "webtalk.xsim_export_sim" -value "42" -objects $obj
-set_property -name "webtalk.xsim_launch_sim" -value "8" -objects $obj
+set_property -name "webtalk.activehdl_export_sim" -value "64" -objects $obj
+set_property -name "webtalk.modelsim_export_sim" -value "64" -objects $obj
+set_property -name "webtalk.questa_export_sim" -value "64" -objects $obj
+set_property -name "webtalk.riviera_export_sim" -value "64" -objects $obj
+set_property -name "webtalk.vcs_export_sim" -value "64" -objects $obj
+set_property -name "webtalk.xcelium_export_sim" -value "22" -objects $obj
+set_property -name "webtalk.xsim_export_sim" -value "64" -objects $obj
+set_property -name "webtalk.xsim_launch_sim" -value "9" -objects $obj
 set_property -name "xpm_libraries" -value "XPM_CDC XPM_MEMORY" -objects $obj
 
 # Create 'sources_1' fileset (if not found)
@@ -231,27 +239,28 @@ set files [list \
  [file normalize "${origin_dir}/fpga_src/design/Twiddle_factors.vhd"] \
  [file normalize "${origin_dir}/fpga_src/design/shift_reg_input.vhd"] \
  [file normalize "${origin_dir}/fpga_src/design/fpga_top.vhd"] \
+ [file normalize "${origin_dir}/fpga_src/coeff/TW2_values.coe"] \
+ [file normalize "${origin_dir}/fpga_src/coeff/TW1_values.coe"] \
+ [file normalize "${origin_dir}/fpga_src/coeff/DFT_values _8I.coe"] \
+ [file normalize "${origin_dir}/fpga_src/coeff/DFT_values _7I.coe"] \
+ [file normalize "${origin_dir}/fpga_src/coeff/DFT_values _6I.coe"] \
+ [file normalize "${origin_dir}/fpga_src/coeff/DFT_values _5I.coe"] \
+ [file normalize "${origin_dir}/fpga_src/coeff/DFT_values _4I.coe"] \
+ [file normalize "${origin_dir}/fpga_src/coeff/DFT_values _3I.coe"] \
+ [file normalize "${origin_dir}/fpga_src/coeff/DFT_values _2I.coe"] \
+ [file normalize "${origin_dir}/fpga_src/coeff/DFT_values _1I.coe"] \
+ [file normalize "${origin_dir}/fpga_src/coeff/DFT_values_7.coe"] \
+ [file normalize "${origin_dir}/fpga_src/coeff/DFT_values_6.coe"] \
+ [file normalize "${origin_dir}/fpga_src/coeff/DFT_values_5.coe"] \
+ [file normalize "${origin_dir}/fpga_src/coeff/DFT_values_4.coe"] \
+ [file normalize "${origin_dir}/fpga_src/coeff/DFT_values_3.coe"] \
+ [file normalize "${origin_dir}/fpga_src/coeff/DFT_values_8.coe"] \
+ [file normalize "${origin_dir}/fpga_src/coeff/DFT_values_2.coe"] \
+ [file normalize "${origin_dir}/fpga_src/coeff/DFT_values_1.coe"] \
  [file normalize "${origin_dir}/fpga_src/design/Input_handling.vhd"] \
  [file normalize "${origin_dir}/fpga_src/design/DFTBD_RAMS_I.vhd"] \
  [file normalize "${origin_dir}/fpga_src/ip/fifo_generator_0/fifo_generator_0.xci"] \
- [file normalize "${origin_dir}/fpga_src/coeff/DFT_values _1I.coe"] \
- [file normalize "${origin_dir}/fpga_src/coeff/DFT_values _2I.coe"] \
- [file normalize "${origin_dir}/fpga_src/coeff/DFT_values _3I.coe"] \
- [file normalize "${origin_dir}/fpga_src/coeff/DFT_values _4I.coe"] \
- [file normalize "${origin_dir}/fpga_src/coeff/DFT_values _5I.coe"] \
- [file normalize "${origin_dir}/fpga_src/coeff/DFT_values _6I.coe"] \
- [file normalize "${origin_dir}/fpga_src/coeff/DFT_values _7I.coe"] \
- [file normalize "${origin_dir}/fpga_src/coeff/DFT_values _8I.coe"] \
- [file normalize "${origin_dir}/fpga_src/coeff/DFT_values_1.coe"] \
- [file normalize "${origin_dir}/fpga_src/coeff/DFT_values_2.coe"] \
- [file normalize "${origin_dir}/fpga_src/coeff/DFT_values_8.coe"] \
- [file normalize "${origin_dir}/fpga_src/coeff/DFT_values_3.coe"] \
- [file normalize "${origin_dir}/fpga_src/coeff/DFT_values_4.coe"] \
- [file normalize "${origin_dir}/fpga_src/coeff/DFT_values_5.coe"] \
- [file normalize "${origin_dir}/fpga_src/coeff/DFT_values_6.coe"] \
- [file normalize "${origin_dir}/fpga_src/coeff/DFT_values_7.coe"] \
- [file normalize "${origin_dir}/fpga_src/coeff/TW1_values.coe"] \
- [file normalize "${origin_dir}/fpga_src/coeff/TW2_values.coe"] \
+ [file normalize "${origin_dir}/../../fpga_src/coeff/DFT_values _2I.coe"] \
 ]
 add_files -norecurse -fileset $obj $files
 
@@ -509,11 +518,55 @@ if {[string equal [get_filesets -quiet sim_1] ""]} {
 
 # Set 'sim_1' fileset object
 set obj [get_filesets sim_1]
-# Empty (no sources present)
+set files [list \
+ [file normalize "${origin_dir}/fpga_src/simulation/Full_sim.vhd"] \
+ [file normalize "${origin_dir}/fpga_src/simulation/Twiddle_test.vhd"] \
+ [file normalize "${origin_dir}/fpga_src/simulation/DFTBD_RAM_TEST.vhd"] \
+ [file normalize "${origin_dir}/fpga_src/simulation/DSP_test.vhd"] \
+ [file normalize "${origin_dir}/fpga_src/simulation/RAM_AND_DSP_TEST.vhd"] \
+ [file normalize "${origin_dir}/fpga_src/simulation/DSP_RAM_Twiddle.vhd"] \
+]
+add_files -norecurse -fileset $obj $files
+
+# Set 'sim_1' fileset file properties for remote files
+set file "$origin_dir/fpga_src/simulation/Full_sim.vhd"
+set file [file normalize $file]
+set file_obj [get_files -of_objects [get_filesets sim_1] [list "*$file"]]
+set_property -name "file_type" -value "VHDL" -objects $file_obj
+
+set file "$origin_dir/fpga_src/simulation/Twiddle_test.vhd"
+set file [file normalize $file]
+set file_obj [get_files -of_objects [get_filesets sim_1] [list "*$file"]]
+set_property -name "file_type" -value "VHDL" -objects $file_obj
+
+set file "$origin_dir/fpga_src/simulation/DFTBD_RAM_TEST.vhd"
+set file [file normalize $file]
+set file_obj [get_files -of_objects [get_filesets sim_1] [list "*$file"]]
+set_property -name "file_type" -value "VHDL" -objects $file_obj
+
+set file "$origin_dir/fpga_src/simulation/DSP_test.vhd"
+set file [file normalize $file]
+set file_obj [get_files -of_objects [get_filesets sim_1] [list "*$file"]]
+set_property -name "file_type" -value "VHDL" -objects $file_obj
+
+set file "$origin_dir/fpga_src/simulation/RAM_AND_DSP_TEST.vhd"
+set file [file normalize $file]
+set file_obj [get_files -of_objects [get_filesets sim_1] [list "*$file"]]
+set_property -name "file_type" -value "VHDL" -objects $file_obj
+
+set file "$origin_dir/fpga_src/simulation/DSP_RAM_Twiddle.vhd"
+set file [file normalize $file]
+set file_obj [get_files -of_objects [get_filesets sim_1] [list "*$file"]]
+set_property -name "file_type" -value "VHDL" -objects $file_obj
+
+
+# Set 'sim_1' fileset file properties for local files
+# None
 
 # Set 'sim_1' fileset properties
 set obj [get_filesets sim_1]
-set_property -name "top" -value "fpga_top" -objects $obj
+set_property -name "top" -value "Full_sim" -objects $obj
+set_property -name "top_auto_set" -value "0" -objects $obj
 set_property -name "top_lib" -value "xil_defaultlib" -objects $obj
 
 # Set 'utils_1' fileset object
