@@ -36,25 +36,7 @@ proc checkRequiredFiles { origin_dir} {
  "[file normalize "$origin_dir/fpga_src/design/fpga_top.vhd"]"\
  "[file normalize "$origin_dir/fpga_src/design/Input_handling.vhd"]"\
  "[file normalize "$origin_dir/fpga_src/design/DFTBD_RAMS_I.vhd"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFT_values _1I.coe"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFT_values _8I.coe"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFT_values _5I.coe"]"\
  "[file normalize "$origin_dir/fpga_src/ip/fifo_generator_0/fifo_generator_0.xci"]"\
- "[file normalize "$origin_dir/fpga_src/ip/TW_values.coe"]"\
- "[file normalize "$origin_dir/fpga_src/ip/TW2_values.coe"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFT_values _3I.coe"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFT_values _4I.coe"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFT_values _6I.coe"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFT_values _2I.coe"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFT_values.coe"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFT_values_2.coe"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFT_values_3.coe"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFT_values_4.coe"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFT_values_5.coe"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFT_values_6.coe"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFT_values_7.coe"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFT_values_8.coe"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFT_values _7I.coe"]"\
  "[file normalize "$origin_dir/fpga_src/coeff/DFT_values _1I.coe"]"\
  "[file normalize "$origin_dir/fpga_src/coeff/DFT_values _2I.coe"]"\
  "[file normalize "$origin_dir/fpga_src/coeff/DFT_values _3I.coe"]"\
@@ -228,7 +210,6 @@ set_property -name "webtalk.modelsim_export_sim" -value "40" -objects $obj
 set_property -name "webtalk.questa_export_sim" -value "40" -objects $obj
 set_property -name "webtalk.riviera_export_sim" -value "40" -objects $obj
 set_property -name "webtalk.vcs_export_sim" -value "40" -objects $obj
-set_property -name "webtalk.xcelium_export_sim" -value "40" -objects $obj
 set_property -name "webtalk.xsim_export_sim" -value "40" -objects $obj
 set_property -name "webtalk.xsim_launch_sim" -value "8" -objects $obj
 set_property -name "xpm_libraries" -value "XPM_CDC XPM_MEMORY" -objects $obj
@@ -249,25 +230,7 @@ set files [list \
  [file normalize "${origin_dir}/fpga_src/design/fpga_top.vhd"] \
  [file normalize "${origin_dir}/fpga_src/design/Input_handling.vhd"] \
  [file normalize "${origin_dir}/fpga_src/design/DFTBD_RAMS_I.vhd"] \
- [file normalize "${origin_dir}/fpga_src/ip/DFT_values _1I.coe"] \
- [file normalize "${origin_dir}/fpga_src/ip/DFT_values _8I.coe"] \
- [file normalize "${origin_dir}/fpga_src/ip/DFT_values _5I.coe"] \
  [file normalize "${origin_dir}/fpga_src/ip/fifo_generator_0/fifo_generator_0.xci"] \
- [file normalize "${origin_dir}/fpga_src/ip/TW_values.coe"] \
- [file normalize "${origin_dir}/fpga_src/ip/TW2_values.coe"] \
- [file normalize "${origin_dir}/fpga_src/ip/DFT_values _3I.coe"] \
- [file normalize "${origin_dir}/fpga_src/ip/DFT_values _4I.coe"] \
- [file normalize "${origin_dir}/fpga_src/ip/DFT_values _6I.coe"] \
- [file normalize "${origin_dir}/fpga_src/ip/DFT_values _2I.coe"] \
- [file normalize "${origin_dir}/fpga_src/ip/DFT_values.coe"] \
- [file normalize "${origin_dir}/fpga_src/ip/DFT_values_2.coe"] \
- [file normalize "${origin_dir}/fpga_src/ip/DFT_values_3.coe"] \
- [file normalize "${origin_dir}/fpga_src/ip/DFT_values_4.coe"] \
- [file normalize "${origin_dir}/fpga_src/ip/DFT_values_5.coe"] \
- [file normalize "${origin_dir}/fpga_src/ip/DFT_values_6.coe"] \
- [file normalize "${origin_dir}/fpga_src/ip/DFT_values_7.coe"] \
- [file normalize "${origin_dir}/fpga_src/ip/DFT_values_8.coe"] \
- [file normalize "${origin_dir}/fpga_src/ip/DFT_values _7I.coe"] \
  [file normalize "${origin_dir}/fpga_src/coeff/DFT_values _1I.coe"] \
  [file normalize "${origin_dir}/fpga_src/coeff/DFT_values _2I.coe"] \
  [file normalize "${origin_dir}/fpga_src/coeff/DFT_values _3I.coe"] \
