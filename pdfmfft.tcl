@@ -18,16 +18,25 @@
 proc checkRequiredFiles { origin_dir} {
   set status true
   set files [list \
- "[file normalize "$origin_dir/vivado_project/pdfmfft.srcs/sources_1/ip/DFTBD_MEM2I/DFTBD_MEM2I.xci"]"\
-  ]
-  foreach ifile $files {
-    if { ![file isfile $ifile] } {
-      puts " Could not find local file $ifile "
-      set status false
-    }
-  }
-
-  set files [list \
+ "[file normalize "$origin_dir/fpga_src/ip/TW2_RAM/TW2_RAM.xci"]"\
+ "[file normalize "$origin_dir/fpga_src/ip/TW_RAM/TW_RAM.xci"]"\
+ "[file normalize "$origin_dir/fpga_src/ip/dsp_macro_0/dsp_macro_0.xci"]"\
+ "[file normalize "$origin_dir/fpga_src/ip/DFTBD_MEM8I/DFTBD_MEM8I.xci"]"\
+ "[file normalize "$origin_dir/fpga_src/ip/DFTBD_MEM7I/DFTBD_MEM7I.xci"]"\
+ "[file normalize "$origin_dir/fpga_src/ip/DFTDB_MEM6I/DFTDB_MEM6I.xci"]"\
+ "[file normalize "$origin_dir/fpga_src/ip/DFTBD_MEM5I/DFTBD_MEM5I.xci"]"\
+ "[file normalize "$origin_dir/fpga_src/ip/DFTBD_MEM4I/DFTBD_MEM4I.xci"]"\
+ "[file normalize "$origin_dir/fpga_src/ip/DFTBD_MEM3I/DFTBD_MEM3I.xci"]"\
+ "[file normalize "$origin_dir/fpga_src/ip/DFTBD_MEM2I/DFTBD_MEM2I.xci"]"\
+ "[file normalize "$origin_dir/fpga_src/ip/DFTBD_MEM1I/DFTBD_MEM1I.xci"]"\
+ "[file normalize "$origin_dir/fpga_src/ip/DFTBD_MEM7/DFTBD_MEM7.xci"]"\
+ "[file normalize "$origin_dir/fpga_src/ip/DFTBD_MEM6/DFTBD_MEM6.xci"]"\
+ "[file normalize "$origin_dir/fpga_src/ip/DFTBD_MEM5/DFTBD_MEM5.xci"]"\
+ "[file normalize "$origin_dir/fpga_src/ip/DFTBD_MEM4/DFTBD_MEM4.xci"]"\
+ "[file normalize "$origin_dir/fpga_src/ip/DFTBD_MEM3/DFTBD_MEM3.xci"]"\
+ "[file normalize "$origin_dir/fpga_src/ip/DFTBD_MEM8/DFTBD_MEM8.xci"]"\
+ "[file normalize "$origin_dir/fpga_src/ip/DFTBD_MEM2/DFTBD_MEM2.xci"]"\
+ "[file normalize "$origin_dir/fpga_src/ip/DFTBD_MEM1/DFTBD_MEM1.xci"]"\
  "[file normalize "$origin_dir/fpga_src/ip/clk_wiz_0/clk_wiz_0.xci"]"\
  "[file normalize "$origin_dir/fpga_src/design/DFTBD_RAM.vhd"]"\
  "[file normalize "$origin_dir/fpga_src/design/DFT_loop.vhd"]"\
@@ -55,31 +64,6 @@ proc checkRequiredFiles { origin_dir} {
  "[file normalize "$origin_dir/fpga_src/coeff/DFT_values_7.coe"]"\
  "[file normalize "$origin_dir/fpga_src/coeff/TW1_values.coe"]"\
  "[file normalize "$origin_dir/fpga_src/coeff/TW2_values.coe"]"\
- "[file normalize "$origin_dir/fpga_src/ip/TW2_RAM/TW2_RAM.xci"]"\
- "[file normalize "$origin_dir/fpga_src/ip/TW_RAM/TW_RAM.xci"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFTBD_MEM8I/DFTBD_MEM8I.xci"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFTBD_MEM7I/DFTBD_MEM7I.xci"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFTDB_MEM6I/DFTDB_MEM6I.xci"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFTBD_MEM5I/DFTBD_MEM5I.xci"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFTBD_MEM4I/DFTBD_MEM4I.xci"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFTBD_MEM3I/DFTBD_MEM3I.xci"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFTBD_MEM1I/DFTBD_MEM1I.xci"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFTBD_MEM7/DFTBD_MEM7.xci"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFTBD_MEM6/DFTBD_MEM6.xci"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFTBD_MEM5/DFTBD_MEM5.xci"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFTBD_MEM4/DFTBD_MEM4.xci"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFTBD_MEM3/DFTBD_MEM3.xci"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFTBD_MEM8/DFTBD_MEM8.xci"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFTBD_MEM2/DFTBD_MEM2.xci"]"\
- "[file normalize "$origin_dir/fpga_src/ip/DFTBD_MEM1/DFTBD_MEM1.xci"]"\
- "[file normalize "$origin_dir/fpga_src/ip/dsp_macro_0/dsp_macro_0.xci"]"\
- "[file normalize "$origin_dir/fpga_src/simulation/Full_sim.vhd"]"\
- "[file normalize "$origin_dir/fpga_src/simulation/Twiddle_test.vhd"]"\
- "[file normalize "$origin_dir/fpga_src/simulation/DFTBD_RAM_TEST.vhd"]"\
- "[file normalize "$origin_dir/fpga_src/simulation/DSP_test.vhd"]"\
- "[file normalize "$origin_dir/fpga_src/simulation/RAM_AND_DSP_TEST.vhd"]"\
- "[file normalize "$origin_dir/fpga_src/simulation/DSP_RAM_Twiddle.vhd"]"\
- "[file normalize "$origin_dir/fpga_src/waveform/Full_sim_behav.wcfg"]"\
   ]
   foreach ifile $files {
     if { ![file isfile $ifile] } {
@@ -205,12 +189,12 @@ set_property -name "simulator.xsim_gcc_version" -value "6.2.0" -objects $obj
 set_property -name "simulator.xsim_version" -value "2022.1" -objects $obj
 set_property -name "simulator_language" -value "Mixed" -objects $obj
 set_property -name "target_language" -value "VHDL" -objects $obj
-set_property -name "webtalk.activehdl_export_sim" -value "40" -objects $obj
-set_property -name "webtalk.modelsim_export_sim" -value "40" -objects $obj
-set_property -name "webtalk.questa_export_sim" -value "40" -objects $obj
-set_property -name "webtalk.riviera_export_sim" -value "40" -objects $obj
-set_property -name "webtalk.vcs_export_sim" -value "40" -objects $obj
-set_property -name "webtalk.xsim_export_sim" -value "40" -objects $obj
+set_property -name "webtalk.activehdl_export_sim" -value "42" -objects $obj
+set_property -name "webtalk.modelsim_export_sim" -value "42" -objects $obj
+set_property -name "webtalk.questa_export_sim" -value "42" -objects $obj
+set_property -name "webtalk.riviera_export_sim" -value "42" -objects $obj
+set_property -name "webtalk.vcs_export_sim" -value "42" -objects $obj
+set_property -name "webtalk.xsim_export_sim" -value "42" -objects $obj
 set_property -name "webtalk.xsim_launch_sim" -value "8" -objects $obj
 set_property -name "xpm_libraries" -value "XPM_CDC XPM_MEMORY" -objects $obj
 
@@ -222,6 +206,25 @@ if {[string equal [get_filesets -quiet sources_1] ""]} {
 # Set 'sources_1' fileset object
 set obj [get_filesets sources_1]
 set files [list \
+ [file normalize "${origin_dir}/fpga_src/ip/TW2_RAM/TW2_RAM.xci"] \
+ [file normalize "${origin_dir}/fpga_src/ip/TW_RAM/TW_RAM.xci"] \
+ [file normalize "${origin_dir}/fpga_src/ip/dsp_macro_0/dsp_macro_0.xci"] \
+ [file normalize "${origin_dir}/fpga_src/ip/DFTBD_MEM8I/DFTBD_MEM8I.xci"] \
+ [file normalize "${origin_dir}/fpga_src/ip/DFTBD_MEM7I/DFTBD_MEM7I.xci"] \
+ [file normalize "${origin_dir}/fpga_src/ip/DFTDB_MEM6I/DFTDB_MEM6I.xci"] \
+ [file normalize "${origin_dir}/fpga_src/ip/DFTBD_MEM5I/DFTBD_MEM5I.xci"] \
+ [file normalize "${origin_dir}/fpga_src/ip/DFTBD_MEM4I/DFTBD_MEM4I.xci"] \
+ [file normalize "${origin_dir}/fpga_src/ip/DFTBD_MEM3I/DFTBD_MEM3I.xci"] \
+ [file normalize "${origin_dir}/fpga_src/ip/DFTBD_MEM2I/DFTBD_MEM2I.xci"] \
+ [file normalize "${origin_dir}/fpga_src/ip/DFTBD_MEM1I/DFTBD_MEM1I.xci"] \
+ [file normalize "${origin_dir}/fpga_src/ip/DFTBD_MEM7/DFTBD_MEM7.xci"] \
+ [file normalize "${origin_dir}/fpga_src/ip/DFTBD_MEM6/DFTBD_MEM6.xci"] \
+ [file normalize "${origin_dir}/fpga_src/ip/DFTBD_MEM5/DFTBD_MEM5.xci"] \
+ [file normalize "${origin_dir}/fpga_src/ip/DFTBD_MEM4/DFTBD_MEM4.xci"] \
+ [file normalize "${origin_dir}/fpga_src/ip/DFTBD_MEM3/DFTBD_MEM3.xci"] \
+ [file normalize "${origin_dir}/fpga_src/ip/DFTBD_MEM8/DFTBD_MEM8.xci"] \
+ [file normalize "${origin_dir}/fpga_src/ip/DFTBD_MEM2/DFTBD_MEM2.xci"] \
+ [file normalize "${origin_dir}/fpga_src/ip/DFTBD_MEM1/DFTBD_MEM1.xci"] \
  [file normalize "${origin_dir}/fpga_src/ip/clk_wiz_0/clk_wiz_0.xci"] \
  [file normalize "${origin_dir}/fpga_src/design/DFTBD_RAM.vhd"] \
  [file normalize "${origin_dir}/fpga_src/design/DFT_loop.vhd"] \
@@ -253,6 +256,177 @@ set files [list \
 add_files -norecurse -fileset $obj $files
 
 # Set 'sources_1' fileset file properties for remote files
+set file "$origin_dir/fpga_src/ip/TW2_RAM/TW2_RAM.xci"
+set file [file normalize $file]
+set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
+set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
+set_property -name "registered_with_manager" -value "1" -objects $file_obj
+if { ![get_property "is_locked" $file_obj] } {
+  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
+}
+
+set file "$origin_dir/fpga_src/ip/TW_RAM/TW_RAM.xci"
+set file [file normalize $file]
+set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
+set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
+set_property -name "registered_with_manager" -value "1" -objects $file_obj
+if { ![get_property "is_locked" $file_obj] } {
+  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
+}
+
+set file "$origin_dir/fpga_src/ip/dsp_macro_0/dsp_macro_0.xci"
+set file [file normalize $file]
+set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
+set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
+set_property -name "registered_with_manager" -value "1" -objects $file_obj
+if { ![get_property "is_locked" $file_obj] } {
+  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
+}
+
+set file "$origin_dir/fpga_src/ip/DFTBD_MEM8I/DFTBD_MEM8I.xci"
+set file [file normalize $file]
+set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
+set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
+set_property -name "registered_with_manager" -value "1" -objects $file_obj
+if { ![get_property "is_locked" $file_obj] } {
+  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
+}
+
+set file "$origin_dir/fpga_src/ip/DFTBD_MEM7I/DFTBD_MEM7I.xci"
+set file [file normalize $file]
+set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
+set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
+set_property -name "registered_with_manager" -value "1" -objects $file_obj
+if { ![get_property "is_locked" $file_obj] } {
+  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
+}
+
+set file "$origin_dir/fpga_src/ip/DFTDB_MEM6I/DFTDB_MEM6I.xci"
+set file [file normalize $file]
+set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
+set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
+set_property -name "registered_with_manager" -value "1" -objects $file_obj
+if { ![get_property "is_locked" $file_obj] } {
+  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
+}
+
+set file "$origin_dir/fpga_src/ip/DFTBD_MEM5I/DFTBD_MEM5I.xci"
+set file [file normalize $file]
+set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
+set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
+set_property -name "registered_with_manager" -value "1" -objects $file_obj
+if { ![get_property "is_locked" $file_obj] } {
+  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
+}
+
+set file "$origin_dir/fpga_src/ip/DFTBD_MEM4I/DFTBD_MEM4I.xci"
+set file [file normalize $file]
+set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
+set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
+set_property -name "registered_with_manager" -value "1" -objects $file_obj
+if { ![get_property "is_locked" $file_obj] } {
+  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
+}
+
+set file "$origin_dir/fpga_src/ip/DFTBD_MEM3I/DFTBD_MEM3I.xci"
+set file [file normalize $file]
+set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
+set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
+set_property -name "registered_with_manager" -value "1" -objects $file_obj
+if { ![get_property "is_locked" $file_obj] } {
+  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
+}
+
+set file "$origin_dir/fpga_src/ip/DFTBD_MEM2I/DFTBD_MEM2I.xci"
+set file [file normalize $file]
+set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
+set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
+set_property -name "registered_with_manager" -value "1" -objects $file_obj
+if { ![get_property "is_locked" $file_obj] } {
+  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
+}
+
+set file "$origin_dir/fpga_src/ip/DFTBD_MEM1I/DFTBD_MEM1I.xci"
+set file [file normalize $file]
+set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
+set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
+set_property -name "registered_with_manager" -value "1" -objects $file_obj
+if { ![get_property "is_locked" $file_obj] } {
+  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
+}
+
+set file "$origin_dir/fpga_src/ip/DFTBD_MEM7/DFTBD_MEM7.xci"
+set file [file normalize $file]
+set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
+set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
+set_property -name "registered_with_manager" -value "1" -objects $file_obj
+if { ![get_property "is_locked" $file_obj] } {
+  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
+}
+
+set file "$origin_dir/fpga_src/ip/DFTBD_MEM6/DFTBD_MEM6.xci"
+set file [file normalize $file]
+set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
+set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
+set_property -name "registered_with_manager" -value "1" -objects $file_obj
+if { ![get_property "is_locked" $file_obj] } {
+  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
+}
+
+set file "$origin_dir/fpga_src/ip/DFTBD_MEM5/DFTBD_MEM5.xci"
+set file [file normalize $file]
+set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
+set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
+set_property -name "registered_with_manager" -value "1" -objects $file_obj
+if { ![get_property "is_locked" $file_obj] } {
+  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
+}
+
+set file "$origin_dir/fpga_src/ip/DFTBD_MEM4/DFTBD_MEM4.xci"
+set file [file normalize $file]
+set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
+set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
+set_property -name "registered_with_manager" -value "1" -objects $file_obj
+if { ![get_property "is_locked" $file_obj] } {
+  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
+}
+
+set file "$origin_dir/fpga_src/ip/DFTBD_MEM3/DFTBD_MEM3.xci"
+set file [file normalize $file]
+set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
+set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
+set_property -name "registered_with_manager" -value "1" -objects $file_obj
+if { ![get_property "is_locked" $file_obj] } {
+  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
+}
+
+set file "$origin_dir/fpga_src/ip/DFTBD_MEM8/DFTBD_MEM8.xci"
+set file [file normalize $file]
+set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
+set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
+set_property -name "registered_with_manager" -value "1" -objects $file_obj
+if { ![get_property "is_locked" $file_obj] } {
+  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
+}
+
+set file "$origin_dir/fpga_src/ip/DFTBD_MEM2/DFTBD_MEM2.xci"
+set file [file normalize $file]
+set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
+set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
+set_property -name "registered_with_manager" -value "1" -objects $file_obj
+if { ![get_property "is_locked" $file_obj] } {
+  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
+}
+
+set file "$origin_dir/fpga_src/ip/DFTBD_MEM1/DFTBD_MEM1.xci"
+set file [file normalize $file]
+set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
+set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
+set_property -name "registered_with_manager" -value "1" -objects $file_obj
+if { ![get_property "is_locked" $file_obj] } {
+  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
+}
+
 set file "$origin_dir/fpga_src/ip/clk_wiz_0/clk_wiz_0.xci"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
@@ -313,405 +487,7 @@ if { ![get_property "is_locked" $file_obj] } {
 # Set 'sources_1' fileset properties
 set obj [get_filesets sources_1]
 set_property -name "top" -value "fpga_top" -objects $obj
-
-# Set 'sources_1' fileset object
-set obj [get_filesets sources_1]
-set files [list \
- [file normalize "${origin_dir}/fpga_src/ip/TW2_RAM/TW2_RAM.xci"] \
-]
-add_files -norecurse -fileset $obj $files
-
-# Set 'sources_1' fileset file properties for remote files
-set file "$origin_dir/fpga_src/ip/TW2_RAM/TW2_RAM.xci"
-set file [file normalize $file]
-set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
-set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
-set_property -name "registered_with_manager" -value "1" -objects $file_obj
-if { ![get_property "is_locked" $file_obj] } {
-  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
-}
-
-
-# Set 'sources_1' fileset file properties for local files
-# None
-
-# Set 'sources_1' fileset object
-set obj [get_filesets sources_1]
-set files [list \
- [file normalize "${origin_dir}/fpga_src/ip/TW_RAM/TW_RAM.xci"] \
-]
-add_files -norecurse -fileset $obj $files
-
-# Set 'sources_1' fileset file properties for remote files
-set file "$origin_dir/fpga_src/ip/TW_RAM/TW_RAM.xci"
-set file [file normalize $file]
-set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
-set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
-set_property -name "registered_with_manager" -value "1" -objects $file_obj
-if { ![get_property "is_locked" $file_obj] } {
-  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
-}
-
-
-# Set 'sources_1' fileset file properties for local files
-# None
-
-# Set 'sources_1' fileset object
-set obj [get_filesets sources_1]
-set files [list \
- [file normalize "${origin_dir}/fpga_src/ip/DFTBD_MEM8I/DFTBD_MEM8I.xci"] \
-]
-add_files -norecurse -fileset $obj $files
-
-# Set 'sources_1' fileset file properties for remote files
-set file "$origin_dir/fpga_src/ip/DFTBD_MEM8I/DFTBD_MEM8I.xci"
-set file [file normalize $file]
-set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
-set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
-set_property -name "registered_with_manager" -value "1" -objects $file_obj
-if { ![get_property "is_locked" $file_obj] } {
-  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
-}
-
-
-# Set 'sources_1' fileset file properties for local files
-# None
-
-# Set 'sources_1' fileset object
-set obj [get_filesets sources_1]
-set files [list \
- [file normalize "${origin_dir}/fpga_src/ip/DFTBD_MEM7I/DFTBD_MEM7I.xci"] \
-]
-add_files -norecurse -fileset $obj $files
-
-# Set 'sources_1' fileset file properties for remote files
-set file "$origin_dir/fpga_src/ip/DFTBD_MEM7I/DFTBD_MEM7I.xci"
-set file [file normalize $file]
-set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
-set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
-set_property -name "registered_with_manager" -value "1" -objects $file_obj
-if { ![get_property "is_locked" $file_obj] } {
-  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
-}
-
-
-# Set 'sources_1' fileset file properties for local files
-# None
-
-# Set 'sources_1' fileset object
-set obj [get_filesets sources_1]
-set files [list \
- [file normalize "${origin_dir}/fpga_src/ip/DFTDB_MEM6I/DFTDB_MEM6I.xci"] \
-]
-add_files -norecurse -fileset $obj $files
-
-# Set 'sources_1' fileset file properties for remote files
-set file "$origin_dir/fpga_src/ip/DFTDB_MEM6I/DFTDB_MEM6I.xci"
-set file [file normalize $file]
-set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
-set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
-set_property -name "registered_with_manager" -value "1" -objects $file_obj
-if { ![get_property "is_locked" $file_obj] } {
-  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
-}
-
-
-# Set 'sources_1' fileset file properties for local files
-# None
-
-# Set 'sources_1' fileset object
-set obj [get_filesets sources_1]
-set files [list \
- [file normalize "${origin_dir}/fpga_src/ip/DFTBD_MEM5I/DFTBD_MEM5I.xci"] \
-]
-add_files -norecurse -fileset $obj $files
-
-# Set 'sources_1' fileset file properties for remote files
-set file "$origin_dir/fpga_src/ip/DFTBD_MEM5I/DFTBD_MEM5I.xci"
-set file [file normalize $file]
-set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
-set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
-set_property -name "registered_with_manager" -value "1" -objects $file_obj
-if { ![get_property "is_locked" $file_obj] } {
-  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
-}
-
-
-# Set 'sources_1' fileset file properties for local files
-# None
-
-# Set 'sources_1' fileset object
-set obj [get_filesets sources_1]
-set files [list \
- [file normalize "${origin_dir}/fpga_src/ip/DFTBD_MEM4I/DFTBD_MEM4I.xci"] \
-]
-add_files -norecurse -fileset $obj $files
-
-# Set 'sources_1' fileset file properties for remote files
-set file "$origin_dir/fpga_src/ip/DFTBD_MEM4I/DFTBD_MEM4I.xci"
-set file [file normalize $file]
-set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
-set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
-set_property -name "registered_with_manager" -value "1" -objects $file_obj
-if { ![get_property "is_locked" $file_obj] } {
-  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
-}
-
-
-# Set 'sources_1' fileset file properties for local files
-# None
-
-# Set 'sources_1' fileset object
-set obj [get_filesets sources_1]
-set files [list \
- [file normalize "${origin_dir}/fpga_src/ip/DFTBD_MEM3I/DFTBD_MEM3I.xci"] \
-]
-add_files -norecurse -fileset $obj $files
-
-# Set 'sources_1' fileset file properties for remote files
-set file "$origin_dir/fpga_src/ip/DFTBD_MEM3I/DFTBD_MEM3I.xci"
-set file [file normalize $file]
-set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
-set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
-set_property -name "registered_with_manager" -value "1" -objects $file_obj
-if { ![get_property "is_locked" $file_obj] } {
-  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
-}
-
-
-# Set 'sources_1' fileset file properties for local files
-# None
-
-# Set 'sources_1' fileset object
-set obj [get_filesets sources_1]
-set files [list \
- [file normalize "${origin_dir}/fpga_src/ip/DFTBD_MEM1I/DFTBD_MEM1I.xci"] \
-]
-add_files -norecurse -fileset $obj $files
-
-# Set 'sources_1' fileset file properties for remote files
-set file "$origin_dir/fpga_src/ip/DFTBD_MEM1I/DFTBD_MEM1I.xci"
-set file [file normalize $file]
-set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
-set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
-set_property -name "registered_with_manager" -value "1" -objects $file_obj
-if { ![get_property "is_locked" $file_obj] } {
-  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
-}
-
-
-# Set 'sources_1' fileset file properties for local files
-# None
-
-# Set 'sources_1' fileset object
-set obj [get_filesets sources_1]
-set files [list \
- [file normalize "${origin_dir}/fpga_src/ip/DFTBD_MEM7/DFTBD_MEM7.xci"] \
-]
-add_files -norecurse -fileset $obj $files
-
-# Set 'sources_1' fileset file properties for remote files
-set file "$origin_dir/fpga_src/ip/DFTBD_MEM7/DFTBD_MEM7.xci"
-set file [file normalize $file]
-set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
-set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
-set_property -name "registered_with_manager" -value "1" -objects $file_obj
-if { ![get_property "is_locked" $file_obj] } {
-  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
-}
-
-
-# Set 'sources_1' fileset file properties for local files
-# None
-
-# Set 'sources_1' fileset object
-set obj [get_filesets sources_1]
-set files [list \
- [file normalize "${origin_dir}/fpga_src/ip/DFTBD_MEM6/DFTBD_MEM6.xci"] \
-]
-add_files -norecurse -fileset $obj $files
-
-# Set 'sources_1' fileset file properties for remote files
-set file "$origin_dir/fpga_src/ip/DFTBD_MEM6/DFTBD_MEM6.xci"
-set file [file normalize $file]
-set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
-set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
-set_property -name "registered_with_manager" -value "1" -objects $file_obj
-if { ![get_property "is_locked" $file_obj] } {
-  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
-}
-
-
-# Set 'sources_1' fileset file properties for local files
-# None
-
-# Set 'sources_1' fileset object
-set obj [get_filesets sources_1]
-set files [list \
- [file normalize "${origin_dir}/fpga_src/ip/DFTBD_MEM5/DFTBD_MEM5.xci"] \
-]
-add_files -norecurse -fileset $obj $files
-
-# Set 'sources_1' fileset file properties for remote files
-set file "$origin_dir/fpga_src/ip/DFTBD_MEM5/DFTBD_MEM5.xci"
-set file [file normalize $file]
-set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
-set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
-set_property -name "registered_with_manager" -value "1" -objects $file_obj
-if { ![get_property "is_locked" $file_obj] } {
-  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
-}
-
-
-# Set 'sources_1' fileset file properties for local files
-# None
-
-# Set 'sources_1' fileset object
-set obj [get_filesets sources_1]
-set files [list \
- [file normalize "${origin_dir}/fpga_src/ip/DFTBD_MEM4/DFTBD_MEM4.xci"] \
-]
-add_files -norecurse -fileset $obj $files
-
-# Set 'sources_1' fileset file properties for remote files
-set file "$origin_dir/fpga_src/ip/DFTBD_MEM4/DFTBD_MEM4.xci"
-set file [file normalize $file]
-set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
-set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
-set_property -name "registered_with_manager" -value "1" -objects $file_obj
-if { ![get_property "is_locked" $file_obj] } {
-  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
-}
-
-
-# Set 'sources_1' fileset file properties for local files
-# None
-
-# Set 'sources_1' fileset object
-set obj [get_filesets sources_1]
-set files [list \
- [file normalize "${origin_dir}/fpga_src/ip/DFTBD_MEM3/DFTBD_MEM3.xci"] \
-]
-add_files -norecurse -fileset $obj $files
-
-# Set 'sources_1' fileset file properties for remote files
-set file "$origin_dir/fpga_src/ip/DFTBD_MEM3/DFTBD_MEM3.xci"
-set file [file normalize $file]
-set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
-set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
-set_property -name "registered_with_manager" -value "1" -objects $file_obj
-if { ![get_property "is_locked" $file_obj] } {
-  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
-}
-
-
-# Set 'sources_1' fileset file properties for local files
-# None
-
-# Set 'sources_1' fileset object
-set obj [get_filesets sources_1]
-set files [list \
- [file normalize "${origin_dir}/fpga_src/ip/DFTBD_MEM8/DFTBD_MEM8.xci"] \
-]
-add_files -norecurse -fileset $obj $files
-
-# Set 'sources_1' fileset file properties for remote files
-set file "$origin_dir/fpga_src/ip/DFTBD_MEM8/DFTBD_MEM8.xci"
-set file [file normalize $file]
-set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
-set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
-set_property -name "registered_with_manager" -value "1" -objects $file_obj
-if { ![get_property "is_locked" $file_obj] } {
-  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
-}
-
-
-# Set 'sources_1' fileset file properties for local files
-# None
-
-# Set 'sources_1' fileset object
-set obj [get_filesets sources_1]
-set files [list \
- [file normalize "${origin_dir}/fpga_src/ip/DFTBD_MEM2/DFTBD_MEM2.xci"] \
-]
-add_files -norecurse -fileset $obj $files
-
-# Set 'sources_1' fileset file properties for remote files
-set file "$origin_dir/fpga_src/ip/DFTBD_MEM2/DFTBD_MEM2.xci"
-set file [file normalize $file]
-set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
-set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
-set_property -name "registered_with_manager" -value "1" -objects $file_obj
-if { ![get_property "is_locked" $file_obj] } {
-  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
-}
-
-
-# Set 'sources_1' fileset file properties for local files
-# None
-
-# Set 'sources_1' fileset object
-set obj [get_filesets sources_1]
-set files [list \
- [file normalize "${origin_dir}/fpga_src/ip/DFTBD_MEM1/DFTBD_MEM1.xci"] \
-]
-add_files -norecurse -fileset $obj $files
-
-# Set 'sources_1' fileset file properties for remote files
-set file "$origin_dir/fpga_src/ip/DFTBD_MEM1/DFTBD_MEM1.xci"
-set file [file normalize $file]
-set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
-set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
-set_property -name "registered_with_manager" -value "1" -objects $file_obj
-if { ![get_property "is_locked" $file_obj] } {
-  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
-}
-
-
-# Set 'sources_1' fileset file properties for local files
-# None
-
-# Set 'sources_1' fileset object
-set obj [get_filesets sources_1]
-set files [list \
- [file normalize "${origin_dir}/fpga_src/ip/dsp_macro_0/dsp_macro_0.xci"] \
-]
-add_files -norecurse -fileset $obj $files
-
-# Set 'sources_1' fileset file properties for remote files
-set file "$origin_dir/fpga_src/ip/dsp_macro_0/dsp_macro_0.xci"
-set file [file normalize $file]
-set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
-set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
-set_property -name "registered_with_manager" -value "1" -objects $file_obj
-if { ![get_property "is_locked" $file_obj] } {
-  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
-}
-
-
-# Set 'sources_1' fileset file properties for local files
-# None
-
-# Set 'sources_1' fileset object
-set obj [get_filesets sources_1]
-# Add local files from the original project (-no_copy_sources specified)
-set files [list \
- [file normalize "${origin_dir}/vivado_project/pdfmfft.srcs/sources_1/ip/DFTBD_MEM2I/DFTBD_MEM2I.xci" ]\
-]
-set added_files [add_files -fileset sources_1 $files]
-
-# Set 'sources_1' fileset file properties for remote files
-# None
-
-# Set 'sources_1' fileset file properties for local files
-set file "DFTBD_MEM2I/DFTBD_MEM2I.xci"
-set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
-set_property -name "generate_files_for_reference" -value "0" -objects $file_obj
-set_property -name "registered_with_manager" -value "1" -objects $file_obj
-if { ![get_property "is_locked" $file_obj] } {
-  set_property -name "synth_checkpoint_mode" -value "Singular" -objects $file_obj
-}
-
+set_property -name "top_auto_set" -value "0" -objects $obj
 
 # Create 'constrs_1' fileset (if not found)
 if {[string equal [get_filesets -quiet constrs_1] ""]} {
@@ -733,58 +509,12 @@ if {[string equal [get_filesets -quiet sim_1] ""]} {
 
 # Set 'sim_1' fileset object
 set obj [get_filesets sim_1]
-set files [list \
- [file normalize "${origin_dir}/fpga_src/simulation/Full_sim.vhd"] \
- [file normalize "${origin_dir}/fpga_src/simulation/Twiddle_test.vhd"] \
- [file normalize "${origin_dir}/fpga_src/simulation/DFTBD_RAM_TEST.vhd"] \
- [file normalize "${origin_dir}/fpga_src/simulation/DSP_test.vhd"] \
- [file normalize "${origin_dir}/fpga_src/simulation/RAM_AND_DSP_TEST.vhd"] \
- [file normalize "${origin_dir}/fpga_src/simulation/DSP_RAM_Twiddle.vhd"] \
- [file normalize "${origin_dir}/fpga_src/waveform/Full_sim_behav.wcfg"] \
-]
-add_files -norecurse -fileset $obj $files
-
-# Set 'sim_1' fileset file properties for remote files
-set file "$origin_dir/fpga_src/simulation/Full_sim.vhd"
-set file [file normalize $file]
-set file_obj [get_files -of_objects [get_filesets sim_1] [list "*$file"]]
-set_property -name "file_type" -value "VHDL" -objects $file_obj
-
-set file "$origin_dir/fpga_src/simulation/Twiddle_test.vhd"
-set file [file normalize $file]
-set file_obj [get_files -of_objects [get_filesets sim_1] [list "*$file"]]
-set_property -name "file_type" -value "VHDL" -objects $file_obj
-
-set file "$origin_dir/fpga_src/simulation/DFTBD_RAM_TEST.vhd"
-set file [file normalize $file]
-set file_obj [get_files -of_objects [get_filesets sim_1] [list "*$file"]]
-set_property -name "file_type" -value "VHDL" -objects $file_obj
-
-set file "$origin_dir/fpga_src/simulation/DSP_test.vhd"
-set file [file normalize $file]
-set file_obj [get_files -of_objects [get_filesets sim_1] [list "*$file"]]
-set_property -name "file_type" -value "VHDL" -objects $file_obj
-
-set file "$origin_dir/fpga_src/simulation/RAM_AND_DSP_TEST.vhd"
-set file [file normalize $file]
-set file_obj [get_files -of_objects [get_filesets sim_1] [list "*$file"]]
-set_property -name "file_type" -value "VHDL" -objects $file_obj
-
-set file "$origin_dir/fpga_src/simulation/DSP_RAM_Twiddle.vhd"
-set file [file normalize $file]
-set file_obj [get_files -of_objects [get_filesets sim_1] [list "*$file"]]
-set_property -name "file_type" -value "VHDL" -objects $file_obj
-
-
-# Set 'sim_1' fileset file properties for local files
-# None
+# Empty (no sources present)
 
 # Set 'sim_1' fileset properties
 set obj [get_filesets sim_1]
-set_property -name "top" -value "Full_sim" -objects $obj
-set_property -name "top_auto_set" -value "0" -objects $obj
+set_property -name "top" -value "fpga_top" -objects $obj
 set_property -name "top_lib" -value "xil_defaultlib" -objects $obj
-set_property -name "xsim.simulate.runtime" -value "10000ns" -objects $obj
 
 # Set 'utils_1' fileset object
 set obj [get_filesets utils_1]
@@ -820,6 +550,7 @@ if { $obj != "" } {
 }
 set obj [get_runs synth_1]
 set_property -name "auto_incremental_checkpoint" -value "1" -objects $obj
+set_property -name "auto_incremental_checkpoint.directory" -value "C:/FPGA/projects/egh400_test/vivado_project/pdfmfft.srcs/utils_1/imports/synth_1" -objects $obj
 set_property -name "strategy" -value "Vivado Synthesis Defaults" -objects $obj
 
 # set the current synth run
@@ -1041,6 +772,8 @@ set_property -name "options.warn_on_violation" -value "1" -objects $obj
 
 }
 set obj [get_runs impl_1]
+set_property -name "auto_rqs.directory" -value "C:/FPGA/projects/egh400_test/vivado_project/pdfmfft.srcs/utils_1/imports/impl_1" -objects $obj
+set_property -name "auto_incremental_checkpoint.directory" -value "C:/FPGA/projects/egh400_test/vivado_project/pdfmfft.srcs/utils_1/imports/impl_1" -objects $obj
 set_property -name "strategy" -value "Vivado Implementation Defaults" -objects $obj
 set_property -name "steps.write_bitstream.args.readback_file" -value "0" -objects $obj
 set_property -name "steps.write_bitstream.args.verbose" -value "0" -objects $obj
