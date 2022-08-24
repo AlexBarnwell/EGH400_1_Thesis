@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="4.922 ns"></ZoomStartTime>
-      <ZoomEndTime time="4,349.923 ns"></ZoomEndTime>
+      <ZoomStartTime time="96.720 ns"></ZoomStartTime>
+      <ZoomEndTime time="969.721 ns"></ZoomEndTime>
       <Cursor1Time time="864.922 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="104"></NameColumnWidth>
+      <NameColumnWidth column_width="100"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="35" />
+   <WVObjectSize size="31" />
    <wvobject fp_name="/Full_sim/CLK" type="logic">
       <obj_property name="ElementShortName">CLK</obj_property>
       <obj_property name="ObjectShortName">CLK</obj_property>
@@ -59,17 +59,6 @@
       <obj_property name="ObjectShortName">DFTin[15:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/Full_sim/PP" type="array">
-      <obj_property name="ElementShortName">PP[17:0]</obj_property>
-      <obj_property name="ObjectShortName">PP[17:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Full_sim/PPI" type="array">
-      <obj_property name="ElementShortName">PPI[17:0]</obj_property>
-      <obj_property name="ObjectShortName">PPI[17:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-   </wvobject>
    <wvobject fp_name="/Full_sim/orders" type="other">
       <obj_property name="ElementShortName">orders</obj_property>
       <obj_property name="ObjectShortName">orders</obj_property>
@@ -81,10 +70,6 @@
    <wvobject fp_name="/Full_sim/FFT_RESET" type="logic">
       <obj_property name="ElementShortName">FFT_RESET</obj_property>
       <obj_property name="ObjectShortName">FFT_RESET</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Full_sim/overflow" type="other">
-      <obj_property name="ElementShortName">overflow</obj_property>
-      <obj_property name="ObjectShortName">overflow</obj_property>
    </wvobject>
    <wvobject fp_name="/Full_sim/FFT_outR" type="array">
       <obj_property name="ElementShortName">FFT_outR[35:0]</obj_property>
@@ -198,9 +183,5 @@
    <wvobject fp_name="/Full_sim/count_check" type="other">
       <obj_property name="ElementShortName">count_check</obj_property>
       <obj_property name="ObjectShortName">count_check</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Full_sim/count_in" type="array">
-      <obj_property name="ElementShortName">count_in[5:0]</obj_property>
-      <obj_property name="ObjectShortName">count_in[5:0]</obj_property>
    </wvobject>
 </wave_config>

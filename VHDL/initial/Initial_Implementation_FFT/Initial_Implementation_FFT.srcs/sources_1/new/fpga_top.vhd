@@ -33,8 +33,6 @@ generic (
         clk_100M  : in  STD_LOGIC;
        -- reset_n   : in  STD_LOGIC;
         rst      : in  STD_LOGIC;
-       -- FFT_outR : out std_logic_vector; 
-       -- FFT_outI : out std_logic_vector ;
         outR : out STD_LOGIC_VECTOR   (G_DATA_WIDTH*2-1 downto 0 ); -- outputs of the FFT
         outI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH*2-1 downto 0 );
         order_I : out integer ;
@@ -71,11 +69,8 @@ component  DFT_loop is
         DFTinI : in std_logic_vector (15 downto 0);
         TWin : in std_logic_vector (15 downto 0);  -- cos
         TWin2 : in std_logic_vector (15 downto 0); -- sin
-        PP : out STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );
-        PPI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );
         nRst : in std_logic;
         Clk : in std_logic;
-        count : out  unsigned(4 downto 0);
         -- SCLR : in  std_logic;
         FFT_RESETs : out std_logic;  -- triggers hard reset (reset to 0 on most operations)
         DFT_RESETs : out std_logic;  -- trggers soft reset (pause on most operations)
@@ -86,8 +81,7 @@ component  DFT_loop is
         orders : out integer;
         ordersI : out integer;
        -- position : out unsigned(3 downto 0));
-        FFT_ready : in std_logic;
-        overflow : out integer);
+        FFT_ready : in std_logic);
     -- PCOUT : out std_logic_vector (47 downto 0));
     -- PCOUT : out std_logic_vector (47 downto 0));
 
@@ -132,11 +126,9 @@ component  shift_reg_input is
        -- Data_ready : out std_logic; 
         --read_en : in std_logic;
         MCLK : in std_logic;
-        buffer_out : out std_logic_vector(255 downto 0);
         byte_out : out std_logic_vector(15 downto 0); -- reorderd byte for DFTBD RAMS as input
         byte_select : out unsigned(3 downto 0); -- the counter/ byte_select for the RAM
-        byte_select_full : out unsigned(7 downto 0);
-        count_check : out integer
+        byte_select_full : out unsigned(7 downto 0)
         -- note there will need to be a pause (soft reset after each DFT) and a restart (after each full FFT cycle) flag
     );
 
@@ -152,9 +144,6 @@ end component ;
     signal count : unsigned(7 downto 0) := (others => '0');
     signal position : unsigned (3 downto 0 ) := (others => '0'); -- DFTBD RAM DFT wated 0 through 15
 
-    signal PPsig : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
-    signal  P2sig : std_logic_vector (15 downto 0):= (others => '0');
-    signal  temp : std_logic_vector (15 downto 0):= (others => '0');
     signal  TW : std_logic_vector (15 downto 0):= (others => '0');
     signal  FFT_RESETs : std_logic;  -- triggers hard reset (reset to 0 on most operations)
     signal DFT_RESETs : std_logic; 
@@ -213,8 +202,6 @@ begin
              FFT_outR => FFT_outR,
             FFT_outI => FFT_outI,
             orders =>orders
-            --overflow => overflow
-            --position => position
         );
 
         
@@ -236,10 +223,9 @@ input : shift_reg_input
         FFT_Reset => FFT_RESETS,
         DFT_Reset => DFT_RESETS,
         FFT_ready =>FFT_ready, -- trigger for new mic data being reseived ready to start next FFT
-        --Data_ready =; 
-        --read_en : in std_logic;
+
         MCLK => clk_mic,
-        --buffer_out : out std_logic_vector(255 downto 0);
+ 
         byte_out => bit_stream_value, -- reorderd byte for DFTBD RAMS as input
         byte_select => position, -- the counter/ byte_select for the RAM
         byte_select_full => count

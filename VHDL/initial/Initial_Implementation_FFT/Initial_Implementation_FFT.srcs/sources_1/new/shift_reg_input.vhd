@@ -1,35 +1,7 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 08.07.2022 18:24:18
--- Design Name: 
--- Module Name: shift_reg_input - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity shift_reg_input is
     Port (
@@ -42,13 +14,10 @@ entity shift_reg_input is
         -- Data_ready : out std_logic; 
         --read_en : in std_logic;
         MCLK : in std_logic;
-        buffer_out : out std_logic_vector(255 downto 0);
+       -- buffer_out : out std_logic_vector(255 downto 0); -- not needed to pass out
         byte_out : out std_logic_vector(15 downto 0); -- reorderd byte for DFTBD RAMS as input
         byte_select : out unsigned(3 downto 0); -- the counter/ byte_select for the RAM
-        byte_select_full : out unsigned(7 downto 0);
-        count_check : out integer;
-        count_in : out unsigned(5 downto 0)
-        --overflow : out integer
+        byte_select_full : out unsigned(7 downto 0)
         -- note there will need to be a pause (soft reset after each DFT) and a restart (after each full FFT cycle) flag
     );
 
@@ -57,7 +26,6 @@ end shift_reg_input;
 architecture Behavioral of shift_reg_input is
 
     signal Mic_shift_reg_input : std_logic_vector(64 downto 0) := (others => '0');
-    --signal shift_reg_buffer : std_logic_vector(255 downto 0) := (0 => '0', 2=> '0', 4=> '0',  6=> '0' , 8=> '0',  10=> '0',  12=> '0',  14 => '0' ,  others => '1');
     signal shift_reg_buffer : std_logic_vector(255 downto 0) := (others => '0');
     signal buffer_done : std_logic := '0';
     signal count : unsigned(5 downto 0) := (others => '0');
@@ -83,7 +51,7 @@ begin
         if RST = '0' then
             --shift_reg_buffer <=  (0 => '0', 2=> '0', 4=> '0',  6=> '0' , 8=> '0',  10=> '0',  12=> '0',  14 => '0' ,  others => '1');-- empty buffer
          -- shift_reg_buffer <=(others => '0');
-            shift_reg_buffer <= x"555555555555555555555555555555555555555555555555ffffffffffffffff";
+            shift_reg_buffer <= x"555555555555555555555555555555555555555555555555ffffffffffffffff"; -- temporary used to set the intial bit input
             FFT_ready<= '1';
 --                    for k in 0 to 127 loop
 --                    shift_reg_buffer(k*2) <= '1';
@@ -120,13 +88,6 @@ begin
         end if;
     end process input_bit;
 
-
-    --    reset_input_check : process (MCLK) is
-    --       begin
-    --         if falling_edge(MCLK) then
-    --            read_en <='0';
-    --            end if;
-    --            end process reset_input_check;
 
 
 
@@ -175,7 +136,6 @@ begin
            end if;
         --delay <= '0';
         else
-            -- if (rising_edge(CLK) and (DFT_Reset = '1') ) then -- only update when DFT is not done i.e singl eclock pause at end of DFT
             if ((rising_edge(CLK))) then
 
                 if start_count = "001" then -- delay amount (needs to be calibrated)
@@ -185,8 +145,6 @@ begin
                     if ((count2 = 0) or (hold(0) = '1')) then
                         -- if count2 =0 then
                         count2 <=(DFT_count-1);
-                    --hold <= '1'; -- turn on hold ( can be made a std_logic_vector for more delay
-                    -- delay <= '1';
 
                     else --delay = '0' then
                         count2 <= count2-1;
@@ -205,8 +163,7 @@ begin
                         byte_select_full_temp<= byte_select_full_temp+1; -- for Twwiddle factor position
                     end if;
         
-                   -- byte_select_temp <= byte_select_temp_1;
-                   -- byte_select_full_temp <= byte_select_full_temp_1;
+                   
         
                     byte_out(0)<= byte(0); -- reorded bit stream  sectio  with need generics for larger scale 
                     byte_out(1)<= byte(1);
@@ -262,8 +219,6 @@ begin
     byte_select_full <= byte_select_full_temp;
 
 
-    buffer_out <= shift_reg_buffer ;
 
-    count_check <= count2;
-    count_in <= count;
+
 end Behavioral;

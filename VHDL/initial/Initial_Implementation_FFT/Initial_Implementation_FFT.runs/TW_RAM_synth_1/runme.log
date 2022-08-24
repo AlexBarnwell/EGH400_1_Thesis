@@ -10,6 +10,5 @@
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 
 source TW_RAM.tcl -notrace
-create_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 1280.082 ; gain = 24.879
 INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP TW_RAM, cache-ID = 08b1b1746089b720.
-INFO: [Common 17-206] Exiting Vivado at Tue Aug 23 12:59:02 2022...
+INFO: [Common 17-206] Exiting Vivado at Wed Aug 24 18:29:43 2022...

@@ -1,36 +1,10 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 27.05.2022 17:32:44
--- Design Name: 
--- Module Name: DFTBD_RAM - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
+-----------------------------------------------
 
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 -- 6 clock cycle latency for input output handling
 entity DFTBD_RAM is
@@ -265,19 +239,6 @@ END COMPONENT;
     signal DFTBD7Io : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
     signal DFTBD8Io : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
     
-    
-
-
-    --    signal DFTBD1 : signed(15 downto 0):= (others => '0');
-    --    signal DFTBD2 : signed(15 downto 0):= (others => '0');
-    --    signal DFTBD3 : signed(15 downto 0):= (others => '0');
-    --    signal DFTBD4 : signed(15 downto 0):= (others => '0');
-    --    signal DFTBD5 : signed(15 downto 0):= (others => '0');
-    --    signal DFTBD6 : signed(15 downto 0):= (others => '0');
-    --    signal DFTBD7 : signed(15 downto 0):= (others => '0');
-    --    signal DFTBD8 : signed(15 downto 0):= (others => '0');
-
-
 
 
     signal DFTBD11 : signed (15 downto 0):= (others => '0');
@@ -478,14 +439,7 @@ begin
         if RST = '0' then
             DFTBD31<= (others => '0'); -- sets output to zero
 
-            --                DFTBD1<=(others => '0');
-            --                DFTBD2<=(others => '0');
-            --                DFTBD3<=(others => '0');
-            --                DFTBD4<=(others => '0');
-            --                DFTBD5<= (others => '0');
-            --                DFTBD6<= (others => '0');
-            --                DFTBD7<=(others => '0');
-            --                DFTBD8<= (others => '0');
+
             DFTBD11<=(others => '0');
             DFTBD12<=(others => '0');
             DFTBD13<=(others => '0');
@@ -501,29 +455,11 @@ begin
             DFTBDI21<=(others => '0');
             DFTBDI22<=(others => '0');
 
-        --                DFTBD1o<=(others => '0');
-        --                DFTBD2o<=(others => '0');
-        --                DFTBD3o<=(others => '0');
-        --                DFTBD4o<=(others => '0');
-        --                DFTBD5o<= (others => '0');
-        --                DFTBD6o<= (others => '0');
-        --                DFTBD7o<=(others => '0');
-        --                DFTBD8o<= (others => '0');
 
 
 
-        --elsif ((rising_edge(CLK)) and (DFT_RESET = '1')) then
+
         elsif ((rising_edge(CLK))) then
-            --                DFTBD1<= signed(DFTBD1o);
-            --                DFTBD2<= signed(DFTBD2o);
-            --                DFTBD3<= signed(DFTBD3o);
-            --                DFTBD4<= signed(DFTBD4o);
-            --                DFTBD5<= signed(DFTBD5o);
-            --                DFTBD6<= signed(DFTBD6o);
-            --                DFTBD7<= signed(DFTBD7o);
-            --                DFTBD8<= signed(DFTBD8o);
-
-
 
             DFTBD11<=(signed(DFTBD1o)+signed(DFTBD2o));
             DFTBD12<=(signed(DFTBD3o)+signed(DFTBD4o));

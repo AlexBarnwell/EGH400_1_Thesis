@@ -10,17 +10,16 @@ entity DFT_loop is
 
     );
     port (--AA : in STD_LOGIC_VECTOR (15 downto 0); -- initial ports
-    --BB : in STD_LOGIC_VECTOR (15 downto 0);
-    --CC : in STD_LOGIC_VECTOR (15 downto 0);
+
         DFTin : in std_logic_vector (15 downto 0);
         DFTinI : in std_logic_vector (15 downto 0);
         TWin : in std_logic_vector (15 downto 0);  -- cos
         TWin2 : in std_logic_vector (15 downto 0); -- sin
-        PP : out STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );
-        PPI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );
+       -- PP : out STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );
+      --  PPI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );
         nRst : in std_logic;
         Clk : in std_logic;
-        count : out  unsigned(4 downto 0);
+       -- count : out  unsigned(4 downto 0);
         -- SCLR : in  std_logic;
         FFT_RESETs : out std_logic;  -- triggers hard reset (reset to 0 on most operations)
         DFT_RESETs : out std_logic;  -- trggers soft reset (pause on most operations)
@@ -31,9 +30,9 @@ entity DFT_loop is
 
         orders : out integer; -- temp
         ordersI : out integer;
-        position : out unsigned(3 downto 0);
-        FFT_ready: in std_logic;
-        overflow : out integer
+        --position : out unsigned(3 downto 0);
+        FFT_ready: in std_logic
+       -- overflow : out integer
     );
 
     -- PCOUT : out std_logic_vector (47 downto 0));
@@ -65,7 +64,7 @@ architecture behavioral of DFT_loop is
     signal  unPPsig : std_logic_vector (G_DATA_WIDTH*2 downto 0):= (others => '0');
     signal  unPPsigI : std_logic_vector (G_DATA_WIDTH*2 downto 0):= (others => '0');
 
-    signal  DFT1s : signed (G_DATA_WIDTH*2 downto 0):= (others => '0');
+   signal  DFT1s : signed (G_DATA_WIDTH*2 downto 0):= (others => '0');
 
     signal  DFT1SI : signed (G_DATA_WIDTH*2 downto 0):= (others => '0');
 
@@ -97,11 +96,7 @@ architecture behavioral of DFT_loop is
     signal A1 : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
     --pp32sig2 <= signed (ZERO(7 downto 0) &  ppsig2 & ZERO(7 downto 0));
     signal B1 : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
-    --signal ppsig2 : signed  (32 downto 0) := (others => '0');
-    --pp32sig2 <= signed (ZERO(7 downto 0) &  ppsig2 & ZERO(7 downto 0));
-    -- signal ppsigi2 : signed  (32 downto 0) := (others => '0');
 
-    --pp32sigi2 <= signed (ZERO(7 downto 0) &  ppsigi2 & ZERO(7 downto 0));
     signal REALL : std_logic_vector(G_DATA_WIDTH*2-1 downto 0) := (others => '0');-- FFT outputs -- probably send to some sort of RAM 
     signal IMAGG : std_logic_vector (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
 
@@ -111,7 +106,7 @@ architecture behavioral of DFT_loop is
 
     signal count_delay : unsigned (3 downto 0) := (others => '0');
     signal CE : std_logic:= '0';
-    signal turn_on:std_logic := '0';
+    --signal turn_on:std_logic := '0';
 
     signal FFT_RESET : std_logic := '1'; -- triggers hard reset (reset to 0 on most operations)
     signal DFT_RESET : std_logic := '1'; -- trggers soft reset (pause on most operations)
@@ -121,6 +116,7 @@ architecture behavioral of DFT_loop is
     -- state machine signal
     type states is (start, DFT, finish);
     signal state : states := start;
+    
     signal count4 : unsigned(1 downto 0):= (others => '0');
     signal count5 : unsigned(3 downto 0):= (others => '0');
 
@@ -143,23 +139,7 @@ architecture behavioral of DFT_loop is
 
     signal ovf_checkI : std_logic_vector(2 downto 0) := (others => '0');
     signal ovf_checkR : std_logic_vector(2 downto 0) := (others => '0');
-    signal ovf_hold : std_logic := '0';
-    signal ovf_holdi : std_logic := '0';
-    signal ovf_clock_holdi : std_logic := '1';
-    signal ovf_clock_hold : std_logic := '1';
-    -- signal Clk : std_logic :='0';
 
-
-    --    component xbip_multadd_0 -- instatiate DSP
-    --        PORT (
-    --            A : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-    --            B : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-    --            C : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-    --            SUBTRACT : IN STD_LOGIC;
-    --            P : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
-    --          --PCOUT : OUT STD_LOGIC_VECTOR(47 DOWNTO 0)
-    --        );
-    --    END component ;
 
 
 
@@ -178,11 +158,7 @@ architecture behavioral of DFT_loop is
 
 
 begin
-    overflow <= rshift;
-    --A<=AA;
-    --B<=BB;
-    --C<=CC;
-    --PP<=P;
+
     first : dsp_macro_0  port map(   --- instatiate 1 DSP DFT
             CLK => Clk,
             CE => DFT_RESET ,
@@ -191,7 +167,6 @@ begin
             B =>coss2,
             C =>P2sig,
             P =>Pout
-            --  PCOUT=>PCOUT
         );
 
     firstI : dsp_macro_0  port map(   --- instatiate 1 DSP DFT
@@ -202,7 +177,6 @@ begin
             B =>coss2,
             C =>P2sigI,
             P =>PoutI
-            --  PCOUT=>PCOUT
         );
 
 
@@ -236,15 +210,12 @@ begin
                     end if;
                 when DFT  =>
                     count2<=(count2+1);
-                    PPsig2 <= std_logic_vector( shift_right( signed(PPsig),0));
+                    PPsig2 <= std_logic_vector( shift_right( signed(PPsig),0)); -- store the previous value of the transfomr decomposition loop
                     PPsig2I <= std_logic_vector( shift_right( signed(PPsigI),0));
                     delayed_cos <= coss;
-                    -- delayed_cos2 <= coss2;
                     delayed_sin <= sinn;
                     delayed2_cos <= delayed_cos;
-                    -- delayed_cos2 <= coss2;
                     delayed2_sin <= delayed_sin;
-                    -- delayed_sin2 <=sinn2;
 
                     if count2 = "10000" then -- this assumes 256 input bits thus only 16 banks of 16, will change to generic when needed
                         count2 <= (others => '0');
@@ -252,61 +223,19 @@ begin
                         count5 <= (count5+1); -- novel DFT input size i.e bank size = 16
                         DFT_RESET <= '0';
                         state <= Finish;
-                        -- CE <= '0';
-                        --SCLR <= '1' -- turn off DSP block and clear
                     end if;
-                    -- check if the bit is gettiong close too overflow (also underflow but only if the MSB is not getting close to overflow)
 
-                    -- if Pout(G_DATA_WIDTH +G_DECIMAL_WIDTH -1) = '1' then -- check if negative
-
-                    --                rshift<=r2shift;
-                    --                if ((Pout(G_DATA_WIDTH +G_DECIMAL_WIDTH -1) /= Pout(G_DATA_WIDTH +G_DECIMAL_WIDTH -2)) or (Pout(G_DATA_WIDTH +G_DECIMAL_WIDTH -1) /= Pout(G_DATA_WIDTH +G_DECIMAL_WIDTH -3)) or (Pout(G_DATA_WIDTH +G_DECIMAL_WIDTH -1) /= Pout(G_DATA_WIDTH +G_DECIMAL_WIDTH -4))) then
-                    --                    -- trigger left shift 
-                    --                    order<=order+1;
-                    --                    r2shift<= 1;
-
-                    --                else
-                    --                    r2shift <= 0;
-                    --                end if;
-
-                    --                rshifti<=r2shifti;
-                    --                if ((Pouti(G_DATA_WIDTH +G_DECIMAL_WIDTH -1) /= Pouti(G_DATA_WIDTH +G_DECIMAL_WIDTH -2)) or (Pouti(G_DATA_WIDTH +G_DECIMAL_WIDTH -1) /= Pouti(G_DATA_WIDTH +G_DECIMAL_WIDTH -3)) or (Pouti(G_DATA_WIDTH +G_DECIMAL_WIDTH -1) /= Pouti(G_DATA_WIDTH +G_DECIMAL_WIDTH -4))) then
-                    --                    -- trigger left shift 
-                    --                     orderi<=orderi+1;
-                    --                    r2shifti<= 1;
-                    --                else
-                    --                    r2shifti <=0;
-                    --                end if;
 
                     if (rshift = 1) then
                         order <= order +1;
                         rshift2 <= rshift;
-                      --  ovf_clock_hold <= '1';
-                        else
-                       -- ovf_clock_hold <= '0';
                     end if;
 
                     if (rshifti = 1) then
                         orderi <= orderi +1;
                         rshift2i <= rshifti;
-                       -- ovf_clock_holdi <= '1';
-                        else
-                        --ovf_clock_holdi <= '0';
                     end if;
-                    --orderi<=orderi1;
-                    --order<= order1;
 
---                    if (ord_diff >0) then
---                        ord_diffr <= 0;
---                        ord_diffi <= ord_diff ;
---                    else
---                        ord_diffi <= 0;
---                        ord_diffr <= (-ord_diff);
-
---                    end if;
-                --elsif
-
-                --else
 
 
 
@@ -317,30 +246,16 @@ begin
                     FFT_outI <= IMAGG;
                     order <=0;
                     orderi <=0;
-                    --r2shifti<=0;
-                    --rshift<=0;
-                    --r2shift<=0;
-                    --rshifti <=0;
-                    --if count4 = "11" then
+
                     if count3 = 0 then
                         FFT_RESET<= '0'; -- trigger hard reset and go to start to wait until dat input is ready
                         state <= start;
                     else
                         state <= DFT; -- up completion
                         DFT_RESET <= '1'; -- turn off DFT reset
-                        -- CE<= '1';
-                        --SCLR <= '0';
+
                     end if;
-                    --end if;
-                    --CE<='1';
-                    --DFT_RESET  <= '0';
-                    --if count3 = 0 then -- reset upon completion of a full cycle
-                    --count3<=(others=>'0');
-                    --FFT_RESET<= '0'; -- trigger hard reset
-                    -- state <= start;
-                    --FFT_RESET <= '0';
-                    -- end if;
-                    -- upon completion
+         
 
 
             end case;
@@ -348,11 +263,9 @@ begin
     end process;
 
 
+
+-- overflow checker and applier
     ord_diff <= (order-orderi);
-
-
-
-
 
     ord_diffr <= -ord_diff when ord_diff <= 0 else
             0;          
@@ -363,8 +276,9 @@ begin
 
     FFT_RESETs <= FFT_RESET;  -- triggers hard reset (reset to 0 on most operations)
     DFT_RESETs <= DFT_RESET;
-    --position <= count5;
-    -- could ahve applied the current right shoft tot eh 2 previous values before teh multiplcation but for slightly high preiciosn it was done after
+    
+    --break apart the final loop of the FFT segements to get then compute the real and imaginary sections
+    
     final1 <= shift_right(signed(delayed2_cos)*signed(PPsig2),ord_diffr); --cos*A2-- final recombination -- NOTE need to add the part in process that grabs final value and hence get put into BRAM
     final2 <= shift_right(signed(delayed2_sin)*signed(PPsig2I),ord_diffi); -- sin*B2
     final3 <=  shift_right(signed(delayed2_sin)*signed(PPsig2),ord_diffr); -- sin*A2
@@ -375,54 +289,15 @@ begin
     -- recast to 32 
     A1(G_DATA_WIDTH*2-1 downto G_DECIMAL_WIDTH ) <= resize(signed(ppsig),G_DATA_WIDTH*2-G_DECIMAL_WIDTH);
     B1(G_DATA_WIDTH*2-1 downto G_DECIMAL_WIDTH) <= resize(signed(ppsigI),G_DATA_WIDTH*2-G_DECIMAL_WIDTH);
-    --pp32sig2 <= signed (ZERO(7 downto 0) &  ppsig2 & ZERO(7 downto 0));
-    --pp32sigi1 <= signed (ZERO(7 downto 0) &  ppsigi1 & ZERO(7 downto 0));
-    --pp32sigi2 <= signed (ZERO(7 downto 0) &  ppsigi2 & ZERO(7 downto 0));
+ 
 
-    REALL <= std_logic_vector ( shift_right(A1,ord_diffr) - final1 + final2); -- FFT outputs -- probably send to some stort of RAM  -- might increase to 100% 
+    REALL <= std_logic_vector ( shift_right(A1,ord_diffr) - final1 + final2); -- FFT outputs -- 
     IMAGG <= std_logic_vector (shift_right(B1,ord_diffi) - final3 - final4);
 
 
 
 
 
-
-
-
-    --    series_DFT: process(Clk,nRst) is
-    --    begin
-    --        if nRst = '0' then -- nRst is tied to hard reset
-    --           -- PPsig<= (others => '0'); -- sets output to zero
-    --            count2<=(others => '0');
-    --            count3<=(others => '0');
-    --            count_delay<= (others => '0');
-    --        else
-    --            if rising_edge(Clk) then
-    --            count_delay<= count_delay+1;    
-
-    --             if count_delay = "100" then -- 4 clock ticks delay
-
-    --             turn_on <= '1';
-    --             CE<='1';
-    --                -- DFTnew<=DFTin;
-
-    --               elsif DFT_RESET = '1' then
-    --               if turn_on = '1' then
-    --                count2<=(count2+1);
-    --                if count2 = 15 then -- this assumes 256 input bits thus only 16 banks of 16, will change to generic when needed
-    --                    count2 <= (others => '0');
-    --                    count3<=(count3+1); -- count 3 keeps track of how many DFTs have bee computed
-    --                    DFT_RESET <= '0';
-    --                    if count3 =255 then -- reset upon completion of a full cycle
-    --                        count3<=(others=>'0');
-    --                        FFT_RESET<= '0'; -- trigger hard reset
-    --                    end if;
-    --                    end if;
-    --                end if;
-    --                end if;
-    --            end if;
-    --        end if;
-    --    end process series_DFT;
 
 
     rshift <= 0 when ((ovf_checkR = "000") or (ovf_checkR = "111") or (state = Finish)) else
@@ -490,10 +365,10 @@ begin
     temp<=std_logic_vector(shift_right(DFTs-PPsigs,rshift));-- same size as Pout
     tempI<=std_logic_vector(shift_right(DFTsI-PPsigsI,rshifti));
     --PP<=(Pout(G_DATA_WIDTH+G_DECIMAL_WIDTH-1 downto G_DECIMAL_WIDTH));--
-    PP<= ppsig;
-    count<=count2;
+   -- PP<= ppsig;
+    --count<=count2;
 
     orders<= order;
     ordersI <= orderI;
-     PPI<=ppsigI;--
+     --PPI<=ppsigI;--
 end behavioral;

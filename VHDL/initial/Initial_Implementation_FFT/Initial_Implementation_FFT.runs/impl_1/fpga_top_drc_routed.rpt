@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
-| Date         : Wed Aug 24 14:17:05 2022
-| Host         : LAPTOP-M3DNELKA running 64-bit major release  (build 9200)
+| Date         : Wed Aug 24 19:29:05 2022
+| Host         : DESKTOP-BDA8VGJ running 64-bit major release  (build 9200)
 | Command      : report_drc -file fpga_top_drc_routed.rpt -pb fpga_top_drc_routed.pb -rpx fpga_top_drc_routed.rpx
 | Design       : fpga_top
 | Device       : xc7a35ticsg324-1L

@@ -2,15 +2,14 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Tue Aug 23 12:58:41 2022
-# Process ID: 18312
-# Current directory: C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/TW_RAM_synth_1
+# Start of session at: Wed Aug 24 18:29:35 2022
+# Process ID: 32380
+# Current directory: C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/TW_RAM_synth_1
 # Command line: vivado.exe -log TW_RAM.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source TW_RAM.tcl
-# Log file: C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/TW_RAM_synth_1/TW_RAM.vds
-# Journal file: C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/TW_RAM_synth_1\vivado.jou
-# Running On: LAPTOP-M3DNELKA, OS: Windows, CPU Frequency: 2208 MHz, CPU Physical cores: 6, Host memory: 17075 MB
+# Log file: C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/TW_RAM_synth_1/TW_RAM.vds
+# Journal file: C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/TW_RAM_synth_1\vivado.jou
+# Running On: DESKTOP-BDA8VGJ, OS: Windows, CPU Frequency: 3600 MHz, CPU Physical cores: 8, Host memory: 25599 MB
 #-----------------------------------------------------------
 source TW_RAM.tcl -notrace
-create_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 1280.082 ; gain = 24.879
 INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP TW_RAM, cache-ID = 08b1b1746089b720.
-INFO: [Common 17-206] Exiting Vivado at Tue Aug 23 12:59:02 2022...
+INFO: [Common 17-206] Exiting Vivado at Wed Aug 24 18:29:43 2022...

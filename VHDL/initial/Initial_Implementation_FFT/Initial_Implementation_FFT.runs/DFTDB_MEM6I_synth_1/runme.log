@@ -10,6 +10,5 @@
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 
 source DFTDB_MEM6I.tcl -notrace
-create_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 1280.215 ; gain = 24.895
 INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP DFTDB_MEM6I, cache-ID = 573a4506d2159780.
-INFO: [Common 17-206] Exiting Vivado at Tue Aug 23 12:59:02 2022...
+INFO: [Common 17-206] Exiting Vivado at Wed Aug 24 18:30:14 2022...
