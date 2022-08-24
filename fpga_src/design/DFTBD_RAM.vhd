@@ -125,7 +125,7 @@ COMPONENT DFTBD_MEM1I
   );
 END COMPONENT;
 
-COMPONENT DFTB_MEM2I
+COMPONENT DFTBD_MEM2I
   PORT (
     clka : IN STD_LOGIC;
     ena : IN STD_LOGIC;
@@ -362,7 +362,7 @@ begin
             douta => DFTBD1Io
         );
         
-           DFTBD_RAMI2 : DFTB_MEM2I
+       DFTBD_RAMI2 : DFTBD_MEM2I
         PORT MAP (
             clka => CLK,
             ena => RST,
