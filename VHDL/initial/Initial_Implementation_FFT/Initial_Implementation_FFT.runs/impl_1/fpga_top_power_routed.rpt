@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
-| Date             : Sun Aug 21 18:35:13 2022
-| Host             : DESKTOP-BDA8VGJ running 64-bit major release  (build 9200)
+| Date             : Wed Aug 24 14:17:10 2022
+| Host             : LAPTOP-M3DNELKA running 64-bit major release  (build 9200)
 | Command          : report_power -file fpga_top_power_routed.rpt -pb fpga_top_power_summary_routed.pb -rpx fpga_top_power_routed.rpx
 | Design           : fpga_top
 | Device           : xc7a35ticsg324-1L
@@ -52,17 +52,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.003 |        6 |       --- |             --- |
-| Slice Logic    |     0.004 |     1021 |       --- |             --- |
-|   LUT as Logic |     0.003 |      419 |     20800 |            2.01 |
-|   CARRY4       |    <0.001 |       64 |      8150 |            0.79 |
-|   Register     |    <0.001 |      359 |     41600 |            0.86 |
-|   Others       |     0.000 |       30 |       --- |             --- |
-| Signals        |     0.004 |      864 |       --- |             --- |
-| Block RAM      |     0.013 |      4.5 |        50 |            9.00 |
+| Clocks         |     0.004 |       10 |       --- |             --- |
+| Slice Logic    |     0.009 |     2935 |       --- |             --- |
+|   LUT as Logic |     0.009 |     1771 |     20800 |            8.51 |
+|   CARRY4       |    <0.001 |      158 |      8150 |            1.94 |
+|   Register     |    <0.001 |      701 |     41600 |            1.69 |
+|   Others       |     0.000 |       53 |       --- |             --- |
+| Signals        |     0.013 |     2766 |       --- |             --- |
+| Block RAM      |     0.008 |        9 |        50 |           18.00 |
 | MMCM           |     0.106 |        1 |         5 |           20.00 |
-| DSPs           |     0.001 |        1 |        90 |            1.11 |
-| I/O            |     0.017 |       21 |       210 |           10.00 |
+| DSPs           |     0.004 |        6 |        90 |            6.67 |
+| I/O            |     0.003 |      138 |       210 |           65.71 |
 | Static Power   |     0.061 |          |           |                 |
 | Total          |     0.209 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
@@ -74,11 +74,11 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       0.950 |     0.032 |       0.025 |      0.006 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.071 |       0.060 |      0.011 |       NA    | Unspecified | NA         |
+| Vccint    |       0.950 |     0.046 |       0.040 |      0.006 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.070 |       0.059 |      0.011 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vcco18    |       1.800 |     0.009 |       0.008 |      0.001 |       NA    | Unspecified | NA         |
+| Vcco18    |       1.800 |     0.003 |       0.002 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -127,14 +127,18 @@ Table of Contents
 2.2 Clock Constraints
 ---------------------
 
-+--------------------+-------------------------------+-----------------+
-| Clock              | Domain                        | Constraint (ns) |
-+--------------------+-------------------------------+-----------------+
-| clk_100M           | clk_100M                      |            10.0 |
-| clk_mic_clk_wiz_0  | CLOCK/inst/clk_mic_clk_wiz_0  |            10.0 |
-| clk_sys_clk_wiz_0  | CLOCK/inst/clk_sys_clk_wiz_0  |            10.0 |
-| clkfbout_clk_wiz_0 | CLOCK/inst/clkfbout_clk_wiz_0 |            10.0 |
-+--------------------+-------------------------------+-----------------+
++----------------------+-------------------------------+-----------------+
+| Clock                | Domain                        | Constraint (ns) |
++----------------------+-------------------------------+-----------------+
+| clk_100M             | clk_100M                      |            10.0 |
+| clk_mic_clk_wiz_0    | CLOCK/inst/clk_mic_clk_wiz_0  |            10.0 |
+| clk_mic_clk_wiz_0_1  | CLOCK/inst/clk_mic_clk_wiz_0  |            10.0 |
+| clk_sys_clk_wiz_0    | CLOCK/inst/clk_sys_clk_wiz_0  |            10.0 |
+| clk_sys_clk_wiz_0_1  | CLOCK/inst/clk_sys_clk_wiz_0  |            10.0 |
+| clkfbout_clk_wiz_0   | CLOCK/inst/clkfbout_clk_wiz_0 |            10.0 |
+| clkfbout_clk_wiz_0_1 | CLOCK/inst/clkfbout_clk_wiz_0 |            10.0 |
+| sys_clk_pin          | clk_100M                      |            10.0 |
++----------------------+-------------------------------+-----------------+
 
 
 3. Detailed Reports
@@ -149,30 +153,13 @@ Table of Contents
 | fpga_top                    |     0.148 |
 |   CLOCK                     |     0.107 |
 |     inst                    |     0.107 |
-|   DFTBD_RAMs                |     0.016 |
-|     DFTBD_RAM1              |     0.002 |
-|       U0                    |     0.002 |
-|     DFTBD_RAM2              |     0.001 |
-|       U0                    |     0.001 |
-|     DFTBD_RAM3              |     0.002 |
-|       U0                    |     0.002 |
-|     DFTBD_RAM4              |     0.002 |
-|       U0                    |     0.002 |
-|     DFTBD_RAM5              |     0.002 |
-|       U0                    |     0.002 |
-|     DFTBD_RAM6              |     0.002 |
-|       U0                    |     0.002 |
-|     DFTBD_RAM7              |     0.002 |
-|       U0                    |     0.002 |
-|     DFTBD_RAM8              |     0.002 |
-|       U0                    |     0.002 |
-|   Series_recombination_loop |     0.005 |
+|   DFTBD_RAMs                |     0.009 |
+|   Series_recombination_loop |     0.026 |
 |     first                   |     0.002 |
 |       U0                    |     0.002 |
-|   TWiddle1                  |     0.002 |
-|     Twiddle_1               |     0.002 |
-|       U0                    |     0.002 |
-|   input                     |     0.001 |
+|     firstI                  |     0.001 |
+|       U0                    |     0.001 |
+|   TWiddle1                  |     0.001 |
 +-----------------------------+-----------+
 
 

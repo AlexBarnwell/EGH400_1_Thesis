@@ -31,13 +31,21 @@ generic (
     );
     port(
         clk_100M  : in  STD_LOGIC;
-        reset_n   : in  STD_LOGIC;
-        nrst      : in  STD_LOGIC
+       -- reset_n   : in  STD_LOGIC;
+        rst      : in  STD_LOGIC;
+       -- FFT_outR : out std_logic_vector; 
+       -- FFT_outI : out std_logic_vector ;
+        outR : out STD_LOGIC_VECTOR   (G_DATA_WIDTH*2-1 downto 0 ); -- outputs of the FFT
+        outI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH*2-1 downto 0 );
+        order_I : out integer ;
+        order_R : out  integer
        -- output    : out std_logic_vector(17 downto 0)
     );
 end fpga_top;
 
 architecture RTL of fpga_top is
+
+    signal nrst : std_logic;
 
     component clk_wiz_0
         port
@@ -64,6 +72,7 @@ component  DFT_loop is
         TWin : in std_logic_vector (15 downto 0);  -- cos
         TWin2 : in std_logic_vector (15 downto 0); -- sin
         PP : out STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );
+        PPI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );
         nRst : in std_logic;
         Clk : in std_logic;
         count : out  unsigned(4 downto 0);
@@ -83,6 +92,7 @@ component  DFT_loop is
     -- PCOUT : out std_logic_vector (47 downto 0));
 
 end component ;
+
 
 
 component DFTBD_RAM
@@ -165,13 +175,14 @@ begin
 
     CLOCK : clk_wiz_0
         port map(
-            reset => reset_n,
+            reset => nRSt,
             clk_in1  => clk_100M,
             clk_sys => clk_sys,
             clk_mic => clk_mic
         );
 
 
+    nrst <= not rst;
 
     DFTBD_RAMs : DFTBD_RAM
         port map(
@@ -241,7 +252,10 @@ input : shift_reg_input
 
  --  resets
  RESET <= (nRSt and FFT_RESETS); -- resets given each condition
-
+    order_R <= orders;
+    order_I <= ordersI;
+    outI<= FFT_outI ;
+    outR <= FFT_outR;
 
 
 

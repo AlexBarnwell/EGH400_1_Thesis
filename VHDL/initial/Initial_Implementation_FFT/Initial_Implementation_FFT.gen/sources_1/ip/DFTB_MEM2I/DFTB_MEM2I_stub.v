@@ -1,10 +1,10 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
-// Date        : Mon Aug 22 19:01:44 2022
+// Date        : Mon Aug 22 19:01:43 2022
 // Host        : DESKTOP-BDA8VGJ running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               c:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTB_MEM2I/DFTB_MEM2I_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top DFTB_MEM2I -prefix
+//               DFTB_MEM2I_ DFTB_MEM2I_stub.v
 // Design      : DFTB_MEM2I
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a35ticsg324-1L

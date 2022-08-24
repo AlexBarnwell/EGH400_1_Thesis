@@ -82,7 +82,7 @@ begin
     begin
         if RST = '0' then
             --shift_reg_buffer <=  (0 => '0', 2=> '0', 4=> '0',  6=> '0' , 8=> '0',  10=> '0',  12=> '0',  14 => '0' ,  others => '1');-- empty buffer
- --         shift_reg_buffer <=(others => '1');
+         -- shift_reg_buffer <=(others => '0');
             shift_reg_buffer <= x"555555555555555555555555555555555555555555555555ffffffffffffffff";
             FFT_ready<= '1';
 --                    for k in 0 to 127 loop
