@@ -2,8 +2,8 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Wed Aug 24 18:32:08 2022
-# Process ID: 8700
+# Start of session at: Thu Aug 25 10:35:52 2022
+# Process ID: 21908
 # Current directory: C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/DFTBD_MEM2_synth_1
 # Command line: vivado.exe -log DFTBD_MEM2.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source DFTBD_MEM2.tcl
 # Log file: C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/DFTBD_MEM2_synth_1/DFTBD_MEM2.vds
@@ -12,4 +12,4 @@
 #-----------------------------------------------------------
 source DFTBD_MEM2.tcl -notrace
 INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP DFTBD_MEM2, cache-ID = 83c738e7c7021df6.
-INFO: [Common 17-206] Exiting Vivado at Wed Aug 24 18:32:16 2022...
+INFO: [Common 17-206] Exiting Vivado at Thu Aug 25 10:36:00 2022...

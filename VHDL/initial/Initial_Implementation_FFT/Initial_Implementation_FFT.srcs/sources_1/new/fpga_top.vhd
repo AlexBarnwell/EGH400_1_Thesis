@@ -50,7 +50,7 @@ architecture RTL of fpga_top is
 (-- Clock in ports
         -- Clock out ports
             clk_sys          : out    std_logic;
-            clk_mic          : out    std_logic;
+           -- clk_mic          : out    std_logic;
             -- Status and control signals
             reset             : in     std_logic;
             locked            : out    std_logic;
@@ -158,6 +158,7 @@ end component ;
     
     signal orders : integer := 0;
     signal ordersI : integer := 0;
+    signal clock_count : unsigned(4 downto 0) := (others => '0');
     
     
 begin
@@ -166,9 +167,29 @@ begin
         port map(
             reset => nRSt,
             clk_in1  => clk_100M,
-            clk_sys => clk_sys,
-            clk_mic => clk_mic
+            clk_sys => clk_sys
+            --clk_mic => clk_mic
         );
+
+
+
+
+microphone_CLK : process (clk_sys,nRST)
+begin
+    
+    if nRST = '0' then
+    clk_mic <= '0';
+    clock_count <= "00000";
+    else
+    clock_count <=clock_count+1;
+    
+    if clock_count = "11000" then
+    clock_count <= "00000";
+    clk_mic <= not clk_mic;
+    end if;
+    end if;
+    
+end process;
 
 
     nrst <= not rst;

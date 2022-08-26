@@ -131,11 +131,10 @@ begin
 
     RAM_pipeline_1 :process (CLK,RST) is
     begin
-    if rising_edge(CLK) then
         if RST = '0' then
             Buffer_data_in <= (others =>'0'); -- sets data in to 0
             Write_enable <='0'; -- disable write operation in RAM
-        else
+        elsif rising_edge(CLK) then
             Buffer_data_in <= FIFO_data_out; -- buffer for data timing
 
             addr_buff_1 <= write_unsigned; -- add buffer for address timing
@@ -174,7 +173,6 @@ begin
 
 
         end if;
-    end if;
     end process RAM_pipeline_1;
 
 

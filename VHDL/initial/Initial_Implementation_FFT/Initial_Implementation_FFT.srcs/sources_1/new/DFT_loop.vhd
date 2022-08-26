@@ -264,6 +264,10 @@ begin
 
 
 
+
+
+
+
 -- overflow checker and applier
     ord_diff <= (order-orderi);
 

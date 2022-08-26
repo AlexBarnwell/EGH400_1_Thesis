@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
-| Date             : Wed Aug 24 19:29:08 2022
+| Date             : Fri Aug 26 12:40:34 2022
 | Host             : DESKTOP-BDA8VGJ running 64-bit major release  (build 9200)
 | Command          : report_power -file fpga_top_power_routed.rpt -pb fpga_top_power_summary_routed.pb -rpx fpga_top_power_routed.rpx
 | Design           : fpga_top
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.208        |
+| Total On-Chip Power (W)  | 0.195        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.147        |
+| Dynamic (W)              | 0.134        |
 | Device Static (W)        | 0.061        |
 | Effective TJA (C/W)      | 4.8          |
-| Max Ambient (C)          | 99.0         |
-| Junction Temperature (C) | 26.0         |
+| Max Ambient (C)          | 99.1         |
+| Junction Temperature (C) | 25.9         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,19 +52,19 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.004 |       10 |       --- |             --- |
-| Slice Logic    |     0.009 |     2911 |       --- |             --- |
-|   LUT as Logic |     0.008 |     1739 |     20800 |            8.36 |
+| Clocks         |     0.004 |        8 |       --- |             --- |
+| Slice Logic    |     0.004 |     2970 |       --- |             --- |
+|   LUT as Logic |     0.004 |     1760 |     20800 |            8.46 |
 |   CARRY4       |    <0.001 |      158 |      8150 |            1.94 |
-|   Register     |    <0.001 |      701 |     41600 |            1.69 |
-|   Others       |     0.000 |       53 |       --- |             --- |
-| Signals        |     0.013 |     2746 |       --- |             --- |
+|   Register     |    <0.001 |      739 |     41600 |            1.78 |
+|   Others       |     0.000 |       54 |       --- |             --- |
+| Signals        |     0.006 |     2792 |       --- |             --- |
 | Block RAM      |     0.008 |        9 |        50 |           18.00 |
 | MMCM           |     0.106 |        1 |         5 |           20.00 |
-| DSPs           |     0.004 |        6 |        90 |            6.67 |
+| DSPs           |     0.003 |        6 |        90 |            6.67 |
 | I/O            |     0.003 |      138 |       210 |           65.71 |
 | Static Power   |     0.061 |          |           |                 |
-| Total          |     0.208 |          |           |                 |
+| Total          |     0.195 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,11 +74,11 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       0.950 |     0.045 |       0.039 |      0.006 |       NA    | Unspecified | NA         |
+| Vccint    |       0.950 |     0.032 |       0.026 |      0.006 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.070 |       0.059 |      0.011 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vcco18    |       1.800 |     0.003 |       0.002 |      0.001 |       NA    | Unspecified | NA         |
+| Vcco18    |       1.800 |     0.002 |       0.001 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -131,8 +131,6 @@ Table of Contents
 | Clock                | Domain                        | Constraint (ns) |
 +----------------------+-------------------------------+-----------------+
 | clk_100M             | clk_100M                      |            10.0 |
-| clk_mic_clk_wiz_0    | CLOCK/inst/clk_mic_clk_wiz_0  |            10.0 |
-| clk_mic_clk_wiz_0_1  | CLOCK/inst/clk_mic_clk_wiz_0  |            10.0 |
 | clk_sys_clk_wiz_0    | CLOCK/inst/clk_sys_clk_wiz_0  |            10.0 |
 | clk_sys_clk_wiz_0_1  | CLOCK/inst/clk_sys_clk_wiz_0  |            10.0 |
 | clkfbout_clk_wiz_0   | CLOCK/inst/clkfbout_clk_wiz_0 |            10.0 |
@@ -150,13 +148,13 @@ Table of Contents
 +-----------------------------+-----------+
 | Name                        | Power (W) |
 +-----------------------------+-----------+
-| fpga_top                    |     0.147 |
-|   CLOCK                     |     0.107 |
-|     inst                    |     0.107 |
+| fpga_top                    |     0.134 |
+|   CLOCK                     |     0.106 |
+|     inst                    |     0.106 |
 |   DFTBD_RAMs                |     0.009 |
-|   Series_recombination_loop |     0.025 |
-|     first                   |     0.002 |
-|       U0                    |     0.002 |
+|   Series_recombination_loop |     0.013 |
+|     first                   |     0.001 |
+|       U0                    |     0.001 |
 |     firstI                  |     0.001 |
 |       U0                    |     0.001 |
 |   TWiddle1                  |     0.001 |

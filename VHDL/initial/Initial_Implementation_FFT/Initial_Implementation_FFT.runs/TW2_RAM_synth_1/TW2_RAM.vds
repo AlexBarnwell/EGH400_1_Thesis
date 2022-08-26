@@ -2,8 +2,8 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Wed Aug 24 18:29:24 2022
-# Process ID: 22008
+# Start of session at: Thu Aug 25 10:33:14 2022
+# Process ID: 37484
 # Current directory: C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/TW2_RAM_synth_1
 # Command line: vivado.exe -log TW2_RAM.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source TW2_RAM.tcl
 # Log file: C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/TW2_RAM_synth_1/TW2_RAM.vds
@@ -12,4 +12,4 @@
 #-----------------------------------------------------------
 source TW2_RAM.tcl -notrace
 INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP TW2_RAM, cache-ID = c3486a427e59f8b3.
-INFO: [Common 17-206] Exiting Vivado at Wed Aug 24 18:29:33 2022...
+INFO: [Common 17-206] Exiting Vivado at Thu Aug 25 10:33:22 2022...

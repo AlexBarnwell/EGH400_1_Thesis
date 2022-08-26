@@ -139,7 +139,6 @@ OPTRACE "set parameters" START { }
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/fpga_top.dcp
-  read_ip -quiet C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
   read_ip -quiet C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/TW2_RAM/TW2_RAM.xci
   read_ip -quiet C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/TW_RAM/TW_RAM.xci
   read_ip -quiet C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM8I/DFTBD_MEM8I.xci
@@ -159,6 +158,7 @@ OPTRACE "add files" START { }
   read_ip -quiet C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM2/DFTBD_MEM2.xci
   read_ip -quiet C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM1/DFTBD_MEM1.xci
   read_ip -quiet C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/dsp_macro_0/dsp_macro_0.xci
+  read_ip -quiet c:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/clk_wiz_0_2/clk_wiz_0.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_implementation_FFT.constraints/arty.xdc
 OPTRACE "read constraints: implementation" END { }
