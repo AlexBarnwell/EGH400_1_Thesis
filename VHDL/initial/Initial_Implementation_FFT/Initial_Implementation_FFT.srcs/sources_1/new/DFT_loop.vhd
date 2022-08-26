@@ -15,11 +15,11 @@ entity DFT_loop is
         DFTinI : in std_logic_vector (15 downto 0);
         TWin : in std_logic_vector (15 downto 0);  -- cos
         TWin2 : in std_logic_vector (15 downto 0); -- sin
-       -- PP : out STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );
-      --  PPI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );
+        -- PP : out STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );
+        --  PPI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );
         nRst : in std_logic;
         Clk : in std_logic;
-       -- count : out  unsigned(4 downto 0);
+        -- count : out  unsigned(4 downto 0);
         -- SCLR : in  std_logic;
         FFT_RESETs : out std_logic;  -- triggers hard reset (reset to 0 on most operations)
         DFT_RESETs : out std_logic;  -- trggers soft reset (pause on most operations)
@@ -32,7 +32,7 @@ entity DFT_loop is
         ordersI : out integer;
         --position : out unsigned(3 downto 0);
         FFT_ready: in std_logic
-       -- overflow : out integer
+        -- overflow : out integer
     );
 
     -- PCOUT : out std_logic_vector (47 downto 0));
@@ -64,7 +64,7 @@ architecture behavioral of DFT_loop is
     signal  unPPsig : std_logic_vector (G_DATA_WIDTH*2 downto 0):= (others => '0');
     signal  unPPsigI : std_logic_vector (G_DATA_WIDTH*2 downto 0):= (others => '0');
 
-   signal  DFT1s : signed (G_DATA_WIDTH*2 downto 0):= (others => '0');
+    signal  DFT1s : signed (G_DATA_WIDTH*2 downto 0):= (others => '0');
 
     signal  DFT1SI : signed (G_DATA_WIDTH*2 downto 0):= (others => '0');
 
@@ -116,7 +116,7 @@ architecture behavioral of DFT_loop is
     -- state machine signal
     type states is (start, DFT, finish);
     signal state : states := start;
-    
+
     signal count4 : unsigned(1 downto 0):= (others => '0');
     signal count5 : unsigned(3 downto 0):= (others => '0');
 
@@ -140,6 +140,32 @@ architecture behavioral of DFT_loop is
     signal ovf_checkI : std_logic_vector(2 downto 0) := (others => '0');
     signal ovf_checkR : std_logic_vector(2 downto 0) := (others => '0');
 
+
+
+    signal final1_S : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
+    signal final2_S : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
+    signal final3_S : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
+    signal final4_S : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
+
+    signal step2_S : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
+    signal step2i_S : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
+    signal step1_S : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
+    signal step1i_S : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
+
+
+    signal step2 : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
+    signal step2i : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
+    signal step1 : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
+    signal step1i : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
+
+
+
+
+    signal A1_S : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
+    signal B1_S : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
+
+    signal A1_temp : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
+    signal B1_temp : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
 
 
 
@@ -188,6 +214,10 @@ begin
             count3<=(others => '0');
             count4<=(others => '0');
             count_delay<= (others => '0');
+            final1_S<= (others => '0');
+            final2_S<= (others => '0');
+            final3_S<= (others => '0');
+            final4_S<= (others => '0');
         elsif rising_edge(Clk) then
             case state is
                 when start =>
@@ -203,15 +233,15 @@ begin
                             FFT_begin <= '0';
                             CE<='1';
                             state <= DFT;
-                             DFT_RESET <= '1'; 
-                         else 
-                         DFT_RESET <= '0';
+                            DFT_RESET <= '1';
+                        else
+                            DFT_RESET <= '0';
                         end if;
                     end if;
                 when DFT  =>
                     count2<=(count2+1);
-                    PPsig2 <= std_logic_vector( shift_right( signed(PPsig),0)); -- store the previous value of the transfomr decomposition loop
-                    PPsig2I <= std_logic_vector( shift_right( signed(PPsigI),0));
+                    PPsig2 <= PPsig; -- store the previous value of the transfomr decomposition loop
+                    PPsig2I <= PPsigI;
                     delayed_cos <= coss;
                     delayed_sin <= sinn;
                     delayed2_cos <= delayed_cos;
@@ -242,10 +272,20 @@ begin
                 when Finish =>
                     -- compute the recombination steps + the stops
                     --count4 <= count4+1;
-                    FFT_outR <= REALL; -- push the value to outputs (synchonous)
-                    FFT_outI <= IMAGG;
+                    --  FFT_outR <= REALL; -- push the value to outputs (synchonous)
+                    -- FFT_outI <= IMAGG;
                     order <=0;
                     orderi <=0;
+
+                    final1_S <= final1; -- should onlyt trigger once and start the 
+                    final2_S <= final2;
+                    final3_S <= final3;
+                    final4_S <= final4;
+                    A1_S <= A1;
+                    B1_S <= B1;
+
+
+
 
                     if count3 = 0 then
                         FFT_RESET<= '0'; -- trigger hard reset and go to start to wait until dat input is ready
@@ -255,7 +295,7 @@ begin
                         DFT_RESET <= '1'; -- turn off DFT reset
 
                     end if;
-         
+
 
 
             end case;
@@ -264,25 +304,50 @@ begin
 
 
 
+    final_combination : process(clk, nRST) is
+    begin
+
+        if nRST = '0' then
+            --REALL <= (others => '0');
+            --IMAGG <= (others => '0');
+            step1_S <=(others => '0');
+            step2_S <= (others => '0');
+            step1i_S <= (others => '0');
+            step2i_S <= (others => '0');
+            FFT_outr<= (others => '0');
+            FFT_outi<= (others => '0');
+
+        elsif rising_edge(Clk) then
+            step1_S <= step1;
+            step2_S <= step2;
+            step1i_S <= step1i;
+            step2i_S <= step2i;
+            --A1_S<=A1;
+            --B1_S<=B1;
+            FFT_outr <= REALL;
+            FFT_OUTi <= IMAGG;
+
+        end if;
+
+    end process;
 
 
 
-
--- overflow checker and applier
+    -- overflow checker and applier
     ord_diff <= (order-orderi);
 
     ord_diffr <= -ord_diff when ord_diff <= 0 else
-            0;          
+                 0;
 
     ord_diffi <= ord_diff when ord_diff >0 else
-            0;      
+                 0;
 
 
     FFT_RESETs <= FFT_RESET;  -- triggers hard reset (reset to 0 on most operations)
     DFT_RESETs <= DFT_RESET;
-    
+
     --break apart the final loop of the FFT segements to get then compute the real and imaginary sections
-    
+
     final1 <= shift_right(signed(delayed2_cos)*signed(PPsig2),ord_diffr); --cos*A2-- final recombination -- NOTE need to add the part in process that grabs final value and hence get put into BRAM
     final2 <= shift_right(signed(delayed2_sin)*signed(PPsig2I),ord_diffi); -- sin*B2
     final3 <=  shift_right(signed(delayed2_sin)*signed(PPsig2),ord_diffr); -- sin*A2
@@ -291,12 +356,24 @@ begin
 
 
     -- recast to 32 
-    A1(G_DATA_WIDTH*2-1 downto G_DECIMAL_WIDTH ) <= resize(signed(ppsig),G_DATA_WIDTH*2-G_DECIMAL_WIDTH);
-    B1(G_DATA_WIDTH*2-1 downto G_DECIMAL_WIDTH) <= resize(signed(ppsigI),G_DATA_WIDTH*2-G_DECIMAL_WIDTH);
- 
+    A1_temp(G_DATA_WIDTH*2-1 downto G_DECIMAL_WIDTH) <= resize(signed(ppsig),G_DATA_WIDTH*2-G_DECIMAL_WIDTH);
+    B1_temp(G_DATA_WIDTH*2-1 downto G_DECIMAL_WIDTH) <= resize(signed(ppsigI),G_DATA_WIDTH*2-G_DECIMAL_WIDTH);
 
-    REALL <= std_logic_vector ( shift_right(A1,ord_diffr) - final1 + final2); -- FFT outputs -- 
-    IMAGG <= std_logic_vector (shift_right(B1,ord_diffi) - final3 - final4);
+    A1<=shift_right(A1_temp,ord_diffr);
+    B1<=shift_right(B1_temp,ord_diffi);
+
+
+    step1 <= A1_S-final1_S;
+    step1i <= B1_S-final3_S;
+
+    step2 <= step1_S+final2_S;
+    step2i <= step1i_S-final4_S;
+
+
+
+
+    REALL <= std_logic_vector (step2_S); -- FFT outputs -- 
+    IMAGG <= std_logic_vector (step2i_S);
 
 
 
@@ -374,5 +451,5 @@ begin
 
     orders<= order;
     ordersI <= orderI;
-     --PPI<=ppsigI;--
+    --PPI<=ppsigI;--
 end behavioral;

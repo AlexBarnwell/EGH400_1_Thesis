@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
-| Date         : Fri Aug 26 12:40:32 2022
+| Date         : Fri Aug 26 17:54:24 2022
 | Host         : DESKTOP-BDA8VGJ running 64-bit major release  (build 9200)
 | Command      : report_methodology -file fpga_top_methodology_drc_routed.rpt -pb fpga_top_methodology_drc_routed.pb -rpx fpga_top_methodology_drc_routed.rpx
 | Design       : fpga_top
@@ -23,7 +23,7 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 144
+             Violations found: 120
 +-----------+------------------+------------------------------------------------------------------+------------+
 | Rule      | Severity         | Description                                                      | Violations |
 +-----------+------------------+------------------------------------------------------------------+------------+
@@ -31,7 +31,6 @@ Table of Contents
 | TIMING-17 | Critical Warning | Non-clocked sequential cell                                      | 1          |
 | LUTAR-1   | Warning          | LUT drives async reset alert                                     | 3          |
 | SYNTH-11  | Warning          | DSP output not registered                                        | 4          |
-| TIMING-16 | Warning          | Large setup violation                                            | 24         |
 | TIMING-18 | Warning          | Missing input or output delay                                    | 105        |
 | TIMING-20 | Warning          | Non-clocked latch                                                | 1          |
 | TIMING-23 | Warning          | Combinational loop found                                         | 1          |
@@ -64,7 +63,7 @@ input/count2_reg[5]/CLR, input/count2_reg[6]/CLR, input/count2_reg[7]/CLR,
 input/count2_reg[8]/CLR, input/count2_reg[9]/CLR, input/hold_reg[0]/PRE,
 input/hold_reg[1]/PRE, input/start_count_reg[0]/CLR,
 input/start_count_reg[1]/CLR, input/start_count_reg[2]/CLR
- (the first 15 of 430 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+ (the first 15 of 790 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#2 Warning
@@ -109,126 +108,6 @@ Related violations: <none>
 SYNTH-11#4 Warning
 DSP output not registered  
 DSP instance Series_recombination_loop/ARG__2 is not fully pipelined on the output side. MREG/PREG are not used.
-Related violations: <none>
-
-TIMING-16#1 Warning
-Large setup violation  
-There is a large setup violation of -1.007 ns between Series_recombination_loop/order_reg[0]/C (clocked by clk_sys_clk_wiz_0) and Series_recombination_loop/FFT_outR_reg[23]/D (clocked by clk_sys_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#2 Warning
-Large setup violation  
-There is a large setup violation of -1.028 ns between Series_recombination_loop/order_reg[0]/C (clocked by clk_sys_clk_wiz_0) and Series_recombination_loop/FFT_outR_reg[21]/D (clocked by clk_sys_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#3 Warning
-Large setup violation  
-There is a large setup violation of -1.031 ns between Series_recombination_loop/order_reg[0]/C (clocked by clk_sys_clk_wiz_0) and Series_recombination_loop/FFT_outR_reg[24]/D (clocked by clk_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#4 Warning
-Large setup violation  
-There is a large setup violation of -1.047 ns between Series_recombination_loop/order_reg[0]/C (clocked by clk_sys_clk_wiz_0) and Series_recombination_loop/FFT_outR_reg[26]/D (clocked by clk_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#5 Warning
-Large setup violation  
-There is a large setup violation of -1.074 ns between Series_recombination_loop/order_reg[0]/C (clocked by clk_sys_clk_wiz_0) and Series_recombination_loop/FFT_outI_reg[27]/D (clocked by clk_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#6 Warning
-Large setup violation  
-There is a large setup violation of -1.082 ns between Series_recombination_loop/order_reg[0]/C (clocked by clk_sys_clk_wiz_0) and Series_recombination_loop/FFT_outI_reg[25]/D (clocked by clk_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#7 Warning
-Large setup violation  
-There is a large setup violation of -1.095 ns between Series_recombination_loop/order_reg[0]/C (clocked by clk_sys_clk_wiz_0) and Series_recombination_loop/FFT_outI_reg[28]/D (clocked by clk_sys_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#8 Warning
-Large setup violation  
-There is a large setup violation of -1.115 ns between Series_recombination_loop/order_reg[0]/C (clocked by clk_sys_clk_wiz_0) and Series_recombination_loop/FFT_outI_reg[30]/D (clocked by clk_sys_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#9 Warning
-Large setup violation  
-There is a large setup violation of -1.121 ns between Series_recombination_loop/order_reg[0]/C (clocked by clk_sys_clk_wiz_0) and Series_recombination_loop/FFT_outR_reg[27]/D (clocked by clk_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#10 Warning
-Large setup violation  
-There is a large setup violation of -1.142 ns between Series_recombination_loop/order_reg[0]/C (clocked by clk_sys_clk_wiz_0) and Series_recombination_loop/FFT_outR_reg[25]/D (clocked by clk_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#11 Warning
-Large setup violation  
-There is a large setup violation of -1.144 ns between Series_recombination_loop/order_reg[0]/C (clocked by clk_sys_clk_wiz_0) and Series_recombination_loop/FFT_outR_reg[28]/D (clocked by clk_sys_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#12 Warning
-Large setup violation  
-There is a large setup violation of -1.160 ns between Series_recombination_loop/order_reg[0]/C (clocked by clk_sys_clk_wiz_0) and Series_recombination_loop/FFT_outR_reg[30]/D (clocked by clk_sys_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#13 Warning
-Large setup violation  
-There is a large setup violation of -1.191 ns between Series_recombination_loop/order_reg[0]/C (clocked by clk_sys_clk_wiz_0) and Series_recombination_loop/FFT_outI_reg[31]/D (clocked by clk_sys_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#14 Warning
-Large setup violation  
-There is a large setup violation of -1.199 ns between Series_recombination_loop/order_reg[0]/C (clocked by clk_sys_clk_wiz_0) and Series_recombination_loop/FFT_outI_reg[29]/D (clocked by clk_sys_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#15 Warning
-Large setup violation  
-There is a large setup violation of -1.211 ns between Series_recombination_loop/order_reg[0]/C (clocked by clk_sys_clk_wiz_0) and Series_recombination_loop/FFT_outI_reg[32]/D (clocked by clk_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#16 Warning
-Large setup violation  
-There is a large setup violation of -1.231 ns between Series_recombination_loop/order_reg[0]/C (clocked by clk_sys_clk_wiz_0) and Series_recombination_loop/FFT_outI_reg[34]/D (clocked by clk_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#17 Warning
-Large setup violation  
-There is a large setup violation of -1.234 ns between Series_recombination_loop/order_reg[0]/C (clocked by clk_sys_clk_wiz_0) and Series_recombination_loop/FFT_outR_reg[31]/D (clocked by clk_sys_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#18 Warning
-Large setup violation  
-There is a large setup violation of -1.255 ns between Series_recombination_loop/order_reg[0]/C (clocked by clk_sys_clk_wiz_0) and Series_recombination_loop/FFT_outR_reg[29]/D (clocked by clk_sys_clk_wiz_0_1). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#19 Warning
-Large setup violation  
-There is a large setup violation of -1.257 ns between Series_recombination_loop/order_reg[0]/C (clocked by clk_sys_clk_wiz_0) and Series_recombination_loop/FFT_outR_reg[32]/D (clocked by clk_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#20 Warning
-Large setup violation  
-There is a large setup violation of -1.273 ns between Series_recombination_loop/order_reg[0]/C (clocked by clk_sys_clk_wiz_0) and Series_recombination_loop/FFT_outR_reg[34]/D (clocked by clk_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#21 Warning
-Large setup violation  
-There is a large setup violation of -1.307 ns between Series_recombination_loop/order_reg[0]/C (clocked by clk_sys_clk_wiz_0) and Series_recombination_loop/FFT_outI_reg[35]/D (clocked by clk_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#22 Warning
-Large setup violation  
-There is a large setup violation of -1.315 ns between Series_recombination_loop/order_reg[0]/C (clocked by clk_sys_clk_wiz_0) and Series_recombination_loop/FFT_outI_reg[33]/D (clocked by clk_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#23 Warning
-Large setup violation  
-There is a large setup violation of -1.347 ns between Series_recombination_loop/order_reg[0]/C (clocked by clk_sys_clk_wiz_0) and Series_recombination_loop/FFT_outR_reg[35]/D (clocked by clk_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#24 Warning
-Large setup violation  
-There is a large setup violation of -1.368 ns between Series_recombination_loop/order_reg[0]/C (clocked by clk_sys_clk_wiz_0) and Series_recombination_loop/FFT_outR_reg[33]/D (clocked by clk_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-18#1 Warning

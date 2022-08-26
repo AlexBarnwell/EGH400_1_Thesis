@@ -2,8 +2,8 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Fri Aug 26 12:37:11 2022
-# Process ID: 8876
+# Start of session at: Fri Aug 26 17:51:31 2022
+# Process ID: 40916
 # Current directory: C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1
 # Command line: vivado.exe -log fpga_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fpga_top.tcl
 # Log file: C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/fpga_top.vds
@@ -23,75 +23,75 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 23616
+INFO: [Synth 8-7075] Helper process launched with PID 40408
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1290.293 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1290.574 ; gain = 0.000
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-9112] actual for formal port 'sclr' is neither a static name nor a globally static expression [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFT_loop.vhd:165]
-WARNING: [Synth 8-9112] actual for formal port 'sclr' is neither a static name nor a globally static expression [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFT_loop.vhd:175]
+WARNING: [Synth 8-9112] actual for formal port 'sclr' is neither a static name nor a globally static expression [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFT_loop.vhd:191]
+WARNING: [Synth 8-9112] actual for formal port 'sclr' is neither a static name nor a globally static expression [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFT_loop.vhd:201]
 INFO: [Synth 8-638] synthesizing module 'fpga_top' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:44]
-INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/clk_wiz_0_stub.vhdl:5' bound to instance 'CLOCK' of component 'clk_wiz_0' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:166]
-INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/clk_wiz_0_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/clk_wiz_0_stub.vhdl:5' bound to instance 'CLOCK' of component 'clk_wiz_0' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:166]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/clk_wiz_0_stub.vhdl:15]
 WARNING: [Synth 8-614] signal 'clock_count' is read in the process but is not in the sensitivity list [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:177]
 WARNING: [Synth 8-614] signal 'clk_mic' is read in the process but is not in the sensitivity list [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:177]
 INFO: [Synth 8-3491] module 'DFTBD_RAM' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:10' bound to instance 'DFTBD_RAMs' of component 'DFTBD_RAM' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:197]
 INFO: [Synth 8-638] synthesizing module 'DFTBD_RAM' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:23]
-INFO: [Synth 8-3491] module 'DFTBD_MEM1' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM1_stub.vhdl:5' bound to instance 'DFTBD_RAM1' of component 'DFTBD_MEM1' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:272]
-INFO: [Synth 8-638] synthesizing module 'DFTBD_MEM1' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM1_stub.vhdl:17]
-INFO: [Synth 8-3491] module 'DFTBD_MEM2' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM2_stub.vhdl:5' bound to instance 'DFTBD_RAM2' of component 'DFTBD_MEM2' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:282]
-INFO: [Synth 8-638] synthesizing module 'DFTBD_MEM2' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM2_stub.vhdl:17]
-INFO: [Synth 8-3491] module 'DFTBD_MEM8' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM8_stub.vhdl:5' bound to instance 'DFTBD_RAM8' of component 'DFTBD_MEM8' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:292]
-INFO: [Synth 8-638] synthesizing module 'DFTBD_MEM8' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM8_stub.vhdl:17]
-INFO: [Synth 8-3491] module 'DFTBD_MEM3' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM3_stub.vhdl:5' bound to instance 'DFTBD_RAM3' of component 'DFTBD_MEM3' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:302]
-INFO: [Synth 8-638] synthesizing module 'DFTBD_MEM3' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM3_stub.vhdl:17]
-INFO: [Synth 8-3491] module 'DFTBD_MEM4' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM4_stub.vhdl:5' bound to instance 'DFTBD_RAM4' of component 'DFTBD_MEM4' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:312]
-INFO: [Synth 8-638] synthesizing module 'DFTBD_MEM4' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM4_stub.vhdl:17]
-INFO: [Synth 8-3491] module 'DFTBD_MEM5' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM5_stub.vhdl:5' bound to instance 'DFTBD_RAM5' of component 'DFTBD_MEM5' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:322]
-INFO: [Synth 8-638] synthesizing module 'DFTBD_MEM5' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM5_stub.vhdl:17]
-INFO: [Synth 8-3491] module 'DFTBD_MEM6' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM6_stub.vhdl:5' bound to instance 'DFTBD_RAM6' of component 'DFTBD_MEM6' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:332]
-INFO: [Synth 8-638] synthesizing module 'DFTBD_MEM6' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM6_stub.vhdl:17]
-INFO: [Synth 8-3491] module 'DFTBD_MEM7' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM7_stub.vhdl:5' bound to instance 'DFTBD_RAM7' of component 'DFTBD_MEM7' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:342]
-INFO: [Synth 8-638] synthesizing module 'DFTBD_MEM7' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM7_stub.vhdl:17]
-INFO: [Synth 8-3491] module 'DFTBD_MEM1I' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM1I_stub.vhdl:5' bound to instance 'DFTBD_RAMI1' of component 'DFTBD_MEM1I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:355]
-INFO: [Synth 8-638] synthesizing module 'DFTBD_MEM1I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM1I_stub.vhdl:17]
-INFO: [Synth 8-3491] module 'DFTB_MEM2I' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTB_MEM2I_stub.vhdl:5' bound to instance 'DFTBD_RAMI2' of component 'DFTB_MEM2I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:365]
-INFO: [Synth 8-638] synthesizing module 'DFTB_MEM2I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTB_MEM2I_stub.vhdl:17]
-INFO: [Synth 8-3491] module 'DFTBD_MEM3I' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM3I_stub.vhdl:5' bound to instance 'DFTBD_RAMI3' of component 'DFTBD_MEM3I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:375]
-INFO: [Synth 8-638] synthesizing module 'DFTBD_MEM3I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM3I_stub.vhdl:17]
-INFO: [Synth 8-3491] module 'DFTBD_MEM4I' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM4I_stub.vhdl:5' bound to instance 'DFTBD_RAMI4' of component 'DFTBD_MEM4I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:385]
-INFO: [Synth 8-638] synthesizing module 'DFTBD_MEM4I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM4I_stub.vhdl:17]
-INFO: [Synth 8-3491] module 'DFTBD_MEM5I' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM5I_stub.vhdl:5' bound to instance 'DFTBD_RAMI5' of component 'DFTBD_MEM5I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:395]
-INFO: [Synth 8-638] synthesizing module 'DFTBD_MEM5I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM5I_stub.vhdl:17]
-INFO: [Synth 8-3491] module 'DFTDB_MEM6I' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTDB_MEM6I_stub.vhdl:5' bound to instance 'DFTBD_RAMI6' of component 'DFTDB_MEM6I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:405]
-INFO: [Synth 8-638] synthesizing module 'DFTDB_MEM6I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTDB_MEM6I_stub.vhdl:17]
-INFO: [Synth 8-3491] module 'DFTBD_MEM7I' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM7I_stub.vhdl:5' bound to instance 'DFTBD_RAMI7' of component 'DFTBD_MEM7I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:415]
-INFO: [Synth 8-638] synthesizing module 'DFTBD_MEM7I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM7I_stub.vhdl:17]
-INFO: [Synth 8-3491] module 'DFTBD_MEM8I' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM8I_stub.vhdl:5' bound to instance 'DFTBD_RAMI8' of component 'DFTBD_MEM8I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:425]
-INFO: [Synth 8-638] synthesizing module 'DFTBD_MEM8I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM8I_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'DFTBD_MEM1' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM1_stub.vhdl:5' bound to instance 'DFTBD_RAM1' of component 'DFTBD_MEM1' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:272]
+INFO: [Synth 8-638] synthesizing module 'DFTBD_MEM1' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM1_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'DFTBD_MEM2' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM2_stub.vhdl:5' bound to instance 'DFTBD_RAM2' of component 'DFTBD_MEM2' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:282]
+INFO: [Synth 8-638] synthesizing module 'DFTBD_MEM2' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM2_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'DFTBD_MEM8' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM8_stub.vhdl:5' bound to instance 'DFTBD_RAM8' of component 'DFTBD_MEM8' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:292]
+INFO: [Synth 8-638] synthesizing module 'DFTBD_MEM8' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM8_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'DFTBD_MEM3' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM3_stub.vhdl:5' bound to instance 'DFTBD_RAM3' of component 'DFTBD_MEM3' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:302]
+INFO: [Synth 8-638] synthesizing module 'DFTBD_MEM3' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM3_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'DFTBD_MEM4' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM4_stub.vhdl:5' bound to instance 'DFTBD_RAM4' of component 'DFTBD_MEM4' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:312]
+INFO: [Synth 8-638] synthesizing module 'DFTBD_MEM4' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM4_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'DFTBD_MEM5' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM5_stub.vhdl:5' bound to instance 'DFTBD_RAM5' of component 'DFTBD_MEM5' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:322]
+INFO: [Synth 8-638] synthesizing module 'DFTBD_MEM5' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM5_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'DFTBD_MEM6' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM6_stub.vhdl:5' bound to instance 'DFTBD_RAM6' of component 'DFTBD_MEM6' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:332]
+INFO: [Synth 8-638] synthesizing module 'DFTBD_MEM6' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM6_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'DFTBD_MEM7' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM7_stub.vhdl:5' bound to instance 'DFTBD_RAM7' of component 'DFTBD_MEM7' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:342]
+INFO: [Synth 8-638] synthesizing module 'DFTBD_MEM7' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM7_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'DFTBD_MEM1I' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM1I_stub.vhdl:5' bound to instance 'DFTBD_RAMI1' of component 'DFTBD_MEM1I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:355]
+INFO: [Synth 8-638] synthesizing module 'DFTBD_MEM1I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM1I_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'DFTB_MEM2I' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTB_MEM2I_stub.vhdl:5' bound to instance 'DFTBD_RAMI2' of component 'DFTB_MEM2I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:365]
+INFO: [Synth 8-638] synthesizing module 'DFTB_MEM2I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTB_MEM2I_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'DFTBD_MEM3I' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM3I_stub.vhdl:5' bound to instance 'DFTBD_RAMI3' of component 'DFTBD_MEM3I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:375]
+INFO: [Synth 8-638] synthesizing module 'DFTBD_MEM3I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM3I_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'DFTBD_MEM4I' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM4I_stub.vhdl:5' bound to instance 'DFTBD_RAMI4' of component 'DFTBD_MEM4I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:385]
+INFO: [Synth 8-638] synthesizing module 'DFTBD_MEM4I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM4I_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'DFTBD_MEM5I' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM5I_stub.vhdl:5' bound to instance 'DFTBD_RAMI5' of component 'DFTBD_MEM5I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:395]
+INFO: [Synth 8-638] synthesizing module 'DFTBD_MEM5I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM5I_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'DFTDB_MEM6I' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTDB_MEM6I_stub.vhdl:5' bound to instance 'DFTBD_RAMI6' of component 'DFTDB_MEM6I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:405]
+INFO: [Synth 8-638] synthesizing module 'DFTDB_MEM6I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTDB_MEM6I_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'DFTBD_MEM7I' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM7I_stub.vhdl:5' bound to instance 'DFTBD_RAMI7' of component 'DFTBD_MEM7I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:415]
+INFO: [Synth 8-638] synthesizing module 'DFTBD_MEM7I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM7I_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'DFTBD_MEM8I' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM8I_stub.vhdl:5' bound to instance 'DFTBD_RAMI8' of component 'DFTBD_MEM8I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:425]
+INFO: [Synth 8-638] synthesizing module 'DFTBD_MEM8I' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM8I_stub.vhdl:17]
 INFO: [Synth 8-256] done synthesizing module 'DFTBD_RAM' (0#1) [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhd:23]
 INFO: [Synth 8-3491] module 'DFT_loop' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFT_loop.vhd:5' bound to instance 'Series_recombination_loop' of component 'DFT_loop' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:210]
 INFO: [Synth 8-638] synthesizing module 'DFT_loop' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFT_loop.vhd:43]
-INFO: [Synth 8-3491] module 'dsp_macro_0' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/dsp_macro_0_stub.vhdl:5' bound to instance 'first' of component 'dsp_macro_0' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFT_loop.vhd:162]
-INFO: [Synth 8-638] synthesizing module 'dsp_macro_0' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/dsp_macro_0_stub.vhdl:18]
-INFO: [Synth 8-3491] module 'dsp_macro_0' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/dsp_macro_0_stub.vhdl:5' bound to instance 'firstI' of component 'dsp_macro_0' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFT_loop.vhd:172]
-WARNING: [Synth 8-614] signal 'DFT_RESET' is read in the process but is not in the sensitivity list [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFT_loop.vhd:317]
+INFO: [Synth 8-3491] module 'dsp_macro_0' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/dsp_macro_0_stub.vhdl:5' bound to instance 'first' of component 'dsp_macro_0' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFT_loop.vhd:188]
+INFO: [Synth 8-638] synthesizing module 'dsp_macro_0' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/dsp_macro_0_stub.vhdl:18]
+INFO: [Synth 8-3491] module 'dsp_macro_0' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/dsp_macro_0_stub.vhdl:5' bound to instance 'firstI' of component 'dsp_macro_0' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFT_loop.vhd:198]
+WARNING: [Synth 8-614] signal 'DFT_RESET' is read in the process but is not in the sensitivity list [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFT_loop.vhd:398]
 INFO: [Synth 8-256] done synthesizing module 'DFT_loop' (0#1) [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFT_loop.vhd:43]
 INFO: [Synth 8-3491] module 'Twiddle_factors' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/Twiddle_factors.vhd:35' bound to instance 'TWiddle1' of component 'Twiddle_factors' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:229]
 INFO: [Synth 8-638] synthesizing module 'Twiddle_factors' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/Twiddle_factors.vhd:46]
-INFO: [Synth 8-3491] module 'TW_RAM' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/TW_RAM_stub.vhdl:5' bound to instance 'Twiddle_1' of component 'TW_RAM' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/Twiddle_factors.vhd:93]
-INFO: [Synth 8-638] synthesizing module 'TW_RAM' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/TW_RAM_stub.vhdl:17]
-INFO: [Synth 8-3491] module 'TW2_RAM' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/TW2_RAM_stub.vhdl:5' bound to instance 'Twiddle_2' of component 'TW2_RAM' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/Twiddle_factors.vhd:103]
-INFO: [Synth 8-638] synthesizing module 'TW2_RAM' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-8876-DESKTOP-BDA8VGJ/realtime/TW2_RAM_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'TW_RAM' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/TW_RAM_stub.vhdl:5' bound to instance 'Twiddle_1' of component 'TW_RAM' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/Twiddle_factors.vhd:93]
+INFO: [Synth 8-638] synthesizing module 'TW_RAM' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/TW_RAM_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'TW2_RAM' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/TW2_RAM_stub.vhdl:5' bound to instance 'Twiddle_2' of component 'TW2_RAM' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/Twiddle_factors.vhd:103]
+INFO: [Synth 8-638] synthesizing module 'TW2_RAM' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-40916-DESKTOP-BDA8VGJ/realtime/TW2_RAM_stub.vhdl:17]
 INFO: [Synth 8-256] done synthesizing module 'Twiddle_factors' (0#1) [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/Twiddle_factors.vhd:46]
 INFO: [Synth 8-3491] module 'shift_reg_input' declared at 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/shift_reg_input.vhd:6' bound to instance 'input' of component 'shift_reg_input' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:239]
 INFO: [Synth 8-638] synthesizing module 'shift_reg_input' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/shift_reg_input.vhd:26]
 WARNING: [Synth 8-614] signal 'read_en' is read in the process but is not in the sensitivity list [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/shift_reg_input.vhd:77]
 INFO: [Synth 8-256] done synthesizing module 'shift_reg_input' (0#1) [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/shift_reg_input.vhd:26]
 INFO: [Synth 8-256] done synthesizing module 'fpga_top' (0#1) [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:44]
-WARNING: [Synth 8-6014] Unused sequential element CE_reg was removed.  [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFT_loop.vhd:204]
-WARNING: [Synth 8-6014] Unused sequential element count5_reg was removed.  [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFT_loop.vhd:223]
-WARNING: [Synth 8-6014] Unused sequential element rshift2_reg was removed.  [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFT_loop.vhd:231]
-WARNING: [Synth 8-6014] Unused sequential element rshift2i_reg was removed.  [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFT_loop.vhd:236]
+WARNING: [Synth 8-6014] Unused sequential element CE_reg was removed.  [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFT_loop.vhd:234]
+WARNING: [Synth 8-6014] Unused sequential element count5_reg was removed.  [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFT_loop.vhd:253]
+WARNING: [Synth 8-6014] Unused sequential element rshift2_reg was removed.  [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFT_loop.vhd:261]
+WARNING: [Synth 8-6014] Unused sequential element rshift2i_reg was removed.  [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFT_loop.vhd:266]
 WARNING: [Synth 8-6014] Unused sequential element TWout3_reg was removed.  [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/Twiddle_factors.vhd:122]
 WARNING: [Synth 8-6014] Unused sequential element TWout4_reg was removed.  [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/Twiddle_factors.vhd:123]
 WARNING: [Synth 8-6014] Unused sequential element TWout5_reg was removed.  [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/Twiddle_factors.vhd:124]
@@ -136,18 +136,18 @@ WARNING: [Synth 8-3917] design fpga_top has port order_I[1] driven by constant 0
 WARNING: [Synth 8-3917] design fpga_top has port order_I[0] driven by constant 0
 WARNING: [Synth 8-7129] Port DFT_Reset in module shift_reg_input is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1290.293 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1290.574 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1290.293 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1290.574 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1290.293 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1290.574 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 1290.293 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 1290.574 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -200,11 +200,11 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/fpga_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1375.574 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1375.664 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1375.574 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1375.664 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'DFTBD_RAMs/DFTBD_RAM1' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'DFTBD_RAMs/DFTBD_RAM2' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'DFTBD_RAMs/DFTBD_RAM3' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
@@ -226,14 +226,14 @@ WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context s
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1377.090 ; gain = 86.797
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1378.664 ; gain = 88.090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35ticsg324-1L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1377.090 ; gain = 86.797
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1378.664 ; gain = 88.090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -262,7 +262,7 @@ Applied set_property KEEP_HIERARCHY = SOFT for Series_recombination_loop/first. 
 Applied set_property KEEP_HIERARCHY = SOFT for Series_recombination_loop/firstI. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for CLOCK. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1377.090 ; gain = 86.797
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1378.664 ; gain = 88.090
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'DFT_loop'
 ---------------------------------------------------------------------------------------------------
@@ -275,7 +275,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'DFT_l
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'DFT_loop'
 WARNING: [Synth 8-327] inferring latch for variable 'clk_mic_reg' [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:181]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1377.090 ; gain = 86.797
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1378.664 ; gain = 88.090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -283,7 +283,8 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   3 Input   37 Bit       Adders := 2     
-	   4 Input   36 Bit       Adders := 2     
+	   3 Input   36 Bit       Adders := 3     
+	   2 Input   36 Bit       Adders := 1     
 	   2 Input   32 Bit       Adders := 2     
 	   3 Input   32 Bit       Adders := 1     
 	   2 Input   31 Bit       Adders := 1     
@@ -298,7 +299,7 @@ Detailed RTL Component Info :
 	              256 Bit    Registers := 1     
 	               64 Bit    Registers := 1     
 	               37 Bit    Registers := 2     
-	               36 Bit    Registers := 2     
+	               36 Bit    Registers := 12    
 	               32 Bit    Registers := 2     
 	               18 Bit    Registers := 4     
 	               16 Bit    Registers := 21    
@@ -337,24 +338,24 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 DSP Report: Generating DSP ARG, operation Mode is: A''*B2.
-DSP Report: register PPsig2_reg is absorbed into DSP ARG.
-DSP Report: register delayed_cos_reg is absorbed into DSP ARG.
-DSP Report: register delayed2_cos_reg is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: A''*B2.
 DSP Report: register PPsig2I_reg is absorbed into DSP ARG.
 DSP Report: register delayed_sin_reg is absorbed into DSP ARG.
 DSP Report: register delayed2_sin_reg is absorbed into DSP ARG.
 DSP Report: operator ARG is absorbed into DSP ARG.
 DSP Report: Generating DSP ARG, operation Mode is: A''*B2.
 DSP Report: register PPsig2_reg is absorbed into DSP ARG.
-DSP Report: register delayed_sin_reg is absorbed into DSP ARG.
-DSP Report: register delayed2_sin_reg is absorbed into DSP ARG.
+DSP Report: register delayed_cos_reg is absorbed into DSP ARG.
+DSP Report: register delayed2_cos_reg is absorbed into DSP ARG.
 DSP Report: operator ARG is absorbed into DSP ARG.
 DSP Report: Generating DSP ARG, operation Mode is: A''*B2.
 DSP Report: register PPsig2I_reg is absorbed into DSP ARG.
 DSP Report: register delayed_cos_reg is absorbed into DSP ARG.
 DSP Report: register delayed2_cos_reg is absorbed into DSP ARG.
+DSP Report: operator ARG is absorbed into DSP ARG.
+DSP Report: Generating DSP ARG, operation Mode is: A''*B2.
+DSP Report: register PPsig2_reg is absorbed into DSP ARG.
+DSP Report: register delayed_sin_reg is absorbed into DSP ARG.
+DSP Report: register delayed2_sin_reg is absorbed into DSP ARG.
 DSP Report: operator ARG is absorbed into DSP ARG.
 WARNING: [Synth 8-3917] design fpga_top has port order_I[31] driven by constant 0
 WARNING: [Synth 8-3917] design fpga_top has port order_I[30] driven by constant 0
@@ -390,7 +391,7 @@ WARNING: [Synth 8-3917] design fpga_top has port order_I[1] driven by constant 0
 WARNING: [Synth 8-3917] design fpga_top has port order_I[0] driven by constant 0
 WARNING: [Synth 8-7129] Port DFT_Reset in module shift_reg_input is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 1377.090 ; gain = 86.797
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1378.664 ; gain = 88.090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -414,214 +415,214 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 1377.090 ; gain = 86.797
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 1378.664 ; gain = 88.090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:47 ; elapsed = 00:00:47 . Memory (MB): peak = 1594.277 ; gain = 303.984
+Finished Timing Optimization : Time (s): cpu = 00:00:59 ; elapsed = 00:01:00 . Memory (MB): peak = 1520.480 ; gain = 229.906
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 Found timing loop:
-     0: i_1905/O (LUT2)
+     0: i_1922/O (LUT2)
       [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     1: i_1905/I0 (LUT2)
-     2: i_1894/O (LUT5)
+     1: i_1922/I0 (LUT2)
+     2: i_1911/O (LUT5)
       [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     3: i_1894/I4 (LUT5)
-     4: i_1905/O (LUT2)
-      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
-Inferred a: "set_disable_timing -from I0 -to O i_1905"
-Found timing loop:
-     0: i_1905/O (LUT2)
-      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     1: i_1905/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
-Found timing loop:
-     0: i_1905/O (LUT2)
-      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     1: i_1905/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
-Found timing loop:
-     0: i_1913/O (LUT2)
-      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     1: i_1913/I1 (LUT2)
-     2: i_1913/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
-Inferred a: "set_disable_timing -from I1 -to O i_1913"
-Found timing loop:
-     0: i_1905/O (LUT2)
-      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     1: i_1905/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
-Found timing loop:
-     0: i_1913/O (LUT2)
-      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     1: i_1913/I0 (LUT2)
-     2: i_1895/O (LUT6)
-      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     3: i_1895/I4 (LUT6)
-     4: i_1906/O (LUT3)
-      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     5: i_1906/I2 (LUT3)
-     6: i_1905/O (LUT2)
-      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     7: i_1905/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
-Inferred a: "set_disable_timing -from I0 -to O i_1913"
-Found timing loop:
-     0: i_1905/O (LUT2)
-      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     1: i_1905/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
-Found timing loop:
-     0: i_1911/O (LUT3)
-      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     1: i_1911/I2 (LUT3)
-     2: i_1903/O (LUT3)
-      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     3: i_1903/I2 (LUT3)
-     4: i_1905/O (LUT2)
-      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     5: i_1905/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
-Inferred a: "set_disable_timing -from I2 -to O i_1911"
-Found timing loop:
-     0: i_1908/O (LUT3)
-      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     1: i_1908/I2 (LUT3)
-     2: i_1901/O (LUT6)
-      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     3: i_1901/I5 (LUT6)
-     4: i_1907/O (LUT2)
-      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     5: i_1907/I0 (LUT2)
-     6: i_1898/O (LUT5)
-      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     7: i_1898/I4 (LUT5)
-     8: i_1908/O (LUT3)
+     3: i_1911/I4 (LUT5)
+     4: i_1922/O (LUT2)
       [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
 CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
-Inferred a: "set_disable_timing -from I2 -to O i_1908"
+Inferred a: "set_disable_timing -from I0 -to O i_1922"
 Found timing loop:
-     0: i_1910/O (LUT3)
+     0: i_1922/O (LUT2)
       [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     1: i_1910/I2 (LUT3)
-     2: i_1902/O (LUT4)
-      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     3: i_1902/I3 (LUT4)
-     4: i_1905/O (LUT2)
-      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     5: i_1905/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
-Inferred a: "set_disable_timing -from I2 -to O i_1910"
-Found timing loop:
-     0: i_1905/O (LUT2)
-      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     1: i_1905/O (LUT2)
+     1: i_1922/O (LUT2)
 CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
 Found timing loop:
-     0: i_1912/O (LUT3)
+     0: i_1922/O (LUT2)
       [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     1: i_1912/I2 (LUT3)
-     2: i_1909/O (LUT2)
-      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     3: i_1909/I1 (LUT2)
-     4: i_1912/O (LUT3)
-      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
-Inferred a: "set_disable_timing -from I2 -to O i_1912"
-Found timing loop:
-     0: i_1905/O (LUT2)
-      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     1: i_1905/O (LUT2)
+     1: i_1922/O (LUT2)
 CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
 Found timing loop:
-     0: i_1912/O (LUT3)
+     0: i_1930/O (LUT2)
       [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     1: i_1912/I1 (LUT3)
-     2: i_1899/O (LUT2)
-      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     3: i_1899/I1 (LUT2)
-     4: i_1912/O (LUT3)
-      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
+     1: i_1930/I1 (LUT2)
+     2: i_1930/O (LUT2)
 CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
-Inferred a: "set_disable_timing -from I1 -to O i_1912"
+Inferred a: "set_disable_timing -from I1 -to O i_1930"
 Found timing loop:
-     0: i_1905/O (LUT2)
+     0: i_1922/O (LUT2)
       [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     1: i_1905/O (LUT2)
+     1: i_1922/O (LUT2)
 CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
 Found timing loop:
-     0: i_1913/O (LUT2)
+     0: i_1930/O (LUT2)
       [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     1: i_1913/O (LUT2)
+     1: i_1930/I0 (LUT2)
+     2: i_1912/O (LUT6)
+      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
+     3: i_1912/I4 (LUT6)
+     4: i_1923/O (LUT3)
+      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
+     5: i_1923/I2 (LUT3)
+     6: i_1922/O (LUT2)
+      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
+     7: i_1922/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
+Inferred a: "set_disable_timing -from I0 -to O i_1930"
+Found timing loop:
+     0: i_1922/O (LUT2)
+      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
+     1: i_1922/O (LUT2)
 CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
 Found timing loop:
-     0: i_1911/O (LUT3)
+     0: i_1928/O (LUT3)
       [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     1: i_1911/I0 (LUT3)
-     2: i_1911/O (LUT3)
+     1: i_1928/I2 (LUT3)
+     2: i_1920/O (LUT3)
+      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
+     3: i_1920/I2 (LUT3)
+     4: i_1922/O (LUT2)
+      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
+     5: i_1922/O (LUT2)
 CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
-Inferred a: "set_disable_timing -from I0 -to O i_1911"
+Inferred a: "set_disable_timing -from I2 -to O i_1928"
 Found timing loop:
-     0: i_1913/O (LUT2)
+     0: i_1925/O (LUT3)
       [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     1: i_1913/O (LUT2)
+     1: i_1925/I2 (LUT3)
+     2: i_1918/O (LUT6)
+      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
+     3: i_1918/I5 (LUT6)
+     4: i_1924/O (LUT2)
+      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
+     5: i_1924/I0 (LUT2)
+     6: i_1915/O (LUT5)
+      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
+     7: i_1915/I4 (LUT5)
+     8: i_1925/O (LUT3)
+      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
 CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
+Inferred a: "set_disable_timing -from I2 -to O i_1925"
 Found timing loop:
-     0: i_1908/O (LUT3)
+     0: i_1927/O (LUT3)
       [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     1: i_1908/I0 (LUT3)
-     2: i_1910/O (LUT3)
+     1: i_1927/I2 (LUT3)
+     2: i_1919/O (LUT4)
       [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     3: i_1910/I0 (LUT3)
-     4: i_1910/O (LUT3)
+     3: i_1919/I3 (LUT4)
+     4: i_1922/O (LUT2)
+      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
+     5: i_1922/O (LUT2)
 CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
-Inferred a: "set_disable_timing -from I0 -to O i_1908"
+Inferred a: "set_disable_timing -from I2 -to O i_1927"
 Found timing loop:
-     0: i_1910/O (LUT3)
+     0: i_1922/O (LUT2)
       [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     1: i_1910/I0 (LUT3)
-     2: i_1910/O (LUT3)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
-Inferred a: "set_disable_timing -from I0 -to O i_1910"
-Found timing loop:
-     0: i_1910/O (LUT3)
-      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     1: i_1910/O (LUT3)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
-Found timing loop:
-     0: i_1905/O (LUT2)
-      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     1: i_1905/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
-Found timing loop:
-     0: i_1905/O (LUT2)
-      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     1: i_1905/O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
-Found timing loop:
-     0: i_1911/O (LUT3)
-      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     1: i_1911/O (LUT3)
+     1: i_1922/O (LUT2)
 CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
 Found timing loop:
-     0: i_1905/O (LUT2)
+     0: i_1929/O (LUT3)
       [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     1: i_1905/O (LUT2)
+     1: i_1929/I2 (LUT3)
+     2: i_1926/O (LUT2)
+      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
+     3: i_1926/I1 (LUT2)
+     4: i_1929/O (LUT3)
+      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
+Inferred a: "set_disable_timing -from I2 -to O i_1929"
+Found timing loop:
+     0: i_1922/O (LUT2)
+      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
+     1: i_1922/O (LUT2)
 CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
 Found timing loop:
-     0: i_1910/O (LUT3)
+     0: i_1929/O (LUT3)
       [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
-     1: i_1910/O (LUT3)
+     1: i_1929/I1 (LUT3)
+     2: i_1916/O (LUT2)
+      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
+     3: i_1916/I1 (LUT2)
+     4: i_1929/O (LUT3)
+      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
+Inferred a: "set_disable_timing -from I1 -to O i_1929"
+Found timing loop:
+     0: i_1922/O (LUT2)
+      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
+     1: i_1922/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
+Found timing loop:
+     0: i_1930/O (LUT2)
+      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
+     1: i_1930/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
+Found timing loop:
+     0: i_1928/O (LUT3)
+      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
+     1: i_1928/I0 (LUT3)
+     2: i_1928/O (LUT3)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
+Inferred a: "set_disable_timing -from I0 -to O i_1928"
+Found timing loop:
+     0: i_1930/O (LUT2)
+      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
+     1: i_1930/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
+Found timing loop:
+     0: i_1925/O (LUT3)
+      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
+     1: i_1925/I0 (LUT3)
+     2: i_1927/O (LUT3)
+      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
+     3: i_1927/I0 (LUT3)
+     4: i_1927/O (LUT3)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
+Inferred a: "set_disable_timing -from I0 -to O i_1925"
+Found timing loop:
+     0: i_1927/O (LUT3)
+      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
+     1: i_1927/I0 (LUT3)
+     2: i_1927/O (LUT3)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
+Inferred a: "set_disable_timing -from I0 -to O i_1927"
+Found timing loop:
+     0: i_1927/O (LUT3)
+      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
+     1: i_1927/O (LUT3)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
+Found timing loop:
+     0: i_1922/O (LUT2)
+      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
+     1: i_1922/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
+Found timing loop:
+     0: i_1922/O (LUT2)
+      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
+     1: i_1922/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
+Found timing loop:
+     0: i_1928/O (LUT3)
+      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
+     1: i_1928/O (LUT3)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
+Found timing loop:
+     0: i_1922/O (LUT2)
+      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
+     1: i_1922/O (LUT2)
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
+Found timing loop:
+     0: i_1927/O (LUT3)
+      [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:180]
+     1: i_1927/O (LUT3)
 CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd:28]
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:48 ; elapsed = 00:00:48 . Memory (MB): peak = 1612.277 ; gain = 321.984
+Finished Technology Mapping : Time (s): cpu = 00:01:00 ; elapsed = 00:01:01 . Memory (MB): peak = 1538.535 ; gain = 247.961
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -639,13 +640,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:52 ; elapsed = 00:00:52 . Memory (MB): peak = 1612.277 ; gain = 321.984
+Finished IO Insertion : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 1538.535 ; gain = 247.961
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:52 ; elapsed = 00:00:52 . Memory (MB): peak = 1612.277 ; gain = 321.984
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 1538.535 ; gain = 247.961
 ---------------------------------------------------------------------------------
 Found timing loop:
      0: clk_mic_reg_i_8/O (LUT6)
@@ -717,25 +718,25 @@ Inferred a: "set_disable_timing -from I0 -to O clk_mic_reg_i_8"
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:52 ; elapsed = 00:00:52 . Memory (MB): peak = 1612.277 ; gain = 321.984
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 1538.535 ; gain = 247.961
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:52 ; elapsed = 00:00:52 . Memory (MB): peak = 1612.277 ; gain = 321.984
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 1538.535 ; gain = 247.961
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:52 ; elapsed = 00:00:53 . Memory (MB): peak = 1612.277 ; gain = 321.984
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:04 ; elapsed = 00:01:05 . Memory (MB): peak = 1538.535 ; gain = 247.961
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:52 ; elapsed = 00:00:53 . Memory (MB): peak = 1612.277 ; gain = 321.984
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:04 ; elapsed = 00:01:05 . Memory (MB): peak = 1538.535 ; gain = 247.961
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -802,44 +803,45 @@ Report Cell Usage:
 |18    |TW_RAM_bbox      |     1|
 |19    |clk_wiz_0_bbox   |     1|
 |20    |dsp_macro_0_bbox |     2|
-|22    |CARRY4           |   158|
+|22    |CARRY4           |   176|
 |23    |DSP48E1          |     4|
-|24    |LUT1             |    59|
-|25    |LUT2             |   499|
-|26    |LUT3             |   281|
-|27    |LUT4             |   194|
-|28    |LUT5             |   190|
-|29    |LUT6             |   781|
-|30    |FDCE             |   491|
+|24    |LUT1             |    61|
+|25    |LUT2             |   634|
+|26    |LUT3             |   226|
+|27    |LUT4             |   245|
+|28    |LUT5             |   238|
+|29    |LUT6             |   662|
+|30    |FDCE             |   851|
 |31    |FDPE             |    23|
-|32    |FDRE             |   150|
-|33    |LDC              |     1|
-|34    |IBUF             |     1|
-|35    |OBUF             |   136|
+|32    |FDRE             |    98|
+|33    |FDSE             |    36|
+|34    |LDC              |     1|
+|35    |IBUF             |     1|
+|36    |OBUF             |   136|
 +------+-----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:52 ; elapsed = 00:00:53 . Memory (MB): peak = 1612.277 ; gain = 321.984
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:04 ; elapsed = 00:01:05 . Memory (MB): peak = 1538.535 ; gain = 247.961
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 34 critical warnings and 35 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:44 ; elapsed = 00:00:51 . Memory (MB): peak = 1612.277 ; gain = 235.188
-Synthesis Optimization Complete : Time (s): cpu = 00:00:52 ; elapsed = 00:00:53 . Memory (MB): peak = 1612.277 ; gain = 321.984
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:57 ; elapsed = 00:01:03 . Memory (MB): peak = 1538.535 ; gain = 159.871
+Synthesis Optimization Complete : Time (s): cpu = 00:01:04 ; elapsed = 00:01:05 . Memory (MB): peak = 1538.535 ; gain = 247.961
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 1612.277 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 163 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1538.535 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 181 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1612.277 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1538.535 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   LDC => LDCE: 1 instance 
 
-Synth Design complete, checksum: 98ba649f
+Synth Design complete, checksum: 391b337c
 INFO: [Common 17-83] Releasing license: Synthesis
 78 Infos, 106 Warnings, 34 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 1612.277 ; gain = 321.984
+synth_design: Time (s): cpu = 00:01:08 ; elapsed = 00:01:09 . Memory (MB): peak = 1538.535 ; gain = 247.961
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
 INFO: [Common 17-1381] The checkpoint 'C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/fpga_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file fpga_top_utilization_synth.rpt -pb fpga_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Aug 26 12:38:18 2022...
+INFO: [Common 17-206] Exiting Vivado at Fri Aug 26 17:52:49 2022...

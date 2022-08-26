@@ -172,7 +172,7 @@ set_property used_in_implementation false [get_files -all c:/REPOS/EGH400_1/EGH4
 read_ip -quiet C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/dsp_macro_0/dsp_macro_0.xci
 set_property used_in_implementation false [get_files -all c:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/dsp_macro_0/dsp_macro_0_ooc.xdc]
 
-read_ip -quiet c:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/clk_wiz_0_2/clk_wiz_0.xci
+read_ip -quiet C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/clk_wiz_0_2/clk_wiz_0.xci
 set_property used_in_implementation false [get_files -all c:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/clk_wiz_0_2/clk_wiz_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/clk_wiz_0_2/clk_wiz_0.xdc]
 set_property used_in_implementation false [get_files -all c:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/clk_wiz_0_2/clk_wiz_0_ooc.xdc]
