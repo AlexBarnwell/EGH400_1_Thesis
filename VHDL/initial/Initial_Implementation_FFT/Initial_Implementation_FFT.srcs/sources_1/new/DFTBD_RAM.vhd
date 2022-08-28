@@ -8,10 +8,16 @@ USE ieee.numeric_std.ALL;
 
 -- 6 clock cycle latency for input output handling
 entity DFTBD_RAM is
+    generic (
+        G_DATA_WIDTH    : INTEGER := 25; -- data width of output
+        G_DECIMAL_WIDTH : integer := 13; -- decimal precision
+        G_FILLER_25 : STD_LOGIC_VECTOR(25-1 downto 0) := "0000000000000000000000000"
+        --POUT_size : integer := 37
+    );
     port(
         --ADDRESS : in  std_logic_vector(5 downto 0);
-        DFTOUT  : out std_logic_vector (15 downto 0);
-        DFTOUTI : OUT std_logic_vector (15 downto 0);
+        DFTOUT  : out std_logic_vector (G_DATA_WIDTH-1 downto 0);
+        DFTOUTI : OUT std_logic_vector (G_DATA_WIDTH-1 downto 0);
         CLK : in std_logic;
         RST : in std_logic;
         position : in unsigned(3 downto 0);
@@ -30,8 +36,8 @@ architecture Behavioral of DFTBD_RAM is
             ena : IN STD_LOGIC;
             wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
             addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
-            dina : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-            douta : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+            dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
+            douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0)
         );
     END COMPONENT;
 
@@ -41,8 +47,8 @@ architecture Behavioral of DFTBD_RAM is
             ena : IN STD_LOGIC;
             wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
             addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
-            dina : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-            douta : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+            dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
+            douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0)
         );
     END COMPONENT;
 
@@ -52,8 +58,8 @@ architecture Behavioral of DFTBD_RAM is
             ena : IN STD_LOGIC;
             wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
             addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
-            dina : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-            douta : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+            dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
+            douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0)
         );
     END COMPONENT;
 
@@ -63,8 +69,8 @@ architecture Behavioral of DFTBD_RAM is
             ena : IN STD_LOGIC;
             wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
             addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
-            dina : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-            douta : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+            dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
+            douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0)
         );
     END COMPONENT;
 
@@ -74,8 +80,8 @@ architecture Behavioral of DFTBD_RAM is
             ena : IN STD_LOGIC;
             wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
             addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
-            dina : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-            douta : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+            dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
+            douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0)
         );
     END COMPONENT;
 
@@ -85,8 +91,8 @@ architecture Behavioral of DFTBD_RAM is
             ena : IN STD_LOGIC;
             wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
             addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
-            dina : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-            douta : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+            dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
+            douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0)
         );
     END COMPONENT;
 
@@ -96,8 +102,8 @@ architecture Behavioral of DFTBD_RAM is
             ena : IN STD_LOGIC;
             wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
             addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
-            dina : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-            douta : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+            dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
+            douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0)
         );
     END COMPONENT;
 
@@ -107,8 +113,8 @@ architecture Behavioral of DFTBD_RAM is
             ena : IN STD_LOGIC;
             wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
             addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
-            dina : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-            douta : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+            dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
+            douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0)
         );
     END COMPONENT;
     
@@ -120,19 +126,19 @@ COMPONENT DFTBD_MEM1I
     ena : IN STD_LOGIC;
     wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
     addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
-    dina : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-    douta : OUT STD_LOGIC_VECTOR(15 DOWNTO 0) 
+    dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
+    douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0) 
   );
 END COMPONENT;
 
-COMPONENT DFTB_MEM2I
+COMPONENT DFTBD_MEM2I
   PORT (
     clka : IN STD_LOGIC;
     ena : IN STD_LOGIC;
     wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
     addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
-    dina : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-    douta : OUT STD_LOGIC_VECTOR(15 DOWNTO 0) 
+    dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
+    douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0) 
   );
 END COMPONENT;
 
@@ -142,8 +148,8 @@ COMPONENT DFTBD_MEM3I
     ena : IN STD_LOGIC;
     wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
     addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
-    dina : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-    douta : OUT STD_LOGIC_VECTOR(15 DOWNTO 0) 
+    dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
+    douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0) 
   );
 END COMPONENT;
 
@@ -153,8 +159,8 @@ COMPONENT DFTBD_MEM4I
     ena : IN STD_LOGIC;
     wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
     addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
-    dina : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-    douta : OUT STD_LOGIC_VECTOR(15 DOWNTO 0) 
+    dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
+    douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0) 
   );
 END COMPONENT;
 
@@ -164,19 +170,19 @@ COMPONENT DFTBD_MEM5I
     ena : IN STD_LOGIC;
     wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
     addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
-    dina : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-    douta : OUT STD_LOGIC_VECTOR(15 DOWNTO 0) 
+    dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
+    douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0) 
   );
 END COMPONENT;
 
-COMPONENT DFTDB_MEM6I
+COMPONENT DFTBD_MEM6I
   PORT (
     clka : IN STD_LOGIC;
     ena : IN STD_LOGIC;
     wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
     addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
-    dina : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-    douta : OUT STD_LOGIC_VECTOR(15 DOWNTO 0) 
+    dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
+    douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0) 
   );
 END COMPONENT;
 
@@ -186,8 +192,8 @@ COMPONENT DFTBD_MEM7I
     ena : IN STD_LOGIC;
     wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
     addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
-    dina : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-    douta : OUT STD_LOGIC_VECTOR(15 DOWNTO 0) 
+    dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
+    douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0) 
   );
 END COMPONENT;
 
@@ -197,8 +203,8 @@ COMPONENT DFTBD_MEM8I
     ena : IN STD_LOGIC;
     wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
     addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
-    dina : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-    douta : OUT STD_LOGIC_VECTOR(15 DOWNTO 0) 
+    dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
+    douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0) 
   );
 END COMPONENT;
     
@@ -220,47 +226,47 @@ END COMPONENT;
     signal ADDRESS7 : std_logic_vector(5 downto 0):= (others => '0');
     signal ADDRESS8 : std_logic_vector(5 downto 0):= (others => '0');
 
-    signal DFTBD1o : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
-    signal DFTBD2o : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
-    signal DFTBD3o : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
-    signal DFTBD4o : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
-    signal DFTBD5o : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
-    signal DFTBD6o : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
-    signal DFTBD7o : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
-    signal DFTBD8o : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
+    signal DFTBD1o : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal DFTBD2o : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal DFTBD3o : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal DFTBD4o : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal DFTBD5o : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal DFTBD6o : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal DFTBD7o : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal DFTBD8o : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0):= (others => '0');
     
     
-    signal DFTBD1Io : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
-    signal DFTBD2Io : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
-    signal DFTBD3Io : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
-    signal DFTBD4Io : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
-    signal DFTBD5Io : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
-    signal DFTBD6Io : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
-    signal DFTBD7Io : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
-    signal DFTBD8Io : STD_LOGIC_VECTOR(15 downto 0):= (others => '0');
+    signal DFTBD1Io : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal DFTBD2Io : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal DFTBD3Io : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal DFTBD4Io : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal DFTBD5Io : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal DFTBD6Io : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal DFTBD7Io : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal DFTBD8Io : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0):= (others => '0');
     
 
 
-    signal DFTBD11 : signed (15 downto 0):= (others => '0');
-    signal DFTBD12 : signed (15 downto 0):= (others => '0');
-    signal DFTBD13 : signed (15 downto 0):= (others => '0');
-    signal DFTBD14 : signed (15 downto 0):= (others => '0');
+    signal DFTBD11 : signed (G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal DFTBD12 : signed (G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal DFTBD13 : signed (G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal DFTBD14 : signed (G_DATA_WIDTH-1 downto 0):= (others => '0');
 
-    signal DFTBD21 : signed (15 downto 0):= (others => '0');
-    signal DFTBD22 : signed (15 downto 0):= (others => '0');
+    signal DFTBD21 : signed (G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal DFTBD22 : signed (G_DATA_WIDTH-1 downto 0):= (others => '0');
 
-    signal DFTBD31 : signed (15 downto 0):= (others => '0');
+    signal DFTBD31 : signed (G_DATA_WIDTH-1 downto 0):= (others => '0');
     
     
-    signal DFTBDI11 : signed (15 downto 0):= (others => '0');
-    signal DFTBDI12 : signed (15 downto 0):= (others => '0');
-    signal DFTBDI13 : signed (15 downto 0):= (others => '0');
-    signal DFTBDI14 : signed (15 downto 0):= (others => '0');
+    signal DFTBDI11 : signed (G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal DFTBDI12 : signed (G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal DFTBDI13 : signed (G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal DFTBDI14 : signed (G_DATA_WIDTH-1 downto 0):= (others => '0');
 
-    signal DFTBDI21 : signed (15 downto 0):= (others => '0');
-    signal DFTBDI22 : signed (15 downto 0):= (others => '0');
+    signal DFTBDI21 : signed (G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal DFTBDI22 : signed (G_DATA_WIDTH-1 downto 0):= (others => '0');
 
-    signal DFTBDI31 : signed (15 downto 0):= (others => '0');
+    signal DFTBDI31 : signed (G_DATA_WIDTH-1 downto 0):= (others => '0');
     
     
 
@@ -275,7 +281,7 @@ begin
             ena => RST,
             wea => "0", -- set hard to 0 so only read is possible
             addra => ADDRESS1,
-            dina => "0000000000000000",
+            dina => G_FILLER_25,
             douta => DFTBD1o
         );
 
@@ -285,7 +291,7 @@ begin
             ena => RST,
             wea => "0", -- set hard to 0 so only read is possible
             addra => ADDRESS2,
-            dina => "0000000000000000",
+            dina => G_FILLER_25,
             douta => DFTBD2o
         );
 
@@ -295,7 +301,7 @@ begin
             ena => RST,
             wea => "0", -- set hard to 0 so only read is possible
             addra => ADDRESS8,
-            dina => "0000000000000000",
+            dina => G_FILLER_25,
             douta => DFTBD8o
         );
 
@@ -305,7 +311,7 @@ begin
             ena => RST,
             wea => "0", -- set hard to 0 so only read is possible
             addra => ADDRESS3,
-            dina => "0000000000000000",
+            dina => G_FILLER_25,
             douta => DFTBD3o
         );
 
@@ -315,7 +321,7 @@ begin
             ena => RST,
             wea => "0", -- set hard to 0 so only read is possible
             addra => ADDRESS4,
-            dina => "0000000000000000",
+            dina => G_FILLER_25,
             douta => DFTBD4o
         );
 
@@ -325,7 +331,7 @@ begin
             ena => RST,
             wea => "0", -- set hard to 0 so only read is possible
             addra => ADDRESS5,
-            dina => "0000000000000000",
+            dina => G_FILLER_25,
             douta => DFTBD5o
         );
 
@@ -335,7 +341,7 @@ begin
             ena => RST,
             wea => "0", -- set hard to 0 so only read is possible
             addra => ADDRESS6,
-            dina => "0000000000000000",
+            dina => G_FILLER_25,
             douta => DFTBD6o
         );
 
@@ -345,7 +351,7 @@ begin
             ena => RST,
             wea => "0", -- set hard to 0 so only read is possible
             addra => ADDRESS7,
-            dina => "0000000000000000",
+            dina => G_FILLER_25,
             douta => DFTBD7o
         );
         
@@ -358,17 +364,17 @@ begin
             ena => RST,
             wea => "0", -- set hard to 0 so only read is possible
             addra => ADDRESS1,
-            dina => "0000000000000000",
+            dina => G_FILLER_25,
             douta => DFTBD1Io
         );
         
-           DFTBD_RAMI2 : DFTB_MEM2I
+           DFTBD_RAMI2 : DFTBD_MEM2I
         PORT MAP (
             clka => CLK,
             ena => RST,
             wea => "0", -- set hard to 0 so only read is possible
             addra => ADDRESS2,
-            dina => "0000000000000000",
+            dina => G_FILLER_25,
             douta => DFTBD2Io
         );
         
@@ -378,7 +384,7 @@ begin
             ena => RST,
             wea => "0", -- set hard to 0 so only read is possible
             addra => ADDRESS3,
-            dina => "0000000000000000",
+            dina => G_FILLER_25,
             douta => DFTBD3Io
         );
         
@@ -388,7 +394,7 @@ begin
             ena => RST,
             wea => "0", -- set hard to 0 so only read is possible
             addra => ADDRESS4,
-            dina => "0000000000000000",
+            dina => G_FILLER_25,
             douta => DFTBD4Io
         );
         
@@ -398,17 +404,17 @@ begin
             ena => RST,
             wea => "0", -- set hard to 0 so only read is possible
             addra => ADDRESS5,
-            dina => "0000000000000000",
+            dina => G_FILLER_25,
             douta => DFTBD5Io
         );
         
-           DFTBD_RAMI6 : DFTDB_MEM6I
+           DFTBD_RAMI6 : DFTBD_MEM6I
         PORT MAP (
             clka => CLK,
             ena => RST,
             wea => "0", -- set hard to 0 so only read is possible
             addra => ADDRESS6,
-            dina => "0000000000000000",
+            dina => G_FILLER_25,
             douta => DFTBD6Io
         );
         
@@ -418,7 +424,7 @@ begin
             ena => RST,
             wea => "0", -- set hard to 0 so only read is possible
             addra => ADDRESS7,
-            dina => "0000000000000000",
+            dina => G_FILLER_25,
             douta => DFTBD7Io
         );
         
@@ -428,7 +434,7 @@ begin
             ena => RST,
             wea => "0", -- set hard to 0 so only read is possible
             addra => ADDRESS8,
-            dina => "0000000000000000",
+            dina => G_FILLER_25,
             douta => DFTBD8Io
         );
 

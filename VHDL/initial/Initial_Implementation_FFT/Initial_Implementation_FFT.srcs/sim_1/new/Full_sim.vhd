@@ -34,7 +34,9 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity Full_sim is
 generic (
-        G_DATA_WIDTH    : INTEGER := 18 -- data width of output
+        G_DATA_WIDTH    : INTEGER := 25; -- data width of output
+        G_DATA_WIDTH_TW    : INTEGER := 18; -- data width of output
+        G_DECIMAL_WIDTH    : INTEGER := 13 -- data width of output
     );
 --  Port ( );
 end Full_sim;
@@ -47,10 +49,10 @@ component  DFT_loop is
     port (--AA : in STD_LOGIC_VECTOR (15 downto 0); -- initial ports
     --BB : in STD_LOGIC_VECTOR (15 downto 0);
     --CC : in STD_LOGIC_VECTOR (15 downto 0);
-        DFTin : in std_logic_vector (15 downto 0);
-        DFTinI : in std_logic_vector (15 downto 0);
-        TWin : in std_logic_vector (15 downto 0);  -- cos
-        TWin2 : in std_logic_vector (15 downto 0); -- sin
+        DFTin : in std_logic_vector (G_DATA_WIDTH-1 downto 0);
+        DFTinI : in std_logic_vector (G_DATA_WIDTH-1 downto 0);
+        TWin : in std_logic_vector (G_DATA_WIDTH_TW-1 downto 0);  -- cos
+        TWin2 : in std_logic_vector (G_DATA_WIDTH_TW-1 downto 0); -- sin
      --   PP : out STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );
     --    PPI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );
         nRst : in std_logic;
@@ -61,8 +63,8 @@ component  DFT_loop is
         DFT_RESETs : out std_logic;  -- trggers soft reset (pause on most operations)
 
 
-        FFT_outR : out STD_LOGIC_VECTOR   (G_DATA_WIDTH*2-1 downto 0 ); -- outputs of the FFT
-        FFT_outI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH*2-1 downto 0 );
+        FFT_outR : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 ); -- outputs of the FFT
+        FFT_outI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 );
         orders : out integer;
         ordersI : out integer;
        -- position : out unsigned(3 downto 0));
@@ -77,8 +79,8 @@ end component ;
 component DFTBD_RAM
     port(
         --ADDRESS : in  std_logic_vector(5 downto 0);
-        DFTOUT  : out std_logic_vector (15 downto 0);
-        DFTOUTI  : out std_logic_vector (15 downto 0);
+        DFTOUT  : out std_logic_vector (G_DATA_WIDTH-1 downto 0);
+        DFTOUTI  : out std_logic_vector (G_DATA_WIDTH-1 downto 0);
         CLK : in std_logic;
         RST : in std_logic;
         position : in unsigned(3 downto 0);
@@ -92,8 +94,8 @@ component Twiddle_factors is
     count : in unsigned(7 downto 0);
     CLK : in std_logic;
     RST : in std_logic;
-    Twiddleout : out std_logic_vector(15 downto 0);
-    Twiddleout2 : out std_logic_vector(15 downto 0)
+    Twiddleout : out std_logic_vector(G_DATA_WIDTH_TW-1 downto 0);
+    Twiddleout2 : out std_logic_vector(G_DATA_WIDTH_TW-1 downto 0)
    -- DFT_RESET : in std_logic
     );
 end component  ;
@@ -126,8 +128,8 @@ end component ;
 
 
 signal CLK  : std_logic := '1';
-signal DFTOUT  : std_logic_vector (15 downto 0);--:= (others => '0');
-signal DFTOUTI  : std_logic_vector (15 downto 0);--:= (others => '0');
+signal DFTOUT  : std_logic_vector (G_DATA_WIDTH-1 downto 0);--:= (others => '0');
+signal DFTOUTI  : std_logic_vector (G_DATA_WIDTH-1 downto 0);--:= (others => '0');
 signal RST : std_logic := '0';
 signal positionin : unsigned(3 downto 0);--:= (others => '0');
 --signal positionout : unsigned(3 downto 0);
@@ -135,13 +137,13 @@ signal Bit_stream_value  : std_logic_vector(15 downto 0):= (others => '1');
 constant ClockFrequency : integer := 100e6; -- 100 MHz
 constant ClockPeriod    : time    := 1000 ms / ClockFrequency;
 
-    signal DFTin    : std_logic_vector (15 downto 0) := (others => '0');
-    signal TWin     : std_logic_vector (15 downto 0):= (others => '0');
-    signal DFTinI    : std_logic_vector (15 downto 0) := (others => '0');
-    signal TW2in     : std_logic_vector (15 downto 0):= (others => '0');
+    signal DFTin    : std_logic_vector (G_DATA_WIDTH-1 downto 0) := (others => '0');
+    signal TWin     : std_logic_vector (G_DATA_WIDTH_TW-1 downto 0):= (others => '0');
+    signal DFTinI    : std_logic_vector (G_DATA_WIDTH-1 downto 0) := (others => '0');
+    signal TW2in     : std_logic_vector (G_DATA_WIDTH_TW-1 downto 0):= (others => '0');
     
-    signal TWin0     : std_logic_vector (15 downto 0):= (others => '0');
-    signal TW2in0    : std_logic_vector (15 downto 0):= (others => '0');
+    signal TWin0     : std_logic_vector (G_DATA_WIDTH_TW-1 downto 0):= (others => '0');
+    signal TW2in0    : std_logic_vector (G_DATA_WIDTH_TW-1 downto 0):= (others => '0');
     
     signal PP       : STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );--:= (others => '0');
         signal PPI       : STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );--:= (others => '0');
@@ -151,11 +153,11 @@ constant ClockPeriod    : time    := 1000 ms / ClockFrequency;
     signal FFT_RESET : std_logic;  -- triggers hard reset (reset to 0 on most operations)
     signal DFT_RESET : std_logic;
     
-    signal  FFT_outR : STD_LOGIC_VECTOR   (G_DATA_WIDTH*2-1 downto 0 ); -- outputs of the FFT
-    signal  FFT_outI : STD_LOGIC_VECTOR   (G_DATA_WIDTH*2-1 downto 0 );
+    signal  FFT_outR : STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 ); -- outputs of the FFT
+    signal  FFT_outI : STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 );
 
-    signal Twiddleout2 : std_logic_vector(15 downto 0);
-    signal Twiddleout : std_logic_vector(15 downto 0);
+    signal Twiddleout2 : std_logic_vector(G_DATA_WIDTH_TW-1 downto 0);
+    signal Twiddleout : std_logic_vector(G_DATA_WIDTH_TW-1 downto 0);
     signal orders : integer :=0;
     signal ordersi : integer :=0;
     

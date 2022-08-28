@@ -1,2 +1,0 @@
-DFTB_MEM2I.v,verilog,xil_defaultlib,../../../../Initial_Implementation_FFT.gen/sources_1/ip/DFTB_MEM2I/sim/DFTB_MEM2I.v,
-glbl.v,Verilog,xil_defaultlib,glbl.v

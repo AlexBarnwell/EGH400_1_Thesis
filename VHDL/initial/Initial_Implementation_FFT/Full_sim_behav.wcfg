@@ -11,22 +11,22 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="877.001 ns"></ZoomEndTime>
-      <Cursor1Time time="1,525.000 ns"></Cursor1Time>
+      <ZoomStartTime time="64,178.231 ns"></ZoomStartTime>
+      <ZoomEndTime time="64,266.732 ns"></ZoomEndTime>
+      <Cursor1Time time="64,166.231 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="96"></NameColumnWidth>
+      <NameColumnWidth column_width="88"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="31" />
+   <WVObjectSize size="32" />
    <wvobject fp_name="/Full_sim/CLK" type="logic">
       <obj_property name="ElementShortName">CLK</obj_property>
       <obj_property name="ObjectShortName">CLK</obj_property>
    </wvobject>
    <wvobject fp_name="/Full_sim/DFTOUT" type="array">
-      <obj_property name="ElementShortName">DFTOUT[15:0]</obj_property>
-      <obj_property name="ObjectShortName">DFTOUT[15:0]</obj_property>
+      <obj_property name="ElementShortName">DFTOUT[24:0]</obj_property>
+      <obj_property name="ObjectShortName">DFTOUT[24:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/Full_sim/input/byte" type="array">
@@ -34,8 +34,8 @@
       <obj_property name="ObjectShortName">byte[15:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/Full_sim/DFTOUTI" type="array">
-      <obj_property name="ElementShortName">DFTOUTI[15:0]</obj_property>
-      <obj_property name="ObjectShortName">DFTOUTI[15:0]</obj_property>
+      <obj_property name="ElementShortName">DFTOUTI[24:0]</obj_property>
+      <obj_property name="ObjectShortName">DFTOUTI[24:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/Full_sim/DFT_RESET" type="logic">
@@ -55,8 +55,8 @@
       <obj_property name="ObjectShortName">Bit_stream_value[15:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/Full_sim/DFTin" type="array">
-      <obj_property name="ElementShortName">DFTin[15:0]</obj_property>
-      <obj_property name="ObjectShortName">DFTin[15:0]</obj_property>
+      <obj_property name="ElementShortName">DFTin[24:0]</obj_property>
+      <obj_property name="ObjectShortName">DFTin[24:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/Full_sim/orders" type="other">
@@ -72,23 +72,23 @@
       <obj_property name="ObjectShortName">FFT_RESET</obj_property>
    </wvobject>
    <wvobject fp_name="/Full_sim/FFT_outR" type="array">
-      <obj_property name="ElementShortName">FFT_outR[35:0]</obj_property>
-      <obj_property name="ObjectShortName">FFT_outR[35:0]</obj_property>
+      <obj_property name="ElementShortName">FFT_outR[42:0]</obj_property>
+      <obj_property name="ObjectShortName">FFT_outR[42:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/Full_sim/FFT_outI" type="array">
-      <obj_property name="ElementShortName">FFT_outI[35:0]</obj_property>
-      <obj_property name="ObjectShortName">FFT_outI[35:0]</obj_property>
+      <obj_property name="ElementShortName">FFT_outI[42:0]</obj_property>
+      <obj_property name="ObjectShortName">FFT_outI[42:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/Full_sim/Twiddleout2" type="array">
-      <obj_property name="ElementShortName">Twiddleout2[15:0]</obj_property>
-      <obj_property name="ObjectShortName">Twiddleout2[15:0]</obj_property>
+      <obj_property name="ElementShortName">Twiddleout2[17:0]</obj_property>
+      <obj_property name="ObjectShortName">Twiddleout2[17:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/Full_sim/Twiddleout" type="array">
-      <obj_property name="ElementShortName">Twiddleout[15:0]</obj_property>
-      <obj_property name="ObjectShortName">Twiddleout[15:0]</obj_property>
+      <obj_property name="ElementShortName">Twiddleout[17:0]</obj_property>
+      <obj_property name="ObjectShortName">Twiddleout[17:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/Full_sim/bit_input" type="logic">
@@ -143,24 +143,24 @@
       <obj_property name="label">unused</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <wvobject fp_name="/Full_sim/DFTinI" type="array">
-         <obj_property name="ElementShortName">DFTinI[15:0]</obj_property>
-         <obj_property name="ObjectShortName">DFTinI[15:0]</obj_property>
+         <obj_property name="ElementShortName">DFTinI[24:0]</obj_property>
+         <obj_property name="ObjectShortName">DFTinI[24:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/Full_sim/TW2in" type="array">
-         <obj_property name="ElementShortName">TW2in[15:0]</obj_property>
-         <obj_property name="ObjectShortName">TW2in[15:0]</obj_property>
+         <obj_property name="ElementShortName">TW2in[17:0]</obj_property>
+         <obj_property name="ObjectShortName">TW2in[17:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/Full_sim/TWin0" type="array">
-         <obj_property name="ElementShortName">TWin0[15:0]</obj_property>
-         <obj_property name="ObjectShortName">TWin0[15:0]</obj_property>
+         <obj_property name="ElementShortName">TWin0[17:0]</obj_property>
+         <obj_property name="ObjectShortName">TWin0[17:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/Full_sim/TW2in0" type="array">
-         <obj_property name="ElementShortName">TW2in0[15:0]</obj_property>
-         <obj_property name="ObjectShortName">TW2in0[15:0]</obj_property>
+         <obj_property name="ElementShortName">TW2in0[17:0]</obj_property>
+         <obj_property name="ObjectShortName">TW2in0[17:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/Full_sim/TWin" type="array">
-         <obj_property name="ElementShortName">TWin[15:0]</obj_property>
-         <obj_property name="ObjectShortName">TWin[15:0]</obj_property>
+         <obj_property name="ElementShortName">TWin[17:0]</obj_property>
+         <obj_property name="ObjectShortName">TWin[17:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/Full_sim/count" type="array">
          <obj_property name="ElementShortName">count[7:0]</obj_property>
@@ -180,8 +180,13 @@
       <obj_property name="ElementShortName">positionin[3:0]</obj_property>
       <obj_property name="ObjectShortName">positionin[3:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Full_sim/count_check" type="other">
-      <obj_property name="ElementShortName">count_check</obj_property>
-      <obj_property name="ObjectShortName">count_check</obj_property>
+   <wvobject fp_name="/Full_sim/input/shift_reg_buffer" type="array">
+      <obj_property name="ElementShortName">shift_reg_buffer[255:0]</obj_property>
+      <obj_property name="ObjectShortName">shift_reg_buffer[255:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Full_sim/testbenching1/PPsig" type="array">
+      <obj_property name="ElementShortName">PPsig[24:0]</obj_property>
+      <obj_property name="ObjectShortName">PPsig[24:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

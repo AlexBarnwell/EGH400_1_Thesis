@@ -4,17 +4,18 @@ USE ieee.numeric_std.ALL;
 
 entity DFT_loop is
     generic (
-        G_DATA_WIDTH    : INTEGER := 18; -- data width of output
-        G_DECIMAL_WIDTH : integer := 10 -- decimal precision
+        G_DATA_WIDTH    : INTEGER := 25; -- data width of output (others)
+        G_DATA_WIDTH_TW    : INTEGER := 18; -- data width of TW
+        G_DECIMAL_WIDTH : integer := 13 -- decimal precision
         --POUT_size : integer := 37
 
     );
-    port (--AA : in STD_LOGIC_VECTOR (15 downto 0); -- initial ports
+    port (--AA : in STD_LOGIC_VECTOR (G_DATA_WIDTH downto 0); -- initial ports
 
-        DFTin : in std_logic_vector (15 downto 0);
-        DFTinI : in std_logic_vector (15 downto 0);
-        TWin : in std_logic_vector (15 downto 0);  -- cos
-        TWin2 : in std_logic_vector (15 downto 0); -- sin
+        DFTin : in std_logic_vector (G_DATA_WIDTH-1 downto 0);
+        DFTinI : in std_logic_vector (G_DATA_WIDTH-1 downto 0);
+        TWin : in std_logic_vector (G_DATA_WIDTH_TW-1 downto 0);  -- cos
+        TWin2 : in std_logic_vector (G_DATA_WIDTH_TW-1 downto 0); -- sin
         -- PP : out STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );
         --  PPI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );
         nRst : in std_logic;
@@ -25,8 +26,8 @@ entity DFT_loop is
         DFT_RESETs : out std_logic;  -- trggers soft reset (pause on most operations)
 
 
-        FFT_outR : out STD_LOGIC_VECTOR   (G_DATA_WIDTH*2-1 downto 0 ); -- outputs of the FFT
-        FFT_outI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH*2-1 downto 0 );
+        FFT_outR : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 ); -- outputs of the FFT
+        FFT_outI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 );
 
         orders : out integer; -- temp
         ordersI : out integer;
@@ -41,64 +42,64 @@ entity DFT_loop is
 end DFT_loop;
 
 architecture behavioral of DFT_loop is
-    --signal AAsig : STD_LOGIC_VECTOR(15 downto 0);
-    --signal BBsig : STD_LOGIC_VECTOR(15 downto 0);
-    --signal CCsig : STD_LOGIC_VECTOR(15 downto 0);
+    --signal AAsig : STD_LOGIC_VECTOR(G_DATA_WIDTH downto 0);
+    --signal BBsig : STD_LOGIC_VECTOR(G_DATA_WIDTH downto 0);
+    --signal CCsig : STD_LOGIC_VECTOR(G_DATA_WIDTH downto 0);
     signal PPsig : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0):= (others => '0');
-    signal  P2sig : std_logic_vector (G_DATA_WIDTH*2-1 downto 0):= (others => '0');
-    signal  PPsigs : signed (G_DATA_WIDTH*2 downto 0):= (others => '0');
+    signal  P2sig : std_logic_vector (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0):= (others => '0');
+    signal  PPsigs : signed (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
     signal PPsig2 : std_logic_vector  (G_DATA_WIDTH-1 downto 0) := (others => '0');
-    signal  temp : std_logic_vector (G_DATA_WIDTH*2 downto 0):= (others => '0');
-    signal  temp2 : std_logic_vector (G_DATA_WIDTH*2 downto 0):= (others => '0');
-    signal  Pout : std_logic_vector  (G_DATA_WIDTH*2 downto 0):= (others => '0');
+    signal  temp : std_logic_vector (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
+    signal  temp2 : std_logic_vector (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
+    signal  Pout : std_logic_vector  (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
 
 
     signal PPsigI : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0):= (others => '0');
-    signal  P2sigI : std_logic_vector (G_DATA_WIDTH*2-1 downto 0):= (others => '0');
-    signal  PPsigsI : signed (G_DATA_WIDTH*2 downto 0):= (others => '0');
+    signal  P2sigI : std_logic_vector (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0):= (others => '0');
+    signal  PPsigsI : signed (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
     signal PPsig2I : std_logic_vector  (G_DATA_WIDTH-1 downto 0) := (others => '0');
-    signal  tempI : std_logic_vector (G_DATA_WIDTH*2 downto 0):= (others => '0');
-    signal  temp2I : std_logic_vector (G_DATA_WIDTH*2 downto 0):= (others => '0');
-    signal  PoutI : std_logic_vector  (G_DATA_WIDTH*2 downto 0):= (others => '0');
+    signal  tempI : std_logic_vector (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
+    signal  temp2I : std_logic_vector (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
+    signal  PoutI : std_logic_vector  (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
 
-    signal  unPPsig : std_logic_vector (G_DATA_WIDTH*2 downto 0):= (others => '0');
-    signal  unPPsigI : std_logic_vector (G_DATA_WIDTH*2 downto 0):= (others => '0');
+    signal  unPPsig : std_logic_vector (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
+    signal  unPPsigI : std_logic_vector (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
 
-    signal  DFT1s : signed (G_DATA_WIDTH*2 downto 0):= (others => '0');
+    signal  DFT1s : signed (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
 
-    signal  DFT1SI : signed (G_DATA_WIDTH*2 downto 0):= (others => '0');
+    signal  DFT1SI : signed (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
 
-    signal  coss2 : std_logic_vector (G_DATA_WIDTH-1 downto 0):= (others => '0');
-    signal  coss : std_logic_vector (G_DATA_WIDTH-1 downto 0):= (others => '0');
-    signal  sinn : std_logic_vector (G_DATA_WIDTH-1 downto 0):= (others => '0');
-    signal  sinn2 : std_logic_vector (G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal  coss2 : std_logic_vector (G_DATA_WIDTH_TW-1 downto 0):= (others => '0');
+    signal  coss : std_logic_vector (G_DATA_WIDTH_TW-1 downto 0):= (others => '0');
+    signal  sinn : std_logic_vector (G_DATA_WIDTH_TW-1 downto 0):= (others => '0');
+    signal  sinn2 : std_logic_vector (G_DATA_WIDTH_TW-1 downto 0):= (others => '0');
 
-    --signal  delayed_cos2 : std_logic_vector (G_DATA_WIDTH-1 downto 0):= (others => '0');
-    signal  delayed_cos : std_logic_vector (G_DATA_WIDTH-1 downto 0):= (others => '0');
-    signal  delayed_sin : std_logic_vector (G_DATA_WIDTH-1 downto 0):= (others => '0');
+    --signal  delayed_cos2 : std_logic_vector (G_DATA_WIDTH_TW downto 0):= (others => '0');
+    signal  delayed_cos : std_logic_vector (G_DATA_WIDTH_TW-1 downto 0):= (others => '0');
+    signal  delayed_sin : std_logic_vector (G_DATA_WIDTH_TW-1 downto 0):= (others => '0');
 
-    signal  delayed2_cos : std_logic_vector (G_DATA_WIDTH-1 downto 0):= (others => '0');
-    signal  delayed2_sin : std_logic_vector (G_DATA_WIDTH-1 downto 0):= (others => '0');
+    signal  delayed2_cos : std_logic_vector (G_DATA_WIDTH_TW-1 downto 0):= (others => '0');
+    signal  delayed2_sin : std_logic_vector (G_DATA_WIDTH_TW-1 downto 0):= (others => '0');
 
     -- signal  delayed_sin2 : std_logic_vector (G_DATA_WIDTH-1 downto 0):= (others => '0');
-    --signal  DFTnew : std_logic_vector (15 downto 0):= (others => '0');
-    signal  DFTs : signed (G_DATA_WIDTH*2 downto 0):= (others => '0');
-    signal  DFTsI : signed (G_DATA_WIDTH*2 downto 0):= (others => '0');
+    --signal  DFTnew : std_logic_vector (G_DATA_WIDTH downto 0):= (others => '0');
+    signal  DFTs : signed (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
+    signal  DFTsI : signed (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
 
-    --signal PPsig2 : std_logic_vector  (15 downto 0) := (others => '0');
+    --signal PPsig2 : std_logic_vector  (G_DATA_WIDTH downto 0) := (others => '0');
 
-    signal final1 : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
-    signal final2 : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
-    signal final3 : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
-    signal final4 : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
+    signal final1 : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+    signal final2 : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+    signal final3 : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+    signal final4 : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
 
 
-    signal A1 : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
+    signal A1 : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
     --pp32sig2 <= signed (ZERO(7 downto 0) &  ppsig2 & ZERO(7 downto 0));
-    signal B1 : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
+    signal B1 : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
 
-    signal REALL : std_logic_vector(G_DATA_WIDTH*2-1 downto 0) := (others => '0');-- FFT outputs -- probably send to some sort of RAM 
-    signal IMAGG : std_logic_vector (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
+    signal REALL : std_logic_vector(G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');-- FFT outputs -- probably send to some sort of RAM 
+    signal IMAGG : std_logic_vector (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
 
 
     signal  count2 : unsigned (4 downto 0) := (others => '0');
@@ -142,30 +143,30 @@ architecture behavioral of DFT_loop is
 
 
 
-    signal final1_S : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
-    signal final2_S : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
-    signal final3_S : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
-    signal final4_S : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
+    signal final1_S : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+    signal final2_S : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+    signal final3_S : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+    signal final4_S : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
 
-    signal step2_S : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
-    signal step2i_S : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
-    signal step1_S : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
-    signal step1i_S : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
-
-
-    signal step2 : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
-    signal step2i : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
-    signal step1 : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
-    signal step1i : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
+    signal step2_S : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+    signal step2i_S : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+    signal step1_S : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+    signal step1i_S : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
 
 
+    signal step2 : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+    signal step2i : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+    signal step1 : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+    signal step1i : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
 
 
-    signal A1_S : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
-    signal B1_S : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
 
-    signal A1_temp : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
-    signal B1_temp : signed  (G_DATA_WIDTH*2-1 downto 0) := (others => '0');
+
+    signal A1_S : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+    signal B1_S : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+
+    signal A1_temp : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+    signal B1_temp : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
 
 
 
@@ -174,10 +175,10 @@ architecture behavioral of DFT_loop is
             CLK : IN STD_LOGIC;
             CE : IN STD_LOGIC;
             SCLR : IN STD_LOGIC;
-            A : IN STD_LOGIC_VECTOR(17 DOWNTO 0);
-            B : IN STD_LOGIC_VECTOR(17 DOWNTO 0);
-            C : IN STD_LOGIC_VECTOR(35 DOWNTO 0);
-            P : OUT STD_LOGIC_VECTOR(36 DOWNTO 0)
+            A : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
+            B : IN STD_LOGIC_VECTOR(G_DATA_WIDTH_TW-1 DOWNTO 0);
+            C : IN STD_LOGIC_VECTOR(G_DATA_WIDTH_TW +G_DATA_WIDTH-1 DOWNTO 0);
+            P : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH_TW +G_DATA_WIDTH DOWNTO 0)
         );
     END COMPONENT;
 
@@ -355,9 +356,9 @@ begin
 
 
 
-    -- recast to 32 
-    A1_temp(G_DATA_WIDTH*2-1 downto G_DECIMAL_WIDTH) <= resize(signed(ppsig),G_DATA_WIDTH*2-G_DECIMAL_WIDTH);
-    B1_temp(G_DATA_WIDTH*2-1 downto G_DECIMAL_WIDTH) <= resize(signed(ppsigI),G_DATA_WIDTH*2-G_DECIMAL_WIDTH);
+
+    A1_temp(G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto G_DECIMAL_WIDTH) <= resize(signed(ppsig),G_DATA_WIDTH+G_DATA_WIDTH_TW-G_DECIMAL_WIDTH);
+    B1_temp(G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto G_DECIMAL_WIDTH) <= resize(signed(ppsigI),G_DATA_WIDTH+G_DATA_WIDTH_TW-G_DECIMAL_WIDTH);
 
     A1<=shift_right(A1_temp,ord_diffr);
     B1<=shift_right(B1_temp,ord_diffi);
@@ -411,18 +412,18 @@ begin
 
     ovf_checkR(1 downto 0) <= Pout(G_DECIMAL_WIDTH +G_DATA_WIDTH-1 downto G_DECIMAL_WIDTH +G_DATA_WIDTH -2); -- deals with determining whether an overflow has occured
     ovf_checkI(1 downto 0) <= PoutI(G_DECIMAL_WIDTH +G_DATA_WIDTH-1 downto G_DECIMAL_WIDTH +G_DATA_WIDTH -2);
-    ovf_checkI(2) <= PoutI(G_DATA_WIDTH*2);
-    ovf_checkR(2) <= Pout(G_DATA_WIDTH*2);
+    ovf_checkI(2) <= PoutI(G_DATA_WIDTH+G_DATA_WIDTH_TW);
+    ovf_checkR(2) <= Pout(G_DATA_WIDTH+G_DATA_WIDTH_TW);
     --TWt2<= std_logic_vector (2*signed(TW2t));
-    P2sig(G_DATA_WIDTH*2-1 downto 0)<= temp2(G_DATA_WIDTH*2-1+rshift downto rshift ); -- 
-    P2sigI(G_DATA_WIDTH*2-1 downto 0)<=temp2I(G_DATA_WIDTH*2-1+rshifti downto rshifti );
+    P2sig(G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0)<= temp2(G_DATA_WIDTH+G_DATA_WIDTH_TW-1+rshift downto rshift ); -- 
+    P2sigI(G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0)<=temp2I(G_DATA_WIDTH+G_DATA_WIDTH_TW-1+rshifti downto rshifti );
 
-    coss(G_DATA_WIDTH -1 downto 0)<=std_logic_vector(resize(signed(TWin),G_DATA_WIDTH));-- --reformates the inputs size by padding on the right side
-    coss2(G_DATA_WIDTH-1 downto 1)<=coss(G_DATA_WIDTH-2 downto 0); -- Lshift by 1 (multiply by 2)
+    coss(G_DATA_WIDTH_TW-1 downto 0)<=TWin;-- --reformates the inputs size by padding on the right side 
+    coss2(G_DATA_WIDTH_TW-1 downto 1)<=coss(G_DATA_WIDTH_TW-2 downto 0); -- Lshift by 1 (multiply by 2)
     --coss2<=coss;
-
-    sinn(G_DATA_WIDTH -1 downto 0)<=std_logic_vector(resize(signed(TWin2),G_DATA_WIDTH));-- --reformates the inputs size by padding on the right side
-    sinn2(G_DATA_WIDTH-1 downto 1)<=sinn(G_DATA_WIDTH-2 downto 0);
+        
+    sinn(G_DATA_WIDTH_TW-1 downto 0)<=TWin2;-- --reformates the inputs size by padding on the right side
+    sinn2(G_DATA_WIDTH_TW-1 downto 1)<=sinn(G_DATA_WIDTH_TW-2 downto 0);
 
     PPsig <=Pout(G_DATA_WIDTH+G_DECIMAL_WIDTH-1+rshift downto G_DECIMAL_WIDTH+rshift); --
     PPsigI <=PoutI(G_DATA_WIDTH+G_DECIMAL_WIDTH-1+rshifti downto G_DECIMAL_WIDTH+rshifti); -- 
@@ -434,12 +435,12 @@ begin
     unPPsigI <=PoutI;
 
 
-    DFT1s(G_DATA_WIDTH*2 downto G_DECIMAL_WIDTH )<=(resize(signed(DFTin),G_DATA_WIDTH*2-G_DECIMAL_WIDTH+1));--
+    DFT1s(G_DATA_WIDTH+G_DATA_WIDTH_TW downto G_DECIMAL_WIDTH )<=resize(signed(DFTin),G_DATA_WIDTH+G_DATA_WIDTH_TW-G_DECIMAL_WIDTH+1);--
     DFTs<= shift_right (DFT1s,order);
-    DFT1sI(G_DATA_WIDTH*2 downto G_DECIMAL_WIDTH )<=resize(signed(DFTinI),G_DATA_WIDTH*2-G_DECIMAL_WIDTH+1);--
+    DFT1sI(G_DATA_WIDTH+G_DATA_WIDTH_TW downto G_DECIMAL_WIDTH )<=resize(signed(DFTinI),G_DATA_WIDTH+G_DATA_WIDTH_TW-G_DECIMAL_WIDTH+1);--
 
     PPsigs<= signed(unPPsig); --
-    --DFT1sI(G_DATA_WIDTH*2 downto G_DECIMAL_WIDTH )<=resize(signed(DFTinI),G_DATA_WIDTH*2-G_DECIMAL_WIDTH);--
+    --DFT1sI(G_DATA_WIDTH+G_DATA_WIDTH_TW downto G_DECIMAL_WIDTH )<=resize(signed(DFTinI),G_DATA_WIDTH+G_DATA_WIDTH_TW-G_DECIMAL_WIDTH);--
     DFTsI<= shift_right(DFT1sI,orderi);
     PPsigsI<=signed(unPPsigI); --
 
