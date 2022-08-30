@@ -1,38 +1,38 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/TW2_RAM/sim/TW2_RAM.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/TW2_RAM/sim/TW2_RAM.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module TW2_RAM
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/TW_RAM/sim/TW_RAM.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/TW_RAM/sim/TW_RAM.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module TW_RAM
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM8I/sim/DFTBD_MEM8I.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM8I/sim/DFTBD_MEM8I.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module DFTBD_MEM8I
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM7I/sim/DFTBD_MEM7I.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM7I/sim/DFTBD_MEM7I.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module DFTBD_MEM7I
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM6I/sim/DFTBD_MEM6I.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM6I/sim/DFTBD_MEM6I.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module DFTBD_MEM6I
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM5I/sim/DFTBD_MEM5I.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM5I/sim/DFTBD_MEM5I.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module DFTBD_MEM5I
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM4I/sim/DFTBD_MEM4I.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM4I/sim/DFTBD_MEM4I.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module DFTBD_MEM4I
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM3I/sim/DFTBD_MEM3I.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM3I/sim/DFTBD_MEM3I.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module DFTBD_MEM3I
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM2I/sim/DFTBD_MEM2I.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM2I/sim/DFTBD_MEM2I.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module DFTBD_MEM2I
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM1I_1/sim/DFTBD_MEM1I.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM1I_1/sim/DFTBD_MEM1I.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module DFTBD_MEM1I
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM7/sim/DFTBD_MEM7.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM7/sim/DFTBD_MEM7.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module DFTBD_MEM7
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM6/sim/DFTBD_MEM6.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM6/sim/DFTBD_MEM6.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module DFTBD_MEM6
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM5/sim/DFTBD_MEM5.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM5/sim/DFTBD_MEM5.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module DFTBD_MEM5
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM4/sim/DFTBD_MEM4.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM4/sim/DFTBD_MEM4.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module DFTBD_MEM4
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM3/sim/DFTBD_MEM3.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM3/sim/DFTBD_MEM3.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module DFTBD_MEM3
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM8/sim/DFTBD_MEM8.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM8/sim/DFTBD_MEM8.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module DFTBD_MEM8
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM2/sim/DFTBD_MEM2.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM2/sim/DFTBD_MEM2.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module DFTBD_MEM2
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM1/sim/DFTBD_MEM1.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM1/sim/DFTBD_MEM1.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module DFTBD_MEM1
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module glbl

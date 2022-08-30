@@ -244,9 +244,9 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="DFTBD_MEM5I"/>
   <BlockFileSet Type="BlockSrcs" Name="DFTBD_MEM8"/>
   <BlockFileSet Type="BlockSrcs" Name="TW2_RAM"/>
+  <BlockFileSet Type="BlockSrcs" Name="DFTBD_MEM5I"/>
   <BlockFileSet Type="BlockSrcs" Name="TW_RAM"/>
   <BlockFileSet Type="BlockSrcs" Name="DFTBD_MEM8I"/>
   <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>

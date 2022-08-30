@@ -34,7 +34,7 @@ USE ieee.numeric_std.ALL;
 -- note this is designed for use in a 256 bit input system with 16 bit banks and a 2 bit bitsream decomp (i.e 16 unique twiddle factors)
 entity Twiddle_factors is
 generic (
-        G_DATA_WIDTH    : INTEGER := 18; -- data width of output
+        G_DATA_WIDTH_TW    : INTEGER := 18; -- data width of output
         G_DECIMAL_WIDTH : integer := 13;
         G_FILLER_18 : STD_LOGIC_VECTOR(18-1 downto 0) := "000000000000000000" -- decimal precision
         --POUT_size : integer := 37
@@ -43,8 +43,8 @@ generic (
     count : in unsigned(7 downto 0);
     CLK : in std_logic;
     RST : in std_logic;
-    Twiddleout : out std_logic_vector(G_DATA_WIDTH-1 downto 0);
-    Twiddleout2 : out std_logic_vector(G_DATA_WIDTH-1 downto 0)
+    Twiddleout : out std_logic_vector(G_DATA_WIDTH_TW-1 downto 0);
+    Twiddleout2 : out std_logic_vector(G_DATA_WIDTH_TW-1 downto 0)
         --DFT_RESET : in std_logic 
     );
 end Twiddle_factors;
@@ -57,8 +57,8 @@ COMPONENT TW_RAM --cos
     ena : IN STD_LOGIC;
     wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
     addra : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-    dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
-    douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0)
+    dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH_TW-1 DOWNTO 0);
+    douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH_TW-1 DOWNTO 0)
   );
 END COMPONENT;
 
@@ -69,30 +69,30 @@ COMPONENT TW2_RAM -- sin
     ena : IN STD_LOGIC;
     wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
     addra : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-    dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
-    douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0) 
+    dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH_TW-1 DOWNTO 0);
+    douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH_TW-1 DOWNTO 0) 
   );
 END COMPONENT;
 
 signal ADDRESS : std_logic_vector(7 downto 0);
-signal TWout : std_logic_vector(G_DATA_WIDTH-1 downto 0);
-signal TWout1 : std_logic_vector(G_DATA_WIDTH-1 downto 0);
-signal TWout2 : std_logic_vector(G_DATA_WIDTH-1 downto 0);
-signal TWout3 : std_logic_vector(G_DATA_WIDTH-1 downto 0);
-signal TW2out : std_logic_vector(G_DATA_WIDTH-1 downto 0);
-signal TW2out1 : std_logic_vector(G_DATA_WIDTH-1 downto 0);
-signal TW2out2 : std_logic_vector(G_DATA_WIDTH-1 downto 0);
-signal TW2out3 : std_logic_vector(G_DATA_WIDTH-1 downto 0);
-signal TW2out4 : std_logic_vector(G_DATA_WIDTH-1 downto 0);
-signal TW2out5 : std_logic_vector(G_DATA_WIDTH-1 downto 0);
-signal TW2out6 : std_logic_vector(G_DATA_WIDTH-1 downto 0);
-signal TWout4 : std_logic_vector(G_DATA_WIDTH-1 downto 0);
-signal TWout5 : std_logic_vector(G_DATA_WIDTH-1 downto 0);
-signal TWout6 : std_logic_vector(G_DATA_WIDTH-1 downto 0);
-signal TWout7 : std_logic_vector(G_DATA_WIDTH-1 downto 0);
-signal TW2out7 : std_logic_vector(G_DATA_WIDTH-1 downto 0);
+signal TWout : std_logic_vector(G_DATA_WIDTH_TW-1 downto 0);
+signal TWout1 : std_logic_vector(G_DATA_WIDTH_TW-1 downto 0);
+signal TWout2 : std_logic_vector(G_DATA_WIDTH_TW-1 downto 0);
+signal TWout3 : std_logic_vector(G_DATA_WIDTH_TW-1 downto 0);
+signal TW2out : std_logic_vector(G_DATA_WIDTH_TW-1 downto 0);
+signal TW2out1 : std_logic_vector(G_DATA_WIDTH_TW-1 downto 0);
+signal TW2out2 : std_logic_vector(G_DATA_WIDTH_TW-1 downto 0);
+signal TW2out3 : std_logic_vector(G_DATA_WIDTH_TW-1 downto 0);
+signal TW2out4 : std_logic_vector(G_DATA_WIDTH_TW-1 downto 0);
+signal TW2out5 : std_logic_vector(G_DATA_WIDTH_TW-1 downto 0);
+signal TW2out6 : std_logic_vector(G_DATA_WIDTH_TW-1 downto 0);
+signal TWout4 : std_logic_vector(G_DATA_WIDTH_TW-1 downto 0);
+signal TWout5 : std_logic_vector(G_DATA_WIDTH_TW-1 downto 0);
+signal TWout6 : std_logic_vector(G_DATA_WIDTH_TW-1 downto 0);
+signal TWout7 : std_logic_vector(G_DATA_WIDTH_TW-1 downto 0);
+signal TW2out7 : std_logic_vector(G_DATA_WIDTH_TW-1 downto 0);
 
---signal TW2out : std_logic_vector(G_DATA_WIDTH-1 downto 0);
+--signal TW2out : std_logic_vector(G_DATA_WIDTH_TW-1 downto 0);
 begin
 
 
