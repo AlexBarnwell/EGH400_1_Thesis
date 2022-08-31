@@ -65,12 +65,13 @@ architecture Behavioral of fpga_top_tb is
 
         -- signals
         signal clk_100M : std_logic := '0';
-        signal rst: std_logic := '0';
+        signal rst: std_logic := '1'; -- the reset is inverted so 1 is off and 0 is on
         signal outR : std_logic_vector(G_DATA_WIDTH + G_DATA_WIDTH_TW-1 downto 0 ) := (others => '0');
         signal outI : std_logic_vector(G_DATA_WIDTH + G_DATA_WIDTH_TW-1 downto 0 ) := (others => '0');
         signal order_I :integer:= 0;
         signal order_R  :integer:= 0;
-
+        constant ClockFrequency : integer := 100e6; -- 100 MHz
+        constant ClockPeriod    : time    := 1000 ms / ClockFrequency;
 
 begin
 
@@ -92,5 +93,33 @@ begin
                 order_R => order_R
                -- output    : out std_logic_vector(17 downto 0)
             );
+
+
+
+
+
+
+
+             -- resets given each condition
+            Clk_100M <= not Clk_100M after ClockPeriod / 2;
+
+            process is
+                begin
+                wait for 20 ns;
+
+                RST <= '0';
+                wait for 20 ns;
+                RST <='1';
+                wait for 20 ns;
+                 RST <= '0';
+                 wait;
+
+                 end process;
+            
+            
+
+
+
+
 
 end Behavioral;

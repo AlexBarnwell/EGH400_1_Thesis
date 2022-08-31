@@ -11,13 +11,90 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
-      <ZoomEndTime time="4.106213 us"></ZoomEndTime>
-      <Cursor1Time time="3.000000 us"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,622.001 ns"></ZoomEndTime>
+      <Cursor1Time time="30,000.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="73"></NameColumnWidth>
-      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+      <NameColumnWidth column_width="149"></NameColumnWidth>
+      <ValueColumnWidth column_width="71"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="0" />
+   <WVObjectSize size="19" />
+   <wvobject fp_name="/fpga_top_tb/outR" type="array">
+      <obj_property name="ElementShortName">outR[42:0]</obj_property>
+      <obj_property name="ObjectShortName">outR[42:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/outI" type="array">
+      <obj_property name="ElementShortName">outI[42:0]</obj_property>
+      <obj_property name="ObjectShortName">outI[42:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/order_I" type="other">
+      <obj_property name="ElementShortName">order_I</obj_property>
+      <obj_property name="ObjectShortName">order_I</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/order_R" type="other">
+      <obj_property name="ElementShortName">order_R</obj_property>
+      <obj_property name="ObjectShortName">order_R</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/clk_100M" type="logic">
+      <obj_property name="ElementShortName">clk_100M</obj_property>
+      <obj_property name="ObjectShortName">clk_100M</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/clk_mic" type="logic">
+      <obj_property name="ElementShortName">clk_mic</obj_property>
+      <obj_property name="ObjectShortName">clk_mic</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/clk_sys" type="logic">
+      <obj_property name="ElementShortName">clk_sys</obj_property>
+      <obj_property name="ObjectShortName">clk_sys</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/clock_count" type="array">
+      <obj_property name="ElementShortName">clock_count[4:0]</obj_property>
+      <obj_property name="ObjectShortName">clock_count[4:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/nrst" type="logic">
+      <obj_property name="ElementShortName">nrst</obj_property>
+      <obj_property name="ObjectShortName">nrst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/RESET" type="logic">
+      <obj_property name="ElementShortName">RESET</obj_property>
+      <obj_property name="ObjectShortName">RESET</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/DFTBD_RAMs/CLK" type="logic">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/DFTBD_RAMs/RST" type="logic">
+      <obj_property name="ElementShortName">RST</obj_property>
+      <obj_property name="ObjectShortName">RST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/inputs/read_en" type="logic">
+      <obj_property name="ElementShortName">read_en</obj_property>
+      <obj_property name="ObjectShortName">read_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/inputs/buffer_push" type="logic">
+      <obj_property name="ElementShortName">buffer_push</obj_property>
+      <obj_property name="ObjectShortName">buffer_push</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/inputs/RST" type="logic">
+      <obj_property name="ElementShortName">RST</obj_property>
+      <obj_property name="ObjectShortName">RST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/inputs/buffer_done" type="logic">
+      <obj_property name="ElementShortName">buffer_done</obj_property>
+      <obj_property name="ObjectShortName">buffer_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/inputs/FFT_Reset" type="logic">
+      <obj_property name="ElementShortName">FFT_Reset</obj_property>
+      <obj_property name="ObjectShortName">FFT_Reset</obj_property>
+   </wvobject>
 </wave_config>

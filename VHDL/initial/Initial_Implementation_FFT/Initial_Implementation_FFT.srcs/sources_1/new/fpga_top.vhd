@@ -152,7 +152,7 @@ end component ;
     signal Bit_stream_value : std_logic_vector (15 downto 0):= (others => '0'); -- this is will be tied to the bit stream values of the reformatted bitsream
     signal RESET : std_logic := '0';
     --signal nRST  : std_logic := '0'; 
-    signal bit_input: std_logic := '0';
+    signal bit_input: std_logic := '1';
     signal FFT_ready: std_logic;
     
     signal  FFT_outR : STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 ); -- outputs of the FFT
@@ -167,7 +167,7 @@ begin
 
     CLOCK : clk_wiz_0
         port map(
-            reset => nRSt,
+            reset => RST,
             clk_in1  => clk_100M,
             clk_sys => clk_sys
             --clk_mic => clk_mic
@@ -238,7 +238,7 @@ end process;
     );
 
 
-input : shift_reg_input 
+inputs : shift_reg_input 
     Port map (
         CLK  => clk_sys,
         RST =>nRST,
