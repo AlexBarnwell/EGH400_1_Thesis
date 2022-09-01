@@ -23,16 +23,19 @@ entity DFT_loop is
         -- count : out  unsigned(4 downto 0);
         -- SCLR : in  std_logic;
         FFT_RESETs : out std_logic;  -- triggers hard reset (reset to 0 on most operations)
-        DFT_RESETs : out std_logic;  -- trggers soft reset (pause on most operations)
+        --DFT_RESETs : out std_logic;  -- trggers soft reset (pause on most operations)
 
 
         FFT_outR : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 ); -- outputs of the FFT
         FFT_outI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 );
 
-        orders : out integer; -- temp
-        ordersI : out integer;
+        --orders : out integer; -- temp
+       -- ordersI : out integer;
+       order_out : out integer;
         --position : out unsigned(3 downto 0);
+        Write_flag : out std_logic;
         FFT_ready: in std_logic
+       
         -- overflow : out integer
     );
 
@@ -159,8 +162,10 @@ architecture behavioral of DFT_loop is
     signal step1 : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
     signal step1i : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
 
+    signal write_count : signed (2 downto 0 ) := (others => '0');
 
 
+    signal start_write_count : std_logic:= '0';
 
     signal A1_S : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
     signal B1_S : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
@@ -168,7 +173,10 @@ architecture behavioral of DFT_loop is
     signal A1_temp : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
     signal B1_temp : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
 
+    signal FFT_outR2 : STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 ):= (others => '0'); -- outputs of the FFT
+    signal FFT_outI2 : STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 ):= (others => '0');
 
+   signal  order_out2 : integer := 0;
 
     COMPONENT dsp_macro_0
         PORT (
@@ -219,6 +227,17 @@ begin
             final2_S<= (others => '0');
             final3_S<= (others => '0');
             final4_S<= (others => '0');
+
+
+            step1_S <=(others => '0');
+            step2_S <= (others => '0');
+            step1i_S <= (others => '0');
+            step2i_S <= (others => '0');
+            FFT_outr2<= (others => '0');
+            FFT_outi2<= (others => '0');
+
+
+
         elsif rising_edge(Clk) then
             case state is
                 when start =>
@@ -239,6 +258,8 @@ begin
                             DFT_RESET <= '0';
                         end if;
                     end if;
+                    start_write_count <= '0'; 
+
                 when DFT  =>
                     count2<=(count2+1);
                     PPsig2 <= PPsig; -- store the previous value of the transfomr decomposition loop
@@ -266,7 +287,7 @@ begin
                         orderi <= orderi +1;
                         rshift2i <= rshifti;
                     end if;
-
+                    start_write_count <= '0'; 
 
 
 
@@ -278,14 +299,16 @@ begin
                     order <=0;
                     orderi <=0;
 
-                    final1_S <= final1; -- should onlyt trigger once and start the 
+                    order_out<= order_out2;
+
+                    final1_S <= final1; -- should onlyt trigger once and start the  final cobiantion step of TD
                     final2_S <= final2;
                     final3_S <= final3;
                     final4_S <= final4;
                     A1_S <= A1;
                     B1_S <= B1;
 
-
+                     start_write_count <= '1'; 
 
 
                     if count3 = 0 then
@@ -300,6 +323,30 @@ begin
 
 
             end case;
+             
+            step1_S <= step1;
+            step2_S <= step2;
+            step1i_S <= step1i;
+            step2i_S <= step2i;
+            --A1_S<=A1;
+            --B1_S<=B1;
+            FFT_outr2<= REALL;
+            FFT_outi2<= IMAGG;
+
+            if write_count = "101"  then
+                write_count <= "000";
+                write_flag <= '1'; --set write flag
+                elsif ((start_write_count = '1') or (write_count /= "000")) then
+                    write_count<= write_count+1;
+
+                    else 
+
+                    write_flag <= '0';
+            end if;
+
+
+
+
         end if;
     end process;
 
@@ -311,28 +358,16 @@ begin
         if nRST = '0' then
             --REALL <= (others => '0');
             --IMAGG <= (others => '0');
-            step1_S <=(others => '0');
-            step2_S <= (others => '0');
-            step1i_S <= (others => '0');
-            step2i_S <= (others => '0');
-            FFT_outr<= (others => '0');
-            FFT_outi<= (others => '0');
+     
 
         elsif rising_edge(Clk) then
-            step1_S <= step1;
-            step2_S <= step2;
-            step1i_S <= step1i;
-            step2i_S <= step2i;
-            --A1_S<=A1;
-            --B1_S<=B1;
-            FFT_outr <= REALL;
-            FFT_OUTi <= IMAGG;
-
+            
         end if;
 
     end process;
 
-
+            FFT_outR <= FFT_outR2;
+            FFT_outI <= FFT_outI2;
 
     -- overflow checker and applier
     ord_diff <= (order-orderi);
@@ -344,8 +379,14 @@ begin
                  0;
 
 
+    order_out2 <= order when (order>= orderi) else
+    orderi;
+
+
+
+
     FFT_RESETs <= FFT_RESET;  -- triggers hard reset (reset to 0 on most operations)
-    DFT_RESETs <= DFT_RESET;
+    --DFT_RESETs <= DFT_RESET;
 
     --break apart the final loop of the FFT segements to get then compute the real and imaginary sections
 
@@ -449,8 +490,5 @@ begin
     --PP<=(Pout(G_DATA_WIDTH+G_DECIMAL_WIDTH-1 downto G_DECIMAL_WIDTH));--
    -- PP<= ppsig;
     --count<=count2;
-
-    orders<= order;
-    ordersI <= orderI;
     --PPI<=ppsigI;--
 end behavioral;

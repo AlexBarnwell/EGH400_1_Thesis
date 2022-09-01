@@ -224,7 +224,7 @@ begin
         
         
         
-input: shift_reg_input 
+inputs: shift_reg_input 
     Port map (
         CLK => clk,
         RST => RST,

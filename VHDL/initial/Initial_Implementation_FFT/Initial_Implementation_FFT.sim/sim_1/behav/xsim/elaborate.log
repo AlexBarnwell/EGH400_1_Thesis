@@ -79,7 +79,7 @@ Compiling module xil_defaultlib.DFTBD_MEM7I
 Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
 Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="art...
 Compiling module xil_defaultlib.DFTBD_MEM8I
-Compiling architecture behavioral of entity xil_defaultlib.DFTBD_RAM [dftbd_ram_default]
+Compiling architecture behavioral of entity xil_defaultlib.DFTBD_RAM [\DFTBD_RAM(g_decimal_width=15)\]
 Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
 Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
 Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
@@ -92,7 +92,7 @@ Compiling architecture synth of entity dsp_macro_v1_0_2.dsp_macro_synth [\dsp_ma
 Compiling architecture synth of entity dsp_macro_v1_0_2.dsp_macro_v1_0_2_viv [\dsp_macro_v1_0_2_viv(c_xdevicef...]
 Compiling architecture xilinx of entity dsp_macro_v1_0_2.dsp_macro_v1_0_2 [\dsp_macro_v1_0_2(c_xdevicefamil...]
 Compiling architecture dsp_macro_0_arch of entity xil_defaultlib.dsp_macro_0 [dsp_macro_0_default]
-Compiling architecture behavioral of entity xil_defaultlib.DFT_loop [dft_loop_default]
+Compiling architecture behavioral of entity xil_defaultlib.DFT_loop [\DFT_loop(g_decimal_width=15)\]
 Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
 Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
 Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_softecc_outpu...
@@ -102,8 +102,8 @@ Compiling module xil_defaultlib.TW_RAM
 Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
 Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="art...
 Compiling module xil_defaultlib.TW2_RAM
-Compiling architecture behavioral of entity xil_defaultlib.Twiddle_factors [twiddle_factors_default]
+Compiling architecture behavioral of entity xil_defaultlib.Twiddle_factors [\Twiddle_factors(g_decimal_width...]
 Compiling architecture behavioral of entity xil_defaultlib.shift_reg_input [shift_reg_input_default]
-Compiling architecture rtl of entity xil_defaultlib.fpga_top [fpga_top_default]
+Compiling architecture rtl of entity xil_defaultlib.fpga_top [\fpga_top(g_decimal_width=15)\]
 Compiling architecture behavioral of entity xil_defaultlib.fpga_top_tb
 Built simulation snapshot fpga_top_tb_behav

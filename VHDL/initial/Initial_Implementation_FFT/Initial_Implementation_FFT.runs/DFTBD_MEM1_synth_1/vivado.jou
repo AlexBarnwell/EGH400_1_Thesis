@@ -2,8 +2,8 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Sat Aug 27 18:27:31 2022
-# Process ID: 40744
+# Start of session at: Thu Sep  1 21:11:49 2022
+# Process ID: 50132
 # Current directory: C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/DFTBD_MEM1_synth_1
 # Command line: vivado.exe -log DFTBD_MEM1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source DFTBD_MEM1.tcl
 # Log file: C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/DFTBD_MEM1_synth_1/DFTBD_MEM1.vds

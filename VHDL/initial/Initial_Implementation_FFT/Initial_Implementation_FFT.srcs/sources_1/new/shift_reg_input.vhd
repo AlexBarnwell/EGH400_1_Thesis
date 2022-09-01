@@ -9,7 +9,6 @@ entity shift_reg_input is
         RST : in std_logic;
         bit_input: in std_logic; -- input from microphone
         FFT_Reset : in std_logic;
-        DFT_Reset : in std_logic;
         FFT_ready : out std_logic; -- trigger for new mic data being reseived ready to start next FFT
         -- Data_ready : out std_logic; 
         --read_en : in std_logic;
@@ -50,12 +49,12 @@ begin
     begin
         if RST = '0' then
             --shift_reg_buffer <=  (0 => '0', 2=> '0', 4=> '0',  6=> '0' , 8=> '0',  10=> '0',  12=> '0',  14 => '0' ,  others => '1');-- empty buffer
-          shift_reg_buffer <=(others => '0');
+          --shift_reg_buffer <=(others => '0');
             --shift_reg_buffer <= x"555555555555555555555555555555555555555555555555ffffffffffffffff"; -- temporary used to set the intial bit input
             FFT_ready<= '1';
---                    for k in 0 to 127 loop
---                    shift_reg_buffer(k*2) <= '1';
---                    end loop;
+                    for k in 0 to 127 loop
+                    shift_reg_buffer(k*2) <= '1';
+                    end loop;
 
         else
             if rising_edge(CLK) then
@@ -132,7 +131,7 @@ begin
          if (RST = '0') then
            start_count <= "000";
            else 
-           start_count <= "000";
+           start_count <= "001";
            end if;
         --delay <= '0';
         else

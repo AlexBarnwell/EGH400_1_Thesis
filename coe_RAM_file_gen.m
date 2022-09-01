@@ -5,12 +5,12 @@ clear all
 close all
 only_RAM
 fileName={'RAM1.txt', 'RAM2.txt', 'RAM3.txt','RAM4.txt', 'RAM5.txt', 'RAM6.txt','RAM7.txt', 'RAM8.txt'};
-D=13; %% the decimal location
+D=15; %% the decimal location % 14 or more triggers dec2bin to propduce a 32 bit value
 DFTBD_size =25;
 TW_size=18;
-LUTRR=LUTRR.*(2.^D); % 8 decimal bits
+LUTRR=round(LUTRR.*(2.^D)); % 8 decimal bits
 for ii=1:8
-bin=dec2bin(LUTRR(:,ii),DFTBD_size)
+bin=int2bin(LUTRR(:,ii),DFTBD_size)
 %file=[num2str(ii)
 %open file identifier
 file=sprintf('DFT_values_%d.coe',ii);
@@ -36,9 +36,9 @@ end
 %%
 %IMAG
 
-LUTII=LUTII.*(2.^D); % 8 decimal bits
+LUTII=round(LUTII.*(2.^D)); % 8 decimal bits
 for ii=1:8
-bin=dec2bin(LUTII(:,ii),DFTBD_size)
+bin=int2bin(LUTII(:,ii),DFTBD_size)
 %file=[num2str(ii)
 %open file identifier
 file=sprintf('DFT_values _%dI.coe',ii);
@@ -63,8 +63,8 @@ end
 
 
 
-TW=TW.*(2.^D);
-TWbin=dec2bin(TW,TW_size);
+TW=round(TW.*(2.^D));
+TWbin=(int2bin(TW,TW_size));
 fileTW= 'VHDL\initial\Initial_Implementation_FFT\Initial_Implementation_FFT.srcs\sources_1\ip\TW_values.coe';
 fid=fopen(fileTW,'w');
 fprintf(fid,'memory_initialization_radix=2;\n');
@@ -77,8 +77,8 @@ for ii=1:256
 fclose(fid);
 
 
-TW2=TW2.*(2.^D);
-TW2bin=dec2bin(TW2,TW_size);
+TW2=round(TW2.*(2.^D));
+TW2bin=int2bin(TW2,TW_size);
 fileTW2= 'VHDL\initial\Initial_Implementation_FFT\Initial_Implementation_FFT.srcs\sources_1\ip\TW2_values.coe';
 
 fid=fopen(fileTW2,'w');

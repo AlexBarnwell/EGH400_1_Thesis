@@ -21,11 +21,12 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
+use IEEE.NUMERIC_STD.ALL;
+use std.textio.all;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
-use IEEE.NUMERIC_STD.ALL;
+
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx leaf cells in this code.
@@ -36,7 +37,7 @@ entity fpga_top_tb is
     generic (
                 G_DATA_WIDTH    : INTEGER := 25; -- data width of output
                 G_DATA_WIDTH_TW    : INTEGER := 18; --  dta with of TWiddle
-                G_DECIMAL_WIDTH : integer := 13
+                G_DECIMAL_WIDTH : integer := 15
             );
 --  Port ( );
 end fpga_top_tb;
@@ -56,8 +57,9 @@ architecture Behavioral of fpga_top_tb is
                 rst      : in  STD_LOGIC;
                 outR : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 ); -- outputs of the FFT
                 outI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 );
-                order_I : out integer ;
-                order_R : out  integer
+                order_out : out integer; 
+                write_flag : out std_logic;
+                bit_input : in std_logic
                -- output    : out std_logic_vector(17 downto 0)
             );
         end component;
@@ -68,10 +70,30 @@ architecture Behavioral of fpga_top_tb is
         signal rst: std_logic := '1'; -- the reset is inverted so 1 is off and 0 is on
         signal outR : std_logic_vector(G_DATA_WIDTH + G_DATA_WIDTH_TW-1 downto 0 ) := (others => '0');
         signal outI : std_logic_vector(G_DATA_WIDTH + G_DATA_WIDTH_TW-1 downto 0 ) := (others => '0');
-        signal order_I :integer:= 0;
-        signal order_R  :integer:= 0;
+        signal order_out :integer:= 0;
+        signal order  :integer:= 0;
+        
+        signal int_outR : integer := 0;
+        signal int_outI : integer := 0;
+
+
+      
+        signal FFT_outR :bit_vector(G_DATA_WIDTH + G_DATA_WIDTH_TW-1 downto 0 ) := (others => '0');
+        signal FFT_outI :bit_vector(G_DATA_WIDTH + G_DATA_WIDTH_TW-1 downto 0 ) := (others => '0');
+        signal write_flag : std_logic := '0';
         constant ClockFrequency : integer := 100e6; -- 100 MHz
         constant ClockPeriod    : time    := 1000 ms / ClockFrequency;
+        constant M_ClockFrequency : integer := 1e6; -- 100 MHz
+        constant M_clockPeriod : time  := 1000 ms/M_ClockFrequency;
+        signal bit_input : std_logic := '1';
+        signal file_save_delay : integer := 0;
+
+
+      --  type test_out is file of std_logic_vector(G_DATA_WIDTH + G_DATA_WIDTH_TW-1 downto 0 ) ; -- file
+
+
+
+
 
 begin
 
@@ -89,8 +111,9 @@ begin
                 rst      => RST,
                 outR  => outR ,-- outputs of the FFT
                 outI  => outI,
-                order_I => order_I,
-                order_R => order_R
+                order_out => order_out,
+                write_flag =>write_flag,
+                bit_input => bit_input
                -- output    : out std_logic_vector(17 downto 0)
             );
 
@@ -102,6 +125,7 @@ begin
 
              -- resets given each condition
             Clk_100M <= not Clk_100M after ClockPeriod / 2;
+            bit_input <= bit_input after M_clockperiod;
 
             process is
                 begin
@@ -112,14 +136,51 @@ begin
                 RST <='1';
                 wait for 20 ns;
                  RST <= '0';
-                 wait;
+                 --it_input <= '1'; -- set the microphone input to 1
+               -- 
+                wait;
 
                  end process;
             
             
+           -- int_outR <= to_integer(signed(outR));
+           -- int_outI <= to_integer(signed(outI));
+
+              FFT_outR<=  to_bitvector(outR);
+               FFT_outI<=  to_bitvector(outI);
+
+file_save : process( write_flag)
+
+file test_vector      : text open write_mode is "output_file.txt";
+variable row          : line;  -- the row variable
+
+begin
+
+    if(RST='1') then -- RESEt here is inverted as the ARTY RESET is inverted
+        -- dont write
+
+        elsif(rising_edge(write_flag)) then
+            --file_save_delay <= file_save_delay+1;
+
+                write(row,FFT_outR, right, 55);
+      
+                write(row,FFt_outI, right, 55);
+
+                write(row,order_out, right, 15);
+                --hwrite(row,o_add, right, 15);
+               -- hwrite(row,"00000000"&o_add, right, 15);
+                
+                writeline(test_vector,row);
 
 
 
+    end if;
+
+    end process;
+
+
+
+ 
 
 
 end Behavioral;

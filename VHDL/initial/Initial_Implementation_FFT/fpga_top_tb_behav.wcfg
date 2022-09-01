@@ -11,34 +11,36 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,622.001 ns"></ZoomEndTime>
-      <Cursor1Time time="30,000.000 ns"></Cursor1Time>
+      <ZoomStartTime time="64,170.009 ns"></ZoomStartTime>
+      <ZoomEndTime time="67,696.581 ns"></ZoomEndTime>
+      <Cursor1Time time="100,000.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="149"></NameColumnWidth>
-      <ValueColumnWidth column_width="71"></ValueColumnWidth>
+      <NameColumnWidth column_width="130"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="19" />
+   <WVObjectSize size="29" />
    <wvobject fp_name="/fpga_top_tb/outR" type="array">
       <obj_property name="ElementShortName">outR[42:0]</obj_property>
       <obj_property name="ObjectShortName">outR[42:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/fpga_top_tb/outI" type="array">
       <obj_property name="ElementShortName">outI[42:0]</obj_property>
       <obj_property name="ObjectShortName">outI[42:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/fpga_top_tb/order_I" type="other">
-      <obj_property name="ElementShortName">order_I</obj_property>
-      <obj_property name="ObjectShortName">order_I</obj_property>
+   <wvobject fp_name="/fpga_top_tb/top_sim/order_out" type="other">
+      <obj_property name="ElementShortName">order_out</obj_property>
+      <obj_property name="ObjectShortName">order_out</obj_property>
    </wvobject>
-   <wvobject fp_name="/fpga_top_tb/order_R" type="other">
-      <obj_property name="ElementShortName">order_R</obj_property>
-      <obj_property name="ObjectShortName">order_R</obj_property>
+   <wvobject fp_name="/fpga_top_tb/write_flag" type="logic">
+      <obj_property name="ElementShortName">write_flag</obj_property>
+      <obj_property name="ObjectShortName">write_flag</obj_property>
    </wvobject>
-   <wvobject fp_name="/fpga_top_tb/clk_100M" type="logic">
-      <obj_property name="ElementShortName">clk_100M</obj_property>
-      <obj_property name="ObjectShortName">clk_100M</obj_property>
+   <wvobject fp_name="/fpga_top_tb/top_sim/Series_recombination_loop/start_write_count" type="logic">
+      <obj_property name="ElementShortName">start_write_count</obj_property>
+      <obj_property name="ObjectShortName">start_write_count</obj_property>
    </wvobject>
    <wvobject fp_name="/fpga_top_tb/rst" type="logic">
       <obj_property name="ElementShortName">rst</obj_property>
@@ -53,8 +55,8 @@
       <obj_property name="ObjectShortName">clk_sys</obj_property>
    </wvobject>
    <wvobject fp_name="/fpga_top_tb/top_sim/clock_count" type="array">
-      <obj_property name="ElementShortName">clock_count[4:0]</obj_property>
-      <obj_property name="ObjectShortName">clock_count[4:0]</obj_property>
+      <obj_property name="ElementShortName">clock_count[6:0]</obj_property>
+      <obj_property name="ObjectShortName">clock_count[6:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/fpga_top_tb/top_sim/nrst" type="logic">
@@ -96,5 +98,48 @@
    <wvobject fp_name="/fpga_top_tb/top_sim/inputs/FFT_Reset" type="logic">
       <obj_property name="ElementShortName">FFT_Reset</obj_property>
       <obj_property name="ObjectShortName">FFT_Reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/RESET" type="logic">
+      <obj_property name="ElementShortName">RESET</obj_property>
+      <obj_property name="ObjectShortName">RESET</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/clk_100M" type="logic">
+      <obj_property name="ElementShortName">clk_100M</obj_property>
+      <obj_property name="ObjectShortName">clk_100M</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/DFTBD_RAMs/DFTOUT" type="array">
+      <obj_property name="ElementShortName">DFTOUT[24:0]</obj_property>
+      <obj_property name="ObjectShortName">DFTOUT[24:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/Series_recombination_loop/PPsig" type="array">
+      <obj_property name="ElementShortName">PPsig[24:0]</obj_property>
+      <obj_property name="ObjectShortName">PPsig[24:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/bit_input" type="logic">
+      <obj_property name="ElementShortName">bit_input</obj_property>
+      <obj_property name="ObjectShortName">bit_input</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/inputs/Mic_shift_reg_input" type="array">
+      <obj_property name="ElementShortName">Mic_shift_reg_input[64:0]</obj_property>
+      <obj_property name="ObjectShortName">Mic_shift_reg_input[64:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/inputs/shift_reg_buffer" type="array">
+      <obj_property name="ElementShortName">shift_reg_buffer[255:0]</obj_property>
+      <obj_property name="ObjectShortName">shift_reg_buffer[255:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/file_save_delay" type="other">
+      <obj_property name="ElementShortName">file_save_delay</obj_property>
+      <obj_property name="ObjectShortName">file_save_delay</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/Series_recombination_loop/DFT_RESET" type="logic">
+      <obj_property name="ElementShortName">DFT_RESET</obj_property>
+      <obj_property name="ObjectShortName">DFT_RESET</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/Series_recombination_loop/TWin" type="array">
+      <obj_property name="ElementShortName">TWin[17:0]</obj_property>
+      <obj_property name="ObjectShortName">TWin[17:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

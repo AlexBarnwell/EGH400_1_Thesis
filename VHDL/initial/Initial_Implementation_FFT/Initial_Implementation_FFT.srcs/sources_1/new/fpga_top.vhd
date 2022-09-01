@@ -1,21 +1,4 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 24.06.2017 16:26:44
--- Design Name: 
--- Module Name: fpga_top
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
+
 ----------------------------------------------------------------------------------
 
 library IEEE;
@@ -37,8 +20,9 @@ generic (
         rst      : in  STD_LOGIC;
         outR : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 ); -- outputs of the FFT
         outI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 );
-        order_I : out integer ;
-        order_R : out  integer
+        order_out : out integer ;
+        bit_input : in std_logic;
+        write_flag : out std_logic
        -- output    : out std_logic_vector(17 downto 0)
     );
 end fpga_top;
@@ -64,6 +48,11 @@ architecture RTL of fpga_top is
 
 
 component  DFT_loop is
+    generic (
+        G_DATA_WIDTH    : INTEGER := 25; -- data width of output
+        G_DATA_WIDTH_TW    : INTEGER := 18; --  dta with of TWiddle
+        G_DECIMAL_WIDTH : integer := 13
+    );
     port (--AA : in STD_LOGIC_VECTOR (15 downto 0); -- initial ports
     --BB : in STD_LOGIC_VECTOR (15 downto 0);
     --CC : in STD_LOGIC_VECTOR (15 downto 0);
@@ -75,13 +64,12 @@ component  DFT_loop is
         Clk : in std_logic;
         -- SCLR : in  std_logic;
         FFT_RESETs : out std_logic;  -- triggers hard reset (reset to 0 on most operations)
-        DFT_RESETs : out std_logic;  -- trggers soft reset (pause on most operations)
 
 
         FFT_outR : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 ); -- outputs of the FFT
         FFT_outI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 );
-        orders : out integer;
-        ordersI : out integer;
+        order_out: out integer;
+        write_flag : out std_logic;
        -- position : out unsigned(3 downto 0));
         FFT_ready : in std_logic);
     -- PCOUT : out std_logic_vector (47 downto 0));
@@ -92,6 +80,10 @@ end component ;
 
 
 component DFTBD_RAM
+generic (
+    G_DATA_WIDTH    : INTEGER := 25; -- data width of output
+    G_DECIMAL_WIDTH : integer := 13
+);
     port(
         --ADDRESS : in  std_logic_vector(5 downto 0);
         DFTOUT  : out std_logic_vector (G_DATA_WIDTH-1 downto 0);
@@ -105,6 +97,10 @@ component DFTBD_RAM
 end component;
 
 component Twiddle_factors is
+    generic (
+        G_DATA_WIDTH_TW    : INTEGER := 18; --  dta with of TWiddle
+        G_DECIMAL_WIDTH : integer := 13
+    );
     port(
     count : in unsigned(7 downto 0);
     CLK : in std_logic;
@@ -123,7 +119,6 @@ component  shift_reg_input is
         RST : in std_logic;
         bit_input: in std_logic; -- input from microphone
         FFT_Reset : in std_logic;
-        DFT_Reset : in std_logic;
         FFT_ready : out std_logic; -- trigger for new mic data being reseived ready to start next FFT
        -- Data_ready : out std_logic; 
         --read_en : in std_logic;
@@ -148,19 +143,20 @@ end component ;
 
     signal  TW : std_logic_vector (G_DATA_WIDTH_TW-1 downto 0):= (others => '0');
     signal  FFT_RESETs : std_logic;  -- triggers hard reset (reset to 0 on most operations)
-    signal DFT_RESETs : std_logic; 
     signal Bit_stream_value : std_logic_vector (15 downto 0):= (others => '0'); -- this is will be tied to the bit stream values of the reformatted bitsream
     signal RESET : std_logic := '0';
     --signal nRST  : std_logic := '0'; 
-    signal bit_input: std_logic := '1';
+    --signal bit_input: std_logic := '0';
     signal FFT_ready: std_logic;
     
     signal  FFT_outR : STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 ); -- outputs of the FFT
     signal  FFT_outI : STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 );
     
-    signal orders : integer := 0;
-    signal ordersI : integer := 0;
-    signal clock_count : unsigned(4 downto 0) := (others => '0');
+
+
+    signal clock_count : unsigned(6 downto 0) := (others => '0');
+
+
     
     
 begin
@@ -181,12 +177,12 @@ begin
     
     if nRST = '0' then
     clk_mic <= '0';
-    clock_count <= "00000";
+    clock_count <= "0000000";
     else
     clock_count <=clock_count+1;
     
-    if clock_count = "11000" then
-    clock_count <= "00000";
+    if clock_count = "1100100" then -- decrease time to 1MHz temp
+    clock_count <= "0000000";
     clk_mic <= not clk_mic;
     end if;
     end if;
@@ -197,6 +193,10 @@ end process;
     nrst <= not rst;
 
     DFTBD_RAMs : DFTBD_RAM
+    generic map (
+        G_DATA_WIDTH  => G_DATA_WIDTH, -- data width of output
+        G_DECIMAL_WIDTH => G_DECIMAL_WIDTH
+    )
         port map(
             --ADDRESS => DFT_address,
             DFTOUT  => DFTin,
@@ -210,25 +210,35 @@ end process;
 
 
     Series_recombination_loop : DFT_loop
+        generic map (
+            G_DATA_WIDTH  => G_DATA_WIDTH, -- data width of output
+            G_DATA_WIDTH_TW  => G_DATA_WIDTH_TW, --  dta with of TWiddle
+            G_DECIMAL_WIDTH => G_DECIMAL_WIDTH
+        )
         port map(
             DFTin => DFTin,
             DFTinI => DFTinI,
             TWin  => Twin,
             TWin2  => Twin2,
             --PP    => output,
-            nRst  => RESET,
+            nRst  => nRst,
             Clk   => clk_sys,
            -- count => count,
             FFT_RESETs => FFT_RESETs,
-            DFT_RESETs  => DFT_RESETs,
             FFT_ready => FFT_ready,
              FFT_outR => FFT_outR,
             FFT_outI => FFT_outI,
-            orders =>orders
+            order_out=>order_out,
+            write_flag => write_flag
         );
 
         
     TWiddle1 :Twiddle_factors
+    generic map (
+        G_DATA_WIDTH_TW  => G_DATA_WIDTH_TW, --  dta with of TWiddle
+        G_DECIMAL_WIDTH => G_DECIMAL_WIDTH
+
+    )
     port map(
     count => count,
     CLK  => clk_sys,
@@ -244,8 +254,7 @@ inputs : shift_reg_input
         RST =>nRST,
         bit_input => bit_input,
         FFT_Reset => FFT_RESETS,
-        DFT_Reset => DFT_RESETS,
-        FFT_ready =>FFT_ready, -- trigger for new mic data being reseived ready to start next FFT
+        FFT_ready =>FFT_ready, -- trigger for new mic data being received ready to start next FFT
 
         MCLK => clk_mic,
  
@@ -261,8 +270,8 @@ inputs : shift_reg_input
 
  --  resets
  RESET <= (nRSt and FFT_RESETS); -- resets given each condition
-    order_R <= orders;
-    order_I <= ordersI;
+   -- order_R <= orders;
+    --order_I <= ordersI;
     outI<= FFT_outI ;
     outR <= FFT_outR;
 
