@@ -34,9 +34,9 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400_1/EGH400_1_Thesis/V
 INFO: [VRFC 10-311] analyzing module DFTBD_MEM2
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM1/sim/DFTBD_MEM1.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module DFTBD_MEM1
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/clk_wiz_0_2/clk_wiz_0_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module clk_wiz_0_clk_wiz
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/clk_wiz_0_2/clk_wiz_0.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module clk_wiz_0
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module glbl

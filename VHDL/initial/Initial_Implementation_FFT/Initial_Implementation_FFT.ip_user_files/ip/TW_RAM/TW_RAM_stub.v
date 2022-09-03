@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
 // Date        : Thu Sep  1 21:00:33 2022
 // Host        : DESKTOP-BDA8VGJ running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               c:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/TW_RAM/TW_RAM_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top TW_RAM -prefix
+//               TW_RAM_ TW_RAM_stub.v
 // Design      : TW_RAM
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a35ticsg324-1L

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
-| Date         : Thu Sep  1 12:15:29 2022
+| Date         : Sat Sep  3 16:09:39 2022
 | Host         : DESKTOP-BDA8VGJ running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file fpga_top_control_sets_placed.rpt
 | Design       : fpga_top
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    21 |
-|    Minimum number of control sets                        |    21 |
+| Total control sets                                       |    27 |
+|    Minimum number of control sets                        |    27 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    59 |
+| Unused register locations in slices containing registers |    92 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,13 +39,13 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    21 |
-| >= 0 to < 4        |     4 |
-| >= 4 to < 6        |     3 |
-| >= 6 to < 8        |     1 |
+| Total control sets |    27 |
+| >= 0 to < 4        |     7 |
+| >= 4 to < 6        |     2 |
+| >= 6 to < 8        |     3 |
 | >= 8 to < 10       |     2 |
-| >= 10 to < 12      |     0 |
-| >= 12 to < 14      |     1 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     2 |
 | >= 14 to < 16      |     0 |
 | >= 16              |    10 |
 +--------------------+-------+
@@ -58,42 +58,48 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               8 |            4 |
-| No           | No                    | Yes                    |             835 |          239 |
-| No           | Yes                   | No                     |               1 |            1 |
-| Yes          | No                    | No                     |              78 |           48 |
-| Yes          | No                    | Yes                    |             575 |          209 |
-| Yes          | Yes                   | No                     |              68 |           22 |
+| No           | No                    | No                     |              12 |            6 |
+| No           | No                    | Yes                    |             835 |          236 |
+| No           | Yes                   | No                     |               2 |            2 |
+| Yes          | No                    | No                     |              81 |           42 |
+| Yes          | No                    | Yes                    |             576 |          204 |
+| Yes          | Yes                   | No                     |              98 |           44 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------------+----------------------------------------------+----------------------------------------------+------------------+----------------+--------------+
-|     Clock Signal     |                 Enable Signal                |               Set/Reset Signal               | Slice Load Count | Bel Load Count | Bels / Slice |
-+----------------------+----------------------------------------------+----------------------------------------------+------------------+----------------+--------------+
-|  clk_mic_reg_i_2_n_0 |                                              | rst_IBUF                                     |                1 |              1 |         1.00 |
-|  clk_mic             |                                              | rst_IBUF                                     |                1 |              1 |         1.00 |
-|  clk_mic             | inputs/nRst                                  | inputs/read_en_i_2_n_0                       |                1 |              1 |         1.00 |
-|  CLOCK/inst/clk_sys  | inputs/p_0_in__0                             | Series_recombination_loop/FFT_RESET_reg_0    |                1 |              3 |         3.00 |
-|  CLOCK/inst/clk_sys  | Series_recombination_loop/A1_S[40]_i_1_n_0   | Series_recombination_loop/B1_S[20]_i_1_n_0   |                4 |              4 |         1.00 |
-|  CLOCK/inst/clk_sys  | Series_recombination_loop/count_delay        | rst_IBUF                                     |                1 |              4 |         4.00 |
-|  CLOCK/inst/clk_sys  | Series_recombination_loop/count2             | rst_IBUF                                     |                1 |              5 |         5.00 |
-|  CLOCK/inst/clk_sys  | inputs/count0                                |                                              |                2 |              6 |         3.00 |
-|  CLOCK/inst/clk_sys  |                                              |                                              |                4 |              8 |         2.00 |
-|  CLOCK/inst/clk_sys  | Series_recombination_loop/count3[7]_i_1_n_0  | rst_IBUF                                     |                2 |              8 |         4.00 |
-|  CLOCK/inst/clk_sys  | inputs/byte_select_temp[3]_i_1_n_0           | Series_recombination_loop/FFT_RESET_reg_0    |                3 |             12 |         4.00 |
-|  CLOCK/inst/clk_sys  | Series_recombination_loop/orderi[31]_i_2_n_0 | Series_recombination_loop/orderi[31]_i_1_n_0 |                9 |             32 |         3.56 |
-|  CLOCK/inst/clk_sys  | Series_recombination_loop/order0             | Series_recombination_loop/order[31]_i_1_n_0  |                9 |             32 |         3.56 |
-|  CLOCK/inst/clk_sys  | inputs/hold[1]_i_1_n_0                       | Series_recombination_loop/FFT_RESET_reg_0    |               15 |             50 |         3.33 |
-|  CLOCK/inst/clk_sys  | inputs/count1                                | rst_IBUF                                     |               16 |             64 |         4.00 |
-|  CLOCK/inst/clk_sys  | Series_recombination_loop/A1_S[40]_i_1_n_0   |                                              |               46 |             72 |         1.57 |
-|  CLOCK/inst/clk_sys  |                                              | Series_recombination_loop/temp2I[43]_i_2_n_0 |               22 |             88 |         4.00 |
-|  CLOCK/inst/clk_sys  | Series_recombination_loop/final1_S           | rst_IBUF                                     |              100 |            172 |         1.72 |
-|  CLOCK/inst/clk_sys  | inputs/shift_reg_buffer0                     | rst_IBUF                                     |               69 |            256 |         3.71 |
-|  CLOCK/inst/clk_sys  |                                              | rst_IBUF                                     |               72 |            260 |         3.61 |
-|  CLOCK/inst/clk_sys  |                                              | Series_recombination_loop/FFT_RESET_reg_0    |              144 |            486 |         3.38 |
-+----------------------+----------------------------------------------+----------------------------------------------+------------------+----------------+--------------+
++--------------------------------------------+----------------------------------------------+----------------------------------------------+------------------+----------------+--------------+
+|                Clock Signal                |                 Enable Signal                |               Set/Reset Signal               | Slice Load Count | Bel Load Count | Bels / Slice |
++--------------------------------------------+----------------------------------------------+----------------------------------------------+------------------+----------------+--------------+
+|  Series_recombination_loop/FFT_RESET_reg_1 |                                              | rst_IBUF                                     |                1 |              1 |         1.00 |
+|  CLOCK/inst/clk_sys                        | Series_recombination_loop/Write_flag_i_2_n_0 | Series_recombination_loop/Write_flag0        |                1 |              1 |         1.00 |
+|  CLOCK/inst/clk_sys                        | inputs/p_2_in                                | Series_recombination_loop/FFT_RESET_reg_1    |                1 |              1 |         1.00 |
+|  clk_mic                                   |                                              | rst_IBUF                                     |                1 |              1 |         1.00 |
+|  MIC_clock_OBUF                            | inputs/Mic_shift_reg_input_reg0              | rst_IBUF                                     |                1 |              1 |         1.00 |
+|  MIC_clock_OBUF                            | inputs/nRst                                  | inputs/read_en_i_2_n_0                       |                1 |              1 |         1.00 |
+|  CLOCK/inst/clk_sys                        | inputs/p_2_in                                | Series_recombination_loop/FFT_RESET_reg_0    |                1 |              2 |         2.00 |
+|  CLOCK/inst/clk_sys                        | Series_recombination_loop/count_delay        | rst_IBUF                                     |                1 |              4 |         4.00 |
+|  CLOCK/inst/clk_sys                        | Series_recombination_loop/count2             | rst_IBUF                                     |                1 |              5 |         5.00 |
+|  CLOCK/inst/clk_sys                        | inputs/count0                                |                                              |                1 |              6 |         6.00 |
+|  CLOCK/inst/clk_sys                        | Series_recombination_loop/A1_S[40]_i_1_n_0   | Series_recombination_loop/B1_S[36]_i_1_n_0   |                2 |              7 |         3.50 |
+|  CLOCK/inst/clk_sys                        | Series_recombination_loop/A1_S[40]_i_1_n_0   | Series_recombination_loop/B1_S[7]_i_1_n_0    |                7 |              7 |         1.00 |
+|  CLOCK/inst/clk_sys                        | Series_recombination_loop/A1_S[40]_i_1_n_0   | Series_recombination_loop/A1_S[36]_i_1_n_0   |                4 |              8 |         2.00 |
+|  CLOCK/inst/clk_sys                        | Series_recombination_loop/count3[7]_i_1_n_0  | rst_IBUF                                     |                2 |              8 |         4.00 |
+|  CLOCK/inst/clk_sys                        | Series_recombination_loop/A1_S[40]_i_1_n_0   | Series_recombination_loop/B1_S[31]_i_1_n_0   |                3 |             11 |         3.67 |
+|  CLOCK/inst/clk_sys                        |                                              |                                              |                6 |             12 |         2.00 |
+|  CLOCK/inst/clk_sys                        | inputs/byte_select_temp[3]_i_1_n_0           | Series_recombination_loop/FFT_RESET_reg_0    |                3 |             12 |         4.00 |
+|  CLOCK/inst/clk_sys                        | Series_recombination_loop/order0             | Series_recombination_loop/order[31]_i_1_n_0  |               12 |             32 |         2.67 |
+|  CLOCK/inst/clk_sys                        | Series_recombination_loop/orderi[31]_i_2_n_0 | Series_recombination_loop/orderi[31]_i_1_n_0 |               15 |             32 |         2.13 |
+|  CLOCK/inst/clk_sys                        | inputs/hold[1]_i_1_n_0                       | Series_recombination_loop/FFT_RESET_reg_0    |               16 |             50 |         3.12 |
+|  CLOCK/inst/clk_sys                        | inputs/count1                                | rst_IBUF                                     |               19 |             64 |         3.37 |
+|  CLOCK/inst/clk_sys                        | Series_recombination_loop/A1_S[40]_i_1_n_0   |                                              |               41 |             75 |         1.83 |
+|  CLOCK/inst/clk_sys                        |                                              | Series_recombination_loop/temp2I[43]_i_2_n_0 |               22 |             88 |         4.00 |
+|  CLOCK/inst/clk_sys                        | Series_recombination_loop/start_write_count  | rst_IBUF                                     |               96 |            172 |         1.79 |
+|  CLOCK/inst/clk_sys                        | inputs/shift_reg_buffer0                     | rst_IBUF                                     |               62 |            256 |         4.13 |
+|  CLOCK/inst/clk_sys                        |                                              | rst_IBUF                                     |               67 |            261 |         3.90 |
+|  CLOCK/inst/clk_sys                        |                                              | Series_recombination_loop/FFT_RESET_reg_0    |              147 |            486 |         3.31 |
++--------------------------------------------+----------------------------------------------+----------------------------------------------+------------------+----------------+--------------+
 
 

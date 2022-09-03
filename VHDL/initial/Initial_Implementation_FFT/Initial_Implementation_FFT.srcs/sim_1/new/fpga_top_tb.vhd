@@ -59,7 +59,8 @@ architecture Behavioral of fpga_top_tb is
                 outI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 );
                 order_out : out integer; 
                 write_flag : out std_logic;
-                bit_input : in std_logic
+                bit_input : in std_logic;
+                MIC_clock : out std_logic
                -- output    : out std_logic_vector(17 downto 0)
             );
         end component;
@@ -85,8 +86,11 @@ architecture Behavioral of fpga_top_tb is
         constant ClockPeriod    : time    := 1000 ms / ClockFrequency;
         constant M_ClockFrequency : integer := 1e6; -- 100 MHz
         constant M_clockPeriod : time  := 1000 ms/M_ClockFrequency;
-        signal bit_input : std_logic := '1';
+        signal bit_input : std_logic := '0';
         signal file_save_delay : integer := 0;
+        signal MIC_clock : std_logic := '0';
+
+        signal predefined_input :std_logic_vector(255 downto 0) := "1101100111011010011110111110101000011010001100011101100010101011111000101010001001111011010011101000010101011100010111000101110001010000111011010000000011000100100000111000100011101010100110110000111110110111110000100000010011000010110000010010110100111001";
 
 
       --  type test_out is file of std_logic_vector(G_DATA_WIDTH + G_DATA_WIDTH_TW-1 downto 0 ) ; -- file
@@ -113,7 +117,8 @@ begin
                 outI  => outI,
                 order_out => order_out,
                 write_flag =>write_flag,
-                bit_input => bit_input
+                bit_input => bit_input,
+                MIC_clock => MIC_clock
                -- output    : out std_logic_vector(17 downto 0)
             );
 
@@ -125,7 +130,29 @@ begin
 
              -- resets given each condition
             Clk_100M <= not Clk_100M after ClockPeriod / 2;
-            bit_input <= bit_input after M_clockperiod;
+            --bit_input <= bit_input after M_clockperiod;
+
+            Microphone : process (MIC_clock,RST)
+
+            begin
+
+                if RST = '1' then
+               -- bit_input <= '0';
+                elsif rising_edge(MIC_clock) then
+                    predefined_input<= predefined_input(254 downto 0) & '0';
+                   -- bit_input <= not bit_input;
+
+                end if;
+
+            end process;
+
+                    bit_input <= predefined_input(255);
+
+
+
+
+
+
 
             process is
                 begin

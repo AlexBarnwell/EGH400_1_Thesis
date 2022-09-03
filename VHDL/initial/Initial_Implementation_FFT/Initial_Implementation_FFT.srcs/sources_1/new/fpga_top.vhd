@@ -22,7 +22,8 @@ generic (
         outI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 );
         order_out : out integer ;
         bit_input : in std_logic;
-        write_flag : out std_logic
+        write_flag : out std_logic;
+        MIC_clock : out std_logic
        -- output    : out std_logic_vector(17 downto 0)
     );
 end fpga_top;
@@ -189,6 +190,7 @@ begin
     
 end process;
 
+MIC_clock <= clk_mic;
 
     nrst <= not rst;
 

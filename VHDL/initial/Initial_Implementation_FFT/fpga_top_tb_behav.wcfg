@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="64,170.009 ns"></ZoomStartTime>
-      <ZoomEndTime time="67,696.581 ns"></ZoomEndTime>
-      <Cursor1Time time="100,000.000 ns"></Cursor1Time>
+      <ZoomStartTime time="144,200.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="145,902.001 ns"></ZoomEndTime>
+      <Cursor1Time time="145,000.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="130"></NameColumnWidth>
+      <NameColumnWidth column_width="122"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="29" />
+   <WVObjectSize size="33" />
    <wvobject fp_name="/fpga_top_tb/outR" type="array">
       <obj_property name="ElementShortName">outR[42:0]</obj_property>
       <obj_property name="ObjectShortName">outR[42:0]</obj_property>
@@ -141,5 +141,22 @@
       <obj_property name="ElementShortName">TWin[17:0]</obj_property>
       <obj_property name="ObjectShortName">TWin[17:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/Series_recombination_loop/state" type="other">
+      <obj_property name="ElementShortName">state</obj_property>
+      <obj_property name="ObjectShortName">state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/Series_recombination_loop/count_delay" type="array">
+      <obj_property name="ElementShortName">count_delay[3:0]</obj_property>
+      <obj_property name="ObjectShortName">count_delay[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/Series_recombination_loop/FFT_ready" type="logic">
+      <obj_property name="ElementShortName">FFT_ready</obj_property>
+      <obj_property name="ObjectShortName">FFT_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/predefined_input" type="array">
+      <obj_property name="ElementShortName">predefined_input[255:0]</obj_property>
+      <obj_property name="ObjectShortName">predefined_input[255:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
 </wave_config>

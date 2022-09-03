@@ -70,7 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35ticsg324-1L
 
@@ -112,17 +111,28 @@ read_vhdl -library xil_defaultlib {
   C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/shift_reg_input.vhd
   C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhd
 }
+read_ip -quiet C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/clk_wiz_0_2/clk_wiz_0.xci
+set_property used_in_implementation false [get_files -all c:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/clk_wiz_0_2/clk_wiz_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/clk_wiz_0_2/clk_wiz_0.xdc]
+set_property used_in_implementation false [get_files -all c:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/clk_wiz_0_2/clk_wiz_0_ooc.xdc]
+
 read_ip -quiet C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/TW2_RAM/TW2_RAM.xci
 set_property used_in_implementation false [get_files -all c:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/TW2_RAM/TW2_RAM_ooc.xdc]
 
 read_ip -quiet C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/TW_RAM/TW_RAM.xci
 set_property used_in_implementation false [get_files -all c:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/TW_RAM/TW_RAM_ooc.xdc]
 
+read_ip -quiet C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/dsp_macro_0/dsp_macro_0.xci
+set_property used_in_implementation false [get_files -all c:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/dsp_macro_0/dsp_macro_0_ooc.xdc]
+
 read_ip -quiet C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM8I/DFTBD_MEM8I.xci
 set_property used_in_implementation false [get_files -all c:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM8I/DFTBD_MEM8I_ooc.xdc]
 
 read_ip -quiet C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM7I/DFTBD_MEM7I.xci
 set_property used_in_implementation false [get_files -all c:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM7I/DFTBD_MEM7I_ooc.xdc]
+
+read_ip -quiet C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM6I/DFTBD_MEM6I.xci
+set_property used_in_implementation false [get_files -all c:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM6I/DFTBD_MEM6I_ooc.xdc]
 
 read_ip -quiet C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM5I/DFTBD_MEM5I.xci
 set_property used_in_implementation false [get_files -all c:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM5I/DFTBD_MEM5I_ooc.xdc]
@@ -132,6 +142,9 @@ set_property used_in_implementation false [get_files -all c:/REPOS/EGH400_1/EGH4
 
 read_ip -quiet C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM3I/DFTBD_MEM3I.xci
 set_property used_in_implementation false [get_files -all c:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM3I/DFTBD_MEM3I_ooc.xdc]
+
+read_ip -quiet C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM2I/DFTBD_MEM2I.xci
+set_property used_in_implementation false [get_files -all c:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM2I/DFTBD_MEM2I_ooc.xdc]
 
 read_ip -quiet C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM1I_1/DFTBD_MEM1I.xci
 set_property used_in_implementation false [get_files -all c:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM1I_1/DFTBD_MEM1I_ooc.xdc]
@@ -159,20 +172,6 @@ set_property used_in_implementation false [get_files -all c:/REPOS/EGH400_1/EGH4
 
 read_ip -quiet C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM1/DFTBD_MEM1.xci
 set_property used_in_implementation false [get_files -all c:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM1/DFTBD_MEM1_ooc.xdc]
-
-read_ip -quiet C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/dsp_macro_0/dsp_macro_0.xci
-set_property used_in_implementation false [get_files -all c:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/dsp_macro_0/dsp_macro_0_ooc.xdc]
-
-read_ip -quiet C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/clk_wiz_0_2/clk_wiz_0.xci
-set_property used_in_implementation false [get_files -all c:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/clk_wiz_0_2/clk_wiz_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/clk_wiz_0_2/clk_wiz_0.xdc]
-set_property used_in_implementation false [get_files -all c:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/clk_wiz_0_2/clk_wiz_0_ooc.xdc]
-
-read_ip -quiet C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM6I/DFTBD_MEM6I.xci
-set_property used_in_implementation false [get_files -all c:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM6I/DFTBD_MEM6I_ooc.xdc]
-
-read_ip -quiet C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/ip/DFTBD_MEM2I/DFTBD_MEM2I.xci
-set_property used_in_implementation false [get_files -all c:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM2I/DFTBD_MEM2I_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
