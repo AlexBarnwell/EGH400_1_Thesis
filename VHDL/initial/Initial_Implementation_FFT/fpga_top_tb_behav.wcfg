@@ -11,12 +11,12 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="144,200.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="145,902.001 ns"></ZoomEndTime>
-      <Cursor1Time time="145,000.000 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="42.950001 us"></ZoomEndTime>
+      <Cursor1Time time="0.400000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="122"></NameColumnWidth>
+      <NameColumnWidth column_width="114"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="33" />
@@ -24,15 +24,27 @@
       <obj_property name="ElementShortName">outR[42:0]</obj_property>
       <obj_property name="ObjectShortName">outR[42:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/fpga_top_tb/outI" type="array">
       <obj_property name="ElementShortName">outI[42:0]</obj_property>
       <obj_property name="ObjectShortName">outI[42:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/fpga_top_tb/top_sim/order_out" type="other">
       <obj_property name="ElementShortName">order_out</obj_property>
       <obj_property name="ObjectShortName">order_out</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/clk_sys" type="logic">
+      <obj_property name="ElementShortName">clk_sys</obj_property>
+      <obj_property name="ObjectShortName">clk_sys</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/fpga_top_tb/write_flag" type="logic">
       <obj_property name="ElementShortName">write_flag</obj_property>
@@ -49,10 +61,6 @@
    <wvobject fp_name="/fpga_top_tb/top_sim/clk_mic" type="logic">
       <obj_property name="ElementShortName">clk_mic</obj_property>
       <obj_property name="ObjectShortName">clk_mic</obj_property>
-   </wvobject>
-   <wvobject fp_name="/fpga_top_tb/top_sim/clk_sys" type="logic">
-      <obj_property name="ElementShortName">clk_sys</obj_property>
-      <obj_property name="ObjectShortName">clk_sys</obj_property>
    </wvobject>
    <wvobject fp_name="/fpga_top_tb/top_sim/clock_count" type="array">
       <obj_property name="ElementShortName">clock_count[6:0]</obj_property>
@@ -74,6 +82,8 @@
    <wvobject fp_name="/fpga_top_tb/top_sim/DFTBD_RAMs/RST" type="logic">
       <obj_property name="ElementShortName">RST</obj_property>
       <obj_property name="ObjectShortName">RST</obj_property>
+      <obj_property name="CustomSignalColor">#00FF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/fpga_top_tb/top_sim/inputs/read_en" type="logic">
       <obj_property name="ElementShortName">read_en</obj_property>
@@ -157,6 +167,5 @@
    <wvobject fp_name="/fpga_top_tb/predefined_input" type="array">
       <obj_property name="ElementShortName">predefined_input[255:0]</obj_property>
       <obj_property name="ObjectShortName">predefined_input[255:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
    </wvobject>
 </wave_config>
