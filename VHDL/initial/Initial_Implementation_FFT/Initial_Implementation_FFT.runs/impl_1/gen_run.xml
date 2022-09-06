@@ -295,12 +295,12 @@
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
   <BlockFileSet Type="BlockSrcs" Name="DFTBD_MEM7I"/>
-  <BlockFileSet Type="BlockSrcs" Name="DFTBD_MEM5I"/>
   <BlockFileSet Type="BlockSrcs" Name="DFTBD_MEM8"/>
   <BlockFileSet Type="BlockSrcs" Name="TW2_RAM"/>
+  <BlockFileSet Type="BlockSrcs" Name="DFTBD_MEM5I"/>
   <BlockFileSet Type="BlockSrcs" Name="TW_RAM"/>
-  <BlockFileSet Type="BlockSrcs" Name="DFTBD_MEM4I"/>
   <BlockFileSet Type="BlockSrcs" Name="dsp_macro_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="DFTBD_MEM4I"/>
   <BlockFileSet Type="BlockSrcs" Name="DFTBD_MEM8I"/>
   <BlockFileSet Type="BlockSrcs" Name="DFTBD_MEM6I"/>
   <BlockFileSet Type="BlockSrcs" Name="DFTBD_MEM3I"/>
