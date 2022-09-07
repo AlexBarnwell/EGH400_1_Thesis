@@ -1,0 +1,11 @@
+saple on pulse that is registerd ( falling edge of M_CLK)
+
+do teh windowing
+
+extract magnitude
+
+compressing dynamic range
+
+ sum fo swayrs doen withsingle DSP
+
+counter pointer to line piped to read so can see that all has been read

@@ -4,7 +4,7 @@ USE ieee.numeric_std.ALL;
 
 library work;
 
-use work.state_machine.all;
+use work.data_types.all; 
 
 entity DSP_TD is
     generic (
@@ -325,7 +325,7 @@ begin
 
                     -- end if;
 
-
+                    when others  =>
 
             end case;
              

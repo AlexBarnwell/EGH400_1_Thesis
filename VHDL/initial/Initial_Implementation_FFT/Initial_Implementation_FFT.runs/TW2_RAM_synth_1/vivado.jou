@@ -2,12 +2,12 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Sat Sep  3 16:41:14 2022
-# Process ID: 32428
-# Current directory: C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/TW2_RAM_synth_1
+# Start of session at: Wed Sep  7 20:24:42 2022
+# Process ID: 29636
+# Current directory: C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/TW2_RAM_synth_1
 # Command line: vivado.exe -log TW2_RAM.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source TW2_RAM.tcl
-# Log file: C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/TW2_RAM_synth_1/TW2_RAM.vds
-# Journal file: C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/TW2_RAM_synth_1\vivado.jou
-# Running On: DESKTOP-BDA8VGJ, OS: Windows, CPU Frequency: 3600 MHz, CPU Physical cores: 8, Host memory: 25599 MB
+# Log file: C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/TW2_RAM_synth_1/TW2_RAM.vds
+# Journal file: C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/TW2_RAM_synth_1\vivado.jou
+# Running On: LAPTOP-M3DNELKA, OS: Windows, CPU Frequency: 2208 MHz, CPU Physical cores: 6, Host memory: 17075 MB
 #-----------------------------------------------------------
 source TW2_RAM.tcl -notrace

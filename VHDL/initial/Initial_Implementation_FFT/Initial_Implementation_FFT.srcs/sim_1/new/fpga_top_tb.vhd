@@ -24,6 +24,10 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 use std.textio.all;
 
+library work;
+
+use work.data_types.all;
+
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 
@@ -37,7 +41,11 @@ entity fpga_top_tb is
     generic (
         G_DATA_WIDTH    : INTEGER := 25; -- data width of output
         G_DATA_WIDTH_TW    : INTEGER := 18; --  dta with of TWiddle
-        G_DECIMAL_WIDTH : integer := 15
+        G_DECIMAL_WIDTH : integer := 15;
+        G_PARALLEL_TD : integer :=1;
+        G_BYTE_SIZE : Integer := 256;
+        G_RADIX : integer := 16;
+        G_DFTBD_B : integer := 2
     );
     --  Port ( );
 end fpga_top_tb;
@@ -49,7 +57,11 @@ architecture Behavioral of fpga_top_tb is
         generic (
             G_DATA_WIDTH    : INTEGER := 25; -- data width of output
             G_DATA_WIDTH_TW    : INTEGER := 18; --  dta with of TWiddle
-            G_DECIMAL_WIDTH : integer := 13
+            G_DECIMAL_WIDTH : integer := 13;
+            G_PARALLEL_TD  : integer := 1;
+            G_BYTE_SIZE : Integer := 256;
+            G_RADIX : integer := 16;
+            G_DFTBD_B : integer := 2
         );
         port(
             clk_100M  : in  STD_LOGIC;
@@ -57,7 +69,7 @@ architecture Behavioral of fpga_top_tb is
             rst      : in  STD_LOGIC;
             outR : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 ); -- outputs of the FFT
             outI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 );
-            order_out : out integer;
+            order_out : out int_array_order ;
             write_flag : out std_logic;
             bit_input : in std_logic;
             MIC_clock : out std_logic
@@ -71,11 +83,11 @@ architecture Behavioral of fpga_top_tb is
     signal rst: std_logic := '1'; -- the reset is inverted so 1 is off and 0 is on
     signal outR : std_logic_vector(G_DATA_WIDTH + G_DATA_WIDTH_TW-1 downto 0 ) := (others => '0');
     signal outI : std_logic_vector(G_DATA_WIDTH + G_DATA_WIDTH_TW-1 downto 0 ) := (others => '0');
-    signal order_out :integer:= 0;
-    signal order  :integer:= 0;
+    signal order_out : int_array_order := (others => 0);
+   -- signal order  :integer:= 0;
 
-    signal int_outR : integer := 0;
-    signal int_outI : integer := 0;
+   -- signal int_outR : integer := 0;
+   -- signal int_outI : integer := 0;
 
 
 
@@ -90,7 +102,7 @@ architecture Behavioral of fpga_top_tb is
     signal file_save_delay : integer := 0;
     signal MIC_clock : std_logic := '0';
 
-    signal predefined_input :std_logic_vector(255 downto 0) := "1101100111011010011110111110101000011010001100011101100010101011111000101010001001111011010011101000010101011100010111000101110001010000111011010000000011000100100000111000100011101010100110110000111110110111110000100000010011000010110000010010110100111001";
+    --signal predefined_input :std_logic_vector(255 downto 0) := "1101100111011010011110111110101000011010001100011101100010101011111000101010001001111011010011101000010101011100010111000101110001010000111011010000000011000100100000111000100011101010100110110000111110110111110000100000010011000010110000010010110100111001";
 
 
     --  type test_out is file of std_logic_vector(G_DATA_WIDTH + G_DATA_WIDTH_TW-1 downto 0 ) ; -- file
@@ -107,7 +119,11 @@ begin
         generic map (
             G_DATA_WIDTH  => G_DATA_WIDTH, -- data width of output
             G_DATA_WIDTH_TW  => G_DATA_WIDTH_TW, --  dta with of TWiddle
-            G_DECIMAL_WIDTH => G_DECIMAL_WIDTH
+            G_DECIMAL_WIDTH => G_DECIMAL_WIDTH,
+            G_PARALLEL_TD  => G_PARALLEL_TD,
+            G_BYTE_SIZE => G_BYTE_SIZE,
+            G_RADIX => G_RADIX,
+            G_DFTBD_B => G_DFTBD_B
         )
         port map (
             clk_100M  => clk_100M,
@@ -193,7 +209,7 @@ begin
 
             write(row_write,FFt_outI, right, 55);
 
-            write(row_write,order_out, right, 15);
+            write(row_write,order_out(0), right, 15);
             --hwrite(row,o_add, right, 15);
             -- hwrite(row,"00000000"&o_add, right, 15);
 

@@ -272,8 +272,8 @@ DFT_TD_DSPs:
 
         DFTin => DFTin,
         DFTinI => DFTinI,
-        TWin  => TWin(G_DATA_WIDTH*I -1 downto G_DATA_WIDTH*(I-1)),  --not TWiddle in contains 
-        TWin2 => TWin2(G_DATA_WIDTH*I -1 downto G_DATA_WIDTH*(I-1)), -- sin
+        TWin  => TWin(G_DATA_WIDTH_TW*I -1 downto G_DATA_WIDTH*(I-1)),  --not TWiddle in contains 
+        TWin2 => TWin2(G_DATA_WIDTH_TW*I -1 downto G_DATA_WIDTH*(I-1)), -- sin
         -- PP : out STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );
         --  PPI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );
         nRst => nRst,
@@ -283,23 +283,20 @@ DFT_TD_DSPs:
         -- SCLR : in  std_logic;
      --   FFT_RESETs : out std_logic;  -- triggers hard reset (reset to 0 on most operations)
         DFT_RESET => DFT_RESET,  -- trggers soft reset (pause on most operations)
-        state  => states,
+        state  => state,
 
         FFT_outR =>FFT_outR((G_DATA_WIDTH+G_DATA_WIDTH_TW)*I-1 downto (G_DATA_WIDTH+G_DATA_WIDTH_TW)*(I-1) ), -- outputs of the FFT
         FFT_outI =>FFT_outI((G_DATA_WIDTH+G_DATA_WIDTH_TW)*I-1 downto (G_DATA_WIDTH+G_DATA_WIDTH_TW)*(I-1) ),
 
         --orders : out integer; -- temp
        -- ordersI : out integer;
-       order_out => order_out(I)
+       order_out => order_out(I-1)
         --position : out unsigned(3 downto 0);
        -- Write_flag : out std_logic;
        -- FFT_ready: in std_logic
        
         -- overflow : out integer
     );
-      
-      
-        
    end generate;
 
     -- first : dsp_macro_0  port map(   --- instatiate 1 DSP DFT

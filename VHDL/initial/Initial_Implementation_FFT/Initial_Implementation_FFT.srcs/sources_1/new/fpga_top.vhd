@@ -5,6 +5,10 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
+library work;
+
+use work.data_types.all;
+
 --LIBRARY dsp_macro_v1_0_2;
 --USE dsp_macro_v1_0_2.dsp_macro_v1_0_2;
 
@@ -12,7 +16,11 @@ entity fpga_top is
 generic (
         G_DATA_WIDTH    : INTEGER := 25; -- data width of DFTBD
         G_DATA_WIDTH_TW    : INTEGER := 18; --  dta with of TWiddle
-        G_DECIMAL_WIDTH : integer := 13 -- decimal position (x shifts away from before 0th bit)
+        G_DECIMAL_WIDTH : integer := 13; -- decimal position (x shifts away from before 0th bit)
+        G_PARALLEL_TD : integer := 1;
+        G_BYTE_SIZE : Integer := 256;
+        G_RADIX : integer := 16;
+        G_DFTBD_B : integer := 2
     );
     port(
         clk_100M  : in  STD_LOGIC;
@@ -20,7 +28,7 @@ generic (
         rst      : in  STD_LOGIC;
         outR : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 ); -- outputs of the FFT
         outI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 );
-        order_out : out integer ;
+        order_out : out int_array_order ;
         bit_input : in std_logic;
         write_flag : out std_logic;
         MIC_clock : out std_logic
@@ -48,36 +56,30 @@ architecture RTL of fpga_top is
 
 
 
-component  DFT_loop is
+component  Control_TD is
     generic (
-        G_DATA_WIDTH    : INTEGER := 25; -- data width of output
-        G_DATA_WIDTH_TW    : INTEGER := 18; --  dta with of TWiddle
-        G_DECIMAL_WIDTH : integer := 13
+        G_DATA_WIDTH    : INTEGER := 25; -- data width of output (others)
+        G_DATA_WIDTH_TW    : INTEGER := 18; -- data width of TW
+        G_DECIMAL_WIDTH : INTEGER := 13; -- decimal precision
+        G_PARALLEL_TD : INTEGER :=  1 -- how many parrallel transform decompositions are happening
+
+
     );
-    port (--AA : in STD_LOGIC_VECTOR (15 downto 0); -- initial ports
-    --BB : in STD_LOGIC_VECTOR (15 downto 0);
-    --CC : in STD_LOGIC_VECTOR (15 downto 0);
-        DFTin : in std_logic_vector (G_DATA_WIDTH-1 downto 0);
-        DFTinI : in std_logic_vector (G_DATA_WIDTH-1 downto 0);
-        TWin : in std_logic_vector (G_DATA_WIDTH_TW-1 downto 0);  -- cos
-        TWin2 : in std_logic_vector (G_DATA_WIDTH_TW-1 downto 0); -- sin
+    port (
+        DFTin : in std_logic_vector (G_DATA_WIDTH-1 downto 0); -- this is the DFt in this si the same for all parrell modules
+        DFTinI : in std_logic_vector (G_DATA_WIDTH-1 downto 0); -- ^
+        TWin : in std_logic_vector (G_DATA_WIDTH_TW*G_PARALLEL_TD-1 downto 0);  -- cos -- these differ so the result will a vector of vectors to store all the one used
+        TWin2 : in std_logic_vector (G_DATA_WIDTH_TW*G_PARALLEL_TD-1 downto 0); -- sin
         nRst : in std_logic;
         Clk : in std_logic;
-        -- SCLR : in  std_logic;
         FFT_RESETs : out std_logic;  -- triggers hard reset (reset to 0 on most operations)
-
-
         FFT_outR : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 ); -- outputs of the FFT
         FFT_outI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 );
-        order_out: out integer;
-        write_flag : out std_logic;
-       -- position : out unsigned(3 downto 0));
-        FFT_ready : in std_logic);
-    -- PCOUT : out std_logic_vector (47 downto 0));
-    -- PCOUT : out std_logic_vector (47 downto 0));
-
-end component ;
-
+       order_out : out int_array_order := (others => 0); -- check the state machine package
+        Write_flag : out std_logic;
+        FFT_ready: in std_logic
+    );
+    end component;
 
 
 component DFTBD_RAM
@@ -100,7 +102,9 @@ end component;
 component Twiddle_factors is
     generic (
         G_DATA_WIDTH_TW    : INTEGER := 18; --  dta with of TWiddle
-        G_DECIMAL_WIDTH : integer := 13
+        G_DECIMAL_WIDTH : integer := 13;
+        G_PARALLEL_TD : INTEGER := 2;
+        G_BYTE_SIZE : Integer := 256
     );
     port(
     count : in unsigned(7 downto 0);
@@ -115,6 +119,12 @@ end component  ;
 
 
 component  shift_reg_input is
+    generic (
+        G_PARALLEL_TD : integer := 1;
+        G_BYTE_SIZE : integer := 256;
+        G_RADIX : integer := 16;
+        G_DFTBD_B : integer := 2 -- both radix and DFTBD B modification has not been implemented
+    );
     Port (
         CLK : in std_logic;
         RST : in std_logic;
@@ -198,6 +208,7 @@ MIC_clock <= clk_mic;
     generic map (
         G_DATA_WIDTH  => G_DATA_WIDTH, -- data width of output
         G_DECIMAL_WIDTH => G_DECIMAL_WIDTH
+
     )
         port map(
             --ADDRESS => DFT_address,
@@ -211,11 +222,12 @@ MIC_clock <= clk_mic;
 
 
 
-    Series_recombination_loop : DFT_loop
+    Series_recombination_loop : Control_TD
         generic map (
             G_DATA_WIDTH  => G_DATA_WIDTH, -- data width of output
             G_DATA_WIDTH_TW  => G_DATA_WIDTH_TW, --  dta with of TWiddle
-            G_DECIMAL_WIDTH => G_DECIMAL_WIDTH
+            G_DECIMAL_WIDTH => G_DECIMAL_WIDTH,
+            G_PARALLEL_TD => G_PARALLEL_TD
         )
         port map(
             DFTin => DFTin,
@@ -238,7 +250,9 @@ MIC_clock <= clk_mic;
     TWiddle1 :Twiddle_factors
     generic map (
         G_DATA_WIDTH_TW  => G_DATA_WIDTH_TW, --  dta with of TWiddle
-        G_DECIMAL_WIDTH => G_DECIMAL_WIDTH
+        G_DECIMAL_WIDTH => G_DECIMAL_WIDTH,
+        G_PARALLEL_TD => G_PARALLEL_TD,
+        G_BYTE_SIZE => G_BYTE_SIZE
 
     )
     port map(
@@ -251,6 +265,12 @@ MIC_clock <= clk_mic;
 
 
 inputs : shift_reg_input 
+generic map (
+    G_PARALLEL_TD => G_PARALLEL_TD,
+    G_BYTE_SIZE => G_BYTE_SIZE,
+    G_RADIX  => G_RADIX,
+    G_DFTBD_B => G_DFTBD_B -- both radix and DFTBD B modification has not been implemented
+)
     Port map (
         CLK  => clk_sys,
         RST =>nRST,

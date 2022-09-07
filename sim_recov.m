@@ -14,7 +14,8 @@ rng(Seed,'twister') % get the RNG seed
 bitstream=round(rand(1,N)); % set bitstream
 bitstream(1) =0;
 % convert to char
-char_bitstream=char(bitstream+48) % rplace this line with a text file write
+%bitstream=mod((1:length(bitstream))+1,2)
+char_bitstream=char(bitstream+48); % rplace this line with a text file write
 file="VHDL\initial\Initial_Implementation_FFT\Initial_Implementation_FFT.sim\sim_1\behav\xsim\input_file.txt";
 fid=fopen(file,'w');
 
@@ -28,7 +29,7 @@ for ii=1:1000
    fprintf(fid,'0\n'); % this si file buffer
 end
 
-%bitstream=mod((1:length(bitstream)),2); % 1 0 1 0 1 .... 
+%bitstream=mod((1:length(bitstream))+1,2); % 1 0 1 0 1 .... 
 
 %%
 
