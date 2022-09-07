@@ -2,7 +2,7 @@
 close all
 clear all
 
-Seed =12;
+Seed =65;
 N=256;
 L=256;
 P=16;

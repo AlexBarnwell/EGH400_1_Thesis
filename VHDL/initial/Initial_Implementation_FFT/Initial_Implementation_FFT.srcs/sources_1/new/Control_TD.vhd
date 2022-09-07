@@ -4,7 +4,7 @@ USE ieee.numeric_std.ALL;
 
 library work;
 
-use work.state_machine.all; -- this is the custom package for the loop state machine
+use work.data_types.all; -- this is the custom package for other data types
 
 entity Control_TD is
     generic (
@@ -31,12 +31,12 @@ entity Control_TD is
         --DFT_RESETs : out std_logic;  -- trggers soft reset (pause on most operations)
 
 
-        --FFT_outR : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 ); -- outputs of the FFT
-       -- FFT_outI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 );
+        FFT_outR : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 ); -- outputs of the FFT
+        FFT_outI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 );
 
         --orders : out integer; -- temp
        -- ordersI : out integer;
-       --order_out : out integer;
+       order_out : out int_array_order := (others => 0); -- check the state machine package
         --position : out unsigned(3 downto 0);
         Write_flag : out std_logic;
         FFT_ready: in std_logic
@@ -201,7 +201,106 @@ architecture behavioral of Control_TD is
 
 
 
+   component DSP_TD
+    generic (
+        G_DATA_WIDTH    : INTEGER := 25; -- data width of output (others)
+        G_DATA_WIDTH_TW    : INTEGER := 18; -- data width of TW
+        G_DECIMAL_WIDTH : integer := 13 -- decimal precision
+        --POUT_size : integer := 37
+
+    );
+    port (--AA : in STD_LOGIC_VECTOR (G_DATA_WIDTH downto 0); -- initial ports
+
+        DFTin : in std_logic_vector (G_DATA_WIDTH-1 downto 0);
+        DFTinI : in std_logic_vector (G_DATA_WIDTH-1 downto 0);
+        TWin : in std_logic_vector (G_DATA_WIDTH_TW-1 downto 0);  -- cos
+        TWin2 : in std_logic_vector (G_DATA_WIDTH_TW-1 downto 0); -- sin
+        -- PP : out STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );
+        --  PPI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );
+        nRst : in std_logic;
+        Clk : in std_logic;
+
+        -- count : out  unsigned(4 downto 0);
+        -- SCLR : in  std_logic;
+     --   FFT_RESETs : out std_logic;  -- triggers hard reset (reset to 0 on most operations)
+        DFT_RESET : in std_logic;  -- trggers soft reset (pause on most operations)
+        state  : in states;
+
+        FFT_outR : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 ); -- outputs of the FFT
+        FFT_outI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 );
+
+        --orders : out integer; -- temp
+       -- ordersI : out integer;
+       order_out : out integer
+        --position : out unsigned(3 downto 0);
+       -- Write_flag : out std_logic;
+       -- FFT_ready: in std_logic
+       
+        -- overflow : out integer
+    );
+end component;
+
+
+
+
+
+
+
+
+
+
+
+
 begin
+
+    
+
+DFT_TD_DSPs:
+   for I in 1 to G_PARALLEL_TD  generate
+      begin
+      
+      
+      DFT_TD_DSP : DSP_TD 
+    generic map (
+        G_DATA_WIDTH    => G_DATA_WIDTH, -- data width of output (others)
+        G_DATA_WIDTH_TW  => G_DATA_WIDTH_TW, -- data width of TW
+        G_DECIMAL_WIDTH => G_DECIMAL_WIDTH -- decimal precision
+        --POUT_size : integer := 37
+
+    )
+    port map(--AA : in STD_LOGIC_VECTOR (G_DATA_WIDTH downto 0); -- initial ports
+
+        DFTin => DFTin,
+        DFTinI => DFTinI,
+        TWin  => TWin(G_DATA_WIDTH*I -1 downto G_DATA_WIDTH*(I-1)),  --not TWiddle in contains 
+        TWin2 => TWin2(G_DATA_WIDTH*I -1 downto G_DATA_WIDTH*(I-1)), -- sin
+        -- PP : out STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );
+        --  PPI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );
+        nRst => nRst,
+        Clk => Clk, 
+
+        -- count : out  unsigned(4 downto 0);
+        -- SCLR : in  std_logic;
+     --   FFT_RESETs : out std_logic;  -- triggers hard reset (reset to 0 on most operations)
+        DFT_RESET => DFT_RESET,  -- trggers soft reset (pause on most operations)
+        state  => states,
+
+        FFT_outR =>FFT_outR((G_DATA_WIDTH+G_DATA_WIDTH_TW)*I-1 downto (G_DATA_WIDTH+G_DATA_WIDTH_TW)*(I-1) ), -- outputs of the FFT
+        FFT_outI =>FFT_outI((G_DATA_WIDTH+G_DATA_WIDTH_TW)*I-1 downto (G_DATA_WIDTH+G_DATA_WIDTH_TW)*(I-1) ),
+
+        --orders : out integer; -- temp
+       -- ordersI : out integer;
+       order_out => order_out(I)
+        --position : out unsigned(3 downto 0);
+       -- Write_flag : out std_logic;
+       -- FFT_ready: in std_logic
+       
+        -- overflow : out integer
+    );
+      
+      
+        
+   end generate;
 
     -- first : dsp_macro_0  port map(   --- instatiate 1 DSP DFT
     --         CLK => Clk,
