@@ -40,12 +40,15 @@ use work.data_types.all;
 entity fpga_top_tb is
     generic (
         G_DATA_WIDTH    : INTEGER := 25; -- data width of output
-        G_DATA_WIDTH_TW    : INTEGER := 18; --  dta with of TWiddle
+        G_DATA_WIDTH_TW    : INTEGER := 18; --  data with of TWiddle
         G_DECIMAL_WIDTH : integer := 15;
-        G_PARALLEL_TD : integer :=1;
-        G_BYTE_SIZE : Integer := 256;
+        G_PARALLEL_TD : integer :=16;
+        G_BYTE_SIZE : Integer := 1024;
         G_RADIX : integer := 16;
-        G_DFTBD_B : integer := 2
+        G_DFTBD_B : integer := 2;
+        G_MCLK_PRESCALER : integer := 50;
+        G_MIN_BANK : integer := 0;
+        G_MAX_BANK : integer := 16 -- 16*16 =256
     );
     --  Port ( );
 end fpga_top_tb;
@@ -58,17 +61,20 @@ architecture Behavioral of fpga_top_tb is
             G_DATA_WIDTH    : INTEGER := 25; -- data width of output
             G_DATA_WIDTH_TW    : INTEGER := 18; --  dta with of TWiddle
             G_DECIMAL_WIDTH : integer := 13;
-            G_PARALLEL_TD  : integer := 1;
+            G_PARALLEL_TD  : integer := 4;
             G_BYTE_SIZE : Integer := 256;
             G_RADIX : integer := 16;
-            G_DFTBD_B : integer := 2
+            G_DFTBD_B : integer := 2;
+            G_MCLK_PRESCALER : integer := 50;
+            G_MIN_BANK : integer := 0;
+            G_MAX_BANK : integer := 16 -- 16*16 =256
         );
         port(
             clk_100M  : in  STD_LOGIC;
             -- reset_n   : in  STD_LOGIC;
             rst      : in  STD_LOGIC;
-            outR : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 ); -- outputs of the FFT
-            outI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 );
+            outR : out STD_LOGIC_VECTOR   ((G_DATA_WIDTH + G_DATA_WIDTH_TW)*G_PARALLEL_TD-1 downto 0 ); -- outputs of the FFT
+            outI : out STD_LOGIC_VECTOR   ((G_DATA_WIDTH + G_DATA_WIDTH_TW)*G_PARALLEL_TD-1 downto 0 );
             order_out : out int_array_order ;
             write_flag : out std_logic;
             bit_input : in std_logic;
@@ -81,8 +87,8 @@ architecture Behavioral of fpga_top_tb is
     -- signals
     signal clk_100M : std_logic := '0';
     signal rst: std_logic := '1'; -- the reset is inverted so 1 is off and 0 is on
-    signal outR : std_logic_vector(G_DATA_WIDTH + G_DATA_WIDTH_TW-1 downto 0 ) := (others => '0');
-    signal outI : std_logic_vector(G_DATA_WIDTH + G_DATA_WIDTH_TW-1 downto 0 ) := (others => '0');
+    signal outR : std_logic_vector((G_DATA_WIDTH + G_DATA_WIDTH_TW)*G_PARALLEL_TD-1 downto 0 ) := (others => '0');
+    signal outI : std_logic_vector((G_DATA_WIDTH + G_DATA_WIDTH_TW)*G_PARALLEL_TD-1 downto 0 ) := (others => '0');
     signal order_out : int_array_order := (others => 0);
    -- signal order  :integer:= 0;
 
@@ -91,8 +97,8 @@ architecture Behavioral of fpga_top_tb is
 
 
 
-    signal FFT_outR :bit_vector(G_DATA_WIDTH + G_DATA_WIDTH_TW-1 downto 0 ) := (others => '0');
-    signal FFT_outI :bit_vector(G_DATA_WIDTH + G_DATA_WIDTH_TW-1 downto 0 ) := (others => '0');
+    signal FFT_outR :bit_vector((G_DATA_WIDTH + G_DATA_WIDTH_TW)*G_PARALLEL_TD-1 downto 0 ) := (others => '0');
+    signal FFT_outI :bit_vector((G_DATA_WIDTH + G_DATA_WIDTH_TW)*G_PARALLEL_TD-1 downto 0 ) := (others => '0');
     signal write_flag : std_logic := '0';
     constant ClockFrequency : integer := 100e6; -- 100 MHz
     constant ClockPeriod    : time    := 1000 ms / ClockFrequency;
@@ -123,7 +129,10 @@ begin
             G_PARALLEL_TD  => G_PARALLEL_TD,
             G_BYTE_SIZE => G_BYTE_SIZE,
             G_RADIX => G_RADIX,
-            G_DFTBD_B => G_DFTBD_B
+            G_DFTBD_B => G_DFTBD_B,
+            G_MCLK_PRESCALER => G_MCLK_PRESCALER,
+            G_MIN_BANK => G_MIN_BANK,
+            G_MAX_BANK => G_MAX_BANK
         )
         port map (
             clk_100M  => clk_100M,
@@ -204,17 +213,17 @@ begin
 
         elsif(rising_edge(write_flag)) then
             --file_save_delay <= file_save_delay+1;
+            for I in G_PARALLEL_TD downto 1 loop
+            write(row_write,FFT_outR((G_DATA_WIDTH+G_DATA_WIDTH_TW)*I-1 downto (G_DATA_WIDTH+G_DATA_WIDTH_TW)*(I-1)), right, 55);
 
-            write(row_write,FFT_outR, right, 55);
+            write(row_write,FFt_outI((G_DATA_WIDTH+G_DATA_WIDTH_TW)*I-1 downto (G_DATA_WIDTH+G_DATA_WIDTH_TW)*(I-1)), right, 55);
 
-            write(row_write,FFt_outI, right, 55);
-
-            write(row_write,order_out(0), right, 15);
+            write(row_write,order_out(I-1), right, 15);
             --hwrite(row,o_add, right, 15);
             -- hwrite(row,"00000000"&o_add, right, 15);
 
             writeline(test_vector,row_write);
-
+        end loop;
 
 
         end if;

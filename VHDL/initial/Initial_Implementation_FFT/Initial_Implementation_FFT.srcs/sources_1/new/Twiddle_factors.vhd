@@ -42,11 +42,14 @@ generic (
         G_DECIMAL_WIDTH : integer := 13;
         G_FILLER_18 : STD_LOGIC_VECTOR(18-1 downto 0) := "000000000000000000"; -- decimal precision
         G_PARALLEL_TD : INTEGER := 1;
-        G_BYTE_SIZE : Integer := 256
+        G_BYTE_SIZE : Integer := 256;
         --POUT_size : integer := 37
+        G_MIN_BANK : integer := 0;
+        G_MAX_BANK : integer := 16; -- 16*16 =256 
+        G_RADIX : integer  := 16
     );
     port(
-    count : in unsigned(log2(G_BYTE_SIZE/G_PARALLEL_TD)-1 downto 0);
+    count : in unsigned(log2(G_RADIX*(G_MAX_BANK-G_MIN_BANK)/G_PARALLEL_TD)-1  downto 0);
     CLK : in std_logic;
     RST : in std_logic;
     Twiddleout : out std_logic_vector(G_DATA_WIDTH_TW*G_PARALLEL_TD-1 downto 0);
@@ -62,7 +65,7 @@ COMPONENT TW_RAM --cos
     clka : IN STD_LOGIC;
     ena : IN STD_LOGIC;
     wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    addra : IN STD_LOGIC_VECTOR(log2(G_BYTE_SIZE/G_PARALLEL_TD)-1 DOWNTO 0);
+    addra : IN STD_LOGIC_VECTOR(log2(G_RADIX*(G_MAX_BANK-G_MIN_BANK)/G_PARALLEL_TD)-1 DOWNTO 0);
     dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH_TW*G_PARALLEL_TD-1 DOWNTO 0);
     douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH_TW*G_PARALLEL_TD-1 DOWNTO 0)
   );
@@ -74,13 +77,13 @@ COMPONENT TW2_RAM -- sin
     clka : IN STD_LOGIC;
     ena : IN STD_LOGIC;
     wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    addra : IN STD_LOGIC_VECTOR(log2(G_BYTE_SIZE/G_PARALLEL_TD)-1 DOWNTO 0);
+    addra : IN STD_LOGIC_VECTOR(log2(G_RADIX*(G_MAX_BANK-G_MIN_BANK)/G_PARALLEL_TD)-1 DOWNTO 0);
     dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH_TW*G_PARALLEL_TD-1 DOWNTO 0);
     douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH_TW*G_PARALLEL_TD-1 DOWNTO 0) 
   );
 END COMPONENT;
 
-signal ADDRESS : std_logic_vector(log2(G_BYTE_SIZE/G_PARALLEL_TD)-1 downto 0);
+signal ADDRESS : std_logic_vector(log2(G_RADIX*(G_MAX_BANK-G_MIN_BANK)/G_PARALLEL_TD)-1 DOWNTO 0);
 signal TWout : std_logic_vector(G_DATA_WIDTH_TW*G_PARALLEL_TD-1 downto 0);
 signal TWout1 : std_logic_vector(G_DATA_WIDTH_TW*G_PARALLEL_TD-1 downto 0);
 signal TWout2 : std_logic_vector(G_DATA_WIDTH_TW*G_PARALLEL_TD-1 downto 0);

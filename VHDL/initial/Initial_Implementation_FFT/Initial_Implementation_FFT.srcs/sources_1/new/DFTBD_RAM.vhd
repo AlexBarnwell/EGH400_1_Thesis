@@ -5,13 +5,19 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
+library work;
+
+use work.data_types.all;
 
 -- 6 clock cycle latency for input output handling
 entity DFTBD_RAM is
     generic (
         G_DATA_WIDTH    : INTEGER := 25; -- data width of output
         G_DECIMAL_WIDTH : integer := 13; -- decimal precision
-        G_FILLER_25 : STD_LOGIC_VECTOR(25-1 downto 0) := "0000000000000000000000000"
+        G_FILLER_25 : STD_LOGIC_VECTOR(25-1 downto 0) := "0000000000000000000000000";
+        G_RADIX : integer := 16;
+        G_BYTE_SIZE : integer := 256;
+        G_DFTBD_B : integer := 2
         --POUT_size : integer := 37
     );
     port(
@@ -20,8 +26,8 @@ entity DFTBD_RAM is
         DFTOUTI : OUT std_logic_vector (G_DATA_WIDTH-1 downto 0);
         CLK : in std_logic;
         RST : in std_logic;
-        position : in unsigned(3 downto 0);
-        Bit_stream_value  : in std_logic_vector(15 downto 0) -- all bits from the input buffer to feed into RAM address
+        position : in unsigned(log2(G_RADIX*(2**G_DFTBD_B))-G_DFTBD_B-1 downto 0);
+        Bit_stream_value  : in std_logic_vector(G_RADIX-1 downto 0) -- all bits from the input buffer to feed into RAM address
         --DFT_RESET : in std_logic
     );
 end DFTBD_RAM;
@@ -35,7 +41,7 @@ architecture Behavioral of DFTBD_RAM is
             clka : IN STD_LOGIC;
             ena : IN STD_LOGIC;
             wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-            addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+            addra : IN STD_LOGIC_VECTOR( log2(G_RADIX*(2**G_DFTBD_B))-1 DOWNTO 0);
             dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
             douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0)
         );
@@ -46,7 +52,7 @@ architecture Behavioral of DFTBD_RAM is
             clka : IN STD_LOGIC;
             ena : IN STD_LOGIC;
             wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-            addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+            addra : IN STD_LOGIC_VECTOR( log2(G_RADIX*(2**G_DFTBD_B))-1  DOWNTO 0);
             dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
             douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0)
         );
@@ -57,7 +63,7 @@ architecture Behavioral of DFTBD_RAM is
             clka : IN STD_LOGIC;
             ena : IN STD_LOGIC;
             wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-            addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+            addra : IN STD_LOGIC_VECTOR( log2(G_RADIX*(2**G_DFTBD_B))-1  DOWNTO 0);
             dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
             douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0)
         );
@@ -68,7 +74,7 @@ architecture Behavioral of DFTBD_RAM is
             clka : IN STD_LOGIC;
             ena : IN STD_LOGIC;
             wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-            addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+            addra : IN STD_LOGIC_VECTOR( log2(G_RADIX*(2**G_DFTBD_B))-1  DOWNTO 0);
             dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
             douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0)
         );
@@ -79,7 +85,7 @@ architecture Behavioral of DFTBD_RAM is
             clka : IN STD_LOGIC;
             ena : IN STD_LOGIC;
             wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-            addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+            addra : IN STD_LOGIC_VECTOR( log2(G_RADIX*(2**G_DFTBD_B))-1  DOWNTO 0);
             dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
             douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0)
         );
@@ -90,7 +96,7 @@ architecture Behavioral of DFTBD_RAM is
             clka : IN STD_LOGIC;
             ena : IN STD_LOGIC;
             wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-            addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+            addra : IN STD_LOGIC_VECTOR( log2(G_RADIX*(2**G_DFTBD_B))-1  DOWNTO 0);
             dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
             douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0)
         );
@@ -101,7 +107,7 @@ architecture Behavioral of DFTBD_RAM is
             clka : IN STD_LOGIC;
             ena : IN STD_LOGIC;
             wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-            addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+            addra : IN STD_LOGIC_VECTOR( log2(G_RADIX*(2**G_DFTBD_B))-1  DOWNTO 0);
             dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
             douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0)
         );
@@ -112,7 +118,7 @@ architecture Behavioral of DFTBD_RAM is
             clka : IN STD_LOGIC;
             ena : IN STD_LOGIC;
             wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-            addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+            addra : IN STD_LOGIC_VECTOR( log2(G_RADIX*(2**G_DFTBD_B))-1  DOWNTO 0);
             dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
             douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0)
         );
@@ -125,7 +131,7 @@ COMPONENT DFTBD_MEM1I
     clka : IN STD_LOGIC;
     ena : IN STD_LOGIC;
     wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+    addra : IN STD_LOGIC_VECTOR( log2(G_RADIX*(2**G_DFTBD_B))-1  DOWNTO 0);
     dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
     douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0) 
   );
@@ -136,7 +142,7 @@ COMPONENT DFTBD_MEM2I
     clka : IN STD_LOGIC;
     ena : IN STD_LOGIC;
     wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+    addra : IN STD_LOGIC_VECTOR( log2(G_RADIX*(2**G_DFTBD_B))-1  DOWNTO 0);
     dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
     douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0) 
   );
@@ -147,7 +153,7 @@ COMPONENT DFTBD_MEM3I
     clka : IN STD_LOGIC;
     ena : IN STD_LOGIC;
     wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+    addra : IN STD_LOGIC_VECTOR( log2(G_RADIX*(2**G_DFTBD_B))-1  DOWNTO 0);
     dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
     douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0) 
   );
@@ -158,7 +164,7 @@ COMPONENT DFTBD_MEM4I
     clka : IN STD_LOGIC;
     ena : IN STD_LOGIC;
     wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+    addra : IN STD_LOGIC_VECTOR( log2(G_RADIX*(2**G_DFTBD_B))-1  DOWNTO 0);
     dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
     douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0) 
   );
@@ -169,7 +175,7 @@ COMPONENT DFTBD_MEM5I
     clka : IN STD_LOGIC;
     ena : IN STD_LOGIC;
     wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+    addra : IN STD_LOGIC_VECTOR( log2(G_RADIX*(2**G_DFTBD_B))-1  DOWNTO 0);
     dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
     douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0) 
   );
@@ -180,7 +186,7 @@ COMPONENT DFTBD_MEM6I
     clka : IN STD_LOGIC;
     ena : IN STD_LOGIC;
     wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+    addra : IN STD_LOGIC_VECTOR( log2(G_RADIX*(2**G_DFTBD_B))-1  DOWNTO 0);
     dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
     douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0) 
   );
@@ -191,7 +197,7 @@ COMPONENT DFTBD_MEM7I
     clka : IN STD_LOGIC;
     ena : IN STD_LOGIC;
     wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+    addra : IN STD_LOGIC_VECTOR( log2(G_RADIX*(2**G_DFTBD_B))-1  DOWNTO 0);
     dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
     douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0) 
   );
@@ -202,7 +208,7 @@ COMPONENT DFTBD_MEM8I
     clka : IN STD_LOGIC;
     ena : IN STD_LOGIC;
     wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+    addra : IN STD_LOGIC_VECTOR( log2(G_RADIX*(2**G_DFTBD_B))-1  DOWNTO 0);
     dina : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
     douta : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0) 
   );
@@ -217,14 +223,14 @@ END COMPONENT;
     
     
 
-    signal ADDRESS1 : std_logic_vector(5 downto 0):= (others => '0'); -- ADDRESSes for all the RAMS
-    signal ADDRESS2 : std_logic_vector(5 downto 0):= (others => '0');
-    signal ADDRESS3 : std_logic_vector(5 downto 0):= (others => '0');
-    signal ADDRESS4 : std_logic_vector(5 downto 0):= (others => '0');
-    signal ADDRESS5 : std_logic_vector(5 downto 0):= (others => '0');
-    signal ADDRESS6 : std_logic_vector(5 downto 0):= (others => '0');
-    signal ADDRESS7 : std_logic_vector(5 downto 0):= (others => '0');
-    signal ADDRESS8 : std_logic_vector(5 downto 0):= (others => '0');
+    signal ADDRESS1 : std_logic_vector( log2(G_RADIX*(2**G_DFTBD_B))-1  downto 0):= (others => '0'); -- ADDRESSes for all the RAMS
+    signal ADDRESS2 : std_logic_vector( log2(G_RADIX*(2**G_DFTBD_B))-1  downto 0):= (others => '0');
+    signal ADDRESS3 : std_logic_vector( log2(G_RADIX*(2**G_DFTBD_B))-1  downto 0):= (others => '0');
+    signal ADDRESS4 : std_logic_vector( log2(G_RADIX*(2**G_DFTBD_B))-1  downto 0):= (others => '0');
+    signal ADDRESS5 : std_logic_vector( log2(G_RADIX*(2**G_DFTBD_B))-1  downto 0):= (others => '0');
+    signal ADDRESS6 : std_logic_vector( log2(G_RADIX*(2**G_DFTBD_B))-1  downto 0):= (others => '0');
+    signal ADDRESS7 : std_logic_vector( log2(G_RADIX*(2**G_DFTBD_B))-1  downto 0):= (others => '0');
+    signal ADDRESS8 : std_logic_vector( log2(G_RADIX*(2**G_DFTBD_B))-1  downto 0):= (others => '0');
 
     signal DFTBD1o : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0):= (others => '0');
     signal DFTBD2o : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0):= (others => '0');
@@ -508,14 +514,14 @@ begin
             ADDRESS8 <= (others => '0');
        -- elsif ((rising_edge(CLK)) and (DFT_RESET = '1')) then
         elsif ((rising_edge(CLK))) then
-            ADDRESS1(5 downto 4) <= Bit_stream_value( 1 downto 0); -- assume B=2 thus this is 2 bit width
-            ADDRESS2(5 downto 4) <= Bit_stream_value( 3 downto 2);
-            ADDRESS3(5 downto 4) <= Bit_stream_value( 5 downto 4);
-            ADDRESS4(5 downto 4) <= Bit_stream_value( 7 downto 6);
-            ADDRESS5(5 downto 4) <= Bit_stream_value( 9 downto 8);
-            ADDRESS6(5 downto 4) <= Bit_stream_value( 11 downto 10);
-            ADDRESS7(5 downto 4) <= Bit_stream_value( 13 downto 12);
-            ADDRESS8(5 downto 4) <= Bit_stream_value( 15 downto 14);
+            ADDRESS1( log2(G_RADIX*(2**G_DFTBD_B))-1  downto 4) <= Bit_stream_value( 1 downto 0); -- assume B=2 thus this is 2 bit width ---- note will put inot for loop later
+            ADDRESS2( log2(G_RADIX*(2**G_DFTBD_B))-1  downto 4) <= Bit_stream_value( 3 downto 2);
+            ADDRESS3( log2(G_RADIX*(2**G_DFTBD_B))-1  downto 4) <= Bit_stream_value( 5 downto 4);
+            ADDRESS4( log2(G_RADIX*(2**G_DFTBD_B))-1  downto 4) <= Bit_stream_value( 7 downto 6);
+            ADDRESS5( log2(G_RADIX*(2**G_DFTBD_B))-1  downto 4) <= Bit_stream_value( 9 downto 8);
+            ADDRESS6( log2(G_RADIX*(2**G_DFTBD_B))-1  downto 4) <= Bit_stream_value( 11 downto 10);
+            ADDRESS7( log2(G_RADIX*(2**G_DFTBD_B))-1  downto 4) <= Bit_stream_value( 13 downto 12);
+            ADDRESS8( log2(G_RADIX*(2**G_DFTBD_B))-1  downto 4) <= Bit_stream_value( 15 downto 14);
 
             ADDRESS1(3 downto 0) <= std_logic_vector(position); -- incrementer  
             ADDRESS2(3 downto 0) <= std_logic_vector(position);

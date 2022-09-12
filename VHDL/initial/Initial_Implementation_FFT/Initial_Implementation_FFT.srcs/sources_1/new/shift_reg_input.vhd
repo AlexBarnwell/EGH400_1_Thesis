@@ -12,7 +12,9 @@ entity shift_reg_input is
         G_PARALLEL_TD : integer := 1;
         G_BYTE_SIZE : integer := 256;
         G_RADIX : integer := 16;
-        G_DFTBD_B : integer := 2 -- both radix and DFTBD B modification has not been implemented
+        G_DFTBD_B : integer := 2; -- both radix and DFTBD B modification has not been implemented
+        G_MIN_BANK : integer := 0;
+        G_MAX_BANK : integer := 16 -- 16*16 =256 
     );
     Port (
         CLK : in std_logic;
@@ -26,7 +28,7 @@ entity shift_reg_input is
        -- buffer_out : out std_logic_vector(255 downto 0); -- not needed to pass out
         byte_out : out std_logic_vector(G_RADIX-1 downto 0); -- reorderd byte for DFTBD RAMS as input
         byte_select : out unsigned(log2(G_RADIX*(2**G_DFTBD_B))-1-G_DFTBD_B downto 0); -- the counter/ byte_select for the RAM
-        byte_select_full : out unsigned(log2(G_BYTE_SIZE/G_PARALLEL_TD)-1 downto 0)
+        byte_select_full : out unsigned(log2(G_RADIX*(G_MAX_BANK-G_MIN_BANK)/G_PARALLEL_TD)-1  downto 0)
         -- note there will need to be a pause (soft reset after each DFT) and a restart (after each full FFT cycle) flag
     );
 
@@ -41,13 +43,13 @@ architecture Behavioral of shift_reg_input is
     --signal 
     signal buffer_push : std_logic := '0';
     signal read_en : std_logic := '0';
-    constant DFT_count : integer := 16; --DFTBs per DFT for the FFT (i.e 16 clocks 1 per DFTBD) how many banks of 16 
-    signal count2 :  integer := 15;
+    --constant DFT_count : integer := 16; --DFTBs per DFT for the FFT (i.e 16 clocks 1 per DFTBD) how many banks of 16 
+    signal count2 :  integer := G_BYTE_SIZE/G_RADIX-1;
     signal byte : std_logic_vector(G_RADIX-1 downto 0) := (others => '0');
     signal start_count : unsigned (2 downto 0) := (others => '0');
-    signal byte_select_full_temp : unsigned(log2(G_BYTE_SIZE/G_PARALLEL_TD)-1 downto 0) := (others => '0');
+    signal byte_select_full_temp : unsigned(log2(G_RADIX*(G_MAX_BANK-G_MIN_BANK)/G_PARALLEL_TD)-1 downto 0) := (others => '0'); --unsigned(log2(G_BYTE_SIZE/G_PARALLEL_TD)-1 downto 0) := (others => '0');
     signal byte_select_temp : unsigned(log2(G_RADIX*(2**G_DFTBD_B))-1-G_DFTBD_B downto 0) := (others => '0');
-    signal byte_select_full_temp_1 : unsigned(log2(G_BYTE_SIZE/G_PARALLEL_TD)-1 downto 0) := (others => '0');
+    signal byte_select_full_temp_1 : unsigned(log2(G_RADIX*(G_MAX_BANK-G_MIN_BANK)/G_PARALLEL_TD)-1 downto 0) := (others => '0');
     signal byte_select_temp_1 : unsigned(G_RADIX*(2**G_DFTBD_B) downto 0) := (others => '0');
     signal read_en2 : std_logic  := '0';
     signal delay  : std_logic := '0';
@@ -70,8 +72,8 @@ begin
         else
             if rising_edge(CLK) then
                 if (buffer_push = '1' and FFT_Reset = '0')  then
-                    shift_reg_buffer(G_BYTE_SIZE-1 downto G_BYTE_SIZE/4) <= shift_reg_buffer(G_BYTE_SIZE*3/4-1 downto 0); -- get new bits into buffer and shift old bits
-                    shift_reg_buffer(G_BYTE_SIZE/4-1 downto 0) <= Mic_shift_reg_input(G_BYTE_SIZE/4 downto 1);
+                    shift_reg_buffer(G_BYTE_SIZE*3/4-1 downto 0) <= shift_reg_buffer(G_BYTE_SIZE-1 downto G_BYTE_SIZE/4); -- get new bits into buffer and shift old bits
+                    shift_reg_buffer(G_BYTE_SIZE-1 downto G_BYTE_SIZE*3/4) <= Mic_shift_reg_input(G_BYTE_SIZE/4-1 downto 0);
                     buffer_done <= '1';
                     FFT_ready <= '1'; -- new data has been successfully pushed into data buffer begin FFT
                 else
@@ -87,11 +89,12 @@ begin
     input_bit : process (MCLK,RST) is -- input processing for input bit and signalling for read_en
     begin
         if RST = '0' then
-            Mic_shift_reg_input(0) <= '0';
+            Mic_shift_reg_input(G_BYTE_SIZE/4) <= '0';
+            read_en <= '0';
         elsif (read_en = '1') then
             read_en <= '0';
-        elsif rising_edge(MCLK) then
-            Mic_shift_reg_input(0) <= bit_input;
+        elsif falling_edge(MCLK) then -- check
+            Mic_shift_reg_input(G_BYTE_SIZE/4) <= bit_input;
             read_en <= '1';
             --        elsif falling_edge(MCLK) then
             --            read_en <='0';
@@ -104,13 +107,13 @@ begin
     input_shift_reg : process(CLK,RST) is -- process for process in the input bits (not handling bit 0 input)
     begin
         if RST = '0' then
-            Mic_shift_reg_input(G_BYTE_SIZE/4 downto 1) <= (others => '0'); -- empty buffer
+            Mic_shift_reg_input(G_BYTE_SIZE/4-1 downto 0) <= (others => '0'); -- empty buffer
             buffer_push <= '0';
         else
             if (rising_edge(CLK)) then
                 if ((read_en ='1') and (read_en2 = '1')) then
                     -- could add a count reset for 
-                    Mic_shift_reg_input(G_BYTE_SIZE/4 downto 1) <=  Mic_shift_reg_input(G_BYTE_SIZE/4-1 downto 0); -- move shift register after new input
+                    Mic_shift_reg_input(G_BYTE_SIZE/4-1 downto 0) <=  Mic_shift_reg_input(G_BYTE_SIZE/4 downto 1); -- move shift register after new input
                     count <= count+1; -- count inputs for buffer transaction
                     read_en2 <= '0';
                     if ((count >= G_BYTE_SIZE/4-1) and (buffer_done = '0')) then -- check if input data amount is 64 bits
@@ -134,7 +137,7 @@ begin
     begin
         if (FFT_Reset = '0' or RST= '0') then
             byte_out <= (others => '0'); -- empty buffer
-            count2 <= DFT_count-1;
+            count2 <= G_BYTE_SIZE/G_RADIX-1;
             byte_select_temp_1 <= (others => '1');
             byte_select_full_temp_1 <= (others => '1');
             byte_select_temp <= (others => '1');
@@ -155,7 +158,7 @@ begin
 
                     if ((count2 = 0) or (hold(0) = '1')) then
                         -- if count2 =0 then
-                        count2 <=(DFT_count-1);
+                        count2 <=(G_BYTE_SIZE/G_RADIX-1);
 
                     else --delay = '0' then
                         count2 <= count2-1;
@@ -168,7 +171,7 @@ begin
                     end if;
 
 
-                    if ((count2 = DFT_count-1) and (hold = "11"))  then
+                    if ((count2 = G_BYTE_SIZE/G_RADIX-1) and (hold = "11"))  then
                         --if count2 = DFT_count-1 then
                         byte_select_temp<= byte_select_temp+1; -- for RAMS DFTBD position
                         byte_select_full_temp<= byte_select_full_temp+1; -- for Twwiddle factor position
@@ -206,7 +209,7 @@ begin
 
 
     Transform_reorder : for JJ in 0 to 15 generate
-    byte(JJ) <=  shift_reg_buffer(count2+DFT_count*JJ);
+    byte(JJ) <=  shift_reg_buffer(count2+(G_BYTE_SIZE/G_RADIX)*JJ);
     -- byte(1) <=  shift_reg_buffer(DFT_count*1+count2);
     -- byte(2) <=  shift_reg_buffer(DFT_count*2+count2);
     -- byte(3) <=  shift_reg_buffer(DFT_count*3+count2);

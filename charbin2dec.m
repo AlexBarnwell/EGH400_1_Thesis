@@ -9,7 +9,7 @@ for ii=1:R
     
     if FFT_outR(ii,1) == '0' % positive number
         
-        for jj=C:-1:1
+        for jj=C:-1:2
         
         
        FFTR(ii) =(FFT_outR(ii,jj)-'0')*2^(C-jj)+FFTR(ii);
@@ -33,7 +33,7 @@ for ii=1:R
             end
             
             % add 1
-            for jj=C:-1:1
+            for jj=C:-1:2
                 if FFT_outR(ii,jj)=='0'
                     FFT_outR(ii,jj)='1';
                     break

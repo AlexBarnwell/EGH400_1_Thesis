@@ -20,14 +20,17 @@ generic (
         G_PARALLEL_TD : integer := 1;
         G_BYTE_SIZE : Integer := 256;
         G_RADIX : integer := 16;
-        G_DFTBD_B : integer := 2
+        G_DFTBD_B : integer := 2;
+        G_MCLK_PRESCALER : integer := 50;
+        G_MIN_BANK : integer := 0;
+        G_MAX_BANK : integer := 16 -- 16*16 =256 
     );
     port(
         clk_100M  : in  STD_LOGIC;
        -- reset_n   : in  STD_LOGIC;
         rst      : in  STD_LOGIC;
-        outR : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 ); -- outputs of the FFT
-        outI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 );
+        outR : out STD_LOGIC_VECTOR   ((G_DATA_WIDTH+G_DATA_WIDTH_TW)*G_PARALLEL_TD-1 downto 0 ); -- outputs of the FFT
+        outI : out STD_LOGIC_VECTOR  ((G_DATA_WIDTH+G_DATA_WIDTH_TW)*G_PARALLEL_TD-1 downto 0 );
         order_out : out int_array_order ;
         bit_input : in std_logic;
         write_flag : out std_logic;
@@ -61,8 +64,11 @@ component  Control_TD is
         G_DATA_WIDTH    : INTEGER := 25; -- data width of output (others)
         G_DATA_WIDTH_TW    : INTEGER := 18; -- data width of TW
         G_DECIMAL_WIDTH : INTEGER := 13; -- decimal precision
-        G_PARALLEL_TD : INTEGER :=  1 -- how many parrallel transform decompositions are happening
-
+        G_PARALLEL_TD : INTEGER :=  1; -- how many parrallel transform decompositions are happening
+        G_BYTE_SIZE : integer := 256;
+        G_RADIX : integer := 16;
+        G_MIN_BANK : integer := 0;--  start of bank 0
+        G_MAX_BANK : integer := 16 -- 16*16 =256 -- to start of bank 16 i.e. 0-15 so 16 banks 256 values  
 
     );
     port (
@@ -73,8 +79,8 @@ component  Control_TD is
         nRst : in std_logic;
         Clk : in std_logic;
         FFT_RESETs : out std_logic;  -- triggers hard reset (reset to 0 on most operations)
-        FFT_outR : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 ); -- outputs of the FFT
-        FFT_outI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 );
+        FFT_outR : out STD_LOGIC_VECTOR   ((G_DATA_WIDTH+G_DATA_WIDTH_TW)*G_PARALLEL_TD-1 downto 0 ); -- outputs of the FFT
+        FFT_outI : out STD_LOGIC_VECTOR   ((G_DATA_WIDTH+G_DATA_WIDTH_TW)*G_PARALLEL_TD-1 downto 0 );
        order_out : out int_array_order := (others => 0); -- check the state machine package
         Write_flag : out std_logic;
         FFT_ready: in std_logic
@@ -85,7 +91,10 @@ component  Control_TD is
 component DFTBD_RAM
 generic (
     G_DATA_WIDTH    : INTEGER := 25; -- data width of output
-    G_DECIMAL_WIDTH : integer := 13
+    G_DECIMAL_WIDTH : integer := 13;
+    G_RADIX : integer := 16;
+    G_BYTE_SIZE : integer := 256;
+    G_DFTBD_B : integer := 2
 );
     port(
         --ADDRESS : in  std_logic_vector(5 downto 0);
@@ -93,7 +102,7 @@ generic (
         DFTOUTI  : out std_logic_vector (G_DATA_WIDTH-1 downto 0);
         CLK : in std_logic;
         RST : in std_logic;
-        position : in unsigned(3 downto 0);
+        position : in unsigned( log2(G_RADIX*(2**G_DFTBD_B))-G_DFTBD_B-1 downto 0);
         Bit_stream_value  : in std_logic_vector(15 downto 0) -- all bits from the input buffer to feed into RAM address
        -- DFT_RESET : in std_logic
     );
@@ -104,14 +113,17 @@ component Twiddle_factors is
         G_DATA_WIDTH_TW    : INTEGER := 18; --  dta with of TWiddle
         G_DECIMAL_WIDTH : integer := 13;
         G_PARALLEL_TD : INTEGER := 2;
-        G_BYTE_SIZE : Integer := 256
+        G_BYTE_SIZE : Integer := 256;
+        G_MIN_BANK : integer := 0;
+        G_MAX_BANK : integer := 16; -- 16*16 =256 
+        G_RADIX : integer  := 16
     );
     port(
-    count : in unsigned(7 downto 0);
+    count : in unsigned(log2(G_RADIX*(G_MAX_BANK-G_MIN_BANK)/G_PARALLEL_TD)-1  downto 0);
     CLK : in std_logic;
     RST : in std_logic;
-    Twiddleout : out std_logic_vector(G_DATA_WIDTH_TW-1 downto 0);
-    Twiddleout2 : out std_logic_vector(G_DATA_WIDTH_TW-1 downto 0)
+    Twiddleout : out std_logic_vector((G_DATA_WIDTH_TW*G_PARALLEL_TD)-1 downto 0);
+    Twiddleout2 : out std_logic_vector((G_DATA_WIDTH_TW*G_PARALLEL_TD)-1 downto 0)
    -- DFT_RESET : in std_logic
     );
 end component  ;
@@ -123,7 +135,9 @@ component  shift_reg_input is
         G_PARALLEL_TD : integer := 1;
         G_BYTE_SIZE : integer := 256;
         G_RADIX : integer := 16;
-        G_DFTBD_B : integer := 2 -- both radix and DFTBD B modification has not been implemented
+        G_DFTBD_B : integer := 2;-- both radix and DFTBD B modification has not been implemented
+        G_MIN_BANK : integer := 0;
+        G_MAX_BANK : integer := 16 -- 16*16 =256 
     );
     Port (
         CLK : in std_logic;
@@ -134,9 +148,9 @@ component  shift_reg_input is
        -- Data_ready : out std_logic; 
         --read_en : in std_logic;
         MCLK : in std_logic;
-        byte_out : out std_logic_vector(15 downto 0); -- reorderd byte for DFTBD RAMS as input
-        byte_select : out unsigned(3 downto 0); -- the counter/ byte_select for the RAM
-        byte_select_full : out unsigned(7 downto 0)
+        byte_out : out std_logic_vector(G_RADIX-1 downto 0); -- reorderd byte for DFTBD RAMS as input
+        byte_select : out unsigned(log2(G_RADIX*(2**G_DFTBD_B))-G_DFTBD_B-1 downto 0); -- the counter/ byte_select for the RAM
+        byte_select_full : out unsigned(log2(G_RADIX*(G_MAX_BANK-G_MIN_BANK)/G_PARALLEL_TD)-1  downto 0)
         -- note there will need to be a pause (soft reset after each DFT) and a restart (after each full FFT cycle) flag
     );
 
@@ -147,10 +161,10 @@ end component ;
     signal clk_mic : std_logic;
     signal DFTin : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0):= (others => '0');
     signal DFTinI : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0):= (others => '0');
-    signal TWin : STD_LOGIC_VECTOR(G_DATA_WIDTH_TW-1 downto 0):= (others => '0');
-        signal TWin2 : STD_LOGIC_VECTOR(G_DATA_WIDTH_TW-1 downto 0):= (others => '0');
-    signal count : unsigned(7 downto 0) := (others => '0');
-    signal position : unsigned (3 downto 0 ) := (others => '0'); -- DFTBD RAM DFT wated 0 through 15
+    signal TWin : STD_LOGIC_VECTOR(G_DATA_WIDTH_TW*G_PARALLEL_TD-1 downto 0):= (others => '0');
+    signal TWin2 : STD_LOGIC_VECTOR(G_DATA_WIDTH_TW*G_PARALLEL_TD-1 downto 0):= (others => '0');
+    signal count : unsigned(log2(G_RADIX*(G_MAX_BANK-G_MIN_BANK)/G_PARALLEL_TD)-1  downto 0) := (others => '0');
+    signal position : unsigned (log2(G_RADIX*(2**G_DFTBD_B))-G_DFTBD_B-1  downto 0 ) := (others => '0'); -- DFTBD RAM DFT wated 0 through 15
 
     signal  TW : std_logic_vector (G_DATA_WIDTH_TW-1 downto 0):= (others => '0');
     signal  FFT_RESETs : std_logic;  -- triggers hard reset (reset to 0 on most operations)
@@ -160,12 +174,12 @@ end component ;
     --signal bit_input: std_logic := '0';
     signal FFT_ready: std_logic;
     
-    signal  FFT_outR : STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 ); -- outputs of the FFT
-    signal  FFT_outI : STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 );
+    signal  FFT_outR : STD_LOGIC_VECTOR   ((G_DATA_WIDTH+G_DATA_WIDTH_TW)*G_PARALLEL_TD-1 downto 0 ); -- outputs of the FFT
+    signal  FFT_outI : STD_LOGIC_VECTOR  ((G_DATA_WIDTH+G_DATA_WIDTH_TW)*G_PARALLEL_TD-1 downto 0 );
     
 
 
-    signal clock_count : unsigned(6 downto 0) := (others => '0');
+    signal clock_count : integer :=0;
 
 
     
@@ -188,12 +202,12 @@ begin
     
     if nRST = '0' then
     clk_mic <= '0';
-    clock_count <= "0000000";
+    clock_count <= 0;
     else
     clock_count <=clock_count+1;
     
-    if clock_count = "1100100" then -- decrease time to 1MHz temp
-    clock_count <= "0000000";
+    if clock_count = G_MCLK_PRESCALER/2-1 then -- decrease time to 1MHz temp
+    clock_count <= 0;
     clk_mic <= not clk_mic;
     end if;
     end if;
@@ -207,7 +221,10 @@ MIC_clock <= clk_mic;
     DFTBD_RAMs : DFTBD_RAM
     generic map (
         G_DATA_WIDTH  => G_DATA_WIDTH, -- data width of output
-        G_DECIMAL_WIDTH => G_DECIMAL_WIDTH
+        G_DECIMAL_WIDTH => G_DECIMAL_WIDTH,
+        G_RADIX => G_RADIX,
+        G_BYTE_SIZE => G_BYTE_SIZE,
+        G_DFTBD_B => G_DFTBD_B
 
     )
         port map(
@@ -227,7 +244,11 @@ MIC_clock <= clk_mic;
             G_DATA_WIDTH  => G_DATA_WIDTH, -- data width of output
             G_DATA_WIDTH_TW  => G_DATA_WIDTH_TW, --  dta with of TWiddle
             G_DECIMAL_WIDTH => G_DECIMAL_WIDTH,
-            G_PARALLEL_TD => G_PARALLEL_TD
+            G_PARALLEL_TD => G_PARALLEL_TD,
+            G_BYTE_SIZE => G_BYTE_SIZE,
+            G_RADIX  => G_RADIX,
+            G_MIN_BANK => G_MIN_BANK,
+            G_MAX_BANK => G_MAX_BANK
         )
         port map(
             DFTin => DFTin,
@@ -252,7 +273,10 @@ MIC_clock <= clk_mic;
         G_DATA_WIDTH_TW  => G_DATA_WIDTH_TW, --  dta with of TWiddle
         G_DECIMAL_WIDTH => G_DECIMAL_WIDTH,
         G_PARALLEL_TD => G_PARALLEL_TD,
-        G_BYTE_SIZE => G_BYTE_SIZE
+        G_BYTE_SIZE => G_BYTE_SIZE,
+        G_MIN_BANK => G_MIN_BANK,
+        G_MAX_BANK => G_MAX_BANK,
+        G_RADIX => G_RADIX
 
     )
     port map(
@@ -269,7 +293,9 @@ generic map (
     G_PARALLEL_TD => G_PARALLEL_TD,
     G_BYTE_SIZE => G_BYTE_SIZE,
     G_RADIX  => G_RADIX,
-    G_DFTBD_B => G_DFTBD_B -- both radix and DFTBD B modification has not been implemented
+    G_DFTBD_B => G_DFTBD_B, -- both radix and DFTBD B modification has not been implemented
+    G_MIN_BANK => G_MIN_BANK,
+    G_MAX_BANK => G_MAX_BANK
 )
     Port map (
         CLK  => clk_sys,

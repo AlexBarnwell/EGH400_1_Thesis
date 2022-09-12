@@ -11,7 +11,12 @@ entity Control_TD is
         G_DATA_WIDTH    : INTEGER := 25; -- data width of output (others)
         G_DATA_WIDTH_TW    : INTEGER := 18; -- data width of TW
         G_DECIMAL_WIDTH : INTEGER := 13; -- decimal precision
-        G_PARALLEL_TD : INTEGER :=  1 -- how many parrallel transform decompositions are happening
+        G_PARALLEL_TD : INTEGER :=  2; -- how many parrallel transform decompositions are happening
+        G_BYTE_SIZE : integer := 256;
+        G_RADIX : integer := 16;
+        G_MIN_BANK : integer := 0; --  start of bank 0
+        G_MAX_BANK : integer := 16 -- 16*16 =256 -- to start of bank 16 i.e. 0-15 so 16 banks 256 values 
+        
         --POUT_size : integer := 37
 
     );
@@ -31,8 +36,8 @@ entity Control_TD is
         --DFT_RESETs : out std_logic;  -- trggers soft reset (pause on most operations)
 
 
-        FFT_outR : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 ); -- outputs of the FFT
-        FFT_outI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 );
+        FFT_outR : out STD_LOGIC_VECTOR   ((G_DATA_WIDTH+G_DATA_WIDTH_TW)*G_PARALLEL_TD-1 downto 0 ); -- outputs of the FFT
+        FFT_outI : out STD_LOGIC_VECTOR   ((G_DATA_WIDTH+G_DATA_WIDTH_TW)*G_PARALLEL_TD-1 downto 0 );
 
         --orders : out integer; -- temp
        -- ordersI : out integer;
@@ -110,8 +115,8 @@ architecture behavioral of Control_TD is
     -- signal IMAGG : std_logic_vector (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
 
 
-    signal  count2 : unsigned (4 downto 0) := (others => '0');
-    signal  count3 : unsigned (7 downto 0) := (others => '0');
+    signal  count2 : integer := 0;
+    signal  count3 : integer := 0;
 
     signal count_delay : unsigned (3 downto 0) := (others => '0');
     signal CE : std_logic:= '0';
@@ -126,8 +131,8 @@ architecture behavioral of Control_TD is
     --type states is (start, DFT, finish);
     signal state : states := start;
 
-    signal count4 : unsigned(1 downto 0):= (others => '0');
-    signal count5 : unsigned(3 downto 0):= (others => '0');
+    --signal count4 : unsigned(1 downto 0):= (others => '0');
+   -- signal count5 : unsigned(3 downto 0):= (others => '0');
 
     -- signal rshift : integer := 0;
     -- signal rshift2 : integer := 0;
@@ -272,8 +277,8 @@ DFT_TD_DSPs:
 
         DFTin => DFTin,
         DFTinI => DFTinI,
-        TWin  => TWin(G_DATA_WIDTH_TW*I -1 downto G_DATA_WIDTH*(I-1)),  --not TWiddle in contains 
-        TWin2 => TWin2(G_DATA_WIDTH_TW*I -1 downto G_DATA_WIDTH*(I-1)), -- sin
+        TWin  => TWin(G_DATA_WIDTH_TW*I -1 downto G_DATA_WIDTH_TW*(I-1)),  --not TWiddle in contains 
+        TWin2 => TWin2(G_DATA_WIDTH_TW*I -1 downto G_DATA_WIDTH_TW*(I-1)), -- sin
         -- PP : out STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );
         --  PPI : out STD_LOGIC_VECTOR   (G_DATA_WIDTH-1 downto 0 );
         nRst => nRst,
@@ -324,9 +329,9 @@ DFT_TD_DSPs:
     series_DFT : process(Clk,nRSt) is -- note the final recombination stuff can be controlled byt porting out the hold flags
     begin
         if nRST = '0' then
-            count2<=(others => '0');
-            count3<=(others => '0');
-            count4<=(others => '0');
+            count2<=0;
+            count3<=0;
+          --  count5<=(others => '0');
             count_delay<= (others => '0');
         --     final1_S<= (others => '0');
         --     final2_S<= (others => '0');
@@ -374,10 +379,10 @@ DFT_TD_DSPs:
                     -- delayed2_cos <= delayed_cos;
                     -- delayed2_sin <= delayed_sin;
 
-                    if count2 = "10000" then -- this assumes 256 input bits thus only 16 banks of 16, will change to generic when needed
-                        count2 <= (others => '0');
-                        count3<=(count3+1); -- count 3 keeps track of how many DFTs have bee computed
-                        count5 <= (count5+1); -- novel DFT input size i.e bank size = 16
+                    if count2 = (G_BYTE_SIZE/G_RADIX) then -- this assumes input byte size/radix
+                        count2 <= 0;
+                        count3<=(count3+G_PARALLEL_TD); -- count 3 keeps track of how many DFTs have bee computed
+                       -- count5 <= (count5+1); -- novel DFT input size i.e bank size = 16
                         DFT_RESET <= '0';
                         state <= Finish;
                     end if;
@@ -416,7 +421,8 @@ DFT_TD_DSPs:
                      start_write_count <= '1'; 
 
 
-                    if count3 = 0 then
+                    if count3 = G_RADIX*(G_MAX_BANK-G_MIN_BANK) then -- 
+                        count3 <= 0;
                         FFT_RESET<= '0'; -- trigger hard reset and go to start to wait until dat input is ready
                         state <= start;
                     else

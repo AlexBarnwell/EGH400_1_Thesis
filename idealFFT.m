@@ -39,6 +39,7 @@ I=P;
 B=[0 1];
 LUTR = ones(ADR,B1,B2,I);
 LUTI = ones(ADR,B1,B2,I);
+
 n=0:(P-1);
 % fill LUT 
 %Btemp= zeros(1,P);

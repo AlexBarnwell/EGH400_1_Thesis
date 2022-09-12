@@ -1,8 +1,7 @@
 %create DFT LUT with 3 bit address for P=16 and 2 bit data 
-clear all
-close all
-P=16
-N=256
+
+function[TW,TW2,LUTRR,LUTII] = only_RAM(P,minb,maxb,N)
+
 ADR = 2^3; % all these values are teo represneted in theri deciam forms
 % however fot the VHDl implemation they will be binary addres tokend for
 % the LUT
@@ -72,8 +71,8 @@ LUTII=LUTII'
 
 %%
 
-TW=(cos((0:N-1).*2.*pi./N))'
-TW2=(sin((0:N-1).*2.*pi./N))'
+TW=(cos(((minb*P):(maxb*P-1)).*2.*pi./N))';
+TW2=(sin(((minb*P):(maxb*P-1)).*2.*pi./N))';
 % %%
 % a=1:64
 % a=a'
@@ -83,3 +82,4 @@ TW2=(sin((0:N-1).*2.*pi./N))'
 % for ii=1:64 
 % q(ii)= [num2str(b(ii)) ','];
 % end
+end
