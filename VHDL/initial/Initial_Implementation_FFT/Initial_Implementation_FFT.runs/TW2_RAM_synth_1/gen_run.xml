@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="TW2_RAM_synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1662890039">
+<GenRun Id="TW2_RAM_synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1663146524">
   <File Type="PA-TCL" Name="TW2_RAM.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="TW2_RAM_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="TW2_RAM_reports.tcl"/>

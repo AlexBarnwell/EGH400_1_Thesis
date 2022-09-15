@@ -50,9 +50,7 @@ entity DSP_TD is
 end DSP_TD;
 
 architecture behavioral of DSP_TD is
-    --signal AAsig : STD_LOGIC_VECTOR(G_DATA_WIDTH downto 0);
-    --signal BBsig : STD_LOGIC_VECTOR(G_DATA_WIDTH downto 0);
-    --signal CCsig : STD_LOGIC_VECTOR(G_DATA_WIDTH downto 0);
+
     signal PPsig : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0):= (others => '0');
     signal  P2sig : std_logic_vector (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0):= (others => '0');
     signal  PPsigs : signed (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
@@ -110,25 +108,10 @@ architecture behavioral of DSP_TD is
     signal IMAGG : std_logic_vector (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
 
 
-    -- signal  count2 : unsigned (4 downto 0) := (others => '0');
-    -- signal  count3 : unsigned (7 downto 0) := (others => '0');
 
     signal count_delay : unsigned (3 downto 0) := (others => '0');
     signal CE : std_logic:= '0';
-    --signal turn_on:std_logic := '0';
-
-    -- signal FFT_RESET : std_logic := '1'; -- triggers hard reset (reset to 0 on most operations)
-    -- signal DFT_RESET : std_logic := '1'; -- trggers soft reset (pause on most operations)
-
-    -- signal FFT_begin : std_logic := '0';
-
-    -- state machine signal
-    -- type states is (start, DFT, finish);
-    -- signal state : states := start;
-
-    -- signal count4 : unsigned(1 downto 0):= (others => '0');
-    -- signal count5 : unsigned(3 downto 0):= (others => '0');
-
+    
     signal rshift : integer := 0;
     signal rshift2 : integer := 0;
     signal order : integer := 0; -- the order that FFT bank has been shifted to 
@@ -180,6 +163,8 @@ architecture behavioral of DSP_TD is
 
     signal FFT_outR2 : STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 ):= (others => '0'); -- outputs of the FFT
     signal FFT_outI2 : STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 ):= (others => '0');
+
+
 
    signal  order_out2 : integer := 0;
 
@@ -245,25 +230,7 @@ begin
 
         elsif rising_edge(Clk) then
             case state is
-                --when start =>
-                   -- if ((FFT_ready = '1') or (FFT_begin = '1')) then
-                    --     FFT_begin <= '1';
-                    --     FFT_reset <= '1';
-                    --     --FFT_ready <= '0';
-                    --     count_delay<= count_delay+1;
-
-                    --     if count_delay = "1001" then
-                    --         --turn_on <= '1';
-                    --         count_delay <= (others => '0');
-                    --         FFT_begin <= '0';
-                    --         CE<='1';
-                    --         state <= DFT;
-                    --         DFT_RESET <= '1';
-                    --     else
-                    --         DFT_RESET <= '0';
-                    --     end if;
-                    -- end if;
-                    -- start_write_count <= '0'; 
+                
 
                 when DFT  =>
                     --count2<=(count2+1);
@@ -274,14 +241,7 @@ begin
                     delayed2_cos <= delayed_cos;
                     delayed2_sin <= delayed_sin;
 
-                    -- if count2 = "10000" then -- this assumes 256 input bits thus only 16 banks of 16, will change to generic when needed
-                    --     count2 <= (others => '0');
-                    --     count3<=(count3+1); -- count 3 keeps track of how many DFTs have bee computed
-                    --     count5 <= (count5+1); -- novel DFT input size i.e bank size = 16
-                    --     DFT_RESET <= '0';
-                    --     state <= Finish;
-                    -- end if;
-
+                  
 
                     if (rshift = 1) then
                         order <= order +1;
@@ -338,17 +298,7 @@ begin
             FFT_outr2<= REALL;
             FFT_outi2<= IMAGG;
 
-            -- if write_count = "101"  then
-            --     write_count <= "000";
-            --     write_flag <= '1'; --set write flag
-            --     elsif ((start_write_count = '1') or (write_count /= "000")) then
-            --         write_count<= write_count+1;
-
-            --         else 
-
-            --         write_flag <= '0';
-            -- end if;
-
+            
 
 
 
@@ -454,6 +404,15 @@ begin
     end process;
 
 
+    -- PPsig <= std_logic_vector(signed(Pout (G_DATA_WIDTH+G_DECIMAL_WIDTH-1+rshift downto G_DECIMAL_WIDTH+rshift)) + 0) when Pout(G_DECIMAL_WIDTH+rshift-1)='1' else
+    --     Pout (G_DATA_WIDTH+G_DECIMAL_WIDTH-1+rshift downto G_DECIMAL_WIDTH+rshift);
+
+    -- PPsigI <= std_logic_vector(signed(PoutI (G_DATA_WIDTH+G_DECIMAL_WIDTH-1+rshifti downto G_DECIMAL_WIDTH+rshifti)) + 0) when PoutI(G_DECIMAL_WIDTH+rshifti-1)='1' else
+    --     PoutI (G_DATA_WIDTH+G_DECIMAL_WIDTH-1+rshifti downto G_DECIMAL_WIDTH+rshifti);
+    
+
+
+
 
 
     ovf_checkR(1 downto 0) <= Pout(G_DECIMAL_WIDTH +G_DATA_WIDTH-1 downto G_DECIMAL_WIDTH +G_DATA_WIDTH -2); -- deals with determining whether an overflow has occured
@@ -464,12 +423,27 @@ begin
     P2sig(G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0)<= temp2(G_DATA_WIDTH+G_DATA_WIDTH_TW-1+rshift downto rshift ); -- 
     P2sigI(G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0)<=temp2I(G_DATA_WIDTH+G_DATA_WIDTH_TW-1+rshifti downto rshifti );
 
-    coss(G_DATA_WIDTH_TW-1 downto 0)<=TWin;-- --reformates the inputs size by padding on the right side 
-    coss2(G_DATA_WIDTH_TW-1 downto 1)<=coss(G_DATA_WIDTH_TW-2 downto 0); -- Lshift by 1 (multiply by 2)
-    --coss2<=coss;
+    coss2(G_DATA_WIDTH_TW-1 downto 0)<=TWin;-- --reformates the inputs size by padding on the right side 
+    coss(G_DATA_WIDTH_TW-3 downto 0)<= coss2(G_DATA_WIDTH_TW-2 downto 1);
+
+    coss(G_DATA_WIDTH_TW-1 downto G_DATA_WIDTH_TW-2)<= (others => coss2(G_DATA_WIDTH_TW-1)); -- Lshift by 1 (multiply by 2)
+
+
+    --coss2<=coss
+
+    -- coss(G_DATA_WIDTH_TW-1 downto 0)<=TWin;-- --reformates the inputs size by padding on the right side 
+    -- coss2(G_DATA_WIDTH_TW-1 downto 1)<=coss(G_DATA_WIDTH_TW-2 downto 0); -- Lshift by 1 (multiply by 2)
         
-    sinn(G_DATA_WIDTH_TW-1 downto 0)<=TWin2;-- --reformates the inputs size by padding on the right side
-    sinn2(G_DATA_WIDTH_TW-1 downto 1)<=sinn(G_DATA_WIDTH_TW-2 downto 0);
+
+    sinn2(G_DATA_WIDTH_TW-1 downto 0)<=TWin2;-- --reformates the inputs size by padding on the right side 
+    sinn(G_DATA_WIDTH_TW-3 downto 0)<= sinn2(G_DATA_WIDTH_TW-2 downto 1);
+
+    sinn(G_DATA_WIDTH_TW-1 downto G_DATA_WIDTH_TW-2)<= (others => sinn2(G_DATA_WIDTH_TW-1)); -- Lshift by 1 (multiply by 2)
+
+
+
+    -- sinn(G_DATA_WIDTH_TW-1 downto 0)<=TWin2;-- --reformates the inputs size by padding on the right side
+    -- sinn2(G_DATA_WIDTH_TW-1 downto 1)<=sinn(G_DATA_WIDTH_TW-2 downto 0);
 
     PPsig <=Pout(G_DATA_WIDTH+G_DECIMAL_WIDTH-1+rshift downto G_DECIMAL_WIDTH+rshift); --
     PPsigI <=PoutI(G_DATA_WIDTH+G_DECIMAL_WIDTH-1+rshifti downto G_DECIMAL_WIDTH+rshifti); -- 

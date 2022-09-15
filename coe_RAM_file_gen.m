@@ -13,7 +13,7 @@ parallel =16;
 P =16;
 maxb=16;
 minb=0;
-N=1024;
+N=512;
 [TW,TW2,LUTRR,LUTII] = only_RAM(P,minb,maxb,N);
 LUTRR=round(LUTRR.*(2.^D)); % 8 decimal bits
 for ii=1:8
@@ -70,7 +70,7 @@ end
 
 %% TWiddle factors
 
-TWr=round(TW.*(2.^D));
+TWr=round(2*TW.*(2.^D));
 TWbin=(int2bin(TWr,TW_size));
 %TWbin2=[];
 TWbin2=zeros((maxb-minb)*P/parallel,TW_size*parallel);
@@ -92,7 +92,7 @@ for ii=1:(maxb-minb)*P/parallel
 fclose(fid);
 
 
-TW2r=round(TW2.*(2.^D));
+TW2r=round(2*TW2.*(2.^D));
 TW2bin=int2bin(TW2r,TW_size);
 fileTW2= 'VHDL\initial\Initial_Implementation_FFT\Initial_Implementation_FFT.srcs\sources_1\ip\TW2_values.coe';
 

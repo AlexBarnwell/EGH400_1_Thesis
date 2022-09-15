@@ -4,7 +4,11 @@ FFT_outR=input;
 [R, C] =size(FFT_outR);
 FFTR=zeros(R,1);
 
+for ii=1:R
+  orderd(ii)= str2double(order(ii,:));
+end
 
+sum((order(:,:)-'0').*[10^1 10^0])
 for ii=1:R
     
     if FFT_outR(ii,1) == '0' % positive number
@@ -18,7 +22,7 @@ for ii=1:R
         end
                   
         
-        FFTR(ii)=FFTR(ii).*2^(-D*2+(order(ii)-'0'));
+        FFTR(ii)=FFTR(ii).*2^(-D*2+(orderd(ii)));
         
         
          else % negative number
@@ -51,7 +55,7 @@ for ii=1:R
         
        end
         
-       FFTR(ii)=-FFTR(ii).*2^(-D*2+(order(ii)-'0'));
+       FFTR(ii)=-FFTR(ii).*2^(-D*2+(orderd(ii)));
         
         
     end

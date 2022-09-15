@@ -2,14 +2,15 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Fri Sep  9 16:33:46 2022
-# Process ID: 33988
-# Current directory: C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/DFTBD_MEM8_synth_1
+# Start of session at: Wed Sep 14 14:27:57 2022
+# Process ID: 10472
+# Current directory: C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/DFTBD_MEM8_synth_1
 # Command line: vivado.exe -log DFTBD_MEM8.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source DFTBD_MEM8.tcl
-# Log file: C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/DFTBD_MEM8_synth_1/DFTBD_MEM8.vds
-# Journal file: C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/DFTBD_MEM8_synth_1\vivado.jou
-# Running On: DESKTOP-BDA8VGJ, OS: Windows, CPU Frequency: 3600 MHz, CPU Physical cores: 8, Host memory: 25599 MB
+# Log file: C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/DFTBD_MEM8_synth_1/DFTBD_MEM8.vds
+# Journal file: C:/REPOS/EGH400-1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/DFTBD_MEM8_synth_1\vivado.jou
+# Running On: LAPTOP-M3DNELKA, OS: Windows, CPU Frequency: 2208 MHz, CPU Physical cores: 6, Host memory: 17075 MB
 #-----------------------------------------------------------
 source DFTBD_MEM8.tcl -notrace
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1280.258 ; gain = 27.609
 INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP DFTBD_MEM8, cache-ID = 15a6047288755699.
-INFO: [Common 17-206] Exiting Vivado at Fri Sep  9 16:33:55 2022...
+INFO: [Common 17-206] Exiting Vivado at Wed Sep 14 14:28:10 2022...

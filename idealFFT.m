@@ -112,4 +112,16 @@ end
 
 FFT=Yr+1i*Yi;
 
+
+
+%         coss=vpa(cos(angle),TW);
+%         cosss(k+1)=coss;
+%         coss2(k+1)=cos(angle);
+%         
+%         stager= vpa(vpa(A1,DF).*vpa(2.*coss,TW)-vpa(A2,DF)+vpa(DFTtempR,DF)); % multiply addition and access (multiple clock cycles 
+%         A2=A1;
+%         A1=stager;
+%         
+%         stagei =vpa(vpa(B1,DF).*vpa(2.*coss,TW)-vpa(B2,DF)+vpa(DFTtempI,DF),DF); %same time lock step DSP blocks
+
 end

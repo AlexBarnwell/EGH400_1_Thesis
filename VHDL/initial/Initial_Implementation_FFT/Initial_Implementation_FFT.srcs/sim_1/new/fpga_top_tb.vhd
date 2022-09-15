@@ -43,10 +43,10 @@ entity fpga_top_tb is
         G_DATA_WIDTH_TW    : INTEGER := 18; --  data with of TWiddle
         G_DECIMAL_WIDTH : integer := 15;
         G_PARALLEL_TD : integer :=16;
-        G_BYTE_SIZE : Integer := 1024;
+        G_BYTE_SIZE : Integer := 512;
         G_RADIX : integer := 16;
         G_DFTBD_B : integer := 2;
-        G_MCLK_PRESCALER : integer := 50;
+        G_MCLK_PRESCALER : integer := 15;
         G_MIN_BANK : integer := 0;
         G_MAX_BANK : integer := 16 -- 16*16 =256
     );
