@@ -10,7 +10,8 @@ entity DSP_TD is
     generic (
         G_DATA_WIDTH    : INTEGER := 25; -- data width of output (others)
         G_DATA_WIDTH_TW    : INTEGER := 18; -- data width of TW
-        G_DECIMAL_WIDTH : integer := 13 -- decimal precision
+        G_DECIMAL_WIDTH : integer := 13; -- decimal precision
+        G_DECIMAL_WIDTH_TW : integer := 13 -- decimal precision
         --POUT_size : integer := 37
 
     );
@@ -353,8 +354,8 @@ begin
 
 
 
-    A1_temp(G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto G_DECIMAL_WIDTH) <= resize(signed(ppsig),G_DATA_WIDTH+G_DATA_WIDTH_TW-G_DECIMAL_WIDTH);
-    B1_temp(G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto G_DECIMAL_WIDTH) <= resize(signed(ppsigI),G_DATA_WIDTH+G_DATA_WIDTH_TW-G_DECIMAL_WIDTH);
+    A1_temp(G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto G_DECIMAL_WIDTH_TW) <= resize(signed(ppsig),G_DATA_WIDTH+G_DATA_WIDTH_TW-G_DECIMAL_WIDTH_TW); --/
+    B1_temp(G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto G_DECIMAL_WIDTH_TW) <= resize(signed(ppsigI),G_DATA_WIDTH+G_DATA_WIDTH_TW-G_DECIMAL_WIDTH_TW); --/
 
     A1<=shift_right(A1_temp,ord_diffr);
     B1<=shift_right(B1_temp,ord_diffi);
@@ -404,19 +405,19 @@ begin
     end process;
 
 
-    -- PPsig <= std_logic_vector(signed(Pout (G_DATA_WIDTH+G_DECIMAL_WIDTH-1+rshift downto G_DECIMAL_WIDTH+rshift)) + 0) when Pout(G_DECIMAL_WIDTH+rshift-1)='1' else
-    --     Pout (G_DATA_WIDTH+G_DECIMAL_WIDTH-1+rshift downto G_DECIMAL_WIDTH+rshift);
+    PPsig <= std_logic_vector(signed(Pout (G_DATA_WIDTH+G_DECIMAL_WIDTH_TW-1+rshift downto G_DECIMAL_WIDTH_TW+rshift)) + 0) when Pout(G_DECIMAL_WIDTH_TW+rshift-1)='1' else
+        Pout (G_DATA_WIDTH+G_DECIMAL_WIDTH_TW-1+rshift downto G_DECIMAL_WIDTH_TW+rshift);
 
-    -- PPsigI <= std_logic_vector(signed(PoutI (G_DATA_WIDTH+G_DECIMAL_WIDTH-1+rshifti downto G_DECIMAL_WIDTH+rshifti)) + 0) when PoutI(G_DECIMAL_WIDTH+rshifti-1)='1' else
-    --     PoutI (G_DATA_WIDTH+G_DECIMAL_WIDTH-1+rshifti downto G_DECIMAL_WIDTH+rshifti);
+    PPsigI <= std_logic_vector(signed(PoutI (G_DATA_WIDTH+G_DECIMAL_WIDTH_TW-1+rshifti downto G_DECIMAL_WIDTH_TW+rshifti)) + 0) when PoutI(G_DECIMAL_WIDTH_TW+rshifti-1)='1' else
+        PoutI (G_DATA_WIDTH+G_DECIMAL_WIDTH_TW-1+rshifti downto G_DECIMAL_WIDTH_TW+rshifti);
     
 
 
 
 
 
-    ovf_checkR(1 downto 0) <= Pout(G_DECIMAL_WIDTH +G_DATA_WIDTH-1 downto G_DECIMAL_WIDTH +G_DATA_WIDTH -2); -- deals with determining whether an overflow has occured
-    ovf_checkI(1 downto 0) <= PoutI(G_DECIMAL_WIDTH +G_DATA_WIDTH-1 downto G_DECIMAL_WIDTH +G_DATA_WIDTH -2);
+    ovf_checkR(1 downto 0) <= Pout(G_DECIMAL_WIDTH_TW+G_DATA_WIDTH-1 downto G_DECIMAL_WIDTH_TW +G_DATA_WIDTH -2); -- deals with determining whether an overflow has occured
+    ovf_checkI(1 downto 0) <= PoutI(G_DECIMAL_WIDTH_TW +G_DATA_WIDTH-1 downto G_DECIMAL_WIDTH_TW +G_DATA_WIDTH -2);
     ovf_checkI(2) <= PoutI(G_DATA_WIDTH+G_DATA_WIDTH_TW);
     ovf_checkR(2) <= Pout(G_DATA_WIDTH+G_DATA_WIDTH_TW);
     --TWt2<= std_logic_vector (2*signed(TW2t));
@@ -445,8 +446,8 @@ begin
     -- sinn(G_DATA_WIDTH_TW-1 downto 0)<=TWin2;-- --reformates the inputs size by padding on the right side
     -- sinn2(G_DATA_WIDTH_TW-1 downto 1)<=sinn(G_DATA_WIDTH_TW-2 downto 0);
 
-    PPsig <=Pout(G_DATA_WIDTH+G_DECIMAL_WIDTH-1+rshift downto G_DECIMAL_WIDTH+rshift); --
-    PPsigI <=PoutI(G_DATA_WIDTH+G_DECIMAL_WIDTH-1+rshifti downto G_DECIMAL_WIDTH+rshifti); -- 
+    -- PPsig <=Pout(G_DATA_WIDTH+G_DECIMAL_WIDTH_TW-1+rshift downto G_DECIMAL_WIDTH_TW+rshift); --
+    -- PPsigI <=PoutI(G_DATA_WIDTH+G_DECIMAL_WIDTH_TW-1+rshifti downto G_DECIMAL_WIDTH_TW+rshifti); -- 
 
     --unPPsig <=Pout(G_DATA_WIDTH+G_DECIMAL_WIDTH downto G_DECIMAL_WIDTH); -- a bit larger than the input (19 with 18 bit input)
     --unPPsigI <=PoutI(G_DATA_WIDTH+G_DECIMAL_WIDTH downto G_DECIMAL_WIDTH);
@@ -455,9 +456,9 @@ begin
     unPPsigI <=PoutI;
 
 
-    DFT1s(G_DATA_WIDTH+G_DATA_WIDTH_TW downto G_DECIMAL_WIDTH )<=resize(signed(DFTin),G_DATA_WIDTH+G_DATA_WIDTH_TW-G_DECIMAL_WIDTH+1);--
+    DFT1s(G_DATA_WIDTH+G_DATA_WIDTH_TW downto G_DECIMAL_WIDTH_TW )<=resize(signed(DFTin),G_DATA_WIDTH+G_DATA_WIDTH_TW-G_DECIMAL_WIDTH_TW+1);--
     DFTs<= shift_right (DFT1s,order);
-    DFT1sI(G_DATA_WIDTH+G_DATA_WIDTH_TW downto G_DECIMAL_WIDTH )<=resize(signed(DFTinI),G_DATA_WIDTH+G_DATA_WIDTH_TW-G_DECIMAL_WIDTH+1);--
+    DFT1sI(G_DATA_WIDTH+G_DATA_WIDTH_TW downto G_DECIMAL_WIDTH_TW )<=resize(signed(DFTinI),G_DATA_WIDTH+G_DATA_WIDTH_TW-G_DECIMAL_WIDTH_TW+1);--
 
     PPsigs<= signed(unPPsig); --
     --DFT1sI(G_DATA_WIDTH+G_DATA_WIDTH_TW downto G_DECIMAL_WIDTH )<=resize(signed(DFTinI),G_DATA_WIDTH+G_DATA_WIDTH_TW-G_DECIMAL_WIDTH);--

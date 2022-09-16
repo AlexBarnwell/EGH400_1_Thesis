@@ -12,13 +12,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="36,162.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="37,528.001 ns"></ZoomEndTime>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,731.825 ns"></ZoomEndTime>
       <Cursor1Time time="36,762.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="73"></NameColumnWidth>
-      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+      <ValueColumnWidth column_width="68"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="37" />
    <wvobject fp_name="/fpga_top_tb/outR" type="array">
@@ -131,12 +131,12 @@
       <obj_property name="ObjectShortName">bit_input</obj_property>
    </wvobject>
    <wvobject fp_name="/fpga_top_tb/top_sim/inputs/Mic_shift_reg_input" type="array">
-      <obj_property name="ElementShortName">Mic_shift_reg_input[128:0]</obj_property>
-      <obj_property name="ObjectShortName">Mic_shift_reg_input[128:0]</obj_property>
+      <obj_property name="ElementShortName">Mic_shift_reg_input[2048:0]</obj_property>
+      <obj_property name="ObjectShortName">Mic_shift_reg_input[2048:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/fpga_top_tb/top_sim/inputs/shift_reg_buffer" type="array">
-      <obj_property name="ElementShortName">shift_reg_buffer[511:0]</obj_property>
-      <obj_property name="ObjectShortName">shift_reg_buffer[511:0]</obj_property>
+      <obj_property name="ElementShortName">shift_reg_buffer[8191:0]</obj_property>
+      <obj_property name="ObjectShortName">shift_reg_buffer[8191:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/fpga_top_tb/file_save_delay" type="other">

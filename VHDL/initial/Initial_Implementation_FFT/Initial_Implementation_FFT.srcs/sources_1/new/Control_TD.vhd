@@ -15,7 +15,8 @@ entity Control_TD is
         G_BYTE_SIZE : integer := 256;
         G_RADIX : integer := 16;
         G_MIN_BANK : integer := 0; --  start of bank 0
-        G_MAX_BANK : integer := 16 -- 16*16 =256 -- to start of bank 16 i.e. 0-15 so 16 banks 256 values 
+        G_MAX_BANK : integer := 16; -- 16*16 =256 -- to start of bank 16 i.e. 0-15 so 16 banks 256 values 
+        G_DECIMAL_WIDTH_TW : integer := 13 -- decimal precision
         
         --POUT_size : integer := 37
 
@@ -210,7 +211,8 @@ architecture behavioral of Control_TD is
     generic (
         G_DATA_WIDTH    : INTEGER := 25; -- data width of output (others)
         G_DATA_WIDTH_TW    : INTEGER := 18; -- data width of TW
-        G_DECIMAL_WIDTH : integer := 13 -- decimal precision
+        G_DECIMAL_WIDTH : integer := 13; -- decimal precision
+        G_DECIMAL_WIDTH_TW : integer := 13 -- decimal precision
         --POUT_size : integer := 37
 
     );
@@ -269,7 +271,8 @@ DFT_TD_DSPs:
     generic map (
         G_DATA_WIDTH    => G_DATA_WIDTH, -- data width of output (others)
         G_DATA_WIDTH_TW  => G_DATA_WIDTH_TW, -- data width of TW
-        G_DECIMAL_WIDTH => G_DECIMAL_WIDTH -- decimal precision
+        G_DECIMAL_WIDTH => G_DECIMAL_WIDTH, -- decimal precision
+        G_DECIMAL_WIDTH_TW => G_DECIMAL_WIDTH_TW
         --POUT_size : integer := 37
 
     )

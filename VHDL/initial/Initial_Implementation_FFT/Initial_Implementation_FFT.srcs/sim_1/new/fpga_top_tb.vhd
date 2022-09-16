@@ -41,14 +41,15 @@ entity fpga_top_tb is
     generic (
         G_DATA_WIDTH    : INTEGER := 25; -- data width of output
         G_DATA_WIDTH_TW    : INTEGER := 18; --  data with of TWiddle
-        G_DECIMAL_WIDTH : integer := 15;
+        G_DECIMAL_WIDTH : integer := 20;
         G_PARALLEL_TD : integer :=16;
-        G_BYTE_SIZE : Integer := 512;
+        G_BYTE_SIZE : Integer := 8192;
         G_RADIX : integer := 16;
         G_DFTBD_B : integer := 2;
         G_MCLK_PRESCALER : integer := 15;
         G_MIN_BANK : integer := 0;
-        G_MAX_BANK : integer := 16 -- 16*16 =256
+        G_MAX_BANK : integer := 16; -- 16*16 =256
+        G_DECIMAL_WIDTH_TW : integer := 15 -- decimal precision 
     );
     --  Port ( );
 end fpga_top_tb;
@@ -67,7 +68,8 @@ architecture Behavioral of fpga_top_tb is
             G_DFTBD_B : integer := 2;
             G_MCLK_PRESCALER : integer := 50;
             G_MIN_BANK : integer := 0;
-            G_MAX_BANK : integer := 16 -- 16*16 =256
+            G_MAX_BANK : integer := 16; -- 16*16 =256
+            G_DECIMAL_WIDTH_TW : integer := 13 -- decimal precision 
         );
         port(
             clk_100M  : in  STD_LOGIC;
@@ -132,7 +134,8 @@ begin
             G_DFTBD_B => G_DFTBD_B,
             G_MCLK_PRESCALER => G_MCLK_PRESCALER,
             G_MIN_BANK => G_MIN_BANK,
-            G_MAX_BANK => G_MAX_BANK
+            G_MAX_BANK => G_MAX_BANK,
+            G_DECIMAL_WIDTH_TW => G_DECIMAL_WIDTH_TW
         )
         port map (
             clk_100M  => clk_100M,

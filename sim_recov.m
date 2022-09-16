@@ -3,10 +3,11 @@ close all
 clear all
 
 Seed =13;
-N=512;
+N=8192;
 L=256;
 P=16;
-D=15;
+DFTD=20;
+TWD = 15;
 parallel =16;
 FILE_read= "VHDL\initial\Initial_Implementation_FFT\Initial_Implementation_FFT.sim\sim_1\behav\xsim\output_file.txt";
 %bitstream = zeros(1,N);
@@ -38,8 +39,8 @@ end
 
 
  
-FFT = idealFFT(N,P,L,bitstream); % run ideal FFT
-FFTsim = simFFT(FILE_read,D); % recover simulated ( FPGA FFT)
+FFT = idealFFT(N,P,L,bitstream,TWD); % run ideal FFT
+FFTsim = simFFT(FILE_read,DFTD,TWD); % recover simulated ( FPGA FFT)
 FFTM=fft(bitstream);
 
 
@@ -67,10 +68,13 @@ plot(abs(FFTsim_FULL))
 hold on
 plot(abs(FFT))
 hold off
+
+title ('FFT OUT')
+legend('FPGA','MATLAB');
 figure
-plot(abs(abs(FFTsim_FULL)-abs(FFT.'))/abs(FFT.'))
+plot(abs(abs(FFTsim_FULL)-abs(FFT.'))./abs(FFT.'))
 hold on
-plot (cos(linspace(0,2*pi,512)).^(N/P)*0.00015)
+plot (cos(linspace(0,2*pi,8192)).^(N/P)*0.004)
 hold off
 
 figure
@@ -81,7 +85,7 @@ hold off
 
 %figure
 %plot(FFTI)
-log2(1024*2./(sum((abs(abs(FFTsim_FULL)-abs(FFT.')))./1024))) % average precision approx 18 bits for 1024 input bits
+log2(N*2./(sum((abs(abs(FFTsim_FULL(21:end))-abs(FFT(21:end).')))./(L-21)))) % average precision approx 18 bits for 1024 input bits
 
 
 %13.7469 -- with standard rounding 
@@ -94,4 +98,9 @@ max(abs(abs(FFTsim_FULL)-abs(FFT.')))
 % 20.1331 truncation
 
 % 20.1331
+%%
 
+
+% 20.9723 avg prec
+
+% 0.0287 max error

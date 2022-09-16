@@ -6,16 +6,17 @@ close all
 
 fileName={'RAM1.txt', 'RAM2.txt', 'RAM3.txt','RAM4.txt', 'RAM5.txt', 'RAM6.txt','RAM7.txt', 'RAM8.txt'};
 
-D=15; %% the decimal location % 14 or more triggers dec2bin to propduce a 32 bit value
+TWD=15; %% the decimal location % 14 or more triggers dec2bin to propduce a 32 bit value
+DFTD =20;
 DFTBD_size =25;
 TW_size=18;
-parallel =16;
+parallel =8;
 P =16;
 maxb=16;
 minb=0;
-N=512;
+N=8192;
 [TW,TW2,LUTRR,LUTII] = only_RAM(P,minb,maxb,N);
-LUTRR=round(LUTRR.*(2.^D)); % 8 decimal bits
+LUTRR=round(LUTRR.*(2.^DFTD)); % 8 decimal bits
 for ii=1:8
 bin=int2bin(LUTRR(:,ii),DFTBD_size)
 %file=[num2str(ii)
@@ -43,7 +44,7 @@ end
 %%
 %IMAG
 
-LUTII=round(LUTII.*(2.^D)); % 8 decimal bits
+LUTII=round(LUTII.*(2.^DFTD)); % 8 decimal bits
 for ii=1:8
 bin=int2bin(LUTII(:,ii),DFTBD_size)
 %file=[num2str(ii)
@@ -70,7 +71,7 @@ end
 
 %% TWiddle factors
 
-TWr=round(2*TW.*(2.^D));
+TWr=round(2*TW.*(2.^TWD));
 TWbin=(int2bin(TWr,TW_size));
 %TWbin2=[];
 TWbin2=zeros((maxb-minb)*P/parallel,TW_size*parallel);
@@ -92,7 +93,7 @@ for ii=1:(maxb-minb)*P/parallel
 fclose(fid);
 
 
-TW2r=round(2*TW2.*(2.^D));
+TW2r=round(2*TW2.*(2.^TWD));
 TW2bin=int2bin(TW2r,TW_size);
 fileTW2= 'VHDL\initial\Initial_Implementation_FFT\Initial_Implementation_FFT.srcs\sources_1\ip\TW2_values.coe';
 

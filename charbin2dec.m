@@ -1,5 +1,5 @@
-function output= charbin2dec(input,order,Decimal)
-D=Decimal;
+function output= charbin2dec(input,order,DFTD,TWD)
+
 FFT_outR=input;
 [R, C] =size(FFT_outR);
 FFTR=zeros(R,1);
@@ -22,7 +22,7 @@ for ii=1:R
         end
                   
         
-        FFTR(ii)=FFTR(ii).*2^(-D*2+(orderd(ii)));
+        FFTR(ii)=FFTR(ii).*2^(-(DFTD+TWD)+(orderd(ii)));
         
         
          else % negative number
@@ -55,7 +55,7 @@ for ii=1:R
         
        end
         
-       FFTR(ii)=-FFTR(ii).*2^(-D*2+(orderd(ii)));
+       FFTR(ii)=-FFTR(ii).*2^(-(DFTD+TWD)+(orderd(ii)));
         
         
     end

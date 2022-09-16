@@ -14,7 +14,7 @@ entity DFTBD_RAM is
     generic (
         G_DATA_WIDTH    : INTEGER := 25; -- data width of output
         G_DECIMAL_WIDTH : integer := 13; -- decimal precision
-        G_FILLER_25 : STD_LOGIC_VECTOR(25-1 downto 0) := "0000000000000000000000000";
+        
         G_RADIX : integer := 16;
         G_BYTE_SIZE : integer := 256;
         G_DFTBD_B : integer := 2
@@ -274,7 +274,7 @@ END COMPONENT;
 
     signal DFTBDI31 : signed (G_DATA_WIDTH-1 downto 0):= (others => '0');
     
-    
+    signal G_FILLER_25 : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0) := (others => '0');
 
     --signal Bit_stream_value : std_logic_vector(1 downto 0) := (others => '0');
 

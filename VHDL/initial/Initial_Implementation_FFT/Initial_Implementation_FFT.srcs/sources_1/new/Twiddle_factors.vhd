@@ -39,8 +39,8 @@ use work.data_types.all;
 entity Twiddle_factors is
 generic (
         G_DATA_WIDTH_TW    : INTEGER := 18; -- data width of output
-        G_DECIMAL_WIDTH : integer := 13;
-        G_FILLER_18 : STD_LOGIC_VECTOR(18-1 downto 0) := "000000000000000000"; -- decimal precision
+        G_DECIMAL_WIDTH_TW : integer := 13;
+        -- decimal precision
         G_PARALLEL_TD : INTEGER := 1;
         G_BYTE_SIZE : Integer := 256;
         --POUT_size : integer := 37
@@ -91,6 +91,8 @@ signal TWout2 : std_logic_vector(G_DATA_WIDTH_TW*G_PARALLEL_TD-1 downto 0);
 signal TW2out : std_logic_vector(G_DATA_WIDTH_TW*G_PARALLEL_TD-1 downto 0);
 signal TW2out1 : std_logic_vector(G_DATA_WIDTH_TW*G_PARALLEL_TD-1 downto 0);
 signal TW2out2 : std_logic_vector(G_DATA_WIDTH_TW*G_PARALLEL_TD-1 downto 0);
+
+signal G_FILLER_18 : STD_LOGIC_VECTOR(G_DATA_WIDTH_TW downto 0) := (others => '0');
 -- signal TW2out3 : std_logic_vector(G_DATA_WIDTH_TW*G_PARALLEL_TD-1 downto 0);
 -- signal TW2out4 : std_logic_vector(G_DATA_WIDTH_TW*G_PARALLEL_TD-1 downto 0);
 -- signal TW2out5 : std_logic_vector(G_DATA_WIDTH_TW*G_PARALLEL_TD-1 downto 0);

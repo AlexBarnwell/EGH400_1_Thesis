@@ -1,4 +1,4 @@
-function data = simFFT(FILE,D) 
+function data = simFFT(FILE,DFTD,TWD) 
 
 
 
@@ -18,8 +18,8 @@ FFT_outI=char(FFT_outI);
 order=char(order);
 
 
-FFTR=charbin2dec(FFT_outR,order,D);
+FFTR=charbin2dec(FFT_outR,order,DFTD,TWD);
 
-FFTI=charbin2dec(FFT_outI,order,D);
+FFTI=charbin2dec(FFT_outI,order,DFTD,TWD);
 data = FFTR+1i*FFTI;
 end

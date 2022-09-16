@@ -1,5 +1,5 @@
-function FFT = idealFFT(N,P,L,bitstream)
-
+function FFT = idealFFT(N,P,L,bitstream,TWD)
+%digits(2)
 Q=N/P; % reoformatted bit strema banks
 L=L/16; % L*16 DFT uotputs desired
 %bitstream=randi([0 1],1,N); % create randomised 1:0 input data to simualte bitstream
@@ -89,12 +89,15 @@ for ii =1:P
         % apply twiddle factors
         k=((1:L)-1).*(P)+(ii-1); % set based on how many required output banks (L*P)
         angle=2*pi*k/N;
-
-        stager =A1.*2.*cos(angle)-A2+DFTtempR; % multiply addition and access (multiple clock cycles 
+       % coss=vpa(2*cos(angle));
+       
+       coss = 2^(-TWD).*(round((2^TWD)*2*cos(angle)));
+       sinn = 2^(-TWD).*(round((2^TWD)*2*sin(angle)));
+        stager =A1.*coss-A2+DFTtempR; % multiply addition and access (multiple clock cycles 
         A2=A1;
         A1=stager;
         
-        stagei =B1.*2.*cos(angle)-B2+DFTtempI; %same time lock step DSP blocks
+        stagei =B1.*coss-B2+DFTtempI; %same time lock step DSP blocks
         
         
         % get new value  (try out of parrallel) in series
@@ -102,8 +105,8 @@ for ii =1:P
         B2=B1;
         B1=stagei;
     end
-    Yr(((1:L)-1)*P+ii)=A1-cos(angle).*A2+sin(angle).*B2;
-    Yi(((1:L)-1)*P+ii)=B1-sin(angle).*A2-cos(angle).*B2;
+    Yr(((1:L)-1)*P+ii)=A1-coss./2.*A2+sinn./2.*B2;
+    Yi(((1:L)-1)*P+ii)=B1-sinn./2.*A2-coss./2.*B2;
 end
 
 
