@@ -1,275 +1,0 @@
-Data_For_RDAFlowver5.0
-	top level⁄√
-fpga_top
-LinkDesign_Blackboxes#
-DFTBD_RAMs/DFTBD_RAM1
-DFTBD_MEM1#
-DFTBD_RAMs/DFTBD_RAM2
-DFTBD_MEM2#
-DFTBD_RAMs/DFTBD_RAM3
-DFTBD_MEM3#
-DFTBD_RAMs/DFTBD_RAM4
-DFTBD_MEM4#
-DFTBD_RAMs/DFTBD_RAM5
-DFTBD_MEM5#
-DFTBD_RAMs/DFTBD_RAM6
-DFTBD_MEM6H
-9Series_recombination_loop/DFT_TD_DSPs[5].DFT_TD_DSP/firstdsp_macro_0#
-DFTBD_RAMs/DFTBD_RAM7
-DFTBD_MEM7#
-DFTBD_RAMs/DFTBD_RAM8
-DFTBD_MEM8H
-9Series_recombination_loop/DFT_TD_DSPs[8].DFT_TD_DSP/firstdsp_macro_0H
-9Series_recombination_loop/DFT_TD_DSPs[3].DFT_TD_DSP/firstdsp_macro_0H
-9Series_recombination_loop/DFT_TD_DSPs[6].DFT_TD_DSP/firstdsp_macro_0
-CLOCK	clk_wiz_0I
-:Series_recombination_loop/DFT_TD_DSPs[8].DFT_TD_DSP/firstIdsp_macro_0H
-9Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/firstdsp_macro_0
-TWiddle1/Twiddle_1TW_RAMI
-:Series_recombination_loop/DFT_TD_DSPs[7].DFT_TD_DSP/firstIdsp_macro_0
-TWiddle1/Twiddle_2TW2_RAMI
-:Series_recombination_loop/DFT_TD_DSPs[6].DFT_TD_DSP/firstIdsp_macro_0I
-:Series_recombination_loop/DFT_TD_DSPs[5].DFT_TD_DSP/firstIdsp_macro_0H
-9Series_recombination_loop/DFT_TD_DSPs[4].DFT_TD_DSP/firstdsp_macro_0%
-DFTBD_RAMs/DFTBD_RAMI1DFTBD_MEM1II
-:Series_recombination_loop/DFT_TD_DSPs[4].DFT_TD_DSP/firstIdsp_macro_0%
-DFTBD_RAMs/DFTBD_RAMI2DFTBD_MEM2I%
-DFTBD_RAMs/DFTBD_RAMI3DFTBD_MEM3I%
-DFTBD_RAMs/DFTBD_RAMI4DFTBD_MEM4I%
-DFTBD_RAMs/DFTBD_RAMI5DFTBD_MEM5II
-:Series_recombination_loop/DFT_TD_DSPs[3].DFT_TD_DSP/firstIdsp_macro_0%
-DFTBD_RAMs/DFTBD_RAMI6DFTBD_MEM6I%
-DFTBD_RAMs/DFTBD_RAMI7DFTBD_MEM7I%
-DFTBD_RAMs/DFTBD_RAMI8DFTBD_MEM8II
-:Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/firstIdsp_macro_0I
-:Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/firstIdsp_macro_0H
-9Series_recombination_loop/DFT_TD_DSPs[7].DFT_TD_DSP/firstdsp_macro_0H
-9Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/firstdsp_macro_0üD
-synthFileNamesJ
-10DC:/Xilinx/Vivado/2022.1/data/vhdl/src/unimacro/BRAM_SINGLE_MACRO.vhdG
-11AC:/Xilinx/Vivado/2022.1/data/vhdl/src/unimacro/BRAM_TDP_MACRO.vhdK
-12EC:/Xilinx/Vivado/2022.1/data/vhdl/src/unimacro/COUNTER_LOAD_MACRO.vhdI
-13CC:/Xilinx/Vivado/2022.1/data/vhdl/src/unimacro/COUNTER_TC_MACRO.vhdI
-14CC:/Xilinx/Vivado/2022.1/data/vhdl/src/unimacro/EQ_COMPARE_MACRO.vhdF
-20@C:/Xilinx/Vivado/2022.1/data/verilog/src/unimacro/ADDSUB_MACRO.vM
-15GC:/Xilinx/Vivado/2022.1/data/vhdl/src/unimacro/FIFO_DUALCLOCK_MACRO.vhdH
-21BC:/Xilinx/Vivado/2022.1/data/verilog/src/unimacro/BRAM_SDP_MACRO.vH
-16BC:/Xilinx/Vivado/2022.1/data/vhdl/src/unimacro/FIFO_SYNC_MACRO.vhdK
-22EC:/Xilinx/Vivado/2022.1/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.vC
-17=C:/Xilinx/Vivado/2022.1/data/vhdl/src/unimacro/MACC_MACRO.vhdC
-18=C:/Xilinx/Vivado/2022.1/data/vhdl/src/unimacro/MULT_MACRO.vhdH
-23BC:/Xilinx/Vivado/2022.1/data/verilog/src/unimacro/BRAM_TDP_MACRO.vG
-19AC:/Xilinx/Vivado/2022.1/data/verilog/src/unimacro/ADDMACC_MACRO.vL
-24FC:/Xilinx/Vivado/2022.1/data/verilog/src/unimacro/COUNTER_LOAD_MACRO.vJ
-25DC:/Xilinx/Vivado/2022.1/data/verilog/src/unimacro/COUNTER_TC_MACRO.vD
-30>C:/Xilinx/Vivado/2022.1/data/verilog/src/unimacro/MULT_MACRO.v
-NumFileNames73J
-26DC:/Xilinx/Vivado/2022.1/data/verilog/src/unimacro/EQ_COMPARE_MACRO.vJ
-31DC:/Xilinx/Vivado/2022.1/data/vhdl/src/unisims/retarget/MULT18X18.vhd=
-18C:/Xilinx/Vivado/2022.1/scripts/rt/data/unisim_VCOMP.vhdN
-27HC:/Xilinx/Vivado/2022.1/data/verilog/src/unimacro/FIFO_DUALCLOCK_MACRO.vK
-32EC:/Xilinx/Vivado/2022.1/data/vhdl/src/unisims/retarget/MULT18X18S.vhd<
-27C:/Xilinx/Vivado/2022.1/scripts/rt/data/unisim_VPKG.vhdI
-28CC:/Xilinx/Vivado/2022.1/data/verilog/src/unimacro/FIFO_SYNC_MACRO.v@
-33:C:/Xilinx/Vivado/2022.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:
-35C:/Xilinx/Vivado/2022.1/scripts/rt/data/unisim_comp.vD
-29>C:/Xilinx/Vivado/2022.1/data/verilog/src/unimacro/MACC_MACRO.vF
-34@C:/Xilinx/Vivado/2022.1/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv=
-48C:/Xilinx/Vivado/2022.1/scripts/rt/data/internal_cells.vµ
-35ÆC:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-63324-DESKTOP-BDA8VGJ/realtime/TW2_RAM_stub.vhdlπ
-40≤C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-63324-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM7I_stub.vhdl3
-5.C:/Xilinx/Vivado/2022.1/scripts/rt/data/BUFT.v¥
-36≠C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-63324-DESKTOP-BDA8VGJ/realtime/TW_RAM_stub.vhdlπ
-41≤C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-63324-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM6I_stub.vhdlF
-6AC:/Xilinx/Vivado/2022.1/data/vhdl/src/unimacro/unimacro_VCOMP.vhd∑
-37∞C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-63324-DESKTOP-BDA8VGJ/realtime/clk_wiz_0_stub.vhdlπ
-42≤C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-63324-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM5I_stub.vhdlE
-7@C:/Xilinx/Vivado/2022.1/data/vhdl/src/unimacro/ADDMACC_MACRO.vhdπ
-38≤C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-63324-DESKTOP-BDA8VGJ/realtime/dsp_macro_0_stub.vhdlπ
-43≤C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-63324-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM4I_stub.vhdlD
-8?C:/Xilinx/Vivado/2022.1/data/vhdl/src/unimacro/ADDSUB_MACRO.vhdπ
-39≤C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-63324-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM8I_stub.vhdlπ
-44≤C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-63324-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM3I_stub.vhdl∏
-50±C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-63324-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM4_stub.vhdlF
-9AC:/Xilinx/Vivado/2022.1/data/vhdl/src/unimacro/BRAM_SDP_MACRO.vhdπ
-45≤C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-63324-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM2I_stub.vhdl∏
-51±C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-63324-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM3_stub.vhdlπ
-46≤C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-63324-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM1I_stub.vhdl∏
-52±C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-63324-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM8_stub.vhdl∏
-47±C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-63324-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM7_stub.vhdl∏
-53±C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-63324-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM2_stub.vhdl∏
-48±C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-63324-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM6_stub.vhdl∏
-54±C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-63324-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM1_stub.vhdl∏
-49±C:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/.Xil/Vivado-63324-DESKTOP-BDA8VGJ/realtime/DFTBD_MEM5_stub.vhdlí
-60ãC:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/shift_reg_input.vhdç
-55ÜC:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/data_types.vhdã
-61ÑC:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/fpga_top.vhdç
-56ÜC:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/Control_TD.vhd7
-621C:/Xilinx/Vivado/2022.1/data/ip/xpm/xpm_VCOMP.vhdå
-57ÖC:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DFTBD_RAM.vhdé
-63áC:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/1993/src/std_1164.vhdâ
-58ÇC:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/DSP_TD.vhdé
-64áC:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/1993/src/standard.vhdí
-59ãC:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.srcs/sources_1/new/Twiddle_factors.vhdé
-70áC:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/1993/src/prmtvs_b.vhdë
-65äC:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/1993/src/numeric_std.vhdé
-71áC:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/1993/src/syn_arit.vhdå
-66ÖC:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/1993/src/textio.vhdé
-72áC:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/1993/src/syn_unsi.vhdé
-67áC:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/1993/src/timing_p.vhdé
-68áC:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/1993/src/timing_b.vhdé
-69áC:/REPOS/EGH400_1/EGH400_1_Thesis/VHDL/initial/Initial_Implementation_FFT/Initial_Implementation_FFT.runs/synth_1/1993/src/prmtvs_p.vhd¥
-
-synthStats•
-fwd_retimable_ffsI
-CSeries_recombination_loop/DFT_TD_DSPs[3].DFT_TD_DSP/step1i_S_reg[*]43I
-CSeries_recombination_loop/DFT_TD_DSPs[7].DFT_TD_DSP/step1i_S_reg[*]43H
-BSeries_recombination_loop/DFT_TD_DSPs[5].DFT_TD_DSP/step1_S_reg[*]43I
-CSeries_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/final2_S_reg[*]43H
-BSeries_recombination_loop/DFT_TD_DSPs[3].DFT_TD_DSP/step1_S_reg[*]43I
-CSeries_recombination_loop/DFT_TD_DSPs[6].DFT_TD_DSP/final2_S_reg[*]43
-DFTBD_RAMs/DFTBD11_reg[*]25 
-DFTBD_RAMs/DFTBDI11_reg[*]25I
-CSeries_recombination_loop/DFT_TD_DSPs[4].DFT_TD_DSP/step1i_S_reg[*]43H
-BSeries_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/step1_S_reg[*]43I
-CSeries_recombination_loop/DFT_TD_DSPs[8].DFT_TD_DSP/step1i_S_reg[*]43
-DFTBD_RAMs/DFTBD14_reg[*]25 
-DFTBD_RAMs/DFTBDI14_reg[*]25I
-CSeries_recombination_loop/DFT_TD_DSPs[3].DFT_TD_DSP/final2_S_reg[*]43H
-BSeries_recombination_loop/DFT_TD_DSPs[8].DFT_TD_DSP/step1_S_reg[*]43
-DFTBD_RAMs/DFTBD22_reg[*]25 
-DFTBD_RAMs/DFTBDI22_reg[*]25I
-CSeries_recombination_loop/DFT_TD_DSPs[7].DFT_TD_DSP/final2_S_reg[*]43I
-CSeries_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/step1i_S_reg[*]43H
-BSeries_recombination_loop/DFT_TD_DSPs[6].DFT_TD_DSP/step1_S_reg[*]43I
-CSeries_recombination_loop/DFT_TD_DSPs[5].DFT_TD_DSP/step1i_S_reg[*]43
-DFTBD_RAMs/DFTBD13_reg[*]25H
-BSeries_recombination_loop/DFT_TD_DSPs[4].DFT_TD_DSP/step1_S_reg[*]43 
-DFTBD_RAMs/DFTBDI13_reg[*]25I
-CSeries_recombination_loop/DFT_TD_DSPs[4].DFT_TD_DSP/final2_S_reg[*]43H
-BSeries_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/step1_S_reg[*]43I
-CSeries_recombination_loop/DFT_TD_DSPs[8].DFT_TD_DSP/final2_S_reg[*]43
-DFTBD_RAMs/DFTBD21_reg[*]25I
-CSeries_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/step1i_S_reg[*]43 
-DFTBD_RAMs/DFTBDI21_reg[*]25I
-CSeries_recombination_loop/DFT_TD_DSPs[6].DFT_TD_DSP/step1i_S_reg[*]43I
-CSeries_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/final2_S_reg[*]43
-DFTBD_RAMs/DFTBD12_reg[*]25I
-CSeries_recombination_loop/DFT_TD_DSPs[5].DFT_TD_DSP/final2_S_reg[*]43 
-DFTBD_RAMs/DFTBDI12_reg[*]25H
-BSeries_recombination_loop/DFT_TD_DSPs[7].DFT_TD_DSP/step1_S_reg[*]43èL
-ElaboratedNamesForRQSıK
-DSP_RAM%
-1970177 {DFTBD_RAMs/DFTBDI110_i} Ö
-1433603˘ {Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/ARG_i__0} {Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/ARG_i__0} {Series_recombination_loop/DFT_TD_DSPs[3].DFT_TD_DSP/ARG_i__0} {Series_recombination_loop/DFT_TD_DSPs[4].DFT_TD_DSP/ARG_i__0} {Series_recombination_loop/DFT_TD_DSPs[5].DFT_TD_DSP/ARG_i__0} {Series_recombination_loop/DFT_TD_DSPs[6].DFT_TD_DSP/ARG_i__0} {Series_recombination_loop/DFT_TD_DSPs[7].DFT_TD_DSP/ARG_i__0} {Series_recombination_loop/DFT_TD_DSPs[8].DFT_TD_DSP/ARG_i__0} 2
-1585154' {Series_recombination_loop/count30_i} ï
-1347587â {Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/ord_diff_i} {Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/ord_diff_i} {Series_recombination_loop/DFT_TD_DSPs[3].DFT_TD_DSP/ord_diff_i} {Series_recombination_loop/DFT_TD_DSPs[4].DFT_TD_DSP/ord_diff_i} {Series_recombination_loop/DFT_TD_DSPs[5].DFT_TD_DSP/ord_diff_i} {Series_recombination_loop/DFT_TD_DSPs[6].DFT_TD_DSP/ord_diff_i} {Series_recombination_loop/DFT_TD_DSPs[7].DFT_TD_DSP/ord_diff_i} {Series_recombination_loop/DFT_TD_DSPs[8].DFT_TD_DSP/ord_diff_i} $
-2002945 {DFTBD_RAMs/DFTBD310_i} 
-819206 {inputs/plusOp_i}  
-720902 {inputs/plusOp_i__0} %
-1974273 {DFTBD_RAMs/DFTBDI120_i} ^
-634886T {inputs/byte_out_i} {inputs/count2_i__0} {inputs/hold_i__0} {inputs/start_count_i} ˝
-1503235Ò {Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/step2_i} {Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/step2_i} {Series_recombination_loop/DFT_TD_DSPs[3].DFT_TD_DSP/step2_i} {Series_recombination_loop/DFT_TD_DSPs[4].DFT_TD_DSP/step2_i} {Series_recombination_loop/DFT_TD_DSPs[5].DFT_TD_DSP/step2_i} {Series_recombination_loop/DFT_TD_DSPs[6].DFT_TD_DSP/step2_i} {Series_recombination_loop/DFT_TD_DSPs[7].DFT_TD_DSP/step2_i} {Series_recombination_loop/DFT_TD_DSPs[8].DFT_TD_DSP/step2_i} ˝
-1490947Ò {Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/step1_i} {Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/step1_i} {Series_recombination_loop/DFT_TD_DSPs[3].DFT_TD_DSP/step1_i} {Series_recombination_loop/DFT_TD_DSPs[4].DFT_TD_DSP/step1_i} {Series_recombination_loop/DFT_TD_DSPs[5].DFT_TD_DSP/step1_i} {Series_recombination_loop/DFT_TD_DSPs[6].DFT_TD_DSP/step1_i} {Series_recombination_loop/DFT_TD_DSPs[7].DFT_TD_DSP/step1_i} {Series_recombination_loop/DFT_TD_DSPs[8].DFT_TD_DSP/step1_i} 1
-1478658& {Series_recombination_loop/plusOp_i} 2
-1544194' {Series_recombination_loop/count20_i} $
-1990657 {DFTBD_RAMs/DFTBD210_i} Ö
-1921027˘ {Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/ARG_i__4} {Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/ARG_i__4} {Series_recombination_loop/DFT_TD_DSPs[3].DFT_TD_DSP/ARG_i__4} {Series_recombination_loop/DFT_TD_DSPs[4].DFT_TD_DSP/ARG_i__4} {Series_recombination_loop/DFT_TD_DSPs[5].DFT_TD_DSP/ARG_i__4} {Series_recombination_loop/DFT_TD_DSPs[6].DFT_TD_DSP/ARG_i__4} {Series_recombination_loop/DFT_TD_DSPs[7].DFT_TD_DSP/ARG_i__4} {Series_recombination_loop/DFT_TD_DSPs[8].DFT_TD_DSP/ARG_i__4} %
-1978369 {DFTBD_RAMs/DFTBDI130_i} $
-1961985 {DFTBD_RAMs/DFTBD140_i} Ü
-1576962{ {Series_recombination_loop/DFT_RESET_i__1} {Series_recombination_loop/count3_i__0} {Series_recombination_loop/state_i__3} Ö
-1507331˘ {Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/step2i_i} {Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/step2i_i} {Series_recombination_loop/DFT_TD_DSPs[3].DFT_TD_DSP/step2i_i} {Series_recombination_loop/DFT_TD_DSPs[4].DFT_TD_DSP/step2i_i} {Series_recombination_loop/DFT_TD_DSPs[5].DFT_TD_DSP/step2i_i} {Series_recombination_loop/DFT_TD_DSPs[6].DFT_TD_DSP/step2i_i} {Series_recombination_loop/DFT_TD_DSPs[7].DFT_TD_DSP/step2i_i} {Series_recombination_loop/DFT_TD_DSPs[8].DFT_TD_DSP/step2i_i} $
-1949697 {DFTBD_RAMs/DFTBD110_i} 4
-1200130) {Series_recombination_loop/DFT_RESET_i} %
-2023425 {DFTBD_RAMs/DFTBDI310_i} $
-1994753 {DFTBD_RAMs/DFTBD220_i} Ö
-1495043˘ {Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/step1i_i} {Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/step1i_i} {Series_recombination_loop/DFT_TD_DSPs[3].DFT_TD_DSP/step1i_i} {Series_recombination_loop/DFT_TD_DSPs[4].DFT_TD_DSP/step1i_i} {Series_recombination_loop/DFT_TD_DSPs[5].DFT_TD_DSP/step1i_i} {Series_recombination_loop/DFT_TD_DSPs[6].DFT_TD_DSP/step1i_i} {Series_recombination_loop/DFT_TD_DSPs[7].DFT_TD_DSP/step1i_i} {Series_recombination_loop/DFT_TD_DSPs[8].DFT_TD_DSP/step1i_i} 5
-1843202* {Series_recombination_loop/Write_flag_i} ù
-1032195ë {Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/orderi_i__0} {Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/orderi_i__0} {Series_recombination_loop/DFT_TD_DSPs[3].DFT_TD_DSP/orderi_i__0} {Series_recombination_loop/DFT_TD_DSPs[4].DFT_TD_DSP/orderi_i__0} {Series_recombination_loop/DFT_TD_DSPs[5].DFT_TD_DSP/orderi_i__0} {Series_recombination_loop/DFT_TD_DSPs[6].DFT_TD_DSP/orderi_i__0} {Series_recombination_loop/DFT_TD_DSPs[7].DFT_TD_DSP/orderi_i__0} {Series_recombination_loop/DFT_TD_DSPs[8].DFT_TD_DSP/orderi_i__0} 
-864256 {clk_mic_i} Ö
-1437699˘ {Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/ARG_i__1} {Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/ARG_i__1} {Series_recombination_loop/DFT_TD_DSPs[3].DFT_TD_DSP/ARG_i__1} {Series_recombination_loop/DFT_TD_DSPs[4].DFT_TD_DSP/ARG_i__1} {Series_recombination_loop/DFT_TD_DSPs[5].DFT_TD_DSP/ARG_i__1} {Series_recombination_loop/DFT_TD_DSPs[6].DFT_TD_DSP/ARG_i__1} {Series_recombination_loop/DFT_TD_DSPs[7].DFT_TD_DSP/ARG_i__1} {Series_recombination_loop/DFT_TD_DSPs[8].DFT_TD_DSP/ARG_i__1} Ì
-1429507· {Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/ARG_i} {Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/ARG_i} {Series_recombination_loop/DFT_TD_DSPs[3].DFT_TD_DSP/ARG_i} {Series_recombination_loop/DFT_TD_DSPs[4].DFT_TD_DSP/ARG_i} {Series_recombination_loop/DFT_TD_DSPs[5].DFT_TD_DSP/ARG_i} {Series_recombination_loop/DFT_TD_DSPs[6].DFT_TD_DSP/ARG_i} {Series_recombination_loop/DFT_TD_DSPs[7].DFT_TD_DSP/ARG_i} {Series_recombination_loop/DFT_TD_DSPs[8].DFT_TD_DSP/ARG_i} 
-479238 {inputs/count0_i} 
-671750 {inputs/count20_i} ç
-1036291Å {Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/orderi0_i} {Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/orderi0_i} {Series_recombination_loop/DFT_TD_DSPs[3].DFT_TD_DSP/orderi0_i} {Series_recombination_loop/DFT_TD_DSPs[4].DFT_TD_DSP/orderi0_i} {Series_recombination_loop/DFT_TD_DSPs[5].DFT_TD_DSP/orderi0_i} {Series_recombination_loop/DFT_TD_DSPs[6].DFT_TD_DSP/orderi0_i} {Series_recombination_loop/DFT_TD_DSPs[7].DFT_TD_DSP/orderi0_i} {Series_recombination_loop/DFT_TD_DSPs[8].DFT_TD_DSP/orderi0_i} %
-2011137 {DFTBD_RAMs/DFTBDI210_i} %
-1982465 {DFTBD_RAMs/DFTBDI140_i}  
-724998 {inputs/plusOp_i__1} ï
-1011715â {Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/order_i__0} {Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/order_i__0} {Series_recombination_loop/DFT_TD_DSPs[3].DFT_TD_DSP/order_i__0} {Series_recombination_loop/DFT_TD_DSPs[4].DFT_TD_DSP/order_i__0} {Series_recombination_loop/DFT_TD_DSPs[5].DFT_TD_DSP/order_i__0} {Series_recombination_loop/DFT_TD_DSPs[6].DFT_TD_DSP/order_i__0} {Series_recombination_loop/DFT_TD_DSPs[7].DFT_TD_DSP/order_i__0} {Series_recombination_loop/DFT_TD_DSPs[8].DFT_TD_DSP/order_i__0} $
-1953793 {DFTBD_RAMs/DFTBD120_i} Ø
-868358§ {inputs/byte_100_i} {inputs/byte_10_i} {inputs/byte_110_i} {inputs/byte_120_i} {inputs/byte_130_i} {inputs/byte_140_i} {inputs/byte_150_i} {inputs/byte_20_i} {inputs/byte_30_i} {inputs/byte_40_i} {inputs/byte_50_i} {inputs/byte_60_i} {inputs/byte_70_i} {inputs/byte_80_i} {inputs/byte_90_i} [
-1486850P {Series_recombination_loop/FFT_begin_i} {Series_recombination_loop/state_i__1} Ö
-1916931˘ {Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/ARG_i__3} {Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/ARG_i__3} {Series_recombination_loop/DFT_TD_DSPs[3].DFT_TD_DSP/ARG_i__3} {Series_recombination_loop/DFT_TD_DSPs[4].DFT_TD_DSP/ARG_i__3} {Series_recombination_loop/DFT_TD_DSPs[5].DFT_TD_DSP/ARG_i__3} {Series_recombination_loop/DFT_TD_DSPs[6].DFT_TD_DSP/ARG_i__3} {Series_recombination_loop/DFT_TD_DSPs[7].DFT_TD_DSP/ARG_i__3} {Series_recombination_loop/DFT_TD_DSPs[8].DFT_TD_DSP/ARG_i__3} 4
-1859586) {Series_recombination_loop/plusOp_i__0} %
-2015233 {DFTBD_RAMs/DFTBDI220_i} Ö
-1015811˘ {Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/order0_i} {Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/order0_i} {Series_recombination_loop/DFT_TD_DSPs[3].DFT_TD_DSP/order0_i} {Series_recombination_loop/DFT_TD_DSPs[4].DFT_TD_DSP/order0_i} {Series_recombination_loop/DFT_TD_DSPs[5].DFT_TD_DSP/order0_i} {Series_recombination_loop/DFT_TD_DSPs[6].DFT_TD_DSP/order0_i} {Series_recombination_loop/DFT_TD_DSPs[7].DFT_TD_DSP/order0_i} {Series_recombination_loop/DFT_TD_DSPs[8].DFT_TD_DSP/order0_i} Ø
-1748994£ {Series_recombination_loop/DFT_RESET_i__2} {Series_recombination_loop/FFT_RESET_i__0} {Series_recombination_loop/count3_i__1} {Series_recombination_loop/state_i} 
-856064 {clock_count0_i} $
-1957889 {DFTBD_RAMs/DFTBD130_i} Ö
-1441795˘ {Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/ARG_i__2} {Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/ARG_i__2} {Series_recombination_loop/DFT_TD_DSPs[3].DFT_TD_DSP/ARG_i__2} {Series_recombination_loop/DFT_TD_DSPs[4].DFT_TD_DSP/ARG_i__2} {Series_recombination_loop/DFT_TD_DSPs[5].DFT_TD_DSP/ARG_i__2} {Series_recombination_loop/DFT_TD_DSPs[6].DFT_TD_DSP/ARG_i__2} {Series_recombination_loop/DFT_TD_DSPs[7].DFT_TD_DSP/ARG_i__2} {Series_recombination_loop/DFT_TD_DSPs[8].DFT_TD_DSP/ARG_i__2} Á
-blackBoxInfo%
-DFTBD_RAMs/DFTBD_RAMI3DFTBD_MEM3I%
-DFTBD_RAMs/DFTBD_RAMI4DFTBD_MEM4I%
-DFTBD_RAMs/DFTBD_RAMI5DFTBD_MEM5II
-:Series_recombination_loop/DFT_TD_DSPs[3].DFT_TD_DSP/firstIdsp_macro_0%
-DFTBD_RAMs/DFTBD_RAMI6DFTBD_MEM6I%
-DFTBD_RAMs/DFTBD_RAMI7DFTBD_MEM7I%
-DFTBD_RAMs/DFTBD_RAMI8DFTBD_MEM8II
-:Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/firstIdsp_macro_0I
-:Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/firstIdsp_macro_0H
-9Series_recombination_loop/DFT_TD_DSPs[7].DFT_TD_DSP/firstdsp_macro_0H
-9Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/firstdsp_macro_0#
-DFTBD_RAMs/DFTBD_RAM1
-DFTBD_MEM1#
-DFTBD_RAMs/DFTBD_RAM2
-DFTBD_MEM2#
-DFTBD_RAMs/DFTBD_RAM3
-DFTBD_MEM3#
-DFTBD_RAMs/DFTBD_RAM4
-DFTBD_MEM4#
-DFTBD_RAMs/DFTBD_RAM5
-DFTBD_MEM5#
-DFTBD_RAMs/DFTBD_RAM6
-DFTBD_MEM6H
-9Series_recombination_loop/DFT_TD_DSPs[5].DFT_TD_DSP/firstdsp_macro_0#
-DFTBD_RAMs/DFTBD_RAM7
-DFTBD_MEM7#
-DFTBD_RAMs/DFTBD_RAM8
-DFTBD_MEM8H
-9Series_recombination_loop/DFT_TD_DSPs[8].DFT_TD_DSP/firstdsp_macro_0H
-9Series_recombination_loop/DFT_TD_DSPs[3].DFT_TD_DSP/firstdsp_macro_0H
-9Series_recombination_loop/DFT_TD_DSPs[6].DFT_TD_DSP/firstdsp_macro_0
-CLOCK	clk_wiz_0I
-:Series_recombination_loop/DFT_TD_DSPs[8].DFT_TD_DSP/firstIdsp_macro_0H
-9Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/firstdsp_macro_0
-TWiddle1/Twiddle_1TW_RAMI
-:Series_recombination_loop/DFT_TD_DSPs[7].DFT_TD_DSP/firstIdsp_macro_0
-TWiddle1/Twiddle_2TW2_RAMI
-:Series_recombination_loop/DFT_TD_DSPs[6].DFT_TD_DSP/firstIdsp_macro_0I
-:Series_recombination_loop/DFT_TD_DSPs[5].DFT_TD_DSP/firstIdsp_macro_0H
-9Series_recombination_loop/DFT_TD_DSPs[4].DFT_TD_DSP/firstdsp_macro_0%
-DFTBD_RAMs/DFTBD_RAMI1DFTBD_MEM1II
-:Series_recombination_loop/DFT_TD_DSPs[4].DFT_TD_DSP/firstIdsp_macro_0%
-DFTBD_RAMs/DFTBD_RAMI2DFTBD_MEM2IÖ
-synth_design
-isIncremental0
-Runtime2
-Threads used2Y
-argsQ-verilog_define default::[not_specified] -top  fpga_top -part  xc7a35ticsg324-1L 
-resynthPerc0.00
-Cputime2
-blackBoxPercinf
-	directive ù
-synth_design_metrics$
-mismatchedAddSubOperatorWidths-1
-lowMaxFanout-1
-NumUnregisteredPorts0
-caseNotFullNoDefault-1
-	smallSrls-1
-srlsWithResetLogic-1
-shallowRAMWithAttribute-1
-hierMFO0
-bigRAMs-1
-NetsWithMixedFanouts-1
-DSPsWithKeep0
-RQS_Results

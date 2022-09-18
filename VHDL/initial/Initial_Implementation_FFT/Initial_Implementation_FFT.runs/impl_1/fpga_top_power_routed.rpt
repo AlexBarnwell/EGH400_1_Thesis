@@ -1,0 +1,203 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
+| Date             : Sun Sep 18 11:11:33 2022
+| Host             : DESKTOP-BDA8VGJ running 64-bit major release  (build 9200)
+| Command          : report_power -file fpga_top_power_routed.rpt -pb fpga_top_power_summary_routed.pb -rpx fpga_top_power_routed.rpx
+| Design           : fpga_top
+| Device           : xc7a35ticsg324-1L
+| Design State     : routed
+| Grade            : industrial
+| Process          : typical
+| Characterization : Production
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+
+1. Summary
+----------
+
++--------------------------+--------------+
+| Total On-Chip Power (W)  | 0.429        |
+| Design Power Budget (W)  | Unspecified* |
+| Power Budget Margin (W)  | NA           |
+| Dynamic (W)              | 0.370        |
+| Device Static (W)        | 0.059        |
+| Effective TJA (C/W)      | 4.8          |
+| Max Ambient (C)          | 97.9         |
+| Junction Temperature (C) | 27.1         |
+| Confidence Level         | Medium       |
+| Setting File             | ---          |
+| Simulation Activity File | ---          |
+| Design Nets Matched      | NA           |
++--------------------------+--------------+
+* Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
+
+
+1.1 On-Chip Components
+----------------------
+
++----------------+-----------+----------+-----------+-----------------+
+| On-Chip        | Power (W) | Used     | Available | Utilization (%) |
++----------------+-----------+----------+-----------+-----------------+
+| Clocks         |     0.027 |        8 |       --- |             --- |
+| Slice Logic    |     0.062 |    21801 |       --- |             --- |
+|   LUT as Logic |     0.059 |     6833 |     20800 |           32.85 |
+|   CARRY4       |     0.002 |      425 |      8150 |            5.21 |
+|   Register     |    <0.001 |    12432 |     41600 |           29.88 |
+|   F7/F8 Muxes  |    <0.001 |     1684 |     32600 |            5.17 |
+|   Others       |     0.000 |       65 |       --- |             --- |
+| Signals        |     0.089 |    17431 |       --- |             --- |
+| Block RAM      |     0.050 |        9 |        50 |           18.00 |
+| MMCM           |     0.122 |        1 |         5 |           20.00 |
+| DSPs           |     0.019 |       12 |        90 |           13.33 |
+| I/O            |    <0.001 |        1 |       210 |            0.48 |
+| Static Power   |     0.059 |          |           |                 |
+| Total          |     0.429 |          |           |                 |
++----------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
+| Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
++-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
+| Vccint    |       0.950 |     0.263 |       0.256 |      0.007 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.079 |       0.068 |      0.011 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vccbram   |       0.950 |     0.005 |       0.004 |      0.000 |       NA    | Unspecified | NA         |
+| MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vccadc    |       1.800 |     0.018 |       0.000 |      0.018 |       NA    | Unspecified | NA         |
++-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                        | Action                                                                                                     |
++-----------------------------+------------+------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                               |                                                                                                            |
+| Clock nodes activity        | High       | User specified more than 95% of clocks         |                                                                                                            |
+| I/O nodes activity          | High       | User specified more than 95% of inputs         |                                                                                                            |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
+| Device models               | High       | Device models are Production                   |                                                                                                            |
+|                             |            |                                                |                                                                                                            |
+| Overall confidence level    | Medium     |                                                |                                                                                                            |
++-----------------------------+------------+------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+--------------------------+
+| Ambient Temp (C)      | 25.0                     |
+| ThetaJA (C/W)         | 4.8                      |
+| Airflow (LFM)         | 250                      |
+| Heat Sink             | medium (Medium Profile)  |
+| ThetaSA (C/W)         | 4.6                      |
+| Board Selection       | medium (10"x10")         |
+| # of Board Layers     | 12to15 (12 to 15 Layers) |
+| Board Temperature (C) | 25.0                     |
++-----------------------+--------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++-------------------+----------------------------+-----------------+
+| Clock             | Domain                     | Constraint (ns) |
++-------------------+----------------------------+-----------------+
+| clk_100M          | clk_100M                   |            10.0 |
+| clk_sys_CLK_IP    | CLOCK/inst/clk_sys_CLK_IP  |             6.3 |
+| clk_sys_CLK_IP_1  | CLOCK/inst/clk_sys_CLK_IP  |             6.3 |
+| clkfbout_CLK_IP   | CLOCK/inst/clkfbout_CLK_IP |            10.0 |
+| clkfbout_CLK_IP_1 | CLOCK/inst/clkfbout_CLK_IP |            10.0 |
+| sys_clk_pin       | clk_100M                   |            10.0 |
++-------------------+----------------------------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++-------------------------------+-----------+
+| Name                          | Power (W) |
++-------------------------------+-----------+
+| fpga_top                      |     0.370 |
+|   CLOCK                       |     0.123 |
+|     inst                      |     0.123 |
+|   DFTBD_RAMs                  |     0.065 |
+|     DFTBD_RAM1                |     0.003 |
+|       U0                      |     0.003 |
+|     DFTBD_RAM2                |     0.003 |
+|       U0                      |     0.003 |
+|     DFTBD_RAM3                |     0.003 |
+|       U0                      |     0.003 |
+|     DFTBD_RAM4                |     0.003 |
+|       U0                      |     0.003 |
+|     DFTBD_RAM5                |     0.003 |
+|       U0                      |     0.003 |
+|     DFTBD_RAM6                |     0.003 |
+|       U0                      |     0.003 |
+|     DFTBD_RAM7                |     0.003 |
+|       U0                      |     0.003 |
+|     DFTBD_RAM8                |     0.003 |
+|       U0                      |     0.003 |
+|     DFTBD_RAMI1               |     0.003 |
+|       U0                      |     0.003 |
+|     DFTBD_RAMI2               |     0.003 |
+|       U0                      |     0.003 |
+|     DFTBD_RAMI3               |     0.003 |
+|       U0                      |     0.003 |
+|     DFTBD_RAMI4               |     0.003 |
+|       U0                      |     0.003 |
+|     DFTBD_RAMI5               |     0.003 |
+|       U0                      |     0.003 |
+|     DFTBD_RAMI6               |     0.003 |
+|       U0                      |     0.003 |
+|     DFTBD_RAMI7               |     0.003 |
+|       U0                      |     0.003 |
+|     DFTBD_RAMI8               |     0.003 |
+|       U0                      |     0.003 |
+|   Series_recombination_loop   |     0.143 |
+|     DFT_TD_DSPs[1].DFT_TD_DSP |     0.072 |
+|       first                   |     0.004 |
+|       firstI                  |     0.005 |
+|     DFT_TD_DSPs[2].DFT_TD_DSP |     0.070 |
+|       first                   |     0.003 |
+|       firstI                  |     0.005 |
+|   TWiddle1                    |     0.006 |
+|     Twiddle_1                 |     0.003 |
+|       U0                      |     0.003 |
+|     Twiddle_2                 |     0.003 |
+|       U0                      |     0.003 |
+|   inputs                      |     0.033 |
++-------------------------------+-----------+
+
+
