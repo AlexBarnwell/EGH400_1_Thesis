@@ -8,8 +8,8 @@ L=256;
 P=16;
 DFTD=20;
 TWD = 15;
-parallel = 1;
-FILE_read= "C:\FPGA\projects\pdmfft\vivado_project\pdfmfft.sim\sim_1\behav\xsim\output_file.txt";
+parallel = 2;
+FILE_read= "..\sim\output_file.txt";
 %bitstream = zeros(1,N);
 
 rng(Seed,'twister') % get the RNG seed
@@ -19,7 +19,7 @@ bitstream=round(rand(1,N)); % set bitstream
 %bitstream=mod((1:length(bitstream))+1,2);
 %bitstream(end) =0;
 char_bitstream=(char(bitstream+48)); % rplace this line with a text file write
-file="C:\FPGA\projects\pdmfft\vivado_project\pdfmfft.sim\sim_1\behav\xsim\input_file.txt";
+file="..\sim\input_file.txt";
 fid=fopen(file,'w');
 
 for ii=1:(length(bitstream))

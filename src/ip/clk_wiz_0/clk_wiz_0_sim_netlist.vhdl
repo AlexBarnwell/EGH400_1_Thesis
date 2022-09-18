@@ -1,10 +1,10 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
--- Date        : Sun Sep 18 14:48:32 2022
--- Host        : fraser-desktop running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top clk_wiz_0 -prefix
---               clk_wiz_0_ clk_wiz_0_sim_netlist.vhdl
+-- Date        : Sun Sep 18 16:45:55 2022
+-- Host        : DESKTOP-BDA8VGJ running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode funcsim
+--               c:/REPOS/EGH400_1/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0_sim_netlist.vhdl
 -- Design      : clk_wiz_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -14,16 +14,16 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity clk_wiz_0_clk_wiz_0_clk_wiz is
+entity clk_wiz_0_clk_wiz is
   port (
     clk_sys : out STD_LOGIC;
     reset : in STD_LOGIC;
     locked : out STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
-end clk_wiz_0_clk_wiz_0_clk_wiz;
+end clk_wiz_0_clk_wiz;
 
-architecture STRUCTURE of clk_wiz_0_clk_wiz_0_clk_wiz is
+architecture STRUCTURE of clk_wiz_0_clk_wiz is
   signal clk_in1_clk_wiz_0 : STD_LOGIC;
   signal clk_sys_clk_wiz_0 : STD_LOGIC;
   signal clkfbout_buf_clk_wiz_0 : STD_LOGIC;
@@ -82,7 +82,7 @@ mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
       CLKFBOUT_USE_FINE_PS => false,
       CLKIN1_PERIOD => 10.000000,
       CLKIN2_PERIOD => 0.000000,
-      CLKOUT0_DIVIDE_F => 10.000000,
+      CLKOUT0_DIVIDE_F => 6.250000,
       CLKOUT0_DUTY_CYCLE => 0.500000,
       CLKOUT0_PHASE => 0.000000,
       CLKOUT0_USE_FINE_PS => false,
@@ -178,7 +178,7 @@ end clk_wiz_0;
 
 architecture STRUCTURE of clk_wiz_0 is
 begin
-inst: entity work.clk_wiz_0_clk_wiz_0_clk_wiz
+inst: entity work.clk_wiz_0_clk_wiz
      port map (
       clk_in1 => clk_in1,
       clk_sys => clk_sys,

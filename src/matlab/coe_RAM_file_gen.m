@@ -21,8 +21,8 @@ for ii=1:8
 bin=int2bin(LUTRR(:,ii),DFTBD_size)
 %file=[num2str(ii)
 %open file identifier
-file=sprintf('DFT_values_%d.coe',ii);
-% file=['VHDL\initial\Initial_Implementation_FFT\Initial_Implementation_FFT.srcs\sources_1\ip\' file];
+file=sprintf('bd_ram_r%d.coe',ii);
+file=['..\coeff\' file];
 fid=fopen(file,'w');
 
     %read the file name as string including delimiters and next lines
@@ -49,8 +49,8 @@ for ii=1:8
 bin=int2bin(LUTII(:,ii),DFTBD_size)
 %file=[num2str(ii)
 %open file identifier
-file=sprintf('DFT_values _%dI.coe',ii);
-file=['VHDL\initial\Initial_Implementation_FFT\Initial_Implementation_FFT.srcs\sources_1\ip\' file];
+file=sprintf('bd_ram_i%d.coe',ii);
+file=['..\coeff\' file];
 fid=fopen(file,'w');
 
     %read the file name as string including delimiters and next lines
@@ -81,7 +81,7 @@ TWbin2((ii*16+1):(ii+1)*16,(1+jj*TW_size):TW_size*(1+jj))= TWbin(1+(ii*parallel+
     end
 end
 TWbin2=char(TWbin2);
-fileTW= 'VHDL\initial\Initial_Implementation_FFT\Initial_Implementation_FFT.srcs\sources_1\ip\TW_values.coe';
+fileTW='..\coeff\tw_ram_cos.coe';
 fid=fopen(fileTW,'w');
 fprintf(fid,'memory_initialization_radix=2;\n');
     fprintf(fid,'memory_initialization_vector=\n');
@@ -95,7 +95,7 @@ fclose(fid);
 
 TW2r=round(2*TW2.*(2.^TWD));
 TW2bin=int2bin(TW2r,TW_size);
-fileTW2= 'VHDL\initial\Initial_Implementation_FFT\Initial_Implementation_FFT.srcs\sources_1\ip\TW2_values.coe';
+fileTW2= '..\coeff\tw_ram_sin.coe';
 
 
 TW2bin2=zeros((maxb-minb)*P/parallel,TW_size*parallel);

@@ -42,11 +42,11 @@ entity fpga_top_tb is
         G_DATA_WIDTH    : INTEGER := 25; -- data width of output
         G_DATA_WIDTH_TW    : INTEGER := 18; --  data with of TWiddle
         G_DECIMAL_WIDTH : integer := 20;
-        G_PARALLEL_TD : integer := 1;
+        G_PARALLEL_TD : integer := 2;
         G_BYTE_SIZE : Integer := 8192;
         G_RADIX : integer := 16;
         G_DFTBD_B : integer := 2;
-        G_MCLK_PRESCALER : integer := 15;
+        G_MCLK_PRESCALER : integer := 40;
         G_MIN_BANK : integer := 0;
         G_MAX_BANK : integer := 16; -- 16*16 =256
         G_DECIMAL_WIDTH_TW : integer := 15 -- decimal precision 
@@ -206,7 +206,7 @@ begin
 
     file_save : process( write_flag)
 
-        file test_vector      : text open write_mode is "output_file.txt";
+        file test_vector      : text open write_mode is "../../../../../src/sim/output_file.txt";
         variable row_write          : line;  -- the row variable
 
     begin
@@ -236,7 +236,7 @@ begin
 
 
     file_write : process (MIC_clock,RST)
-        file test_vector      : text open read_mode is "input_file.txt";
+        file test_vector      : text open read_mode is "../../../../../src/sim/input_file.txt";
         variable row_read          : line;  -- the row variable
         variable v_data_read : bit := '0';
     begin

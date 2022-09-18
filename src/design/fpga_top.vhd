@@ -16,15 +16,15 @@ entity fpga_top is
 generic (
         G_DATA_WIDTH    : INTEGER := 25; -- data width of DFTBD
         G_DATA_WIDTH_TW    : INTEGER := 18; --  data with of TWiddle
-        G_DECIMAL_WIDTH : integer := 15; -- decimal position (x shifts away from before 0th bit)
-        G_PARALLEL_TD : integer := 1;
+        G_DECIMAL_WIDTH : integer := 20; -- decimal position (x shifts away from before 0th bit)
+        G_PARALLEL_TD : integer := 2;
         G_BYTE_SIZE : Integer := 8192;
         G_RADIX : integer := 16;
         G_DFTBD_B : integer := 2;
         G_MCLK_PRESCALER : integer := 40;
         G_MIN_BANK : integer := 0;
         G_MAX_BANK : integer := 16; -- 16*16 =256
-        G_DECIMAL_WIDTH_TW : integer := 13 -- decimal precision 
+        G_DECIMAL_WIDTH_TW : integer := 15 -- decimal precision 
     );
     port(
         clk_100M  : in  STD_LOGIC;

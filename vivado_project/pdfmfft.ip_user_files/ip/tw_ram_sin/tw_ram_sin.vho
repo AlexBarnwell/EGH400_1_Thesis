@@ -53,8 +53,8 @@
 COMPONENT tw_ram_sin
   PORT (
     clka : IN STD_LOGIC;
-    addra : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-    douta : OUT STD_LOGIC_VECTOR(17 DOWNTO 0) 
+    addra : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
+    douta : OUT STD_LOGIC_VECTOR(35 DOWNTO 0) 
   );
 END COMPONENT;
 -- COMP_TAG_END ------ End COMPONENT Declaration ------------

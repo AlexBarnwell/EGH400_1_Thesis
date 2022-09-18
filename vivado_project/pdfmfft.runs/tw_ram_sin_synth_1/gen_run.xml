@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="tw_ram_sin_synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1663477372">
+<GenRun Id="tw_ram_sin_synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1663483383">
   <File Type="PA-TCL" Name="tw_ram_sin.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="tw_ram_sin_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="tw_ram_sin_reports.tcl"/>
@@ -42,9 +42,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>
