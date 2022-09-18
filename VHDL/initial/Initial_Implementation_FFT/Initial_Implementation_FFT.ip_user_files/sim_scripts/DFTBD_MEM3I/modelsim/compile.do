@@ -10,7 +10,6 @@ vmap blk_mem_gen_v8_4_5 modelsim_lib/msim/blk_mem_gen_v8_4_5
 vmap xil_defaultlib modelsim_lib/msim/xil_defaultlib
 
 vlog -work xpm  -incr -mfcu -sv \
-"C:/Xilinx/Vivado/2022.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
 "C:/Xilinx/Vivado/2022.1/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
 
 vcom -work xpm  -93 \
@@ -21,6 +20,7 @@ vlog -work blk_mem_gen_v8_4_5  -incr -mfcu \
 
 vlog -work xil_defaultlib  -incr -mfcu \
 "../../../../Initial_Implementation_FFT.gen/sources_1/ip/DFTBD_MEM3I/sim/DFTBD_MEM3I.v" \
+
 
 vlog -work xil_defaultlib \
 "glbl.v"
