@@ -17,11 +17,11 @@ generic (
         G_DATA_WIDTH    : INTEGER := 25; -- data width of DFTBD
         G_DATA_WIDTH_TW    : INTEGER := 18; --  data with of TWiddle
         G_DECIMAL_WIDTH : integer := 15; -- decimal position (x shifts away from before 0th bit)
-        G_PARALLEL_TD : integer := 8;
+        G_PARALLEL_TD : integer := 2;
         G_BYTE_SIZE : Integer := 8192;
         G_RADIX : integer := 16;
         G_DFTBD_B : integer := 2;
-        G_MCLK_PRESCALER : integer := 25;
+        G_MCLK_PRESCALER : integer := 40;
         G_MIN_BANK : integer := 0;
         G_MAX_BANK : integer := 16; -- 16*16 =256
         G_DECIMAL_WIDTH_TW : integer := 13 -- decimal precision 
@@ -44,12 +44,12 @@ architecture RTL of fpga_top is
 
     signal nrst : std_logic;
 
-    component clk_wiz_0
+    component CLK_IP
         port
 (-- Clock in ports
         -- Clock out ports
             clk_sys          : out    std_logic;
-           -- clk_mic          : out    std_logic;
+         --   clk_mic          : out    std_logic;
             -- Status and control signals
             reset             : in     std_logic;
             locked            : out    std_logic;
@@ -58,7 +58,7 @@ architecture RTL of fpga_top is
     end component;
 
 
---asdsadsada
+
 
 component  Control_TD is
     generic (
@@ -178,7 +178,7 @@ end component ;
     
     signal  FFT_outR : STD_LOGIC_VECTOR   ((G_DATA_WIDTH+G_DATA_WIDTH_TW)*G_PARALLEL_TD-1 downto 0 ); -- outputs of the FFT
     signal  FFT_outI : STD_LOGIC_VECTOR  ((G_DATA_WIDTH+G_DATA_WIDTH_TW)*G_PARALLEL_TD-1 downto 0 );
-    
+    signal RSTbuff : std_logic := '1';
 
 
     signal clock_count : integer :=0;
@@ -188,12 +188,12 @@ end component ;
     
 begin
 
-    CLOCK : clk_wiz_0
+    CLOCK : CLK_IP
         port map(
-            reset => RST,
+            reset => RSTbuff,
             clk_in1  => clk_100M,
             clk_sys => clk_sys
-            --clk_mic => clk_mic
+          --  clk_mic => clk_mic
         );
 
 
@@ -205,12 +205,12 @@ begin
     if nRST = '0' then
     clk_mic <= '0';
     clock_count <= 0;
-    else
-    clock_count <=clock_count+1;
-    
+    elsif rising_edge(clk_sys) then
     if clock_count = G_MCLK_PRESCALER/2-1 then -- decrease time to 1MHz temp
     clock_count <= 0;
     clk_mic <= not clk_mic;
+    else
+        clock_count <=clock_count+1;
     end if;
     end if;
     
@@ -326,7 +326,7 @@ generic map (
     outI<= FFT_outI ;
     outR <= FFT_outR;
 
-
+    RSTbuff<= RST;
 
 
 end RTL;
