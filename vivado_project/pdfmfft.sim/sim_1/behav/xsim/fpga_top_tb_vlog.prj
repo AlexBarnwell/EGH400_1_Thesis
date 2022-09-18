@@ -1,0 +1,28 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../../src/ip/clk_wiz_0" \
+"../../../../../src/ip/tw_ram_sin/sim/tw_ram_sin.v" \
+"../../../../../src/ip/tw_ram_cos/sim/tw_ram_cos.v" \
+"../../../../../src/ip/bd_ram_i8/sim/bd_ram_i8.v" \
+"../../../../../src/ip/bd_ram_i7/sim/bd_ram_i7.v" \
+"../../../../../src/ip/bd_ram_i6/sim/bd_ram_i6.v" \
+"../../../../../src/ip/bd_ram_i5/sim/bd_ram_i5.v" \
+"../../../../../src/ip/bd_ram_i4/sim/bd_ram_i4.v" \
+"../../../../../src/ip/bd_ram_i3/sim/bd_ram_i3.v" \
+"../../../../../src/ip/bd_ram_i2/sim/bd_ram_i2.v" \
+"../../../../../src/ip/bd_ram_i1/sim/bd_ram_i1.v" \
+"../../../../../src/ip/bd_ram_r8/sim/bd_ram_r8.v" \
+"../../../../../src/ip/bd_ram_r7/sim/bd_ram_r7.v" \
+"../../../../../src/ip/bd_ram_r6/sim/bd_ram_r6.v" \
+"../../../../../src/ip/bd_ram_r5/sim/bd_ram_r5.v" \
+"../../../../../src/ip/bd_ram_r4/sim/bd_ram_r4.v" \
+"../../../../../src/ip/bd_ram_r3/sim/bd_ram_r3.v" \
+"../../../../../src/ip/bd_ram_r2/sim/bd_ram_r2.v" \
+"../../../../../src/ip/bd_ram_r1/sim/bd_ram_r1.v" \
+"../../../../../src/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" \
+"../../../../../src/ip/clk_wiz_0/clk_wiz_0.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,2 @@
+bd_ram_r2.v,verilog,xil_defaultlib,../../../../../src/ip/bd_ram_r2/sim/bd_ram_r2.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v
