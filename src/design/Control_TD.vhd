@@ -360,7 +360,7 @@ DFT_TD_DSPs:
                         --FFT_ready <= '0';
                         count_delay<= count_delay+1;
 
-                        if count_delay = "1001" then
+                        if count_delay = "1010" then
                             --turn_on <= '1';
                             count_delay <= (others => '0');
                             FFT_begin <= '0';

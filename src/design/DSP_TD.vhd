@@ -11,7 +11,8 @@ entity DSP_TD is
         G_DATA_WIDTH    : INTEGER := 25; -- data width of output (others)
         G_DATA_WIDTH_TW    : INTEGER := 18; -- data width of TW
         G_DECIMAL_WIDTH : integer := 13; -- decimal precision
-        G_DECIMAL_WIDTH_TW : integer := 13 -- decimal precision
+        G_DECIMAL_WIDTH_TW : integer := 13; -- decimal precision
+        G_DSP_ADDER_REDUC : integer := 0 -- the reduction in the size of (C) of the DSP from the full 43 bit
         --POUT_size : integer := 37
 
     );
@@ -53,7 +54,7 @@ end DSP_TD;
 architecture behavioral of DSP_TD is
 
     signal PPsig : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0):= (others => '0');
-    signal  P2sig : std_logic_vector (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0):= (others => '0');
+    signal  P2sig : std_logic_vector (G_DATA_WIDTH+G_DATA_WIDTH_TW-1-G_DSP_ADDER_REDUC downto 0):= (others => '0');
     signal  PPsigs : signed (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
     signal PPsig2 : std_logic_vector  (G_DATA_WIDTH-1 downto 0) := (others => '0');
     signal  temp : std_logic_vector (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
@@ -62,7 +63,7 @@ architecture behavioral of DSP_TD is
 
 
     signal PPsigI : STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0):= (others => '0');
-    signal  P2sigI : std_logic_vector (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0):= (others => '0');
+    signal  P2sigI : std_logic_vector (G_DATA_WIDTH+G_DATA_WIDTH_TW-1-G_DSP_ADDER_REDUC downto 0):= (others => '0');
     signal  PPsigsI : signed (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
     signal PPsig2I : std_logic_vector  (G_DATA_WIDTH-1 downto 0) := (others => '0');
     signal  tempI : std_logic_vector (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
@@ -227,7 +228,7 @@ architecture behavioral of DSP_TD is
             SCLR : IN STD_LOGIC;
             A : IN STD_LOGIC_VECTOR(G_DATA_WIDTH-1 DOWNTO 0);
             B : IN STD_LOGIC_VECTOR(G_DATA_WIDTH_TW-1 DOWNTO 0);
-            C : IN STD_LOGIC_VECTOR(G_DATA_WIDTH_TW +G_DATA_WIDTH-1 DOWNTO 0);
+            C : IN STD_LOGIC_VECTOR(G_DATA_WIDTH_TW +G_DATA_WIDTH-1-G_DSP_ADDER_REDUC DOWNTO 0);
             P : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH_TW +G_DATA_WIDTH DOWNTO 0)
         );
     END COMPONENT;
@@ -515,15 +516,15 @@ begin
     process (clk,nRST)
     begin
         if ((nRst = '0') or (DFT_RESET = '0'))then
-           -- temp2<= (others => '0');
-           -- temp2I<= (others => '0');
+        --    temp2<= (others => '0');
+        --    temp2I<= (others => '0');
             DFTsIS<= (others => '0');
             DFTss<= (others => '0');
             Pouts <= (others => '0');
             PoutIs <= (others => '0');
         elsif rising_edge(clk) then
-            --temp2<= temp;
-         --   temp2I<= tempI;
+        --     temp2<= temp;
+        --    temp2I<= tempI;
             DFTsIS<= DFTsI;
             DFTss<= DFTs;
             Pouts <= unPPsig;
@@ -548,8 +549,11 @@ begin
     ovf_checkI(2) <= PoutI(G_DATA_WIDTH+G_DATA_WIDTH_TW);
     ovf_checkR(2) <= Pout(G_DATA_WIDTH+G_DATA_WIDTH_TW);
     --TWt2<= std_logic_vector (2*signed(TW2t));
-    P2sig(G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0)<= temp(G_DATA_WIDTH+G_DATA_WIDTH_TW-1+rshift downto rshift ); -- 
-    P2sigI(G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0)<=tempI(G_DATA_WIDTH+G_DATA_WIDTH_TW-1+rshifti downto rshifti );
+    -- P2sig(G_DATA_WIDTH+G_DATA_WIDTH_TW-1-G_DSP_ADDER_REDUC downto 0)<= temp(G_DATA_WIDTH+G_DATA_WIDTH_TW-1+rshift downto rshift ); -- 
+    -- P2sigI(G_DATA_WIDTH+G_DATA_WIDTH_TW-1-G_DSP_ADDER_REDUC downto 0)<=tempI(G_DATA_WIDTH+G_DATA_WIDTH_TW-1+rshifti downto rshifti );
+
+    P2sig(G_DATA_WIDTH+G_DATA_WIDTH_TW-1-G_DSP_ADDER_REDUC downto 0)<= temp(G_DATA_WIDTH+G_DATA_WIDTH_TW-1+rshift downto rshift ); -- 
+    P2sigI(G_DATA_WIDTH+G_DATA_WIDTH_TW-1-G_DSP_ADDER_REDUC downto 0)<=tempI(G_DATA_WIDTH+G_DATA_WIDTH_TW-1+rshifti downto rshifti );
 
     coss2(G_DATA_WIDTH_TW-1 downto 0)<=TWin;-- --reformates the inputs size by padding on the right side 
     coss(G_DATA_WIDTH_TW-3 downto 0)<= coss2(G_DATA_WIDTH_TW-2 downto 1);
@@ -588,13 +592,22 @@ begin
 
    -- PPsigs<= signed(unPPsig); --
     --DFT1sI(G_DATA_WIDTH+G_DATA_WIDTH_TW downto G_DECIMAL_WIDTH )<=resize(signed(DFTinI),G_DATA_WIDTH+G_DATA_WIDTH_TW-G_DECIMAL_WIDTH);--
+
+
     DFTsI<= shift_right(DFT1sI,orderi+rshifti);
     DFTs<= shift_right (DFT1s,order+rshift);
+
+    -- DFTsI<= shift_right(signed(DFT1sI),orderi);
+    -- DFTs<= shift_right(signed(DFT1s),order);
 
    -- PPsigsI<=signed(unPPsigI); --
 
     temp<=std_logic_vector(DFTss-Pouts);-- same size as Pout
     tempI<=std_logic_vector(DFTsIs-PoutIs);
+
+    -- temp<=std_logic_vector(shift_right(DFTs-unPPsig,rshift));-- same size as Pout
+    -- tempI<=std_logic_vector(shift_right(DFTsI-unPPsigI,rshiftI));
+
     --PP<=(Pout(G_DATA_WIDTH+G_DECIMAL_WIDTH-1 downto G_DECIMAL_WIDTH));--
    -- PP<= ppsig;
     --count<=count2;

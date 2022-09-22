@@ -1,2 +1,0 @@
-tw_ram_sin.v,verilog,xil_defaultlib,../../../../../src/ip/tw_ram_sin/sim/tw_ram_sin.v,
-glbl.v,Verilog,xil_defaultlib,glbl.v

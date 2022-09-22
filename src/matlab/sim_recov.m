@@ -28,7 +28,7 @@ fprintf(fid,'\n');
 end
 %fprintf(fid,char_bitstream(end));
 
-for ii=1:10000zz
+for ii=1:10000
    fprintf(fid,'0\n'); % this si file buffer
 end
 

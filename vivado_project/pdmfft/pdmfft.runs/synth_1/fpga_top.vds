@@ -1,0 +1,625 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Thu Sep 22 21:05:17 2022
+# Process ID: 25532
+# Current directory: C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1
+# Command line: vivado.exe -log fpga_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fpga_top.tcl
+# Log file: C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/fpga_top.vds
+# Journal file: C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1\vivado.jou
+# Running On: DESKTOP-BDA8VGJ, OS: Windows, CPU Frequency: 3600 MHz, CPU Physical cores: 8, Host memory: 25599 MB
+#-----------------------------------------------------------
+source fpga_top.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/synth_1/fpga_top.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/synth_1/fpga_top.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top fpga_top -part xc7a35ticsg324-1L -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: [Device 21-403] Loading part xc7a35ticsg324-1L
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 36180
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1291.043 ; gain = 0.000
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-9871] overwriting existing primary unit 'data_types' [C:/EGH400_1_Thesis/src/design/data_types.vhd:6]
+WARNING: [Synth 8-9112] actual for formal port 'sclr' is neither a static name nor a globally static expression [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:243]
+WARNING: [Synth 8-9112] actual for formal port 'sclr' is neither a static name nor a globally static expression [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:253]
+INFO: [Synth 8-638] synthesizing module 'fpga_top' [C:/EGH400_1_Thesis/src/design/fpga_top.vhd:43]
+INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/clk_wiz_0_stub.vhdl:5' bound to instance 'CLOCK' of component 'clk_wiz_0' [C:/EGH400_1_Thesis/src/design/fpga_top.vhd:191]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/clk_wiz_0_stub.vhdl:15]
+	Parameter G_DATA_WIDTH bound to: 25 - type: integer 
+	Parameter G_DECIMAL_WIDTH bound to: 20 - type: integer 
+	Parameter G_RADIX bound to: 16 - type: integer 
+	Parameter G_BYTE_SIZE bound to: 8192 - type: integer 
+	Parameter G_DFTBD_B bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'DFTBD_RAM' declared at 'C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:13' bound to instance 'DFTBD_RAMs' of component 'DFTBD_RAM' [C:/EGH400_1_Thesis/src/design/fpga_top.vhd:223]
+INFO: [Synth 8-638] synthesizing module 'DFTBD_RAM' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:35]
+	Parameter G_DATA_WIDTH bound to: 25 - type: integer 
+	Parameter G_DECIMAL_WIDTH bound to: 20 - type: integer 
+	Parameter G_RADIX bound to: 16 - type: integer 
+	Parameter G_BYTE_SIZE bound to: 8192 - type: integer 
+	Parameter G_DFTBD_B bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'bd_ram_r1' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_r1_stub.vhdl:5' bound to instance 'DFTBD_RAM1' of component 'bd_ram_r1' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:236]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_r1' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_r1_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_r2' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_r2_stub.vhdl:5' bound to instance 'DFTBD_RAM2' of component 'bd_ram_r2' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:243]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_r2' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_r2_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_r3' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_r3_stub.vhdl:5' bound to instance 'DFTBD_RAM3' of component 'bd_ram_r3' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:250]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_r3' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_r3_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_r4' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_r4_stub.vhdl:5' bound to instance 'DFTBD_RAM4' of component 'bd_ram_r4' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:257]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_r4' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_r4_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_r5' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_r5_stub.vhdl:5' bound to instance 'DFTBD_RAM5' of component 'bd_ram_r5' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:264]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_r5' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_r5_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_r6' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_r6_stub.vhdl:5' bound to instance 'DFTBD_RAM6' of component 'bd_ram_r6' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:271]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_r6' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_r6_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_r7' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_r7_stub.vhdl:5' bound to instance 'DFTBD_RAM7' of component 'bd_ram_r7' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:278]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_r7' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_r7_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_r8' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_r8_stub.vhdl:5' bound to instance 'DFTBD_RAM8' of component 'bd_ram_r8' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:285]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_r8' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_r8_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_i1' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_i1_stub.vhdl:5' bound to instance 'DFTBD_RAMI1' of component 'bd_ram_i1' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:295]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_i1' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_i1_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_i2' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_i2_stub.vhdl:5' bound to instance 'DFTBD_RAMI2' of component 'bd_ram_i2' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:302]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_i2' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_i2_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_i3' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_i3_stub.vhdl:5' bound to instance 'DFTBD_RAMI3' of component 'bd_ram_i3' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:309]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_i3' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_i3_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_i4' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_i4_stub.vhdl:5' bound to instance 'DFTBD_RAMI4' of component 'bd_ram_i4' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:316]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_i4' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_i4_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_i5' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_i5_stub.vhdl:5' bound to instance 'DFTBD_RAMI5' of component 'bd_ram_i5' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:323]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_i5' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_i5_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_i6' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_i6_stub.vhdl:5' bound to instance 'DFTBD_RAMI6' of component 'bd_ram_i6' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:330]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_i6' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_i6_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_i7' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_i7_stub.vhdl:5' bound to instance 'DFTBD_RAMI7' of component 'bd_ram_i7' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:337]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_i7' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_i7_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_i8' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_i8_stub.vhdl:5' bound to instance 'DFTBD_RAMI8' of component 'bd_ram_i8' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:344]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_i8' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/bd_ram_i8_stub.vhdl:14]
+INFO: [Synth 8-256] done synthesizing module 'DFTBD_RAM' (0#1) [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:35]
+	Parameter G_DATA_WIDTH bound to: 25 - type: integer 
+	Parameter G_DATA_WIDTH_TW bound to: 18 - type: integer 
+	Parameter G_DECIMAL_WIDTH bound to: 20 - type: integer 
+	Parameter G_PARALLEL_TD bound to: 2 - type: integer 
+	Parameter G_BYTE_SIZE bound to: 8192 - type: integer 
+	Parameter G_RADIX bound to: 16 - type: integer 
+	Parameter G_MIN_BANK bound to: 0 - type: integer 
+	Parameter G_MAX_BANK bound to: 16 - type: integer 
+	Parameter G_DECIMAL_WIDTH_TW bound to: 15 - type: integer 
+INFO: [Synth 8-3491] module 'Control_TD' declared at 'C:/EGH400_1_Thesis/src/design/Control_TD.vhd:9' bound to instance 'Series_recombination_loop' of component 'Control_TD' [C:/EGH400_1_Thesis/src/design/fpga_top.vhd:244]
+INFO: [Synth 8-638] synthesizing module 'Control_TD' [C:/EGH400_1_Thesis/src/design/Control_TD.vhd:58]
+	Parameter G_DATA_WIDTH bound to: 25 - type: integer 
+	Parameter G_DATA_WIDTH_TW bound to: 18 - type: integer 
+	Parameter G_DECIMAL_WIDTH bound to: 20 - type: integer 
+	Parameter G_PARALLEL_TD bound to: 2 - type: integer 
+	Parameter G_BYTE_SIZE bound to: 8192 - type: integer 
+	Parameter G_RADIX bound to: 16 - type: integer 
+	Parameter G_MIN_BANK bound to: 0 - type: integer 
+	Parameter G_MAX_BANK bound to: 16 - type: integer 
+	Parameter G_DECIMAL_WIDTH_TW bound to: 15 - type: integer 
+	Parameter G_DATA_WIDTH bound to: 25 - type: integer 
+	Parameter G_DATA_WIDTH_TW bound to: 18 - type: integer 
+	Parameter G_DECIMAL_WIDTH bound to: 20 - type: integer 
+	Parameter G_DECIMAL_WIDTH_TW bound to: 15 - type: integer 
+INFO: [Synth 8-3491] module 'DSP_TD' declared at 'C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:9' bound to instance 'DFT_TD_DSP' of component 'DSP_TD' [C:/EGH400_1_Thesis/src/design/Control_TD.vhd:270]
+INFO: [Synth 8-638] synthesizing module 'DSP_TD' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:54]
+	Parameter G_DATA_WIDTH bound to: 25 - type: integer 
+	Parameter G_DATA_WIDTH_TW bound to: 18 - type: integer 
+	Parameter G_DECIMAL_WIDTH bound to: 20 - type: integer 
+	Parameter G_DECIMAL_WIDTH_TW bound to: 15 - type: integer 
+INFO: [Synth 8-3491] module 'dsp_macro_0' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/dsp_macro_0_stub.vhdl:5' bound to instance 'first' of component 'dsp_macro_0' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:240]
+INFO: [Synth 8-638] synthesizing module 'dsp_macro_0' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/dsp_macro_0_stub.vhdl:18]
+INFO: [Synth 8-3491] module 'dsp_macro_0' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/dsp_macro_0_stub.vhdl:5' bound to instance 'firstI' of component 'dsp_macro_0' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:250]
+WARNING: [Synth 8-614] signal 'DFT_RESET' is read in the process but is not in the sensitivity list [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:516]
+INFO: [Synth 8-256] done synthesizing module 'DSP_TD' (0#1) [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:54]
+WARNING: [Synth 8-7043] port width mismatch for port 'order_out': port width = 32, actual width = 7 (integer) [C:/EGH400_1_Thesis/src/design/Control_TD.vhd:301]
+	Parameter G_DATA_WIDTH bound to: 25 - type: integer 
+	Parameter G_DATA_WIDTH_TW bound to: 18 - type: integer 
+	Parameter G_DECIMAL_WIDTH bound to: 20 - type: integer 
+	Parameter G_DECIMAL_WIDTH_TW bound to: 15 - type: integer 
+INFO: [Synth 8-3491] module 'DSP_TD' declared at 'C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:9' bound to instance 'DFT_TD_DSP' of component 'DSP_TD' [C:/EGH400_1_Thesis/src/design/Control_TD.vhd:270]
+WARNING: [Synth 8-7043] port width mismatch for port 'order_out': port width = 32, actual width = 7 (integer) [C:/EGH400_1_Thesis/src/design/Control_TD.vhd:301]
+INFO: [Synth 8-256] done synthesizing module 'Control_TD' (0#1) [C:/EGH400_1_Thesis/src/design/Control_TD.vhd:58]
+	Parameter G_DATA_WIDTH_TW bound to: 18 - type: integer 
+	Parameter G_DECIMAL_WIDTH_TW bound to: 15 - type: integer 
+	Parameter G_PARALLEL_TD bound to: 2 - type: integer 
+	Parameter G_BYTE_SIZE bound to: 8192 - type: integer 
+	Parameter G_MIN_BANK bound to: 0 - type: integer 
+	Parameter G_MAX_BANK bound to: 16 - type: integer 
+	Parameter G_RADIX bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'Twiddle_factors' declared at 'C:/EGH400_1_Thesis/src/design/Twiddle_factors.vhd:39' bound to instance 'TWiddle1' of component 'Twiddle_factors' [C:/EGH400_1_Thesis/src/design/fpga_top.vhd:274]
+INFO: [Synth 8-638] synthesizing module 'Twiddle_factors' [C:/EGH400_1_Thesis/src/design/Twiddle_factors.vhd:61]
+	Parameter G_DATA_WIDTH_TW bound to: 18 - type: integer 
+	Parameter G_DECIMAL_WIDTH_TW bound to: 15 - type: integer 
+	Parameter G_PARALLEL_TD bound to: 2 - type: integer 
+	Parameter G_BYTE_SIZE bound to: 8192 - type: integer 
+	Parameter G_MIN_BANK bound to: 0 - type: integer 
+	Parameter G_MAX_BANK bound to: 16 - type: integer 
+	Parameter G_RADIX bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'tw_ram_cos' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/tw_ram_cos_stub.vhdl:5' bound to instance 'Twiddle_1' of component 'tw_ram_cos' [C:/EGH400_1_Thesis/src/design/Twiddle_factors.vhd:104]
+INFO: [Synth 8-638] synthesizing module 'tw_ram_cos' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/tw_ram_cos_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'tw_ram_sin' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/tw_ram_sin_stub.vhdl:5' bound to instance 'Twiddle_2' of component 'tw_ram_sin' [C:/EGH400_1_Thesis/src/design/Twiddle_factors.vhd:111]
+INFO: [Synth 8-638] synthesizing module 'tw_ram_sin' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-25532-DESKTOP-BDA8VGJ/realtime/tw_ram_sin_stub.vhdl:14]
+INFO: [Synth 8-256] done synthesizing module 'Twiddle_factors' (0#1) [C:/EGH400_1_Thesis/src/design/Twiddle_factors.vhd:61]
+	Parameter G_PARALLEL_TD bound to: 2 - type: integer 
+	Parameter G_BYTE_SIZE bound to: 8192 - type: integer 
+	Parameter G_RADIX bound to: 16 - type: integer 
+	Parameter G_DFTBD_B bound to: 2 - type: integer 
+	Parameter G_MIN_BANK bound to: 0 - type: integer 
+	Parameter G_MAX_BANK bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'shift_reg_input' declared at 'C:/EGH400_1_Thesis/src/design/shift_reg_input.vhd:10' bound to instance 'inputs' of component 'shift_reg_input' [C:/EGH400_1_Thesis/src/design/fpga_top.vhd:294]
+INFO: [Synth 8-638] synthesizing module 'shift_reg_input' [C:/EGH400_1_Thesis/src/design/shift_reg_input.vhd:37]
+	Parameter G_PARALLEL_TD bound to: 2 - type: integer 
+	Parameter G_BYTE_SIZE bound to: 8192 - type: integer 
+	Parameter G_RADIX bound to: 16 - type: integer 
+	Parameter G_DFTBD_B bound to: 2 - type: integer 
+	Parameter G_MIN_BANK bound to: 0 - type: integer 
+	Parameter G_MAX_BANK bound to: 16 - type: integer 
+WARNING: [Synth 8-614] signal 'read_en' is read in the process but is not in the sensitivity list [C:/EGH400_1_Thesis/src/design/shift_reg_input.vhd:100]
+INFO: [Synth 8-256] done synthesizing module 'shift_reg_input' (0#1) [C:/EGH400_1_Thesis/src/design/shift_reg_input.vhd:37]
+INFO: [Synth 8-256] done synthesizing module 'fpga_top' (0#1) [C:/EGH400_1_Thesis/src/design/fpga_top.vhd:43]
+WARNING: [Synth 8-6014] Unused sequential element rshift2_reg was removed.  [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:307]
+WARNING: [Synth 8-6014] Unused sequential element rshift2i_reg was removed.  [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:315]
+WARNING: [Synth 8-6014] Unused sequential element CE_reg was removed.  [C:/EGH400_1_Thesis/src/design/Control_TD.vhd:367]
+WARNING: [Synth 8-6014] Unused sequential element count2_2_reg was removed.  [C:/EGH400_1_Thesis/src/design/shift_reg_input.vhd:152]
+WARNING: [Synth 8-6014] Unused sequential element count2_3_reg was removed.  [C:/EGH400_1_Thesis/src/design/shift_reg_input.vhd:153]
+WARNING: [Synth 8-7129] Port TWin2[0] in module DSP_TD is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1313.949 ; gain = 22.906
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1313.949 ; gain = 22.906
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1313.949 ; gain = 22.906
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.178 . Memory (MB): peak = 1313.949 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'CLOCK'
+Finished Parsing XDC File [c:/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'CLOCK'
+Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_r1/bd_ram_r1/bd_ram_r1_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAM1'
+Finished Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_r1/bd_ram_r1/bd_ram_r1_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAM1'
+Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_r2/bd_ram_r2/bd_ram_r2_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAM2'
+Finished Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_r2/bd_ram_r2/bd_ram_r2_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAM2'
+Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_r3/bd_ram_r3/bd_ram_r3_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAM3'
+Finished Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_r3/bd_ram_r3/bd_ram_r3_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAM3'
+Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_r4/bd_ram_r4/bd_ram_r4_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAM4'
+Finished Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_r4/bd_ram_r4/bd_ram_r4_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAM4'
+Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_r5/bd_ram_r5/bd_ram_r5_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAM5'
+Finished Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_r5/bd_ram_r5/bd_ram_r5_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAM5'
+Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_r6/bd_ram_r6/bd_ram_r6_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAM6'
+Finished Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_r6/bd_ram_r6/bd_ram_r6_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAM6'
+Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_r7/bd_ram_r7/bd_ram_r7_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAM7'
+Finished Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_r7/bd_ram_r7/bd_ram_r7_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAM7'
+Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_r8/bd_ram_r8/bd_ram_r8_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAM8'
+Finished Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_r8/bd_ram_r8/bd_ram_r8_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAM8'
+Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_i1/bd_ram_i1/bd_ram_i1_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAMI1'
+Finished Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_i1/bd_ram_i1/bd_ram_i1_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAMI1'
+Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_i3/bd_ram_i3/bd_ram_i3_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAMI3'
+Finished Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_i3/bd_ram_i3/bd_ram_i3_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAMI3'
+Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_i4/bd_ram_i4/bd_ram_i4_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAMI4'
+Finished Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_i4/bd_ram_i4/bd_ram_i4_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAMI4'
+Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_i5/bd_ram_i5/bd_ram_i5_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAMI5'
+Finished Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_i5/bd_ram_i5/bd_ram_i5_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAMI5'
+Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_i6/bd_ram_i6/bd_ram_i6_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAMI6'
+Finished Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_i6/bd_ram_i6/bd_ram_i6_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAMI6'
+Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_i7/bd_ram_i7/bd_ram_i7_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAMI7'
+Finished Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_i7/bd_ram_i7/bd_ram_i7_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAMI7'
+Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_i8/bd_ram_i8/bd_ram_i8_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAMI8'
+Finished Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_i8/bd_ram_i8/bd_ram_i8_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAMI8'
+Parsing XDC File [c:/EGH400_1_Thesis/src/ip/dsp_macro_0/dsp_macro_0/dsp_macro_0_in_context.xdc] for cell 'Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/first'
+Finished Parsing XDC File [c:/EGH400_1_Thesis/src/ip/dsp_macro_0/dsp_macro_0/dsp_macro_0_in_context.xdc] for cell 'Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/first'
+Parsing XDC File [c:/EGH400_1_Thesis/src/ip/dsp_macro_0/dsp_macro_0/dsp_macro_0_in_context.xdc] for cell 'Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/firstI'
+Finished Parsing XDC File [c:/EGH400_1_Thesis/src/ip/dsp_macro_0/dsp_macro_0/dsp_macro_0_in_context.xdc] for cell 'Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/firstI'
+Parsing XDC File [c:/EGH400_1_Thesis/src/ip/dsp_macro_0/dsp_macro_0/dsp_macro_0_in_context.xdc] for cell 'Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/first'
+Finished Parsing XDC File [c:/EGH400_1_Thesis/src/ip/dsp_macro_0/dsp_macro_0/dsp_macro_0_in_context.xdc] for cell 'Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/first'
+Parsing XDC File [c:/EGH400_1_Thesis/src/ip/dsp_macro_0/dsp_macro_0/dsp_macro_0_in_context.xdc] for cell 'Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/firstI'
+Finished Parsing XDC File [c:/EGH400_1_Thesis/src/ip/dsp_macro_0/dsp_macro_0/dsp_macro_0_in_context.xdc] for cell 'Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/firstI'
+Parsing XDC File [c:/EGH400_1_Thesis/src/ip/tw_ram_sin/tw_ram_sin/tw_ram_sin_in_context.xdc] for cell 'TWiddle1/Twiddle_2'
+Finished Parsing XDC File [c:/EGH400_1_Thesis/src/ip/tw_ram_sin/tw_ram_sin/tw_ram_sin_in_context.xdc] for cell 'TWiddle1/Twiddle_2'
+Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_i2/bd_ram_i2/bd_ram_i2_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAMI2'
+Finished Parsing XDC File [c:/EGH400_1_Thesis/src/ip/bd_ram_i2/bd_ram_i2/bd_ram_i2_in_context.xdc] for cell 'DFTBD_RAMs/DFTBD_RAMI2'
+Parsing XDC File [c:/EGH400_1_Thesis/src/ip/tw_ram_cos/tw_ram_cos/tw_ram_cos_in_context.xdc] for cell 'TWiddle1/Twiddle_1'
+Finished Parsing XDC File [c:/EGH400_1_Thesis/src/ip/tw_ram_cos/tw_ram_cos/tw_ram_cos_in_context.xdc] for cell 'TWiddle1/Twiddle_1'
+Parsing XDC File [C:/EGH400_1_Thesis/src/constraints/arty.xdc]
+Finished Parsing XDC File [C:/EGH400_1_Thesis/src/constraints/arty.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/EGH400_1_Thesis/src/constraints/arty.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/fpga_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/fpga_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1384.336 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.154 . Memory (MB): peak = 1398.117 ; gain = 13.781
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1398.117 ; gain = 107.074
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35ticsg324-1L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1398.117 ; gain = 107.074
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for clk_100M. (constraint file  c:/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_100M. (constraint file  c:/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 4).
+Applied set_property KEEP_HIERARCHY = SOFT for CLOCK. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for DFTBD_RAMs/DFTBD_RAM1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for DFTBD_RAMs/DFTBD_RAM2. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for DFTBD_RAMs/DFTBD_RAM3. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for DFTBD_RAMs/DFTBD_RAM4. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for DFTBD_RAMs/DFTBD_RAM5. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for DFTBD_RAMs/DFTBD_RAM6. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for DFTBD_RAMs/DFTBD_RAM7. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for DFTBD_RAMs/DFTBD_RAM8. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for DFTBD_RAMs/DFTBD_RAMI1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for DFTBD_RAMs/DFTBD_RAMI3. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for DFTBD_RAMs/DFTBD_RAMI4. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for DFTBD_RAMs/DFTBD_RAMI5. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for DFTBD_RAMs/DFTBD_RAMI6. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for DFTBD_RAMs/DFTBD_RAMI7. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for DFTBD_RAMs/DFTBD_RAMI8. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for Series_recombination_loop/\DFT_TD_DSPs[1].DFT_TD_DSP /first. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for Series_recombination_loop/\DFT_TD_DSPs[2].DFT_TD_DSP /first. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for Series_recombination_loop/\DFT_TD_DSPs[1].DFT_TD_DSP /firstI. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for Series_recombination_loop/\DFT_TD_DSPs[2].DFT_TD_DSP /firstI. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for TWiddle1/Twiddle_2. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for DFTBD_RAMs/DFTBD_RAMI2. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for TWiddle1/Twiddle_1. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1398.117 ; gain = 107.074
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Control_TD'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   start |                              001 |                               00
+                     dft |                              010 |                               01
+                  finish |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'Control_TD'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1398.117 ; gain = 107.074
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   44 Bit       Adders := 4     
+	   3 Input   43 Bit       Adders := 6     
+	   2 Input   43 Bit       Adders := 2     
+	   2 Input   32 Bit       Adders := 13    
+	   3 Input   32 Bit       Adders := 2     
+	   2 Input   31 Bit       Adders := 4     
+	   2 Input   25 Bit       Adders := 14    
+	   2 Input   10 Bit       Adders := 1     
+	   2 Input    7 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 2     
+	   2 Input    3 Bit       Adders := 2     
++---Registers : 
+	             8192 Bit    Registers := 1     
+	             2048 Bit    Registers := 1     
+	               44 Bit    Registers := 8     
+	               43 Bit    Registers := 28    
+	               36 Bit    Registers := 6     
+	               32 Bit    Registers := 17    
+	               25 Bit    Registers := 14    
+	               18 Bit    Registers := 8     
+	               16 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
+	                7 Bit    Registers := 3     
+	                6 Bit    Registers := 8     
+	                4 Bit    Registers := 3     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 12    
++---Muxes : 
+	   2 Input   44 Bit        Muxes := 4     
+	   3 Input   32 Bit        Muxes := 9     
+	   2 Input   32 Bit        Muxes := 8     
+	   2 Input    4 Bit        Muxes := 1     
+	   3 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 4     
+	   2 Input    2 Bit        Muxes := 5     
+	   3 Input    1 Bit        Muxes := 14    
+	   4 Input    1 Bit        Muxes := 6     
+	   2 Input    1 Bit        Muxes := 14    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP mult2_S_reg, operation Mode is: (A2*B'')'.
+DSP Report: register delayed_sin_reg is absorbed into DSP mult2_S_reg.
+DSP Report: register delayed2_sin_reg is absorbed into DSP mult2_S_reg.
+DSP Report: register PPsig2I_reg is absorbed into DSP mult2_S_reg.
+DSP Report: register mult2_S_reg is absorbed into DSP mult2_S_reg.
+DSP Report: operator mult2 is absorbed into DSP mult2_S_reg.
+DSP Report: Generating DSP mult1_S_reg, operation Mode is: (A2*B'')'.
+DSP Report: register delayed_cos_reg is absorbed into DSP mult1_S_reg.
+DSP Report: register delayed2_cos_reg is absorbed into DSP mult1_S_reg.
+DSP Report: register PPsig2_reg is absorbed into DSP mult1_S_reg.
+DSP Report: register mult1_S_reg is absorbed into DSP mult1_S_reg.
+DSP Report: operator mult1 is absorbed into DSP mult1_S_reg.
+DSP Report: Generating DSP mult4_S_reg, operation Mode is: (A2*B'')'.
+DSP Report: register delayed_cos_reg is absorbed into DSP mult4_S_reg.
+DSP Report: register PPsig2I_reg is absorbed into DSP mult4_S_reg.
+DSP Report: register delayed2_cos_reg is absorbed into DSP mult4_S_reg.
+DSP Report: register mult4_S_reg is absorbed into DSP mult4_S_reg.
+DSP Report: operator mult4 is absorbed into DSP mult4_S_reg.
+DSP Report: Generating DSP mult3_S_reg, operation Mode is: (A2*B'')'.
+DSP Report: register delayed_sin_reg is absorbed into DSP mult3_S_reg.
+DSP Report: register PPsig2_reg is absorbed into DSP mult3_S_reg.
+DSP Report: register delayed2_sin_reg is absorbed into DSP mult3_S_reg.
+DSP Report: register mult3_S_reg is absorbed into DSP mult3_S_reg.
+DSP Report: operator mult3 is absorbed into DSP mult3_S_reg.
+DSP Report: Generating DSP mult2_S_reg, operation Mode is: (A2*B'')'.
+DSP Report: register delayed_sin_reg is absorbed into DSP mult2_S_reg.
+DSP Report: register delayed2_sin_reg is absorbed into DSP mult2_S_reg.
+DSP Report: register PPsig2I_reg is absorbed into DSP mult2_S_reg.
+DSP Report: register mult2_S_reg is absorbed into DSP mult2_S_reg.
+DSP Report: operator mult2 is absorbed into DSP mult2_S_reg.
+DSP Report: Generating DSP mult1_S_reg, operation Mode is: (A2*B'')'.
+DSP Report: register delayed_cos_reg is absorbed into DSP mult1_S_reg.
+DSP Report: register delayed2_cos_reg is absorbed into DSP mult1_S_reg.
+DSP Report: register PPsig2_reg is absorbed into DSP mult1_S_reg.
+DSP Report: register mult1_S_reg is absorbed into DSP mult1_S_reg.
+DSP Report: operator mult1 is absorbed into DSP mult1_S_reg.
+DSP Report: Generating DSP mult4_S_reg, operation Mode is: (A2*B'')'.
+DSP Report: register delayed_cos_reg is absorbed into DSP mult4_S_reg.
+DSP Report: register PPsig2I_reg is absorbed into DSP mult4_S_reg.
+DSP Report: register delayed2_cos_reg is absorbed into DSP mult4_S_reg.
+DSP Report: register mult4_S_reg is absorbed into DSP mult4_S_reg.
+DSP Report: operator mult4 is absorbed into DSP mult4_S_reg.
+DSP Report: Generating DSP mult3_S_reg, operation Mode is: (A2*B'')'.
+DSP Report: register delayed_sin_reg is absorbed into DSP mult3_S_reg.
+DSP Report: register PPsig2_reg is absorbed into DSP mult3_S_reg.
+DSP Report: register delayed2_sin_reg is absorbed into DSP mult3_S_reg.
+DSP Report: register mult3_S_reg is absorbed into DSP mult3_S_reg.
+DSP Report: operator mult3 is absorbed into DSP mult3_S_reg.
+WARNING: [Synth 8-7129] Port TWin2[0] in module DSP_TD is either unconnected or has no load
+WARNING: [Synth 8-7129] Port TWin2[0] in module DSP_TD__xdcDup__1 is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1398.117 ; gain = 107.074
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
+|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
+|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
+|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
+|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
+|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
+|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
+|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 1398.117 ; gain = 107.074
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 1444.848 ; gain = 153.805
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1462.945 ; gain = 171.902
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 1462.945 ; gain = 171.902
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 1462.945 ; gain = 171.902
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:45 ; elapsed = 00:00:45 . Memory (MB): peak = 1462.945 ; gain = 171.902
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:45 ; elapsed = 00:00:45 . Memory (MB): peak = 1462.945 ; gain = 171.902
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 1462.945 ; gain = 171.902
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 1462.945 ; gain = 171.902
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+-----------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                          | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+-----------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|fpga_top    | inputs/shift_reg_buffer_reg[1023] | 4      | 1024  | YES          | NO                 | YES               | 1024   | 0       | 
++------------+-----------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|DSP_TD      | (A'*B'')'   | 30     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 0    | 1    | 
+|DSP_TD      | (A'*B'')'   | 30     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 0    | 1    | 
+|DSP_TD      | (A'*B'')'   | 30     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 0    | 1    | 
+|DSP_TD      | (A'*B'')'   | 30     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 0    | 1    | 
+|DSP_TD      | (A'*B'')'   | 30     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 0    | 1    | 
+|DSP_TD      | (A'*B'')'   | 30     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 0    | 1    | 
+|DSP_TD      | (A'*B'')'   | 30     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 0    | 1    | 
+|DSP_TD      | (A'*B'')'   | 30     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 0    | 1    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_wiz_0     |         1|
+|2     |bd_ram_r1     |         1|
+|3     |bd_ram_r2     |         1|
+|4     |bd_ram_r3     |         1|
+|5     |bd_ram_r4     |         1|
+|6     |bd_ram_r5     |         1|
+|7     |bd_ram_r6     |         1|
+|8     |bd_ram_r7     |         1|
+|9     |bd_ram_r8     |         1|
+|10    |bd_ram_i1     |         1|
+|11    |bd_ram_i2     |         1|
+|12    |bd_ram_i3     |         1|
+|13    |bd_ram_i4     |         1|
+|14    |bd_ram_i5     |         1|
+|15    |bd_ram_i6     |         1|
+|16    |bd_ram_i7     |         1|
+|17    |bd_ram_i8     |         1|
+|18    |dsp_macro_0   |         4|
+|19    |tw_ram_cos    |         1|
+|20    |tw_ram_sin    |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+--------------------+------+
+|      |Cell                |Count |
++------+--------------------+------+
+|1     |bd_ram_i1_bbox      |     1|
+|2     |bd_ram_i2_bbox      |     1|
+|3     |bd_ram_i3_bbox      |     1|
+|4     |bd_ram_i4_bbox      |     1|
+|5     |bd_ram_i5_bbox      |     1|
+|6     |bd_ram_i6_bbox      |     1|
+|7     |bd_ram_i7_bbox      |     1|
+|8     |bd_ram_i8_bbox      |     1|
+|9     |bd_ram_r1_bbox      |     1|
+|10    |bd_ram_r2_bbox      |     1|
+|11    |bd_ram_r3_bbox      |     1|
+|12    |bd_ram_r4_bbox      |     1|
+|13    |bd_ram_r5_bbox      |     1|
+|14    |bd_ram_r6_bbox      |     1|
+|15    |bd_ram_r7_bbox      |     1|
+|16    |bd_ram_r8_bbox      |     1|
+|17    |clk_wiz_0_bbox      |     1|
+|18    |dsp_macro_0_bbox    |     1|
+|19    |dsp_macro_0_bbox_17 |     1|
+|20    |dsp_macro_0_bbox    |     1|
+|21    |dsp_macro_0_bbox_18 |     1|
+|22    |tw_ram_cos_bbox     |     1|
+|23    |tw_ram_sin_bbox     |     1|
+|24    |CARRY4              |   418|
+|25    |DSP48E1             |     8|
+|26    |LUT1                |    70|
+|27    |LUT2                |  2244|
+|28    |LUT3                |   380|
+|29    |LUT4                |   262|
+|30    |LUT5                |  1060|
+|31    |LUT6                |  1636|
+|32    |MUXF7               |   136|
+|33    |MUXF8               |    68|
+|34    |SRL16E              |  1024|
+|35    |FDCE                |  5112|
+|36    |FDPE                |    24|
+|37    |FDRE                |  1627|
+|38    |LDC                 |     1|
++------+--------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 1462.945 ; gain = 171.902
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 3 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:36 ; elapsed = 00:00:43 . Memory (MB): peak = 1462.945 ; gain = 87.734
+Synthesis Optimization Complete : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 1462.945 ; gain = 171.902
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.122 . Memory (MB): peak = 1465.777 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 631 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1470.504 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  LDC => LDCE: 1 instance 
+
+Synth Design complete, checksum: 82b36d5c
+INFO: [Common 17-83] Releasing license: Synthesis
+82 Infos, 15 Warnings, 1 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:51 ; elapsed = 00:00:51 . Memory (MB): peak = 1470.504 ; gain = 179.461
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/fpga_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file fpga_top_utilization_synth.rpt -pb fpga_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Sep 22 21:06:17 2022...

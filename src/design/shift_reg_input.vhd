@@ -46,16 +46,26 @@ architecture Behavioral of shift_reg_input is
     --constant DFT_count : integer := 16; --DFTBs per DFT for the FFT (i.e 16 clocks 1 per DFTBD) how many banks of 16 
     signal count2 :  integer := G_BYTE_SIZE/G_RADIX-1;
     signal count2_2 :  integer := G_BYTE_SIZE/G_RADIX-1;
+    signal count2_3 :  integer := G_BYTE_SIZE/G_RADIX-1;
     signal byte : std_logic_vector(G_RADIX-1 downto 0) := (others => '0');
     signal start_count : unsigned (2 downto 0) := (others => '0');
     signal byte_select_full_temp : unsigned(log2(G_RADIX*(G_MAX_BANK-G_MIN_BANK)/G_PARALLEL_TD)-1 downto 0) := (others => '0'); --unsigned(log2(G_BYTE_SIZE/G_PARALLEL_TD)-1 downto 0) := (others => '0');
     signal byte_select_temp : unsigned(log2(G_RADIX*(2**G_DFTBD_B))-1-G_DFTBD_B downto 0) := (others => '0');
+    
+    signal byte_select_full_temp_out : unsigned(log2(G_RADIX*(G_MAX_BANK-G_MIN_BANK)/G_PARALLEL_TD)-1 downto 0) := (others => '0'); --unsigned(log2(G_BYTE_SIZE/G_PARALLEL_TD)-1 downto 0) := (others => '0');
+    signal byte_select_temp_out : unsigned(log2(G_RADIX*(2**G_DFTBD_B))-1-G_DFTBD_B downto 0) := (others => '0');
+    
+    
+    
     signal byte_select_full_temp_1 : unsigned(log2(G_RADIX*(G_MAX_BANK-G_MIN_BANK)/G_PARALLEL_TD)-1 downto 0) := (others => '0');
     signal byte_select_temp_1 : unsigned(G_RADIX*(2**G_DFTBD_B) downto 0) := (others => '0');
     signal read_en2 : std_logic  := '0';
     signal delay  : std_logic := '0';
     signal hold : std_logic_vector(1 downto 0) := (others => '0'); -- trigger for holder the couiter for a period of time
-
+    signal pos : int_array_16 := (others => 0);
+    
+    
+    
 begin
 
     -- trigger for end of DFT continue to wiat for input flag to trigger  (i.e. enough inputs have come in)
@@ -140,6 +150,7 @@ begin
             byte_out <= (others => '0'); -- empty buffer
             count2 <= G_BYTE_SIZE/G_RADIX-1;
             count2_2 <= G_BYTE_SIZE/G_RADIX-1;
+            count2_3 <= G_BYTE_SIZE/G_RADIX-1;
             byte_select_temp_1 <= (others => '1');
             byte_select_full_temp_1 <= (others => '1');
             byte_select_temp <= (others => '1');
@@ -162,10 +173,12 @@ begin
                         -- if count2 =0 then
                         count2 <=(G_BYTE_SIZE/G_RADIX-1);
                         count2_2<=(G_BYTE_SIZE/G_RADIX-1);
+                        count2_3<=(G_BYTE_SIZE/G_RADIX-1);
 
                     else --delay = '0' then
                         count2 <= count2-1;
                         count2_2<= count2_2-1;
+                        count2_3<= count2_3-1;
                     end if;
 
                     if (count2 =0) then
@@ -181,25 +194,18 @@ begin
                         byte_select_full_temp<= byte_select_full_temp+1; -- for Twwiddle factor position
                     end if;
         
+
+                    for II in 0 to G_RADIX-1 loop
+                     pos(II) <= count2+(G_BYTE_SIZE/G_RADIX)*II;
+                    end loop;
+                    byte_select_temp_out <= byte_select_temp;
+                    byte_select_full_temp_out<=byte_select_full_temp;
                    
-        for II in 0 to 15 loop
-                    byte_out(II)<= byte(II); -- reorded bit stream  sectio  with need generics for larger scale 
-                    -- byte_out(1)<= byte(1);
-                    -- byte_out(2)<= byte(2);
-                    -- byte_out(3)<= byte(3);
-                    -- byte_out(4)<= byte(4);
-                    -- byte_out(5)<= byte(5);
-                    -- byte_out(6)<= byte(6);
-                    -- byte_out(7)<= byte(7);
-                    -- byte_out(8)<= byte(8);
-                    -- byte_out(9)<= byte(9);
-                    -- byte_out(10)<= byte(10);
-                    -- byte_out(11)<= byte(11);
-                    -- byte_out(12)<= byte(12);
-                    -- byte_out(13)<= byte(13);
-                    -- byte_out(14)<= byte(14);
-                    -- byte_out(15)<= byte(15);
+        for II in 0 to G_RADIX-1 loop
+                    byte_out(II)<= byte(II); -- reorded bit stream  sectio  with need generics for larger scale                 
         end loop;
+
+
                 else
                     start_count <= start_count+1; -- initial delay for RAMs to start
                 end if;
@@ -212,20 +218,24 @@ begin
 
 
 
-    Transform_reorder_1 : for JJ in 0 to (G_RADIX/2)-1 generate
-    byte(JJ) <=  shift_reg_buffer(count2+(G_BYTE_SIZE/G_RADIX)*JJ);
+    Transform_reorder_1 : for JJ in 0 to G_RADIX-1 generate
+    byte(JJ) <=  shift_reg_buffer(pos(JJ));
     end generate;
+
+    --     Transform_reorder_3 : for JJ in 6 to 10 generate
+    --         byte(JJ) <=  shift_reg_buffer(count2_2+(G_BYTE_SIZE/G_RADIX)*JJ);
+    --         end generate;
 
 
         
-    Transform_reorder_2 : for JJ in (G_RADIX/2) to G_RADIX-1 generate
-        byte(JJ) <=  shift_reg_buffer(count2_2+(G_BYTE_SIZE/G_RADIX)*JJ);
-        end generate;
+    -- Transform_reorder_2 : for JJ in 11 to G_RADIX-1 generate
+    --     byte(JJ) <=  shift_reg_buffer(count2_3+(G_BYTE_SIZE/G_RADIX)*JJ);
+    --     end generate;
 
 
 
-    byte_select <= byte_select_temp;
-    byte_select_full <= byte_select_full_temp;
+    byte_select <= byte_select_temp_out;
+    byte_select_full <= byte_select_full_temp_out;
 
 
 
@@ -246,3 +256,21 @@ end Behavioral;
     -- byte(13) <=  shift_reg_buffer(DFT_count*13+count2);
     -- byte(14) <=  shift_reg_buffer(DFT_count*14+count2);
     -- byte(15) <=  shift_reg_buffer(DFT_count*15+count2);
+
+
+
+        -- byte_out(1)<= byte(1);
+                    -- byte_out(2)<= byte(2);
+                    -- byte_out(3)<= byte(3);
+                    -- byte_out(4)<= byte(4);
+                    -- byte_out(5)<= byte(5);
+                    -- byte_out(6)<= byte(6);
+                    -- byte_out(7)<= byte(7);
+                    -- byte_out(8)<= byte(8);
+                    -- byte_out(9)<= byte(9);
+                    -- byte_out(10)<= byte(10);
+                    -- byte_out(11)<= byte(11);
+                    -- byte_out(12)<= byte(12);
+                    -- byte_out(13)<= byte(13);
+                    -- byte_out(14)<= byte(14);
+                    -- byte_out(15)<= byte(15);
