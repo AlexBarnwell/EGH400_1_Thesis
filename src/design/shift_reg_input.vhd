@@ -45,6 +45,7 @@ architecture Behavioral of shift_reg_input is
     signal read_en : std_logic := '0';
     --constant DFT_count : integer := 16; --DFTBs per DFT for the FFT (i.e 16 clocks 1 per DFTBD) how many banks of 16 
     signal count2 :  integer := G_BYTE_SIZE/G_RADIX-1;
+    signal count2_2 :  integer := G_BYTE_SIZE/G_RADIX-1;
     signal byte : std_logic_vector(G_RADIX-1 downto 0) := (others => '0');
     signal start_count : unsigned (2 downto 0) := (others => '0');
     signal byte_select_full_temp : unsigned(log2(G_RADIX*(G_MAX_BANK-G_MIN_BANK)/G_PARALLEL_TD)-1 downto 0) := (others => '0'); --unsigned(log2(G_BYTE_SIZE/G_PARALLEL_TD)-1 downto 0) := (others => '0');
@@ -138,6 +139,7 @@ begin
         if (FFT_Reset = '0' or RST= '0') then
             byte_out <= (others => '0'); -- empty buffer
             count2 <= G_BYTE_SIZE/G_RADIX-1;
+            count2_2 <= G_BYTE_SIZE/G_RADIX-1;
             byte_select_temp_1 <= (others => '1');
             byte_select_full_temp_1 <= (others => '1');
             byte_select_temp <= (others => '1');
@@ -159,9 +161,11 @@ begin
                     if ((count2 = 0) or (hold(0) = '1')) then
                         -- if count2 =0 then
                         count2 <=(G_BYTE_SIZE/G_RADIX-1);
+                        count2_2<=(G_BYTE_SIZE/G_RADIX-1);
 
                     else --delay = '0' then
                         count2 <= count2-1;
+                        count2_2<= count2_2-1;
                     end if;
 
                     if (count2 =0) then
@@ -208,8 +212,25 @@ begin
 
 
 
-    Transform_reorder : for JJ in 0 to 15 generate
+    Transform_reorder_1 : for JJ in 0 to (G_RADIX/2)-1 generate
     byte(JJ) <=  shift_reg_buffer(count2+(G_BYTE_SIZE/G_RADIX)*JJ);
+    end generate;
+
+
+        
+    Transform_reorder_2 : for JJ in (G_RADIX/2) to G_RADIX-1 generate
+        byte(JJ) <=  shift_reg_buffer(count2_2+(G_BYTE_SIZE/G_RADIX)*JJ);
+        end generate;
+
+
+
+    byte_select <= byte_select_temp;
+    byte_select_full <= byte_select_full_temp;
+
+
+
+
+end Behavioral;
     -- byte(1) <=  shift_reg_buffer(DFT_count*1+count2);
     -- byte(2) <=  shift_reg_buffer(DFT_count*2+count2);
     -- byte(3) <=  shift_reg_buffer(DFT_count*3+count2);
@@ -225,15 +246,3 @@ begin
     -- byte(13) <=  shift_reg_buffer(DFT_count*13+count2);
     -- byte(14) <=  shift_reg_buffer(DFT_count*14+count2);
     -- byte(15) <=  shift_reg_buffer(DFT_count*15+count2);
-
-    end generate;
-
-
-
-    byte_select <= byte_select_temp;
-    byte_select_full <= byte_select_full_temp;
-
-
-
-
-end Behavioral;

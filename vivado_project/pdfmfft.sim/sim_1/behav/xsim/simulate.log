@@ -53,4 +53,4 @@ Block Memory Generator module fpga_top_tb.top_sim.TWiddle1.Twiddle_1.inst.\nativ
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
 Block Memory Generator module fpga_top_tb.top_sim.TWiddle1.Twiddle_2.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
-INFO: xsimkernel Simulation Memory Usage: 22096 KB (Peak: 22096 KB), Simulation CPU Usage: 114703 ms
+INFO: xsimkernel Simulation Memory Usage: 22144 KB (Peak: 22144 KB), Simulation CPU Usage: 179046 ms

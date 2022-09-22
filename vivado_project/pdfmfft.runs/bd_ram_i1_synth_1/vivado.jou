@@ -2,12 +2,12 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Sun Sep 18 14:56:30 2022
-# Process ID: 11672
-# Current directory: C:/FPGA/projects/pdmfft/vivado_project/pdfmfft.runs/bd_ram_i1_synth_1
+# Start of session at: Tue Sep 20 17:56:39 2022
+# Process ID: 18604
+# Current directory: C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdfmfft.runs/bd_ram_i1_synth_1
 # Command line: vivado.exe -log bd_ram_i1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source bd_ram_i1.tcl
-# Log file: C:/FPGA/projects/pdmfft/vivado_project/pdfmfft.runs/bd_ram_i1_synth_1/bd_ram_i1.vds
-# Journal file: C:/FPGA/projects/pdmfft/vivado_project/pdfmfft.runs/bd_ram_i1_synth_1\vivado.jou
-# Running On: fraser-desktop, OS: Windows, CPU Frequency: 3700 MHz, CPU Physical cores: 12, Host memory: 34268 MB
+# Log file: C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdfmfft.runs/bd_ram_i1_synth_1/bd_ram_i1.vds
+# Journal file: C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdfmfft.runs/bd_ram_i1_synth_1\vivado.jou
+# Running On: LAPTOP-M3DNELKA, OS: Windows, CPU Frequency: 2208 MHz, CPU Physical cores: 6, Host memory: 17075 MB
 #-----------------------------------------------------------
 source bd_ram_i1.tcl -notrace

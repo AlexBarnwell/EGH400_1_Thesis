@@ -447,7 +447,7 @@ DFT_TD_DSPs:
             -- FFT_outr2<= REALL;
             -- FFT_outi2<= IMAGG;
 
-            if write_count = "101"  then
+            if write_count = "110"  then
                 write_count <= "000";
                 write_flag <= '1'; --set write flag
                 elsif ((start_write_count = '1') or (write_count /= "000")) then

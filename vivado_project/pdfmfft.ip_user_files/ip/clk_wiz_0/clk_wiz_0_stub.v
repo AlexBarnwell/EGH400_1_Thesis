@@ -1,9 +1,9 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
-// Date        : Sun Sep 18 16:45:55 2022
-// Host        : DESKTOP-BDA8VGJ running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub c:/REPOS/EGH400_1/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0_stub.v
+// Date        : Wed Sep 21 17:42:28 2022
+// Host        : LAPTOP-M3DNELKA running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode synth_stub c:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0_stub.v
 // Design      : clk_wiz_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a35ticsg324-1L

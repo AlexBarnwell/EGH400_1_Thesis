@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="tw_ram_cos_synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1663483367">
+<GenRun Id="tw_ram_cos_synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1663660412">
   <File Type="PA-TCL" Name="tw_ram_cos.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="tw_ram_cos_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="tw_ram_cos_reports.tcl"/>

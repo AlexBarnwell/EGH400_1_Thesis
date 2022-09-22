@@ -69,12 +69,20 @@ architecture behavioral of DSP_TD is
     signal  temp2I : std_logic_vector (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
     signal  PoutI : std_logic_vector  (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
 
-    signal  unPPsig : std_logic_vector (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
-    signal  unPPsigI : std_logic_vector (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
+    signal  unPPsig : signed (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
+    signal  unPPsigI : signed (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
+    
+    
+     signal  Pouts : signed (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
+    signal  PoutIs : signed (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
 
     signal  DFT1s : signed (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
 
     signal  DFT1SI : signed (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
+    
+      signal  DFTss : signed (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
+
+    signal  DFTSIs : signed (G_DATA_WIDTH+G_DATA_WIDTH_TW downto 0):= (others => '0');
 
     signal  coss2 : std_logic_vector (G_DATA_WIDTH_TW-1 downto 0):= (others => '0');
     signal  coss : std_logic_vector (G_DATA_WIDTH_TW-1 downto 0):= (others => '0');
@@ -95,10 +103,16 @@ architecture behavioral of DSP_TD is
 
     --signal PPsig2 : std_logic_vector  (G_DATA_WIDTH downto 0) := (others => '0');
 
-    signal final1 : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
-    signal final2 : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
-    signal final3 : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
-    signal final4 : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+    signal final1 : signed   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+    signal final2 : signed   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+    signal final3 : signed   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+    signal final4 : signed   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+
+
+    signal mult1 : signed   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+    signal mult2 : signed   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+    signal mult3 : signed   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+    signal mult4 : signed (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
 
 
     signal A1 : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
@@ -115,9 +129,9 @@ architecture behavioral of DSP_TD is
     
     signal rshift : integer := 0;
     signal rshift2 : integer := 0;
+
     signal order : integer := 0; -- the order that FFT bank has been shifted to 
     signal order1 : integer := 0; -- the order that FFT bank has been shifted to 
-
     signal orderi1 : integer := 0; -- the order that FFT bank has been shifted to 
 
 
@@ -128,6 +142,20 @@ architecture behavioral of DSP_TD is
     signal ord_diff : integer :=0;
     signal ord_diffr : integer :=0;
     signal ord_diffi : integer :=0;
+
+    signal ord_diffrs : integer :=0;
+    signal ord_diffis : integer :=0;
+
+
+    signal ord_diff2 : integer :=0;
+    signal ord_diffr2 : integer :=0;
+    signal ord_diffi2 : integer :=0;
+
+
+
+    signal ord_diff3 : integer :=0;
+    signal ord_diffr3 : integer :=0;
+    signal ord_diffi3 : integer :=0;
 
 
     signal ovf_checkI : std_logic_vector(2 downto 0) := (others => '0');
@@ -140,6 +168,17 @@ architecture behavioral of DSP_TD is
     signal final3_S : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
     signal final4_S : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
 
+
+    signal mult1_S : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+    signal mult2_S : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+    signal mult3_S : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+    signal mult4_S : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+
+    signal final1_SS : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+    signal final2_SS : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+    signal final3_SS : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+    signal final4_SS : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+
     signal step2_S : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
     signal step2i_S : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
     signal step1_S : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
@@ -151,6 +190,15 @@ architecture behavioral of DSP_TD is
     signal step1 : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
     signal step1i : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
 
+    signal order2 : integer := 0;
+    signal order2I : integer := 0;
+
+--    signal order3 : integer := 0;
+--    signal order3I : integer := 0;
+
+--    signal order4 : integer := 0;
+--    signal order4I : integer := 0;
+
     --signal write_count : signed (2 downto 0 ) := (others => '0');
 
 
@@ -161,6 +209,9 @@ architecture behavioral of DSP_TD is
 
     signal A1_temp : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
     signal B1_temp : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+
+    signal A1_temps : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
+    signal B1_temps : signed  (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0) := (others => '0');
 
     signal FFT_outR2 : STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 ):= (others => '0'); -- outputs of the FFT
     signal FFT_outI2 : STD_LOGIC_VECTOR   (G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0 ):= (others => '0');
@@ -219,6 +270,9 @@ begin
             final3_S<= (others => '0');
             final4_S<= (others => '0');
 
+            ord_diffrs <= 0;
+            ord_diffis <= 0;
+
 
             step1_S <=(others => '0');
             step2_S <= (others => '0');
@@ -246,11 +300,17 @@ begin
 
                     if (rshift = 1) then
                         order <= order +1;
+                        order2 <= order2 +1;
+--                        order3 <= order3 +1;
+--                        order4 <= order4 +1;
                         rshift2 <= rshift;
                     end if;
 
                     if (rshifti = 1) then
                         orderi <= orderi +1;
+                        order2i <= order2i +1;
+--                        order3i <= order3i +1;
+--                        order4i <= order4i +1;
                         rshift2i <= rshifti;
                     end if;
                    -- start_write_count <= '0'; 
@@ -264,15 +324,30 @@ begin
                     -- FFT_outI <= IMAGG;
                     order <=0;
                     orderi <=0;
+                    order2 <= 0;
+                    order2i <= 0;
+--                    order3 <= 0;
+--                    order3i <= 0;
+--                    order4 <= 0;
+--                    order4i <= 0;
 
                     order_out<= order_out2;
 
-                    final1_S <= final1; -- should onlyt trigger once and start the  final cobiantion step of TD
-                    final2_S <= final2;
-                    final3_S <= final3;
-                    final4_S <= final4;
-                    A1_S <= A1;
-                    B1_S <= B1;
+                    
+
+                    ord_diffrS <= ord_diffr;
+                    ord_diffiS <= ord_diffi;
+
+                    A1_temps<= A1_temp;
+                    B1_temps <= B1_temp;
+
+                    mult1_S <= (mult1);
+                    mult2_S <= (mult2);
+                    mult3_S <= (mult3);
+                    mult4_S <= (mult4);                   
+
+                    -- A1_S <= A1;
+                    -- B1_S <= B1;
 
                     -- start_write_count <= '1'; 
 
@@ -290,6 +365,15 @@ begin
 
             end case;
              
+
+            final1_S <= (final1); -- should onlyt trigger once and start the  final cobiantion step of TD
+            final2_S <= (final2);
+            final3_S <= (final3);
+            final4_S <= (final4);
+
+            A1_S <= A1;
+            B1_S <= B1;
+
             step1_S <= step1;
             step2_S <= step2;
             step1i_S <= step1i;
@@ -326,13 +410,35 @@ begin
             FFT_outI <= FFT_outI2;
 
     -- overflow checker and applier
-    ord_diff <= (order-orderi);
+    ord_diff <= (order2-order2i);
 
     ord_diffr <= -ord_diff when ord_diff <= 0 else
                  0;
 
     ord_diffi <= ord_diff when ord_diff >0 else
                  0;
+
+
+
+--                 ord_diff2 <= (order3-order3i);
+
+--                 ord_diffr2 <= -ord_diff2 when ord_diff2 <= 0 else
+--                              0;
+             
+--                 ord_diffi2 <= ord_diff2 when ord_diff2 >0 else
+--                              0;
+             
+
+--                              ord_diff3 <= (order4-order4i);
+
+--                              ord_diffr3 <= -ord_diff3 when ord_diff3 <= 0 else
+--                                           0;
+                          
+--                              ord_diffi3 <= ord_diff3 when ord_diff3 >0 else
+--                                           0;
+
+
+
 
 
     order_out2 <= order when (order>= orderi) else
@@ -346,19 +452,32 @@ begin
 
     --break apart the final loop of the FFT segements to get then compute the real and imaginary sections
 
-    final1 <= shift_right(signed(delayed2_cos)*signed(PPsig2),ord_diffr); --cos*A2-- final recombination -- NOTE need to add the part in process that grabs final value and hence get put into BRAM
-    final2 <= shift_right(signed(delayed2_sin)*signed(PPsig2I),ord_diffi); -- sin*B2
-    final3 <=  shift_right(signed(delayed2_sin)*signed(PPsig2),ord_diffr); -- sin*A2
-    final4 <=  shift_right(signed(delayed2_cos)*signed(PPsig2I),ord_diffi); --cos*B2
+     final1 <= shift_right(mult1_S,ord_diffrs); --cos*A2-- final recombination -- NOTE need to add the part in process that grabs final value and hence get put into BRAM
+     final2 <= shift_right(mult2_S,ord_diffis); -- sin*B2
+     final3 <=  shift_right(mult3_S,ord_diffrs); -- sin*A2
+     final4 <=  shift_right(mult4_S,ord_diffis); --cos*B2
+
+    mult1 <= signed(delayed2_cos)*signed(PPsig2);
+    mult2 <= signed(delayed2_sin)*signed(PPsig2I);
+    mult3 <= signed(delayed2_sin)*signed(PPsig2);
+    mult4 <= signed(delayed2_cos)*signed(PPsig2I);
 
 
-
+--    final1 <= ((G_DATA_WIDTH+G_DATA_WIDTH_TW-2-ord_diffr downto 0) => mult1(G_DATA_WIDTH+G_DATA_WIDTH_TW-2 downto ord_diffr), others => mult1(G_DATA_WIDTH+G_DATA_WIDTH_TW-1));
+--    final2(G_DATA_WIDTH+G_DATA_WIDTH_TW-2-ord_diffi downto 0) <= mult2(G_DATA_WIDTH+G_DATA_WIDTH_TW-2 downto ord_diffi);
+--    final3(G_DATA_WIDTH+G_DATA_WIDTH_TW-2-ord_diffr2 downto 0) <= mult3(G_DATA_WIDTH+G_DATA_WIDTH_TW-2 downto ord_diffr2);
+--    final4(G_DATA_WIDTH+G_DATA_WIDTH_TW-2-ord_diffi2 downto 0) <= mult4(G_DATA_WIDTH+G_DATA_WIDTH_TW-2 downto ord_diffi2);
+    
+    -- final1(G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto G_DATA_WIDTH+G_DATA_WIDTH_TW-1-ord_diffr) <= (others => mult1(G_DATA_WIDTH+G_DATA_WIDTH_TW-1));
+    -- final2(G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto G_DATA_WIDTH+G_DATA_WIDTH_TW-1-ord_diffi  ) <= (others => mult2(G_DATA_WIDTH+G_DATA_WIDTH_TW-1));
+    -- final3(G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto G_DATA_WIDTH+G_DATA_WIDTH_TW-1-ord_diffr2  ) <= (others => mult3(G_DATA_WIDTH+G_DATA_WIDTH_TW-1));
+    -- final4(G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto G_DATA_WIDTH+G_DATA_WIDTH_TW-1-ord_diffi2 ) <= (others => mult4(G_DATA_WIDTH+G_DATA_WIDTH_TW-1));
 
     A1_temp(G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto G_DECIMAL_WIDTH_TW) <= resize(signed(ppsig),G_DATA_WIDTH+G_DATA_WIDTH_TW-G_DECIMAL_WIDTH_TW); --/
     B1_temp(G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto G_DECIMAL_WIDTH_TW) <= resize(signed(ppsigI),G_DATA_WIDTH+G_DATA_WIDTH_TW-G_DECIMAL_WIDTH_TW); --/
 
-    A1<=shift_right(A1_temp,ord_diffr);
-    B1<=shift_right(B1_temp,ord_diffi);
+    A1<=shift_right(A1_tempS,ord_diffrs);
+    B1<=shift_right(B1_tempS,ord_diffis);
 
 
     step1 <= A1_S-final1_S;
@@ -396,11 +515,19 @@ begin
     process (clk,nRST)
     begin
         if ((nRst = '0') or (DFT_RESET = '0'))then
-            temp2<= (others => '0');
-            temp2I<= (others => '0');
+           -- temp2<= (others => '0');
+           -- temp2I<= (others => '0');
+            DFTsIS<= (others => '0');
+            DFTss<= (others => '0');
+            Pouts <= (others => '0');
+            PoutIs <= (others => '0');
         elsif rising_edge(clk) then
-            temp2<= temp;
-            temp2I<= tempI;
+            --temp2<= temp;
+         --   temp2I<= tempI;
+            DFTsIS<= DFTsI;
+            DFTss<= DFTs;
+            Pouts <= unPPsig;
+            PoutIs <= unPPsigI;
         end if;
     end process;
 
@@ -421,15 +548,15 @@ begin
     ovf_checkI(2) <= PoutI(G_DATA_WIDTH+G_DATA_WIDTH_TW);
     ovf_checkR(2) <= Pout(G_DATA_WIDTH+G_DATA_WIDTH_TW);
     --TWt2<= std_logic_vector (2*signed(TW2t));
-    P2sig(G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0)<= temp2(G_DATA_WIDTH+G_DATA_WIDTH_TW-1+rshift downto rshift ); -- 
-    P2sigI(G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0)<=temp2I(G_DATA_WIDTH+G_DATA_WIDTH_TW-1+rshifti downto rshifti );
+    P2sig(G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0)<= temp(G_DATA_WIDTH+G_DATA_WIDTH_TW-1+rshift downto rshift ); -- 
+    P2sigI(G_DATA_WIDTH+G_DATA_WIDTH_TW-1 downto 0)<=tempI(G_DATA_WIDTH+G_DATA_WIDTH_TW-1+rshifti downto rshifti );
 
     coss2(G_DATA_WIDTH_TW-1 downto 0)<=TWin;-- --reformates the inputs size by padding on the right side 
     coss(G_DATA_WIDTH_TW-3 downto 0)<= coss2(G_DATA_WIDTH_TW-2 downto 1);
 
     coss(G_DATA_WIDTH_TW-1 downto G_DATA_WIDTH_TW-2)<= (others => coss2(G_DATA_WIDTH_TW-1)); -- Lshift by 1 (multiply by 2)
 
-
+    
     --coss2<=coss
 
     -- coss(G_DATA_WIDTH_TW-1 downto 0)<=TWin;-- --reformates the inputs size by padding on the right side 
@@ -452,21 +579,22 @@ begin
     --unPPsig <=Pout(G_DATA_WIDTH+G_DECIMAL_WIDTH downto G_DECIMAL_WIDTH); -- a bit larger than the input (19 with 18 bit input)
     --unPPsigI <=PoutI(G_DATA_WIDTH+G_DECIMAL_WIDTH downto G_DECIMAL_WIDTH);
 
-    unPPsig <=Pout; -- same size as Pout
-    unPPsigI <=PoutI;
+    unPPsig <=shift_right(signed(Pout),rshift); -- same size as Pout
+    unPPsigI <=shift_right(signed(PoutI),rshifti);
 
 
     DFT1s(G_DATA_WIDTH+G_DATA_WIDTH_TW downto G_DECIMAL_WIDTH_TW )<=resize(signed(DFTin),G_DATA_WIDTH+G_DATA_WIDTH_TW-G_DECIMAL_WIDTH_TW+1);--
-    DFTs<= shift_right (DFT1s,order);
     DFT1sI(G_DATA_WIDTH+G_DATA_WIDTH_TW downto G_DECIMAL_WIDTH_TW )<=resize(signed(DFTinI),G_DATA_WIDTH+G_DATA_WIDTH_TW-G_DECIMAL_WIDTH_TW+1);--
 
-    PPsigs<= signed(unPPsig); --
+   -- PPsigs<= signed(unPPsig); --
     --DFT1sI(G_DATA_WIDTH+G_DATA_WIDTH_TW downto G_DECIMAL_WIDTH )<=resize(signed(DFTinI),G_DATA_WIDTH+G_DATA_WIDTH_TW-G_DECIMAL_WIDTH);--
-    DFTsI<= shift_right(DFT1sI,orderi);
-    PPsigsI<=signed(unPPsigI); --
+    DFTsI<= shift_right(DFT1sI,orderi+rshifti);
+    DFTs<= shift_right (DFT1s,order+rshift);
 
-    temp<=std_logic_vector(shift_right(DFTs-PPsigs,rshift));-- same size as Pout
-    tempI<=std_logic_vector(shift_right(DFTsI-PPsigsI,rshifti));
+   -- PPsigsI<=signed(unPPsigI); --
+
+    temp<=std_logic_vector(DFTss-Pouts);-- same size as Pout
+    tempI<=std_logic_vector(DFTsIs-PoutIs);
     --PP<=(Pout(G_DATA_WIDTH+G_DECIMAL_WIDTH-1 downto G_DECIMAL_WIDTH));--
    -- PP<= ppsig;
     --count<=count2;

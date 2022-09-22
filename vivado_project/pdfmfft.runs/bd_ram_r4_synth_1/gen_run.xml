@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="bd_ram_r4_synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1663476779">
+<GenRun Id="bd_ram_r4_synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1663660408">
   <File Type="PA-TCL" Name="bd_ram_r4.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="bd_ram_r4_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="bd_ram_r4_reports.tcl"/>
   <File Type="RDS-RDS" Name="bd_ram_r4.vds"/>
   <File Type="RDS-UTIL" Name="bd_ram_r4_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="bd_ram_r4_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="bd_ram_r4.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="bd_ram_r4_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="bd_ram_r4_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/bd_ram_r4">
     <File Path="$PPRDIR/../src/ip/bd_ram_r4/bd_ram_r4.xci">
       <FileInfo>
