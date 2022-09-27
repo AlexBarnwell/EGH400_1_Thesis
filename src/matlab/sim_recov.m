@@ -39,7 +39,7 @@ end
 
 
  
-FFT = idealFFT(N,P,L,bitstream,TWD); % run ideal FFT
+FFT = idealFFT(N,P,L,bitstream, TWD); % run ideal FFT
 FFTsim = simFFT(FILE_read,DFTD,TWD); % recover simulated ( FPGA FFT)
 FFTM=fft(bitstream);
 

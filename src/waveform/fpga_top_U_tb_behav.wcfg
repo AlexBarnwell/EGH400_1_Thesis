@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="fpga_top_U_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="data_types" />
+            <top_module name="fpga_top_U_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="10.330000000 ms"></ZoomStartTime>
+      <ZoomEndTime time="19.570000001 ms"></ZoomEndTime>
+      <Cursor1Time time="17.000000000 ms"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="59"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="23" />
+   <wvobject fp_name="/fpga_top_U_tb/FFT_outR" type="array">
+      <obj_property name="ElementShortName">FFT_outR[85:0]</obj_property>
+      <obj_property name="ObjectShortName">FFT_outR[85:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/ADDRESS" type="array">
+      <obj_property name="ElementShortName">ADDRESS[7:0]</obj_property>
+      <obj_property name="ObjectShortName">ADDRESS[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/hold" type="array">
+      <obj_property name="ElementShortName">hold[1:0]</obj_property>
+      <obj_property name="ObjectShortName">hold[1:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/nRST" type="logic">
+      <obj_property name="ElementShortName">nRST</obj_property>
+      <obj_property name="ObjectShortName">nRST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/write_flag" type="logic">
+      <obj_property name="ElementShortName">write_flag</obj_property>
+      <obj_property name="ObjectShortName">write_flag</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/CASES" type="other">
+      <obj_property name="ElementShortName">CASES</obj_property>
+      <obj_property name="ObjectShortName">CASES</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/A" type="array">
+      <obj_property name="ElementShortName">A[7:0]</obj_property>
+      <obj_property name="ObjectShortName">A[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/B" type="array">
+      <obj_property name="ElementShortName">B[7:0]</obj_property>
+      <obj_property name="ObjectShortName">B[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/count" type="other">
+      <obj_property name="ElementShortName">count</obj_property>
+      <obj_property name="ObjectShortName">count</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/wea" type="array">
+      <obj_property name="ElementShortName">wea[0:0]</obj_property>
+      <obj_property name="ObjectShortName">wea[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/UART_COUNT" type="other">
+      <obj_property name="ElementShortName">UART_COUNT</obj_property>
+      <obj_property name="ObjectShortName">UART_COUNT</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/DATA_IN" type="array">
+      <obj_property name="ElementShortName">DATA_IN[95:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA_IN[95:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/DATA_OUT" type="array">
+      <obj_property name="ElementShortName">DATA_OUT[95:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA_OUT[95:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/FFT_R" type="array">
+      <obj_property name="ElementShortName">FFT_R[85:0]</obj_property>
+      <obj_property name="ObjectShortName">FFT_R[85:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/FFT_I" type="array">
+      <obj_property name="ElementShortName">FFT_I[85:0]</obj_property>
+      <obj_property name="ObjectShortName">FFT_I[85:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/UART_TX_1/tx_ready_r" type="logic">
+      <obj_property name="ElementShortName">tx_ready_r</obj_property>
+      <obj_property name="ObjectShortName">tx_ready_r</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/UART_TX_1/fsm_tx_state" type="other">
+      <obj_property name="ElementShortName">fsm_tx_state</obj_property>
+      <obj_property name="ObjectShortName">fsm_tx_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/UART_done" type="logic">
+      <obj_property name="ElementShortName">UART_done</obj_property>
+      <obj_property name="ObjectShortName">UART_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/UART_OUT" type="logic">
+      <obj_property name="ElementShortName">UART_OUT</obj_property>
+      <obj_property name="ObjectShortName">UART_OUT</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/UART_TX_1/Cnt_div_r" type="other">
+      <obj_property name="ElementShortName">Cnt_div_r</obj_property>
+      <obj_property name="ObjectShortName">Cnt_div_r</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_U_tb/uart_tx" type="logic">
+      <obj_property name="ElementShortName">uart_tx</obj_property>
+      <obj_property name="ObjectShortName">uart_tx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_U_tb/MIC_clock" type="logic">
+      <obj_property name="ElementShortName">MIC_clock</obj_property>
+      <obj_property name="ObjectShortName">MIC_clock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_U_tb/top_sim/inputs/Mic_shift_reg_input" type="array">
+      <obj_property name="ElementShortName">Mic_shift_reg_input[2048:0]</obj_property>
+      <obj_property name="ObjectShortName">Mic_shift_reg_input[2048:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+</wave_config>

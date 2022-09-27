@@ -463,7 +463,6 @@ begin
     mult3 <= signed(delayed2_sin)*signed(PPsig2);
     mult4 <= signed(delayed2_cos)*signed(PPsig2I);
 
-
 --    final1 <= ((G_DATA_WIDTH+G_DATA_WIDTH_TW-2-ord_diffr downto 0) => mult1(G_DATA_WIDTH+G_DATA_WIDTH_TW-2 downto ord_diffr), others => mult1(G_DATA_WIDTH+G_DATA_WIDTH_TW-1));
 --    final2(G_DATA_WIDTH+G_DATA_WIDTH_TW-2-ord_diffi downto 0) <= mult2(G_DATA_WIDTH+G_DATA_WIDTH_TW-2 downto ord_diffi);
 --    final3(G_DATA_WIDTH+G_DATA_WIDTH_TW-2-ord_diffr2 downto 0) <= mult3(G_DATA_WIDTH+G_DATA_WIDTH_TW-2 downto ord_diffr2);

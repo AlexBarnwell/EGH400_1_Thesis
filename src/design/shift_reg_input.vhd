@@ -162,8 +162,7 @@ begin
            start_count <= "001";
            end if;
         --delay <= '0';
-        else
-            if ((rising_edge(CLK))) then
+        elsif ((rising_edge(CLK))) then
 
                 if start_count = "001" then -- delay amount (needs to be calibrated)
 
@@ -201,16 +200,16 @@ begin
                     byte_select_temp_out <= byte_select_temp;
                     byte_select_full_temp_out<=byte_select_full_temp;
                    
-        for II in 0 to G_RADIX-1 loop
+                     for II in 0 to G_RADIX-1 loop
                     byte_out(II)<= byte(II); -- reorded bit stream  sectio  with need generics for larger scale                 
-        end loop;
+                     end loop;
 
 
                 else
                     start_count <= start_count+1; -- initial delay for RAMs to start
                 end if;
             end if;
-        end if;
+       
 
     end process reorder;
 
