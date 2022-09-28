@@ -277,7 +277,7 @@ begin
     begin
 
         if nRST = '0' then
-            clk_mic <= '1';
+            clk_mic <= '0';
             clock_count <= 0;
         elsif rising_edge(clk_sys) then
             

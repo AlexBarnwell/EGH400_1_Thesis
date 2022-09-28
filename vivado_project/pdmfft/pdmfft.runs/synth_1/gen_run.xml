@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1664093717" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/fpga_top.dcp" LaunchWriteIncrSynthDcp="true">
+<GenRun Id="synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1664327806" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/fpga_top.dcp" LaunchWriteIncrSynthDcp="true">
   <File Type="PA-TCL" Name="fpga_top_U.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="fpga_top_U_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="fpga_top_U_reports.tcl"/>
   <File Type="RDS-RDS" Name="fpga_top_U.vds"/>
   <File Type="RDS-UTIL" Name="fpga_top_U_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="fpga_top_U_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="fpga_top_U.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="fpga_top_U_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="fpga_top_U_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../../src/design/data_types.vhd">
@@ -39,6 +42,12 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../../src/design/Twiddle_factors.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/design/UART_TX.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -228,8 +237,8 @@
       <Option Id="MoreOptsStr"><![CDATA[-mode out_of_context]]></Option>
     </Step>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
   <BlockFileSet Type="BlockSrcs" Name="bd_ram_r8"/>
+  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
   <BlockFileSet Type="BlockSrcs" Name="bd_ram_r1"/>
   <BlockFileSet Type="BlockSrcs" Name="bd_ram_r2"/>
   <BlockFileSet Type="BlockSrcs" Name="dsp_macro_0"/>

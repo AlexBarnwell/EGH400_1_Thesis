@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35ticsg324-1L
 
@@ -114,6 +115,7 @@ read_vhdl -library xil_defaultlib {
   C:/EGH400_1_Thesis/src/design/DSP_TD.vhd
   C:/EGH400_1_Thesis/src/design/FFT_RAM.vhd
   C:/EGH400_1_Thesis/src/design/Twiddle_factors.vhd
+  C:/EGH400_1_Thesis/src/design/UART_TX.vhd
   C:/EGH400_1_Thesis/src/design/shift_reg_input.vhd
   C:/EGH400_1_Thesis/src/design/Fpga_top_U.vhd
 }
