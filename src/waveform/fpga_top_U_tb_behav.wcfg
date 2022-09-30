@@ -12,18 +12,20 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="12,373.620000 us"></ZoomStartTime>
-      <ZoomEndTime time="12,391.900001 us"></ZoomEndTime>
-      <Cursor1Time time="12,385.385000 us"></Cursor1Time>
+      <ZoomStartTime time="0.000000000 ms"></ZoomStartTime>
+      <ZoomEndTime time="17.000000001 ms"></ZoomEndTime>
+      <Cursor1Time time="17.000000000 ms"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="59"></NameColumnWidth>
-      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+      <NameColumnWidth column_width="73"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="25" />
    <wvobject fp_name="/fpga_top_U_tb/FFT_outR" type="array">
       <obj_property name="ElementShortName">FFT_outR[85:0]</obj_property>
       <obj_property name="ObjectShortName">FFT_outR[85:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/ADDRESS" type="array">
       <obj_property name="ElementShortName">ADDRESS[7:0]</obj_property>
@@ -94,6 +96,8 @@
    <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/UART_TX_1/fsm_tx_state" type="other">
       <obj_property name="ElementShortName">fsm_tx_state</obj_property>
       <obj_property name="ObjectShortName">fsm_tx_state</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/UART_done" type="logic">
       <obj_property name="ElementShortName">UART_done</obj_property>

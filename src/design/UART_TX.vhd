@@ -26,7 +26,7 @@ end entity UART_TX;
 
 architecture rtl of UART_TX is
     
-    constant C_CLK_DIVISOR : INTEGER := 10;--10417;
+    constant C_CLK_DIVISOR : INTEGER := 10417;--10417;
    --G_CLOCK_DIV  : integer := 10417 
    
     
@@ -37,7 +37,7 @@ architecture rtl of UART_TX is
 
     signal fsm_tx_state : fsm_tx_type := TX_IDLE;
   -- signal cnt_div_r    : unsigned(C_DIV_WIDTH-1 downto 0) := (others=>'0');
-    signal   Cnt_div_r : integer range 0 to 11 :=  0; -- clk div for 9600  is 10417 --10418
+    signal   Cnt_div_r : integer range 0 to 10418 :=  0; -- clk div for 9600  is 10417 --10418
     signal cnt_shift_r  : unsigned(9 downto 0) := (others=>'0');
     signal tx_data_sr   : std_logic_vector(9 downto 0) := (others=>'0');
     signal tx_ready_r   : std_logic := '0';

@@ -29,7 +29,7 @@ fprintf(fid,'\n');
 end
 %fprintf(fid,char_bitstream(end));
 
-for ii=1:10000
+for ii=1:10001
    fprintf(fid,'0\n'); % this si file buffer
 end
 

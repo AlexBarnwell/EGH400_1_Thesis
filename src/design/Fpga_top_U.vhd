@@ -34,13 +34,17 @@ entity fpga_top_U is
         clk_100M  : in  STD_LOGIC;
         -- reset_n   : in  STD_LOGIC;
         rst      : in  STD_LOGIC;
-        outR : out STD_LOGIC_VECTOR   ((G_DATA_WIDTH+G_DATA_WIDTH_TW)*G_PARALLEL_TD-1 downto 0 ); -- outputs of the FFT
-        outI : out STD_LOGIC_VECTOR  ((G_DATA_WIDTH+G_DATA_WIDTH_TW)*G_PARALLEL_TD-1 downto 0 );
-        order_out : out int_array_order ;
-        bit_input : in std_logic;
-        write_flag : out std_logic;
-        MIC_clock : out std_logic;
+       -- outR : out STD_LOGIC_VECTOR   ((G_DATA_WIDTH+G_DATA_WIDTH_TW)*G_PARALLEL_TD-1 downto 0 ); -- outputs of the FFT
+        --outI : out STD_LOGIC_VECTOR  ((G_DATA_WIDTH+G_DATA_WIDTH_TW)*G_PARALLEL_TD-1 downto 0 );
+       -- order_out : out int_array_order ;
+        bit_input : in std_logic; -- io41
+        --write_flag : out std_logic;
+        MIC_clock : out std_logic; --io40
         uart_tx : out std_logic
+        
+        
+        
+        
         -- output    : out std_logic_vector(17 downto 0)
     );
 end fpga_top_U;
@@ -56,8 +60,8 @@ architecture RTL of fpga_top_U is
             clk_sys          : out    std_logic;
             --   clk_mic          : out    std_logic;
             -- Status and control signals
-            reset             : in     std_logic;
-            locked            : out    std_logic;
+           -- reset             : in     std_logic;
+            --locked            : out    std_logic;
             clk_in1           : in     std_logic
         );
     end component;
@@ -137,14 +141,15 @@ architecture RTL of fpga_top_U is
 
 
 
-    component  shift_reg_input is
+    component  shift_reg_input_U is
         generic (
             G_PARALLEL_TD : integer := 1;
             G_BYTE_SIZE : integer := 256;
             G_RADIX : integer := 16;
             G_DFTBD_B : integer := 2;-- both radix and DFTBD B modification has not been implemented
             G_MIN_BANK : integer := 0;
-            G_MAX_BANK : integer := 16 -- 16*16 =256 
+            G_MAX_BANK : integer := 16; -- 16*16 =256 
+            G_MCLK_PRESCALER : integer := 40
         );
         Port (
             CLK : in std_logic;
@@ -154,10 +159,11 @@ architecture RTL of fpga_top_U is
             FFT_ready : out std_logic; -- trigger for new mic data being reseived ready to start next FFT
             -- Data_ready : out std_logic; 
             --read_en : in std_logic;
-            MCLK : in std_logic;
+            MCLK : out std_logic;
             byte_out : out std_logic_vector(G_RADIX-1 downto 0); -- reorderd byte for DFTBD RAMS as input
             byte_select : out unsigned(log2(G_RADIX*(2**G_DFTBD_B))-G_DFTBD_B-1 downto 0); -- the counter/ byte_select for the RAM
-            byte_select_full : out unsigned(log2(G_RADIX*(G_MAX_BANK-G_MIN_BANK)/G_PARALLEL_TD)-1  downto 0)
+            byte_select_full : out unsigned(log2(G_RADIX*(G_MAX_BANK-G_MIN_BANK)/G_PARALLEL_TD)-1  downto 0);
+            mic_and_fft_done : in std_logic
             -- note there will need to be a pause (soft reset after each DFT) and a restart (after each full FFT cycle) flag
         );
 
@@ -216,13 +222,19 @@ architecture RTL of fpga_top_U is
 
     signal order_out_sig  : int_array_order := (others => 0);
 
-    signal clock_count : integer :=0;
+    
     signal write_flag_sig : std_logic := '0';
 
     signal FFT_begin : std_logic;
     signal MIC_and_FFT_done : std_logic;
 
     signal UART_FFT_DONE : std_logic;
+    
+    
+--    attribute mark_debug : string;
+--        attribute mark_debug of uart_tx : signal is "true";
+--        attribute mark_debug of bit_input : signal is "true";
+        
 
 
 
@@ -231,7 +243,7 @@ begin
 
     CLOCK : clk_wiz_0
         port map(
-            reset => RSTbuff,
+            --reset => RSTbuff,
             clk_in1  => clk_100M,
             clk_sys => clk_sys
             --  clk_mic => clk_mic
@@ -273,29 +285,29 @@ begin
 
 
 
-    microphone_CLK : process (clk_sys,nRST)
-    begin
+--    microphone_CLK : process (clk_sys,nRST)
+--    begin
 
-        if nRST = '0' then
-            clk_mic <= '0';
-            clock_count <= 0;
-        elsif rising_edge(clk_sys) then
+--        if nRST = '0' then
+--            clk_mic <= '0';
+--            clock_count <= 0;
+--        elsif rising_edge(clk_sys) then
             
-            if MIC_and_FFT_done = '1'  then
-                clock_count <= 0;
-            elsif clock_count = G_MCLK_PRESCALER/2-1 then -- decrease time to 1MHz temp
-                clock_count <= 0;
-                clk_mic <= not clk_mic;
-            else
-                clock_count <=clock_count+1;
-            end if;
-        end if;
+--            if MIC_and_FFT_done = '1'  then
+--                clock_count <= 0;
+--            elsif clock_count = G_MCLK_PRESCALER/2-1 then -- decrease time to 1MHz temp
+--                clock_count <= 0;
+--                clk_mic <= not clk_mic;
+--            else
+--                clock_count <=clock_count+1;
+--            end if;
+--        end if;
 
-    end process;
+--    end process;
 
     MIC_clock <= clk_mic;
 
-    nrst <= not rst;
+    nrst <= rst;
 
     DFTBD_RAMs : DFTBD_RAM
         generic map (
@@ -347,7 +359,7 @@ begin
             write_flag => write_flag_sig
         );
 
-    order_out <= order_out_sig;
+    --order_out <= order_out_sig;
 
 
     TWiddle1 :Twiddle_factors
@@ -370,14 +382,15 @@ begin
         );
 
 
-    inputs : shift_reg_input
+    inputs : shift_reg_input_U
         generic map (
             G_PARALLEL_TD => G_PARALLEL_TD,
             G_BYTE_SIZE => G_BYTE_SIZE,
             G_RADIX  => G_RADIX,
             G_DFTBD_B => G_DFTBD_B, -- both radix and DFTBD B modification has not been implemented
             G_MIN_BANK => G_MIN_BANK,
-            G_MAX_BANK => G_MAX_BANK
+            G_MAX_BANK => G_MAX_BANK,
+            G_MCLK_PRESCALER => G_MCLK_PRESCALER 
         )
         Port map (
             CLK  => clk_sys,
@@ -390,7 +403,8 @@ begin
 
             byte_out => bit_stream_value, -- reorderd byte for DFTBD RAMS as input
             byte_select => position, -- the counter/ byte_select for the RAM
-            byte_select_full => count
+            byte_select_full => count,
+            mic_and_fft_done => mic_and_fft_done
             -- note there will need to be a pause (soft reset after each DFT) and a restart (after each full FFT cycle) flag
         );
 
@@ -422,13 +436,13 @@ begin
 
         );
 
-    write_flag <= write_flag_sig;
+    --write_flag <= write_flag_sig;
     --  resets
     RESET <= (nRSt and FFT_RESETS); -- resets given each condition
     -- order_R <= orders;
     --order_I <= ordersI;
-    outI<= FFT_outI ;
-    outR <= FFT_outR;
+    --outI<= FFT_outI ;
+   -- outR <= FFT_outR;
 
     RSTbuff<= RST;
 

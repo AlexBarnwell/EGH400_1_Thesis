@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/tw_ram_cos_synth_1'
+HD_PWD='C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/tw_ram_cos_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

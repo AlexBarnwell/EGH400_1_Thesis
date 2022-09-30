@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1664327806" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/fpga_top.dcp" LaunchWriteIncrSynthDcp="true">
+<GenRun Id="synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1664446830" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/fpga_top.dcp" LaunchWriteIncrSynthDcp="true">
   <File Type="PA-TCL" Name="fpga_top_U.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="fpga_top_U_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="fpga_top_U_reports.tcl"/>
@@ -53,7 +53,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../src/design/shift_reg_input.vhd">
+    <File Path="$PPRDIR/../../src/design/shift_reg_input_U.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -61,6 +61,13 @@
     </File>
     <File Path="$PPRDIR/../../src/design/Fpga_top_U.vhd">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/design/shift_reg_input.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -214,6 +221,7 @@
       </FileInfo>
     </File>
     <Config>
+      <Option Name="TargetConstrsFile" Val="$PPRDIR/../../src/constraints/arty.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
@@ -233,9 +241,7 @@
   </FileSet>
   <Strategy Version="1" Minor="2">
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
-    <Step Id="synth_design">
-      <Option Id="MoreOptsStr"><![CDATA[-mode out_of_context]]></Option>
-    </Step>
+    <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="bd_ram_r8"/>
   <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>

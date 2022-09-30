@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/fpga_top_U.tcl"
+  variable script "C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/fpga_top_U.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,7 +70,9 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 1
+set_param tcl.collectionResultDisplayLimit 0
+set_param chipscope.maxJobs 3
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35ticsg324-1L
 
@@ -78,111 +80,111 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.cache/wt [current_project]
-set_property parent.project_path C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.xpr [current_project]
+set_property webtalk.parent_dir C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.cache/wt [current_project]
+set_property parent.project_path C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part_repo_paths {C:/Users/a/AppData/Roaming/Xilinx/Vivado/2022.1/xhub/board_store/xilinx_board_store} [current_project]
 set_property board_part digilentinc.com:arty:part0:1.1 [current_project]
-set_property ip_output_repo c:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.cache/ip [current_project]
+set_property ip_output_repo c:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-add_files C:/EGH400_1_Thesis/src/coeff/bd_ram_r1.coe
-add_files C:/EGH400_1_Thesis/src/coeff/bd_ram_r2.coe
-add_files C:/EGH400_1_Thesis/src/coeff/bd_ram_r3.coe
-add_files C:/EGH400_1_Thesis/src/coeff/bd_ram_r4.coe
-add_files C:/EGH400_1_Thesis/src/coeff/bd_ram_r5.coe
-add_files C:/EGH400_1_Thesis/src/coeff/bd_ram_r6.coe
-add_files C:/EGH400_1_Thesis/src/coeff/bd_ram_r7.coe
-add_files C:/EGH400_1_Thesis/src/coeff/bd_ram_r8.coe
-add_files C:/EGH400_1_Thesis/src/coeff/bd_ram_i1.coe
-add_files C:/EGH400_1_Thesis/src/coeff/bd_ram_i2.coe
-add_files C:/EGH400_1_Thesis/src/coeff/bd_ram_i3.coe
-add_files C:/EGH400_1_Thesis/src/coeff/bd_ram_i4.coe
-add_files C:/EGH400_1_Thesis/src/coeff/bd_ram_i5.coe
-add_files C:/EGH400_1_Thesis/src/coeff/bd_ram_i6.coe
-add_files C:/EGH400_1_Thesis/src/coeff/bd_ram_i7.coe
-add_files C:/EGH400_1_Thesis/src/coeff/bd_ram_i8.coe
-add_files C:/EGH400_1_Thesis/src/coeff/TW_values.coe
-add_files C:/EGH400_1_Thesis/src/coeff/tw_ram_sin.coe
-add_files C:/EGH400_1_Thesis/src/coeff/tw_ram_cos.coe
+add_files C:/REPOS/EGH400-1/EGH400_1_Thesis/src/coeff/bd_ram_r1.coe
+add_files C:/REPOS/EGH400-1/EGH400_1_Thesis/src/coeff/bd_ram_r2.coe
+add_files C:/REPOS/EGH400-1/EGH400_1_Thesis/src/coeff/bd_ram_r3.coe
+add_files C:/REPOS/EGH400-1/EGH400_1_Thesis/src/coeff/bd_ram_r4.coe
+add_files C:/REPOS/EGH400-1/EGH400_1_Thesis/src/coeff/bd_ram_r5.coe
+add_files C:/REPOS/EGH400-1/EGH400_1_Thesis/src/coeff/bd_ram_r6.coe
+add_files C:/REPOS/EGH400-1/EGH400_1_Thesis/src/coeff/bd_ram_r7.coe
+add_files C:/REPOS/EGH400-1/EGH400_1_Thesis/src/coeff/bd_ram_r8.coe
+add_files C:/REPOS/EGH400-1/EGH400_1_Thesis/src/coeff/bd_ram_i1.coe
+add_files C:/REPOS/EGH400-1/EGH400_1_Thesis/src/coeff/bd_ram_i2.coe
+add_files C:/REPOS/EGH400-1/EGH400_1_Thesis/src/coeff/bd_ram_i3.coe
+add_files C:/REPOS/EGH400-1/EGH400_1_Thesis/src/coeff/bd_ram_i4.coe
+add_files C:/REPOS/EGH400-1/EGH400_1_Thesis/src/coeff/bd_ram_i5.coe
+add_files C:/REPOS/EGH400-1/EGH400_1_Thesis/src/coeff/bd_ram_i6.coe
+add_files C:/REPOS/EGH400-1/EGH400_1_Thesis/src/coeff/bd_ram_i7.coe
+add_files C:/REPOS/EGH400-1/EGH400_1_Thesis/src/coeff/bd_ram_i8.coe
+add_files C:/REPOS/EGH400-1/EGH400_1_Thesis/src/coeff/TW_values.coe
+add_files C:/REPOS/EGH400-1/EGH400_1_Thesis/src/coeff/tw_ram_sin.coe
+add_files C:/REPOS/EGH400-1/EGH400_1_Thesis/src/coeff/tw_ram_cos.coe
 read_vhdl -library xil_defaultlib {
-  C:/EGH400_1_Thesis/src/design/data_types.vhd
-  C:/EGH400_1_Thesis/src/design/Control_TD.vhd
-  C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd
-  C:/EGH400_1_Thesis/src/design/DSP_TD.vhd
-  C:/EGH400_1_Thesis/src/design/FFT_RAM.vhd
-  C:/EGH400_1_Thesis/src/design/Twiddle_factors.vhd
-  C:/EGH400_1_Thesis/src/design/UART_TX.vhd
-  C:/EGH400_1_Thesis/src/design/shift_reg_input.vhd
-  C:/EGH400_1_Thesis/src/design/Fpga_top_U.vhd
+  C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/data_types.vhd
+  C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Control_TD.vhd
+  C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd
+  C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DSP_TD.vhd
+  C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/FFT_RAM.vhd
+  C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Twiddle_factors.vhd
+  C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/UART_TX.vhd
+  C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/shift_reg_input_U.vhd
+  C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Fpga_top_U.vhd
 }
-read_ip -quiet C:/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0.xci
-set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0.xdc]
-set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
+read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0.xci
+set_property used_in_implementation false [get_files -all c:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0.xdc]
+set_property used_in_implementation false [get_files -all c:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
 
-read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_r1/bd_ram_r1.xci
-set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/bd_ram_r1/bd_ram_r1_ooc.xdc]
+read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r1/bd_ram_r1.xci
+set_property used_in_implementation false [get_files -all c:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r1/bd_ram_r1_ooc.xdc]
 
-read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_r2/bd_ram_r2.xci
-set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/bd_ram_r2/bd_ram_r2_ooc.xdc]
+read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r2/bd_ram_r2.xci
+set_property used_in_implementation false [get_files -all c:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r2/bd_ram_r2_ooc.xdc]
 
-read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_r3/bd_ram_r3.xci
-set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/bd_ram_r3/bd_ram_r3_ooc.xdc]
+read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r3/bd_ram_r3.xci
+set_property used_in_implementation false [get_files -all c:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r3/bd_ram_r3_ooc.xdc]
 
-read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_r4/bd_ram_r4.xci
-set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/bd_ram_r4/bd_ram_r4_ooc.xdc]
+read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r4/bd_ram_r4.xci
+set_property used_in_implementation false [get_files -all c:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r4/bd_ram_r4_ooc.xdc]
 
-read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_r5/bd_ram_r5.xci
-set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/bd_ram_r5/bd_ram_r5_ooc.xdc]
+read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r5/bd_ram_r5.xci
+set_property used_in_implementation false [get_files -all c:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r5/bd_ram_r5_ooc.xdc]
 
-read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_r6/bd_ram_r6.xci
-set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/bd_ram_r6/bd_ram_r6_ooc.xdc]
+read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r6/bd_ram_r6.xci
+set_property used_in_implementation false [get_files -all c:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r6/bd_ram_r6_ooc.xdc]
 
-read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_r7/bd_ram_r7.xci
-set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/bd_ram_r7/bd_ram_r7_ooc.xdc]
+read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r7/bd_ram_r7.xci
+set_property used_in_implementation false [get_files -all c:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r7/bd_ram_r7_ooc.xdc]
 
-read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_r8/bd_ram_r8.xci
-set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/bd_ram_r8/bd_ram_r8_ooc.xdc]
+read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r8/bd_ram_r8.xci
+set_property used_in_implementation false [get_files -all c:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r8/bd_ram_r8_ooc.xdc]
 
-read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_i1/bd_ram_i1.xci
-set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/bd_ram_i1/bd_ram_i1_ooc.xdc]
+read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i1/bd_ram_i1.xci
+set_property used_in_implementation false [get_files -all c:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i1/bd_ram_i1_ooc.xdc]
 
-read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_i3/bd_ram_i3.xci
-set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/bd_ram_i3/bd_ram_i3_ooc.xdc]
+read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i3/bd_ram_i3.xci
+set_property used_in_implementation false [get_files -all c:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i3/bd_ram_i3_ooc.xdc]
 
-read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_i4/bd_ram_i4.xci
-set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/bd_ram_i4/bd_ram_i4_ooc.xdc]
+read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i4/bd_ram_i4.xci
+set_property used_in_implementation false [get_files -all c:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i4/bd_ram_i4_ooc.xdc]
 
-read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_i5/bd_ram_i5.xci
-set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/bd_ram_i5/bd_ram_i5_ooc.xdc]
+read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i5/bd_ram_i5.xci
+set_property used_in_implementation false [get_files -all c:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i5/bd_ram_i5_ooc.xdc]
 
-read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_i6/bd_ram_i6.xci
-set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/bd_ram_i6/bd_ram_i6_ooc.xdc]
+read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i6/bd_ram_i6.xci
+set_property used_in_implementation false [get_files -all c:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i6/bd_ram_i6_ooc.xdc]
 
-read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_i7/bd_ram_i7.xci
-set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/bd_ram_i7/bd_ram_i7_ooc.xdc]
+read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i7/bd_ram_i7.xci
+set_property used_in_implementation false [get_files -all c:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i7/bd_ram_i7_ooc.xdc]
 
-read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_i8/bd_ram_i8.xci
-set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/bd_ram_i8/bd_ram_i8_ooc.xdc]
+read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i8/bd_ram_i8.xci
+set_property used_in_implementation false [get_files -all c:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i8/bd_ram_i8_ooc.xdc]
 
-read_ip -quiet C:/EGH400_1_Thesis/src/ip/dsp_macro_0/dsp_macro_0.xci
-set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/dsp_macro_0/dsp_macro_0_ooc.xdc]
+read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/dsp_macro_0/dsp_macro_0.xci
+set_property used_in_implementation false [get_files -all c:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/dsp_macro_0/dsp_macro_0_ooc.xdc]
 
-read_ip -quiet C:/EGH400_1_Thesis/src/ip/tw_ram_sin/tw_ram_sin.xci
-set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/tw_ram_sin/tw_ram_sin_ooc.xdc]
+read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/tw_ram_sin/tw_ram_sin.xci
+set_property used_in_implementation false [get_files -all c:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/tw_ram_sin/tw_ram_sin_ooc.xdc]
 
-read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_i2/bd_ram_i2.xci
-set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/bd_ram_i2/bd_ram_i2_ooc.xdc]
+read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i2/bd_ram_i2.xci
+set_property used_in_implementation false [get_files -all c:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i2/bd_ram_i2_ooc.xdc]
 
-read_ip -quiet C:/EGH400_1_Thesis/src/ip/tw_ram_cos/tw_ram_cos.xci
-set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/tw_ram_cos/tw_ram_cos_ooc.xdc]
+read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/tw_ram_cos/tw_ram_cos.xci
+set_property used_in_implementation false [get_files -all c:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/tw_ram_cos/tw_ram_cos_ooc.xdc]
 
-read_ip -quiet C:/EGH400_1_Thesis/src/ip/FFT_ram/FFT_ram.xci
-set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/FFT_ram/FFT_ram_ooc.xdc]
+read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/FFT_ram/FFT_ram.xci
+set_property used_in_implementation false [get_files -all c:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/FFT_ram/FFT_ram_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -193,16 +195,16 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/EGH400_1_Thesis/src/constraints/arty.xdc
-set_property used_in_implementation false [get_files C:/EGH400_1_Thesis/src/constraints/arty.xdc]
+read_xdc C:/REPOS/EGH400-1/EGH400_1_Thesis/src/constraints/arty.xdc
+set_property used_in_implementation false [get_files C:/REPOS/EGH400-1/EGH400_1_Thesis/src/constraints/arty.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/synth_1/fpga_top.dcp
+read_checkpoint -auto_incremental -incremental C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/synth_1/fpga_top.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top fpga_top_U -part xc7a35ticsg324-1L -mode out_of_context
+synth_design -top fpga_top_U -part xc7a35ticsg324-1L
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"

@@ -1,9 +1,10 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
--- Date        : Thu Sep 22 16:53:30 2022
+-- Date        : Thu Sep 22 16:53:29 2022
 -- Host        : DESKTOP-BDA8VGJ running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub c:/EGH400_1_Thesis/src/ip/bd_ram_i7/bd_ram_i7_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top bd_ram_i7 -prefix
+--               bd_ram_i7_ bd_ram_i7_stub.vhdl
 -- Design      : bd_ram_i7
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a35ticsg324-1L

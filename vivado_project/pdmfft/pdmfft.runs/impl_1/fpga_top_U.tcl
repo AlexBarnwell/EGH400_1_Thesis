@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/impl_1/fpga_top_U.tcl"
+  variable script "C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/impl_1/fpga_top_U.tcl"
   variable category "vivado_impl"
 }
 
@@ -122,7 +122,9 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param chipscope.maxJobs 1
+  set_param tcl.collectionResultDisplayLimit 0
+  set_param chipscope.maxJobs 3
+  set_param xicom.use_bs_reader 1
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a35ticsg324-1L
   set_property board_part_repo_paths {C:/Users/a/AppData/Roaming/Xilinx/Vivado/2022.1/xhub/board_store/xilinx_board_store} [current_project]
@@ -131,37 +133,37 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.cache/wt [current_project]
-  set_property parent.project_path C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.xpr [current_project]
-  set_property ip_output_repo C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.cache/wt [current_project]
+  set_property parent.project_path C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.xpr [current_project]
+  set_property ip_output_repo C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/fpga_top_U.dcp
-  read_ip -quiet C:/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0.xci
-  read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_r1/bd_ram_r1.xci
-  read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_r2/bd_ram_r2.xci
-  read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_r3/bd_ram_r3.xci
-  read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_r4/bd_ram_r4.xci
-  read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_r5/bd_ram_r5.xci
-  read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_r6/bd_ram_r6.xci
-  read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_r7/bd_ram_r7.xci
-  read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_r8/bd_ram_r8.xci
-  read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_i1/bd_ram_i1.xci
-  read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_i3/bd_ram_i3.xci
-  read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_i4/bd_ram_i4.xci
-  read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_i5/bd_ram_i5.xci
-  read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_i6/bd_ram_i6.xci
-  read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_i7/bd_ram_i7.xci
-  read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_i8/bd_ram_i8.xci
-  read_ip -quiet C:/EGH400_1_Thesis/src/ip/dsp_macro_0/dsp_macro_0.xci
-  read_ip -quiet C:/EGH400_1_Thesis/src/ip/tw_ram_sin/tw_ram_sin.xci
-  read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_i2/bd_ram_i2.xci
-  read_ip -quiet C:/EGH400_1_Thesis/src/ip/tw_ram_cos/tw_ram_cos.xci
-  read_ip -quiet C:/EGH400_1_Thesis/src/ip/FFT_ram/FFT_ram.xci
+  add_files -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/fpga_top_U.dcp
+  read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0.xci
+  read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r1/bd_ram_r1.xci
+  read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r2/bd_ram_r2.xci
+  read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r3/bd_ram_r3.xci
+  read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r4/bd_ram_r4.xci
+  read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r5/bd_ram_r5.xci
+  read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r6/bd_ram_r6.xci
+  read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r7/bd_ram_r7.xci
+  read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r8/bd_ram_r8.xci
+  read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i1/bd_ram_i1.xci
+  read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i3/bd_ram_i3.xci
+  read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i4/bd_ram_i4.xci
+  read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i5/bd_ram_i5.xci
+  read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i6/bd_ram_i6.xci
+  read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i7/bd_ram_i7.xci
+  read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i8/bd_ram_i8.xci
+  read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/dsp_macro_0/dsp_macro_0.xci
+  read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/tw_ram_sin/tw_ram_sin.xci
+  read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i2/bd_ram_i2.xci
+  read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/tw_ram_cos/tw_ram_cos.xci
+  read_ip -quiet C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/FFT_ram/FFT_ram.xci
 OPTRACE "read constraints: implementation" START { }
-  read_xdc C:/EGH400_1_Thesis/src/constraints/arty.xdc
+  read_xdc C:/REPOS/EGH400-1/EGH400_1_Thesis/src/constraints/arty.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }
@@ -318,4 +320,35 @@ OPTRACE "route_design write_checkpoint" END { }
 
 OPTRACE "route_design misc" END { }
 OPTRACE "Phase: Route Design" END { }
+OPTRACE "Phase: Write Bitstream" START { ROLLUP_AUTO }
+OPTRACE "write_bitstream setup" START { }
+start_step write_bitstream
+set ACTIVE_STEP write_bitstream
+set rc [catch {
+  create_msg_db write_bitstream.pb
+OPTRACE "read constraints: write_bitstream" START { }
+OPTRACE "read constraints: write_bitstream" END { }
+  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
+  catch { write_mem_info -force -no_partial_mmi fpga_top_U.mmi }
+OPTRACE "write_bitstream setup" END { }
+OPTRACE "write_bitstream" START { }
+  write_bitstream -force fpga_top_U.bit 
+OPTRACE "write_bitstream" END { }
+OPTRACE "write_bitstream misc" START { }
+OPTRACE "read constraints: write_bitstream_post" START { }
+OPTRACE "read constraints: write_bitstream_post" END { }
+  catch {write_debug_probes -quiet -force fpga_top_U}
+  catch {file copy -force fpga_top_U.ltx debug_nets.ltx}
+  close_msg_db -file write_bitstream.pb
+} RESULT]
+if {$rc} {
+  step_failed write_bitstream
+  return -code error $RESULT
+} else {
+  end_step write_bitstream
+  unset ACTIVE_STEP 
+}
+
+OPTRACE "write_bitstream misc" END { }
+OPTRACE "Phase: Write Bitstream" END { }
 OPTRACE "impl_1" END { }

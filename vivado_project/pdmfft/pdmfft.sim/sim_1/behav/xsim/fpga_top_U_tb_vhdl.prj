@@ -9,7 +9,7 @@ vhdl xil_defaultlib  \
 "../../../../../../src/design/Fpga_top_U.vhd" \
 "../../../../../../src/design/Twiddle_factors.vhd" \
 "../../../../../../src/design/UART_TX.vhd" \
-"../../../../../../src/design/shift_reg_input.vhd" \
+"../../../../../../src/design/shift_reg_input_U.vhd" \
 "../../../../../../src/sim/fpga_top_U_tb.vhd" \
 
 # Do not sort compile order
