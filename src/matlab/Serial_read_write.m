@@ -72,7 +72,7 @@ end
 
 end
 i=0;
-FPGA = serialport("COM6",9600);
+FPGA = serialport("COM6",115200);
 out=zeros(1,20000);
 while(1)
     i=i+1;

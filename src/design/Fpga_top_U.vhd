@@ -231,9 +231,9 @@ architecture RTL of fpga_top_U is
     signal UART_FFT_DONE : std_logic;
     
     
---    attribute mark_debug : string;
---        attribute mark_debug of uart_tx : signal is "true";
---        attribute mark_debug of bit_input : signal is "true";
+    attribute mark_debug : string;
+        attribute mark_debug of uart_tx : signal is "true";
+        attribute mark_debug of bit_input : signal is "true";
         
 
 

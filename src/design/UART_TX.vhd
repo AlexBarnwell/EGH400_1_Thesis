@@ -26,7 +26,7 @@ end entity UART_TX;
 
 architecture rtl of UART_TX is
     
-    constant C_CLK_DIVISOR : INTEGER := 10417;--10417;
+    constant C_CLK_DIVISOR : INTEGER := 868;--10417;
    --G_CLOCK_DIV  : integer := 10417 
    
     
@@ -37,9 +37,9 @@ architecture rtl of UART_TX is
 
     signal fsm_tx_state : fsm_tx_type := TX_IDLE;
   -- signal cnt_div_r    : unsigned(C_DIV_WIDTH-1 downto 0) := (others=>'0');
-    signal   Cnt_div_r : integer range 0 to 10418 :=  0; -- clk div for 9600  is 10417 --10418
+    signal   Cnt_div_r : integer range 0 to 870 :=  0; -- clk div for 9600  is 10417 --10418
     signal cnt_shift_r  : unsigned(9 downto 0) := (others=>'0');
-    signal tx_data_sr   : std_logic_vector(9 downto 0) := (others=>'0');
+    signal tx_data_sr   : std_logic_vector(15 downto 0) := (others=>'0');
     signal tx_ready_r   : std_logic := '0';
     signal tx_r         : std_logic := '1';
 
@@ -63,7 +63,7 @@ begin
                    cnt_div_r    <= 0;
                    if (tx_en_in = '1') then -- enable transmission 
                        tx_ready_r   <= '0'; -- not ready to recieve transmission
-                       tx_data_sr   <= '1' & tx_data_in & '0'; -- transmission data i,e start bit DATA stop bit
+                       tx_data_sr   <= "1111111" & tx_data_in & '0'; -- transmission data i,e start bit DATA stop bit
                        fsm_tx_state <= TX_SHIFT_WORD;
                     end if;
 
@@ -71,8 +71,8 @@ begin
                     tx_r <= tx_data_sr(0);
                     if (cnt_div_r = C_CLK_DIVISOR-1) then
                         cnt_div_r   <= 0;
-                        tx_data_sr  <= '1' & tx_data_sr(9 downto 1);
-                        if (cnt_shift_r = 9) then
+                        tx_data_sr  <= '1' & tx_data_sr(15 downto 1);
+                        if (cnt_shift_r = 15) then
                             fsm_tx_state <= TX_IDLE;
                         else
                             cnt_shift_r <= cnt_shift_r + 1;

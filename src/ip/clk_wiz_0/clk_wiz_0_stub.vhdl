@@ -1,9 +1,10 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
--- Date        : Tue Sep 27 14:24:48 2022
+-- Date        : Tue Sep 27 14:24:47 2022
 -- Host        : DESKTOP-BDA8VGJ running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub c:/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top clk_wiz_0 -prefix
+--               clk_wiz_0_ clk_wiz_0_stub.vhdl
 -- Design      : clk_wiz_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a35ticsg324-1L

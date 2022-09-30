@@ -57,7 +57,7 @@ end fpga_top_U_tb;
 architecture Behavioral of fpga_top_U_tb is
 
 
-    component fpga_top_U is
+    component fpga_top_U_sim is
         generic (
             G_DATA_WIDTH    : INTEGER := 25; -- data width of output
             G_DATA_WIDTH_TW    : INTEGER := 18; --  dta with of TWiddle
@@ -126,7 +126,7 @@ begin
 
     -- componants
 
-    top_sim : fpga_top_U
+    top_sim : fpga_top_U_sim
         generic map (
             G_DATA_WIDTH  => G_DATA_WIDTH, -- data width of output
             G_DATA_WIDTH_TW  => G_DATA_WIDTH_TW, --  dta with of TWiddle
@@ -256,7 +256,9 @@ begin
             --  write(row_read,FFT_outR, right, 55);
             read(row_read,v_data_read);
             --write(row_write,FFt_outI, right, 55);
-            bit_input <= to_stdulogic(v_data_read);
+           -- bit_input <= to_stdulogic(v_data_read);
+           
+           bit_input <= '1';
             --write(row_write,order_out, right, 15);
             --hwrite(row,o_add, right, 15);
             -- hwrite(row,"00000000"&o_add, right, 15);

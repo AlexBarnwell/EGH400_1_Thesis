@@ -70,7 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param tcl.collectionResultDisplayLimit 0
 set_param chipscope.maxJobs 3
 set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
@@ -198,6 +197,8 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 read_xdc C:/REPOS/EGH400-1/EGH400_1_Thesis/src/constraints/arty.xdc
 set_property used_in_implementation false [get_files C:/REPOS/EGH400-1/EGH400_1_Thesis/src/constraints/arty.xdc]
 
+read_xdc dont_touch.xdc
+set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
 read_checkpoint -auto_incremental -incremental C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/synth_1/fpga_top.dcp

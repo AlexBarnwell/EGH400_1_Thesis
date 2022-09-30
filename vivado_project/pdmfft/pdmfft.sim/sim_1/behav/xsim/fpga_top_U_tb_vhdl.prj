@@ -6,9 +6,9 @@ vhdl xil_defaultlib  \
 "../../../../../../src/design/DFTBD_RAM.vhd" \
 "../../../../../../src/design/DSP_TD.vhd" \
 "../../../../../../src/design/FFT_RAM.vhd" \
-"../../../../../../src/design/Fpga_top_U.vhd" \
 "../../../../../../src/design/Twiddle_factors.vhd" \
 "../../../../../../src/design/UART_TX.vhd" \
+"../../../../../../src/design/fpga_top_U_sim.vhd" \
 "../../../../../../src/design/shift_reg_input_U.vhd" \
 "../../../../../../src/sim/fpga_top_U_tb.vhd" \
 
