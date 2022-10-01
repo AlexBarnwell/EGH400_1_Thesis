@@ -3,5 +3,7 @@
 
 # XDC: C:/REPOS/EGH400-1/EGH400_1_Thesis/src/constraints/arty.xdc
 
+# XDC: C:/REPOS/EGH400-1/EGH400_1_Thesis/src/constraints/bitstream_flash_config.xdc
+
 # IP: C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==clk_wiz_0 || ORIG_REF_NAME==clk_wiz_0} -quiet] -quiet

@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param tcl.collectionResultDisplayLimit 0
 set_param chipscope.maxJobs 3
 set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
@@ -109,6 +110,7 @@ add_files C:/REPOS/EGH400-1/EGH400_1_Thesis/src/coeff/bd_ram_i8.coe
 add_files C:/REPOS/EGH400-1/EGH400_1_Thesis/src/coeff/TW_values.coe
 add_files C:/REPOS/EGH400-1/EGH400_1_Thesis/src/coeff/tw_ram_sin.coe
 add_files C:/REPOS/EGH400-1/EGH400_1_Thesis/src/coeff/tw_ram_cos.coe
+add_files c:/REPOS/EGH400-1/EGH400_1_Thesis/src/coeff/uart_ram.coe
 read_vhdl -library xil_defaultlib {
   C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/data_types.vhd
   C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Control_TD.vhd
@@ -201,7 +203,7 @@ read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/synth_1/fpga_top.dcp
+read_checkpoint -auto_incremental -incremental C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/synth_1/fpga_top_U.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

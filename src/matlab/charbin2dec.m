@@ -5,10 +5,14 @@ FFT_outR=input;
 FFTR=zeros(R,1);
 
 for ii=1:R
-  orderd(ii)= str2double(order(ii,:));
+    if isa(order,'double')
+    orderd(ii)=order(ii);
+    else
+    orderd(ii)= str2double(order(ii,:));
+    end
 end
 
-sum((order(:,:)-'0').*[10^1 10^0])
+%sum((order(:,:)-'0').*[10^1 10^0])
 for ii=1:R
     
     if FFT_outR(ii,1) == '0' % positive number

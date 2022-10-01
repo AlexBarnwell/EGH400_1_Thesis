@@ -75,7 +75,7 @@ end component UART_TX;
             clka : IN STD_LOGIC;
             ena : IN STD_LOGIC;
             wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-            addra : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+            addra : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
             dina : IN STD_LOGIC_VECTOR((G_DATA_WIDTH+G_DATA_WIDTH_TW+1)*2+G_ORD_SIZE-1 DOWNTO 0);
             douta : OUT STD_LOGIC_VECTOR((G_DATA_WIDTH+G_DATA_WIDTH_TW+1)*2+G_ORD_SIZE-1 DOWNTO 0)
 
@@ -88,10 +88,10 @@ end component UART_TX;
     signal DATA_OUT : std_logic_vector((G_DATA_WIDTH+G_DATA_WIDTH_TW+1)*2+G_ORD_SIZE-1 downto 0) := (others => '0');
     type states is (WRITE, READ, IDLE_READ,IDLE_WRITE, UART,READ_WRITE_BUFF);
     signal CASES : states;
-    signal ADDRESS : std_logic_vector(7 downto 0);
-    signal ADDRESS2 : std_logic_vector(7 downto 0);
-    signal A : signed(G_UART_DEPTH-1 downto 0);
-    signal B : signed(G_UART_DEPTH-1 downto 0);
+    signal ADDRESS : std_logic_vector(8 downto 0);
+    signal ADDRESS2 : std_logic_vector(8 downto 0);
+    signal A : signed(G_UART_DEPTH downto 0);
+    signal B : signed(G_UART_DEPTH downto 0);
 
     signal hold : std_logic_vector(G_PARALLEL_TD-1 downto 0);
     signal UART_buff : std_logic_vector((G_DATA_WIDTH+G_DATA_WIDTH_TW+1)*2+G_ORD_SIZE-1 DOWNTO 0) := (others => '0');
@@ -145,9 +145,9 @@ begin
     begin
 
         if nRST = '0' then
-            A <= (others => '0');
-            B <= "00010000"; -- 16 
-            ADDRESS <= (others => '0');
+            A <= "000000001"; --1
+            B <= "000010001"; -- 17 
+            ADDRESS <= "000000001";
             DATA_IN <= (others => '0');
             wea <= "0";
            -- UART_done <= '0';
@@ -160,7 +160,7 @@ begin
             case cases is
 
 
-                when WRITE => -- teh wirite to RAM
+                when WRITE => -- the wirite to RAM
 
 
                     -- if (hold(0) = '1') then
@@ -214,8 +214,8 @@ begin
                       elsif (count = G_RADIX*(G_MAX_BANK-G_MIN_BANK)) then
                         count <= 0;
                             ADDRESS <= (others => '0');
-                            A<= (others => '0');
-                            B <= "00010000";
+                            A<= "000000001";
+                            B <= "000010001";
                             wea <= "0";
                             DATA_IN <= (others =>'0');
                             cases <= READ_WRITE_BUFF;
@@ -264,12 +264,12 @@ begin
                     read_delay <= '1';
                     UART_ON <= '0';
                     if ((UART_done = '1') and (read_delay = '1')) then
-                        UART_BUFF((G_UART_DEPTH)*10-1 downto 0) <= UART_BUFF(G_UART_DEPTH*11-1 downto G_UART_DEPTH);
+                        UART_BUFF((G_UART_DEPTH)*11-1 downto 0) <= UART_BUFF(G_UART_DEPTH*12-1 downto G_UART_DEPTH);
                       
                       
                       if ( UART_COUNT = 12) then
                        
-                        if (ADDRESS  = "00000000") then
+                        if (ADDRESS  = "100000001") then
                             cases <= IDLE_WRITE;
                             UART_COUNT <= 0;
                             UART_FFT_DONE <= '1';

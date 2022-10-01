@@ -12,15 +12,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000000000 ms"></ZoomStartTime>
-      <ZoomEndTime time="17.000000001 ms"></ZoomEndTime>
-      <Cursor1Time time="17.000000000 ms"></Cursor1Time>
+      <ZoomStartTime time="358.723842 us"></ZoomStartTime>
+      <ZoomEndTime time="1,322.723843 us"></ZoomEndTime>
+      <Cursor1Time time="958.723842 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="73"></NameColumnWidth>
       <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="25" />
+   <WVObjectSize size="26" />
    <wvobject fp_name="/fpga_top_U_tb/FFT_outR" type="array">
       <obj_property name="ElementShortName">FFT_outR[85:0]</obj_property>
       <obj_property name="ObjectShortName">FFT_outR[85:0]</obj_property>
@@ -123,7 +123,6 @@
       <obj_property name="ElementShortName">Mic_shift_reg_input[2048:0]</obj_property>
       <obj_property name="ObjectShortName">Mic_shift_reg_input[2048:0]</obj_property>
       <obj_property name="Radix">BINARYRADIX</obj_property>
-      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/fpga_top_U_tb/top_sim/inputs/shift_reg_buffer" type="array">
       <obj_property name="ElementShortName">shift_reg_buffer[8191:0]</obj_property>
@@ -132,5 +131,9 @@
    <wvobject fp_name="/fpga_top_U_tb/top_sim/inputs/count" type="other">
       <obj_property name="ElementShortName">count</obj_property>
       <obj_property name="ObjectShortName">count</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_U_tb/clk_100M" type="logic">
+      <obj_property name="ElementShortName">clk_100M</obj_property>
+      <obj_property name="ObjectShortName">clk_100M</obj_property>
    </wvobject>
 </wave_config>

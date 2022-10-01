@@ -60,7 +60,7 @@ architecture RTL of fpga_top_U is
             clk_sys          : out    std_logic;
             --   clk_mic          : out    std_logic;
             -- Status and control signals
-           -- reset             : in     std_logic;
+           reset             : in     std_logic;
             --locked            : out    std_logic;
             clk_in1           : in     std_logic
         );
@@ -243,7 +243,7 @@ begin
 
     CLOCK : clk_wiz_0
         port map(
-            --reset => RSTbuff,
+            reset => '0',
             clk_in1  => clk_100M,
             clk_sys => clk_sys
             --  clk_mic => clk_mic

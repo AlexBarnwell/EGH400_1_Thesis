@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1664533113" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/fpga_top.dcp" LaunchWriteIncrSynthDcp="true">
+<GenRun Id="synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1664609084" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/fpga_top_U.dcp" LaunchWriteIncrSynthDcp="true">
   <File Type="PA-TCL" Name="fpga_top_U.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="fpga_top_U_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="fpga_top_U_reports.tcl"/>
@@ -221,6 +221,12 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/../../src/coeff/uart_ram.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="fpga_top_U"/>
@@ -234,14 +240,19 @@
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/../../src/constraints/bitstream_flash_config.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
-      <Option Name="TargetConstrsFile" Val="$PPRDIR/../../src/constraints/arty.xdc"/>
+      <Option Name="TargetConstrsFile" Val="$PPRDIR/../../src/constraints/bitstream_flash_config.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
   <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
     <Filter Type="Utils"/>
-    <File Path="$PSRCDIR/utils_1/imports/synth_1/fpga_top.dcp">
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/fpga_top_U.dcp">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -254,7 +265,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="bd_ram_r1"/>

@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Sat Oct  1 17:26:35 2022
+# Process ID: 19228
+# Current directory: C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/impl_1
+# Command line: vivado.exe -log fpga_top_U.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source fpga_top_U.tcl -notrace
+# Log file: C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/impl_1/fpga_top_U.vdi
+# Journal file: C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/impl_1\vivado.jou
+# Running On: LAPTOP-M3DNELKA, OS: Windows, CPU Frequency: 2208 MHz, CPU Physical cores: 6, Host memory: 17075 MB
+#-----------------------------------------------------------
+source fpga_top_U.tcl -notrace

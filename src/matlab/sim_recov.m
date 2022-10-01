@@ -14,7 +14,7 @@ FILE_read= "..\sim\output_file.txt";
 
 rng(Seed,'twister') % get the RNG seed
 bitstream=round(rand(1,N)); % set bitstream
-%bitstream(end-1)=0;
+bitstream(1:end)=1;
 %bitstream(1) =0;
 % convert to char
 %bitstream=mod((1:length(bitstream))+1,2);

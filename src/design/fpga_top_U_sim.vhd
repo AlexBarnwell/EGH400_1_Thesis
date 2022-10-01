@@ -359,7 +359,7 @@ begin
             write_flag => write_flag_sig
         );
 
-    --order_out <= order_out_sig;
+    order_out <= order_out_sig;
 
 
     TWiddle1 :Twiddle_factors

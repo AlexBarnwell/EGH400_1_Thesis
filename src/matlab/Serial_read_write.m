@@ -5,7 +5,8 @@ close all
 serialportlist("available") %COM4 arduino
 
 Arduino = serialport("COM4",9600);
-
+FPGA = serialport("COM6",115200,"stopbits",2,"ByteOrder","big-endian");
+%FPGA.InputBufferSize(500);
 
 
 
@@ -71,15 +72,72 @@ end
 
 
 end
-i=0;
-FPGA = serialport("COM6",115200);
-out=zeros(1,20000);
+i=1;
+
+out=zeros(1,3080);
+flush(FPGA);
+start_count=0;
 while(1)
-    i=i+1;
-
-out(i)=read(FPGA,1,"uint8");
-
-if i==20000
+   if (start_count<12)
+    if (read(FPGA,1,"uint8") == 90)
+        start_count=start_count+1;
+    end
+    elseif start_count>=12
+    %flush(FPGA)
+%%FPGA.NumBytesAvailable;
+out(1:3080)=read(FPGA,3080,"uint8");
+%NumBytesAvailable(FPGA)
+ i=i+1;
+if i>=0
     break
 end
+    
+    else
+        start_count =0;
+    end
 end
+flush(FPGA);
+FPGA=[];
+figure(1)
+plot(out)
+% processing part
+out_re=zeros(3072/12,12)
+% for i=0:3080/12 % 256
+%    out_Re =  out(
+% end
+
+
+out_re=(reshape(out(1:3072),12,3072/12))'
+
+order = out_re(:,1);
+i=1
+image=string(flip(dec2bin(out_re(:,i+1),8),2));
+for i=2:5
+image=append(image,string(flip(dec2bin(out_re(:,i+1),8),2)))
+end
+i=6;
+temp=(flip(dec2bin(out_re(:,i+1),8),2))
+imag_add_end=string(temp(:,1:3))
+real_add_start = string(temp(:,4:8))
+
+i=7
+real=string(flip(dec2bin(out_re(:,i+1),8),2));
+for i=8:11
+real=append(real,string(flip(dec2bin(out_re(:,i+1),8),2)))
+end 
+
+image=append(image,imag_add_end)
+real=append(real_add_start,real)
+
+
+DFTD=20;
+TWD = 15;
+real2=char(real)
+real=real2(:,1:43);
+
+FFT_Real= charbin2dec(flip(real,2),order,DFTD,TWD);
+
+FFT_Imag= charbin2dec(flip(char(image),2),order,DFTD,TWD)
+
+figure(2)
+plot(abs(FFT_Real+1i*FFT_Imag))
