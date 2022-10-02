@@ -40,7 +40,9 @@ entity fpga_top_U_sim is
         bit_input : in std_logic; -- io41
         write_flag : out std_logic;
         MIC_clock : out std_logic; --io40
-        uart_tx : out std_logic
+        uart_tx : out std_logic;
+                    Chip_select : out std_logic -- chip select for arduino
+
         
         
         
@@ -164,6 +166,7 @@ architecture RTL of fpga_top_U_sim is
             byte_select : out unsigned(log2(G_RADIX*(2**G_DFTBD_B))-G_DFTBD_B-1 downto 0); -- the counter/ byte_select for the RAM
             byte_select_full : out unsigned(log2(G_RADIX*(G_MAX_BANK-G_MIN_BANK)/G_PARALLEL_TD)-1  downto 0);
             mic_and_fft_done : in std_logic
+
             -- note there will need to be a pause (soft reset after each DFT) and a restart (after each full FFT cycle) flag
         );
 
@@ -229,6 +232,9 @@ architecture RTL of fpga_top_U_sim is
     signal MIC_and_FFT_done : std_logic;
 
     signal UART_FFT_DONE : std_logic;
+        signal sig_chip_select : std_logic := '0';
+    signal cs_delay : unsigned(9 downto 0) := (others => '0');
+    signal cs_hold : unsigned(1 downto 0) := (others => '0');
     
     
     attribute mark_debug : string;
@@ -240,6 +246,7 @@ architecture RTL of fpga_top_U_sim is
 
 
 begin
+Chip_select <= sig_chip_select ;
 
     CLOCK : clk_wiz_0
         port map(
@@ -259,6 +266,9 @@ begin
             FFT_begin <= '1';
 
             MIC_and_FFT_done <= '1';
+            sig_chip_select <= '0';
+            cs_hold <= "00";
+            cs_delay <= (others => '0');
 
         elsif rising_edge(clk_sys) then
 
@@ -271,11 +281,20 @@ begin
                 
                 elsif (FFT_ready = '1') then
                 MIC_and_FFT_done <= '1';
+                cs_hold <= "00";
+                
 
             else
                 FFT_begin <= '0';
             end if;
-
+              if ((cs_hold = "00") or (cs_hold = "01"))  then
+                cs_delay<= cs_Delay+1;
+                if CS_delay = "1111111111" then -- 1024
+                   sig_chip_select <= not sig_chip_select;
+                   cs_hold <= cs_hold+1;
+                end if;
+                 
+            end if;
 
         end if;
 

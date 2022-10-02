@@ -81,7 +81,9 @@ architecture Behavioral of fpga_top_U_tb is
             write_flag : out std_logic;
             bit_input : in std_logic;
             MIC_clock : out std_logic;
-            uart_tx : out std_logic
+            uart_tx : out std_logic;
+                        Chip_select : out std_logic -- chip select for arduino
+
             -- output    : out std_logic_vector(17 downto 0)
         );
     end component;
@@ -93,6 +95,7 @@ architecture Behavioral of fpga_top_U_tb is
     signal outR : std_logic_vector((G_DATA_WIDTH + G_DATA_WIDTH_TW)*G_PARALLEL_TD-1 downto 0 ) := (others => '0');
     signal outI : std_logic_vector((G_DATA_WIDTH + G_DATA_WIDTH_TW)*G_PARALLEL_TD-1 downto 0 ) := (others => '0');
     signal order_out : int_array_order := (others => 0);
+    signal cs : std_logic  := '0';
    -- signal order  :integer:= 0;
 
    -- signal int_outR : integer := 0;
@@ -150,7 +153,8 @@ begin
             write_flag =>write_flag,
             bit_input => bit_input,
             MIC_clock => MIC_clock,
-            uart_tx => uart_tx
+            uart_tx => uart_tx,
+            chip_select => cs
             -- output    : out std_logic_vector(17 downto 0)
         );
 
@@ -256,9 +260,9 @@ begin
             --  write(row_read,FFT_outR, right, 55);
             read(row_read,v_data_read);
             --write(row_write,FFt_outI, right, 55);
-           -- bit_input <= to_stdulogic(v_data_read);
+            bit_input <= to_stdulogic(v_data_read);
            
-           bit_input <= '1';
+           --bit_input <= '1';
             --write(row_write,order_out, right, 15);
             --hwrite(row,o_add, right, 15);
             -- hwrite(row,"00000000"&o_add, right, 15);

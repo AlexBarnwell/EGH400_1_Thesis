@@ -238,6 +238,9 @@ begin
 
                 when READ => -- this is the condiction that read in a line for the UART
                     ADDRESS <= std_logic_vector(signed(ADDRESS) +1);
+                    if ADDRESS = "100000000" then
+                    ADDRESS <= (others => '0');
+                    end if;
                     UART_BUFF <= DATA_OUT; -- push DATA from RAM into UART buffer
                     cases <= UART;
 
@@ -269,7 +272,7 @@ begin
                       
                       if ( UART_COUNT = 12) then
                        
-                        if (ADDRESS  = "100000001") then
+                        if (ADDRESS  = "000000000") then
                             cases <= IDLE_WRITE;
                             UART_COUNT <= 0;
                             UART_FFT_DONE <= '1';

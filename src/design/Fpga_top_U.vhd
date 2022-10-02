@@ -24,7 +24,7 @@ entity fpga_top_U is
         G_BYTE_SIZE : Integer := 8192;
         G_RADIX : integer := 16;
         G_DFTBD_B : integer := 2;
-        G_MCLK_PRESCALER : integer := 40;
+        G_MCLK_PRESCALER : integer := 800;
         G_MIN_BANK : integer := 0;
         G_MAX_BANK : integer := 16; -- 16*16 =256
         G_DECIMAL_WIDTH_TW : integer := 15; -- decimal precision 
@@ -40,7 +40,8 @@ entity fpga_top_U is
         bit_input : in std_logic; -- io41
         --write_flag : out std_logic;
         MIC_clock : out std_logic; --io40
-        uart_tx : out std_logic
+        uart_tx : out std_logic;
+        Chip_select : out std_logic -- chip select for arduino
         
         
         
@@ -229,11 +230,15 @@ architecture RTL of fpga_top_U is
     signal MIC_and_FFT_done : std_logic;
 
     signal UART_FFT_DONE : std_logic;
+    signal sig_chip_select : std_logic;
+    signal cs_delay : unsigned(11 downto 0) := (others => '0');
+    signal cs_hold : unsigned(1 downto 0) := (others => '0');
     
     
-    attribute mark_debug : string;
-        attribute mark_debug of uart_tx : signal is "true";
-        attribute mark_debug of bit_input : signal is "true";
+    
+--    attribute mark_debug : string;
+--        attribute mark_debug of uart_tx : signal is "true";
+--        attribute mark_debug of bit_input : signal is "true";
         
 
 
@@ -271,9 +276,19 @@ begin
                 
                 elsif (FFT_ready = '1') then
                 MIC_and_FFT_done <= '1';
+                cs_hold <= "00";
 
             else
                 FFT_begin <= '0';
+            end if;
+            
+            if ((cs_hold = "00") or (cs_hold = "01"))  then
+                cs_delay<= cs_Delay+1;
+                if CS_delay = "111111111111" then -- 4096
+                   sig_chip_select <= not sig_chip_select;
+                   cs_hold <= cs_hold+1;
+                end if;
+                 
             end if;
 
 
@@ -282,7 +297,7 @@ begin
     end process;
 
 
-
+Chip_select <= sig_chip_select ;
 
 
 --    microphone_CLK : process (clk_sys,nRST)

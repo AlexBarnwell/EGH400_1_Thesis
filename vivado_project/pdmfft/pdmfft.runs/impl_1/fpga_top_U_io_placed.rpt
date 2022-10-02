@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
-| Date                      : Sat Oct  1 17:28:41 2022
+| Date                      : Sun Oct  2 13:43:32 2022
 | Host                      : LAPTOP-M3DNELKA running 64-bit major release  (build 9200)
 | Command                   : report_io -file fpga_top_U_io_placed.rpt
 | Design                    : fpga_top_U
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|             5 |
+|             6 |
 +---------------+
 
 
@@ -304,7 +304,7 @@ Table of Contents
 | R15        |             | High Range | IO_L13N_T2_MRCC_14           | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | R16        |             | High Range | IO_L15P_T2_DQS_RDWR_B_14     | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | R17        |             | High Range | IO_L12N_T1_MRCC_14           | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| R18        |             | High Range | IO_L7P_T1_D09_14             | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
+| R18        | Chip_select | High Range | IO_L7P_T1_D09_14             | OUTPUT      | LVCMOS33    |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | T1         |             | High Range | IO_L17N_T2_34                | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | T2         |             | High Range | VCCO_34                      | VCCO        |             |      34 |            |      |                     |                      |   any** |            |           |          |      |                  |              |                   |              |
 | T3         |             | High Range | IO_L11N_T1_SRCC_34           | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |

@@ -110,7 +110,7 @@ add_files C:/REPOS/EGH400-1/EGH400_1_Thesis/src/coeff/bd_ram_i8.coe
 add_files C:/REPOS/EGH400-1/EGH400_1_Thesis/src/coeff/TW_values.coe
 add_files C:/REPOS/EGH400-1/EGH400_1_Thesis/src/coeff/tw_ram_sin.coe
 add_files C:/REPOS/EGH400-1/EGH400_1_Thesis/src/coeff/tw_ram_cos.coe
-add_files c:/REPOS/EGH400-1/EGH400_1_Thesis/src/coeff/uart_ram.coe
+add_files C:/REPOS/EGH400-1/EGH400_1_Thesis/src/coeff/uart_ram.coe
 read_vhdl -library xil_defaultlib {
   C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/data_types.vhd
   C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Control_TD.vhd

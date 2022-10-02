@@ -12,15 +12,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="358.723842 us"></ZoomStartTime>
-      <ZoomEndTime time="1,322.723843 us"></ZoomEndTime>
-      <Cursor1Time time="958.723842 us"></Cursor1Time>
+      <ZoomStartTime time="3,464.015130 us"></ZoomStartTime>
+      <ZoomEndTime time="4,815.298975 us"></ZoomEndTime>
+      <Cursor1Time time="4,590.085000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="73"></NameColumnWidth>
       <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="26" />
+   <WVObjectSize size="27" />
    <wvobject fp_name="/fpga_top_U_tb/FFT_outR" type="array">
       <obj_property name="ElementShortName">FFT_outR[85:0]</obj_property>
       <obj_property name="ObjectShortName">FFT_outR[85:0]</obj_property>
@@ -28,8 +28,8 @@
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/ADDRESS" type="array">
-      <obj_property name="ElementShortName">ADDRESS[7:0]</obj_property>
-      <obj_property name="ObjectShortName">ADDRESS[7:0]</obj_property>
+      <obj_property name="ElementShortName">ADDRESS[8:0]</obj_property>
+      <obj_property name="ObjectShortName">ADDRESS[8:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/hold" type="array">
@@ -50,13 +50,13 @@
       <obj_property name="ObjectShortName">CASES</obj_property>
    </wvobject>
    <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/A" type="array">
-      <obj_property name="ElementShortName">A[7:0]</obj_property>
-      <obj_property name="ObjectShortName">A[7:0]</obj_property>
+      <obj_property name="ElementShortName">A[8:0]</obj_property>
+      <obj_property name="ObjectShortName">A[8:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/B" type="array">
-      <obj_property name="ElementShortName">B[7:0]</obj_property>
-      <obj_property name="ObjectShortName">B[7:0]</obj_property>
+      <obj_property name="ElementShortName">B[8:0]</obj_property>
+      <obj_property name="ObjectShortName">B[8:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/count" type="other">
@@ -135,5 +135,9 @@
    <wvobject fp_name="/fpga_top_U_tb/clk_100M" type="logic">
       <obj_property name="ElementShortName">clk_100M</obj_property>
       <obj_property name="ObjectShortName">clk_100M</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_U_tb/cs" type="logic">
+      <obj_property name="ElementShortName">cs</obj_property>
+      <obj_property name="ObjectShortName">cs</obj_property>
    </wvobject>
 </wave_config>

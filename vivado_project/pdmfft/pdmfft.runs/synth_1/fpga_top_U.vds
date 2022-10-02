@@ -2,8 +2,8 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Sat Oct  1 17:24:48 2022
-# Process ID: 22268
+# Start of session at: Sun Oct  2 13:40:41 2022
+# Process ID: 1220
 # Current directory: C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1
 # Command line: vivado.exe -log fpga_top_U.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fpga_top_U.tcl
 # Log file: C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/fpga_top_U.vds
@@ -23,60 +23,60 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 17012
+INFO: [Synth 8-7075] Helper process launched with PID 6780
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1278.395 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1280.836 ; gain = 0.000
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-9112] actual for formal port 'sclr' is neither a static name nor a globally static expression [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DSP_TD.vhd:243]
 WARNING: [Synth 8-9112] actual for formal port 'sclr' is neither a static name nor a globally static expression [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DSP_TD.vhd:253]
-INFO: [Synth 8-638] synthesizing module 'fpga_top_U' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Fpga_top_U.vhd:52]
-WARNING: [Synth 8-5640] Port 'locked' is missing in component declaration [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Fpga_top_U.vhd:56]
-INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/clk_wiz_0_stub.vhdl:5' bound to instance 'CLOCK' of component 'clk_wiz_0' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Fpga_top_U.vhd:244]
-INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/clk_wiz_0_stub.vhdl:15]
+INFO: [Synth 8-638] synthesizing module 'fpga_top_U' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Fpga_top_U.vhd:53]
+WARNING: [Synth 8-5640] Port 'locked' is missing in component declaration [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Fpga_top_U.vhd:57]
+INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/clk_wiz_0_stub.vhdl:5' bound to instance 'CLOCK' of component 'clk_wiz_0' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Fpga_top_U.vhd:249]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/clk_wiz_0_stub.vhdl:15]
 	Parameter G_DATA_WIDTH bound to: 25 - type: integer 
 	Parameter G_DECIMAL_WIDTH bound to: 20 - type: integer 
 	Parameter G_RADIX bound to: 16 - type: integer 
 	Parameter G_BYTE_SIZE bound to: 8192 - type: integer 
 	Parameter G_DFTBD_B bound to: 2 - type: integer 
-INFO: [Synth 8-3491] module 'DFTBD_RAM' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:13' bound to instance 'DFTBD_RAMs' of component 'DFTBD_RAM' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Fpga_top_U.vhd:312]
+INFO: [Synth 8-3491] module 'DFTBD_RAM' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:13' bound to instance 'DFTBD_RAMs' of component 'DFTBD_RAM' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Fpga_top_U.vhd:327]
 INFO: [Synth 8-638] synthesizing module 'DFTBD_RAM' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:35]
 	Parameter G_DATA_WIDTH bound to: 25 - type: integer 
 	Parameter G_DECIMAL_WIDTH bound to: 20 - type: integer 
 	Parameter G_RADIX bound to: 16 - type: integer 
 	Parameter G_BYTE_SIZE bound to: 8192 - type: integer 
 	Parameter G_DFTBD_B bound to: 2 - type: integer 
-INFO: [Synth 8-3491] module 'bd_ram_r1' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_r1_stub.vhdl:5' bound to instance 'DFTBD_RAM1' of component 'bd_ram_r1' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:236]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_r1' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_r1_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'bd_ram_r2' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_r2_stub.vhdl:5' bound to instance 'DFTBD_RAM2' of component 'bd_ram_r2' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:243]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_r2' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_r2_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'bd_ram_r3' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_r3_stub.vhdl:5' bound to instance 'DFTBD_RAM3' of component 'bd_ram_r3' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:250]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_r3' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_r3_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'bd_ram_r4' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_r4_stub.vhdl:5' bound to instance 'DFTBD_RAM4' of component 'bd_ram_r4' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:257]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_r4' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_r4_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'bd_ram_r5' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_r5_stub.vhdl:5' bound to instance 'DFTBD_RAM5' of component 'bd_ram_r5' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:264]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_r5' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_r5_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'bd_ram_r6' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_r6_stub.vhdl:5' bound to instance 'DFTBD_RAM6' of component 'bd_ram_r6' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:271]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_r6' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_r6_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'bd_ram_r7' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_r7_stub.vhdl:5' bound to instance 'DFTBD_RAM7' of component 'bd_ram_r7' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:278]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_r7' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_r7_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'bd_ram_r8' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_r8_stub.vhdl:5' bound to instance 'DFTBD_RAM8' of component 'bd_ram_r8' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:285]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_r8' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_r8_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'bd_ram_i1' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_i1_stub.vhdl:5' bound to instance 'DFTBD_RAMI1' of component 'bd_ram_i1' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:295]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_i1' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_i1_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'bd_ram_i2' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_i2_stub.vhdl:5' bound to instance 'DFTBD_RAMI2' of component 'bd_ram_i2' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:302]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_i2' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_i2_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'bd_ram_i3' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_i3_stub.vhdl:5' bound to instance 'DFTBD_RAMI3' of component 'bd_ram_i3' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:309]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_i3' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_i3_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'bd_ram_i4' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_i4_stub.vhdl:5' bound to instance 'DFTBD_RAMI4' of component 'bd_ram_i4' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:316]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_i4' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_i4_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'bd_ram_i5' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_i5_stub.vhdl:5' bound to instance 'DFTBD_RAMI5' of component 'bd_ram_i5' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:323]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_i5' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_i5_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'bd_ram_i6' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_i6_stub.vhdl:5' bound to instance 'DFTBD_RAMI6' of component 'bd_ram_i6' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:330]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_i6' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_i6_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'bd_ram_i7' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_i7_stub.vhdl:5' bound to instance 'DFTBD_RAMI7' of component 'bd_ram_i7' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:337]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_i7' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_i7_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'bd_ram_i8' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_i8_stub.vhdl:5' bound to instance 'DFTBD_RAMI8' of component 'bd_ram_i8' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:344]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_i8' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/bd_ram_i8_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_r1' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_r1_stub.vhdl:5' bound to instance 'DFTBD_RAM1' of component 'bd_ram_r1' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:236]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_r1' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_r1_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_r2' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_r2_stub.vhdl:5' bound to instance 'DFTBD_RAM2' of component 'bd_ram_r2' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:243]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_r2' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_r2_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_r3' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_r3_stub.vhdl:5' bound to instance 'DFTBD_RAM3' of component 'bd_ram_r3' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:250]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_r3' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_r3_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_r4' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_r4_stub.vhdl:5' bound to instance 'DFTBD_RAM4' of component 'bd_ram_r4' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:257]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_r4' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_r4_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_r5' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_r5_stub.vhdl:5' bound to instance 'DFTBD_RAM5' of component 'bd_ram_r5' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:264]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_r5' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_r5_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_r6' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_r6_stub.vhdl:5' bound to instance 'DFTBD_RAM6' of component 'bd_ram_r6' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:271]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_r6' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_r6_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_r7' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_r7_stub.vhdl:5' bound to instance 'DFTBD_RAM7' of component 'bd_ram_r7' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:278]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_r7' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_r7_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_r8' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_r8_stub.vhdl:5' bound to instance 'DFTBD_RAM8' of component 'bd_ram_r8' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:285]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_r8' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_r8_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_i1' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_i1_stub.vhdl:5' bound to instance 'DFTBD_RAMI1' of component 'bd_ram_i1' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:295]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_i1' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_i1_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_i2' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_i2_stub.vhdl:5' bound to instance 'DFTBD_RAMI2' of component 'bd_ram_i2' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:302]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_i2' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_i2_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_i3' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_i3_stub.vhdl:5' bound to instance 'DFTBD_RAMI3' of component 'bd_ram_i3' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:309]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_i3' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_i3_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_i4' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_i4_stub.vhdl:5' bound to instance 'DFTBD_RAMI4' of component 'bd_ram_i4' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:316]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_i4' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_i4_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_i5' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_i5_stub.vhdl:5' bound to instance 'DFTBD_RAMI5' of component 'bd_ram_i5' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:323]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_i5' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_i5_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_i6' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_i6_stub.vhdl:5' bound to instance 'DFTBD_RAMI6' of component 'bd_ram_i6' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:330]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_i6' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_i6_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_i7' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_i7_stub.vhdl:5' bound to instance 'DFTBD_RAMI7' of component 'bd_ram_i7' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:337]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_i7' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_i7_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_i8' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_i8_stub.vhdl:5' bound to instance 'DFTBD_RAMI8' of component 'bd_ram_i8' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:344]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_i8' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/bd_ram_i8_stub.vhdl:14]
 INFO: [Synth 8-256] done synthesizing module 'DFTBD_RAM' (0#1) [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:35]
 	Parameter G_DATA_WIDTH bound to: 25 - type: integer 
 	Parameter G_DATA_WIDTH_TW bound to: 18 - type: integer 
@@ -87,7 +87,7 @@ INFO: [Synth 8-256] done synthesizing module 'DFTBD_RAM' (0#1) [C:/REPOS/EGH400-
 	Parameter G_MIN_BANK bound to: 0 - type: integer 
 	Parameter G_MAX_BANK bound to: 16 - type: integer 
 	Parameter G_DECIMAL_WIDTH_TW bound to: 15 - type: integer 
-INFO: [Synth 8-3491] module 'Control_TD' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Control_TD.vhd:9' bound to instance 'Series_recombination_loop' of component 'Control_TD' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Fpga_top_U.vhd:333]
+INFO: [Synth 8-3491] module 'Control_TD' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Control_TD.vhd:9' bound to instance 'Series_recombination_loop' of component 'Control_TD' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Fpga_top_U.vhd:348]
 INFO: [Synth 8-638] synthesizing module 'Control_TD' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Control_TD.vhd:58]
 	Parameter G_DATA_WIDTH bound to: 25 - type: integer 
 	Parameter G_DATA_WIDTH_TW bound to: 18 - type: integer 
@@ -108,9 +108,9 @@ INFO: [Synth 8-638] synthesizing module 'DSP_TD' [C:/REPOS/EGH400-1/EGH400_1_The
 	Parameter G_DATA_WIDTH_TW bound to: 18 - type: integer 
 	Parameter G_DECIMAL_WIDTH bound to: 20 - type: integer 
 	Parameter G_DECIMAL_WIDTH_TW bound to: 15 - type: integer 
-INFO: [Synth 8-3491] module 'dsp_macro_0' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/dsp_macro_0_stub.vhdl:5' bound to instance 'first' of component 'dsp_macro_0' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DSP_TD.vhd:240]
-INFO: [Synth 8-638] synthesizing module 'dsp_macro_0' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/dsp_macro_0_stub.vhdl:18]
-INFO: [Synth 8-3491] module 'dsp_macro_0' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/dsp_macro_0_stub.vhdl:5' bound to instance 'firstI' of component 'dsp_macro_0' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DSP_TD.vhd:250]
+INFO: [Synth 8-3491] module 'dsp_macro_0' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/dsp_macro_0_stub.vhdl:5' bound to instance 'first' of component 'dsp_macro_0' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DSP_TD.vhd:240]
+INFO: [Synth 8-638] synthesizing module 'dsp_macro_0' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/dsp_macro_0_stub.vhdl:18]
+INFO: [Synth 8-3491] module 'dsp_macro_0' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/dsp_macro_0_stub.vhdl:5' bound to instance 'firstI' of component 'dsp_macro_0' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DSP_TD.vhd:250]
 WARNING: [Synth 8-614] signal 'DFT_RESET' is read in the process but is not in the sensitivity list [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DSP_TD.vhd:515]
 INFO: [Synth 8-256] done synthesizing module 'DSP_TD' (0#1) [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DSP_TD.vhd:54]
 WARNING: [Synth 8-7043] port width mismatch for port 'order_out': port width = 32, actual width = 7 (integer) [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Control_TD.vhd:301]
@@ -128,7 +128,7 @@ INFO: [Synth 8-256] done synthesizing module 'Control_TD' (0#1) [C:/REPOS/EGH400
 	Parameter G_MIN_BANK bound to: 0 - type: integer 
 	Parameter G_MAX_BANK bound to: 16 - type: integer 
 	Parameter G_RADIX bound to: 16 - type: integer 
-INFO: [Synth 8-3491] module 'Twiddle_factors' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Twiddle_factors.vhd:39' bound to instance 'TWiddle1' of component 'Twiddle_factors' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Fpga_top_U.vhd:365]
+INFO: [Synth 8-3491] module 'Twiddle_factors' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Twiddle_factors.vhd:39' bound to instance 'TWiddle1' of component 'Twiddle_factors' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Fpga_top_U.vhd:380]
 INFO: [Synth 8-638] synthesizing module 'Twiddle_factors' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Twiddle_factors.vhd:61]
 	Parameter G_DATA_WIDTH_TW bound to: 18 - type: integer 
 	Parameter G_DECIMAL_WIDTH_TW bound to: 15 - type: integer 
@@ -137,10 +137,10 @@ INFO: [Synth 8-638] synthesizing module 'Twiddle_factors' [C:/REPOS/EGH400-1/EGH
 	Parameter G_MIN_BANK bound to: 0 - type: integer 
 	Parameter G_MAX_BANK bound to: 16 - type: integer 
 	Parameter G_RADIX bound to: 16 - type: integer 
-INFO: [Synth 8-3491] module 'tw_ram_cos' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/tw_ram_cos_stub.vhdl:5' bound to instance 'Twiddle_1' of component 'tw_ram_cos' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Twiddle_factors.vhd:104]
-INFO: [Synth 8-638] synthesizing module 'tw_ram_cos' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/tw_ram_cos_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'tw_ram_sin' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/tw_ram_sin_stub.vhdl:5' bound to instance 'Twiddle_2' of component 'tw_ram_sin' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Twiddle_factors.vhd:111]
-INFO: [Synth 8-638] synthesizing module 'tw_ram_sin' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/tw_ram_sin_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'tw_ram_cos' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/tw_ram_cos_stub.vhdl:5' bound to instance 'Twiddle_1' of component 'tw_ram_cos' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Twiddle_factors.vhd:104]
+INFO: [Synth 8-638] synthesizing module 'tw_ram_cos' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/tw_ram_cos_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'tw_ram_sin' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/tw_ram_sin_stub.vhdl:5' bound to instance 'Twiddle_2' of component 'tw_ram_sin' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Twiddle_factors.vhd:111]
+INFO: [Synth 8-638] synthesizing module 'tw_ram_sin' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/tw_ram_sin_stub.vhdl:14]
 INFO: [Synth 8-256] done synthesizing module 'Twiddle_factors' (0#1) [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Twiddle_factors.vhd:61]
 	Parameter G_PARALLEL_TD bound to: 2 - type: integer 
 	Parameter G_BYTE_SIZE bound to: 8192 - type: integer 
@@ -148,8 +148,8 @@ INFO: [Synth 8-256] done synthesizing module 'Twiddle_factors' (0#1) [C:/REPOS/E
 	Parameter G_DFTBD_B bound to: 2 - type: integer 
 	Parameter G_MIN_BANK bound to: 0 - type: integer 
 	Parameter G_MAX_BANK bound to: 16 - type: integer 
-	Parameter G_MCLK_PRESCALER bound to: 40 - type: integer 
-INFO: [Synth 8-3491] module 'shift_reg_input_U' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/shift_reg_input_U.vhd:10' bound to instance 'inputs' of component 'shift_reg_input_U' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Fpga_top_U.vhd:385]
+	Parameter G_MCLK_PRESCALER bound to: 800 - type: integer 
+INFO: [Synth 8-3491] module 'shift_reg_input_U' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/shift_reg_input_U.vhd:10' bound to instance 'inputs' of component 'shift_reg_input_U' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Fpga_top_U.vhd:400]
 INFO: [Synth 8-638] synthesizing module 'shift_reg_input_U' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/shift_reg_input_U.vhd:39]
 	Parameter G_PARALLEL_TD bound to: 2 - type: integer 
 	Parameter G_BYTE_SIZE bound to: 8192 - type: integer 
@@ -157,7 +157,7 @@ INFO: [Synth 8-638] synthesizing module 'shift_reg_input_U' [C:/REPOS/EGH400-1/E
 	Parameter G_DFTBD_B bound to: 2 - type: integer 
 	Parameter G_MIN_BANK bound to: 0 - type: integer 
 	Parameter G_MAX_BANK bound to: 16 - type: integer 
-	Parameter G_MCLK_PRESCALER bound to: 40 - type: integer 
+	Parameter G_MCLK_PRESCALER bound to: 800 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'shift_reg_input_U' (0#1) [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/shift_reg_input_U.vhd:39]
 	Parameter G_PARALLEL_TD bound to: 2 - type: integer 
 	Parameter G_BYTE_SIZE bound to: 8192 - type: integer 
@@ -168,7 +168,7 @@ INFO: [Synth 8-256] done synthesizing module 'shift_reg_input_U' (0#1) [C:/REPOS
 	Parameter G_ORD_SIZE bound to: 8 - type: integer 
 	Parameter G_DATA_WIDTH bound to: 25 - type: integer 
 	Parameter G_DATA_WIDTH_TW bound to: 18 - type: integer 
-INFO: [Synth 8-3491] module 'FFT_RAM_UART' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/FFT_RAM.vhd:20' bound to instance 'FFT_RAM1_UART' of component 'FFT_RAM_UART' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Fpga_top_U.vhd:411]
+INFO: [Synth 8-3491] module 'FFT_RAM_UART' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/FFT_RAM.vhd:20' bound to instance 'FFT_RAM1_UART' of component 'FFT_RAM_UART' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Fpga_top_U.vhd:426]
 INFO: [Synth 8-638] synthesizing module 'FFT_RAM_UART' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/FFT_RAM.vhd:50]
 	Parameter G_PARALLEL_TD bound to: 2 - type: integer 
 	Parameter G_BYTE_SIZE bound to: 8192 - type: integer 
@@ -179,35 +179,33 @@ INFO: [Synth 8-638] synthesizing module 'FFT_RAM_UART' [C:/REPOS/EGH400-1/EGH400
 	Parameter G_ORD_SIZE bound to: 8 - type: integer 
 	Parameter G_DATA_WIDTH bound to: 25 - type: integer 
 	Parameter G_DATA_WIDTH_TW bound to: 18 - type: integer 
-INFO: [Synth 8-3491] module 'FFT_ram' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/FFT_ram_stub.vhdl:5' bound to instance 'FFT_RAMs' of component 'FFT_ram' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/FFT_RAM.vhd:114]
-INFO: [Synth 8-638] synthesizing module 'FFT_ram' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-22268-LAPTOP-M3DNELKA/realtime/FFT_ram_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'FFT_ram' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/FFT_ram_stub.vhdl:5' bound to instance 'FFT_RAMs' of component 'FFT_ram' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/FFT_RAM.vhd:114]
+INFO: [Synth 8-638] synthesizing module 'FFT_ram' [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-1220-LAPTOP-M3DNELKA/realtime/FFT_ram_stub.vhdl:17]
 INFO: [Synth 8-3491] module 'UART_TX' declared at 'C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/UART_TX.vhd:11' bound to instance 'UART_TX_1' of component 'UART_TX' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/FFT_RAM.vhd:127]
 INFO: [Synth 8-638] synthesizing module 'UART_TX' [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/UART_TX.vhd:27]
 	Parameter G_BAUD_RATE bound to: 1000000 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'UART_TX' (0#1) [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/UART_TX.vhd:27]
 INFO: [Synth 8-256] done synthesizing module 'FFT_RAM_UART' (0#1) [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/FFT_RAM.vhd:50]
-INFO: [Synth 8-256] done synthesizing module 'fpga_top_U' (0#1) [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Fpga_top_U.vhd:52]
+INFO: [Synth 8-256] done synthesizing module 'fpga_top_U' (0#1) [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Fpga_top_U.vhd:53]
 WARNING: [Synth 8-6014] Unused sequential element rshift2_reg was removed.  [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DSP_TD.vhd:307]
 WARNING: [Synth 8-6014] Unused sequential element rshift2i_reg was removed.  [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DSP_TD.vhd:315]
 WARNING: [Synth 8-6014] Unused sequential element CE_reg was removed.  [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Control_TD.vhd:367]
 WARNING: [Synth 8-6014] Unused sequential element count2_2_reg was removed.  [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/shift_reg_input_U.vhd:203]
 WARNING: [Synth 8-6014] Unused sequential element count2_3_reg was removed.  [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/shift_reg_input_U.vhd:204]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'inputs'. This will prevent further optimization [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Fpga_top_U.vhd:385]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'FFT_RAM1_UART'. This will prevent further optimization [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Fpga_top_U.vhd:411]
 WARNING: [Synth 8-7129] Port TWin2[0] in module DSP_TD is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1278.395 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1280.836 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1278.395 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1280.836 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1278.395 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1280.836 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.293 . Memory (MB): peak = 1278.395 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.285 . Memory (MB): peak = 1280.836 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -270,11 +268,11 @@ Parsing XDC File [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft
 Finished Parsing XDC File [C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1369.891 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1371.531 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.101 . Memory (MB): peak = 1369.891 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.083 . Memory (MB): peak = 1371.531 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'DFTBD_RAMs/DFTBD_RAM1' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'DFTBD_RAMs/DFTBD_RAM2' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'DFTBD_RAMs/DFTBD_RAM3' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
@@ -297,14 +295,14 @@ WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context s
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1371.172 ; gain = 92.777
+Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1372.523 ; gain = 91.688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35ticsg324-1L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1371.172 ; gain = 92.777
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1372.523 ; gain = 91.688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -336,7 +334,7 @@ Applied set_property KEEP_HIERARCHY = SOFT for DFTBD_RAMs/DFTBD_RAMI2. (constrai
 Applied set_property KEEP_HIERARCHY = SOFT for TWiddle1/Twiddle_1. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for FFT_RAM1_UART/FFT_RAMs. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1371.172 ; gain = 92.777
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1372.523 ; gain = 91.688
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Control_TD'
 INFO: [Synth 8-802] inferred FSM for state register 'CASES_reg' in module 'FFT_RAM_UART'
@@ -360,7 +358,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'CASES_reg' using encoding 'sequential' in module 'FFT_RAM_UART'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 1371.172 ; gain = 92.777
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1372.523 ; gain = 91.688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -379,7 +377,7 @@ Detailed RTL Component Info :
 	   2 Input    7 Bit       Adders := 1     
 	   2 Input    4 Bit       Adders := 2     
 	   2 Input    3 Bit       Adders := 2     
-	   2 Input    2 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 2     
 +---Registers : 
 	             8192 Bit    Registers := 1     
 	             2048 Bit    Registers := 1     
@@ -399,8 +397,8 @@ Detailed RTL Component Info :
 	                6 Bit    Registers := 8     
 	                4 Bit    Registers := 3     
 	                3 Bit    Registers := 2     
-	                2 Bit    Registers := 3     
-	                1 Bit    Registers := 21    
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 22    
 +---Muxes : 
 	   2 Input   96 Bit        Muxes := 1     
 	   6 Input   96 Bit        Muxes := 3     
@@ -411,7 +409,7 @@ Detailed RTL Component Info :
 	   6 Input   32 Bit        Muxes := 2     
 	   2 Input   11 Bit        Muxes := 1     
 	   2 Input   10 Bit        Muxes := 1     
-	   2 Input    9 Bit        Muxes := 1     
+	   2 Input    9 Bit        Muxes := 2     
 	   6 Input    9 Bit        Muxes := 3     
 	   2 Input    7 Bit        Muxes := 1     
 	   2 Input    6 Bit        Muxes := 1     
@@ -419,11 +417,11 @@ Detailed RTL Component Info :
 	   3 Input    3 Bit        Muxes := 1     
 	   2 Input    3 Bit        Muxes := 7     
 	   6 Input    3 Bit        Muxes := 1     
-	   2 Input    2 Bit        Muxes := 5     
+	   2 Input    2 Bit        Muxes := 6     
 	   6 Input    2 Bit        Muxes := 1     
 	   3 Input    1 Bit        Muxes := 15    
 	   4 Input    1 Bit        Muxes := 6     
-	   2 Input    1 Bit        Muxes := 31    
+	   2 Input    1 Bit        Muxes := 33    
 	   6 Input    1 Bit        Muxes := 18    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -492,7 +490,7 @@ DSP Report: operator mult3 is absorbed into DSP mult3_S_reg.
 WARNING: [Synth 8-7129] Port TWin2[0] in module DSP_TD is either unconnected or has no load
 WARNING: [Synth 8-7129] Port TWin2[0] in module DSP_TD__xdcDup__1 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 1371.172 ; gain = 92.777
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 1372.523 ; gain = 91.688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -521,19 +519,19 @@ Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-565] redefining clock 'clk_100M'
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:01 ; elapsed = 00:01:01 . Memory (MB): peak = 1371.172 ; gain = 92.777
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 1372.523 ; gain = 91.688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:04 ; elapsed = 00:01:05 . Memory (MB): peak = 1371.172 ; gain = 92.777
+Finished Timing Optimization : Time (s): cpu = 00:01:01 ; elapsed = 00:01:02 . Memory (MB): peak = 1425.742 ; gain = 144.906
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:10 ; elapsed = 00:01:11 . Memory (MB): peak = 1375.500 ; gain = 97.105
+Finished Technology Mapping : Time (s): cpu = 00:01:06 ; elapsed = 00:01:08 . Memory (MB): peak = 1425.742 ; gain = 144.906
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -551,48 +549,48 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:16 ; elapsed = 00:01:17 . Memory (MB): peak = 1388.777 ; gain = 110.383
+Finished IO Insertion : Time (s): cpu = 00:01:12 ; elapsed = 00:01:14 . Memory (MB): peak = 1425.742 ; gain = 144.906
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:16 ; elapsed = 00:01:17 . Memory (MB): peak = 1388.777 ; gain = 110.383
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:12 ; elapsed = 00:01:14 . Memory (MB): peak = 1425.742 ; gain = 144.906
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:18 ; elapsed = 00:01:18 . Memory (MB): peak = 1388.777 ; gain = 110.383
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:13 ; elapsed = 00:01:15 . Memory (MB): peak = 1425.742 ; gain = 144.906
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:18 ; elapsed = 00:01:18 . Memory (MB): peak = 1388.777 ; gain = 110.383
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:13 ; elapsed = 00:01:15 . Memory (MB): peak = 1425.742 ; gain = 144.906
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:18 ; elapsed = 00:01:19 . Memory (MB): peak = 1388.777 ; gain = 110.383
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:14 ; elapsed = 00:01:16 . Memory (MB): peak = 1425.742 ; gain = 144.906
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:18 ; elapsed = 00:01:19 . Memory (MB): peak = 1388.777 ; gain = 110.383
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:14 ; elapsed = 00:01:16 . Memory (MB): peak = 1425.742 ; gain = 144.906
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 
 Static Shift Register Report:
-+------------------+----------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|Module Name       | RTL Name                   | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
-+------------------+----------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|shift_reg_input_U | shift_reg_buffer_reg[1023] | 4      | 1024  | YES          | NO                 | YES               | 1024   | 0       | 
-+------------------+----------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
++------------+-----------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                          | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+-----------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|fpga_top_U  | inputs/shift_reg_buffer_reg[1023] | 4      | 1024  | YES          | NO                 | YES               | 1024   | 0       | 
++------------+-----------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -620,24 +618,24 @@ Report BlackBoxes:
 +------+--------------+----------+
 |      |BlackBox name |Instances |
 +------+--------------+----------+
-|1     |FFT_ram       |         1|
-|2     |clk_wiz_0     |         1|
-|3     |bd_ram_r1     |         1|
-|4     |bd_ram_r2     |         1|
-|5     |bd_ram_r3     |         1|
-|6     |bd_ram_r4     |         1|
-|7     |bd_ram_r5     |         1|
-|8     |bd_ram_r6     |         1|
-|9     |bd_ram_r7     |         1|
-|10    |bd_ram_r8     |         1|
-|11    |bd_ram_i1     |         1|
-|12    |bd_ram_i2     |         1|
-|13    |bd_ram_i3     |         1|
-|14    |bd_ram_i4     |         1|
-|15    |bd_ram_i5     |         1|
-|16    |bd_ram_i6     |         1|
-|17    |bd_ram_i7     |         1|
-|18    |bd_ram_i8     |         1|
+|1     |clk_wiz_0     |         1|
+|2     |bd_ram_r1     |         1|
+|3     |bd_ram_r2     |         1|
+|4     |bd_ram_r3     |         1|
+|5     |bd_ram_r4     |         1|
+|6     |bd_ram_r5     |         1|
+|7     |bd_ram_r6     |         1|
+|8     |bd_ram_r7     |         1|
+|9     |bd_ram_r8     |         1|
+|10    |bd_ram_i1     |         1|
+|11    |bd_ram_i2     |         1|
+|12    |bd_ram_i3     |         1|
+|13    |bd_ram_i4     |         1|
+|14    |bd_ram_i5     |         1|
+|15    |bd_ram_i6     |         1|
+|16    |bd_ram_i7     |         1|
+|17    |bd_ram_i8     |         1|
+|18    |FFT_ram       |         1|
 |19    |dsp_macro_0   |         4|
 |20    |tw_ram_cos    |         1|
 |21    |tw_ram_sin    |         1|
@@ -671,49 +669,49 @@ Report Cell Usage:
 |22    |dsp_macro_0_bbox_18 |     1|
 |23    |tw_ram_cos_bbox     |     1|
 |24    |tw_ram_sin_bbox     |     1|
-|25    |CARRY4              |   442|
+|25    |CARRY4              |   445|
 |26    |DSP48E1             |     8|
-|27    |LUT1                |    74|
+|27    |LUT1                |    72|
 |28    |LUT2                |  2324|
-|29    |LUT3                |   358|
-|30    |LUT4                |   428|
-|31    |LUT5                |  1156|
-|32    |LUT6                |  1697|
+|29    |LUT3                |   397|
+|30    |LUT4                |   494|
+|31    |LUT5                |  1070|
+|32    |LUT6                |  1681|
 |33    |MUXF7               |   136|
 |34    |MUXF8               |    68|
 |35    |SRL16E              |  1024|
-|36    |FDCE                |  5279|
+|36    |FDCE                |  5265|
 |37    |FDPE                |    31|
-|38    |FDRE                |  1833|
+|38    |FDRE                |  1848|
 |39    |FDSE                |     1|
 |40    |LDC                 |     1|
 |41    |IBUF                |     2|
-|42    |OBUF                |     2|
+|42    |OBUF                |     3|
 +------+--------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:18 ; elapsed = 00:01:19 . Memory (MB): peak = 1388.777 ; gain = 110.383
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:14 ; elapsed = 00:01:16 . Memory (MB): peak = 1425.742 ; gain = 144.906
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:04 ; elapsed = 00:01:14 . Memory (MB): peak = 1388.777 ; gain = 17.605
-Synthesis Optimization Complete : Time (s): cpu = 00:01:19 ; elapsed = 00:01:19 . Memory (MB): peak = 1388.777 ; gain = 110.383
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:01 ; elapsed = 00:01:11 . Memory (MB): peak = 1425.742 ; gain = 53.219
+Synthesis Optimization Complete : Time (s): cpu = 00:01:14 ; elapsed = 00:01:16 . Memory (MB): peak = 1425.742 ; gain = 144.906
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.192 . Memory (MB): peak = 1400.816 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 655 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.186 . Memory (MB): peak = 1430.012 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 658 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1406.500 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1433.645 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   LDC => LDCE: 1 instance 
 
-Synth Design complete, checksum: b955eaeb
+Synth Design complete, checksum: b4dfe8cc
 INFO: [Common 17-83] Releasing license: Synthesis
-94 Infos, 37 Warnings, 0 Critical Warnings and 0 Errors encountered.
+92 Infos, 37 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:26 ; elapsed = 00:01:28 . Memory (MB): peak = 1406.500 ; gain = 128.105
+synth_design: Time (s): cpu = 00:01:22 ; elapsed = 00:01:24 . Memory (MB): peak = 1433.645 ; gain = 152.809
 INFO: [Common 17-600] The following parameters have non-default value.
 tcl.collectionResultDisplayLimit
 INFO: [Common 17-1381] The checkpoint 'C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/fpga_top_U.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file fpga_top_U_utilization_synth.rpt -pb fpga_top_U_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Oct  1 17:26:26 2022...
+INFO: [Common 17-206] Exiting Vivado at Sun Oct  2 13:42:15 2022...
