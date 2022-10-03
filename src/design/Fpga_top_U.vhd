@@ -24,7 +24,7 @@ entity fpga_top_U is
         G_BYTE_SIZE : Integer := 8192;
         G_RADIX : integer := 16;
         G_DFTBD_B : integer := 2;
-        G_MCLK_PRESCALER : integer := 800;
+        G_MCLK_PRESCALER : integer := 400;
         G_MIN_BANK : integer := 0;
         G_MAX_BANK : integer := 16; -- 16*16 =256
         G_DECIMAL_WIDTH_TW : integer := 15; -- decimal precision 
@@ -239,6 +239,7 @@ architecture RTL of fpga_top_U is
 --    attribute mark_debug : string;
 --        attribute mark_debug of uart_tx : signal is "true";
 --        attribute mark_debug of bit_input : signal is "true";
+--        attribute mark_debug of mIC_CLOCK : signal is "true";
         
 
 

@@ -1,9 +1,10 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
-// Date        : Mon Oct  3 11:54:20 2022
+// Date        : Mon Oct  3 11:54:19 2022
 // Host        : DESKTOP-BDA8VGJ running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub c:/EGH400_1_Thesis/src/ip/bd_ram_r4/bd_ram_r4_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top bd_ram_r4 -prefix
+//               bd_ram_r4_ bd_ram_r4_stub.v
 // Design      : bd_ram_r4
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a35ticsg324-1L

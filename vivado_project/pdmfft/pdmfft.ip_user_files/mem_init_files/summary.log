@@ -3,9 +3,9 @@ User Configuration
 --------------------------------------------------------------------------------
 Algorithm                  :     Minimum_Area
 Memory Type                :     Single_Port_ROM
-Port A Read Width          :     [36]
-Port A Write Width         :     [36]
-Memory Depth               :     [128]
+Port A Read Width          :     [25]
+Port A Write Width         :     [25]
+Memory Depth               :     [64]
 
 ----------------------------------------------------------------------------------
 
@@ -16,5 +16,5 @@ Clock A Frequency          :         [100]
 Port A Enable Rate         :         [100]
 Port A Write Rate          :         [0]
 ----------------------------------------------------------------------------------
-Estimated Power for IP     :     3.36452 mW
+Estimated Power for IP     :     2.9298 mW
 ----------------------------------------------------------------------------------

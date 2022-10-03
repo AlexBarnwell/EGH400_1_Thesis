@@ -11,7 +11,7 @@ function uint8t_val = bit_to_uint8 (bits)
   
   for ii=0:7
       
-  uint8t_val(jj)=    2.^(ii).*bits((jj-1)*8+ii+1)+uint8t_val(jj);
+  uint8t_val(jj)=    2.^(7-ii).*bits((jj-1)*8+ii+1)+uint8t_val(jj);
   
   (jj-1)*8+ii+1;
   

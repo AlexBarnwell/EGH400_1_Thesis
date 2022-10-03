@@ -2,7 +2,7 @@
 close all
 clear all
 
-Seed =9; %13 6 doesn't work
+Seed =6; 
 N=8192;
 L=256;
 P=16;
@@ -15,8 +15,17 @@ FILE_read= "..\sim\output_file.txt";
 rng(Seed,'twister') % get the RNG seed
 bitstream=round(rand(1,N/4)); % set bitstream
 
-bitstream=[bitstream bitstream bitstream bitstream]; %zeros(1,N/4)
+%bitstream=[bitstream bitstream bitstream bitstream]; %zeros(1,N/4)
 
+bitstream=uint8(round(rand(1,N/8))); % set bitstream
+%bitstream(1:end)=1;
+bitstream(1:16)=0;
+bitstream(end-15:end)=0;
+%bitstream(8+1:end)=0;
+%bitstream(1:end)=0;
+%bitstream=flip(bitstream);
+bitstream =[bitstream bitstream];
+bitstream=[bitstream bitstream bitstream bitstream]; %zeros(1,N/4)
 %bitstream=[bitstream bitstream];
 %bitstream=[bitstream bitstream];
 %bitstream(1:end)=1;

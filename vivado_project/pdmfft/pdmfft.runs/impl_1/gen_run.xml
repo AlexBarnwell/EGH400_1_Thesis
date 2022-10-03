@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1664763307">
+<GenRun Id="impl_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1664787371">
   <File Type="ROUTE-PWR" Name="fpga_top_U_power_routed.rpt"/>
   <File Type="PA-TCL" Name="fpga_top_U.tcl"/>
   <File Type="BITSTR-MMI" Name="fpga_top_U.mmi"/>
@@ -350,9 +350,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Performance_Auto_1" Flow="Vivado Implementation 2022">
-      <Desc>Best predicted directive for place_design.</Desc>
-    </StratHandle>
+    <StratHandle Name="Performance_Auto_1" Flow="Vivado Implementation 2022"/>
     <Step Id="init_design"/>
     <Step Id="opt_design">
       <Option Id="Directive">0</Option>

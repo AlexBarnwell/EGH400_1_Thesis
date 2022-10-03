@@ -16,7 +16,7 @@ flush(FPGA)
 
 % loop this after this for transmission
 
-Seed =6;%13
+Seed =10;%13
 N=8192;
 L=256;
 P=16;
@@ -26,9 +26,20 @@ parallel = 2;
 %bitstream = zeros(1,N);
 
 rng(Seed,'twister'); % get the RNG seed
-bitstream=uint8(round(rand(1,N/4))); % set bitstream
+bitstream=uint8(round(rand(1,N/8))); % set bitstream
 %bitstream(1:end)=1;
+bitstream(1:8)=0;
+bitstream(end-7:end)=0;
+bitstream =[bitstream bitstream];
+% bitstream(1:8)=0;
+% bitstream(end-7:end)=0;
 
+%bitstream(end/2-7:end/2+7)=0;
+%bitstream(8+1:end)=0;
+%bitstream(1:end)=0;
+%bitstream=flip(bitstream);
+%bitstream2 =[bitstream bitstream];
+%bitstream=[bitstream bitstream];
 uint8t_val = bit_to_uint8 (bitstream);
 %bitstream(end-1)=0;
 %bitstream(1) =0;
@@ -125,34 +136,34 @@ end
 %out_re=(reshape(out(1:3072),12,3072/12))'
 
 order = out_re(:,1);
-i=1
+i=1;
 image=string(flip(dec2bin(out_re(:,i+1),8),2));
 for i=2:5
-image=append(image,string(flip(dec2bin(out_re(:,i+1),8),2)))
+image=append(image,string(flip(dec2bin(out_re(:,i+1),8),2)));
 end
 i=6;
-temp=(flip(dec2bin(out_re(:,i+1),8),2))
-imag_add_end=string(temp(:,1:3))
-real_add_start = string(temp(:,4:8))
+temp=(flip(dec2bin(out_re(:,i+1),8),2));
+imag_add_end=string(temp(:,1:3));
+real_add_start = string(temp(:,4:8));
 
-i=7
-real=string(flip(dec2bin(out_re(:,i+1),8),2));
+i=7;
+reall=string(flip(dec2bin(out_re(:,i+1),8),2));
 for i=8:11
-real=append(real,string(flip(dec2bin(out_re(:,i+1),8),2)))
+reall=append(reall,string(flip(dec2bin(out_re(:,i+1),8),2)));
 end 
 
-image=append(image,imag_add_end)
-real=append(real_add_start,real)
+image=append(image,imag_add_end);
+reall=append(real_add_start,reall);
 
 
-DFTD=20;
+DFTD=19;
 TWD = 15;
-real2=char(real)
-real=real2(:,1:43);
+real2=char(reall);
+reall=real2(:,1:43);
 
-FFT_Real= charbin2dec(flip(real,2),order,DFTD,TWD);
+FFT_Real= charbin2dec(flip(reall,2),order,DFTD,TWD);
 
-FFT_Imag= charbin2dec(flip(char(image),2),order,DFTD,TWD)
+FFT_Imag= charbin2dec(flip(char(image),2),order,DFTD,TWD);
 
 figure(2)
 plot(abs(FFT_Real+1i*FFT_Imag))
@@ -255,10 +266,32 @@ plot(abs(FFT_Real+1i*FFT_Imag))
 % 
 % figure(2)
 % plot(abs(FFT_Real+1i*FFT_Imag))
-bitstream=[bitstream bitstream bitstream bitstream];
 
+
+
+
+
+
+% bitstream=zeros(1,N/8);
+% bitstream(1:8)=1;
+% %bitstream(end-7:end)=1;
+%bitstream=[bitstream(1:end/2) bitstream(1:end/2)];
+ bitstream=[bitstream bitstream bitstream bitstream];
+% bitstream=[bitstream bitstream];
 FFT = idealFFT(N,P,L,bitstream, TWD); 
 hold on
 plot(abs(FFT))
 hold off
+legend('FPGA','MATLAB')
+recov=(abs(ifft(FFT)));
+recovFPGA=(abs(ifft(FFT_Real+1i*FFT_Imag)));
+figure(3)
+plot(recov)
+hold on
+plot(recovFPGA)
+plot(bitstream)
+hold off
+
+
+
 

@@ -3,7 +3,8 @@
 -- Tool Version: Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
 -- Date        : Mon Oct  3 11:56:54 2022
 -- Host        : DESKTOP-BDA8VGJ running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub c:/EGH400_1_Thesis/src/ip/bd_ram_r1/bd_ram_r1_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top bd_ram_r1 -prefix
+--               bd_ram_r1_ bd_ram_r1_stub.vhdl
 -- Design      : bd_ram_r1
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a35ticsg324-1L
