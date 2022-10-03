@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="fpga_top_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="data_types" />
+            <top_module name="fpga_top_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="210,341.510 ns"></ZoomStartTime>
+      <ZoomEndTime time="210,485.511 ns"></ZoomEndTime>
+      <Cursor1Time time="205,405.100 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="59"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="13" />
+   <wvobject fp_name="/fpga_top_tb/FFT_outR" type="array">
+      <obj_property name="ElementShortName">FFT_outR[687:0]</obj_property>
+      <obj_property name="ObjectShortName">FFT_outR[687:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/inputs/byte" type="array">
+      <obj_property name="ElementShortName">byte[15:0]</obj_property>
+      <obj_property name="ObjectShortName">byte[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/inputs/byte_select_full_temp_out" type="array">
+      <obj_property name="ElementShortName">byte_select_full_temp_out[3:0]</obj_property>
+      <obj_property name="ObjectShortName">byte_select_full_temp_out[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/inputs/byte_select_temp_out" type="array">
+      <obj_property name="ElementShortName">byte_select_temp_out[3:0]</obj_property>
+      <obj_property name="ObjectShortName">byte_select_temp_out[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/Series_recombination_loop/DFTin" type="array">
+      <obj_property name="ElementShortName">DFTin[24:0]</obj_property>
+      <obj_property name="ObjectShortName">DFTin[24:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/clk_sys" type="logic">
+      <obj_property name="ElementShortName">clk_sys</obj_property>
+      <obj_property name="ObjectShortName">clk_sys</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/Series_recombination_loop/\DFT_TD_DSPs(1)\/DFT_TD_DSP/state" type="other">
+      <obj_property name="ElementShortName">state</obj_property>
+      <obj_property name="ObjectShortName">state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/Series_recombination_loop/\DFT_TD_DSPs(16)\/DFT_TD_DSP/order" type="other">
+      <obj_property name="ElementShortName">order</obj_property>
+      <obj_property name="ObjectShortName">order</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/Series_recombination_loop/\DFT_TD_DSPs(16)\/DFT_TD_DSP/Pout" type="array">
+      <obj_property name="ElementShortName">Pout[43:0]</obj_property>
+      <obj_property name="ObjectShortName">Pout[43:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/Series_recombination_loop/\DFT_TD_DSPs(16)\/DFT_TD_DSP/order_out" type="other">
+      <obj_property name="ElementShortName">order_out</obj_property>
+      <obj_property name="ObjectShortName">order_out</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/Series_recombination_loop/\DFT_TD_DSPs(16)\/DFT_TD_DSP/TWin" type="array">
+      <obj_property name="ElementShortName">TWin[17:0]</obj_property>
+      <obj_property name="ObjectShortName">TWin[17:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/Series_recombination_loop/\DFT_TD_DSPs(16)\/DFT_TD_DSP/P2sig" type="array">
+      <obj_property name="ElementShortName">P2sig[42:0]</obj_property>
+      <obj_property name="ObjectShortName">P2sig[42:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/Series_recombination_loop/\DFT_TD_DSPs(16)\/DFT_TD_DSP/PoutI" type="array">
+      <obj_property name="ElementShortName">PoutI[43:0]</obj_property>
+      <obj_property name="ObjectShortName">PoutI[43:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

@@ -16,7 +16,7 @@ L=L/16; % L*16 DFT uotputs desired
 %bitstream =flip(bitstream);
 %bitstream(1:256/4) =1;
 reformattt=zeros(1,length(bitstream));
-
+il=1;
 %% perform the start of the transform decompostion
 %bitstream=1:N
 for ii=1:Q %iterate through all banks
@@ -104,6 +104,14 @@ for ii =1:P
         
         B2=B1;
         B1=stagei;
+%        store(il)= DFTtempR*2^(20);
+%        il=il+1
+%        for kk = 1:P/2
+%         reformattt((jj-1)*P+(kk-1)*2+1)
+%         reformattt((jj-1)*P+(kk-1)*2+2)
+%       %  DFTtempI=LUTI(kk,reformattt((jj-1)*P+(kk-1)*2+1)+1,reformattt((jj-1)*P+(kk-1)*2+2)+1,ii)+DFTtempI;
+%         end
+        
     end
     Yr(((1:L)-1)*P+ii)=A1-coss./2.*A2+sinn./2.*B2;
     Yi(((1:L)-1)*P+ii)=B1-sinn./2.*A2-coss./2.*B2;

@@ -90,7 +90,7 @@ set_property ip_output_repo c:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.cach
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet c:/EGH400_1_Thesis/src/ip/dsp_macro_0/dsp_macro_0.xci
+read_ip -quiet C:/EGH400_1_Thesis/src/ip/dsp_macro_0/dsp_macro_0.xci
 set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/dsp_macro_0/dsp_macro_0_ooc.xdc]
 
 OPTRACE "Adding files" END { }

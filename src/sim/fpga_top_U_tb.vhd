@@ -41,7 +41,7 @@ entity fpga_top_U_tb is
     generic (
         G_DATA_WIDTH    : INTEGER := 25; -- data width of output
         G_DATA_WIDTH_TW    : INTEGER := 18; --  data with of TWiddle
-        G_DECIMAL_WIDTH : integer := 20;
+        G_DECIMAL_WIDTH : integer := 19;
         G_PARALLEL_TD : integer := 2;
         G_BYTE_SIZE : Integer := 8192;
         G_RADIX : integer := 16;

@@ -7,7 +7,7 @@ close all
 fileName={'RAM1.txt', 'RAM2.txt', 'RAM3.txt','RAM4.txt', 'RAM5.txt', 'RAM6.txt','RAM7.txt', 'RAM8.txt'};
 
 TWD=15; %% the decimal location % 14 or more triggers dec2bin to propduce a 32 bit value
-DFTD =20;
+DFTD =19;
 DFTBD_size =25;
 TW_size=18;
 parallel =2;

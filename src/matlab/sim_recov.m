@@ -2,20 +2,26 @@
 close all
 clear all
 
-Seed =6; %13
+Seed =9; %13 6 doesn't work
 N=8192;
 L=256;
 P=16;
-DFTD=20;
+DFTD=19;
 TWD = 15;
 parallel = 2;
 FILE_read= "..\sim\output_file.txt";
 %bitstream = zeros(1,N);
 
 rng(Seed,'twister') % get the RNG seed
-bitstream=round(rand(1,N)); % set bitstream
+bitstream=round(rand(1,N/4)); % set bitstream
+
+bitstream=[bitstream bitstream bitstream bitstream]; %zeros(1,N/4)
+
+%bitstream=[bitstream bitstream];
+%bitstream=[bitstream bitstream];
 %bitstream(1:end)=1;
 %bitstream(1) =0;
+%bitstream(end)=0;
 % convert to char
 %bitstream=mod((1:length(bitstream))+1,2);
 %bitstream(end) =0;
@@ -58,8 +64,8 @@ FFTsim_temp=FFTsim_FULL;
 for ii= 1:L/P/parallel
     for jj = 1: parallel
     FFTsim_FULL(P*(parallel*(ii-1)+jj-1)+1: P*(parallel*ii-parallel+1+jj-1))=FFTsim_temp((P*parallel*(ii-1)+jj):parallel:parallel*P*ii);
-    left=P*(parallel*(ii-1)+jj-1)+1: P*(parallel*ii-parallel+1+jj-1)
-    right =(P*parallel*(ii-1)+jj):parallel:parallel*P*ii
+    left=P*(parallel*(ii-1)+jj-1)+1: P*(parallel*ii-parallel+1+jj-1);
+    right =(P*parallel*(ii-1)+jj):parallel:parallel*P*ii;
     end
     
 end
@@ -68,6 +74,9 @@ figure
 plot(abs(FFTsim_FULL))
 hold on
 plot(abs(FFT))
+
+%t=abs(fft(bitstream));
+%plot(t(1:256));
 hold off
 
 title ('FFT OUT')
@@ -79,7 +88,7 @@ plot (cos(linspace(0,2*pi,8192)).^(N/P)*0.004)
 hold off
 
 figure
-plot(abs(abs(FFTsim_FULL)-abs(FFT.')))
+plot(abs(real(FFTsim_FULL)-real(FFT.')))
 hold on
 plot (cos(linspace(0,2*pi,512)).^(N/P)*0.05)
 hold off

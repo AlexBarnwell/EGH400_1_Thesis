@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="bd_ram_i4_synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1664328514">
+<GenRun Id="bd_ram_i4_synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1664761367">
   <File Type="PA-TCL" Name="bd_ram_i4.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="bd_ram_i4_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="bd_ram_i4_reports.tcl"/>
   <File Type="RDS-RDS" Name="bd_ram_i4.vds"/>
+  <File Type="RDS-UTIL" Name="bd_ram_i4_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="bd_ram_i4_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="bd_ram_i4.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="bd_ram_i4_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="bd_ram_i4_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/bd_ram_i4">
     <File Path="$PPRDIR/../../src/ip/bd_ram_i4/bd_ram_i4.xci">
       <FileInfo>
@@ -32,7 +37,7 @@
   </FileSet>
   <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
     <Filter Type="Utils"/>
-    <File Path="$PSRCDIR/utils_1/imports/synth_1/fpga_top.dcp">
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/fpga_top_U.dcp">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -45,7 +50,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

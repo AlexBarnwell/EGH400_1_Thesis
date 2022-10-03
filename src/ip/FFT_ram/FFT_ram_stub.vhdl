@@ -3,7 +3,8 @@
 -- Tool Version: Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
 -- Date        : Sat Oct  1 16:12:53 2022
 -- Host        : LAPTOP-M3DNELKA running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub c:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/FFT_ram/FFT_ram_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top FFT_ram -prefix
+--               FFT_ram_ FFT_ram_stub.vhdl
 -- Design      : FFT_ram
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a35ticsg324-1L
