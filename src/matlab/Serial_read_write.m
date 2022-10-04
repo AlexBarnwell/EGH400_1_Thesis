@@ -55,7 +55,7 @@ uint8t_val = bit_to_uint8 (bitstream);
 % end
 %
 
-inc=0;
+
 count=0;
 % send ack to arduino to reset data
 write(Arduino,'G','char')
@@ -64,7 +64,7 @@ pause(0.1);
 
 for i=1:256
 
-data(i) = uint8t_val(i+256*inc); % one byte at a time
+data(i) = uint8t_val(i); % one byte at a time
 write(Arduino,data(i),"uint8");
 
 
