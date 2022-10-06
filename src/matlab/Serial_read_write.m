@@ -4,9 +4,9 @@ close all
 pause(4);
 serialportlist("available") %COM4 arduino
 
-Arduino = serialport("COM3",9600);
+Arduino = serialport("COM4",9600);
 pause(4)
-FPGA = serialport("COM5",115200,"stopbits",2,"ByteOrder","little-endian");
+FPGA = serialport("COM6",115200,"stopbits",2,"ByteOrder","little-endian");
 pause(4)
 flush(FPGA)
 %FPGA.InputBufferSize(500);
@@ -16,7 +16,7 @@ flush(FPGA)
 
 % loop this after this for transmission
 
-Seed =10;%13
+Seed =5;%13
 N=8192;
 L=256;
 P=16;
