@@ -14,7 +14,8 @@ entity shift_reg_input is
         G_RADIX : integer := 16;
         G_DFTBD_B : integer := 2; -- both radix and DFTBD B modification has not been implemented
         G_MIN_BANK : integer := 0;
-        G_MAX_BANK : integer := 16 -- 16*16 =256 
+        G_MAX_BANK : integer := 16 ;-- 16*16 =256 
+        G_MCLK_PRESCALER : integer := 40
     );
     Port (
         CLK : in std_logic;
@@ -24,7 +25,7 @@ entity shift_reg_input is
         FFT_ready : out std_logic; -- trigger for new mic data being reseived ready to start next FFT
         -- Data_ready : out std_logic; 
         --read_en : in std_logic;
-        MCLK : in std_logic;
+        MCLK : out std_logic;
        -- buffer_out : out std_logic_vector(255 downto 0); -- not needed to pass out
         byte_out : out std_logic_vector(G_RADIX-1 downto 0); -- reorderd byte for DFTBD RAMS as input
         byte_select : out unsigned(log2(G_RADIX*(2**G_DFTBD_B))-1-G_DFTBD_B downto 0); -- the counter/ byte_select for the RAM
@@ -63,6 +64,8 @@ architecture Behavioral of shift_reg_input is
     signal delay  : std_logic := '0';
     signal hold : std_logic_vector(1 downto 0) := (others => '0'); -- trigger for holder the couiter for a period of time
     signal pos : int_array_16 := (others => 0);
+    signal clock_count : integer :=0;
+    signal mic_clock : std_logic := '0';
     
     
     
@@ -97,20 +100,59 @@ begin
 
 
 
-    input_bit : process (MCLK,RST) is -- input processing for input bit and signalling for read_en
+    -- input_bit : process (MCLK,RST) is -- input processing for input bit and signalling for read_en
+    -- begin
+    --     if RST = '0' then
+    --         Mic_shift_reg_input(G_BYTE_SIZE/4) <= '0';
+    --         read_en <= '0';
+    --     elsif (read_en = '1') then
+    --         read_en <= '0';
+    --     elsif falling_edge(MCLK) then -- check
+    --         Mic_shift_reg_input(G_BYTE_SIZE/4) <= bit_input;
+    --         read_en <= '1';
+    --         --        elsif falling_edge(MCLK) then
+    --         --            read_en <='0';
+    --     end if;
+    -- end process input_bit;
+
+
+
+    input_bit : process (CLK,RST) is -- input processing for input bit and signalling for read_en
     begin
         if RST = '0' then
+        clock_count <= 0;
+        mic_clock <= '0';
             Mic_shift_reg_input(G_BYTE_SIZE/4) <= '0';
             read_en <= '0';
-        elsif (read_en = '1') then
-            read_en <= '0';
-        elsif falling_edge(MCLK) then -- check
-            Mic_shift_reg_input(G_BYTE_SIZE/4) <= bit_input;
-            read_en <= '1';
-            --        elsif falling_edge(MCLK) then
-            --            read_en <='0';
+       
+        elsif falling_edge(CLK) then -- check
+        
+            --   if MIC_and_FFT_done = '1'  then
+            --     clock_count <= 0;
+                
+                
+            if clock_count = G_MCLK_PRESCALER/2-1 then -- decrease time to 1MHz temp
+            
+                mic_clock <= not mic_clock;
+                clock_count <= 0;
+
+                if mic_clock = '1' then
+                Mic_shift_reg_input(G_BYTE_SIZE/4) <= bit_input;
+                read_en <= '1';
+
+                end if;
+            else
+                clock_count <=clock_count+1;
+                
+             if (read_en = '1') then
+                read_en <= '0';
+            end if;
+            end if;
         end if;
     end process input_bit;
+
+
+    MCLK <= mic_clock;
 
 
 --max_count<= (others => '1');

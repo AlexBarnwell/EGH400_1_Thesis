@@ -1,59 +1,56 @@
 Time resolution is 1 ps
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
-Block Memory Generator module fpga_top_U_tb.top_sim.DFTBD_RAMs.DFTBD_RAM1.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module fpga_top_tb.top_sim.DFTBD_RAMs.DFTBD_RAM1.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
-Block Memory Generator module fpga_top_U_tb.top_sim.DFTBD_RAMs.DFTBD_RAM2.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module fpga_top_tb.top_sim.DFTBD_RAMs.DFTBD_RAM2.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
-Block Memory Generator module fpga_top_U_tb.top_sim.DFTBD_RAMs.DFTBD_RAM3.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module fpga_top_tb.top_sim.DFTBD_RAMs.DFTBD_RAM3.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
-Block Memory Generator module fpga_top_U_tb.top_sim.DFTBD_RAMs.DFTBD_RAM4.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module fpga_top_tb.top_sim.DFTBD_RAMs.DFTBD_RAM4.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
-Block Memory Generator module fpga_top_U_tb.top_sim.DFTBD_RAMs.DFTBD_RAM5.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module fpga_top_tb.top_sim.DFTBD_RAMs.DFTBD_RAM5.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
-Block Memory Generator module fpga_top_U_tb.top_sim.DFTBD_RAMs.DFTBD_RAM6.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module fpga_top_tb.top_sim.DFTBD_RAMs.DFTBD_RAM6.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
-Block Memory Generator module fpga_top_U_tb.top_sim.DFTBD_RAMs.DFTBD_RAM7.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module fpga_top_tb.top_sim.DFTBD_RAMs.DFTBD_RAM7.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
-Block Memory Generator module fpga_top_U_tb.top_sim.DFTBD_RAMs.DFTBD_RAM8.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module fpga_top_tb.top_sim.DFTBD_RAMs.DFTBD_RAM8.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
-Block Memory Generator module fpga_top_U_tb.top_sim.DFTBD_RAMs.DFTBD_RAMI1.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module fpga_top_tb.top_sim.DFTBD_RAMs.DFTBD_RAMI1.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
-Block Memory Generator module fpga_top_U_tb.top_sim.DFTBD_RAMs.DFTBD_RAMI2.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module fpga_top_tb.top_sim.DFTBD_RAMs.DFTBD_RAMI2.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
-Block Memory Generator module fpga_top_U_tb.top_sim.DFTBD_RAMs.DFTBD_RAMI3.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module fpga_top_tb.top_sim.DFTBD_RAMs.DFTBD_RAMI3.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
-Block Memory Generator module fpga_top_U_tb.top_sim.DFTBD_RAMs.DFTBD_RAMI4.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module fpga_top_tb.top_sim.DFTBD_RAMs.DFTBD_RAMI4.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
-Block Memory Generator module fpga_top_U_tb.top_sim.DFTBD_RAMs.DFTBD_RAMI5.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module fpga_top_tb.top_sim.DFTBD_RAMs.DFTBD_RAMI5.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
-Block Memory Generator module fpga_top_U_tb.top_sim.DFTBD_RAMs.DFTBD_RAMI6.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module fpga_top_tb.top_sim.DFTBD_RAMs.DFTBD_RAMI6.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
-Block Memory Generator module fpga_top_U_tb.top_sim.DFTBD_RAMs.DFTBD_RAMI7.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module fpga_top_tb.top_sim.DFTBD_RAMs.DFTBD_RAMI7.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
-Block Memory Generator module fpga_top_U_tb.top_sim.DFTBD_RAMs.DFTBD_RAMI8.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module fpga_top_tb.top_sim.DFTBD_RAMs.DFTBD_RAMI8.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
-Block Memory Generator module fpga_top_U_tb.top_sim.TWiddle1.Twiddle_1.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module fpga_top_tb.top_sim.TWiddle1.Twiddle_1.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
-Block Memory Generator module fpga_top_U_tb.top_sim.TWiddle1.Twiddle_2.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
- Block Memory Generator module loading initial data...
- Block Memory Generator data initialization complete.
-Block Memory Generator module fpga_top_U_tb.top_sim.FFT_RAM1_UART.FFT_RAMs.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
-INFO: xsimkernel Simulation Memory Usage: 22400 KB (Peak: 22400 KB), Simulation CPU Usage: 246327 ms
+Block Memory Generator module fpga_top_tb.top_sim.TWiddle1.Twiddle_2.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+INFO: xsimkernel Simulation Memory Usage: 29372 KB (Peak: 29372 KB), Simulation CPU Usage: 75656 ms

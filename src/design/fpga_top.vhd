@@ -16,12 +16,12 @@ entity fpga_top is
 generic (
         G_DATA_WIDTH    : INTEGER := 25; -- data width of DFTBD
         G_DATA_WIDTH_TW    : INTEGER := 18; --  data with of TWiddle
-        G_DECIMAL_WIDTH : integer := 20; -- decimal position (x shifts away from before 0th bit)
-        G_PARALLEL_TD : integer := 2;
+        G_DECIMAL_WIDTH : integer := 19; -- decimal position (x shifts away from before 0th bit)
+        G_PARALLEL_TD : integer := 16;
         G_BYTE_SIZE : Integer := 8192;
         G_RADIX : integer := 16;
         G_DFTBD_B : integer := 2;
-        G_MCLK_PRESCALER : integer := 40;
+        G_MCLK_PRESCALER : integer := 36;
         G_MIN_BANK : integer := 0;
         G_MAX_BANK : integer := 16; -- 16*16 =256
         G_DECIMAL_WIDTH_TW : integer := 15 -- decimal precision 
@@ -139,7 +139,8 @@ component  shift_reg_input is
         G_RADIX : integer := 16;
         G_DFTBD_B : integer := 2;-- both radix and DFTBD B modification has not been implemented
         G_MIN_BANK : integer := 0;
-        G_MAX_BANK : integer := 16 -- 16*16 =256 
+        G_MAX_BANK : integer := 16; -- 16*16 =256 
+        G_MCLK_PRESCALER : integer := 6
     );
     Port (
         CLK : in std_logic;
@@ -149,7 +150,7 @@ component  shift_reg_input is
         FFT_ready : out std_logic; -- trigger for new mic data being reseived ready to start next FFT
        -- Data_ready : out std_logic; 
         --read_en : in std_logic;
-        MCLK : in std_logic;
+        MCLK : out std_logic;
         byte_out : out std_logic_vector(G_RADIX-1 downto 0); -- reorderd byte for DFTBD RAMS as input
         byte_select : out unsigned(log2(G_RADIX*(2**G_DFTBD_B))-G_DFTBD_B-1 downto 0); -- the counter/ byte_select for the RAM
         byte_select_full : out unsigned(log2(G_RADIX*(G_MAX_BANK-G_MIN_BANK)/G_PARALLEL_TD)-1  downto 0)
@@ -190,7 +191,7 @@ begin
 
     CLOCK : clk_wiz_0
         port map(
-            reset => RSTbuff,
+            reset => '0',
             clk_in1  => clk_100M,
             clk_sys => clk_sys
           --  clk_mic => clk_mic
@@ -199,22 +200,82 @@ begin
 
 
 
-microphone_CLK : process (clk_sys,nRST)
-begin
+-- microphone_CLK : process (clk_sys,nRST)
+-- begin
     
-    if nRST = '0' then
-    clk_mic <= '0';
-    clock_count <= 0;
-    elsif rising_edge(clk_sys) then
-    if clock_count = G_MCLK_PRESCALER/2-1 then -- decrease time to 1MHz temp
-    clock_count <= 0;
-    clk_mic <= not clk_mic;
-    else
-        clock_count <=clock_count+1;
-    end if;
-    end if;
+--     if nRST = '0' then
+--     clk_mic <= '0';
+--     clock_count <= 0;
+--     elsif rising_edge(clk_sys) then
+--     if clock_count = G_MCLK_PRESCALER/2-1 then -- decrease time to 1MHz temp
+--     clock_count <= 0;
+--     clk_mic <= not clk_mic;
+--     else
+--         clock_count <=clock_count+1;
+--     end if;
+--     end if;
     
-end process;
+-- end process;
+
+
+
+
+
+-- FFT_starts :  process (clk_sys,nRST)
+-- begin
+
+--     if nRSt = '0' then
+
+--         FFT_begin <= '1';
+
+--         MIC_and_FFT_done <= '1';
+
+--     elsif rising_edge(clk_sys) then
+
+        
+
+--         if ((MIC_and_FFT_done = '1') and(UART_FFT_DONE = '1')) then
+--             FFT_begin <= '1';
+--             MIC_and_FFT_done <= '0';
+            
+            
+--             elsif (FFT_ready = '1') then
+--             MIC_and_FFT_done <= '1';
+--            -- cs_hold <= "00";
+
+--         else
+--             FFT_begin <= '0';
+--         end if;
+        
+--         -- if ((cs_hold = "00") or (cs_hold = "01"))  then
+--         --     cs_delay<= cs_Delay+1;
+--         --     if CS_delay = "111111111111" then -- 4096
+--         --        sig_chip_select <= not sig_chip_select;
+--         --        cs_hold <= cs_hold+1;
+--         --     end if;
+             
+--         -- end if;
+
+
+--     end if;
+
+-- end process;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 MIC_clock <= clk_mic;
 
@@ -298,7 +359,8 @@ generic map (
     G_RADIX  => G_RADIX,
     G_DFTBD_B => G_DFTBD_B, -- both radix and DFTBD B modification has not been implemented
     G_MIN_BANK => G_MIN_BANK,
-    G_MAX_BANK => G_MAX_BANK
+    G_MAX_BANK => G_MAX_BANK,
+    G_MCLK_PRESCALER => G_MCLK_PRESCALER
 )
     Port map (
         CLK  => clk_sys,

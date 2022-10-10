@@ -2,30 +2,51 @@
 close all
 clear all
 
+
+
+ %% delta sigma modulation
+
+x=linspace(0,400*pi,8192);
+y=0.5+0.5*sin(x);
+
+DSM = DeltaSigmaModulator('Oversampling',1);
+DeltaSigmaModulator('Oversampling',1);
+ % Delta sigma modulator reset
+    set(DSM,...
+        'Sigma',          0,...
+        'PreviousOutput', 0);        
+       
+    % Delta sigma modulation
+  [Signal,SignalDS] = DSM.update(y);
+
+%%
+
+
 Seed =6; 
 N=8192;
 L=256;
 P=16;
 DFTD=19;
 TWD = 15;
-parallel = 2;
+parallel = 16;
 FILE_read= "..\sim\output_file.txt";
+FILE_read2 = "..\sim\output_file_sin.txt";
 %bitstream = zeros(1,N);
 
 rng(Seed,'twister') % get the RNG seed
-bitstream=round(rand(1,N/4)); % set bitstream
+bitstream=round(rand(1,N)); % set bitstream
 
 %bitstream=[bitstream bitstream bitstream bitstream]; %zeros(1,N/4)
 
-bitstream=uint8(round(rand(1,N/8))); % set bitstream
-%bitstream(1:end)=1;
-bitstream(1:16)=0;
-bitstream(end-15:end)=0;
-%bitstream(8+1:end)=0;
-%bitstream(1:end)=0;
-%bitstream=flip(bitstream);
-bitstream =[bitstream bitstream];
-bitstream=[bitstream bitstream bitstream bitstream]; %zeros(1,N/4)
+% bitstream=uint8(round(rand(1,N/8))); % set bitstream
+% %bitstream(1:end)=1;
+% bitstream(1:16)=0;
+% bitstream(end-15:end)=0;
+% %bitstream(8+1:end)=0;
+% %bitstream(1:end)=0;
+% %bitstream=flip(bitstream);
+% bitstream =[bitstream bitstream];
+% bitstream=[bitstream bitstream bitstream bitstream]; %zeros(1,N/4)
 %bitstream=[bitstream bitstream];
 %bitstream=[bitstream bitstream];
 %bitstream(1:end)=1;
@@ -35,7 +56,11 @@ bitstream=[bitstream bitstream bitstream bitstream]; %zeros(1,N/4)
 %bitstream=mod((1:length(bitstream))+1,2);
 %bitstream(end) =0;
 char_bitstream=(char(bitstream+48)); % rplace this line with a text file write
+char_signalDS=(char(SignalDS+48));
 file="..\sim\input_file.txt";
+file2="..\sim\input_file_sin.txt";
+
+
 fid=fopen(file,'w');
 
 for ii=1:(length(bitstream))
@@ -48,23 +73,53 @@ for ii=1:10001
    fprintf(fid,'0\n'); % this si file buffer
 end
 
+
+fclose(fid);
+fid=fopen(file2,'w');
+
+
+
+for ii=1:(length(SignalDS))
+fprintf(fid,char_signalDS(ii));
+fprintf(fid,'\n');
+end
+%fprintf(fid,char_bitstream(end));
+
+for ii=1:10001
+   fprintf(fid,'0\n'); % this si file buffer
+end
+
+fclose(fid);
+
+
 %bitstream=mod((1:length(bitstream))+1,2); % 1 0 1 0 1 .... 
 
 %%
 
 
 
- 
+
+
+
+
+
+
 FFT = idealFFT(N,P,L,bitstream, TWD); % run ideal FFT
 FFTsim = simFFT(FILE_read,DFTD,TWD); % recover simulated ( FPGA FFT)
-FFTM=fft(bitstream);
+FFTsim_sin = simFFT(FILE_read2,DFTD,TWD); % recover simulated ( FPGA FFT)
+FFTM=fft(bitstream); 
+FFT_FULL = idealFFT(N,P,L,bitstream, 1000); % run ideal FFT at full precicsion
+
+FFTM_sin=fft(SignalDS); 
+FFT_FULL_sin = idealFFT(N,P,L,SignalDS, 1000); % run ideal FFT at full precicsion
+FFT_sin = idealFFT(N,P,L,SignalDS, TWD); 
 
 
 % as the data needs to move through in qurater onlythe 5th FFt will be
 % using the full bitstream 
 
 FFTsim_FULL =FFTsim((4*L+1):(5*L));
-
+FFTsim_FULL_sin =FFTsim_sin((4*L+1):(5*L));
 % reorder into expected format ( this will be done when storing it into a
 % RAM
 
@@ -73,20 +128,119 @@ FFTsim_temp=FFTsim_FULL;
 for ii= 1:L/P/parallel
     for jj = 1: parallel
     FFTsim_FULL(P*(parallel*(ii-1)+jj-1)+1: P*(parallel*ii-parallel+1+jj-1))=FFTsim_temp((P*parallel*(ii-1)+jj):parallel:parallel*P*ii);
-    left=P*(parallel*(ii-1)+jj-1)+1: P*(parallel*ii-parallel+1+jj-1);
-    right =(P*parallel*(ii-1)+jj):parallel:parallel*P*ii;
     end
     
 end
 
-figure
-plot(abs(FFTsim_FULL))
-hold on
-plot(abs(FFT))
+FFTsim_temp_sin=FFTsim_FULL_sin;
 
-%t=abs(fft(bitstream));
-%plot(t(1:256));
+for ii= 1:L/P/parallel
+    for jj = 1: parallel
+    FFTsim_FULL_sin(P*(parallel*(ii-1)+jj-1)+1: P*(parallel*ii-parallel+1+jj-1))=FFTsim_temp_sin((P*parallel*(ii-1)+jj):parallel:parallel*P*ii);
+    end
+    
+end
+
+
+
+%% plots
+
+%Matlab random
+figure
+MAT_RAND=plot(abs(FFTM(1:256)));
+hold on
+plot(abs(FFT_FULL))
+xlabel('FFT banks');
+ylabel('Magnitude');
+title('Initial MATLAB model (Random input)');
+legend('inbuilt','MATLAB model');
+saveas(MAT_RAND, '..\..\other\Report_images\MAT_RAND.png','png');
 hold off
+
+figure
+MAT_RAND_error=plot(abs(abs(FFTM(1:256))-abs(FFT_FULL)));
+xlabel('FFT banks');
+ylabel('Magnitude');
+title('Initial MATLAB model error(Random input)');
+saveas(MAT_RAND_error, '..\..\other\Report_images\MAT_RAND_error.png','png');
+
+%matlab sin
+figure
+MAT_RAND_sin=plot(abs(FFTM_sin(1:256)));
+hold on
+plot(abs(FFT_FULL_sin))
+xlabel('FFT banks');
+ylabel('Magnitude');
+title('Initial MATLAB model');
+legend('inbuilt','MATLAB model (sin input)');
+saveas(MAT_RAND_sin, '..\..\other\Report_images\MAT_RAND_sin.png','png');
+hold off
+
+figure
+MAT_RAND_error_sin=plot(abs(FFTM_sin(1:256))-abs(FFT_FULL_sin));
+xlabel('FFT banks');
+ylabel('Magnitude');
+title('Initial MATLAB model error (sin input)');
+saveas(MAT_RAND_error_sin, '..\..\other\Report_images\MAT_RAND_error_sin.png','png');
+
+
+
+%Sim vs matlab
+figure
+SIM_MAT_RAND=plot(abs(FFTsim_FULL));
+hold on
+plot(abs(FFT_FULL))
+plot(abs(FFT))
+hold off
+title('Simulation vs MATLAB (Random input)')
+xlabel('FFT banks');
+ylabel('Magnitude');
+legend('Simulation','MATLAB full precicion','MATLAB twiddle precision')
+saveas(SIM_MAT_RAND, '..\..\other\Report_images\SIM_MAT_RAND.png','png');
+
+
+figure
+SIM_MAT_RAND_error=plot(abs(FFTsim_FULL')-abs(FFT_FULL));
+hold on
+plot(abs(abs(FFTsim_FULL')-abs(FFT)));
+hold off
+xlabel('FFT banks');
+ylabel('Magnitude');
+legend('MATLAB Full precicison','MATLAB Twiddle precision');
+title('Sim error against MATLAB (Random input)');
+saveas(SIM_MAT_RAND_error, '..\..\other\Report_images\SIM_MAT_RAND_error.png','png');
+
+
+
+% sin wave
+figure
+SIM_MAT_SIN=plot(abs(FFTsim_FULL_sin));
+hold on
+plot(abs(FFT_FULL_sin))
+plot(abs(FFT_sin))
+hold off
+title('Simuation against MATLAB (sin input)')
+xlabel('FFT banks');
+ylabel('Magnitude');
+legend('Simulation','MATLAB full precicion','MATLAB twiddle precision')
+saveas(SIM_MAT_SIN, '..\..\other\Report_images\SIM_MAT_SIN.png','png');
+
+
+
+
+figure
+SIM_MAT_SIN_error=plot(abs(FFTsim_FULL_sin')-abs(FFT_FULL_sin));
+hold on
+plot(abs(abs(FFTsim_FULL_sin')-abs(FFT_sin)));
+hold off
+xlabel('FFT banks');
+ylabel('Magnitude');
+legend('MATLAB Full precicison','MATLAB Twiddle precision');
+title('Sim error against MATLAB (sin input)');
+saveas(SIM_MAT_SIN_error, '..\..\other\Report_images\SIM_MAT_SIN_error.png','png');
+
+
+%%
 
 title ('FFT OUT')
 legend('FPGA','MATLAB');
@@ -101,6 +255,13 @@ plot(abs(real(FFTsim_FULL)-real(FFT.')))
 hold on
 plot (cos(linspace(0,2*pi,512)).^(N/P)*0.05)
 hold off
+
+
+
+
+
+
+
 
 %figure
 %plot(FFTI)

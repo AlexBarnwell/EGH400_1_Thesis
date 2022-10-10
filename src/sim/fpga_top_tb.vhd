@@ -46,10 +46,11 @@ entity fpga_top_tb is
         G_BYTE_SIZE : Integer := 8192;
         G_RADIX : integer := 16;
         G_DFTBD_B : integer := 2;
-        G_MCLK_PRESCALER : integer := 10;
+        G_MCLK_PRESCALER : integer := 6;
         G_MIN_BANK : integer := 0;
         G_MAX_BANK : integer := 16; -- 16*16 =256
-        G_DECIMAL_WIDTH_TW : integer := 15 -- decimal precision 
+        G_DECIMAL_WIDTH_TW : integer := 15; -- decimal precision 
+        G_RAND : integer := 1
     );
     --  Port ( );
 end fpga_top_tb;
@@ -66,7 +67,7 @@ architecture Behavioral of fpga_top_tb is
             G_BYTE_SIZE : Integer := 256;
             G_RADIX : integer := 16;
             G_DFTBD_B : integer := 2;
-            G_MCLK_PRESCALER : integer := 50;
+            G_MCLK_PRESCALER : integer := 10;
             G_MIN_BANK : integer := 0;
             G_MAX_BANK : integer := 16; -- 16*16 =256
             G_DECIMAL_WIDTH_TW : integer := 13 -- decimal precision 
@@ -204,7 +205,48 @@ begin
     FFT_outR<=  to_bitvector(outR);
     FFT_outI<=  to_bitvector(outI);
 
-    file_save : process( write_flag)
+
+
+
+
+--    file_save : process( write_flag)
+
+--        file test_vector      : text open write_mode is "../../../../../../src/sim/output_file.txt";
+--        variable row_write          : line;  -- the row variable
+
+--    begin
+
+--        if(RST='1') then -- RESEt here is inverted as the ARTY RESET is inverted
+--            -- dont write
+
+--        elsif(rising_edge(write_flag)) then
+--            --file_save_delay <= file_save_delay+1;
+--            for I in G_PARALLEL_TD downto 1 loop
+--            write(row_write,FFT_outR((G_DATA_WIDTH+G_DATA_WIDTH_TW)*I-1 downto (G_DATA_WIDTH+G_DATA_WIDTH_TW)*(I-1)), right, 55);
+
+--            write(row_write,FFt_outI((G_DATA_WIDTH+G_DATA_WIDTH_TW)*I-1 downto (G_DATA_WIDTH+G_DATA_WIDTH_TW)*(I-1)), right, 55);
+
+--            write(row_write,order_out(I-1), right, 15);
+--            --hwrite(row,o_add, right, 15);
+--            -- hwrite(row,"00000000"&o_add, right, 15);
+
+--            writeline(test_vector,row_write);
+--        end loop;
+
+
+--        end if;
+
+--    end process;
+
+
+
+
+
+   
+  RANDOM: if G_rand = 1 generate
+
+   
+file_save : process( write_flag)
 
         file test_vector      : text open write_mode is "../../../../../../src/sim/output_file.txt";
         variable row_write          : line;  -- the row variable
@@ -232,10 +274,9 @@ begin
         end if;
 
     end process;
+  -- Code to generate goes here
 
-
-
-    file_write : process (MIC_clock,RST)
+ file_write : process (MIC_clock,RST)
         file test_vector      : text open read_mode is "../../../../../../src/sim/input_file.txt";
         variable row_read          : line;  -- the row variable
         variable v_data_read : bit := '0';
@@ -269,6 +310,279 @@ begin
 
 
     end process;
+
+end generate RANDOM;
+
+
+
+
+SIN: if G_rand = 2 generate
+
+
+file_save : process( write_flag)
+
+        file test_vector      : text open write_mode is "../../../../../../src/sim/output_file_sin.txt";
+        variable row_write          : line;  -- the row variable
+
+    begin
+
+        if(RST='1') then -- RESEt here is inverted as the ARTY RESET is inverted
+            -- dont write
+
+        elsif(rising_edge(write_flag)) then
+            --file_save_delay <= file_save_delay+1;
+            for I in G_PARALLEL_TD downto 1 loop
+            write(row_write,FFT_outR((G_DATA_WIDTH+G_DATA_WIDTH_TW)*I-1 downto (G_DATA_WIDTH+G_DATA_WIDTH_TW)*(I-1)), right, 55);
+
+            write(row_write,FFt_outI((G_DATA_WIDTH+G_DATA_WIDTH_TW)*I-1 downto (G_DATA_WIDTH+G_DATA_WIDTH_TW)*(I-1)), right, 55);
+
+            write(row_write,order_out(I-1), right, 15);
+            --hwrite(row,o_add, right, 15);
+            -- hwrite(row,"00000000"&o_add, right, 15);
+
+            writeline(test_vector,row_write);
+        end loop;
+
+
+        end if;
+
+    end process;
+  -- Code to generate goes here
+
+ file_write : process (MIC_clock,RST)
+        file test_vector      : text open read_mode is "../../../../../../src/sim/input_file_sin.txt";
+        variable row_read          : line;  -- the row variable
+        variable v_data_read : bit := '0';
+    begin
+        if(RST='1') then -- RESEt here is inverted as the ARTY RESET is inverted
+            -- dont write
+
+            --write(row_write,FFt_outI, right, 55);
+            bit_input <= '0';
+
+        elsif(rising_edge(MIC_clock)) then
+            --file_save_delay <= file_save_delay+1;
+            readline(test_vector,row_read);
+            --  write(row_read,FFT_outR, right, 55);
+            read(row_read,v_data_read);
+            --write(row_write,FFt_outI, right, 55);
+            bit_input <= to_stdulogic(v_data_read);
+            --write(row_write,order_out, right, 15);
+            --hwrite(row,o_add, right, 15);
+            -- hwrite(row,"00000000"&o_add, right, 15);
+
+            --writeline(test_vector,row_read);
+
+
+
+        end if;
+
+
+
+
+
+
+    end process;
+
+
+end generate SIN;
+
+
+
+
+
+
+
+
+PHYS_RAND: if G_rand = 3 generate
+
+
+file_save : process( write_flag)
+
+        file test_vector      : text open write_mode is "../../../../../../src/sim/output_file_phys.txt";
+        variable row_write          : line;  -- the row variable
+
+    begin
+
+        if(RST='1') then -- RESEt here is inverted as the ARTY RESET is inverted
+            -- dont write
+
+        elsif(rising_edge(write_flag)) then
+            --file_save_delay <= file_save_delay+1;
+            for I in G_PARALLEL_TD downto 1 loop
+            write(row_write,FFT_outR((G_DATA_WIDTH+G_DATA_WIDTH_TW)*I-1 downto (G_DATA_WIDTH+G_DATA_WIDTH_TW)*(I-1)), right, 55);
+
+            write(row_write,FFt_outI((G_DATA_WIDTH+G_DATA_WIDTH_TW)*I-1 downto (G_DATA_WIDTH+G_DATA_WIDTH_TW)*(I-1)), right, 55);
+
+            write(row_write,order_out(I-1), right, 15);
+            --hwrite(row,o_add, right, 15);
+            -- hwrite(row,"00000000"&o_add, right, 15);
+
+            writeline(test_vector,row_write);
+        end loop;
+
+
+        end if;
+
+    end process;
+  -- Code to generate goes here
+
+ file_write : process (MIC_clock,RST)
+        file test_vector      : text open read_mode is "../../../../../../src/sim/input_file_phys.txt";
+        variable row_read          : line;  -- the row variable
+        variable v_data_read : bit := '0';
+    begin
+        if(RST='1') then -- RESEt here is inverted as the ARTY RESET is inverted
+            -- dont write
+
+            --write(row_write,FFt_outI, right, 55);
+            bit_input <= '0';
+
+        elsif(rising_edge(MIC_clock)) then
+            --file_save_delay <= file_save_delay+1;
+            readline(test_vector,row_read);
+            --  write(row_read,FFT_outR, right, 55);
+            read(row_read,v_data_read);
+            --write(row_write,FFt_outI, right, 55);
+            bit_input <= to_stdulogic(v_data_read);
+            --write(row_write,order_out, right, 15);
+            --hwrite(row,o_add, right, 15);
+            -- hwrite(row,"00000000"&o_add, right, 15);
+
+            --writeline(test_vector,row_read);
+
+
+
+        end if;
+
+
+
+
+
+
+    end process;
+
+
+end generate PHYS_RAND;
+
+
+
+
+
+PHYS_SIN: if G_rand = 4 generate
+
+
+file_save : process( write_flag)
+
+        file test_vector      : text open write_mode is "../../../../../../src/sim/output_file_phys_sin.txt";
+        variable row_write          : line;  -- the row variable
+
+    begin
+
+        if(RST='1') then -- RESEt here is inverted as the ARTY RESET is inverted
+            -- dont write
+
+        elsif(rising_edge(write_flag)) then
+            --file_save_delay <= file_save_delay+1;
+            for I in G_PARALLEL_TD downto 1 loop
+            write(row_write,FFT_outR((G_DATA_WIDTH+G_DATA_WIDTH_TW)*I-1 downto (G_DATA_WIDTH+G_DATA_WIDTH_TW)*(I-1)), right, 55);
+
+            write(row_write,FFt_outI((G_DATA_WIDTH+G_DATA_WIDTH_TW)*I-1 downto (G_DATA_WIDTH+G_DATA_WIDTH_TW)*(I-1)), right, 55);
+
+            write(row_write,order_out(I-1), right, 15);
+            --hwrite(row,o_add, right, 15);
+            -- hwrite(row,"00000000"&o_add, right, 15);
+
+            writeline(test_vector,row_write);
+        end loop;
+
+
+        end if;
+
+    end process;
+  -- Code to generate goes here
+
+ file_write : process (MIC_clock,RST)
+        file test_vector      : text open read_mode is "../../../../../../src/sim/input_file_phys_sin.txt";
+        variable row_read          : line;  -- the row variable
+        variable v_data_read : bit := '0';
+    begin
+        if(RST='1') then -- RESEt here is inverted as the ARTY RESET is inverted
+            -- dont write
+
+            --write(row_write,FFt_outI, right, 55);
+            bit_input <= '0';
+
+        elsif(rising_edge(MIC_clock)) then
+            --file_save_delay <= file_save_delay+1;
+            readline(test_vector,row_read);
+            --  write(row_read,FFT_outR, right, 55);
+            read(row_read,v_data_read);
+            --write(row_write,FFt_outI, right, 55);
+            bit_input <= to_stdulogic(v_data_read);
+            --write(row_write,order_out, right, 15);
+            --hwrite(row,o_add, right, 15);
+            -- hwrite(row,"00000000"&o_add, right, 15);
+
+            --writeline(test_vector,row_read);
+
+
+
+        end if;
+
+
+
+
+
+
+    end process;
+
+
+end generate PHYS_SIN;
+
+
+
+
+
+
+
+
+
+
+--    file_write : process (MIC_clock,RST)
+--        file test_vector      : text open read_mode is "../../../../../../src/sim/input_file.txt";
+--        variable row_read          : line;  -- the row variable
+--        variable v_data_read : bit := '0';
+--    begin
+--        if(RST='1') then -- RESEt here is inverted as the ARTY RESET is inverted
+--            -- dont write
+
+--            --write(row_write,FFt_outI, right, 55);
+--            bit_input <= '0';
+
+--        elsif(rising_edge(MIC_clock)) then
+--            --file_save_delay <= file_save_delay+1;
+--            readline(test_vector,row_read);
+--            --  write(row_read,FFT_outR, right, 55);
+--            read(row_read,v_data_read);
+--            --write(row_write,FFt_outI, right, 55);
+--            bit_input <= to_stdulogic(v_data_read);
+--            --write(row_write,order_out, right, 15);
+--            --hwrite(row,o_add, right, 15);
+--            -- hwrite(row,"00000000"&o_add, right, 15);
+
+--            --writeline(test_vector,row_read);
+
+
+
+--        end if;
+
+
+
+
+
+
+--    end process;
 
 
 end Behavioral;

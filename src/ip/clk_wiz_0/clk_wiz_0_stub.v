@@ -1,7 +1,7 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
-// Date        : Tue Sep 27 14:24:47 2022
+// Date        : Thu Sep 22 21:04:56 2022
 // Host        : DESKTOP-BDA8VGJ running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub -rename_top clk_wiz_0 -prefix
 //               clk_wiz_0_ clk_wiz_0_stub.v

@@ -12,15 +12,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="210,341.510 ns"></ZoomStartTime>
-      <ZoomEndTime time="210,485.511 ns"></ZoomEndTime>
-      <Cursor1Time time="205,405.100 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="927.375 ns"></ZoomEndTime>
+      <Cursor1Time time="103.493 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="59"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="13" />
+   <WVObjectSize size="17" />
    <wvobject fp_name="/fpga_top_tb/FFT_outR" type="array">
       <obj_property name="ElementShortName">FFT_outR[687:0]</obj_property>
       <obj_property name="ObjectShortName">FFT_outR[687:0]</obj_property>
@@ -59,7 +59,6 @@
       <obj_property name="ElementShortName">Pout[43:0]</obj_property>
       <obj_property name="ObjectShortName">Pout[43:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/fpga_top_tb/top_sim/Series_recombination_loop/\DFT_TD_DSPs(16)\/DFT_TD_DSP/order_out" type="other">
       <obj_property name="ElementShortName">order_out</obj_property>
@@ -79,5 +78,21 @@
       <obj_property name="ElementShortName">PoutI[43:0]</obj_property>
       <obj_property name="ObjectShortName">PoutI[43:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/inputs/bit_input" type="logic">
+      <obj_property name="ElementShortName">bit_input</obj_property>
+      <obj_property name="ObjectShortName">bit_input</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/inputs/count" type="other">
+      <obj_property name="ElementShortName">count</obj_property>
+      <obj_property name="ObjectShortName">count</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/top_sim/inputs/MCLK" type="logic">
+      <obj_property name="ElementShortName">MCLK</obj_property>
+      <obj_property name="ObjectShortName">MCLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_tb/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
    </wvobject>
 </wave_config>

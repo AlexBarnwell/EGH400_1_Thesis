@@ -10,3 +10,6 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==tw_ram_sin 
 
 # IP: C:/EGH400_1_Thesis/src/ip/tw_ram_cos/tw_ram_cos.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==tw_ram_cos || ORIG_REF_NAME==tw_ram_cos} -quiet] -quiet
+
+# IP: C:/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==clk_wiz_0 || ORIG_REF_NAME==clk_wiz_0} -quiet] -quiet
