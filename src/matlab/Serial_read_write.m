@@ -1,9 +1,10 @@
 % this script is to read and write the serail to the arduino
 clear  all
 close all
-Rand=2;
+Rand=1;
 
 N=8192;
+bank=0;
  %% delta sigma modulation
 
 x=linspace(0,400*pi,8192);
@@ -116,7 +117,7 @@ flush(FPGA);
 
 pause(4);
 
-out=zeros(1,7000);
+out=zeros(1,14000);
 start_count=0;
 % while(1)
 %    if (start_count<12)
@@ -136,7 +137,7 @@ start_count=0;
 %    end
 % end
 %write(Arduino,bitstream,"uint8")
-out(1:7000)=read(FPGA,7000,"uint8");
+out(1:14000)=read(FPGA,14000,"uint8");
 flush(FPGA);
 clear FPGA
 
@@ -144,7 +145,7 @@ figure(1)
 plot(out)
 
 out_re=zeros(3072/12,12);
-for (ii=1:7000)
+for (ii=1:14000)
     if (out(ii)==90)
         start_count=start_count+1;
     else
@@ -152,8 +153,11 @@ for (ii=1:7000)
     end
     
     if (start_count==12)
+        bank=bank+1;
+        if (bank==2)
         out_re=(reshape(out(ii+1:3072+ii),12,3072/12))';
         break;
+        end
     end
     
 end

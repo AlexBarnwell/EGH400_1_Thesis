@@ -11,6 +11,7 @@
 int count =0;
 //uint8_t new_data = 170;
 int i =0;
+int t =0;
 int k=0;
 bool start =0;
 int cases =1;
@@ -70,11 +71,12 @@ void loop() {
 
     case 3:
     k=k+1;
+	//t=floor(k);
     SPI_TRANSMIT(k);
     
-    if (k== 255){
-      k=0;
-      cases=2;
+    if (k== 127){
+      k=-1;
+      //cases=2;
     }
     break;
 
@@ -171,7 +173,7 @@ SPCR |= (0<<DORD);
 void SPI_TRANSMIT(int k){
 while(!(SPSR & (1<<SPIF))) // wait for SPI to be done
 ;
-
+  char temp=SPDR;
   
   SPDR = bitstream[k];
 }
