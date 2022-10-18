@@ -74,7 +74,7 @@ void loop() {
 	//t=floor(k);
     SPI_TRANSMIT(k);
     
-    if (k== 127){
+    if (k== 255){
       k=-1;
       //cases=2;
     }
