@@ -38,9 +38,9 @@ if (Rand==1)
     pause(4);
     serialportlist("available") %COM4 arduino
 
-    Arduino = serialport("COM4",9600);
+    Arduino = serialport("COM3",9600);
     pause(4)
-    FPGA = serialport("COM6",115200,"stopbits",2,"ByteOrder","little-endian");
+    FPGA = serialport("COM5",115200,"stopbits",2,"ByteOrder","little-endian");
     pause(4)
     flush(FPGA)
     %FPGA.InputBufferSize(500);

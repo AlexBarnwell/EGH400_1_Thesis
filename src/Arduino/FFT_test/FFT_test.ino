@@ -1,4 +1,4 @@
-#include<SPI.h> 
+//#include<SPI.h> 
 
 //byte new_data = 0xA3;
 
@@ -23,7 +23,7 @@ char bitstream[256] = {};
 char m ='N';
 void setup() {
   // put your setup code here, to run once:
-   pinMode(MISO,OUTPUT); 
+  pinMode(MISO,OUTPUT); 
   pinMode(SCK,INPUT);
   pinMode(SS,INPUT);
   pinMode(LED_BUILTIN,OUTPUT); 
@@ -48,16 +48,16 @@ void loop() {
       delay(10);
       UART_Transmit(bitstream[i]);
     }
-
-    if (UART_Receive() == 'Y') {
+    }
+    if (m == 'Y') {
         cases =2;
     }
 
 
-        }
-        else{
-          (UART_Transmit(m));
-        }
+   // }
+        // else{
+        //   (UART_Transmit(m));
+        // }
     break;
     case 2:
 
