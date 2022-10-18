@@ -12,13 +12,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="3,464.015130 us"></ZoomStartTime>
-      <ZoomEndTime time="4,815.298975 us"></ZoomEndTime>
-      <Cursor1Time time="4,590.085000 us"></Cursor1Time>
+      <ZoomStartTime time="12,674,989.022 ns"></ZoomStartTime>
+      <ZoomEndTime time="12,679,439.023 ns"></ZoomEndTime>
+      <Cursor1Time time="12,676,736.449 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="73"></NameColumnWidth>
-      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+      <ValueColumnWidth column_width="68"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="27" />
    <wvobject fp_name="/fpga_top_U_tb/FFT_outR" type="array">
@@ -44,10 +44,6 @@
    <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/write_flag" type="logic">
       <obj_property name="ElementShortName">write_flag</obj_property>
       <obj_property name="ObjectShortName">write_flag</obj_property>
-   </wvobject>
-   <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/CASES" type="other">
-      <obj_property name="ElementShortName">CASES</obj_property>
-      <obj_property name="ObjectShortName">CASES</obj_property>
    </wvobject>
    <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/A" type="array">
       <obj_property name="ElementShortName">A[8:0]</obj_property>
@@ -106,6 +102,10 @@
    <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/UART_OUT" type="logic">
       <obj_property name="ElementShortName">UART_OUT</obj_property>
       <obj_property name="ObjectShortName">UART_OUT</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/CASES" type="other">
+      <obj_property name="ElementShortName">CASES</obj_property>
+      <obj_property name="ObjectShortName">CASES</obj_property>
    </wvobject>
    <wvobject fp_name="/fpga_top_U_tb/top_sim/FFT_RAM1_UART/UART_TX_1/Cnt_div_r" type="other">
       <obj_property name="ElementShortName">Cnt_div_r</obj_property>

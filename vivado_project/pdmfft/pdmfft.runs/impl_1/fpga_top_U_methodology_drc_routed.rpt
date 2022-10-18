@@ -1,0 +1,118 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
+| Date         : Tue Oct 18 11:46:53 2022
+| Host         : DESKTOP-BDA8VGJ running 64-bit major release  (build 9200)
+| Command      : report_methodology -file fpga_top_U_methodology_drc_routed.rpt -pb fpga_top_U_methodology_drc_routed.pb -rpx fpga_top_U_methodology_drc_routed.rpx
+| Design       : fpga_top_U
+| Device       : xc7a35ticsg324-1L
+| Speed File   : -1L
+| Design State : Fully Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 11
++-----------+----------+--------------------------------------------------------+------------+
+| Rule      | Severity | Description                                            | Violations |
++-----------+----------+--------------------------------------------------------+------------+
+| LUTAR-1   | Warning  | LUT drives async reset alert                           | 3          |
+| TIMING-18 | Warning  | Missing input or output delay                          | 5          |
+| TIMING-20 | Warning  | Non-clocked latch                                      | 1          |
+| XDCC-1    | Warning  | Scoped Clock constraint overwritten with the same name | 1          |
+| LATCH-1   | Advisory | Existing latches in the design                         | 1          |
++-----------+----------+--------------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell Series_recombination_loop/DFTBD14[24]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) inputs/count2_reg[29]/CLR, inputs/count2_reg[2]/PRE,
+inputs/count2_reg[30]/CLR, inputs/count2_reg[31]/CLR,
+inputs/count2_reg[3]/PRE, inputs/count2_reg[4]/PRE,
+inputs/count2_reg[5]/PRE, inputs/count2_reg[6]/PRE,
+inputs/count2_reg[7]/PRE, inputs/count2_reg[8]/PRE,
+inputs/count2_reg[9]/CLR, inputs/hold_reg[0]/PRE, inputs/hold_reg[1]/PRE,
+inputs/start_count_reg[1]/CLR, inputs/start_count_reg[2]/CLR
+ (the first 15 of 622 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#2 Warning
+LUT drives async reset alert  
+LUT cell Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/PoutIs[43]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/Pouts_reg[36]/CLR,
+Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/Pouts_reg[37]/CLR,
+Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/Pouts_reg[38]/CLR,
+Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/Pouts_reg[39]/CLR,
+Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/Pouts_reg[3]/CLR,
+Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/Pouts_reg[40]/CLR,
+Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/Pouts_reg[41]/CLR,
+Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/Pouts_reg[42]/CLR,
+Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/Pouts_reg[43]/CLR,
+Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/Pouts_reg[4]/CLR,
+Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/Pouts_reg[5]/CLR,
+Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/Pouts_reg[6]/CLR,
+Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/Pouts_reg[7]/CLR,
+Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/Pouts_reg[8]/CLR,
+Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/Pouts_reg[9]/CLR
+ (the first 15 of 334 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#3 Warning
+LUT drives async reset alert  
+LUT cell Series_recombination_loop/start_count_reg[0]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) inputs/start_count_reg[0]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on bit_input relative to clock(s) clk_100M
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An input delay is missing on rst relative to clock(s) clk_100M
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An output delay is missing on Chip_select relative to clock(s) clk_100M
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An output delay is missing on MIC_clock relative to clock(s) clk_100M
+Related violations: <none>
+
+TIMING-18#5 Warning
+Missing input or output delay  
+An output delay is missing on uart_tx relative to clock(s) clk_100M
+Related violations: <none>
+
+TIMING-20#1 Warning
+Non-clocked latch  
+The latch inputs/start_count_reg[0]_LDC cannot be properly analyzed as its control pin inputs/start_count_reg[0]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+XDCC-1#1 Warning
+Scoped Clock constraint overwritten with the same name  
+A new clock constraint create_clock overrides a previous scoped clock constraint with the same name. It is not recommended to override a scoped (typically an IP) clock constraint and could result in unexpected behaviors.
+New: create_clock -period 10.000 -name clk_100M -waveform {0.000 5.000} -add [get_ports clk_100M] (Source: C:/EGH400_1_Thesis/src/constraints/arty.xdc (Line: 11))
+Previous: create_clock -period 10.000 [get_ports clk_100M] (Source: c:/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0.xdc (Line: 56))
+Related violations: <none>
+
+LATCH-1#1 Advisory
+Existing latches in the design  
+There are 1 latches found in the design. Inferred latches are often the result of HDL coding mistakes, such as incomplete if or case statements.
+Related violations: <none>
+
+

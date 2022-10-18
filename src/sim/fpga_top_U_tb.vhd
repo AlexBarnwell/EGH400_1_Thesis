@@ -214,7 +214,7 @@ begin
 
     file_save : process( write_flag)
 
-        file test_vector      : text open write_mode is "../../../../../../src/sim/output_file.txt";
+        file test_vector      : text open write_mode is "../../../../../../src/sim/output_file11.txt";
         variable row_write          : line;  -- the row variable
 
     begin
@@ -244,7 +244,7 @@ begin
 
 
     file_write : process (MIC_clock,RST)
-        file test_vector      : text open read_mode is "../../../../../../src/sim/input_file.txt";
+        file test_vector      : text open read_mode is "../../../../../../src/sim/input_file_phys.txt";
         variable row_read          : line;  -- the row variable
         variable v_data_read : bit := '0';
     begin

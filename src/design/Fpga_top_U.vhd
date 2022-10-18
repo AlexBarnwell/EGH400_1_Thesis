@@ -19,7 +19,7 @@ entity fpga_top_U is
     generic (
         G_DATA_WIDTH    : INTEGER := 25; -- data width of DFTBD
         G_DATA_WIDTH_TW    : INTEGER := 18; --  data with of TWiddle
-        G_DECIMAL_WIDTH : integer := 20; -- decimal position (x shifts away from before 0th bit)
+        G_DECIMAL_WIDTH : integer := 19; -- decimal position (x shifts away from before 0th bit)
         G_PARALLEL_TD : integer := 2;
         G_BYTE_SIZE : Integer := 8192;
         G_RADIX : integer := 16;
@@ -262,9 +262,12 @@ begin
 
         if nRSt = '0' then
 
-            FFT_begin <= '1';
 
+            
             MIC_and_FFT_done <= '1';
+            sig_chip_select <= '0';
+            cs_hold <= "00";
+            cs_delay <= (others => '0');
 
         elsif rising_edge(clk_sys) then
 

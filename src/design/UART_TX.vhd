@@ -26,7 +26,7 @@ end entity UART_TX;
 
 architecture rtl of UART_TX is
     
-    constant C_CLK_DIVISOR : INTEGER := 868;--10417; 868
+    constant C_CLK_DIVISOR : INTEGER := 10;--10417; 868
    --G_CLOCK_DIV  : integer := 10417 
    
     

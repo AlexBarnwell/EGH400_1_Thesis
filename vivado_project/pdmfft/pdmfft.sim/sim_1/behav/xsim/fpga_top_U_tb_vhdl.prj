@@ -1,0 +1,16 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../../src/ip/dsp_macro_0/sim/dsp_macro_0.vhd" \
+"../../../../../../src/design/data_types.vhd" \
+"../../../../../../src/design/Control_TD.vhd" \
+"../../../../../../src/design/DFTBD_RAM.vhd" \
+"../../../../../../src/design/DSP_TD.vhd" \
+"../../../../../../src/design/FFT_RAM.vhd" \
+"../../../../../../src/design/Twiddle_factors.vhd" \
+"../../../../../../src/design/UART_TX.vhd" \
+"../../../../../../src/design/fpga_top_U_sim.vhd" \
+"../../../../../../src/design/shift_reg_input_U.vhd" \
+"../../../../../../src/sim/fpga_top_U_tb.vhd" \
+
+# Do not sort compile order
+nosort

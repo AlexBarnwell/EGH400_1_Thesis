@@ -164,6 +164,15 @@ ylabel('Magnitude');
 title('Initial MATLAB model error(Random input)');
 saveas(MAT_RAND_error, '..\..\other\Report_images\MAT_RAND_error.png','png');
 
+error=14-log2(abs(abs(FFTM(1:256))-abs(FFT_FULL)));
+
+error(error>25)=25;
+
+
+fprintf( 'MAT RAND error is %d \n', sum(error)/256)
+
+
+
 %matlab sin
 figure
 MAT_RAND_sin=plot(abs(FFTM_sin(1:256)));
@@ -183,7 +192,12 @@ ylabel('Magnitude');
 title('Initial MATLAB model error (sin input)');
 saveas(MAT_RAND_error_sin, '..\..\other\Report_images\MAT_RAND_error_sin.png','png');
 
+error=14-log2(abs(abs(FFTM_sin(1:256))-abs(FFT_FULL_sin)));
 
+error(error>25)=25;
+
+
+fprintf( 'MAT RAND error SIN is %d \n', sum(error)/256)
 
 %Sim vs matlab
 figure
@@ -210,6 +224,22 @@ legend('MATLAB Full precicison','MATLAB Twiddle precision');
 title('Sim error against MATLAB (Random input)');
 saveas(SIM_MAT_RAND_error, '..\..\other\Report_images\SIM_MAT_RAND_error.png','png');
 
+
+error=14-log2(abs(abs(FFTsim_FULL')-abs(FFT)));
+
+error(error>25)=25;
+
+
+fprintf( 'SIM RAND error TW is %d \n', sum(error)/256)
+
+
+
+error=14-log2(abs(abs(FFTsim_FULL')-abs(FFT_FULL)));
+
+error(error>25)=25;
+
+
+fprintf( 'SIM RAND error is %d \n', sum(error)/256)
 
 
 % sin wave
@@ -240,6 +270,25 @@ title('Sim error against MATLAB (sin input)');
 saveas(SIM_MAT_SIN_error, '..\..\other\Report_images\SIM_MAT_SIN_error.png','png');
 
 
+
+
+
+error=14-log2(abs(abs(FFTsim_FULL_sin')-abs(FFT_FULL_sin)));
+
+error(error>25)=25;
+
+
+fprintf( 'SIM RAND error SIN is %d \n', sum(error)/256)
+
+
+
+
+error=14-log2(abs(abs(FFTsim_FULL_sin')-abs(FFT_sin)));
+
+error(error>25)=25;
+
+
+fprintf( 'SIM RAND error TW is %d \n', sum(error)/256)
 %%
 
 title ('FFT OUT')
