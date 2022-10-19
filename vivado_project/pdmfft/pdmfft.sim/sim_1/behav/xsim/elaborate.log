@@ -1,6 +1,6 @@
 Vivado Simulator v2022.1
 Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2022.1/bin/unwrapped/win64.o/xelab.exe --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_5 -L xbip_dsp48_wrapper_v3_0_4 -L xbip_utils_v3_0_10 -L xbip_pipe_v3_0_6 -L dsp_macro_v1_0_2 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot fpga_top_U_tb_behav xil_defaultlib.fpga_top_U_tb xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2022.1/bin/unwrapped/win64.o/xelab.exe --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_5 -L xbip_dsp48_wrapper_v3_0_4 -L xbip_utils_v3_0_10 -L xbip_pipe_v3_0_6 -L dsp_macro_v1_0_2 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot fpga_top_tb_behav xil_defaultlib.fpga_top_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
@@ -105,15 +105,7 @@ Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
 Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="art...
 Compiling module xil_defaultlib.tw_ram_sin
 Compiling architecture behavioral of entity xil_defaultlib.Twiddle_factors [\Twiddle_factors(g_decimal_width...]
-Compiling architecture behavioral of entity xil_defaultlib.shift_reg_input_U [\shift_reg_input_U(g_parallel_td...]
-Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
-Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
-Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_softecc_outpu...
-Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
-Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="art...
-Compiling module xil_defaultlib.FFT_ram
-Compiling architecture rtl of entity xil_defaultlib.UART_TX [\UART_TX(g_baud_rate=1000000)\]
-Compiling architecture behavioral of entity xil_defaultlib.FFT_RAM_UART [\FFT_RAM_UART(g_parallel_td=2,g_...]
-Compiling architecture rtl of entity xil_defaultlib.fpga_top_U_sim [\fpga_top_U_sim(g_decimal_width=...]
-Compiling architecture behavioral of entity xil_defaultlib.fpga_top_u_tb
-Built simulation snapshot fpga_top_U_tb_behav
+Compiling architecture behavioral of entity xil_defaultlib.shift_reg_input [\shift_reg_input(g_parallel_td=1...]
+Compiling architecture rtl of entity xil_defaultlib.fpga_top [\fpga_top(g_mclk_prescaler=6)\]
+Compiling architecture behavioral of entity xil_defaultlib.fpga_top_tb
+Built simulation snapshot fpga_top_tb_behav

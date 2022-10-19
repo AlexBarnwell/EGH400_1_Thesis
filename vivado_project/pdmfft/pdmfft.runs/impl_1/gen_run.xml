@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1666057511">
+<GenRun Id="impl_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1666169626">
   <File Type="ROUTE-PWR" Name="fpga_top_U_power_routed.rpt"/>
   <File Type="PA-TCL" Name="fpga_top_U.tcl"/>
   <File Type="BITSTR-MMI" Name="fpga_top_U.mmi"/>

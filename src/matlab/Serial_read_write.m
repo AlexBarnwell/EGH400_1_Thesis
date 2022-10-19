@@ -38,9 +38,9 @@ if (Rand==1)
     pause(4);
     serialportlist("available") %COM4 arduino
 
-    Arduino = serialport("COM3",9600);
+    Arduino = serialport("COM4",9600);
     pause(4)
-    FPGA = serialport("COM5",115200,"stopbits",2,"ByteOrder","little-endian");
+    FPGA = serialport("COM6",115200,"stopbits",2,"ByteOrder","little-endian");
     pause(4)
     flush(FPGA)
     %FPGA.InputBufferSize(500);
@@ -65,11 +65,13 @@ if (Rand==1)
     %bitstream(1:256+128+64+32+16+8)=0;
     %bitstream(end-255-128-64-32-16-8:end)=0;
 
-    bitstream(1:8)=0
+    %bitstream(1:8)=0
 
-    bitstream(end-7:end)=0;
+   % bitstream(end-7:end)=0;
 
-    bitstream(512-7:512+8)=0;
+   % bitstream(512-7:512+8)=0;
+    %bitstream(512-7:512+8)=0;
+    
 
     bitstream =[bitstream bitstream];
     % bitstream(1:8)=0;
@@ -489,6 +491,21 @@ end
 % bitstream(1:8)=1;
 % %bitstream(end-7:end)=1;
 %bitstream=[bitstream(1:end/2) bitstream(1:end/2)];
+%bitstream=uint8(round(rand(1,N/4))); % set bitstream
+
+%    bitstream=uint8(round(rand(1,N/8))); % set bitstream
+    %bitstream(1:end)=1;
+    %bitstream(1:256+128+64+32+16+8)=0;
+    %bitstream(end-255-128-64-32-16-8:end)=0;
+
+%     bitstream(1:8)=0
+% 
+%     bitstream(end-7:end)=0;
+% 
+%     bitstream(512-7:512+8)=0;
+
+
+%bitstream=[bitstream bitstream];
 bitstream=[bitstream bitstream bitstream bitstream];
 
 

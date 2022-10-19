@@ -2,14 +2,15 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Tue Oct 18 09:50:42 2022
-# Process ID: 19032
-# Current directory: C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/bd_ram_i4_synth_1
+# Start of session at: Wed Oct 19 18:23:18 2022
+# Process ID: 19160
+# Current directory: C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/bd_ram_i4_synth_1
 # Command line: vivado.exe -log bd_ram_i4.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source bd_ram_i4.tcl
-# Log file: C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/bd_ram_i4_synth_1/bd_ram_i4.vds
-# Journal file: C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/bd_ram_i4_synth_1\vivado.jou
-# Running On: DESKTOP-BDA8VGJ, OS: Windows, CPU Frequency: 3600 MHz, CPU Physical cores: 8, Host memory: 25599 MB
+# Log file: C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/bd_ram_i4_synth_1/bd_ram_i4.vds
+# Journal file: C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/bd_ram_i4_synth_1\vivado.jou
+# Running On: LAPTOP-M3DNELKA, OS: Windows, CPU Frequency: 2208 MHz, CPU Physical cores: 6, Host memory: 17075 MB
 #-----------------------------------------------------------
 source bd_ram_i4.tcl -notrace
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 1296.434 ; gain = 41.438
 INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP bd_ram_i4, cache-ID = 88c0ba8284212305.
-INFO: [Common 17-206] Exiting Vivado at Tue Oct 18 09:50:49 2022...
+INFO: [Common 17-206] Exiting Vivado at Wed Oct 19 18:23:35 2022...

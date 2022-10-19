@@ -1,5 +1,5 @@
 //#include<SPI.h> 
-
+#include <stdint.h>
 //byte new_data = 0xA3;
 
 
@@ -12,12 +12,12 @@ int count =0;
 //uint8_t new_data = 170;
 int i =0;
 int t =0;
-int k=0;
+uint16_t k=0;
 bool start =0;
 int cases =1;
 
 
-char bitstream[256] = {};
+uint8_t  bitstream[256] = {};
 
 
 char m ='N';
@@ -65,19 +65,19 @@ void loop() {
       cases =3;
       k=0;
       //digitalWrite(LED_BUILTIN,LOW);
-      SPDR = bitstream[0];
+      //SPDR = bitstream[0];
     }
     break;
 
     case 3:
-    k=k+1;
+    //k=k+1;
 	//t=floor(k);
-    SPI_TRANSMIT(k);
-    
-    if (k== 255){
-      k=-1;
-      //cases=2;
-    }
+    SPI_TRANSMIT(k & 0XFF); // mod 256
+    k=k+1;
+    // if (k== 255){
+    //   k=-1;
+    //   //cases=2;
+    // }
     break;
 
   }
@@ -170,7 +170,7 @@ SPCR |= (1<<SPR0); // speed 16MHz/128 = 128KHz
 SPCR |= (0<<DORD);
 }
 
-void SPI_TRANSMIT(int k){
+void SPI_TRANSMIT(uint16_t k){
 while(!(SPSR & (1<<SPIF))) // wait for SPI to be done
 ;
   char temp=SPDR;

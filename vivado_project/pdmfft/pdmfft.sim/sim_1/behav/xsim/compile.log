@@ -1,67 +1,61 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/EGH400_1_Thesis/src/ip/FFT_ram/sim/FFT_ram.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module FFT_ram
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/EGH400_1_Thesis/src/ip/tw_ram_sin/sim/tw_ram_sin.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/tw_ram_sin/sim/tw_ram_sin.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tw_ram_sin
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/EGH400_1_Thesis/src/ip/tw_ram_cos/sim/tw_ram_cos.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/tw_ram_cos/sim/tw_ram_cos.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tw_ram_cos
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/EGH400_1_Thesis/src/ip/bd_ram_i8/sim/bd_ram_i8.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i8/sim/bd_ram_i8.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module bd_ram_i8
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/EGH400_1_Thesis/src/ip/bd_ram_i7/sim/bd_ram_i7.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i7/sim/bd_ram_i7.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module bd_ram_i7
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/EGH400_1_Thesis/src/ip/bd_ram_i6/sim/bd_ram_i6.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i6/sim/bd_ram_i6.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module bd_ram_i6
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/EGH400_1_Thesis/src/ip/bd_ram_i5/sim/bd_ram_i5.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i5/sim/bd_ram_i5.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module bd_ram_i5
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/EGH400_1_Thesis/src/ip/bd_ram_i4/sim/bd_ram_i4.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i4/sim/bd_ram_i4.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module bd_ram_i4
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/EGH400_1_Thesis/src/ip/bd_ram_i3/sim/bd_ram_i3.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i3/sim/bd_ram_i3.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module bd_ram_i3
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/EGH400_1_Thesis/src/ip/bd_ram_i2/sim/bd_ram_i2.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i2/sim/bd_ram_i2.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module bd_ram_i2
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/EGH400_1_Thesis/src/ip/bd_ram_i1/sim/bd_ram_i1.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_i1/sim/bd_ram_i1.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module bd_ram_i1
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/EGH400_1_Thesis/src/ip/bd_ram_r8/sim/bd_ram_r8.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r8/sim/bd_ram_r8.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module bd_ram_r8
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/EGH400_1_Thesis/src/ip/bd_ram_r7/sim/bd_ram_r7.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r7/sim/bd_ram_r7.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module bd_ram_r7
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/EGH400_1_Thesis/src/ip/bd_ram_r6/sim/bd_ram_r6.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r6/sim/bd_ram_r6.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module bd_ram_r6
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/EGH400_1_Thesis/src/ip/bd_ram_r5/sim/bd_ram_r5.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r5/sim/bd_ram_r5.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module bd_ram_r5
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/EGH400_1_Thesis/src/ip/bd_ram_r4/sim/bd_ram_r4.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r4/sim/bd_ram_r4.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module bd_ram_r4
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/EGH400_1_Thesis/src/ip/bd_ram_r3/sim/bd_ram_r3.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r3/sim/bd_ram_r3.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module bd_ram_r3
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/EGH400_1_Thesis/src/ip/bd_ram_r2/sim/bd_ram_r2.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r2/sim/bd_ram_r2.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module bd_ram_r2
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/EGH400_1_Thesis/src/ip/bd_ram_r1/sim/bd_ram_r1.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/bd_ram_r1/sim/bd_ram_r1.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module bd_ram_r1
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module clk_wiz_0_clk_wiz
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module clk_wiz_0
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module glbl
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/EGH400_1_Thesis/src/ip/dsp_macro_0/sim/dsp_macro_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/REPOS/EGH400-1/EGH400_1_Thesis/src/ip/dsp_macro_0/sim/dsp_macro_0.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'dsp_macro_0'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/EGH400_1_Thesis/src/design/data_types.vhd" into library xil_defaultlib
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/EGH400_1_Thesis/src/design/Control_TD.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/data_types.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Control_TD.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'Control_TD'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'DFTBD_RAM'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/EGH400_1_Thesis/src/design/DSP_TD.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DSP_TD.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'DSP_TD'
-WARNING: [VRFC 10-3093] actual for formal port 'sclr' is neither a static name nor a globally static expression [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:243]
-WARNING: [VRFC 10-3093] actual for formal port 'sclr' is neither a static name nor a globally static expression [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:253]
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/EGH400_1_Thesis/src/design/FFT_RAM.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'FFT_RAM_UART'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/EGH400_1_Thesis/src/design/Twiddle_factors.vhd" into library xil_defaultlib
+WARNING: [VRFC 10-3093] actual for formal port 'sclr' is neither a static name nor a globally static expression [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DSP_TD.vhd:243]
+WARNING: [VRFC 10-3093] actual for formal port 'sclr' is neither a static name nor a globally static expression [C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/DSP_TD.vhd:253]
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/Twiddle_factors.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'Twiddle_factors'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/EGH400_1_Thesis/src/design/UART_TX.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'UART_TX'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/EGH400_1_Thesis/src/design/fpga_top_U_sim.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'fpga_top_U_sim'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/EGH400_1_Thesis/src/design/shift_reg_input_U.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'shift_reg_input_U'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/EGH400_1_Thesis/src/sim/fpga_top_U_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'fpga_top_U_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/fpga_top.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'fpga_top'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/REPOS/EGH400-1/EGH400_1_Thesis/src/design/shift_reg_input.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'shift_reg_input'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/REPOS/EGH400-1/EGH400_1_Thesis/src/sim/fpga_top_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'fpga_top_tb'

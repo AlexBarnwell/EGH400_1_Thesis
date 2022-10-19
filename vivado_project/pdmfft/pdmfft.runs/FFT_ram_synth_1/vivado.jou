@@ -2,12 +2,12 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Mon Oct  3 12:07:12 2022
-# Process ID: 4128
-# Current directory: C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/FFT_ram_synth_1
+# Start of session at: Wed Oct 19 18:25:48 2022
+# Process ID: 19788
+# Current directory: C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/FFT_ram_synth_1
 # Command line: vivado.exe -log FFT_ram.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source FFT_ram.tcl
-# Log file: C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/FFT_ram_synth_1/FFT_ram.vds
-# Journal file: C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/FFT_ram_synth_1\vivado.jou
-# Running On: DESKTOP-BDA8VGJ, OS: Windows, CPU Frequency: 3600 MHz, CPU Physical cores: 8, Host memory: 25599 MB
+# Log file: C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/FFT_ram_synth_1/FFT_ram.vds
+# Journal file: C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/FFT_ram_synth_1\vivado.jou
+# Running On: LAPTOP-M3DNELKA, OS: Windows, CPU Frequency: 2208 MHz, CPU Physical cores: 6, Host memory: 17075 MB
 #-----------------------------------------------------------
 source FFT_ram.tcl -notrace

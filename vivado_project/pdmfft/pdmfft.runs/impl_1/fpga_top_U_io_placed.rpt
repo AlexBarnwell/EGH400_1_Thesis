@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
-| Date                      : Tue Oct 18 11:46:10 2022
-| Host                      : DESKTOP-BDA8VGJ running 64-bit major release  (build 9200)
+| Date                      : Wed Oct 19 18:56:53 2022
+| Host                      : LAPTOP-M3DNELKA running 64-bit major release  (build 9200)
 | Command                   : report_io -file fpga_top_U_io_placed.rpt
 | Design                    : fpga_top_U
 | Device                    : xc7a35ti

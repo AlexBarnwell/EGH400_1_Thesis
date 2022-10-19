@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
-| Date         : Tue Oct 18 11:46:10 2022
-| Host         : DESKTOP-BDA8VGJ running 64-bit major release  (build 9200)
+| Date         : Wed Oct 19 18:56:53 2022
+| Host         : LAPTOP-M3DNELKA running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file fpga_top_U_control_sets_placed.rpt
 | Design       : fpga_top_U
 | Device       : xc7a35ti
@@ -77,11 +77,11 @@ Table of Contents
 |  CLOCK/inst/clk_sys                        | inputs/p_2_in                                                               | Series_recombination_loop/FFT_RESET_reg_0                                  |                1 |              1 |         1.00 |
 |  CLOCK/inst/clk_sys                        |                                                                             | FFT_RAM1_UART/UART_TX_1/tx_r_i_1_n_0                                       |                1 |              1 |         1.00 |
 | ~CLOCK/inst/clk_sys                        | inputs/Mic_shift_reg_input1_out                                             | inputs/PPsig22                                                             |                1 |              1 |         1.00 |
-|  CLOCK/inst/clk_sys                        | Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/orderi0                 |                                                                            |                1 |              2 |         2.00 |
-|  CLOCK/inst/clk_sys                        | Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/order0                  |                                                                            |                1 |              2 |         2.00 |
 |  CLOCK/inst/clk_sys                        | rst_IBUF                                                                    | FFT_RAM1_UART/UART_TX_1/cnt_shift_r[9]_i_1_n_0                             |                1 |              2 |         2.00 |
-|  CLOCK/inst/clk_sys                        | Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/orderi0                 |                                                                            |                1 |              2 |         2.00 |
 |  CLOCK/inst/clk_sys                        | Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/order0                  |                                                                            |                1 |              2 |         2.00 |
+|  CLOCK/inst/clk_sys                        | Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/orderi0                 |                                                                            |                1 |              2 |         2.00 |
+|  CLOCK/inst/clk_sys                        | Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/order0                  |                                                                            |                1 |              2 |         2.00 |
+|  CLOCK/inst/clk_sys                        | Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/orderi0                 |                                                                            |                1 |              2 |         2.00 |
 |  CLOCK/inst/clk_sys                        | Series_recombination_loop/count_delay[3]_i_1_n_0                            | inputs/PPsig22                                                             |                1 |              4 |         4.00 |
 |  CLOCK/inst/clk_sys                        | FFT_RAM1_UART/UART_buff[95]_i_1_n_0                                         |                                                                            |                2 |              8 |         4.00 |
 |  CLOCK/inst/clk_sys                        | FFT_RAM1_UART/UART_IN0                                                      |                                                                            |                1 |              8 |         8.00 |
@@ -95,15 +95,15 @@ Table of Contents
 |  CLOCK/inst/clk_sys                        | inputs/pos[14][9]_i_1_n_0                                                   |                                                                            |                8 |             28 |         3.50 |
 |  CLOCK/inst/clk_sys                        | Series_recombination_loop/count3                                            | inputs/PPsig22                                                             |                9 |             31 |         3.44 |
 |  CLOCK/inst/clk_sys                        | FFT_RAM1_UART/count20                                                       | FFT_RAM1_UART/count2[31]_i_1_n_0                                           |                8 |             31 |         3.88 |
-|  CLOCK/inst/clk_sys                        | inputs/count[0]_i_2_n_0                                                     | inputs/count[0]_i_1__0_n_0                                                 |                8 |             32 |         4.00 |
 |  CLOCK/inst/clk_sys                        | FFT_RAM1_UART/UART_TX_1/UART_COUNT0                                         | FFT_RAM1_UART/UART_TX_1/FSM_sequential_CASES_reg[0]                        |                9 |             32 |         3.56 |
 |  CLOCK/inst/clk_sys                        | Series_recombination_loop/state_reg[0]                                      | inputs/PPsig22                                                             |                8 |             32 |         4.00 |
+|  CLOCK/inst/clk_sys                        | inputs/count[0]_i_2_n_0                                                     | inputs/count[0]_i_1__0_n_0                                                 |                8 |             32 |         4.00 |
 | ~CLOCK/inst/clk_sys                        |                                                                             | inputs/PPsig22                                                             |                8 |             34 |         4.25 |
 |  CLOCK/inst/clk_sys                        | inputs/hold[1]_i_1__0_n_0                                                   | Series_recombination_loop/count20                                          |               10 |             36 |         3.60 |
-|  CLOCK/inst/clk_sys                        | Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/order0                  | Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/order2[31]_i_1__0_n_0  |               16 |             62 |         3.88 |
-|  CLOCK/inst/clk_sys                        | Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/orderi0                 | Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/order2I[31]_i_1__0_n_0 |               16 |             62 |         3.88 |
-|  CLOCK/inst/clk_sys                        | Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/order0                  | Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/order2[31]_i_1_n_0     |               16 |             62 |         3.88 |
 |  CLOCK/inst/clk_sys                        | Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/orderi0                 | Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/order2I[31]_i_1_n_0    |               16 |             62 |         3.88 |
+|  CLOCK/inst/clk_sys                        | Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/orderi0                 | Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/order2I[31]_i_1__0_n_0 |               16 |             62 |         3.88 |
+|  CLOCK/inst/clk_sys                        | Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/order0                  | Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/order2[31]_i_1__0_n_0  |               16 |             62 |         3.88 |
+|  CLOCK/inst/clk_sys                        | Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/order0                  | Series_recombination_loop/DFT_TD_DSPs[1].DFT_TD_DSP/order2[31]_i_1_n_0     |               16 |             62 |         3.88 |
 |  CLOCK/inst/clk_sys                        | FFT_RAM1_UART/UART_TX_1/E[0]                                                |                                                                            |               27 |             88 |         3.26 |
 |  CLOCK/inst/clk_sys                        | Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/FSM_onehot_state_reg[2] |                                                                            |               52 |            114 |         2.19 |
 |  CLOCK/inst/clk_sys                        | Series_recombination_loop/DFT_TD_DSPs[2].DFT_TD_DSP/ord_diffis              | inputs/PPsig22                                                             |               33 |            124 |         3.76 |

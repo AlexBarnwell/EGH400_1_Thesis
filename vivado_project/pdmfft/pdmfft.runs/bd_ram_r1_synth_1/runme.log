@@ -10,5 +10,6 @@
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 
 source bd_ram_r1.tcl -notrace
+create_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1268.363 ; gain = 0.000
 INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP bd_ram_r1, cache-ID = ef1253e3e4f8b0f8.
-INFO: [Common 17-206] Exiting Vivado at Tue Oct 18 09:52:29 2022...
+INFO: [Common 17-206] Exiting Vivado at Wed Oct 19 18:42:24 2022...
