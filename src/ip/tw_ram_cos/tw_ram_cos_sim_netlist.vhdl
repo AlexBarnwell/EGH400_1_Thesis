@@ -3,8 +3,7 @@
 -- Tool Version: Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
 -- Date        : Mon Oct  3 00:43:37 2022
 -- Host        : DESKTOP-BDA8VGJ running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top tw_ram_cos -prefix
---               tw_ram_cos_ tw_ram_cos_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim c:/EGH400_1_Thesis/src/ip/tw_ram_cos/tw_ram_cos_sim_netlist.vhdl
 -- Design      : tw_ram_cos
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.

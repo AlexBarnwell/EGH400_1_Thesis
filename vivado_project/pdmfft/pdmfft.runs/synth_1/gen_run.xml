@@ -1,30 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1666169625" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/fpga_top_U.dcp" LaunchWriteIncrSynthDcp="true">
-  <File Type="PA-TCL" Name="fpga_top_U.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="fpga_top_U_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="fpga_top_U_reports.tcl"/>
-  <File Type="RDS-RDS" Name="fpga_top_U.vds"/>
-  <File Type="RDS-UTIL" Name="fpga_top_U_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="fpga_top_U_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="fpga_top_U.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="fpga_top_U_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="fpga_top_U_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1666499835" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/fpga_top_U.dcp" LaunchWriteIncrSynthDcp="true">
+  <File Type="PA-TCL" Name="fpga_top.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="fpga_top_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="fpga_top_reports.tcl"/>
+  <File Type="RDS-RDS" Name="fpga_top.vds"/>
+  <File Type="RDS-UTIL" Name="fpga_top_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="fpga_top_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="fpga_top.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="fpga_top_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="fpga_top_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PPRDIR/../../src/ip/tw_ram_sin/tw_ram_sin.xci">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../../src/ip/tw_ram_cos/tw_ram_cos.xci">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PPRDIR/../../src/ip/clk_wiz_0/clk_wiz_0.xci">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -56,31 +42,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../src/design/FFT_RAM.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PPRDIR/../../src/design/Twiddle_factors.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../../src/design/UART_TX.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../../src/design/shift_reg_input_U.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../../src/design/Fpga_top_U.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -88,12 +50,38 @@
     </File>
     <File Path="$PPRDIR/../../src/design/shift_reg_input.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../../src/design/fpga_top.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/design/FFT_RAM.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/design/UART_TX.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/design/shift_reg_input_U.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/design/Fpga_top_U.vhd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -251,7 +239,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="fpga_top_U"/>
+      <Option Name="TopModule" Val="fpga_top"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -288,7 +276,9 @@
   </FileSet>
   <Strategy Version="1" Minor="2">
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
-    <Step Id="synth_design"/>
+    <Step Id="synth_design">
+      <Option Id="MoreOptsStr"><![CDATA[-mode out_of_context]]></Option>
+    </Step>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="bd_ram_i2"/>
   <BlockFileSet Type="BlockSrcs" Name="bd_ram_r3"/>
@@ -307,5 +297,6 @@
   <BlockFileSet Type="BlockSrcs" Name="bd_ram_r4"/>
   <BlockFileSet Type="BlockSrcs" Name="bd_ram_r2"/>
   <BlockFileSet Type="BlockSrcs" Name="bd_ram_r1"/>
-  <BlockFileSet Type="BlockSrcs" Name="FFT_ram"/>
+  <BlockFileSet Type="BlockSrcs" Name="tw_ram_cos"/>
+  <BlockFileSet Type="BlockSrcs" Name="tw_ram_sin"/>
 </GenRun>

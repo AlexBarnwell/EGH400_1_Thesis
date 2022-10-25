@@ -1,0 +1,6 @@
+testinh approach and analysis techinques mentioed in methods (simulation approaches) % done
+
+mention ethics is methodolgy (considerations) + risks and sustainablity
+
+limitations of parallel and resulting bitstream input requiremtnts
+
