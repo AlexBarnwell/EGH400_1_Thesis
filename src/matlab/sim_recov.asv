@@ -154,8 +154,6 @@ xlabel('FFT bins (KHz)');
 ylabel('Magnitude');
 title('Initial MATLAB model (Random input)');
 legend('inbuilt','MATLAB model');
-ylim([0 300])
-xlim([0 125])
 saveas(MAT_RAND, '..\..\other\Report_images\MAT_RAND.png','png');
 hold off
 
@@ -275,7 +273,6 @@ plot((1:256).*488.2813./1000,(abs(FFTsim_FULL_sin')-abs(FFT_sin)));
 hold off
 xlabel('FFT bins (KHz)');
 ylabel('Magnitude');
-xlim([0 125])
 legend('MATLAB Full precicison','MATLAB Twiddle precision');
 title('Simulation error against MATLAB (sin input)');
 saveas(SIM_MAT_SIN_error, '..\..\other\Report_images\SIM_MAT_SIN_error.png','png');
@@ -301,46 +298,46 @@ error(error>25)=25;
 
 fprintf( 'SIM RAND error TW is %d \n', sum(error)/256)
 %%
-% 
-% title ('FFT OUT')
-% legend('FPGA','MATLAB');
-% figure
-% plot(abs(abs(FFTsim_FULL)-abs(FFT.'))./abs(FFT.'))
-% hold on
-% plot (cos(linspace(0,2*pi,8192)).^(N/P)*0.004)
-% hold off
-% 
-% figure
-% plot(abs(real(FFTsim_FULL)-real(FFT.')))
-% hold on
-% plot (cos(linspace(0,2*pi,512)).^(N/P)*0.05)
-% hold off
-% 
-% 
-% 
-% 
-% 
-% 
-% 
-% 
-% %figure
-% %plot(FFTI)
-% log2(N*2./(sum((abs(abs(FFTsim_FULL(21:end))-abs(FFT(21:end).')))./(L-21)))) % average precision approx 18 bits for 1024 input bits
-% 
-% 
-% %13.7469 -- with standard rounding 
-% 
-% %13.7520 -- with no runding just truncation
-% 
-% %max error
-% max(abs(abs(FFTsim_FULL)-abs(FFT.')))
-% 
-% % 20.1331 truncation
-% 
-% % 20.1331
-% %%
-% 
-% 
-% % 20.9723 avg prec
-% 
-% % 0.0287 max error
+
+title ('FFT OUT')
+legend('FPGA','MATLAB');
+figure
+plot(abs(abs(FFTsim_FULL)-abs(FFT.'))./abs(FFT.'))
+hold on
+plot (cos(linspace(0,2*pi,8192)).^(N/P)*0.004)
+hold off
+
+figure
+plot(abs(real(FFTsim_FULL)-real(FFT.')))
+hold on
+plot (cos(linspace(0,2*pi,512)).^(N/P)*0.05)
+hold off
+
+
+
+
+
+
+
+
+%figure
+%plot(FFTI)
+log2(N*2./(sum((abs(abs(FFTsim_FULL(21:end))-abs(FFT(21:end).')))./(L-21)))) % average precision approx 18 bits for 1024 input bits
+
+
+%13.7469 -- with standard rounding 
+
+%13.7520 -- with no runding just truncation
+
+%max error
+max(abs(abs(FFTsim_FULL)-abs(FFT.')))
+
+% 20.1331 truncation
+
+% 20.1331
+%%
+
+
+% 20.9723 avg prec
+
+% 0.0287 max error

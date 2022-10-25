@@ -1,7 +1,7 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
-// Date        : Thu Sep 22 16:54:02 2022
+// Date        : Mon Oct  3 00:43:16 2022
 // Host        : DESKTOP-BDA8VGJ running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub -rename_top tw_ram_sin -prefix
 //               tw_ram_sin_ tw_ram_sin_stub.v
@@ -15,8 +15,8 @@
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* x_core_info = "blk_mem_gen_v8_4_5,Vivado 2022.1" *)
 module tw_ram_sin(clka, addra, douta)
-/* synthesis syn_black_box black_box_pad_pin="clka,addra[6:0],douta[35:0]" */;
+/* synthesis syn_black_box black_box_pad_pin="clka,addra[3:0],douta[287:0]" */;
   input clka;
-  input [6:0]addra;
-  output [35:0]douta;
+  input [3:0]addra;
+  output [287:0]douta;
 endmodule

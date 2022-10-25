@@ -50,7 +50,7 @@ entity fpga_top_tb is
         G_MIN_BANK : integer := 0;
         G_MAX_BANK : integer := 16; -- 16*16 =256
         G_DECIMAL_WIDTH_TW : integer := 15; -- decimal precision 
-        G_RAND : integer := 3
+        G_RAND : integer := 4
     );
     --  Port ( );
 end fpga_top_tb;

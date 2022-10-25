@@ -1,7 +1,7 @@
 % this script is to read and write the serail to the arduino
 clear  all
 close all
-Rand=1;
+Rand=2;
 
 N=8192;
 bank=0;
@@ -60,7 +60,7 @@ if (Rand==1)
     %bitstream = zeros(1,N);
 
     rng(Seed,'twister'); % get the RNG seed
-    bitstream=uint8(round(rand(1,N/4))); % set bitstream
+    bitstream=uint8(round(rand(1,N/8))); % set bitstream
     %bitstream(1:end)=1;
     %bitstream(1:256+128+64+32+16+8)=0;
     %bitstream(end-255-128-64-32-16-8:end)=0;
@@ -73,7 +73,7 @@ if (Rand==1)
     %bitstream(512-7:512+8)=0;
     
 
-    %bitstream =[bitstream bitstream];
+    bitstream =[bitstream bitstream];
     % bitstream(1:8)=0;
     % bitstream(end-7:end)=0;
 
@@ -606,19 +606,18 @@ if (Rand==1)
     title('experimental implementation compared to MATLAB and simulation')
     xlabel('FFT bins (KHz)');
     ylabel('Magnitude');
-    %saveas(PHYS_RAND, '..\..\other\Report_images\PHYS_RAND.png','png');
+    saveas(PHYS_RAND, '..\..\other\Report_images\PHYS_RAND.png','png');
 
     figure
-    PHYS_RAND_error=plot((1:256).*488.2813./1000,(abs(FFT_Real+1i*FFT_Imag)-abs(FFT')));
-
+    PHYS_RAND_error=
     hold on
-    plot((1:256).*488.2813./1000,(abs(FFT_Real+1i*FFT_Imag)-abs(FFTsim_FULL)));
+    plot((1:256).*488.2813./1000,(abs(FFT_Real+1i*FFT_Imag)-abs(FFT')));
     hold off
     xlabel('FFT bins (KHz)');
     ylabel('Magnitude');
-    legend('MATLAB Twiddle precision','Simulation');
+    legend('Simulation','MATLAB Twiddle precision');
     title('Experimental error between MATLAB and simulation');
-    %saveas(PHYS_RAND_error, '..\..\other\Report_images\PHYS_RAND_error.png','png');
+    saveas(PHYS_RAND_error, '..\..\other\Report_images\PHYS_RAND_error.png','png');
 
 elseif(Rand==2)
     figure
