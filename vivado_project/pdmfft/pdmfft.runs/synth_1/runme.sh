@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1'
+HD_PWD='C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log fpga_top_U.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source fpga_top_U.tcl
+EAStep vivado -log fpga_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source fpga_top.tcl

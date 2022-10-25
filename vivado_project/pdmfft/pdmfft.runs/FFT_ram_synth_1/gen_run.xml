@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="FFT_ram_synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1666167939">
   <File Type="PA-TCL" Name="FFT_ram.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="FFT_ram_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="FFT_ram_reports.tcl"/>
   <File Type="RDS-RDS" Name="FFT_ram.vds"/>
-  <File Type="RDS-UTIL" Name="FFT_ram_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="FFT_ram_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="FFT_ram.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="FFT_ram_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="FFT_ram_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/FFT_ram">
     <File Path="$PPRDIR/../../src/ip/FFT_ram/FFT_ram.xci">
       <FileInfo>

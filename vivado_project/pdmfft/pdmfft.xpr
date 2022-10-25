@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="60" Path="C:/REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.xpr">
+<Project Version="7" Minor="60" Path="C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="7f3ef3c415e24079bee2e8c07e937b3f"/>
@@ -66,13 +66,13 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="262"/>
-    <Option Name="WTModelSimExportSim" Val="262"/>
-    <Option Name="WTQuestaExportSim" Val="262"/>
+    <Option Name="WTXSimExportSim" Val="280"/>
+    <Option Name="WTModelSimExportSim" Val="280"/>
+    <Option Name="WTQuestaExportSim" Val="280"/>
     <Option Name="WTIesExportSim" Val="0"/>
-    <Option Name="WTVcsExportSim" Val="262"/>
-    <Option Name="WTRivieraExportSim" Val="262"/>
-    <Option Name="WTActivehdlExportSim" Val="262"/>
+    <Option Name="WTVcsExportSim" Val="280"/>
+    <Option Name="WTRivieraExportSim" Val="280"/>
+    <Option Name="WTActivehdlExportSim" Val="280"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -90,20 +90,6 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../../src/ip/tw_ram_sin/tw_ram_sin.xci">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../../src/ip/tw_ram_cos/tw_ram_cos.xci">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PPRDIR/../../src/ip/clk_wiz_0/clk_wiz_0.xci">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -135,31 +121,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../src/design/FFT_RAM.vhd">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PPRDIR/../../src/design/Twiddle_factors.vhd">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../../src/design/UART_TX.vhd">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../../src/design/shift_reg_input_U.vhd">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../../src/design/Fpga_top_U.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -167,12 +129,38 @@
       </File>
       <File Path="$PPRDIR/../../src/design/shift_reg_input.vhd">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <File Path="$PPRDIR/../../src/design/fpga_top.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../../src/design/FFT_RAM.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../../src/design/UART_TX.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../../src/design/shift_reg_input_U.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../../src/design/Fpga_top_U.vhd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -330,7 +318,7 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="fpga_top_U"/>
+        <Option Name="TopModule" Val="fpga_top"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
@@ -687,6 +675,7 @@
     <FileSet Name="FFT_ram" Type="BlockSrcs" RelSrcDir="$PSRCDIR/FFT_ram" RelGenDir="$PGENDIR/FFT_ram">
       <File Path="$PPRDIR/../../src/ip/FFT_ram/FFT_ram.xci">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -694,6 +683,32 @@
       </File>
       <Config>
         <Option Name="TopModule" Val="FFT_ram"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="tw_ram_cos" Type="BlockSrcs" RelSrcDir="$PSRCDIR/tw_ram_cos" RelGenDir="$PGENDIR/tw_ram_cos">
+      <File Path="$PPRDIR/../../src/ip/tw_ram_cos/tw_ram_cos.xci">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="TopModule" Val="tw_ram_cos"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="tw_ram_sin" Type="BlockSrcs" RelSrcDir="$PSRCDIR/tw_ram_sin" RelGenDir="$PGENDIR/tw_ram_sin">
+      <File Path="$PPRDIR/../../src/ip/tw_ram_sin/tw_ram_sin.xci">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="TopModule" Val="tw_ram_sin"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -720,14 +735,16 @@
     <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7a35ticsg324-1L" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="true" IncrementalCheckpoint="$PSRCDIR/utils_1/imports/synth_1/fpga_top_U.dcp" WriteIncrSynthDcp="true" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
-        <Step Id="synth_design"/>
+        <Step Id="synth_design">
+          <Option Id="MoreOptsStr"><![CDATA[-mode out_of_context]]></Option>
+        </Step>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2022"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="dsp_macro_0_synth_1" Type="Ft3:Synth" SrcSet="dsp_macro_0" Part="xc7a35ticsg324-1L" ConstrsSet="dsp_macro_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/dsp_macro_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/dsp_macro_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/dsp_macro_0_synth_1">
+    <Run Id="dsp_macro_0_synth_1" Type="Ft3:Synth" SrcSet="dsp_macro_0" Part="xc7a35ticsg324-1L" ConstrsSet="dsp_macro_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/dsp_macro_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/dsp_macro_0_synth_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/dsp_macro_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
@@ -737,7 +754,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_i8_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_i8" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i8" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_i8_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_i8_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_i8_synth_1">
+    <Run Id="bd_ram_i8_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_i8" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i8" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_i8_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i8_synth_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i8_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
@@ -747,7 +764,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_i7_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_i7" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i7" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_i7_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_i7_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_i7_synth_1">
+    <Run Id="bd_ram_i7_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_i7" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i7" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_i7_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i7_synth_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i7_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
@@ -757,7 +774,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_i6_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_i6" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i6" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_i6_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_i6_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_i6_synth_1">
+    <Run Id="bd_ram_i6_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_i6" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i6" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_i6_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i6_synth_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i6_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
@@ -767,7 +784,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_i5_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_i5" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i5" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_i5_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_i5_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_i5_synth_1">
+    <Run Id="bd_ram_i5_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_i5" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i5" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_i5_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i5_synth_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i5_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
@@ -777,7 +794,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_i4_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_i4" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i4" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_i4_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_i4_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_i4_synth_1">
+    <Run Id="bd_ram_i4_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_i4" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i4" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_i4_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i4_synth_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i4_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
@@ -787,7 +804,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_i3_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_i3" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i3" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_i3_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_i3_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_i3_synth_1">
+    <Run Id="bd_ram_i3_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_i3" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i3" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_i3_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i3_synth_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i3_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
@@ -797,7 +814,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_i2_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_i2" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i2" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_i2_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_i2_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_i2_synth_1">
+    <Run Id="bd_ram_i2_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_i2" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i2" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_i2_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i2_synth_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i2_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
@@ -807,7 +824,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_i1_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_i1" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_i1_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_i1_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_i1_synth_1">
+    <Run Id="bd_ram_i1_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_i1" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_i1_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i1_synth_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i1_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
@@ -817,7 +834,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_r8_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_r8" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r8" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_r8_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_r8_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_r8_synth_1">
+    <Run Id="bd_ram_r8_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_r8" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r8" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_r8_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r8_synth_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r8_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
@@ -827,7 +844,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_r7_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_r7" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r7" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_r7_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_r7_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_r7_synth_1">
+    <Run Id="bd_ram_r7_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_r7" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r7" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_r7_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r7_synth_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r7_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
@@ -837,7 +854,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_r6_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_r6" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r6" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_r6_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_r6_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_r6_synth_1">
+    <Run Id="bd_ram_r6_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_r6" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r6" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_r6_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r6_synth_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r6_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
@@ -847,7 +864,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_r5_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_r5" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r5" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_r5_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_r5_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_r5_synth_1">
+    <Run Id="bd_ram_r5_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_r5" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r5" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_r5_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r5_synth_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r5_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
@@ -857,7 +874,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_r4_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_r4" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r4" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_r4_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_r4_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_r4_synth_1">
+    <Run Id="bd_ram_r4_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_r4" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r4" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_r4_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r4_synth_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r4_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
@@ -867,7 +884,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_r3_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_r3" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r3" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_r3_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_r3_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_r3_synth_1">
+    <Run Id="bd_ram_r3_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_r3" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r3" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_r3_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r3_synth_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r3_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
@@ -877,7 +894,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_r2_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_r2" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r2" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_r2_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_r2_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_r2_synth_1">
+    <Run Id="bd_ram_r2_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_r2" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r2" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_r2_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r2_synth_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r2_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
@@ -887,7 +904,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_r1_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_r1" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_r1_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_r1_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_r1_synth_1">
+    <Run Id="bd_ram_r1_synth_1" Type="Ft3:Synth" SrcSet="bd_ram_r1" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_ram_r1_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r1_synth_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r1_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
@@ -897,7 +914,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="FFT_ram_synth_1" Type="Ft3:Synth" SrcSet="FFT_ram" Part="xc7a35ticsg324-1L" ConstrsSet="FFT_ram" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/FFT_ram_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/FFT_ram_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/FFT_ram_synth_1">
+    <Run Id="FFT_ram_synth_1" Type="Ft3:Synth" SrcSet="FFT_ram" Part="xc7a35ticsg324-1L" ConstrsSet="FFT_ram" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/FFT_ram_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/FFT_ram_synth_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/FFT_ram_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
@@ -907,7 +924,27 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="constrs_1" Description="Best predicted directive for place_design." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/impl_1">
+    <Run Id="tw_ram_cos_synth_1" Type="Ft3:Synth" SrcSet="tw_ram_cos" Part="xc7a35ticsg324-1L" ConstrsSet="tw_ram_cos" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/tw_ram_cos_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/tw_ram_cos_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/tw_ram_cos_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2022"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="tw_ram_sin_synth_1" Type="Ft3:Synth" SrcSet="tw_ram_sin" Part="xc7a35ticsg324-1L" ConstrsSet="tw_ram_sin" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/tw_ram_sin_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/tw_ram_sin_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/tw_ram_sin_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2022"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="constrs_1" Description="Best predicted directive for place_design." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/impl_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Performance_Auto_1" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
@@ -933,7 +970,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="dsp_macro_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="dsp_macro_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="dsp_macro_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/dsp_macro_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/dsp_macro_0_impl_1">
+    <Run Id="dsp_macro_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="dsp_macro_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="dsp_macro_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/dsp_macro_0_impl_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/dsp_macro_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
@@ -950,7 +987,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_i8_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i8" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_i8_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_i8_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_i8_impl_1">
+    <Run Id="bd_ram_i8_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i8" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_i8_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i8_impl_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i8_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
@@ -967,7 +1004,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_i7_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i7" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_i7_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_i7_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_i7_impl_1">
+    <Run Id="bd_ram_i7_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i7" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_i7_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i7_impl_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i7_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
@@ -984,7 +1021,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_i6_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i6" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_i6_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_i6_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_i6_impl_1">
+    <Run Id="bd_ram_i6_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i6" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_i6_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i6_impl_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i6_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
@@ -1001,7 +1038,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_i5_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i5" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_i5_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_i5_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_i5_impl_1">
+    <Run Id="bd_ram_i5_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i5" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_i5_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i5_impl_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i5_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
@@ -1018,7 +1055,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_i4_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i4" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_i4_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_i4_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_i4_impl_1">
+    <Run Id="bd_ram_i4_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i4" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_i4_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i4_impl_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i4_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
@@ -1035,7 +1072,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_i3_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i3" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_i3_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_i3_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_i3_impl_1">
+    <Run Id="bd_ram_i3_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i3" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_i3_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i3_impl_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i3_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
@@ -1052,7 +1089,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_i2_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i2" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_i2_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_i2_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_i2_impl_1">
+    <Run Id="bd_ram_i2_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i2" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_i2_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i2_impl_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i2_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
@@ -1069,7 +1106,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_i1_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_i1_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_i1_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_i1_impl_1">
+    <Run Id="bd_ram_i1_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_i1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_i1_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i1_impl_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_i1_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
@@ -1086,7 +1123,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_r8_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r8" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_r8_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_r8_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_r8_impl_1">
+    <Run Id="bd_ram_r8_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r8" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_r8_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r8_impl_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r8_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
@@ -1103,7 +1140,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_r7_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r7" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_r7_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_r7_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_r7_impl_1">
+    <Run Id="bd_ram_r7_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r7" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_r7_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r7_impl_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r7_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
@@ -1120,7 +1157,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_r6_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r6" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_r6_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_r6_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_r6_impl_1">
+    <Run Id="bd_ram_r6_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r6" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_r6_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r6_impl_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r6_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
@@ -1137,7 +1174,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_r5_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r5" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_r5_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_r5_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_r5_impl_1">
+    <Run Id="bd_ram_r5_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r5" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_r5_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r5_impl_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r5_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
@@ -1154,7 +1191,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_r4_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r4" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_r4_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_r4_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_r4_impl_1">
+    <Run Id="bd_ram_r4_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r4" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_r4_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r4_impl_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r4_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
@@ -1171,7 +1208,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_r3_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r3" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_r3_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_r3_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_r3_impl_1">
+    <Run Id="bd_ram_r3_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r3" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_r3_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r3_impl_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r3_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
@@ -1188,7 +1225,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_r2_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r2" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_r2_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_r2_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_r2_impl_1">
+    <Run Id="bd_ram_r2_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r2" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_r2_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r2_impl_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r2_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
@@ -1205,7 +1242,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="bd_ram_r1_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_r1_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_ram_r1_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_ram_r1_impl_1">
+    <Run Id="bd_ram_r1_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="bd_ram_r1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_ram_r1_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r1_impl_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/bd_ram_r1_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
@@ -1222,7 +1259,41 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="FFT_ram_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="FFT_ram" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="FFT_ram_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/FFT_ram_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/FFT_ram_impl_1">
+    <Run Id="FFT_ram_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="FFT_ram" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="FFT_ram_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/FFT_ram_impl_1" AutoRQSDir="$PPRDIR/../../../REPOS/EGH400-1/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/FFT_ram_impl_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2022"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="tw_ram_cos_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="tw_ram_cos" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="tw_ram_cos_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/tw_ram_cos_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/tw_ram_cos_impl_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2022"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="tw_ram_sin_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="tw_ram_sin" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="tw_ram_sin_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/tw_ram_sin_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/tw_ram_sin_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
