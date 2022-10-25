@@ -1,0 +1,15 @@
+
+*** Running vivado
+    with args -log bd_ram_i3.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source bd_ram_i3.tcl
+
+
+
+****** Vivado v2022.1 (64-bit)
+  **** SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+  **** IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source bd_ram_i3.tcl -notrace
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1291.602 ; gain = 8.191
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP bd_ram_i3, cache-ID = 9106efb134d5eec6.
+INFO: [Common 17-206] Exiting Vivado at Sun Oct 23 13:29:53 2022...

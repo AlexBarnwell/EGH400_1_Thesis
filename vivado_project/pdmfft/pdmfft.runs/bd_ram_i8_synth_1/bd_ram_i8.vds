@@ -1,0 +1,16 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Sun Oct 23 13:28:47 2022
+# Process ID: 6048
+# Current directory: C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/bd_ram_i8_synth_1
+# Command line: vivado.exe -log bd_ram_i8.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source bd_ram_i8.tcl
+# Log file: C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/bd_ram_i8_synth_1/bd_ram_i8.vds
+# Journal file: C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/bd_ram_i8_synth_1\vivado.jou
+# Running On: DESKTOP-BDA8VGJ, OS: Windows, CPU Frequency: 3600 MHz, CPU Physical cores: 8, Host memory: 25599 MB
+#-----------------------------------------------------------
+source bd_ram_i8.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1282.613 ; gain = 0.000
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP bd_ram_i8, cache-ID = afa4b393b637960e.
+INFO: [Common 17-206] Exiting Vivado at Sun Oct 23 13:28:57 2022...

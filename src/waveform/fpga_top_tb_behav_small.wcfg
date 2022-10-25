@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="fpga_top_U_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="data_types" />
+            <top_module name="fpga_top_U_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0 ps"></ZoomStartTime>
+      <ZoomEndTime time="1,135 ps"></ZoomEndTime>
+      <Cursor1Time time="366 ps"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="73"></NameColumnWidth>
+      <ValueColumnWidth column_width="64"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="0" />
+</wave_config>
