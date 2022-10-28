@@ -139,7 +139,8 @@ OPTRACE "set parameters" START { }
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/fpga_top.dcp
-  read_ip -quiet C:/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0.xci
+  read_ip -quiet C:/EGH400_1_Thesis/src/ip/tw_ram_sin/tw_ram_sin.xci
+  read_ip -quiet C:/EGH400_1_Thesis/src/ip/tw_ram_cos/tw_ram_cos.xci
   read_ip -quiet C:/EGH400_1_Thesis/src/ip/dsp_macro_0/dsp_macro_0.xci
   read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_i8/bd_ram_i8.xci
   read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_i7/bd_ram_i7.xci
@@ -157,8 +158,7 @@ OPTRACE "add files" START { }
   read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_r3/bd_ram_r3.xci
   read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_r2/bd_ram_r2.xci
   read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_r1/bd_ram_r1.xci
-  read_ip -quiet C:/EGH400_1_Thesis/src/ip/tw_ram_cos/tw_ram_cos.xci
-  read_ip -quiet C:/EGH400_1_Thesis/src/ip/tw_ram_sin/tw_ram_sin.xci
+  read_ip -quiet C:/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc C:/EGH400_1_Thesis/src/constraints/arty.xdc
   read_xdc C:/EGH400_1_Thesis/src/constraints/bitstream_flash_config.xdc

@@ -1,7 +1,7 @@
 % this script is to read and write the serail to the arduino
 clear  all
 close all
-Rand=1;
+Rand=2;
 
 N=8192;
 bank=0;
@@ -22,9 +22,9 @@ set(DSM,...
 
 
 SignalDS=SignalDS(1:N/8);
-SignalDS(1:8)=0;
-SignalDS(end-7:end)=0;
-SignalDS =[SignalDS SignalDS];
+% SignalDS(1:8)=0;
+% SignalDS(end-7:end)=0;
+%SignalDS =[SignalDS SignalDS];
 
 %%
 
@@ -32,15 +32,15 @@ SignalDS =[SignalDS SignalDS];
 
 
 
-%% this enxt section is the script to run the physical test
+%% this next section is the script to run the physical test
 
 if (Rand==1)
     pause(4);
     serialportlist("available") %COM4 arduino
 
-    Arduino = serialport("COM4",9600);
+    Arduino = serialport("COM3",9600);
     pause(4)
-    FPGA = serialport("COM6",115200,"stopbits",2,"ByteOrder","little-endian");
+    FPGA = serialport("COM5",115200,"stopbits",2,"ByteOrder","little-endian");
     pause(4)
     flush(FPGA)
     %FPGA.InputBufferSize(500);
@@ -153,7 +153,7 @@ if (Rand==1)
     figure(1)
     plot(out)
 
-    out_re=zeros(3072/12,12);
+    out_re=zeros(256,12);
     for (ii=1:14000)
         if (out(ii)==90)
             start_count=start_count+1;
@@ -164,7 +164,7 @@ if (Rand==1)
         if (start_count==12)
             bank=bank+1;
             if (bank==2)
-                out_re=(reshape(out(ii+1:3072+ii),12,3072/12))';
+                out_re=(reshape(out(ii+1:256*12+ii),12,256))';
                 break;
             end
         end
@@ -239,11 +239,12 @@ elseif(Rand==2)
     %bitstream = zeros(1,N);
 
     rng(Seed,'twister'); % get the RNG seed
-    bitstream=SignalDS; % set bitstream
+    %bitstream=SignalDS; % set bitstream
     %bitstream(1:end)=1;
-    bitstream(1:8)=0;
-    bitstream(end-7:end)=0;
-    bitstream =[bitstream bitstream];
+    %bitstream(1:8)=0;
+    %bitstream(end-7:end)=0;
+    SignalDS =[SignalDS SignalDS];
+    bitstream=SignalDS;
     % bitstream(1:8)=0;
     % bitstream(end-7:end)=0;
 
@@ -296,7 +297,7 @@ elseif(Rand==2)
 
     pause(4);
 
-    out=zeros(1,7000);
+    out=zeros(1,14000);
     start_count=0;
     % while(1)
     %    if (start_count<12)
@@ -316,15 +317,15 @@ elseif(Rand==2)
     %    end
     % end
     %write(Arduino,bitstream,"uint8")
-    out(1:7000)=read(FPGA,7000,"uint8");
+    out(1:14000)=read(FPGA,14000,"uint8");
     flush(FPGA);
     clear FPGA
 
     figure(1)
     plot(out)
 
-    out_re=zeros(3072/12,12);
-    for (ii=1:7000)
+    out_re=zeros(256,12);
+    for (ii=1:14000)
         if (out(ii)==90)
             start_count=start_count+1;
         else
@@ -332,8 +333,11 @@ elseif(Rand==2)
         end
 
         if (start_count==12)
-            out_re=(reshape(out(ii+1:3072+ii),12,3072/12))';
-            break;
+            bank=bank+1;
+            if (bank==2)
+                out_re=(reshape(out(ii+1:256*12+ii),12,256))';
+                break;
+            end
         end
 
     end
@@ -517,11 +521,13 @@ FILE_read2 = "..\sim\output_file_phys_sin.txt";
 file="..\sim\input_file_phys.txt";
 file2="..\sim\input_file_phys_sin.txt";
 
-char_bitstream=(char(bitstream+48)); % rplace this line with a text file write
-char_signalDS=(char(SignalDS+48));
+ % rplace this line with a text file write
+%char_signalDS=(char(SignalDS+48));
 
-fid=fopen(file,'w');
 
+if Rand==1
+    char_bitstream=(char(bitstream+48));
+    fid=fopen(file,'w');
 for ii=1:(length(bitstream))
     fprintf(fid,char_bitstream(ii));
     fprintf(fid,'\n');
@@ -531,25 +537,29 @@ end
 for ii=1:10001
     fprintf(fid,'0\n'); % this si file buffer
 end
-
-
 fclose(fid);
-fid=fopen(file2,'w');
+end
 
 
-SignalDS=[SignalDS SignalDS SignalDS SignalDS];
-char_signalDS=(char(SignalDS+48));
-for ii=1:(length(SignalDS))
-    fprintf(fid,char_signalDS(ii));
+
+
+ if Rand==2
+     fid=fopen(file2,'w');
+%SignalDS=[SignalDS SignalDS SignalDS SignalDS];
+char_bitstream=(char(bitstream+48));
+for ii=1:(length(bitstream))
+    fprintf(fid,char_bitstream(ii));
     fprintf(fid,'\n');
 end
+ 
 %fprintf(fid,char_bitstream(end));
 
 for ii=1:10001
     fprintf(fid,'0\n'); % this is file buffer
 end
-
 fclose(fid);
+ end
+
 
 
 
@@ -586,50 +596,61 @@ end
 
 if (Rand==1)
     figure
-    PHYS_RAND=plot(abs(FFT_Real+1i*FFT_Imag));
+    PHYS_RAND=plot((1:256).*488.2813./1000,abs(FFT_Real+1i*FFT_Imag));
     hold on
-    plot(abs(FFT'))
-    plot(abs(FFTsim_FULL))
+    plot((1:256).*488.2813./1000,abs(FFT'))
+    plot((1:256).*488.2813./1000,abs(FFTsim_FULL))
+    ylim([0 500]);
+    xlim([0 125]);
     hold off
-    legend('FPGA','MATLAB','Simulation')
-    title('Physical implementation against simulation')
-    xlabel('FFT banks');
+    legend('FPGA','MATLAB lower twiddle precision','Simulation')
+    title('Experimental implementation ')
+    xlabel('FFT bins (KHz)');
     ylabel('Magnitude');
+    fontsize(gca,20,"pixels")
     saveas(PHYS_RAND, '..\..\other\Report_images\PHYS_RAND.png','png');
 
     figure
-    PHYS_RAND_error=plot(abs(abs(FFT_Real+1i*FFT_Imag)-abs(FFTsim_FULL)));
+    PHYS_RAND_error=plot((1:256).*488.2813./1000,(abs(FFT_Real+1i*FFT_Imag)-abs(FFT')));
+
     hold on
-    plot(abs(abs(FFT_Real+1i*FFT_Imag)-abs(FFT')));
+    plot((1:256).*488.2813./1000,(abs(FFT_Real+1i*FFT_Imag)-abs(FFTsim_FULL)));
     hold off
-    xlabel('FFT banks');
+    xlabel('FFT bins (KHz)');
     ylabel('Magnitude');
-    legend('Simulation','MATLAB Twiddle precision');
-    title('Sim error against MATLAB');
+    legend('MATLAB lower twiddle precision','Simulation');
+    title('Experimental error');
+    fontsize(gca,20,"pixels")
+    xlim([0 125]);
     saveas(PHYS_RAND_error, '..\..\other\Report_images\PHYS_RAND_error.png','png');
 
 elseif(Rand==2)
     figure
-    PHYS_SIN=plot(abs(FFT_Real+1i*FFT_Imag));
+    PHYS_SIN=plot((1:256).*488.2813./1000,abs(FFT_Real+1i*FFT_Imag));
     hold on
-    plot(abs(FFT'))
-    plot(abs(FFTsim_FULL_sin))
+    plot((1:256).*488.2813./1000,abs(FFT'))
+    plot((1:256).*488.2813./1000,abs(FFTsim_FULL_sin))
+    ylim([0 2100]);
     hold off
-    legend('FPGA','MATLAB','Simulation')
-    title('Physical implementation against simulation (random input)')
-    xlabel('FFT banks');
+    legend('FPGA','MATLAB lower twiddle precision','Simulation')
+    title('Experimental implementation (sin input)')
+    xlabel('FFT bins (KHz)');
     ylabel('Magnitude');
+    xlim([0 125]);
+    fontsize(gca,20,"pixels")
     saveas(PHYS_SIN, '..\..\other\Report_images\PHYS_SIN.png','png');
 
     figure
-    PHYS_SIN_error=plot(abs(abs(FFT_Real+1i*FFT_Imag)-abs(FFTsim_FULL_sin)));
+    PHYS_SIN_error=plot((abs(FFT_Real+1i*FFT_Imag)-abs(FFT')));
     hold on
-    plot(abs(abs(FFT_Real+1i*FFT_Imag)-abs(FFT')));
+    plot((abs(FFT_Real+1i*FFT_Imag)-abs(FFTsim_FULL_sin)));
     hold off
-    xlabel('FFT banks');
+    xlabel('FFT bins (KHz)');
     ylabel('Magnitude');
-    legend('Simulation','MATLAB Twiddle precision');
-    title('Sim error against MATLAB (sin input)');
+    legend('MATLAB lower Twiddle precision','Simulation');
+    title('Experimental error (sin input)');
+    xlim([0 125]);
+    fontsize(gca,20,"pixels")
     saveas(PHYS_SIN_error, '..\..\other\Report_images\PHYS_SIN_error.png','png');
 end
 

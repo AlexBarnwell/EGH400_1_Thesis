@@ -1,2 +1,0 @@
-FFT_ram.v,verilog,xil_defaultlib,../../../../../../src/ip/FFT_ram/sim/FFT_ram.v,
-glbl.v,Verilog,xil_defaultlib,glbl.v

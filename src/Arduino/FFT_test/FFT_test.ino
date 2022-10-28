@@ -41,7 +41,7 @@ void loop() {
     case 1:
     m=UART_Receive();
     if (m == 'G'){
-          digitalWrite(LED_BUILTIN,HIGH);
+        //  digitalWrite(LED_BUILTIN,HIGH);
 
     for(i=0; i<256;i++) {
       bitstream[i] = UART_Receive();

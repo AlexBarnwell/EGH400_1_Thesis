@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1666499835">
+<GenRun Id="impl_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1666939857">
   <File Type="ROUTE-PWR" Name="fpga_top_power_routed.rpt"/>
   <File Type="PA-TCL" Name="fpga_top.tcl"/>
   <File Type="BITSTR-MMI" Name="fpga_top.mmi"/>
@@ -81,6 +81,139 @@
   <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../../src/ip/tw_ram_sin/tw_ram_sin.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/ip/tw_ram_cos/tw_ram_cos.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/ip/dsp_macro_0/dsp_macro_0.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/ip/bd_ram_i8/bd_ram_i8.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/ip/bd_ram_i7/bd_ram_i7.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/ip/bd_ram_i6/bd_ram_i6.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/ip/bd_ram_i5/bd_ram_i5.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/ip/bd_ram_i4/bd_ram_i4.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/ip/bd_ram_i3/bd_ram_i3.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/ip/bd_ram_i2/bd_ram_i2.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/ip/bd_ram_i1/bd_ram_i1.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/ip/bd_ram_r8/bd_ram_r8.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/ip/bd_ram_r7/bd_ram_r7.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/ip/bd_ram_r6/bd_ram_r6.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/ip/bd_ram_r5/bd_ram_r5.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/ip/bd_ram_r4/bd_ram_r4.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/ip/bd_ram_r3/bd_ram_r3.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/ip/bd_ram_r2/bd_ram_r2.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/ip/bd_ram_r1/bd_ram_r1.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/../../src/ip/clk_wiz_0/clk_wiz_0.xci">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -127,6 +260,14 @@
     <File Path="$PPRDIR/../../src/design/fpga_top.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/ip/FFT_ram/FFT_ram.xci">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
@@ -364,23 +505,4 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="bd_ram_i2"/>
-  <BlockFileSet Type="BlockSrcs" Name="bd_ram_r3"/>
-  <BlockFileSet Type="BlockSrcs" Name="dsp_macro_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="bd_ram_i8"/>
-  <BlockFileSet Type="BlockSrcs" Name="bd_ram_i7"/>
-  <BlockFileSet Type="BlockSrcs" Name="bd_ram_i6"/>
-  <BlockFileSet Type="BlockSrcs" Name="bd_ram_i5"/>
-  <BlockFileSet Type="BlockSrcs" Name="bd_ram_i4"/>
-  <BlockFileSet Type="BlockSrcs" Name="bd_ram_i3"/>
-  <BlockFileSet Type="BlockSrcs" Name="bd_ram_i1"/>
-  <BlockFileSet Type="BlockSrcs" Name="bd_ram_r8"/>
-  <BlockFileSet Type="BlockSrcs" Name="bd_ram_r7"/>
-  <BlockFileSet Type="BlockSrcs" Name="bd_ram_r6"/>
-  <BlockFileSet Type="BlockSrcs" Name="bd_ram_r5"/>
-  <BlockFileSet Type="BlockSrcs" Name="bd_ram_r4"/>
-  <BlockFileSet Type="BlockSrcs" Name="bd_ram_r2"/>
-  <BlockFileSet Type="BlockSrcs" Name="bd_ram_r1"/>
-  <BlockFileSet Type="BlockSrcs" Name="tw_ram_cos"/>
-  <BlockFileSet Type="BlockSrcs" Name="tw_ram_sin"/>
 </GenRun>

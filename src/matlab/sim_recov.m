@@ -147,21 +147,26 @@ end
 
 %Matlab random
 figure
-MAT_RAND=plot(abs(FFTM(1:256)));
+MAT_RAND=plot((1:256).*488.2813./1000,abs(FFTM(1:256)));
 hold on
-plot(abs(FFT_FULL))
-xlabel('FFT banks');
+plot((1:256).*488.2813./1000,abs(FFT_FULL))
+xlabel('FFT bins (KHz)');
 ylabel('Magnitude');
 title('Initial MATLAB model (Random input)');
 legend('inbuilt','MATLAB model');
+ylim([0 300])
+xlim([0 125])
+fontsize(gca,20,"pixels")
 saveas(MAT_RAND, '..\..\other\Report_images\MAT_RAND.png','png');
 hold off
 
 figure
-MAT_RAND_error=plot(abs(abs(FFTM(1:256))-abs(FFT_FULL)));
-xlabel('FFT banks');
-ylabel('Magnitude');
-title('Initial MATLAB model error(Random input)');
+MAT_RAND_error=plot((1:256).*488.2813./1000,(abs(FFTM(1:256))-abs(FFT_FULL))*10e9);
+xlabel('FFT bins (KHz)');
+ylabel('Magnitude (10e-9)');
+title('Initial MATLAB model error');
+xlim([0 125])
+fontsize(gca,20,"pixels")
 saveas(MAT_RAND_error, '..\..\other\Report_images\MAT_RAND_error.png','png');
 
 error=14-log2(abs(abs(FFTM(1:256))-abs(FFT_FULL)));
@@ -175,21 +180,26 @@ fprintf( 'MAT RAND error is %d \n', sum(error)/256)
 
 %matlab sin
 figure
-MAT_RAND_sin=plot(abs(FFTM_sin(1:256)));
+MAT_RAND_sin=plot((1:256).*488.2813./1000,abs(FFTM_sin(1:256)));
 hold on
-plot(abs(FFT_FULL_sin))
-xlabel('FFT banks');
+plot((1:256).*488.2813./1000,abs(FFT_FULL_sin))
+xlabel('FFT bins (KHz)');
 ylabel('Magnitude');
-title('Initial MATLAB model');
-legend('inbuilt','MATLAB model (sin input)');
+ylim([0 2100])
+xlim([0 125])
+title('Initial MATLAB model (sin input)');
+legend('inbuilt','MATLAB model (sin input)','location','northwest');
+fontsize(gca,20,"pixels")
 saveas(MAT_RAND_sin, '..\..\other\Report_images\MAT_RAND_sin.png','png');
 hold off
 
 figure
-MAT_RAND_error_sin=plot(abs(FFTM_sin(1:256))-abs(FFT_FULL_sin));
-xlabel('FFT banks');
-ylabel('Magnitude');
+MAT_RAND_error_sin=plot((1:256).*488.2813./1000,(abs(FFTM_sin(1:256))-abs(FFT_FULL_sin))*10e9);
+xlabel('FFT bins (KHz)');
+ylabel('Magnitude (10e-9)');
+xlim([0 125])
 title('Initial MATLAB model error (sin input)');
+fontsize(gca,20,"pixels")
 saveas(MAT_RAND_error_sin, '..\..\other\Report_images\MAT_RAND_error_sin.png','png');
 
 error=14-log2(abs(abs(FFTM_sin(1:256))-abs(FFT_FULL_sin)));
@@ -201,27 +211,32 @@ fprintf( 'MAT RAND error SIN is %d \n', sum(error)/256)
 
 %Sim vs matlab
 figure
-SIM_MAT_RAND=plot(abs(FFTsim_FULL));
+SIM_MAT_RAND=plot((1:256).*488.2813./1000,abs(FFTsim_FULL));
 hold on
-plot(abs(FFT_FULL))
-plot(abs(FFT))
+plot((1:256).*488.2813./1000,abs(FFT_FULL))
+plot((1:256).*488.2813./1000,abs(FFT))
 hold off
 title('Simulation vs MATLAB (Random input)')
-xlabel('FFT banks');
+xlabel('FFT bins (KHz)');
 ylabel('Magnitude');
-legend('Simulation','MATLAB full precicion','MATLAB twiddle precision')
+ylim([0 300])
+xlim([0 125])
+legend('Simulation','MATLAB full precision','MATLAB twiddle precision')
+fontsize(gca,20,"pixels")
 saveas(SIM_MAT_RAND, '..\..\other\Report_images\SIM_MAT_RAND.png','png');
 
 
 figure
-SIM_MAT_RAND_error=plot(abs(FFTsim_FULL')-abs(FFT_FULL));
+SIM_MAT_RAND_error=plot((1:256).*488.2813./1000,abs(FFTsim_FULL')-abs(FFT_FULL));
 hold on
-plot(abs(abs(FFTsim_FULL')-abs(FFT)));
+plot((1:256).*488.2813./1000,(abs(FFTsim_FULL')-abs(FFT)));
 hold off
-xlabel('FFT banks');
+xlabel('FFT bins (KHz)');
 ylabel('Magnitude');
-legend('MATLAB Full precicison','MATLAB Twiddle precision');
-title('Sim error against MATLAB (Random input)');
+xlim([0 125])
+legend('MATLAB Full precision','MATLAB lower Twiddle precision');
+title('Simulation error');
+fontsize(gca,20,"pixels")
 saveas(SIM_MAT_RAND_error, '..\..\other\Report_images\SIM_MAT_RAND_error.png','png');
 
 
@@ -242,31 +257,45 @@ error(error>25)=25;
 fprintf( 'SIM RAND error is %d \n', sum(error)/256)
 
 
+
+error=14-log2(abs(abs(FFTsim_FULL(22:246)')-abs(FFT_FULL(22:246))));
+
+error(error>25)=25;
+
+
+fprintf( 'SIM RAND error bat is %d \n', sum(error)/(246-22))
+
+
 % sin wave
 figure
-SIM_MAT_SIN=plot(abs(FFTsim_FULL_sin));
+SIM_MAT_SIN=plot((1:256).*488.2813./1000,abs(FFTsim_FULL_sin));
 hold on
-plot(abs(FFT_FULL_sin))
-plot(abs(FFT_sin))
+plot((1:256).*488.2813./1000,abs(FFT_FULL_sin))
+plot((1:256).*488.2813./1000,abs(FFT_sin))
 hold off
-title('Simuation against MATLAB (sin input)')
-xlabel('FFT banks');
+title('Simuation vs MATLAB (sin input)')
+xlabel('FFT bins (KHz)');
 ylabel('Magnitude');
-legend('Simulation','MATLAB full precicion','MATLAB twiddle precision')
+ylim([0 2100])
+xlim([0 125])
+legend('Simulation','MATLAB full precision','MATLAB lower twiddle precision','location','northwest')
+fontsize(gca,20,"pixels")
 saveas(SIM_MAT_SIN, '..\..\other\Report_images\SIM_MAT_SIN.png','png');
 
 
 
 
 figure
-SIM_MAT_SIN_error=plot(abs(FFTsim_FULL_sin')-abs(FFT_FULL_sin));
+SIM_MAT_SIN_error=plot((1:256).*488.2813./1000,abs(FFTsim_FULL_sin')-abs(FFT_FULL_sin));
 hold on
-plot(abs(abs(FFTsim_FULL_sin')-abs(FFT_sin)));
+plot((1:256).*488.2813./1000,(abs(FFTsim_FULL_sin')-abs(FFT_sin)));
 hold off
-xlabel('FFT banks');
+xlabel('FFT bins (KHz)');
 ylabel('Magnitude');
-legend('MATLAB Full precicison','MATLAB Twiddle precision');
-title('Sim error against MATLAB (sin input)');
+xlim([0 125])
+legend('MATLAB Full precision','MATLAB lower Twiddle precision');
+title('Simulation error (sin input)');
+fontsize(gca,20,"pixels")
 saveas(SIM_MAT_SIN_error, '..\..\other\Report_images\SIM_MAT_SIN_error.png','png');
 
 
@@ -290,46 +319,46 @@ error(error>25)=25;
 
 fprintf( 'SIM RAND error TW is %d \n', sum(error)/256)
 %%
-
-title ('FFT OUT')
-legend('FPGA','MATLAB');
-figure
-plot(abs(abs(FFTsim_FULL)-abs(FFT.'))./abs(FFT.'))
-hold on
-plot (cos(linspace(0,2*pi,8192)).^(N/P)*0.004)
-hold off
-
-figure
-plot(abs(real(FFTsim_FULL)-real(FFT.')))
-hold on
-plot (cos(linspace(0,2*pi,512)).^(N/P)*0.05)
-hold off
-
-
-
-
-
-
-
-
-%figure
-%plot(FFTI)
-log2(N*2./(sum((abs(abs(FFTsim_FULL(21:end))-abs(FFT(21:end).')))./(L-21)))) % average precision approx 18 bits for 1024 input bits
-
-
-%13.7469 -- with standard rounding 
-
-%13.7520 -- with no runding just truncation
-
-%max error
-max(abs(abs(FFTsim_FULL)-abs(FFT.')))
-
-% 20.1331 truncation
-
-% 20.1331
-%%
-
-
-% 20.9723 avg prec
-
-% 0.0287 max error
+% 
+% title ('FFT OUT')
+% legend('FPGA','MATLAB');
+% figure
+% plot(abs(abs(FFTsim_FULL)-abs(FFT.'))./abs(FFT.'))
+% hold on
+% plot (cos(linspace(0,2*pi,8192)).^(N/P)*0.004)
+% hold off
+% 
+% figure
+% plot(abs(real(FFTsim_FULL)-real(FFT.')))
+% hold on
+% plot (cos(linspace(0,2*pi,512)).^(N/P)*0.05)
+% hold off
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% %figure
+% %plot(FFTI)
+% log2(N*2./(sum((abs(abs(FFTsim_FULL(21:end))-abs(FFT(21:end).')))./(L-21)))) % average precision approx 18 bits for 1024 input bits
+% 
+% 
+% %13.7469 -- with standard rounding 
+% 
+% %13.7520 -- with no runding just truncation
+% 
+% %max error
+% max(abs(abs(FFTsim_FULL)-abs(FFT.')))
+% 
+% % 20.1331 truncation
+% 
+% % 20.1331
+% %%
+% 
+% 
+% % 20.9723 avg prec
+% 
+% % 0.0287 max error

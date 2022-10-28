@@ -5,5 +5,62 @@
 
 # XDC: C:/EGH400_1_Thesis/src/constraints/bitstream_flash_config.xdc
 
+# IP: C:/EGH400_1_Thesis/src/ip/tw_ram_sin/tw_ram_sin.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==tw_ram_sin || ORIG_REF_NAME==tw_ram_sin} -quiet] -quiet
+
+# IP: C:/EGH400_1_Thesis/src/ip/tw_ram_cos/tw_ram_cos.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==tw_ram_cos || ORIG_REF_NAME==tw_ram_cos} -quiet] -quiet
+
+# IP: C:/EGH400_1_Thesis/src/ip/dsp_macro_0/dsp_macro_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==dsp_macro_0 || ORIG_REF_NAME==dsp_macro_0} -quiet] -quiet
+
+# IP: C:/EGH400_1_Thesis/src/ip/bd_ram_i8/bd_ram_i8.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==bd_ram_i8 || ORIG_REF_NAME==bd_ram_i8} -quiet] -quiet
+
+# IP: C:/EGH400_1_Thesis/src/ip/bd_ram_i7/bd_ram_i7.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==bd_ram_i7 || ORIG_REF_NAME==bd_ram_i7} -quiet] -quiet
+
+# IP: C:/EGH400_1_Thesis/src/ip/bd_ram_i6/bd_ram_i6.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==bd_ram_i6 || ORIG_REF_NAME==bd_ram_i6} -quiet] -quiet
+
+# IP: C:/EGH400_1_Thesis/src/ip/bd_ram_i5/bd_ram_i5.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==bd_ram_i5 || ORIG_REF_NAME==bd_ram_i5} -quiet] -quiet
+
+# IP: C:/EGH400_1_Thesis/src/ip/bd_ram_i4/bd_ram_i4.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==bd_ram_i4 || ORIG_REF_NAME==bd_ram_i4} -quiet] -quiet
+
+# IP: C:/EGH400_1_Thesis/src/ip/bd_ram_i3/bd_ram_i3.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==bd_ram_i3 || ORIG_REF_NAME==bd_ram_i3} -quiet] -quiet
+
+# IP: C:/EGH400_1_Thesis/src/ip/bd_ram_i2/bd_ram_i2.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==bd_ram_i2 || ORIG_REF_NAME==bd_ram_i2} -quiet] -quiet
+
+# IP: C:/EGH400_1_Thesis/src/ip/bd_ram_i1/bd_ram_i1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==bd_ram_i1 || ORIG_REF_NAME==bd_ram_i1} -quiet] -quiet
+
+# IP: C:/EGH400_1_Thesis/src/ip/bd_ram_r8/bd_ram_r8.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==bd_ram_r8 || ORIG_REF_NAME==bd_ram_r8} -quiet] -quiet
+
+# IP: C:/EGH400_1_Thesis/src/ip/bd_ram_r7/bd_ram_r7.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==bd_ram_r7 || ORIG_REF_NAME==bd_ram_r7} -quiet] -quiet
+
+# IP: C:/EGH400_1_Thesis/src/ip/bd_ram_r6/bd_ram_r6.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==bd_ram_r6 || ORIG_REF_NAME==bd_ram_r6} -quiet] -quiet
+
+# IP: C:/EGH400_1_Thesis/src/ip/bd_ram_r5/bd_ram_r5.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==bd_ram_r5 || ORIG_REF_NAME==bd_ram_r5} -quiet] -quiet
+
+# IP: C:/EGH400_1_Thesis/src/ip/bd_ram_r4/bd_ram_r4.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==bd_ram_r4 || ORIG_REF_NAME==bd_ram_r4} -quiet] -quiet
+
+# IP: C:/EGH400_1_Thesis/src/ip/bd_ram_r3/bd_ram_r3.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==bd_ram_r3 || ORIG_REF_NAME==bd_ram_r3} -quiet] -quiet
+
+# IP: C:/EGH400_1_Thesis/src/ip/bd_ram_r2/bd_ram_r2.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==bd_ram_r2 || ORIG_REF_NAME==bd_ram_r2} -quiet] -quiet
+
+# IP: C:/EGH400_1_Thesis/src/ip/bd_ram_r1/bd_ram_r1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==bd_ram_r1 || ORIG_REF_NAME==bd_ram_r1} -quiet] -quiet
+
 # IP: C:/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==clk_wiz_0 || ORIG_REF_NAME==clk_wiz_0} -quiet] -quiet
