@@ -1,7 +1,7 @@
 % this script is to read and write the serail to the arduino
 clear  all
 close all
-Rand=1;
+Rand=2;
 
 N=8192;
 bank=0;
@@ -38,9 +38,9 @@ if (Rand==1)
     pause(4);
     serialportlist("available") %COM4 arduino
 
-    Arduino = serialport("COM4",9600);
+    Arduino = serialport("COM3",9600);
     pause(4)
-    FPGA = serialport("COM6",115200,"stopbits",2,"ByteOrder","little-endian");
+    FPGA = serialport("COM5",115200,"stopbits",2,"ByteOrder","little-endian");
     pause(4)
     flush(FPGA)
     %FPGA.InputBufferSize(500);
@@ -60,7 +60,7 @@ if (Rand==1)
     %bitstream = zeros(1,N);
 
     rng(Seed,'twister'); % get the RNG seed
-    bitstream=uint8(round(rand(1,N/4))); % set bitstream
+    bitstream=uint8(round(rand(1,N/8))); % set bitstream
     %bitstream(1:end)=1;
     %bitstream(1:256+128+64+32+16+8)=0;
     %bitstream(end-255-128-64-32-16-8:end)=0;
@@ -73,7 +73,7 @@ if (Rand==1)
     %bitstream(512-7:512+8)=0;
     
 
-    %bitstream =[bitstream bitstream];
+    bitstream =[bitstream bitstream];
     % bitstream(1:8)=0;
     % bitstream(end-7:end)=0;
 
@@ -153,7 +153,7 @@ if (Rand==1)
     figure(1)
     plot(out)
 
-    out_re=zeros(3072/12,12);
+    out_re=zeros(256,12);
     for (ii=1:14000)
         if (out(ii)==90)
             start_count=start_count+1;
@@ -164,7 +164,7 @@ if (Rand==1)
         if (start_count==12)
             bank=bank+1;
             if (bank==2)
-                out_re=(reshape(out(ii+1:3072+ii),12,3072/12))';
+                out_re=(reshape(out(ii+1:256*12+ii),12,256))';
                 break;
             end
         end
@@ -217,9 +217,9 @@ elseif(Rand==2)
     pause(4);
     serialportlist("available") %COM4 arduino
 
-    Arduino = serialport("COM4",9600);
+    Arduino = serialport("COM3",9600);
     pause(4)
-    FPGA = serialport("COM6",115200,"stopbits",2,"ByteOrder","little-endian");
+    FPGA = serialport("COM5",115200,"stopbits",2,"ByteOrder","little-endian");
     pause(4)
     flush(FPGA)
     %FPGA.InputBufferSize(500);
@@ -324,7 +324,7 @@ elseif(Rand==2)
     figure(1)
     plot(out)
 
-    out_re=zeros(3072/12,12);
+    out_re=zeros(256,12);
     for (ii=1:14000)
         if (out(ii)==90)
             start_count=start_count+1;
@@ -335,7 +335,7 @@ elseif(Rand==2)
         if (start_count==12)
             bank=bank+1;
             if (bank==2)
-                out_re=(reshape(out(ii+1:3072+ii),12,3072/12))';
+                out_re=(reshape(out(ii+1:256*12+ii),12,256))';
                 break;
             end
         end
@@ -601,12 +601,14 @@ if (Rand==1)
     plot((1:256).*488.2813./1000,abs(FFT'))
     plot((1:256).*488.2813./1000,abs(FFTsim_FULL))
     ylim([0 500]);
+    xlim([0 125]);
     hold off
-    legend('FPGA','MATLAB','Simulation')
-    title('experimental implementation compared to MATLAB and simulation')
+    legend('FPGA','MATLAB lower twiddle precision','Simulation')
+    title('Experimental implementation ')
     xlabel('FFT bins (KHz)');
     ylabel('Magnitude');
-    %saveas(PHYS_RAND, '..\..\other\Report_images\PHYS_RAND.png','png');
+    fontsize(gca,20,"pixels")
+    saveas(PHYS_RAND, '..\..\other\Report_images\PHYS_RAND.png','png');
 
     figure
     PHYS_RAND_error=plot((1:256).*488.2813./1000,(abs(FFT_Real+1i*FFT_Imag)-abs(FFT')));
@@ -616,9 +618,11 @@ if (Rand==1)
     hold off
     xlabel('FFT bins (KHz)');
     ylabel('Magnitude');
-    legend('MATLAB Twiddle precision','Simulation');
-    title('Experimental error between MATLAB and simulation');
-    %saveas(PHYS_RAND_error, '..\..\other\Report_images\PHYS_RAND_error.png','png');
+    legend('MATLAB lower twiddle precision','Simulation');
+    title('Experimental error');
+    fontsize(gca,20,"pixels")
+    xlim([0 125]);
+    saveas(PHYS_RAND_error, '..\..\other\Report_images\PHYS_RAND_error.png','png');
 
 elseif(Rand==2)
     figure
@@ -628,10 +632,12 @@ elseif(Rand==2)
     plot((1:256).*488.2813./1000,abs(FFTsim_FULL_sin))
     ylim([0 2100]);
     hold off
-    legend('FPGA','MATLAB','Simulation')
-    title('Physical implementation against simulation (random input)')
+    legend('FPGA','MATLAB lower twiddle precision','Simulation')
+    title('Experimental implementation (sin input)')
     xlabel('FFT bins (KHz)');
     ylabel('Magnitude');
+    xlim([0 125]);
+    fontsize(gca,20,"pixels")
     saveas(PHYS_SIN, '..\..\other\Report_images\PHYS_SIN.png','png');
 
     figure
@@ -641,8 +647,10 @@ elseif(Rand==2)
     hold off
     xlabel('FFT bins (KHz)');
     ylabel('Magnitude');
-    legend('MATLAB Twiddle precision','Simulation');
-    title('Experimental error between MATLAB and simulation (sin input)');
+    legend('MATLAB lower Twiddle precision','Simulation');
+    title('Experimental error (sin input)');
+    xlim([0 125]);
+    fontsize(gca,20,"pixels")
     saveas(PHYS_SIN_error, '..\..\other\Report_images\PHYS_SIN_error.png','png');
 end
 

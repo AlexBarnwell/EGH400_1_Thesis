@@ -156,14 +156,17 @@ title('Initial MATLAB model (Random input)');
 legend('inbuilt','MATLAB model');
 ylim([0 300])
 xlim([0 125])
+fontsize(gca,20,"pixels")
 saveas(MAT_RAND, '..\..\other\Report_images\MAT_RAND.png','png');
 hold off
 
 figure
-MAT_RAND_error=plot((1:256).*488.2813./1000,(abs(FFTM(1:256))-abs(FFT_FULL)));
+MAT_RAND_error=plot((1:256).*488.2813./1000,(abs(FFTM(1:256))-abs(FFT_FULL))*10e9);
 xlabel('FFT bins (KHz)');
-ylabel('Magnitude');
-title('Initial MATLAB model error(Random input)');
+ylabel('Magnitude (10e-9)');
+title('Initial MATLAB model error');
+xlim([0 125])
+fontsize(gca,20,"pixels")
 saveas(MAT_RAND_error, '..\..\other\Report_images\MAT_RAND_error.png','png');
 
 error=14-log2(abs(abs(FFTM(1:256))-abs(FFT_FULL)));
@@ -184,17 +187,19 @@ xlabel('FFT bins (KHz)');
 ylabel('Magnitude');
 ylim([0 2100])
 xlim([0 125])
-title('Initial MATLAB model');
+title('Initial MATLAB model (sin input)');
 legend('inbuilt','MATLAB model (sin input)','location','northwest');
+fontsize(gca,20,"pixels")
 saveas(MAT_RAND_sin, '..\..\other\Report_images\MAT_RAND_sin.png','png');
 hold off
 
 figure
-MAT_RAND_error_sin=plot((1:256).*488.2813./1000,abs(FFTM_sin(1:256))-abs(FFT_FULL_sin));
+MAT_RAND_error_sin=plot((1:256).*488.2813./1000,(abs(FFTM_sin(1:256))-abs(FFT_FULL_sin))*10e9);
 xlabel('FFT bins (KHz)');
-ylabel('Magnitude');
+ylabel('Magnitude (10e-9)');
 xlim([0 125])
 title('Initial MATLAB model error (sin input)');
+fontsize(gca,20,"pixels")
 saveas(MAT_RAND_error_sin, '..\..\other\Report_images\MAT_RAND_error_sin.png','png');
 
 error=14-log2(abs(abs(FFTM_sin(1:256))-abs(FFT_FULL_sin)));
@@ -216,7 +221,8 @@ xlabel('FFT bins (KHz)');
 ylabel('Magnitude');
 ylim([0 300])
 xlim([0 125])
-legend('Simulation','MATLAB full precicion','MATLAB twiddle precision')
+legend('Simulation','MATLAB full precision','MATLAB twiddle precision')
+fontsize(gca,20,"pixels")
 saveas(SIM_MAT_RAND, '..\..\other\Report_images\SIM_MAT_RAND.png','png');
 
 
@@ -228,8 +234,9 @@ hold off
 xlabel('FFT bins (KHz)');
 ylabel('Magnitude');
 xlim([0 125])
-legend('MATLAB Full precicison','MATLAB Twiddle precision');
-title('Sim error against MATLAB (Random input)');
+legend('MATLAB Full precision','MATLAB lower Twiddle precision');
+title('Simulation error');
+fontsize(gca,20,"pixels")
 saveas(SIM_MAT_RAND_error, '..\..\other\Report_images\SIM_MAT_RAND_error.png','png');
 
 
@@ -250,6 +257,15 @@ error(error>25)=25;
 fprintf( 'SIM RAND error is %d \n', sum(error)/256)
 
 
+
+error=14-log2(abs(abs(FFTsim_FULL(22:246)')-abs(FFT_FULL(22:246))));
+
+error(error>25)=25;
+
+
+fprintf( 'SIM RAND error bat is %d \n', sum(error)/(246-22))
+
+
 % sin wave
 figure
 SIM_MAT_SIN=plot((1:256).*488.2813./1000,abs(FFTsim_FULL_sin));
@@ -257,12 +273,13 @@ hold on
 plot((1:256).*488.2813./1000,abs(FFT_FULL_sin))
 plot((1:256).*488.2813./1000,abs(FFT_sin))
 hold off
-title('Simuation against MATLAB (sin input)')
+title('Simuation vs MATLAB (sin input)')
 xlabel('FFT bins (KHz)');
 ylabel('Magnitude');
 ylim([0 2100])
 xlim([0 125])
-legend('Simulation','MATLAB full precicion','MATLAB twiddle precision','location','northwest')
+legend('Simulation','MATLAB full precision','MATLAB lower twiddle precision','location','northwest')
+fontsize(gca,20,"pixels")
 saveas(SIM_MAT_SIN, '..\..\other\Report_images\SIM_MAT_SIN.png','png');
 
 
@@ -276,8 +293,9 @@ hold off
 xlabel('FFT bins (KHz)');
 ylabel('Magnitude');
 xlim([0 125])
-legend('MATLAB Full precicison','MATLAB Twiddle precision');
-title('Simulation error against MATLAB (sin input)');
+legend('MATLAB Full precision','MATLAB lower Twiddle precision');
+title('Simulation error (sin input)');
+fontsize(gca,20,"pixels")
 saveas(SIM_MAT_SIN_error, '..\..\other\Report_images\SIM_MAT_SIN_error.png','png');
 
 

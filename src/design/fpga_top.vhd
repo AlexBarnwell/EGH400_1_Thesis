@@ -17,13 +17,13 @@ generic (
         G_DATA_WIDTH    : INTEGER := 25; -- data width of DFTBD
         G_DATA_WIDTH_TW    : INTEGER := 18; --  data with of TWiddle
         G_DECIMAL_WIDTH : integer := 19; -- decimal position (x shifts away from before 0th bit)
-        G_PARALLEL_TD : integer := 8;
-        G_BYTE_SIZE : Integer := 10896;
+        G_PARALLEL_TD : integer := 16;
+        G_BYTE_SIZE : Integer := 8192; -- 
         G_RADIX : integer := 16;
         G_DFTBD_B : integer := 2;
-        G_MCLK_PRESCALER : integer := 22;
+        G_MCLK_PRESCALER : integer := 25;
         G_MIN_BANK : integer := 0;
-        G_MAX_BANK : integer := 21; -- 16*16 =256
+        G_MAX_BANK : integer := 16; -- 16*16 =256
         G_DECIMAL_WIDTH_TW : integer := 15 -- decimal precision 
     );
     port(

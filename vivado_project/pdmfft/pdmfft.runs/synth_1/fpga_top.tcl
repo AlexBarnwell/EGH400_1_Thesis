@@ -118,10 +118,11 @@ read_vhdl -library xil_defaultlib {
   C:/EGH400_1_Thesis/src/design/shift_reg_input.vhd
   C:/EGH400_1_Thesis/src/design/fpga_top.vhd
 }
-read_ip -quiet C:/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0.xci
-set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0.xdc]
-set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
+read_ip -quiet C:/EGH400_1_Thesis/src/ip/tw_ram_sin/tw_ram_sin.xci
+set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/tw_ram_sin/tw_ram_sin_ooc.xdc]
+
+read_ip -quiet C:/EGH400_1_Thesis/src/ip/tw_ram_cos/tw_ram_cos.xci
+set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/tw_ram_cos/tw_ram_cos_ooc.xdc]
 
 read_ip -quiet C:/EGH400_1_Thesis/src/ip/dsp_macro_0/dsp_macro_0.xci
 set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/dsp_macro_0/dsp_macro_0_ooc.xdc]
@@ -174,11 +175,10 @@ set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src
 read_ip -quiet C:/EGH400_1_Thesis/src/ip/bd_ram_r1/bd_ram_r1.xci
 set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/bd_ram_r1/bd_ram_r1_ooc.xdc]
 
-read_ip -quiet C:/EGH400_1_Thesis/src/ip/tw_ram_cos/tw_ram_cos.xci
-set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/tw_ram_cos/tw_ram_cos_ooc.xdc]
-
-read_ip -quiet C:/EGH400_1_Thesis/src/ip/tw_ram_sin/tw_ram_sin.xci
-set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/tw_ram_sin/tw_ram_sin_ooc.xdc]
+read_ip -quiet C:/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0.xci
+set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0.xdc]
+set_property used_in_implementation false [get_files -all c:/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
