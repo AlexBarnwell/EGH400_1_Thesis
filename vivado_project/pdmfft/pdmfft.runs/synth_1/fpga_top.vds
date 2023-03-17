@@ -2,8 +2,8 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Fri Oct 28 16:50:59 2022
-# Process ID: 29980
+# Start of session at: Fri Oct 28 22:35:08 2022
+# Process ID: 5420
 # Current directory: C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1
 # Command line: vivado.exe -log fpga_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fpga_top.tcl
 # Log file: C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/fpga_top.vds
@@ -16,40 +16,20 @@ INFO: [Vivado 12-5825] Read reference checkpoint from C:/EGH400_1_Thesis/vivado_
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top fpga_top -part xc7a35ticsg324-1L -mode out_of_context
 Starting synth_design
-WARNING: [Vivado_Tcl 4-393] The 'Synthesis' target of the following IPs are stale, please generate the output products using the generate_target or synth_ip command before running synth_design.
-C:/EGH400_1_Thesis/src/ip/bd_ram_i8/bd_ram_i8.xci
-C:/EGH400_1_Thesis/src/ip/bd_ram_i7/bd_ram_i7.xci
-C:/EGH400_1_Thesis/src/ip/bd_ram_i6/bd_ram_i6.xci
-C:/EGH400_1_Thesis/src/ip/bd_ram_i5/bd_ram_i5.xci
-C:/EGH400_1_Thesis/src/ip/bd_ram_i4/bd_ram_i4.xci
-C:/EGH400_1_Thesis/src/ip/bd_ram_i3/bd_ram_i3.xci
-C:/EGH400_1_Thesis/src/ip/bd_ram_i2/bd_ram_i2.xci
-C:/EGH400_1_Thesis/src/ip/bd_ram_i1/bd_ram_i1.xci
-C:/EGH400_1_Thesis/src/ip/bd_ram_r8/bd_ram_r8.xci
-C:/EGH400_1_Thesis/src/ip/bd_ram_r7/bd_ram_r7.xci
-C:/EGH400_1_Thesis/src/ip/bd_ram_r6/bd_ram_r6.xci
-C:/EGH400_1_Thesis/src/ip/bd_ram_r5/bd_ram_r5.xci
-C:/EGH400_1_Thesis/src/ip/bd_ram_r4/bd_ram_r4.xci
-C:/EGH400_1_Thesis/src/ip/bd_ram_r3/bd_ram_r3.xci
-C:/EGH400_1_Thesis/src/ip/bd_ram_r2/bd_ram_r2.xci
-C:/EGH400_1_Thesis/src/ip/bd_ram_r1/bd_ram_r1.xci
-
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35ti'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35ti'
 INFO: [Device 21-403] Loading part xc7a35ticsg324-1L
-INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
-INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 7260
+INFO: [Synth 8-7075] Helper process launched with PID 5760
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1291.227 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1290.320 ; gain = 0.000
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-9112] actual for formal port 'sclr' is neither a static name nor a globally static expression [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:243]
 WARNING: [Synth 8-9112] actual for formal port 'sclr' is neither a static name nor a globally static expression [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:253]
 INFO: [Synth 8-638] synthesizing module 'fpga_top' [C:/EGH400_1_Thesis/src/design/fpga_top.vhd:43]
-INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/clk_wiz_0_stub.vhdl:5' bound to instance 'CLOCK' of component 'clk_wiz_0' [C:/EGH400_1_Thesis/src/design/fpga_top.vhd:192]
-INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/clk_wiz_0_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/clk_wiz_0_stub.vhdl:5' bound to instance 'CLOCK' of component 'clk_wiz_0' [C:/EGH400_1_Thesis/src/design/fpga_top.vhd:192]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/clk_wiz_0_stub.vhdl:15]
 	Parameter G_DATA_WIDTH bound to: 25 - type: integer 
 	Parameter G_DECIMAL_WIDTH bound to: 19 - type: integer 
 	Parameter G_RADIX bound to: 16 - type: integer 
@@ -62,38 +42,38 @@ INFO: [Synth 8-638] synthesizing module 'DFTBD_RAM' [C:/EGH400_1_Thesis/src/desi
 	Parameter G_RADIX bound to: 16 - type: integer 
 	Parameter G_BYTE_SIZE bound to: 8192 - type: integer 
 	Parameter G_DFTBD_B bound to: 2 - type: integer 
-INFO: [Synth 8-3491] module 'bd_ram_r1' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_r1_stub.vhdl:5' bound to instance 'DFTBD_RAM1' of component 'bd_ram_r1' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:236]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_r1' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_r1_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'bd_ram_r2' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_r2_stub.vhdl:5' bound to instance 'DFTBD_RAM2' of component 'bd_ram_r2' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:243]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_r2' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_r2_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'bd_ram_r3' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_r3_stub.vhdl:5' bound to instance 'DFTBD_RAM3' of component 'bd_ram_r3' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:250]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_r3' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_r3_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'bd_ram_r4' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_r4_stub.vhdl:5' bound to instance 'DFTBD_RAM4' of component 'bd_ram_r4' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:257]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_r4' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_r4_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'bd_ram_r5' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_r5_stub.vhdl:5' bound to instance 'DFTBD_RAM5' of component 'bd_ram_r5' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:264]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_r5' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_r5_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'bd_ram_r6' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_r6_stub.vhdl:5' bound to instance 'DFTBD_RAM6' of component 'bd_ram_r6' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:271]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_r6' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_r6_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'bd_ram_r7' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_r7_stub.vhdl:5' bound to instance 'DFTBD_RAM7' of component 'bd_ram_r7' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:278]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_r7' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_r7_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'bd_ram_r8' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_r8_stub.vhdl:5' bound to instance 'DFTBD_RAM8' of component 'bd_ram_r8' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:285]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_r8' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_r8_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'bd_ram_i1' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_i1_stub.vhdl:5' bound to instance 'DFTBD_RAMI1' of component 'bd_ram_i1' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:295]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_i1' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_i1_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'bd_ram_i2' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_i2_stub.vhdl:5' bound to instance 'DFTBD_RAMI2' of component 'bd_ram_i2' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:302]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_i2' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_i2_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'bd_ram_i3' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_i3_stub.vhdl:5' bound to instance 'DFTBD_RAMI3' of component 'bd_ram_i3' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:309]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_i3' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_i3_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'bd_ram_i4' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_i4_stub.vhdl:5' bound to instance 'DFTBD_RAMI4' of component 'bd_ram_i4' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:316]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_i4' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_i4_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'bd_ram_i5' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_i5_stub.vhdl:5' bound to instance 'DFTBD_RAMI5' of component 'bd_ram_i5' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:323]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_i5' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_i5_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'bd_ram_i6' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_i6_stub.vhdl:5' bound to instance 'DFTBD_RAMI6' of component 'bd_ram_i6' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:330]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_i6' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_i6_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'bd_ram_i7' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_i7_stub.vhdl:5' bound to instance 'DFTBD_RAMI7' of component 'bd_ram_i7' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:337]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_i7' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_i7_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'bd_ram_i8' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_i8_stub.vhdl:5' bound to instance 'DFTBD_RAMI8' of component 'bd_ram_i8' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:344]
-INFO: [Synth 8-638] synthesizing module 'bd_ram_i8' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/bd_ram_i8_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_r1' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_r1_stub.vhdl:5' bound to instance 'DFTBD_RAM1' of component 'bd_ram_r1' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:236]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_r1' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_r1_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_r2' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_r2_stub.vhdl:5' bound to instance 'DFTBD_RAM2' of component 'bd_ram_r2' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:243]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_r2' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_r2_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_r3' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_r3_stub.vhdl:5' bound to instance 'DFTBD_RAM3' of component 'bd_ram_r3' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:250]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_r3' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_r3_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_r4' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_r4_stub.vhdl:5' bound to instance 'DFTBD_RAM4' of component 'bd_ram_r4' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:257]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_r4' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_r4_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_r5' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_r5_stub.vhdl:5' bound to instance 'DFTBD_RAM5' of component 'bd_ram_r5' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:264]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_r5' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_r5_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_r6' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_r6_stub.vhdl:5' bound to instance 'DFTBD_RAM6' of component 'bd_ram_r6' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:271]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_r6' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_r6_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_r7' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_r7_stub.vhdl:5' bound to instance 'DFTBD_RAM7' of component 'bd_ram_r7' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:278]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_r7' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_r7_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_r8' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_r8_stub.vhdl:5' bound to instance 'DFTBD_RAM8' of component 'bd_ram_r8' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:285]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_r8' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_r8_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_i1' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_i1_stub.vhdl:5' bound to instance 'DFTBD_RAMI1' of component 'bd_ram_i1' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:295]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_i1' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_i1_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_i2' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_i2_stub.vhdl:5' bound to instance 'DFTBD_RAMI2' of component 'bd_ram_i2' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:302]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_i2' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_i2_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_i3' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_i3_stub.vhdl:5' bound to instance 'DFTBD_RAMI3' of component 'bd_ram_i3' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:309]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_i3' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_i3_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_i4' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_i4_stub.vhdl:5' bound to instance 'DFTBD_RAMI4' of component 'bd_ram_i4' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:316]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_i4' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_i4_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_i5' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_i5_stub.vhdl:5' bound to instance 'DFTBD_RAMI5' of component 'bd_ram_i5' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:323]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_i5' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_i5_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_i6' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_i6_stub.vhdl:5' bound to instance 'DFTBD_RAMI6' of component 'bd_ram_i6' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:330]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_i6' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_i6_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_i7' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_i7_stub.vhdl:5' bound to instance 'DFTBD_RAMI7' of component 'bd_ram_i7' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:337]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_i7' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_i7_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'bd_ram_i8' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_i8_stub.vhdl:5' bound to instance 'DFTBD_RAMI8' of component 'bd_ram_i8' [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:344]
+INFO: [Synth 8-638] synthesizing module 'bd_ram_i8' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/bd_ram_i8_stub.vhdl:14]
 INFO: [Synth 8-256] done synthesizing module 'DFTBD_RAM' (0#1) [C:/EGH400_1_Thesis/src/design/DFTBD_RAM.vhd:35]
 	Parameter G_DATA_WIDTH bound to: 25 - type: integer 
 	Parameter G_DATA_WIDTH_TW bound to: 18 - type: integer 
@@ -125,9 +105,9 @@ INFO: [Synth 8-638] synthesizing module 'DSP_TD' [C:/EGH400_1_Thesis/src/design/
 	Parameter G_DATA_WIDTH_TW bound to: 18 - type: integer 
 	Parameter G_DECIMAL_WIDTH bound to: 19 - type: integer 
 	Parameter G_DECIMAL_WIDTH_TW bound to: 15 - type: integer 
-INFO: [Synth 8-3491] module 'dsp_macro_0' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/dsp_macro_0_stub.vhdl:5' bound to instance 'first' of component 'dsp_macro_0' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:240]
-INFO: [Synth 8-638] synthesizing module 'dsp_macro_0' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/dsp_macro_0_stub.vhdl:18]
-INFO: [Synth 8-3491] module 'dsp_macro_0' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/dsp_macro_0_stub.vhdl:5' bound to instance 'firstI' of component 'dsp_macro_0' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:250]
+INFO: [Synth 8-3491] module 'dsp_macro_0' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/dsp_macro_0_stub.vhdl:5' bound to instance 'first' of component 'dsp_macro_0' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:240]
+INFO: [Synth 8-638] synthesizing module 'dsp_macro_0' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/dsp_macro_0_stub.vhdl:18]
+INFO: [Synth 8-3491] module 'dsp_macro_0' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/dsp_macro_0_stub.vhdl:5' bound to instance 'firstI' of component 'dsp_macro_0' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:250]
 WARNING: [Synth 8-614] signal 'DFT_RESET' is read in the process but is not in the sensitivity list [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:515]
 INFO: [Synth 8-256] done synthesizing module 'DSP_TD' (0#1) [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:54]
 WARNING: [Synth 8-7043] port width mismatch for port 'order_out': port width = 32, actual width = 7 (integer) [C:/EGH400_1_Thesis/src/design/Control_TD.vhd:301]
@@ -238,10 +218,10 @@ INFO: [Synth 8-638] synthesizing module 'Twiddle_factors' [C:/EGH400_1_Thesis/sr
 	Parameter G_MIN_BANK bound to: 0 - type: integer 
 	Parameter G_MAX_BANK bound to: 16 - type: integer 
 	Parameter G_RADIX bound to: 16 - type: integer 
-INFO: [Synth 8-3491] module 'tw_ram_cos' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/tw_ram_cos_stub.vhdl:5' bound to instance 'Twiddle_1' of component 'tw_ram_cos' [C:/EGH400_1_Thesis/src/design/Twiddle_factors.vhd:104]
-INFO: [Synth 8-638] synthesizing module 'tw_ram_cos' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/tw_ram_cos_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'tw_ram_sin' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/tw_ram_sin_stub.vhdl:5' bound to instance 'Twiddle_2' of component 'tw_ram_sin' [C:/EGH400_1_Thesis/src/design/Twiddle_factors.vhd:111]
-INFO: [Synth 8-638] synthesizing module 'tw_ram_sin' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-29980-DESKTOP-BDA8VGJ/realtime/tw_ram_sin_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'tw_ram_cos' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/tw_ram_cos_stub.vhdl:5' bound to instance 'Twiddle_1' of component 'tw_ram_cos' [C:/EGH400_1_Thesis/src/design/Twiddle_factors.vhd:104]
+INFO: [Synth 8-638] synthesizing module 'tw_ram_cos' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/tw_ram_cos_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'tw_ram_sin' declared at 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/tw_ram_sin_stub.vhdl:5' bound to instance 'Twiddle_2' of component 'tw_ram_sin' [C:/EGH400_1_Thesis/src/design/Twiddle_factors.vhd:111]
+INFO: [Synth 8-638] synthesizing module 'tw_ram_sin' [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/.Xil/Vivado-5420-DESKTOP-BDA8VGJ/realtime/tw_ram_sin_stub.vhdl:14]
 INFO: [Synth 8-256] done synthesizing module 'Twiddle_factors' (0#1) [C:/EGH400_1_Thesis/src/design/Twiddle_factors.vhd:61]
 	Parameter G_PARALLEL_TD bound to: 16 - type: integer 
 	Parameter G_BYTE_SIZE bound to: 8192 - type: integer 
@@ -268,18 +248,18 @@ WARNING: [Synth 8-6014] Unused sequential element count2_2_reg was removed.  [C:
 WARNING: [Synth 8-6014] Unused sequential element count2_3_reg was removed.  [C:/EGH400_1_Thesis/src/design/shift_reg_input.vhd:195]
 WARNING: [Synth 8-7129] Port TWin2[0] in module DSP_TD is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1315.152 ; gain = 23.926
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1314.098 ; gain = 23.777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1315.152 ; gain = 23.926
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1314.098 ; gain = 23.777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1315.152 ; gain = 23.926
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1314.098 ; gain = 23.777
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.328 . Memory (MB): peak = 1315.152 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.365 . Memory (MB): peak = 1314.098 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -392,22 +372,20 @@ Parsing XDC File [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/d
 Finished Parsing XDC File [C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 1446.125 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 1437.613 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.506 . Memory (MB): peak = 1457.465 ; gain = 11.340
-INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
-INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.527 . Memory (MB): peak = 1449.203 ; gain = 11.590
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:15 . Memory (MB): peak = 1457.465 ; gain = 166.238
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1449.203 ; gain = 158.883
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35ticsg324-1L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:15 . Memory (MB): peak = 1457.465 ; gain = 166.238
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1449.203 ; gain = 158.883
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -466,62 +444,80 @@ Applied set_property KEEP_HIERARCHY = SOFT for DFTBD_RAMs/DFTBD_RAM2. (constrain
 Applied set_property KEEP_HIERARCHY = SOFT for DFTBD_RAMs/DFTBD_RAM1. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for CLOCK. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1457.465 ; gain = 166.238
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1449.203 ; gain = 158.883
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Control_TD'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                   start |                              001 |                               00
-                     dft |                              010 |                               01
-                  finish |                              100 |                               10
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'Control_TD'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1457.465 ; gain = 166.238
+Start Preparing Guide Design
 ---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Doing Graph Differ : Time (s): cpu = 00:00:18 ; elapsed = 00:00:17 . Memory (MB): peak = 1449.203 ; gain = 158.883
+---------------------------------------------------------------------------------
+fpga_top__GC0Control_TD__GB5Control_TD__GB4Control_TD__GB3Control_TD__GB2Control_TD__GB0DSP_TD__xdcDup__11---------------------------------------------------------------------------------
+Finished Preparing Guide Design : Time (s): cpu = 00:00:19 ; elapsed = 00:00:18 . Memory (MB): peak = 1449.203 ; gain = 158.883
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:18 . Memory (MB): peak = 1449.203 ; gain = 158.883
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Mimic Skeleton from Reference
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Mimic Skeleton from Reference : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1449.203 ; gain = 158.883
+---------------------------------------------------------------------------------
+
+
+Incremental Synthesis Report Summary:
+
+1. Incremental synthesis run: yes
+
+   Stitch points used : changed
+
+
+2. Change Summary
+
+Report Incremental Modules: 
++-+----------------+------------+----------+----------+
+| |Changed Modules |Replication |Instances |Changed % |
++-+----------------+------------+----------+----------+
++-+----------------+------------+----------+----------+
+
+
+   Full Design Size (number of cells) : 123455
+   Resynthesis Design Size (number of cells) : 0
+   Resynth % : 0.0000,  Reuse % : 100.0000
+
+3. Reference Checkpoint Information
+
++--------------------------------------------------------------------------------------------------------------+
+| DCP Location:  | C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.srcs/utils_1/imports/synth_1/fpga_top_U.dcp |
++--------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------+------------------------------+
+|         DCP Information        |             Value            |
++--------------------------------+------------------------------+
+| Vivado Version                 |                    v2022.1 |
+| DCP State                      |                              |
++--------------------------------+------------------------------+
+
+
+
+Report RTL Partitions: 
++------+---------------------------+------------+----------+
+|      |RTL Partition              |Replication |Instances |
++------+---------------------------+------------+----------+
+|1     |DSP_TD__xdcDup__11_#REUSE# |           1|         0|
+|2     |Control_TD__GB0_#REUSE#    |           1|         0|
+|3     |Control_TD__GB2_#REUSE#    |           1|         0|
+|4     |Control_TD__GB3_#REUSE#    |           1|         0|
+|5     |Control_TD__GB4_#REUSE#    |           1|         0|
+|6     |Control_TD__GB5_#REUSE#    |           1|         0|
+|7     |fpga_top__GC0_#REUSE#      |           1|         0|
++------+---------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
-+---Adders : 
-	   3 Input   44 Bit       Adders := 32    
-	   3 Input   43 Bit       Adders := 48    
-	   2 Input   43 Bit       Adders := 16    
-	   2 Input   32 Bit       Adders := 83    
-	   3 Input   32 Bit       Adders := 16    
-	   2 Input   31 Bit       Adders := 32    
-	   2 Input   25 Bit       Adders := 14    
-	   2 Input   10 Bit       Adders := 1     
-	   2 Input    4 Bit       Adders := 2     
-	   2 Input    3 Bit       Adders := 2     
-+---Registers : 
-	             8192 Bit    Registers := 1     
-	             2048 Bit    Registers := 1     
-	              288 Bit    Registers := 6     
-	               44 Bit    Registers := 64    
-	               43 Bit    Registers := 224   
-	               32 Bit    Registers := 115   
-	               25 Bit    Registers := 14    
-	               18 Bit    Registers := 64    
-	               16 Bit    Registers := 1     
-	               10 Bit    Registers := 2     
-	                6 Bit    Registers := 8     
-	                4 Bit    Registers := 5     
-	                3 Bit    Registers := 2     
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 12    
-+---Muxes : 
-	   2 Input   44 Bit        Muxes := 32    
-	   3 Input   32 Bit        Muxes := 65    
-	   2 Input   32 Bit        Muxes := 50    
-	   2 Input    4 Bit        Muxes := 1     
-	   3 Input    3 Bit        Muxes := 1     
-	   2 Input    3 Bit        Muxes := 4     
-	   2 Input    2 Bit        Muxes := 33    
-	   3 Input    1 Bit        Muxes := 56    
-	   4 Input    1 Bit        Muxes := 34    
-	   2 Input    1 Bit        Muxes := 15    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -537,712 +533,42 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-DSP Report: Generating DSP mult2_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register mult2_S_reg is absorbed into DSP mult2_S_reg.
-DSP Report: operator mult2 is absorbed into DSP mult2_S_reg.
-DSP Report: Generating DSP mult1_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register mult1_S_reg is absorbed into DSP mult1_S_reg.
-DSP Report: operator mult1 is absorbed into DSP mult1_S_reg.
-DSP Report: Generating DSP mult4_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register mult4_S_reg is absorbed into DSP mult4_S_reg.
-DSP Report: operator mult4 is absorbed into DSP mult4_S_reg.
-DSP Report: Generating DSP mult3_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register mult3_S_reg is absorbed into DSP mult3_S_reg.
-DSP Report: operator mult3 is absorbed into DSP mult3_S_reg.
-INFO: [Synth 8-4471] merging register 'PPsig2I_reg[24:0]' into 'PPsig2I_reg[24:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:294]
-INFO: [Synth 8-4471] merging register 'PPsig2_reg[24:0]' into 'PPsig2_reg[24:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:293]
-INFO: [Synth 8-4471] merging register 'delayed_cos_reg[17:0]' into 'delayed_cos_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:295]
-INFO: [Synth 8-4471] merging register 'delayed_sin_reg[17:0]' into 'delayed_sin_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:296]
-INFO: [Synth 8-4471] merging register 'delayed2_cos_reg[17:0]' into 'delayed2_cos_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:297]
-INFO: [Synth 8-4471] merging register 'delayed2_sin_reg[17:0]' into 'delayed2_sin_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:298]
-DSP Report: Generating DSP mult2_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register mult2_S_reg is absorbed into DSP mult2_S_reg.
-DSP Report: operator mult2 is absorbed into DSP mult2_S_reg.
-DSP Report: Generating DSP mult1_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register mult1_S_reg is absorbed into DSP mult1_S_reg.
-DSP Report: operator mult1 is absorbed into DSP mult1_S_reg.
-DSP Report: Generating DSP mult4_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register mult4_S_reg is absorbed into DSP mult4_S_reg.
-DSP Report: operator mult4 is absorbed into DSP mult4_S_reg.
-DSP Report: Generating DSP mult3_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register mult3_S_reg is absorbed into DSP mult3_S_reg.
-DSP Report: operator mult3 is absorbed into DSP mult3_S_reg.
-INFO: [Synth 8-4471] merging register 'PPsig2I_reg[24:0]' into 'PPsig2I_reg[24:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:294]
-INFO: [Synth 8-4471] merging register 'PPsig2_reg[24:0]' into 'PPsig2_reg[24:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:293]
-INFO: [Synth 8-4471] merging register 'delayed_cos_reg[17:0]' into 'delayed_cos_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:295]
-INFO: [Synth 8-4471] merging register 'delayed_sin_reg[17:0]' into 'delayed_sin_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:296]
-INFO: [Synth 8-4471] merging register 'delayed2_cos_reg[17:0]' into 'delayed2_cos_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:297]
-INFO: [Synth 8-4471] merging register 'delayed2_sin_reg[17:0]' into 'delayed2_sin_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:298]
-DSP Report: Generating DSP mult2_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register mult2_S_reg is absorbed into DSP mult2_S_reg.
-DSP Report: operator mult2 is absorbed into DSP mult2_S_reg.
-DSP Report: Generating DSP mult1_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register mult1_S_reg is absorbed into DSP mult1_S_reg.
-DSP Report: operator mult1 is absorbed into DSP mult1_S_reg.
-DSP Report: Generating DSP mult4_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register mult4_S_reg is absorbed into DSP mult4_S_reg.
-DSP Report: operator mult4 is absorbed into DSP mult4_S_reg.
-DSP Report: Generating DSP mult3_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register mult3_S_reg is absorbed into DSP mult3_S_reg.
-DSP Report: operator mult3 is absorbed into DSP mult3_S_reg.
-INFO: [Synth 8-4471] merging register 'PPsig2I_reg[24:0]' into 'PPsig2I_reg[24:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:294]
-INFO: [Synth 8-4471] merging register 'PPsig2_reg[24:0]' into 'PPsig2_reg[24:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:293]
-INFO: [Synth 8-4471] merging register 'delayed_cos_reg[17:0]' into 'delayed_cos_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:295]
-INFO: [Synth 8-4471] merging register 'delayed_sin_reg[17:0]' into 'delayed_sin_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:296]
-INFO: [Synth 8-4471] merging register 'delayed2_cos_reg[17:0]' into 'delayed2_cos_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:297]
-INFO: [Synth 8-4471] merging register 'delayed2_sin_reg[17:0]' into 'delayed2_sin_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:298]
-DSP Report: Generating DSP mult2_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register mult2_S_reg is absorbed into DSP mult2_S_reg.
-DSP Report: operator mult2 is absorbed into DSP mult2_S_reg.
-DSP Report: Generating DSP mult1_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register mult1_S_reg is absorbed into DSP mult1_S_reg.
-DSP Report: operator mult1 is absorbed into DSP mult1_S_reg.
-DSP Report: Generating DSP mult4_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register mult4_S_reg is absorbed into DSP mult4_S_reg.
-DSP Report: operator mult4 is absorbed into DSP mult4_S_reg.
-DSP Report: Generating DSP mult3_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register mult3_S_reg is absorbed into DSP mult3_S_reg.
-DSP Report: operator mult3 is absorbed into DSP mult3_S_reg.
-INFO: [Synth 8-4471] merging register 'PPsig2I_reg[24:0]' into 'PPsig2I_reg[24:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:294]
-INFO: [Synth 8-4471] merging register 'PPsig2_reg[24:0]' into 'PPsig2_reg[24:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:293]
-INFO: [Synth 8-4471] merging register 'delayed_cos_reg[17:0]' into 'delayed_cos_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:295]
-INFO: [Synth 8-4471] merging register 'delayed_sin_reg[17:0]' into 'delayed_sin_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:296]
-INFO: [Synth 8-4471] merging register 'delayed2_cos_reg[17:0]' into 'delayed2_cos_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:297]
-INFO: [Synth 8-4471] merging register 'delayed2_sin_reg[17:0]' into 'delayed2_sin_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:298]
-DSP Report: Generating DSP mult2_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register mult2_S_reg is absorbed into DSP mult2_S_reg.
-DSP Report: operator mult2 is absorbed into DSP mult2_S_reg.
-DSP Report: Generating DSP mult1_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register mult1_S_reg is absorbed into DSP mult1_S_reg.
-DSP Report: operator mult1 is absorbed into DSP mult1_S_reg.
-DSP Report: Generating DSP mult4_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register mult4_S_reg is absorbed into DSP mult4_S_reg.
-DSP Report: operator mult4 is absorbed into DSP mult4_S_reg.
-DSP Report: Generating DSP mult3_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register mult3_S_reg is absorbed into DSP mult3_S_reg.
-DSP Report: operator mult3 is absorbed into DSP mult3_S_reg.
-WARNING: [Synth 8-7129] Port TWin2[0] in module DSP_TD__xdcDup__13 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port TWin2[0] in module DSP_TD__xdcDup__14 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port TWin2[0] in module DSP_TD__xdcDup__15 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port TWin2[0] in module DSP_TD is either unconnected or has no load
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[0]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[1]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[1]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[2]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[2]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[3]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[3]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[4]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[4]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[5]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[5]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[6]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[6]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[7]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[7]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[8]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[8]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[9]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[9]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[10]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[10]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[11]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[11]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[12]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[12]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[13]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[13]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[14]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[14]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[0]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[39]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[40]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[41]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[40]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[40]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/B1_temps_reg[42]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[0]' (FDE) to 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[1]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[1]' (FDE) to 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[2]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[2]' (FDE) to 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[3]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[3]' (FDE) to 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[4]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[4]' (FDE) to 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[5]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[5]' (FDE) to 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[6]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[6]' (FDE) to 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[7]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[7]' (FDE) to 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[8]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[8]' (FDE) to 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[9]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[9]' (FDE) to 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[10]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[10]' (FDE) to 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[11]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[11]' (FDE) to 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[12]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[12]' (FDE) to 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[13]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[13]' (FDE) to 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[14]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[14]' (FDE) to 'DFT_TD_DSPs[14].DFT_TD_DSP/A1_temps_reg[0]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[39]' (FDE) to 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[40]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[41]' (FDE) to 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[40]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[40]' (FDE) to 'DFT_TD_DSPs[14].DFT_TD_DSP/B1_temps_reg[42]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[0]' (FDE) to 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[1]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[1]' (FDE) to 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[2]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[2]' (FDE) to 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[3]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[3]' (FDE) to 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[4]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[4]' (FDE) to 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[5]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[5]' (FDE) to 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[6]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[6]' (FDE) to 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[7]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[7]' (FDE) to 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[8]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[8]' (FDE) to 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[9]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[9]' (FDE) to 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[10]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[10]' (FDE) to 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[11]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[11]' (FDE) to 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[12]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[12]' (FDE) to 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[13]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[13]' (FDE) to 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[14]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[14]' (FDE) to 'DFT_TD_DSPs[15].DFT_TD_DSP/A1_temps_reg[0]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[39]' (FDE) to 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[40]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[41]' (FDE) to 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[40]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[40]' (FDE) to 'DFT_TD_DSPs[15].DFT_TD_DSP/B1_temps_reg[42]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[0]' (FDE) to 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[1]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[1]' (FDE) to 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[2]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[2]' (FDE) to 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[3]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[3]' (FDE) to 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[4]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[4]' (FDE) to 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[5]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[5]' (FDE) to 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[6]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[6]' (FDE) to 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[7]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[7]' (FDE) to 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[8]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[8]' (FDE) to 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[9]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[9]' (FDE) to 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[10]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[10]' (FDE) to 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[11]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[11]' (FDE) to 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[12]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[12]' (FDE) to 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[13]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[13]' (FDE) to 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[14]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[14]' (FDE) to 'DFT_TD_DSPs[16].DFT_TD_DSP/A1_temps_reg[0]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[39]' (FDE) to 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[40]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[41]' (FDE) to 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[40]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[40]' (FDE) to 'DFT_TD_DSPs[16].DFT_TD_DSP/B1_temps_reg[42]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[0]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[1]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[1]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[2]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[2]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[3]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[3]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[4]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[4]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[5]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[5]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[6]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[6]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[7]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[7]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[8]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[8]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[9]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[9]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[10]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[10]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[11]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[11]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[12]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[12]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[13]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[13]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[14]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\DFT_TD_DSPs[13].DFT_TD_DSP /\A1_temps_reg[14] )
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[39]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[40]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[41]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[40]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[40]' (FDE) to 'DFT_TD_DSPs[13].DFT_TD_DSP/A1_temps_reg[42]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[14].DFT_TD_DSP/A1_temps_reg[0]' (FDE) to 'DFT_TD_DSPs[14].DFT_TD_DSP/A1_temps_reg[1]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[14].DFT_TD_DSP/A1_temps_reg[1]' (FDE) to 'DFT_TD_DSPs[14].DFT_TD_DSP/A1_temps_reg[2]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[14].DFT_TD_DSP/A1_temps_reg[2]' (FDE) to 'DFT_TD_DSPs[14].DFT_TD_DSP/A1_temps_reg[3]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[14].DFT_TD_DSP/A1_temps_reg[3]' (FDE) to 'DFT_TD_DSPs[14].DFT_TD_DSP/A1_temps_reg[4]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[14].DFT_TD_DSP/A1_temps_reg[4]' (FDE) to 'DFT_TD_DSPs[14].DFT_TD_DSP/A1_temps_reg[5]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[14].DFT_TD_DSP/A1_temps_reg[5]' (FDE) to 'DFT_TD_DSPs[14].DFT_TD_DSP/A1_temps_reg[6]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[14].DFT_TD_DSP/A1_temps_reg[6]' (FDE) to 'DFT_TD_DSPs[14].DFT_TD_DSP/A1_temps_reg[7]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[14].DFT_TD_DSP/A1_temps_reg[7]' (FDE) to 'DFT_TD_DSPs[14].DFT_TD_DSP/A1_temps_reg[8]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[14].DFT_TD_DSP/A1_temps_reg[8]' (FDE) to 'DFT_TD_DSPs[14].DFT_TD_DSP/A1_temps_reg[9]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[14].DFT_TD_DSP/A1_temps_reg[9]' (FDE) to 'DFT_TD_DSPs[14].DFT_TD_DSP/A1_temps_reg[10]'
-INFO: [Synth 8-3886] merging instance 'DFT_TD_DSPs[14].DFT_TD_DSP/A1_temps_reg[10]' (FDE) to 'DFT_TD_DSPs[14].DFT_TD_DSP/A1_temps_reg[11]'
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\DFT_TD_DSPs[14].DFT_TD_DSP /\A1_temps_reg[14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\DFT_TD_DSPs[15].DFT_TD_DSP /\A1_temps_reg[14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\DFT_TD_DSPs[16].DFT_TD_DSP /\A1_temps_reg[14] )
-INFO: [Synth 8-4471] merging register 'PPsig2I_reg[24:0]' into 'PPsig2I_reg[24:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:294]
-INFO: [Synth 8-4471] merging register 'PPsig2_reg[24:0]' into 'PPsig2_reg[24:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:293]
-INFO: [Synth 8-4471] merging register 'delayed_cos_reg[17:0]' into 'delayed_cos_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:295]
-INFO: [Synth 8-4471] merging register 'delayed_sin_reg[17:0]' into 'delayed_sin_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:296]
-INFO: [Synth 8-4471] merging register 'delayed2_cos_reg[17:0]' into 'delayed2_cos_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:297]
-INFO: [Synth 8-4471] merging register 'delayed2_sin_reg[17:0]' into 'delayed2_sin_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:298]
-DSP Report: Generating DSP mult2_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register mult2_S_reg is absorbed into DSP mult2_S_reg.
-DSP Report: operator mult2 is absorbed into DSP mult2_S_reg.
-DSP Report: Generating DSP mult1_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register mult1_S_reg is absorbed into DSP mult1_S_reg.
-DSP Report: operator mult1 is absorbed into DSP mult1_S_reg.
-DSP Report: Generating DSP mult4_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register mult4_S_reg is absorbed into DSP mult4_S_reg.
-DSP Report: operator mult4 is absorbed into DSP mult4_S_reg.
-DSP Report: Generating DSP mult3_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register mult3_S_reg is absorbed into DSP mult3_S_reg.
-DSP Report: operator mult3 is absorbed into DSP mult3_S_reg.
-INFO: [Synth 8-4471] merging register 'PPsig2I_reg[24:0]' into 'PPsig2I_reg[24:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:294]
-INFO: [Synth 8-4471] merging register 'PPsig2_reg[24:0]' into 'PPsig2_reg[24:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:293]
-INFO: [Synth 8-4471] merging register 'delayed_cos_reg[17:0]' into 'delayed_cos_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:295]
-INFO: [Synth 8-4471] merging register 'delayed_sin_reg[17:0]' into 'delayed_sin_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:296]
-INFO: [Synth 8-4471] merging register 'delayed2_cos_reg[17:0]' into 'delayed2_cos_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:297]
-INFO: [Synth 8-4471] merging register 'delayed2_sin_reg[17:0]' into 'delayed2_sin_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:298]
-DSP Report: Generating DSP mult2_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register mult2_S_reg is absorbed into DSP mult2_S_reg.
-DSP Report: operator mult2 is absorbed into DSP mult2_S_reg.
-DSP Report: Generating DSP mult1_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register mult1_S_reg is absorbed into DSP mult1_S_reg.
-DSP Report: operator mult1 is absorbed into DSP mult1_S_reg.
-DSP Report: Generating DSP mult4_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register mult4_S_reg is absorbed into DSP mult4_S_reg.
-DSP Report: operator mult4 is absorbed into DSP mult4_S_reg.
-DSP Report: Generating DSP mult3_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register mult3_S_reg is absorbed into DSP mult3_S_reg.
-DSP Report: operator mult3 is absorbed into DSP mult3_S_reg.
-WARNING: [Synth 8-7129] Port TWin2[0] in module DSP_TD__xdcDup__8 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port TWin2[0] in module DSP_TD__xdcDup__10 is either unconnected or has no load
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\DFT_TD_DSPs[8].DFT_TD_DSP /\A1_temps_reg[14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\DFT_TD_DSPs[10].DFT_TD_DSP /\A1_temps_reg[14] )
-INFO: [Synth 8-4471] merging register 'PPsig2I_reg[24:0]' into 'PPsig2I_reg[24:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:294]
-INFO: [Synth 8-4471] merging register 'PPsig2_reg[24:0]' into 'PPsig2_reg[24:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:293]
-INFO: [Synth 8-4471] merging register 'delayed_cos_reg[17:0]' into 'delayed_cos_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:295]
-INFO: [Synth 8-4471] merging register 'delayed_sin_reg[17:0]' into 'delayed_sin_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:296]
-INFO: [Synth 8-4471] merging register 'delayed2_cos_reg[17:0]' into 'delayed2_cos_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:297]
-INFO: [Synth 8-4471] merging register 'delayed2_sin_reg[17:0]' into 'delayed2_sin_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:298]
-DSP Report: Generating DSP mult2_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register mult2_S_reg is absorbed into DSP mult2_S_reg.
-DSP Report: operator mult2 is absorbed into DSP mult2_S_reg.
-DSP Report: Generating DSP mult1_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register mult1_S_reg is absorbed into DSP mult1_S_reg.
-DSP Report: operator mult1 is absorbed into DSP mult1_S_reg.
-DSP Report: Generating DSP mult4_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register mult4_S_reg is absorbed into DSP mult4_S_reg.
-DSP Report: operator mult4 is absorbed into DSP mult4_S_reg.
-DSP Report: Generating DSP mult3_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register mult3_S_reg is absorbed into DSP mult3_S_reg.
-DSP Report: operator mult3 is absorbed into DSP mult3_S_reg.
-INFO: [Synth 8-4471] merging register 'PPsig2I_reg[24:0]' into 'PPsig2I_reg[24:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:294]
-INFO: [Synth 8-4471] merging register 'PPsig2_reg[24:0]' into 'PPsig2_reg[24:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:293]
-INFO: [Synth 8-4471] merging register 'delayed_cos_reg[17:0]' into 'delayed_cos_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:295]
-INFO: [Synth 8-4471] merging register 'delayed_sin_reg[17:0]' into 'delayed_sin_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:296]
-INFO: [Synth 8-4471] merging register 'delayed2_cos_reg[17:0]' into 'delayed2_cos_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:297]
-INFO: [Synth 8-4471] merging register 'delayed2_sin_reg[17:0]' into 'delayed2_sin_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:298]
-DSP Report: Generating DSP mult2_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register mult2_S_reg is absorbed into DSP mult2_S_reg.
-DSP Report: operator mult2 is absorbed into DSP mult2_S_reg.
-DSP Report: Generating DSP mult1_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register mult1_S_reg is absorbed into DSP mult1_S_reg.
-DSP Report: operator mult1 is absorbed into DSP mult1_S_reg.
-DSP Report: Generating DSP mult4_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register mult4_S_reg is absorbed into DSP mult4_S_reg.
-DSP Report: operator mult4 is absorbed into DSP mult4_S_reg.
-DSP Report: Generating DSP mult3_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register mult3_S_reg is absorbed into DSP mult3_S_reg.
-DSP Report: operator mult3 is absorbed into DSP mult3_S_reg.
-WARNING: [Synth 8-7129] Port TWin2[0] in module DSP_TD__xdcDup__9 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port TWin2[0] in module DSP_TD__xdcDup__7 is either unconnected or has no load
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\DFT_TD_DSPs[7].DFT_TD_DSP /\A1_temps_reg[14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\DFT_TD_DSPs[9].DFT_TD_DSP /\A1_temps_reg[14] )
-INFO: [Synth 8-4471] merging register 'PPsig2I_reg[24:0]' into 'PPsig2I_reg[24:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:294]
-INFO: [Synth 8-4471] merging register 'PPsig2_reg[24:0]' into 'PPsig2_reg[24:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:293]
-INFO: [Synth 8-4471] merging register 'delayed_cos_reg[17:0]' into 'delayed_cos_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:295]
-INFO: [Synth 8-4471] merging register 'delayed_sin_reg[17:0]' into 'delayed_sin_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:296]
-INFO: [Synth 8-4471] merging register 'delayed2_cos_reg[17:0]' into 'delayed2_cos_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:297]
-INFO: [Synth 8-4471] merging register 'delayed2_sin_reg[17:0]' into 'delayed2_sin_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:298]
-DSP Report: Generating DSP mult2_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register mult2_S_reg is absorbed into DSP mult2_S_reg.
-DSP Report: operator mult2 is absorbed into DSP mult2_S_reg.
-DSP Report: Generating DSP mult1_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register mult1_S_reg is absorbed into DSP mult1_S_reg.
-DSP Report: operator mult1 is absorbed into DSP mult1_S_reg.
-DSP Report: Generating DSP mult4_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register mult4_S_reg is absorbed into DSP mult4_S_reg.
-DSP Report: operator mult4 is absorbed into DSP mult4_S_reg.
-DSP Report: Generating DSP mult3_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register mult3_S_reg is absorbed into DSP mult3_S_reg.
-DSP Report: operator mult3 is absorbed into DSP mult3_S_reg.
-INFO: [Synth 8-4471] merging register 'PPsig2I_reg[24:0]' into 'PPsig2I_reg[24:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:294]
-INFO: [Synth 8-4471] merging register 'PPsig2_reg[24:0]' into 'PPsig2_reg[24:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:293]
-INFO: [Synth 8-4471] merging register 'delayed_cos_reg[17:0]' into 'delayed_cos_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:295]
-INFO: [Synth 8-4471] merging register 'delayed_sin_reg[17:0]' into 'delayed_sin_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:296]
-INFO: [Synth 8-4471] merging register 'delayed2_cos_reg[17:0]' into 'delayed2_cos_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:297]
-INFO: [Synth 8-4471] merging register 'delayed2_sin_reg[17:0]' into 'delayed2_sin_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:298]
-DSP Report: Generating DSP mult2_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register mult2_S_reg is absorbed into DSP mult2_S_reg.
-DSP Report: operator mult2 is absorbed into DSP mult2_S_reg.
-DSP Report: Generating DSP mult1_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register mult1_S_reg is absorbed into DSP mult1_S_reg.
-DSP Report: operator mult1 is absorbed into DSP mult1_S_reg.
-DSP Report: Generating DSP mult4_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register mult4_S_reg is absorbed into DSP mult4_S_reg.
-DSP Report: operator mult4 is absorbed into DSP mult4_S_reg.
-DSP Report: Generating DSP mult3_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register mult3_S_reg is absorbed into DSP mult3_S_reg.
-DSP Report: operator mult3 is absorbed into DSP mult3_S_reg.
-INFO: [Synth 8-4471] merging register 'PPsig2I_reg[24:0]' into 'PPsig2I_reg[24:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:294]
-INFO: [Synth 8-4471] merging register 'PPsig2_reg[24:0]' into 'PPsig2_reg[24:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:293]
-INFO: [Synth 8-4471] merging register 'delayed_cos_reg[17:0]' into 'delayed_cos_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:295]
-INFO: [Synth 8-4471] merging register 'delayed_sin_reg[17:0]' into 'delayed_sin_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:296]
-INFO: [Synth 8-4471] merging register 'delayed2_cos_reg[17:0]' into 'delayed2_cos_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:297]
-INFO: [Synth 8-4471] merging register 'delayed2_sin_reg[17:0]' into 'delayed2_sin_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:298]
-DSP Report: Generating DSP mult2_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register mult2_S_reg is absorbed into DSP mult2_S_reg.
-DSP Report: operator mult2 is absorbed into DSP mult2_S_reg.
-DSP Report: Generating DSP mult1_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register mult1_S_reg is absorbed into DSP mult1_S_reg.
-DSP Report: operator mult1 is absorbed into DSP mult1_S_reg.
-DSP Report: Generating DSP mult4_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register mult4_S_reg is absorbed into DSP mult4_S_reg.
-DSP Report: operator mult4 is absorbed into DSP mult4_S_reg.
-DSP Report: Generating DSP mult3_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register mult3_S_reg is absorbed into DSP mult3_S_reg.
-DSP Report: operator mult3 is absorbed into DSP mult3_S_reg.
-WARNING: [Synth 8-7129] Port TWin2[0] in module DSP_TD__xdcDup__12 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port TWin2[0] in module DSP_TD__xdcDup__5 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port TWin2[0] in module DSP_TD__xdcDup__6 is either unconnected or has no load
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\DFT_TD_DSPs[5].DFT_TD_DSP /\A1_temps_reg[14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\DFT_TD_DSPs[6].DFT_TD_DSP /\A1_temps_reg[14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\DFT_TD_DSPs[12].DFT_TD_DSP /\A1_temps_reg[14] )
-INFO: [Synth 8-4471] merging register 'PPsig2I_reg[24:0]' into 'PPsig2I_reg[24:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:294]
-INFO: [Synth 8-4471] merging register 'PPsig2_reg[24:0]' into 'PPsig2_reg[24:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:293]
-INFO: [Synth 8-4471] merging register 'delayed_cos_reg[17:0]' into 'delayed_cos_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:295]
-INFO: [Synth 8-4471] merging register 'delayed_sin_reg[17:0]' into 'delayed_sin_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:296]
-INFO: [Synth 8-4471] merging register 'delayed2_cos_reg[17:0]' into 'delayed2_cos_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:297]
-INFO: [Synth 8-4471] merging register 'delayed2_sin_reg[17:0]' into 'delayed2_sin_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:298]
-DSP Report: Generating DSP mult2_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register mult2_S_reg is absorbed into DSP mult2_S_reg.
-DSP Report: operator mult2 is absorbed into DSP mult2_S_reg.
-DSP Report: Generating DSP mult1_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register mult1_S_reg is absorbed into DSP mult1_S_reg.
-DSP Report: operator mult1 is absorbed into DSP mult1_S_reg.
-DSP Report: Generating DSP mult4_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register mult4_S_reg is absorbed into DSP mult4_S_reg.
-DSP Report: operator mult4 is absorbed into DSP mult4_S_reg.
-DSP Report: Generating DSP mult3_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register mult3_S_reg is absorbed into DSP mult3_S_reg.
-DSP Report: operator mult3 is absorbed into DSP mult3_S_reg.
-INFO: [Synth 8-4471] merging register 'PPsig2I_reg[24:0]' into 'PPsig2I_reg[24:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:294]
-INFO: [Synth 8-4471] merging register 'PPsig2_reg[24:0]' into 'PPsig2_reg[24:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:293]
-INFO: [Synth 8-4471] merging register 'delayed_cos_reg[17:0]' into 'delayed_cos_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:295]
-INFO: [Synth 8-4471] merging register 'delayed_sin_reg[17:0]' into 'delayed_sin_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:296]
-INFO: [Synth 8-4471] merging register 'delayed2_cos_reg[17:0]' into 'delayed2_cos_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:297]
-INFO: [Synth 8-4471] merging register 'delayed2_sin_reg[17:0]' into 'delayed2_sin_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:298]
-DSP Report: Generating DSP mult2_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register mult2_S_reg is absorbed into DSP mult2_S_reg.
-DSP Report: operator mult2 is absorbed into DSP mult2_S_reg.
-DSP Report: Generating DSP mult1_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register mult1_S_reg is absorbed into DSP mult1_S_reg.
-DSP Report: operator mult1 is absorbed into DSP mult1_S_reg.
-DSP Report: Generating DSP mult4_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register mult4_S_reg is absorbed into DSP mult4_S_reg.
-DSP Report: operator mult4 is absorbed into DSP mult4_S_reg.
-DSP Report: Generating DSP mult3_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register mult3_S_reg is absorbed into DSP mult3_S_reg.
-DSP Report: operator mult3 is absorbed into DSP mult3_S_reg.
-INFO: [Synth 8-4471] merging register 'PPsig2I_reg[24:0]' into 'PPsig2I_reg[24:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:294]
-INFO: [Synth 8-4471] merging register 'PPsig2_reg[24:0]' into 'PPsig2_reg[24:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:293]
-INFO: [Synth 8-4471] merging register 'delayed_cos_reg[17:0]' into 'delayed_cos_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:295]
-INFO: [Synth 8-4471] merging register 'delayed_sin_reg[17:0]' into 'delayed_sin_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:296]
-INFO: [Synth 8-4471] merging register 'delayed2_cos_reg[17:0]' into 'delayed2_cos_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:297]
-INFO: [Synth 8-4471] merging register 'delayed2_sin_reg[17:0]' into 'delayed2_sin_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:298]
-DSP Report: Generating DSP mult2_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register mult2_S_reg is absorbed into DSP mult2_S_reg.
-DSP Report: operator mult2 is absorbed into DSP mult2_S_reg.
-DSP Report: Generating DSP mult1_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register mult1_S_reg is absorbed into DSP mult1_S_reg.
-DSP Report: operator mult1 is absorbed into DSP mult1_S_reg.
-DSP Report: Generating DSP mult4_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register mult4_S_reg is absorbed into DSP mult4_S_reg.
-DSP Report: operator mult4 is absorbed into DSP mult4_S_reg.
-DSP Report: Generating DSP mult3_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register mult3_S_reg is absorbed into DSP mult3_S_reg.
-DSP Report: operator mult3 is absorbed into DSP mult3_S_reg.
-INFO: [Synth 8-4471] merging register 'PPsig2I_reg[24:0]' into 'PPsig2I_reg[24:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:294]
-INFO: [Synth 8-4471] merging register 'PPsig2_reg[24:0]' into 'PPsig2_reg[24:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:293]
-INFO: [Synth 8-4471] merging register 'delayed_cos_reg[17:0]' into 'delayed_cos_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:295]
-INFO: [Synth 8-4471] merging register 'delayed_sin_reg[17:0]' into 'delayed_sin_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:296]
-INFO: [Synth 8-4471] merging register 'delayed2_cos_reg[17:0]' into 'delayed2_cos_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:297]
-INFO: [Synth 8-4471] merging register 'delayed2_sin_reg[17:0]' into 'delayed2_sin_reg[17:0]' [C:/EGH400_1_Thesis/src/design/DSP_TD.vhd:298]
-DSP Report: Generating DSP mult2_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult2_S_reg.
-DSP Report: register mult2_S_reg is absorbed into DSP mult2_S_reg.
-DSP Report: operator mult2 is absorbed into DSP mult2_S_reg.
-DSP Report: Generating DSP mult1_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult1_S_reg.
-DSP Report: register mult1_S_reg is absorbed into DSP mult1_S_reg.
-DSP Report: operator mult1 is absorbed into DSP mult1_S_reg.
-DSP Report: Generating DSP mult4_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register PPsig2I_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register delayed2_cos_reg is absorbed into DSP mult4_S_reg.
-DSP Report: register mult4_S_reg is absorbed into DSP mult4_S_reg.
-DSP Report: operator mult4 is absorbed into DSP mult4_S_reg.
-DSP Report: Generating DSP mult3_S_reg, operation Mode is: (A2*B'')'.
-DSP Report: register delayed_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register PPsig2_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register delayed2_sin_reg is absorbed into DSP mult3_S_reg.
-DSP Report: register mult3_S_reg is absorbed into DSP mult3_S_reg.
-DSP Report: operator mult3 is absorbed into DSP mult3_S_reg.
-WARNING: [Synth 8-7129] Port TWin2[0] in module DSP_TD__xdcDup__1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port TWin2[0] in module DSP_TD__xdcDup__2 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port TWin2[0] in module DSP_TD__xdcDup__3 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port TWin2[0] in module DSP_TD__xdcDup__4 is either unconnected or has no load
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\DFT_TD_DSPs[1].DFT_TD_DSP /\A1_temps_reg[14] )
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\DFT_TD_DSPs[2].DFT_TD_DSP /\A1_temps_reg[14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\DFT_TD_DSPs[3].DFT_TD_DSP /\A1_temps_reg[14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\DFT_TD_DSPs[4].DFT_TD_DSP /\A1_temps_reg[14] )
-INFO: [Synth 8-4471] merging register 'byte_select_full_temp_out_reg[3:0]' into 'byte_select_temp_out_reg[3:0]' [C:/EGH400_1_Thesis/src/design/shift_reg_input.vhd:243]
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7077] IncrSyn: subsequent runs will still be incremental as the reference run was parallel and that data is reused
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:47 ; elapsed = 00:01:18 . Memory (MB): peak = 1457.465 ; gain = 166.238
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1449.203 ; gain = 158.883
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+Start Stitch Unchanged AreaOpt Partitions
 ---------------------------------------------------------------------------------
-
-DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
-+------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-|DSP_TD      | (A2*B'')'   | 25     | 18     | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 0    | 
-+------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-
-Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
 ---------------------------------------------------------------------------------
-Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+Finished Stitch Unchanged AreaOpt Partitions : Time (s): cpu = 00:00:22 ; elapsed = 00:00:21 . Memory (MB): peak = 1449.203 ; gain = 158.883
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:55 ; elapsed = 00:01:26 . Memory (MB): peak = 1457.465 ; gain = 166.238
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1449.203 ; gain = 158.883
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:58 ; elapsed = 00:01:29 . Memory (MB): peak = 1457.465 ; gain = 166.238
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:29 . Memory (MB): peak = 1449.203 ; gain = 158.883
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7077] IncrSyn: subsequent runs will still be incremental as the reference run was parallel and that data is reused
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:05 ; elapsed = 00:01:48 . Memory (MB): peak = 1460.410 ; gain = 169.184
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:29 . Memory (MB): peak = 1449.203 ; gain = 158.883
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Stitch Unchanged Partitions
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Stitch Unchanged Partitions : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1449.203 ; gain = 158.883
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -1260,37 +586,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:11 ; elapsed = 00:01:54 . Memory (MB): peak = 1513.789 ; gain = 222.562
+Finished IO Insertion : Time (s): cpu = 00:00:37 ; elapsed = 00:00:37 . Memory (MB): peak = 1497.652 ; gain = 207.332
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:11 ; elapsed = 00:01:54 . Memory (MB): peak = 1513.789 ; gain = 222.562
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:37 ; elapsed = 00:00:37 . Memory (MB): peak = 1497.652 ; gain = 207.332
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:16 ; elapsed = 00:01:59 . Memory (MB): peak = 1513.789 ; gain = 222.562
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:39 ; elapsed = 00:00:39 . Memory (MB): peak = 1497.652 ; gain = 207.332
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:16 ; elapsed = 00:01:59 . Memory (MB): peak = 1513.789 ; gain = 222.562
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:39 ; elapsed = 00:00:39 . Memory (MB): peak = 1497.652 ; gain = 207.332
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:18 ; elapsed = 00:02:02 . Memory (MB): peak = 1513.789 ; gain = 222.562
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:42 ; elapsed = 00:00:42 . Memory (MB): peak = 1497.652 ; gain = 207.332
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:18 ; elapsed = 00:02:02 . Memory (MB): peak = 1513.789 ; gain = 222.562
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:42 ; elapsed = 00:00:42 . Memory (MB): peak = 1497.652 ; gain = 207.332
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -1436,42 +762,42 @@ Report Cell Usage:
 |51    |tw_ram_sin_bbox     |     1|
 |52    |CARRY4              |  2350|
 |53    |DSP48E1             |    64|
-|55    |LUT1                |   567|
-|56    |LUT2                |  7791|
-|57    |LUT3                |  5234|
-|58    |LUT4                |  1995|
-|59    |LUT5                |  7707|
-|60    |LUT6                |  8413|
-|61    |MUXF7               |   136|
-|62    |MUXF8               |    68|
-|63    |SRL16E              |  1024|
-|64    |FDCE                | 15818|
-|65    |FDPE                |    17|
-|66    |FDRE                |  5331|
-|67    |LDC                 |     1|
+|54    |LUT1                |   567|
+|55    |LUT2                |  7791|
+|56    |LUT3                |  5234|
+|57    |LUT4                |  1995|
+|58    |LUT5                |  7707|
+|59    |LUT6                |  8413|
+|60    |MUXF7               |   136|
+|61    |MUXF8               |    68|
+|62    |SRL16E              |  1024|
+|63    |FDCE                | 15818|
+|64    |FDPE                |    17|
+|65    |FDRE                |  5331|
+|66    |LDC                 |     1|
 +------+--------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:18 ; elapsed = 00:02:02 . Memory (MB): peak = 1513.789 ; gain = 222.562
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:42 ; elapsed = 00:00:42 . Memory (MB): peak = 1497.652 ; gain = 207.332
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 15 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:07 ; elapsed = 00:01:57 . Memory (MB): peak = 1513.789 ; gain = 80.250
-Synthesis Optimization Complete : Time (s): cpu = 00:01:19 ; elapsed = 00:02:02 . Memory (MB): peak = 1513.789 ; gain = 222.562
+Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:36 . Memory (MB): peak = 1497.652 ; gain = 72.227
+Synthesis Optimization Complete : Time (s): cpu = 00:00:42 ; elapsed = 00:00:42 . Memory (MB): peak = 1497.652 ; gain = 207.332
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.410 . Memory (MB): peak = 1539.852 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.457 . Memory (MB): peak = 1531.469 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 2619 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1560.938 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1545.656 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   LDC => LDCE: 1 instance 
 
 Synth Design complete, checksum: 9e2e98b6
 INFO: [Common 17-83] Releasing license: Synthesis
-304 Infos, 41 Warnings, 0 Critical Warnings and 0 Errors encountered.
+89 Infos, 29 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:27 ; elapsed = 00:02:12 . Memory (MB): peak = 1560.938 ; gain = 269.711
+synth_design: Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 1545.656 ; gain = 255.336
 INFO: [Common 17-1381] The checkpoint 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/synth_1/fpga_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file fpga_top_utilization_synth.rpt -pb fpga_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Oct 28 16:53:22 2022...
+INFO: [Common 17-206] Exiting Vivado at Fri Oct 28 22:36:13 2022...

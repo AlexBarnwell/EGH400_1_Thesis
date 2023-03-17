@@ -23,7 +23,7 @@ plot(x,DSP,'d-')
 plot(x,LUTRAM,'d-')
 xlim([0 16])
 hold off
-title('Resource usage for Arty board')
+title('Resource usage for ARTIX-7')
 xlabel('Parallel components')
 ylabel('Resource usage (%)')
 legend('LUT','FF','BRAM','DSP','LUTRAM','location','NorthWest');

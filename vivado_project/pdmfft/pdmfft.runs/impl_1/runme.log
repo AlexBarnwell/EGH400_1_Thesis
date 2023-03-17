@@ -34,7 +34,7 @@ INFO: [Project 1-454] Reading design checkpoint 'c:/EGH400_1_Thesis/src/ip/bd_ra
 INFO: [Project 1-454] Reading design checkpoint 'c:/EGH400_1_Thesis/src/ip/dsp_macro_0/dsp_macro_0.dcp' for cell 'Series_recombination_loop/DFT_TD_DSPs[10].DFT_TD_DSP/first'
 INFO: [Project 1-454] Reading design checkpoint 'c:/EGH400_1_Thesis/src/ip/tw_ram_cos/tw_ram_cos.dcp' for cell 'TWiddle1/Twiddle_1'
 INFO: [Project 1-454] Reading design checkpoint 'c:/EGH400_1_Thesis/src/ip/tw_ram_sin/tw_ram_sin.dcp' for cell 'TWiddle1/Twiddle_2'
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.440 . Memory (MB): peak = 1290.711 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.521 . Memory (MB): peak = 1291.363 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 2675 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2022.1
@@ -44,20 +44,20 @@ Finished Parsing XDC File [c:/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0_board.x
 Parsing XDC File [c:/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'CLOCK/inst'
 INFO: [Timing 38-35] Done setting XDC timing constraints. [c:/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0.xdc:57]
 INFO: [Timing 38-2] Deriving generated clocks [c:/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0.xdc:57]
-get_clocks: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1677.145 ; gain = 386.434
+get_clocks: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 1677.578 ; gain = 386.215
 Finished Parsing XDC File [c:/EGH400_1_Thesis/src/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'CLOCK/inst'
 Parsing XDC File [C:/EGH400_1_Thesis/src/constraints/arty.xdc]
 Finished Parsing XDC File [C:/EGH400_1_Thesis/src/constraints/arty.xdc]
 Parsing XDC File [C:/EGH400_1_Thesis/src/constraints/bitstream_flash_config.xdc]
 Finished Parsing XDC File [C:/EGH400_1_Thesis/src/constraints/bitstream_flash_config.xdc]
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1677.145 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1677.578 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 29 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 link_design completed successfully
-link_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1677.145 ; gain = 386.434
+link_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1677.578 ; gain = 386.215
 Command: opt_design -directive Explore
 INFO: [Vivado_Tcl 4-136] Directive used for opt_design is: Explore
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a35ti'
@@ -69,7 +69,7 @@ INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Project 1-461] DRC finished with 0 Errors
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.917 . Memory (MB): peak = 1677.145 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.948 . Memory (MB): peak = 1677.578 ; gain = 0.000
 
 Starting Logic Optimization Task
 INFO: [Timing 38-35] Done setting XDC timing constraints.
@@ -80,7 +80,7 @@ In IDDR TRANSFORM
 INFO: [Opt 31-49] Retargeted 0 cell(s).
 Phase 1 Retarget | Checksum: 753cb3cb
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2009.668 ; gain = 143.250
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2000.008 ; gain = 141.145
 INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
 INFO: [Opt 31-1021] In phase Retarget, 1 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
@@ -88,32 +88,32 @@ Phase 2 Constant propagation
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 Phase 2 Constant propagation | Checksum: d6a052eb
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2009.668 ; gain = 143.250
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 2000.008 ; gain = 141.145
 INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
 
 Phase 3 Sweep
 Phase 3 Sweep | Checksum: e6dfb46a
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2009.668 ; gain = 143.250
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2000.008 ; gain = 141.145
 INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
 
 Phase 4 BUFG optimization
 Phase 4 BUFG optimization | Checksum: e6dfb46a
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2009.668 ; gain = 143.250
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 2000.008 ; gain = 141.145
 INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
 
 Phase 5 Shift Register Optimization
 INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
 Phase 5 Shift Register Optimization | Checksum: e6dfb46a
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2009.668 ; gain = 143.250
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 2000.008 ; gain = 141.145
 INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
 
 Phase 6 Post Processing Netlist
 Phase 6 Post Processing Netlist | Checksum: e6dfb46a
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2009.668 ; gain = 143.250
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 2000.008 ; gain = 141.145
 INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
 Opt_design Change Summary
 =========================
@@ -134,20 +134,20 @@ Opt_design Change Summary
 
 Starting Connectivity Check Task
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.057 . Memory (MB): peak = 2009.668 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.073 . Memory (MB): peak = 2000.008 ; gain = 0.000
 Ending Logic Optimization Task | Checksum: bac788e7
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 2009.668 ; gain = 143.250
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 2000.008 ; gain = 141.145
 
 Starting Netlist Obfuscation Task
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 2009.668 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 2000.008 ; gain = 0.000
 Ending Netlist Obfuscation Task | Checksum: bac788e7
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 2009.668 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 2000.008 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
 47 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 opt_design completed successfully
-opt_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 2009.668 ; gain = 332.523
+opt_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 2000.008 ; gain = 322.430
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Timing 38-480] Writing timing data to binary archive.
 INFO: [Common 17-1381] The checkpoint 'C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/impl_1/fpga_top_opt.dcp' has been generated.
@@ -160,6 +160,7 @@ Resolution: Set the HD.CLK_SRC property of the out-of-context port to the locati
 INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Vivado_Tcl 2-168] The results of DRC are in file C:/EGH400_1_Thesis/vivado_project/pdmfft/pdmfft.runs/impl_1/fpga_top_drc_opted.rpt.
 report_drc completed successfully
+report_drc: Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 2047.863 ; gain = 47.855
 Command: place_design -directive Auto_1
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a35ti'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35ti'
@@ -181,4 +182,4 @@ INFO: [Common 17-83] Releasing license: Implementation
 place_design failed
 ERROR: [Common 17-39] 'place_design' failed due to earlier errors.
 
-INFO: [Common 17-206] Exiting Vivado at Fri Oct 28 16:54:11 2022...
+INFO: [Common 17-206] Exiting Vivado at Fri Oct 28 22:37:06 2022...
